@@ -1,0 +1,68 @@
+{
+    "title": "Generator",
+    "parentTitle": "Concurrency Primitives",
+    "aliases": [
+        "Lazy Sequence",
+        "Yield‑based Iterator",
+        "Coroutine Producer"
+    ],
+    "links": [
+        {
+            "title": "Wikipedia – Generator (computer programming)",
+            "url": "https://en.wikipedia.org/wiki/Generator_(computer_programming)"
+        },
+        {
+            "title": "PEP 255 – Python Generators",
+            "url": "https://www.python.org/dev/peps/pep-0255/"
+        },
+        {
+            "title": "MDN Web Docs – Generators",
+            "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Generator"
+        },
+        {
+            "title": "Microsoft Docs – Iterators and Enumerators (C# yield)",
+            "url": "https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/iterators"
+        },
+        {
+            "title": "Wikipedia – Coroutine",
+            "url": "https://en.wikipedia.org/wiki/Coroutine"
+        },
+        {
+            "title": "Wikipedia – Lazy evaluation",
+            "url": "https://en.wikipedia.org/wiki/Lazy_evaluation"
+        }
+    ],
+    "tags": [],
+    "details": [],
+    "content": "Generators are ADTs that produce values on demand through a lightweight coroutine mechanism, allowing clients to traverse potentially infinite or expensive sequences without precomputing them. By encapsulating internal state and yielding control back to the caller, generators decouple production from consumption and enable efficient, lazy pipelines in both synchronous and asynchronous contexts.",
+    "sections": [
+        {
+            "title": "Role and Motivation",
+            "content": "Unlike plain iterators, generators maintain their own execution context, pausing at each **yield** point and resuming on demand. This supports lazy evaluation—values are computed only when requested—reducing memory footprint for large or infinite data streams and simplifying code for complex traversals (e.g., tree walks, graph searches)."
+        },
+        {
+            "title": "Core Interface and Semantics",
+            "content": "A generator exposes operations such as **next()** (retrieve the next yielded value), **return(value)** (terminate iteration with a final value), and **throw(exception)** (inject an error into the generator’s context). Each **yield** both returns a value and saves the local state (variables, call stack) so that subsequent **next()** calls resume from the same point."
+        },
+        {
+            "title": "Implementation via Coroutines",
+            "content": "Under the hood, generators compile into finite state machines or leverage language‑level coroutine support. Each yield point corresponds to a state; resuming advances to the next yield. Some languages implement this via stack‑switching coroutines (e.g., Python), while others use compiler transformations (e.g., JavaScript) or runtime support (e.g., C# async iterators)."
+        },
+        {
+            "title": "Lazy Pipelines and Composability",
+            "content": "Generators compose naturally: one generator can **yield from** another (Python) or use generator expressions (JavaScript) to filter, map, or chain sequences. This produces memory‑efficient pipelines—each element flows through stages on demand—ideal for processing large files, network streams, or infinite series like the Fibonacci sequence."
+        },
+        {
+            "title": "Asynchronous Generators",
+            "content": "Async generators combine **async/await** with yield semantics, returning **AsyncIterator** objects. They enable non‑blocking iteration over data sources that deliver values over time—such as user events, I/O streams, or web sockets—without blocking the event loop or spawning threads."
+        },
+        {
+            "title": "Performance and Resource Management",
+            "content": "Generators incur minimal overhead per yield—constant memory for local variables and a small state object. They avoid building intermediate collections, trading off some function‑call cost for reduced allocation and garbage collection. Proper use of lazy pipelines can dramatically improve throughput and latency in data‑intensive applications."
+        },
+        {
+            "title": "Theoretical Underpinnings",
+            "content": "Generators realize lightweight coroutines and can be modeled as coalgebras for the functor X ↦ A × X + 1, where A is the yield type. They connect to category‑theoretic notions of codata and to formal models of control flow, illustrating the power of resumable computations as first‑class abstract objects."
+        }
+    ]
+}

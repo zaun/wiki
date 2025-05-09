@@ -1,0 +1,62 @@
+{
+    "title": "Set (Data Type)",
+    "parentTitle": "Data Structures",
+    "aliases": [
+        "Unordered Collection"
+    ],
+    "links": [
+        {
+            "title": "Encyclopedia of Mathematics – Set",
+            "url": "https://encyclopediaofmath.org/wiki/Set"
+        },
+        {
+            "title": "Britannica – Set (Mathematics)",
+            "url": "https://www.britannica.com/science/set-mathematics"
+        },
+        {
+            "title": "Wiley – Data Structures & Algorithms in Java (Goodrich, Tamassia & Goldwasser) – Chapter on Maps and Sets",
+            "url": "https://www.wiley.com/en-us/Data+Structures+and+Algorithms+in+Java%2C+6th+Edition-p-9781118771334"
+        },
+        {
+            "title": "MIT OpenCourseWare – Data Structures (6.006) Lecture on Hash Tables & Search Trees",
+            "url": "https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/pages/lecture-notes/"
+        },
+        {
+            "title": "ACM DL – Skip Lists: A Probabilistic Alternative to Balanced Trees",
+            "url": "https://dl.acm.org/doi/10.1145/357654.357657"
+        },
+        {
+            "title": "Springer – Purely Functional Data Structures (Okasaki) – Chapter on Sets",
+            "url": "https://link.springer.com/book/10.1007/3-540-44645-0"
+        }
+    ],
+    "tags": [],
+    "details": [],
+    "content": "A Set ADT represents an unordered collection of distinct elements, supporting membership testing and algebraic set operations. By defining the interface—rather than the implementation—it enables modular reasoning about collection behavior while allowing multiple concrete data structures to satisfy the same contract.",
+    "sections": [
+        {
+            "title": "ADT Contract and Core Operations",
+            "content": "A Set supports the following operations:\n\n- **insert(x)**: add element x (no effect if already present).\n- **remove(x)**: delete element x (no effect if absent).\n- **contains(x)**: test membership, returning true if x ∈ set.\n- **size()**: return the number of elements.\n- **isEmpty()**: test whether the set has no elements.\n- **union(S2)**, **intersection(S2)**, **difference(S2)**: produce new sets from pairwise element combinations.\n- **subset(S2)**: test whether all elements of this set appear in S2.\n\nPreconditions specify element types; postconditions guarantee set-theoretic laws (e.g., idempotence of insert)."
+        },
+        {
+            "title": "Formal Semantics",
+            "content": "Mathematically, a finite set over type T is a function }f: T → {0,1}\n}, the characteristic function, where f(x)=1 iff x is in the set. Operations correspond to Boolean operations on these functions: union as OR, intersection as AND, difference as AND with negation."
+        },
+        {
+            "title": "Hash‑Based Implementations",
+            "content": "Hash tables use a hash function h(x) to map elements to buckets. With proper resizing (e.g., doubling), they achieve O(1) average‑case time for insert, remove, and contains, though worst‑case can degrade to O(n) under collisions. Techniques such as chaining, open addressing, and Cuckoo hashing trade space and time for collision resolution."
+        },
+        {
+            "title": "Tree‑Based Implementations",
+            "content": "Balanced binary search trees (e.g., red‑black trees, AVL trees) support insert, remove, and contains in O(log n) worst‑case time, guarantee ordered iteration, and enable range queries. Finger trees and skip lists offer alternative designs with probabilistic balancing or sequence‑like operations."
+        },
+        {
+            "title": "Probabilistic and Specialized Variants",
+            "content": "Bloom filters provide space‑efficient approximate sets with no false negatives and tunable false‑positive rates, suitable for high‑throughput membership testing. Count‑min sketches and HyperLogLog extend these ideas to frequency estimation and cardinality approximation over large data streams."
+        },
+        {
+            "title": "Applications and Practical Considerations",
+            "content": "Sets are used for symbol tables, duplicate elimination, and fast lookups in compilers, databases (e.g., relational algebra’s projection), network routers (blacklists), and caching systems. Choice of implementation depends on workload: hash tables for speed, trees for ordered data, and probabilistic structures for massive-scale approximate queries."
+        }
+    ]
+}

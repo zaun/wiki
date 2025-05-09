@@ -1,0 +1,64 @@
+{
+  "title": "Proofs and Proof Systems",
+  "parentTitle": "Logical and Semantic Frameworks",
+  "aliases": ["Proof Theory", "Derivations"],
+  "links": [
+    {
+      "title": "Stanford Encyclopedia of Philosophy – Proof Theory",
+      "url": "https://plato.stanford.edu/entries/proof-theory/"
+    },
+    {
+      "title": "Stanford Encyclopedia of Philosophy – Mathematical Proof",
+      "url": "https://plato.stanford.edu/entries/mathematical-proof/"
+    },
+    {
+      "title": "Encyclopedia of Mathematics – Proof",
+      "url": "https://encyclopediaofmath.org/wiki/Proof"
+    },
+    {
+      "title": "Britannica – Mathematical Proof",
+      "url": "https://www.britannica.com/science/mathematical-proof"
+    },
+    {
+      "title": "MIT OpenCourseWare – Methods of Proof",
+      "url": "https://ocw.mit.edu/courses/21-200-methods-of-proof-fall-2017/"
+    },
+    {
+      "title": "Cambridge University Press – Proofs from THE BOOK (Aigner & Ziegler)",
+      "url": "https://www.cambridge.org/us/academic/subjects/mathematics/discrete-mathematics-information-theory-and-coding/proofs-book-4th-edition"
+    }
+  ],
+  "tags": [],
+  "details": [],
+  "content": "Proofs are finite, rigorously structured sequences of statements—drawn from axioms and inference rules—that establish the validity of propositions within a formal system. As abstract constructs, they exist independently of any specific presentation (handwritten, printed, or machine‑checked) and embody both the syntactic rules of deduction and the semantic guarantee of truth. From classical mathematical proofs to computer‑verified derivations, proofs are the backbone of logical certainty.",
+  "sections": [
+    {
+      "title": "Role and Structure of Proofs",
+      "content": "A proof begins with axioms or premises and proceeds through a finite chain of inference steps to reach a conclusion. Structurally, proofs can be viewed as linear derivations, tree‑like sequent structures, or graph‑based proof nets. Their primary role is to transform assumed truths into new theorems by strictly governed operations, ensuring that every conclusion is inextricably linked to foundational assumptions."
+    },
+    {
+      "title": "Formal Proof Systems",
+      "content": "Various calculi formalize the notion of proof: **Hilbert‑style systems** emphasize axiom schemas and minimal rules; **natural deduction** presents introduction and elimination rules for each connective; **sequent calculi** expose structural rules like cut and weakening; **tableaux** use refutation trees. Each system balances expressivity, proof length, and meta‑properties such as admissibility of cut or subformula property."
+    },
+    {
+      "title": "Metatheoretical Properties",
+      "content": "Proof systems are analyzed for **soundness** (all derivable statements are semantically valid) and **completeness** (all semantically valid statements are derivable). **Cut‑elimination** and **normalization** theorems show that extraneous steps can be removed, often yielding more canonical proofs. **Consistency** results (no contradiction is derivable) and **decidability** or **undecidability** of proof search characterize the power and limits of each system."
+    },
+    {
+      "title": "Proof Techniques in Mathematics",
+      "content": "Beyond formal systems, mathematicians employ techniques such as **direct proof**, **proof by contraposition**, **proof by contradiction**, and **mathematical induction**. Combinatorial and probabilistic methods construct existence proofs, while constructive proofs yield explicit algorithms or witnesses. These patterns guide the discovery and presentation of proofs, often blending intuition with formal rigor."
+    },
+    {
+      "title": "Automation and Interactive Proof",
+      "content": "Automated theorem provers (e.g., E, Z3) perform unassisted proof search in specific domains, while interactive proof assistants (Coq, Lean, Isabelle) combine human guidance with machine checking. These tools formalize proofs down to inference steps, enabling verification of complex theorems (e.g., the Feit–Thompson theorem) and generating certified code via the Curry–Howard correspondence."
+    },
+    {
+      "title": "Proofs in Computer Science",
+      "content": "In computer science, proofs certify program correctness (Hoare logic, separation logic), security properties (protocol verification), and type safety (type system soundness). The Curry–Howard isomorphism conceptualizes programs as proofs and types as propositions, unifying computation with deduction. Proof-carrying code embeds certificates alongside binaries to ensure runtime safety."
+    },
+    {
+      "title": "Philosophical Perspectives",
+      "content": "Philosophical debates examine whether proofs convey understanding or merely certify truth. **Formalists** treat proofs as syntactic artifacts, **Platonists** see them as uncovering eternal mathematical realities, and **constructivists** demand explicit constructions. Questions about the nature of proof—its epistemic status, explanatory power, and relation to human insight—remain central to the philosophy of mathematics and logic."
+    }
+  ]
+}

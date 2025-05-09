@@ -1,0 +1,56 @@
+{
+  "title": "Order and Lattice Theory",
+  "parentTitle": "Algebraic and Order Structures",
+  "aliases": [
+    "Posets",
+    "Partially Ordered Sets",
+    "Lattices"
+  ],
+  "links": [
+    {
+      "title": "Stanford Encyclopedia of Philosophy – Order Theory",
+      "url": "https://plato.stanford.edu/entries/order-theory/"
+    },
+    {
+      "title": "Encyclopedia of Mathematics – Lattice Theory",
+      "url": "https://encyclopediaofmath.org/wiki/Lattice_theory"
+    },
+    {
+      "title": "nLab – Partially Ordered Set",
+      "url": "https://ncatlab.org/nlab/show/poset"
+    },
+    {
+      "title": "Birkhoff – Lattice Theory (AMS Colloquium Publications)",
+      "url": "https://bookstore.ams.org/coll-25"
+    },
+    {
+      "title": "Grätzer – General Lattice Theory (Birkhäuser, 2008)",
+      "url": "https://link.springer.com/book/10.1007/978-3-319-76914-4"
+    }
+  ],
+  "tags": [],
+  "details": [],
+  "content": "Order & Lattice Theory studies abstract structures in which elements are arranged according to a binary relation that is reflexive, antisymmetric, and transitive.  Partially ordered sets (posets) capture hierarchy and precedence, while lattices impose additional join and meet operations that assign least upper bounds and greatest lower bounds.  These frameworks unify algebraic, combinatorial, and topological notions of structure, providing a foundational language for many areas of mathematics and computer science.\n\nLattice theory generalizes Boolean algebras, distributive and modular lattices, and captures the essence of intersection and union operations in set theory, subgroups in algebra, and concept hierarchies in knowledge representation.  By focusing on order relations and the existence of joins/meets, it reveals deep dualities and categorical correspondences, such as between distributive lattices and topological spaces via Stone duality.",
+  "sections": [
+    {
+      "title": "Basic Definitions",
+      "content": "A **poset** is a set \\(P\\) equipped with a relation \\(\\le\\) that is reflexive (\\(x\\le x\\)), antisymmetric (\\(x\\le y\\) and \\(y\\le x\\implies x=y\\)), and transitive (\\(x\\le y\\le z\\implies x\\le z\\)).  A **chain** is a totally ordered subset, and an **antichain** is a subset of pairwise incomparable elements.  A **lattice** is a poset in which any two elements \\(x,y\\) have a **join** \\(x\\lor y\\) (least upper bound) and a **meet** \\(x\\land y\\) (greatest lower bound)."
+    },
+    {
+      "title": "Lattice Varieties and Properties",
+      "content": "Key classes include **distributive lattices** (where meet distributes over join and vice versa), **modular lattices** (a weakening of distributivity), and **Boolean algebras** (complemented distributive lattices).  **Complete lattices** admit joins and meets of arbitrary subsets, while **continuous lattices** and **algebraic lattices** arise in domain theory.  **Sublattices**, **homomorphisms**, and **quotient lattices** capture algebraic morphisms and factor structures."
+    },
+    {
+      "title": "Examples and Constructions",
+      "content": "Common examples include the power set of any set ordered by inclusion (a Boolean algebra), the lattice of subgroups of a group under inclusion (modular but generally non-distributive), and the lattice of open sets of a topological space (complete Heyting algebra).  **Product lattices** combine two lattices coordinatewise, and **intervals** in posets yield sublattice structures.  **Galois connections** provide adjoint relationships between ordered sets."
+    },
+    {
+      "title": "Applications",
+      "content": "Order and lattice concepts underpin fixed‑point theorems in computer science (e.g., Tarski’s theorem), data type hierarchies, and abstract interpretation in program analysis.  In logic, Heyting algebras model intuitionistic logic, while Boolean algebras correspond to classical propositional logic.  In combinatorics, lattice‑theoretic methods analyze Möbius functions and incidence algebras of posets."
+    },
+    {
+      "title": "Advanced Topics",
+      "content": "Beyond basic lattices, one studies **domain theory**, where directed‑complete partial orders model computation; **quantales**, noncommutative generalizations of lattices; and **lattice‑ordered groups** combining group and lattice structure.  **Stone duality** links Boolean algebras to Boolean spaces, and **Priestley duality** relates distributive lattices to partially ordered compact spaces, revealing deep categorical equivalences."
+    }
+  ]
+}

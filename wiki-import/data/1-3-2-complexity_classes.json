@@ -1,0 +1,64 @@
+{
+  "title": "Complexity Classes",
+  "parentTitle": "Computational Abstractions",
+  "aliases": ["Computational Complexity Classes", "Complexity Theory"],
+  "links": [
+    {
+      "title": "Stanford Encyclopedia of Philosophy – Computational Complexity Theory",
+      "url": "https://plato.stanford.edu/entries/computational-complexity/"
+    },
+    {
+      "title": "Encyclopedia of Mathematics – Computational Complexity",
+      "url": "https://encyclopediaofmath.org/wiki/Computational_complexity"
+    },
+    {
+      "title": "Britannica – Computational Complexity",
+      "url": "https://www.britannica.com/science/computational-complexity"
+    },
+    {
+      "title": "MIT Press – Introduction to the Theory of Computation (Sipser)",
+      "url": "https://mitpress.mit.edu/books/introduction-theory-computation-third-edition"
+    },
+    {
+      "title": "Pearson – Computational Complexity (Papadimitriou)",
+      "url": "https://www.pearson.com/en-us/subject-catalog/p/computational-complexity/P200000004138.html"
+    },
+    {
+      "title": "Complexity Zoo",
+      "url": "https://complexityzoo.uwaterloo.ca/Complexity_Zoo"
+    }
+  ],
+  "tags": [],
+  "details": [],
+  "content": "Complexity classes categorize decision problems and computational tasks by the asymptotic resources—time, space, randomness, or circuit size—required on idealized machine models. By abstracting away hardware specifics, they delineate which problems are feasibly solvable, which require superpolynomial resources, and which are inherently intractable. This classification underpins theoretical computer science, guiding algorithm design, cryptographic security assumptions, and our understanding of the limits of computation.",
+  "sections": [
+    {
+      "title": "Measuring Computation: Models and Resources",
+      "content": "Complexity theory abstracts computation to idealized models—deterministic and nondeterministic Turing machines, random‑access machines, and Boolean circuits. Resources include **time** (number of steps as a function of input size), **space** (memory cells or tape cells), **randomness** (coin flips), and **circuit complexity** (size and depth of Boolean circuits). Uniformity conditions distinguish algorithmic (uniform) from circuit (non‑uniform) classes, while oracle models and alternation add further dimensions."
+    },
+    {
+      "title": "Core Complexity Classes",
+      "content": "Fundamental classes frame our view of tractability:\n\n- **P**: Deterministic polynomial time—problems solvable in time O(n^k).\n- **NP**: Nondeterministic polynomial time—solutions verifiable in polynomial time.\n- **co‑NP**: Complements of NP problems.\n- **L** and **NL**: Deterministic and nondeterministic logarithmic space.\n- **PSPACE**: Polynomial space, regardless of time.\n- **EXP**: Deterministic exponential time.\n\nThese classes form the backbone of the complexity landscape with inclusions P ⊆ NP ⊆ PSPACE ⊆ EXP."
+    },
+    {
+      "title": "Reductions and Complete Problems",
+      "content": "Completeness arises via resource‑bounded reductions that transform instances of one problem into another. **Polynomial‑time many‑one reductions** define NP‑completeness: a problem in NP is NP‑complete if every NP problem reduces to it (e.g., SAT, Clique, 3‑Coloring). Similarly, **PSPACE‑complete** problems like QBF capture the hardest problems in polynomial space. Complete problems serve as benchmarks for intractability and guide algorithmic and hardness analyses."
+    },
+    {
+      "title": "Hierarchy Theorems and Separation Results",
+      "content": "Hierarchy theorems guarantee strictly greater power with more resources: the **Time Hierarchy Theorem** and **Space Hierarchy Theorem** show that DTIME(f(n)) ⊊ DTIME(cf(n) log f(n)) and DSPACE(s(n)) ⊊ DSPACE(cs(n)), for constructible bounds. **Savitch’s Theorem** bridges nondeterministic and deterministic space, and **Immerman–Szelepcsényi** yields NL = co‑NL. Many class separations—most famously P vs NP—remain open, driving deep research."
+    },
+    {
+      "title": "Randomized, Quantum, and Circuit‑Based Classes",
+      "content": "Beyond deterministic models lie richer complexity classes:\n\n- **BPP**, **RP**, **ZPP**: Probabilistic polynomial time with various error bounds.\n- **BQP**: Quantum polynomial time, capturing quantum algorithms like Shor’s factoring.\n- **NC** and **AC**: Classes of problems solvable by polylog‑depth, polynomial‑size circuits (parallel computation).\n- **#P** and **PP**: Counting classes and probabilistic polynomial time without bounded error.\n\nThese classes explore the power of randomness, quantum effects, and circuit parallelism."
+    },
+    {
+      "title": "Applications and Algorithmic Insights",
+      "content": "Complexity classifications inform practical computation:\n\n- **Cryptography**: Hardness assumptions (e.g., NP ≠ P) underlie one‑way functions and public‑key schemes.\n- **Approximation Algorithms**: NP‑hardness guides approximation ratios and inapproximability results via PCP theorems.\n- **Parameterized Complexity**: Fine‑grained analysis by problem parameters yields classes like FPT and W[1], enabling efficient algorithms for restricted inputs.\n- **Algorithm Design**: Understanding class membership steers choices between exact, heuristic, randomized, or parallel approaches."
+    },
+    {
+      "title": "Frontiers and Open Challenges",
+      "content": "Core open problems continue to shape the field:\n\n- **P vs NP**: Does deterministic polynomial time capture NP?\n- **Circuit Lower Bounds**: Proving superpolynomial lower bounds for explicit functions.\n- **Derandomization**: Are BPP and P identical?\n- **Exponential Time Hypothesis**: Conjectures about exact time lower bounds for NP‑complete problems.\n- **Quantum vs Classical**: Does BQP lie outside P and NP?\n\nAdvances in these areas promise to reshape our understanding of what can be computed efficiently."
+    }
+  ]
+}

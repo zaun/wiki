@@ -1,0 +1,64 @@
+{
+  "title": "Computability Models",
+  "parentTitle": "Computational Abstractions",
+  "aliases": ["Models of Computation"],
+  "links": [
+    {
+      "title": "Stanford Encyclopedia of Philosophy – Computability and Complexity",
+      "url": "https://plato.stanford.edu/entries/computability/"
+    },
+    {
+      "title": "Encyclopedia of Mathematics – Computable Function",
+      "url": "https://encyclopediaofmath.org/wiki/Computable_function"
+    },
+    {
+      "title": "Britannica – Computability",
+      "url": "https://www.britannica.com/science/computability"
+    },
+    {
+      "title": "MIT OpenCourseWare – Automata, Computability, and Complexity (6.045J)",
+      "url": "https://ocw.mit.edu/courses/6-045j-automata-computability-and-complexity-spring-2011/"
+    },
+    {
+      "title": "Cambridge University Press – Computability and Logic (Boolos, Burgess & Jeffrey)",
+      "url": "https://www.cambridge.org/core/books/computability-and-logic/63F0173FA572DDFBE80A6C4788CF0672"
+    },
+    {
+      "title": "Princeton University Press – Introduction to Metamathematics (Kleene)",
+      "url": "https://press.princeton.edu/books/paperback/9780691015610/introduction-to-metamathematics"
+    }
+  ],
+  "tags": [],
+  "details": [],
+  "content": "Computability models define the essence of algorithmic processes by specifying idealized machines or formal systems that transform inputs into outputs via unambiguous rules. They abstract away from physical hardware to delineate the boundary between what can be computed in principle and what lies beyond mechanical procedures. Through the equivalence of diverse models under the Church–Turing thesis, these frameworks underpin theoretical computer science, logic, and the formal study of effective calculability.",
+  "sections": [
+    {
+      "title": "Core Models of Computation",
+      "content": "At the foundation are models like **Turing machines**, which use an infinite tape and finite control to emulate stepwise computation, and **λ‑calculus**, where computation is expression reduction. **μ‑recursive functions** formalize computability via initial functions and operators of composition, recursion, and minimization. **Register machines** offer a low‑level view with finite registers and simple instructions. Each captures a notion of effective procedure, and all compute exactly the class of Turing‑computable functions."
+    },
+    {
+      "title": "Church–Turing Thesis and Model Equivalence",
+      "content": "The **Church–Turing thesis** asserts that any function computable by an intuitive, mechanical process is computable by a Turing machine. Church’s λ‑calculus and Kleene’s recursive functions were independently shown equivalent to Turing’s model, demonstrating that disparate formal systems share the same computational power. This equivalence justifies treating any of these abstractions as canonical for decidability and complexity analysis."
+    },
+    {
+      "title": "Decidability and the Halting Problem",
+      "content": "A central result is the **undecidability** of the halting problem: no algorithm can determine, for every program and input, whether execution will terminate. **Many‑one reductions** propagate undecidability to problems like the Post correspondence problem and first‑order logic validity. **Rice’s theorem** further shows that any nontrivial semantic property of programs is undecidable, revealing pervasive limits to algorithmic analysis."
+    },
+    {
+      "title": "Computational Hierarchies and Relative Computability",
+      "content": "Beyond decidability lies a rich hierarchy: **Turing degrees** classify problems by mutual reducibility, forming a lattice of relative computability. Oracle machines augment Turing machines with answers to a chosen decision problem, generating relativized classes and exploring how additional information shifts computability boundaries. These hierarchies map the gradations between solvable, unsolvable, and semi‑decidable problems."
+    },
+    {
+      "title": "Variants and Extensions",
+      "content": "Computability models extend into **probabilistic computation** (randomized Turing machines), **quantum models** (quantum Turing machines capturing BQP), and **infinite‑time Turing machines** that run through transfinitely many steps. Each variant probes the impact of new resources—randomness, quantum parallelism, or extended time—on what functions become computable, though the classical Church–Turing framework remains the baseline."
+    },
+    {
+      "title": "Practical Implications and Fragments",
+      "content": "While general program verification is undecidable, many **decidable fragments** exist: **regular** and **context‑free languages** admit efficient membership tests; **finite‑state** and **pushdown** systems can be model‑checked automatically. **Computable analysis** extends computability to real numbers and functions under the Type‑2 framework, enabling rigorous numerical methods. These practical islands of decidability support automated reasoning in software verification and formal methods."
+    },
+    {
+      "title": "Philosophical and Meta‑Computational Reflections",
+      "content": "Computability models raise deep questions about the nature of mind and machine. Does the brain implement a Turing‐equivalent procedure, or is human cognition hypercomputational? **Gödel–Turing arguments** suggest human insight may transcend mechanical rules, while **hypercomputation** theories posit oracles or physical processes beyond Turing power. These debates intersect philosophy of mind, metaphysics of abstract objects, and the limits of mathematical knowledge."
+    }
+  ]
+}

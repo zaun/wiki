@@ -1,0 +1,60 @@
+{
+  "title": "Metamathematics",
+  "parentTitle": "Foundations of Abstraction",
+  "aliases": ["Foundations of Mathematics", "Metalogic"],
+  "links": [
+    {
+      "title": "Stanford Encyclopedia of Philosophy – Foundations of Mathematics",
+      "url": "https://plato.stanford.edu/entries/foundations-mathematics/"
+    },
+    {
+      "title": "Stanford Encyclopedia of Philosophy – Metalogic",
+      "url": "https://plato.stanford.edu/entries/metalogic/"
+    },
+    {
+      "title": "Stanford Encyclopedia of Philosophy – Gödel’s Incompleteness Theorems",
+      "url": "https://plato.stanford.edu/entries/goedel-incompleteness/"
+    },
+    {
+      "title": "Encyclopedia of Mathematics – Metamathematics",
+      "url": "https://encyclopediaofmath.org/wiki/Metamathematics"
+    },
+    {
+      "title": "Britannica – Metamathematics",
+      "url": "https://www.britannica.com/science/metamathematics"
+    },
+    {
+      "title": "Stanford Encyclopedia of Philosophy – Hilbert’s Program",
+      "url": "https://plato.stanford.edu/entries/hilbert-program/"
+    }
+  ],
+  "tags": [],
+  "details": [],
+  "content": "Foundations & metamathematics probe mathematics itself as a formal enterprise: foundations establish the axioms and language of a base theory (e.g., set theory, type theory, category theory), while metamathematics studies these systems—consistency, completeness, decidability, and relative strength—using a higher‑level metalanguage.",
+  "sections": [
+    {
+      "title": "Purpose and Scope",
+      "content": "Foundations provide a common framework in which all mathematical objects can be defined. Metamathematics then treats this framework as its object of study, investigating the formal properties of proof and theory."
+    },
+    {
+      "title": "Primary Foundational Systems",
+      "content": "Key choices include:\n\n• Zermelo–Fraenkel Set Theory (ZFC): axioms for membership, replacement, foundation\n• Type Theories: constructive and dependent systems underpinning proof assistants\n• Categorical Foundations: topos theory and structural frameworks\n\nEach offers distinct ontological and proof‑theoretic trade‑offs."
+    },
+    {
+      "title": "Gödel’s Theorems and Their Consequences",
+      "content": "Gödel’s incompleteness theorems demonstrate that any sufficiently expressive, consistent system cannot prove its own consistency (first theorem) and will have true but unprovable statements (second theorem). These results reshaped the Hilbert program and redirected foundational research toward relative consistency proofs."
+    },
+    {
+      "title": "Metamathematical Techniques",
+      "content": "Metamathematics employs:\n\n• Proof theory: ordinal analysis, cut‑elimination, normalization\n• Model theory: constructing models to show independence\n• Recursion theory: computability of proof predicates\n\nThese tools classify theories by strength and explore their interrelations."
+    },
+    {
+      "title": "Modern Directions",
+      "content": "Contemporary work includes:\n\n• Homotopy Type Theory: univalent foundations linking type theory and topology\n• Large Cardinal Axioms: extending ZFC’s consistency strength\n• Automated Reasoning: SAT/SMT solvers and proof assistants verifying large developments\n\nThese advances blend foundational concerns with computational methods."
+    },
+    {
+      "title": "Philosophical Debates",
+      "content": "Foundational pluralism accepts multiple coexisting base theories rather than a single “true” foundation. Debates center on formalism (axioms as conventions), Platonism (axioms capturing an external reality), and structuralism (focus on relations rather than objects)."
+    }
+  ]
+}

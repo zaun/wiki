@@ -1,0 +1,330 @@
+{
+    "title": "Mental",
+    "aliases": [
+        "Mind",
+        "Mental Phenomena"
+    ],
+    "links": [
+        {
+            "title": "Cambridge Dictionary — Mental",
+            "url": "https://dictionary.cambridge.org/dictionary/english/mental"
+        },
+        {
+            "title": "Stanford Encyclopedia of Philosophy — Dualism",
+            "url": "https://plato.stanford.edu/archives/spr2023/entries/dualism/"
+        },
+        {
+            "title": "Internet Encyclopedia of Philosophy — Consciousness",
+            "url": "https://iep.utm.edu/consciousness/"
+        },
+        {
+            "title": "British Psychological Society",
+            "url": "https://www.bps.org.uk/"
+        },
+        {
+            "title": "World Health Organization — Mental Health Fact Sheet",
+            "url": "https://www.who.int/news-room/fact-sheets/detail/mental-health-strengthening-our-response"
+        }
+    ],
+    "tags": [],
+    "details": [],
+    "content": "The mental encompasses all subjective or experiential phenomena associated with conscious agents—processes such as thinking, perceiving, imagining, feeling, and intending that occur within the mind. Mental states are inherently subjective, accessible only to the agent experiencing them, and include thoughts, emotions, memories, and sensory experiences. By focusing on representational content and qualitative character, the mental describes how individuals internally process information, make sense of the world, and engage in complex behavior. Although mental phenomena are grounded in neural and physiological mechanisms of the brain, the mental level of description highlights the first‑person perspective—the “what it is like” aspect of experience that distinguishes mental life from purely physical events. Understanding the mental requires integrating insights from philosophy, psychology, neuroscience, and cognitive science to explain how subjective experience emerges, how it can be measured, and how it impacts individual lives, social interactions, and broader societal structures.",
+    "sections": [
+        {
+            "title": "1. Defining the Mental",
+            "content": "The term “mental” refers to the spectrum of processes and states that constitute subjective experience, including thoughts, beliefs, sensations, and emotions. These phenomena are inherently first‑person in nature, accessible only through introspection and self‑report, and cannot be fully captured by purely physical descriptions. Mental states are characterized by their representational content—the way they present information about the world to the experiencing subject—and by their qualitative feel or “phenomenal character.”\n\nAt the core of the mental domain are mental states such as beliefs, desires, intentions, and perceptions, each of which plays a functional role in guiding behavior. A belief represents the world as being a certain way, a desire motivates action toward a goal, and a perception provides an interpretive model of sensory data. Together, these states form an integrated system that enables reasoning, planning, and decision‑making.\n\nAlthough mental phenomena depend on neural processes, the mental level emphasizes how information is processed and experienced rather than the physical details of brain activity. This distinction between mental and physical descriptions is crucial for understanding the unique features of subjective experience, such as the felt quality of seeing red or feeling pain.",
+            "citations": [
+                {
+                    "source": {
+                        "type": "website",
+                        "title": "Cambridge Dictionary",
+                        "authors": [],
+                        "publisher": "Cambridge University Press",
+                        "year": 2025,
+                        "url": "https://dictionary.cambridge.org"
+                    },
+                    "title": "MENTAL | definition in the Cambridge English Dictionary",
+                    "page": "1",
+                    "url": "https://dictionary.cambridge.org/us/dictionary/english/mental",
+                    "quote": "MENTAL meaning: 1. relating to the mind, or involving the process of thinking",
+                    "note": "Definition used to clarify the term 'mental'"
+                },
+                {
+                    "source": {
+                        "type": "website",
+                        "title": "Stanford Encyclopedia of Philosophy",
+                        "authors": [
+                            "Howard Robinson"
+                        ],
+                        "publisher": "Metaphysics Research Lab, Stanford University",
+                        "year": 2023,
+                        "url": "https://plato.stanford.edu"
+                    },
+                    "title": "Stanford Encyclopedia of Philosophy — Dualism",
+                    "page": "Introduction",
+                    "url": "https://plato.stanford.edu/archives/spr2023/entries/dualism/",
+                    "quote": "in the philosophy of mind, dualism is the theory that the mental and the physical – or mind and body or mind and brain – are, in some sense, radically different kinds of things.",
+                    "note": "Illustrates the philosophical distinction of mental phenomena"
+                }
+            ]
+        },
+        {
+            "title": "2. Historical Evolution of the Concept of the Mental",
+            "content": "Concepts of the mind date back to ancient Greek philosophy, where Plato described the psyche as the immortal soul governing reason and desire, and Aristotle investigated the faculties of perception and imagination in his treatise On the Soul. These early thinkers laid the groundwork for viewing the mind as an entity distinct from the body, capable of reasoning and self‑reflection. Over the medieval period, scholastic philosophers such as Augustine and Aquinas refined these ideas, integrating them with theological frameworks and exploring the relationship between intellect and will.\n\nThe modern era began with René Descartes’s dualism, which posited two fundamentally different substances: res cogitans (thinking substance) and res extensa (extended substance). Descartes defined the mind as that which thinks—doubts, understands, and wills—and argued that its essence is transparent to introspection. This Cartesian view dominated early modern debates, even as empiricists and rationalists offered competing perspectives on the origin and nature of ideas.\n\nIn the 19th and 20th centuries, psychology emerged as an empirical science of mental processes. Wilhelm Wundt and William James used introspection and laboratory methods to investigate perception and attention, while behaviorists like John Watson rejected subjective reports altogether in favor of observable behavior. The cognitive revolution later restored the legitimacy of mental constructs, using computational metaphors to model information processing.",
+            "citations": [
+                {
+                    "source": {
+                        "type": "website",
+                        "title": "Stanford Encyclopedia of Philosophy",
+                        "authors": [
+                            "Howard Robinson"
+                        ],
+                        "publisher": "Metaphysics Research Lab, Stanford University",
+                        "year": 2023,
+                        "url": "https://plato.stanford.edu"
+                    },
+                    "title": "Stanford Encyclopedia of Philosophy — Dualism",
+                    "page": "1.2",
+                    "url": "https://plato.stanford.edu/archives/spr2023/entries/dualism/",
+                    "quote": "In dualism, ‘mind’ is contrasted with ‘body’, but at different times, different aspects of the mind have been the centre of attention.",
+                    "note": "Highlights the evolving focus on different aspects of the mind over history"
+                },
+                {
+                    "source": {
+                        "type": "website",
+                        "title": "Internet Encyclopedia of Philosophy",
+                        "authors": [],
+                        "publisher": "Internet Encyclopedia of Philosophy",
+                        "year": 2025,
+                        "url": "https://iep.utm.edu"
+                    },
+                    "title": "Internet Encyclopedia of Philosophy — Consciousness",
+                    "page": "1",
+                    "url": "https://iep.utm.edu/consciousness/",
+                    "quote": "Explaining the nature of consciousness is one of the most important and perplexing areas of philosophy, but the concept is notoriously ambiguous.",
+                    "note": "Underlines the longstanding complexity of defining mental phenomena"
+                }
+            ]
+        },
+        {
+            "title": "3. Philosophical and Theoretical Frameworks",
+            "content": "The mind–body problem asks how mental states relate to physical processes in the brain, giving rise to two broad camps: dualism, which posits two distinct substances, and physicalism, which holds that mental phenomena ultimately reduce to neural events. Dualists argue that subjective experience cannot be captured by material explanations alone, while physicalists point to the overwhelming evidence of brain correlates for every mental process. This debate forms the foundation for subsequent theories about the ontology of the mental.\n\nWithin physicalism, reductive materialists seek direct mappings between mental states and neuronal events, whereas non‑reductive materialists maintain that mental properties emerge from but are not identical to physical substrates. Emergent properties are considered dependent on complex neural interactions yet possess causal powers not reducible to individual neurons. Functionalism offers a further refinement by defining mental states in terms of their causal roles rather than their physical makeup, opening the door to potential artificial minds.\n\nBeyond these positions lie more radical theories such as panpsychism, which attributes primitive experience to all matter, and neutral monism, which posits a single underlying substance manifesting as both mental and physical. These frameworks illustrate the diversity of philosophical approaches to understanding the mental and underscore the ongoing search for a coherent theory.",
+            "citations": [
+                {
+                    "source": {
+                        "type": "website",
+                        "title": "Stanford Encyclopedia of Philosophy",
+                        "authors": [
+                            "Howard Robinson"
+                        ],
+                        "publisher": "Metaphysics Research Lab, Stanford University",
+                        "year": 2023,
+                        "url": "https://plato.stanford.edu"
+                    },
+                    "title": "Stanford Encyclopedia of Philosophy — Dualism",
+                    "page": "1.1",
+                    "url": "https://plato.stanford.edu/archives/spr2023/entries/dualism/",
+                    "quote": "The mind-body problem is the problem: what is the relationship between mind and body? Or alternatively: what is the relationship between mental properties and physical properties?",
+                    "note": "Defines the central question of philosophical theories of mind"
+                },
+                {
+                    "source": {
+                        "type": "website",
+                        "title": "Stanford Encyclopedia of Philosophy",
+                        "authors": [
+                            "Howard Robinson"
+                        ],
+                        "publisher": "Metaphysics Research Lab, Stanford University",
+                        "year": 2023,
+                        "url": "https://plato.stanford.edu"
+                    },
+                    "title": "Stanford Encyclopedia of Philosophy — Dualism",
+                    "page": "Introduction",
+                    "url": "https://plato.stanford.edu/archives/spr2023/entries/dualism/",
+                    "quote": "Dualism contrasts with monism, which is the theory that there is only one fundamental kind, category of thing or principle; and, rather less commonly, with pluralism, which is the view that there are many kinds or categories.",
+                    "note": "Clarifies alternative metaphysical positions"
+                }
+            ]
+        },
+        {
+            "title": "4. Scientific Approaches to the Mental",
+            "content": "Cognitive psychology investigates the architecture of mental processes through controlled experiments on memory, attention, and decision‑making. Researchers use tasks such as reaction‑time studies and dual‑task paradigms to infer the information‑processing stages that underlie perception and reasoning. These findings inform models of mental architecture, illuminating how mental representations are encoded, stored, and manipulated.\n\nNeuroscience complements behavioral studies by mapping mental tasks onto neural mechanisms using techniques like fMRI, EEG, and single‑cell recordings. Scientists seek the neural correlates of conscious states—patterns of brain activity consistently associated with specific experiences. This work bridges the gap between subjective reports and objective measurements, revealing how distributed networks give rise to unified mental episodes.\n\nComputational modeling and artificial intelligence build formal systems—neural networks, symbolic architectures, and hybrid frameworks—that simulate mental functions. These models test hypotheses about learning, perception, and reasoning, often uncovering unexpected parallels between biological and artificial cognition. By iterating between model predictions and empirical data, researchers refine theories of how complex mental phenomena emerge from simple computational principles.",
+            "citations": [
+                {
+                    "source": {
+                        "type": "website",
+                        "title": "British Psychological Society",
+                        "authors": [],
+                        "publisher": "British Psychological Society",
+                        "year": 2022,
+                        "url": "https://www.bps.org.uk"
+                    },
+                    "title": "Using Psychology to Make Better Policy",
+                    "page": "Executive Summary",
+                    "url": "https://cms.bps.org.uk/sites/default/files/2022-06/Using%20Psychology%20to%20Make%20Better%20Policy.pdf",
+                    "quote": "Psychology is the scientific study of the mind and how it influences our behaviour, from communication and memory to thought and emotion.",
+                    "note": "Defines the scope of psychology within scientific approaches"
+                },
+                {
+                    "source": {
+                        "type": "website",
+                        "title": "Internet Encyclopedia of Philosophy",
+                        "authors": [],
+                        "publisher": "Internet Encyclopedia of Philosophy",
+                        "year": 2025,
+                        "url": "https://iep.utm.edu"
+                    },
+                    "title": "Internet Encyclopedia of Philosophy — Consciousness",
+                    "page": "1",
+                    "url": "https://iep.utm.edu/consciousness/",
+                    "quote": "What are the neural correlates of consciousness?",
+                    "note": "Highlights the neuroscience aspect of mental phenomena"
+                }
+            ]
+        },
+        {
+            "title": "5. Subjective Experience and Consciousness",
+            "content": "Subjective experience—what it feels like to be an agent—is the hallmark of the mental. Thomas Nagel famously characterized this as the “what it is like” aspect of conscious states, emphasizing that first‑person experience resists purely objective description. Phenomenal consciousness refers to raw experience, while access consciousness denotes mental content available for reasoning and control.\n\nResearchers distinguish between state consciousness (an individual mental state being conscious) and creature consciousness (an organism being awake and capable of experience). Experimental paradigms like binocular rivalry and reportability measures dissociate conscious perception from unconscious processing. This work seeks the neural and cognitive conditions under which mental content enters awareness.\n\nDebates continue over the hard problem of consciousness—explaining why physical processes give rise to subjective experience—and proposed solutions range from higher‑order representational theories to global workspace models. Ongoing dialogue between empirical findings and conceptual analysis drives progress in understanding the uniquely subjective dimension of the mental.",
+            "citations": [
+                {
+                    "source": {
+                        "type": "website",
+                        "title": "Internet Encyclopedia of Philosophy",
+                        "authors": [],
+                        "publisher": "Internet Encyclopedia of Philosophy",
+                        "year": 2025,
+                        "url": "https://iep.utm.edu"
+                    },
+                    "title": "Internet Encyclopedia of Philosophy — Consciousness",
+                    "page": "1",
+                    "url": "https://iep.utm.edu/consciousness/",
+                    "quote": "When I am in a conscious mental state, there is something it is like for me to be in that state from the subjective or first‑person point of view.",
+                    "note": "Defines the subjective aspect of conscious experiences (qualia)"
+                },
+                {
+                    "source": {
+                        "type": "website",
+                        "title": "Cambridge Dictionary",
+                        "authors": [],
+                        "publisher": "Cambridge University Press",
+                        "year": 2025,
+                        "url": "https://dictionary.cambridge.org"
+                    },
+                    "title": "MIND | English meaning - Cambridge Dictionary",
+                    "page": "1",
+                    "url": "https://dictionary.cambridge.org/dictionary/english/mind",
+                    "quote": "the part of a person that makes it possible for him or her to think, feel emotions, and understand things.",
+                    "note": "Clarifies the broad notion of mind related to subjective experience"
+                }
+            ]
+        },
+        {
+            "title": "6. Emotions and Affective Processes",
+            "content": "Emotions are mental states that assign valence and significance to stimuli, integrating cognitive appraisals with physiological responses and subjective feeling. They serve to direct attention, mobilize action, and shape memory, playing a central role in guiding behavior. Basic emotion theories propose universal categories like joy, fear, and anger, while constructionist approaches view emotions as emerging from more fundamental affective dimensions.\n\nAffective neuroscience maps core circuits—including the amygdala, prefrontal cortex, and limbic system—and investigates how neurotransmitters and hormones modulate emotional states. Psychological research examines emotion regulation strategies such as cognitive reappraisal and attentional deployment, illustrating how higher‑order cognition can influence basic affective responses. This interplay between cognition and emotion underscores the complexity of affective processes.\n\nEmotions also play a pivotal role in social interaction, moral judgment, and decision‑making, making their study essential for understanding both individual well‑being and societal dynamics. Insights into affect inform therapies for mood and anxiety disorders and guide the design of emotionally intelligent human‑machine interfaces.",
+            "citations": [
+                {
+                    "source": {
+                        "type": "website",
+                        "title": "Cambridge Dictionary",
+                        "authors": [],
+                        "publisher": "Cambridge University Press",
+                        "year": 2025,
+                        "url": "https://dictionary.cambridge.org"
+                    },
+                    "title": "Emotion | definition in the Cambridge English Dictionary",
+                    "page": "1",
+                    "url": "https://dictionary.cambridge.org/us/dictionary/english/emotion",
+                    "quote": "a strong feeling such as love or anger, or strong feelings in general.",
+                    "note": "Used to define emotions in the context of mental phenomena"
+                },
+                {
+                    "source": {
+                        "type": "website",
+                        "title": "British Psychological Society",
+                        "authors": [],
+                        "publisher": "British Psychological Society",
+                        "year": 2022,
+                        "url": "https://www.bps.org.uk"
+                    },
+                    "title": "Using Psychology to Make Better Policy",
+                    "page": "Executive Summary",
+                    "url": "https://cms.bps.org.uk/sites/default/files/2022-06/Using%20Psychology%20to%20Make%20Better%20Policy.pdf",
+                    "quote": "Psychology is the scientific study of the mind and how it influences our behaviour, from communication and memory to thought and emotion.",
+                    "note": "Illustrates the inclusion of emotions in scientific study of mental processes"
+                }
+            ]
+        },
+        {
+            "title": "7. Mental Health, Well‑Being, and Pathology",
+            "content": "Mental health refers to a state of well‑being in which individuals realize their abilities, cope with life stresses, learn effectively, work productively, and contribute to their communities. It underpins decision‑making, interpersonal relationships, and societal participation, and is recognized as a fundamental human right. Mental health exists on a continuum, varying across individuals and contexts, rather than as a simple absence of disorder.\n\nPsychiatric disorders—including depression, anxiety, and schizophrenia—are diagnosed using frameworks like the DSM‑5 and ICD‑11, which classify conditions based on clusters of cognitive, affective, and behavioral symptoms. Treatment modalities encompass pharmacotherapy, psychotherapy, and emerging neurotechnologies such as deep brain stimulation and neurofeedback. Public health initiatives emphasize prevention, destigmatization, and integration of mental health into primary care.\n\nPositive psychology focuses on factors that foster resilience and flourishing, such as social connectedness, mindfulness, and strengths‑based interventions. By promoting skills for emotional regulation, purpose‑driven living, and supportive environments, it aims to enhance well‑being at both individual and societal levels.",
+            "citations": [
+                {
+                    "source": {
+                        "type": "website",
+                        "title": "World Health Organization",
+                        "authors": [],
+                        "publisher": "World Health Organization",
+                        "year": 2022,
+                        "url": "https://www.who.int/"
+                    },
+                    "title": "World Health Organization — Mental Health Fact Sheet",
+                    "page": "Key facts",
+                    "url": "https://www.who.int/news-room/fact-sheets/detail/mental-health-strengthening-our-response",
+                    "quote": "Mental health is a state of mental well‑being that enables people to cope with the stresses of life, realize their abilities, learn well and work well, and contribute to their community.",
+                    "note": "Defines mental health in relation to well‑being"
+                },
+                {
+                    "source": {
+                        "type": "website",
+                        "title": "World Health Organization",
+                        "authors": [],
+                        "publisher": "World Health Organization",
+                        "year": 2022,
+                        "url": "https://www.who.int/"
+                    },
+                    "title": "World Health Organization — Mental Health Fact Sheet",
+                    "page": "Key facts",
+                    "url": "https://www.who.int/news-room/fact-sheets/detail/mental-health-strengthening-our-response",
+                    "quote": "Mental health is more than the absence of mental disorders. It exists on a complex continuum, which is experienced differently from one person to the next, with varying degrees of difficulty and distress and potentially very different social and clinical outcomes.",
+                    "note": "Highlights the continuum nature of mental health"
+                }
+            ]
+        },
+        {
+            "title": "8. Applications and Implications",
+            "content": "Advances in artificial intelligence and machine learning raise profound questions about the possibility of non‑biological minds. Philosophers and scientists debate whether an appropriately programmed system could possess genuine conscious states or whether subjective experience requires a biological substrate. These discussions have significant ethical implications for the development and deployment of AI in society.\n\nHuman‑computer interaction leverages insights into mental processes to design intuitive interfaces that align with cognitive and affective expectations. By modeling user attention, memory load, and emotional responses, designers can create systems that enhance usability and well‑being. Such applications range from adaptive learning platforms to emotion‑sensitive virtual assistants.\n\nThe study of the mental also informs broader societal and ethical considerations, including moral responsibility, privacy, and the digital transformation of social life. As our understanding of mental mechanisms deepens, we must grapple with questions about agency, consent, and the potential misuse of technologies that probe or manipulate mental states.",
+            "citations": [
+                {
+                    "source": {
+                        "type": "website",
+                        "title": "Internet Encyclopedia of Philosophy",
+                        "authors": [],
+                        "publisher": "Internet Encyclopedia of Philosophy",
+                        "year": 2025,
+                        "url": "https://iep.utm.edu"
+                    },
+                    "title": "Internet Encyclopedia of Philosophy — Consciousness",
+                    "page": "1",
+                    "url": "https://iep.utm.edu/consciousness/",
+                    "quote": "Could an appropriately programmed machine be conscious?",
+                    "note": "Introduces the question of machine consciousness and AI implications"
+                },
+                {
+                    "source": {
+                        "type": "website",
+                        "title": "Internet Encyclopedia of Philosophy",
+                        "authors": [],
+                        "publisher": "Internet Encyclopedia of Philosophy",
+                        "year": 2025,
+                        "url": "https://iep.utm.edu"
+                    },
+                    "title": "Internet Encyclopedia of Philosophy — Consciousness",
+                    "page": "1",
+                    "url": "https://iep.utm.edu/consciousness/",
+                    "quote": "To what extent are animal minds different from human minds?",
+                    "note": "Raises issues about comparative consciousness relevant to ethics"
+                }
+            ]
+        }
+    ]
+}

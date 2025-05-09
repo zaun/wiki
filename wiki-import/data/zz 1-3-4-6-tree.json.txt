@@ -1,0 +1,66 @@
+{
+    "title": "Tree",
+    "parentTitle": "Data Structures",
+    "aliases": [
+        "Hierarchical Collection"
+    ],
+    "links": [
+        {
+            "title": "Encyclopedia of Mathematics – Tree",
+            "url": "https://encyclopediaofmath.org/wiki/Tree"
+        },
+        {
+            "title": "Britannica – Tree (Data Structure)",
+            "url": "https://www.britannica.com/technology/trees-data-structure"
+        },
+        {
+            "title": "MIT OpenCourseWare – Data Structures (6.006) Lecture: Trees",
+            "url": "https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/pages/lecture-notes/"
+        },
+        {
+            "title": "MIT Press – Introduction to Algorithms (CLRS) – Chapter on Trees",
+            "url": "https://mitpress.mit.edu/books/introduction-algorithms-third-edition"
+        },
+        {
+            "title": "Wiley – Data Structures & Algorithms in Java (Goodrich, Tamassia & Goldwasser) – Chapter on Trees",
+            "url": "https://www.wiley.com/en-us/Data+Structures+and+Algorithms+in+Java%2C+6th+Edition-p-9781118771334"
+        },
+        {
+            "title": "Springer – Purely Functional Data Structures (Okasaki) – Trees",
+            "url": "https://link.springer.com/book/10.1007/3-540-44645-0"
+        }
+    ],
+    "tags": [],
+    "details": [],
+    "content": "A Tree ADT encapsulates a hierarchical collection of nodes connected by parent–child relationships. It generalizes linear structures by allowing each element to have zero or more children, forming a directed acyclic graph with a distinguished root. The Tree ADT defines navigation, insertion, deletion, and traversal operations without mandating a specific memory layout or balancing strategy.",
+    "sections": [
+        {
+            "title": "Core Operations and Interface",
+            "content": "Key operations for the Tree ADT include:\n\n- **root()**: retrieve the root node.\n- **parent(n)**: return the parent of node n (or null if n is root).\n- **children(n)**: list the immediate children of n.\n- **isLeaf(n)** / **isInternal(n)**: test node degree.\n- **insertChild(n, k, x)**: insert x as the k‑th child of n.\n- **removeSubtree(n)**: delete node n and its descendants.\n- **size()**: total number of nodes.\n\nTraversal patterns (preorder, postorder, level‑order) provide systematic ways to visit all nodes."
+        },
+        {
+            "title": "Abstract Semantics",
+            "content": "Mathematically, a finite labeled tree is a partial function T: P → V, where P is a prefix‑closed set of positions (strings over ℕ) and V the value domain. The function assigns a value to each position, and validity requires that if p·i ∈ P then p ∈ P. Operations correspond to manipulating these position sets and their labels."
+        },
+        {
+            "title": "Pointer‑Based vs. Array‑Based Layouts",
+            "content": "Common implementations:\n\n- **Pointer nodes**: Each node stores references to children (and optionally parent), supporting dynamic arity but incurring per‑node overhead.\n- **Left‑child/right‑sibling**: Encodes general trees in binary‑tree form with two pointers, streamlining traversal and insertion.\n- **Array of children lists**: Suits static trees with known maximum branching factor.\n- **Implicit heap layout**: Complete binary trees stored in arrays using index arithmetic, optimal for priority queues."
+        },
+        {
+            "title": "Specialized Tree Variants",
+            "content": "Widely used structured trees include:\n\n- **Binary Search Trees (BSTs)**: Ordered keys enable O(h) search, insert, and delete, where h is tree height.\n- **Balanced Trees**: AVL and red‑black trees guarantee h = O(log n).\n- **B‑Trees and B+‑Trees**: Multiway search trees optimized for block‑based storage and databases.\n- **Heaps**: Nearly complete binary trees supporting O(log n) extract‑min and O(1) insert (amortized).\n- **Tries**: Prefix trees for associative arrays over strings, with operations proportional to key length."
+        },
+        {
+            "title": "Performance Considerations",
+            "content": "Operation complexity depends on tree shape:\n\n- **Unbalanced** BSTs degrade to O(n) in worst case (chain shape).\n- **Self‑balancing** trees maintain O(log n) operations.\n- **Heap operations** rely on array indexing and percolation in O(log n).\n- **Tries** achieve O(k) for k‑length keys, independent of total key count.\n\nMemory locality and pointer indirection influence real‑world performance, favoring array layouts in tight loops."
+        },
+        {
+            "title": "Applications and Use Cases",
+            "content": "Trees appear across domains:\n\n- **Syntax trees** in compilers represent program structure.\n- **File system hierarchies** model directories and files.\n- **DOM trees** in web browsers define document structure.\n- **Spatial partitioning** (quadtrees, octrees) for graphics and collision detection.\n- **Search indexes** use B‑trees and B+‑trees in databases and file systems."
+        },
+        {
+            "title": "Theoretical and Philosophical Reflections",
+            "content": "Trees exemplify inductive definitions and structural recursion, enabling proofs by structural induction. They abstract hierarchical organization found in natural and designed systems, prompting inquiry into the nature of branching, balance, and complexity in formal and real‑world contexts."
+        }
+    ]
+}

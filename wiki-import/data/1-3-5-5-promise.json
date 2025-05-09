@@ -1,0 +1,68 @@
+{
+    "title": "Promise",
+    "parentTitle": "Concurrency Primitives",
+    "aliases": [
+        "Future",
+        "Deferred",
+        "CompletableFuture"
+    ],
+    "links": [
+        {
+            "title": "Wikipedia – Promise (computer programming)",
+            "url": "https://en.wikipedia.org/wiki/Promise_(computer_programming)"
+        },
+        {
+            "title": "MDN – Using Promises",
+            "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise"
+        },
+        {
+            "title": "Oracle – Java CompletableFuture",
+            "url": "https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletableFuture.html"
+        },
+        {
+            "title": "Python Documentation – asyncio.Future",
+            "url": "https://docs.python.org/3/library/asyncio-future.html"
+        },
+        {
+            "title": "C++ Reference – std::future / std::promise",
+            "url": "https://en.cppreference.com/w/cpp/thread/future"
+        },
+        {
+            "title": "Scala Documentation – scala.concurrent.Future",
+            "url": "https://www.scala-lang.org/api/current/scala/concurrent/Future.html"
+        }
+    ],
+    "tags": [],
+    "details": [],
+    "content": "The Promise/Future ADT encapsulates a placeholder for a result that will become available later, decoupling the producer of a value from its consumer. A Promise is writable once and completes a Future, which is then read‑only. Together, they provide a robust abstraction for asynchronous programming, enabling composition, error propagation, and coordination without exposing thread or event‑loop management.",
+    "sections": [
+        {
+            "title": "Concept and Motivation",
+            "content": "Promises/Futures address the need to handle values not immediately available—such as I/O results, network responses, or background computations—by returning a proxy object. This proxy can be passed around, composed, or awaited, allowing the rest of the program to continue without blocking."
+        },
+        {
+            "title": "States and Lifecycle",
+            "content": "A Future transitions through states: **Pending** (no result yet), **Fulfilled** (completed with a value), or **Rejected** (completed with an error). Once transitioned, the state is immutable. Promises drive these transitions by invoking `resolve(value)` or `reject(error)` exactly once."
+        },
+        {
+            "title": "API and Combinators",
+            "content": "Common operations include:\n\n- `then` / `onSuccess`: register callbacks for fulfillment.\n- `catch` / `onError`: register error handlers.\n- `finally`: execute a callback regardless of outcome.\n- `all` / `sequence`: wait for multiple futures to complete.\n- `race` / `firstCompletedOf`: proceed when the first completes.\n\nThese combinators enable building complex asynchronous workflows declaratively."
+        },
+        {
+            "title": "Implementation Patterns",
+            "content": "Underneath, Promises/Futures rely on callback lists, event queues, or synchronization primitives. In single‑threaded environments (JavaScript), they schedule callbacks on the event loop. In multithreaded systems (Java, C++), they use locks or atomic state machines to manage completion and callback invocation."
+        },
+        {
+            "title": "Error Handling and Cancellation",
+            "content": "Errors propagate through rejection handlers, often bypassing normal success callbacks. Some implementations support cancellation tokens or `cancel()` methods, allowing consumers to signal that a result is no longer needed, which may trigger resource cleanup in producers."
+        },
+        {
+            "title": "Use Cases and Patterns",
+            "content": "Promises/Futures underpin:\n\n- Asynchronous APIs (HTTP requests, file I/O).\n- Parallel computation (thread pools submitting tasks).\n- Reactive streams (wrapping event producers).\n- Coordination patterns (barriers, semaphores).\n\nThey simplify code by avoiding callback pyramids and making control flow explicit."
+        },
+        {
+            "title": "Theoretical and Monadic Perspective",
+            "content": "Futures form a **monad**: `flatMap` (or `bind`) sequences asynchronous computations, and `map` applies transformations to fulfilled values. This alignment with functional abstractions allows equational reasoning, composition via `for` or `async/await` syntax, and integration with other monadic contexts."
+        }
+    ]
+}

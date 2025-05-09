@@ -1,0 +1,51 @@
+{
+    "title": "Logical and Semantic Frameworks",
+    "parentTitle": "Abstract",
+    "aliases": [
+        "Formal Semantics",
+        "Logical Frameworks"
+    ],
+    "links": [
+        {
+            "title": "Stanford Encyclopedia of Philosophy — Logic",
+            "url": "https://plato.stanford.edu/entries/logic/"
+        },
+        {
+            "title": "Stanford Encyclopedia of Philosophy — Model Theory",
+            "url": "https://plato.stanford.edu/entries/model-theory/"
+        },
+        {
+            "title": "Internet Encyclopedia of Philosophy — Formal Semantics",
+            "url": "https://iep.utm.edu/form-se/​"
+        },
+        {
+            "title": "Gottlob Frege — Begriffsschrift (Concept Script, 1879)",
+            "url": "https://archive.org/details/conceptscript00freg"
+        }
+    ],
+    "tags": [],
+    "details": [],
+    "content": "Logical and semantic frameworks provide formal systems for representing, interpreting, and reasoning about abstract entities. They define the syntax (symbols and formation rules) and semantics (meaning or truth‑conditions) of languages used in mathematics, computer science, and philosophy. By grounding inference and interpretation in precise frameworks, they enable rigorous proofs, model analysis, and machine‑assisted reasoning.",
+    "sections": [
+        {
+            "title": "Definitions and Scope",
+            "content": "A logical framework specifies a formal language’s syntax and inference rules, while a semantic framework assigns meanings to well‑formed formulas, typically via models or interpretations. Together, these frameworks ensure that symbolic manipulations correspond to valid reasoning about abstract structures."
+        },
+        {
+            "title": "Syntax and Proof Theory",
+            "content": "Syntax defines the alphabet of symbols and rules for constructing formulas. Proof theory studies the formal derivation of theorems from axioms using inference rules. Systems range from propositional and first‑order logic to higher‑order and type‑theoretic calculi, each balancing expressive power with decidability and complexity."
+        },
+        {
+            "title": "Model Theory and Semantics",
+            "content": "Model theory examines the relationship between formal languages and mathematical structures (models) in which formulas are evaluated. A semantic framework provides truth‑conditions: a formula is true in a model if it holds under a specified interpretation. Completeness and soundness theorems link syntax and semantics, ensuring that derivable statements correspond exactly to truths in all models."
+        },
+        {
+            "title": "Applications in Computation",
+            "content": "Logical and semantic frameworks underpin programming language design, compiler correctness, and formal verification. Type systems enforce constraints at compile time; proof assistants (e.g., Coq, Agda) leverage dependent type theory to encode both programs and their correctness proofs. Semantic web standards (RDF, OWL) use description logics to represent and query knowledge graphs."
+        },
+        {
+            "title": "Future Directions",
+            "content": "Emerging work explores categorical semantics, homotopy type theory, and probabilistic logics to model uncertainty and higher‑dimensional structures. Integrating logical frameworks with machine learning promises hybrid systems capable of both symbolic reasoning and data‑driven inference."
+        }
+    ]
+}

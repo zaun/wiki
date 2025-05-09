@@ -1,0 +1,60 @@
+{
+  "title": "Numbers",
+  "parentTitle": "Algebraic and Order Structures",
+  "aliases": ["Number Theory", "Arithmetic"],
+  "links": [
+    {
+      "title": "Stanford Encyclopedia of Philosophy – Natural Number",
+      "url": "https://plato.stanford.edu/entries/natural-number/"
+    },
+    {
+      "title": "Stanford Encyclopedia of Philosophy – Real Numbers",
+      "url": "https://plato.stanford.edu/entries/real-numbers/"
+    },
+    {
+      "title": "Stanford Encyclopedia of Philosophy – Complex Numbers",
+      "url": "https://plato.stanford.edu/entries/complex-numbers/"
+    },
+    {
+      "title": "Encyclopedia of Mathematics – Number",
+      "url": "https://encyclopediaofmath.org/wiki/Number"
+    },
+    {
+      "title": "Britannica – Number (Mathematics)",
+      "url": "https://www.britannica.com/science/number-mathematics"
+    },
+    {
+      "title": "Encyclopedia of Mathematics – Number System",
+      "url": "https://encyclopediaofmath.org/wiki/Number_system"
+    }
+  ],
+  "tags": [],
+  "details": [],
+  "content": "Numbers are the quintessential abstract entities used to represent quantity, order, and magnitude. From simple counting to the most advanced areas of analysis and algebra, number systems underpin virtually every domain of mathematics. As ideal constructs, numbers exist independently of any physical tokens—whether marks on paper, electronic bits, or mental concepts—and their formal properties are studied both for their intrinsic beauty and for their foundational role in computation, geometry, and beyond.",
+  "sections": [
+    {
+      "title": "Fundamental Number Systems",
+      "content": "At the most basic level, we have:\n\n- **Natural Numbers (ℕ)**: 1, 2, 3, … used for counting; form a free monoid under addition.\n- **Integers (ℤ)**: Extend ℕ to include 0 and negatives; form a ring under addition and multiplication.\n- **Rational Numbers (ℚ)**: Ratios of integers; form a field but are countable and dense in ℝ.\n- **Real Numbers (ℝ)**: Completes ℚ by including limits of Cauchy sequences; uncountable continuum with analytic structure.\n- **Complex Numbers (ℂ)**: Pairs of reals with addition and multiplication; algebraically closed field, central in analysis and geometry.\n\nBeyond these lie **p‑adic** systems, **quaternions**, and **transfinite** ordinals/cardinals that capture infinite hierarchies."
+    },
+    {
+      "title": "Arithmetic, Algebraic Structures, and Extensions",
+      "content": "Numbers support fundamental operations—addition, multiplication, subtraction, division—leading to rich algebraic structures:\n\n- **Rings and Fields**: ℤ is a principal ideal domain; ℚ, ℝ, ℂ are fields, enabling invertibility and division.\n- **Modules and Vector Spaces**: Extend number operations to linear combinations over rings/fields.\n- **Algebraic Extensions**: Construct new number systems (e.g., adjoining √2) that remain fields.\n- **Ordered Fields**: ℚ and ℝ carry a total order compatible with arithmetic, essential for analysis."
+    },
+    {
+      "title": "Analytic and Transcendental Aspects",
+      "content": "Real numbers split into **algebraic** (roots of polynomials with integer coefficients) and **transcendental** (not algebraic, e.g., π, e). The study of sequences, series, and limits relies on the completeness of ℝ. Complex analysis explores holomorphic functions on ℂ, leveraging its two‑dimensional real structure and algebraic closure to generalize calculus."
+    },
+    {
+      "title": "Discrete Theory and Number Theory",
+      "content": "Number theory focuses on the arithmetic of integers:\n\n- **Prime Numbers**: Building blocks of ℤ under multiplication; distribution described by the Prime Number Theorem.\n- **Divisibility and Congruences**: Modular arithmetic underpins cryptography and coding theory.\n- **Arithmetic Functions**: μ(n), φ(n), σ(n) capture multiplicative structure.\n- **Diophantine Equations**: Solving polynomial equations in integers links to algebraic geometry and logic."
+    },
+    {
+      "title": "Computational Representations",
+      "content": "In practice, numbers are represented in digital systems via binary expansions, floating‑point formats, or exact rational types. Algorithms for large‑integer arithmetic (Karatsuba, FFT multiplication) and real‑number approximation (Newton’s method, interval arithmetic) bridge abstract definitions with concrete computation."
+    },
+    {
+      "title": "Philosophical and Ontological Perspectives",
+      "content": "Debates about numbers center on their existence: **Platonism** asserts they inhabit a timeless abstract realm, while **nominalism** views them as human conventions or linguistic constructs. **Structuralism** locates numbers within relational systems (e.g., the role of “2” in counting). These perspectives influence how mathematicians and philosophers understand the nature and truth of numerical statements."
+    }
+  ]
+}

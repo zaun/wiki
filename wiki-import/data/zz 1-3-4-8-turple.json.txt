@@ -1,0 +1,67 @@
+{
+    "title": "Tuple",
+    "parentTitle": "Data Structures",
+    "aliases": [
+        "Fixed‑Arity Sequence",
+        "Product"
+    ],
+    "links": [
+        {
+            "title": "Encyclopedia of Mathematics – Tuple",
+            "url": "https://encyclopediaofmath.org/wiki/Tuple"
+        },
+        {
+            "title": "Britannica – Tuple (Mathematics)",
+            "url": "https://www.britannica.com/topic/tuple"
+        },
+        {
+            "title": "Wikipedia – Tuple",
+            "url": "https://en.wikipedia.org/wiki/Tuple"
+        },
+        {
+            "title": "Encyclopedia of Mathematics – Cartesian Product",
+            "url": "https://encyclopediaofmath.org/wiki/Cartesian_product"
+        },
+        {
+            "title": "Stanford Encyclopedia of Philosophy – Type Theory",
+            "url": "https://plato.stanford.edu/entries/type-theory/"
+        },
+        {
+            "title": "Cambridge University Press – Types and Programming Languages (Pierce)",
+            "url": "https://www.cambridge.org/core/books/types-and-programming-languages/BCB1E1784090C1F3C30D1DB0BAF8D5F2"
+        }
+    ],
+    "tags": [],
+    "details": [],
+    "content": "A Tuple ADT represents a fixed‑size, ordered collection of elements, potentially of heterogeneous types, accessible by position. It abstracts the notion of product types from type theory and Cartesian products from set theory, enabling precise modeling of finite records, points in geometry, argument lists in functions, and composite keys in databases without prescribing a concrete layout.",
+    "sections": [
+        {
+            "title": "Definition and Core Characteristics",
+            "content": "A tuple of arity n is an ordered n‑tuple (x₁, x₂, …, xₙ), where each component may belong to a different domain. Unlike sequences, tuples have fixed length and can enforce heterogeneity. Position matters: (a, b) ≠ (b, a) unless a = b."
+        },
+        {
+            "title": "Formal Semantics via Cartesian Products",
+            "content": "Formally, the set of all tuples of types T₁, T₂, …, Tₙ is the Cartesian product T₁ × T₂ × … × Tₙ. Each tuple is a function f: {1,…,n} → ⋃Tᵢ with f(i) ∈ Tᵢ. Projections πᵢ: T₁ × … × Tₙ → Tᵢ extract the i‑th component, and tuple formation is the inverse of projection."
+        },
+        {
+            "title": "ADT Interface and Operations",
+            "content": "Typical operations include:\n\n- **get(i)**: retrieve the element at position i (1 ≤ i ≤ n).\n- **update(i, x)**: return a new tuple with the i‑th component replaced by x, preserving other positions.\n- **arity()**: return the fixed length n.\n- **concatenate(other)**: for tuples of lengths n and m, produce an (n+m)‑tuple.\n- **zip(other)**: pairwise combine tuples of equal length into a tuple of pairs."
+        },
+        {
+            "title": "Implementation Strategies",
+            "content": "Tuples map naturally to:\n\n- **Static arrays**: contiguous memory with fixed offset for each position, enabling O(1) access.\n- **Records/Structs**: named fields correspond to positions, supporting heterogeneous types and alignment.\n- **Tagged unions**: combining multiple product types in languages with algebraic data types.\n\nMemory layout and padding considerations affect performance and interoperability."
+        },
+        {
+            "title": "Applications and Examples",
+            "content": "Tuples appear in:\n\n- **Database rows**: each row is a tuple of column values.\n- **Function arguments**: bundling multiple parameters into one composite value.\n- **Coordinate points**: e.g., (x, y, z) in 3D space.\n- **Key structures**: composite keys in maps or databases use tuples to index multi‑attribute records."
+        },
+        {
+            "title": "Theoretical and Type‑Theoretic Perspectives",
+            "content": "In type theory, tuples correspond to product types, dual to sum types (variants). Category theory views them as categorical products, characterized by universal properties. The interplay of product and sum types underlies algebraic data type design in functional programming."
+        },
+        {
+            "title": "Philosophical and Modeling Considerations",
+            "content": "Tuples embody the trade‑off between fixed structure and heterogeneity: they model records with known schema but sacrifice the flexibility of variable‑length sequences. Philosophical questions arise about positional identity versus structural naming, especially when migrating between tuple and record abstractions."
+        }
+    ]
+}

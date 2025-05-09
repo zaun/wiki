@@ -1,0 +1,68 @@
+{
+    "title": "Stream",
+    "parentTitle": "Concurrency Primitives",
+    "aliases": [
+        "Lazy Stream",
+        "Data Stream",
+        "Pipeline"
+    ],
+    "links": [
+        {
+            "title": "Wikipedia – Stream (computing)",
+            "url": "https://en.wikipedia.org/wiki/Stream_(computing)"
+        },
+        {
+            "title": "Mozilla MDN – Streams API",
+            "url": "https://developer.mozilla.org/en-US/docs/Web/API/Streams_API"
+        },
+        {
+            "title": "Oracle – Java 8 Stream API",
+            "url": "https://docs.oracle.com/javase/8/docs/api/java/util/stream/Stream.html"
+        },
+        {
+            "title": "Reactive Streams Specification",
+            "url": "https://www.reactive-streams.org/"
+        },
+        {
+            "title": "Node.js Documentation – Streams",
+            "url": "https://nodejs.org/api/stream.html"
+        },
+        {
+            "title": "Wikipedia – Reactive Programming",
+            "url": "https://en.wikipedia.org/wiki/Reactive_programming"
+        }
+    ],
+    "tags": [],
+    "details": [],
+    "content": "A Stream ADT represents a sequence of data elements made available over time, potentially unbounded, and processed in a pipeline of transformations. Streams abstract away storage concerns by delivering elements on demand (pull) or pushing them as they arrive, enabling efficient, composable, and reactive data processing without requiring all data to reside in memory.",
+    "sections": [
+        {
+            "title": "Core Semantics",
+            "content": "A stream is a sequence \\(S\\) of elements \\(s_1, s_2, \\dots\\), finite or infinite, with operations to access the head (first element) and the remainder (tail) lazily. Conceptually, it is a coinductive structure supporting corecursion."
+        },
+        {
+            "title": "Pull‑Based vs Push‑Based Models",
+            "content": "In pull‑based streams (e.g., Java 8 Streams), consumers request elements via `next()` calls. In push‑based or reactive streams (e.g., Reactive Streams, Node.js), producers emit elements into subscriber callbacks, with mechanisms for backpressure to prevent overwhelming consumers."
+        },
+        {
+            "title": "Transformations and Pipelines",
+            "content": "Streams support high‑level operations such as `map`, `filter`, `flatMap`, `reduce`, and windowing. These transformations form a pipeline, where each stage applies a function to incoming elements and passes results downstream, often evaluated lazily or asynchronously."
+        },
+        {
+            "title": "Backpressure and Flow Control",
+            "content": "To handle mismatched production and consumption rates, many stream frameworks implement backpressure: consumers signal demand to producers, ensuring that data flows only as fast as downstream stages can handle, preventing memory overflow and providing stability."
+        },
+        {
+            "title": "Implementations and Patterns",
+            "content": "Classic implementations include lazy linked lists (Haskell `Data.Stream`), iterator adapters (Java Streams), coroutine‑based generators, and event‑driven APIs (Node.js `Readable`/`Writable` streams). Frameworks like RxJS and Reactor provide operators for composing asynchronous streams with error handling and concurrency controls."
+        },
+        {
+            "title": "Applications and Use Cases",
+            "content": "Streams are used for file and network I/O (processing lines or packets incrementally), reactive UIs (event streams), data processing (ETL pipelines), sensor data handling (IoT), and real‑time analytics. Their composability and low memory footprint make them ideal for large or unbounded data flows."
+        },
+        {
+            "title": "Theoretical Foundations",
+            "content": "Streams correspond to coalgebras for the functor \\(F(X) = A \\times X + 1\\), where \\(A\\) is the element type. Corecursion schemes (anamorphisms) generate streams, while homomorphic folds consume them, linking streams to category‑theoretic and coinductive concepts."
+        }
+    ]
+}

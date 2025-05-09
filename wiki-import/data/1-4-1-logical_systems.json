@@ -1,0 +1,56 @@
+{
+  "title": "Logical Systems",
+  "parentTitle": "Logical and Semantic Frameworks",
+  "aliases": ["Formal Logic", "Deductive Systems"],
+  "links": [
+    {
+      "title": "Stanford Encyclopedia of Philosophy – Logical Consequence",
+      "url": "https://plato.stanford.edu/entries/logical-consequence/"
+    },
+    {
+      "title": "Stanford Encyclopedia of Philosophy – Model Theory",
+      "url": "https://plato.stanford.edu/entries/model-theory/"
+    },
+    {
+      "title": "Encyclopedia of Mathematics – Logical System",
+      "url": "https://encyclopediaofmath.org/wiki/Logical_system"
+    },
+    {
+      "title": "Britannica – Logic (Philosophy)",
+      "url": "https://www.britannica.com/topic/logic-philosophy"
+    },
+    {
+      "title": "MIT OpenCourseWare – Logic I",
+      "url": "https://ocw.mit.edu/courses/24-241-logic-i-spring-2009/"
+    },
+    {
+      "title": "Cambridge University Press – Handbook of Philosophical Logic",
+      "url": "https://www.cambridge.org/core/books/handbook-of-philosophical-logic/4BE4C58D308F1E4A300B79B1BDE2539C"
+    }
+  ],
+  "tags": [],
+  "details": [],
+  "content": "Logical systems are formal frameworks specifying a language of symbols, rules for forming well‑formed formulas, and inference mechanisms for deriving theorems from axioms. By abstracting the process of deduction into syntactic operations and semantic interpretations, they provide the backbone for rigorous reasoning in mathematics, computer science, and philosophy. These systems exist solely as ideal constructs—free from physical instantiation—yet their structure governs the validity of arguments and the expressivity of formal languages.",
+  "sections": [
+    {
+      "title": "Syntax and Proof Theory",
+      "content": "The syntax of a logical system defines its alphabet (connectives, quantifiers, variables) and formation rules for well‑formed formulas. Proof theory then studies the formal derivations of theorems via calculi such as natural deduction, sequent systems, or Hilbert‑style axioms. Structural properties—like cut‑elimination, normalization, and proof identity—are investigated to ensure consistency and to analyze the complexity of deduction."
+    },
+    {
+      "title": "Semantics and Model Theory",
+      "content": "Model theory assigns meaning to formulas by interpreting them over mathematical structures (models). A sentence is true in a model if it satisfies the interpretation rules (e.g., Tarski’s definition of truth). Central results include soundness (all provable statements hold in every model) and completeness (all semantically valid statements are provable), establishing the correspondence between syntax and semantics."
+    },
+    {
+      "title": "Varieties of Logical Systems",
+      "content": "Beyond classical propositional and first‑order logics, there are many extensions and alternatives: modal logics introduce necessity and possibility operators; intuitionistic logic rejects the law of excluded middle; higher‑order logics quantify over predicates; and substructural logics (e.g., linear logic) control structural rules like contraction and weakening. Each variant tailors the deductive apparatus to capture different conceptual or resource‑sensitivity requirements."
+    },
+    {
+      "title": "Computational Interpretations",
+      "content": "Logical systems underpin computation through the Curry–Howard correspondence, where propositions correspond to types and proofs to programs. Logic programming languages (e.g., Prolog) execute proof search as computation, while SMT and ATP tools leverage decision procedures and heuristics to automate reasoning. Type theories used in proof assistants (Coq, Lean) combine logical deduction with functional programming paradigms."
+    },
+    {
+      "title": "Philosophical and Foundational Issues",
+      "content": "Logical systems raise deep questions about the nature of truth, proof, and inference. Debates include formalism (logic as symbol manipulation), Platonism (logical forms as timeless realities), and inferentialism (meaning as use in inference). The choice of logical principles—such as the law of excluded middle or non‑monotonic inference rules—reflects differing philosophical commitments about rationality and the limits of reasoning."
+    }
+  ]
+}

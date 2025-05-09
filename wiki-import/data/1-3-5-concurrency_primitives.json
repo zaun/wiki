@@ -1,0 +1,52 @@
+{
+  "title": "Concurrency Primitives",
+  "parentTitle": "Computational Abstractions",
+  "aliases": [
+    "Asynchronous Primitives",
+    "Concurrent ADTs",
+    "Async Abstractions"
+  ],
+  "links": [
+    {
+      "title": "Communicating Sequential Processes (Hoare, 1978)",
+      "url": "https://doi.org/10.1016/C2013-0-02835-8"
+    },
+    {
+      "title": "A Calculus of Communicating Systems (Milner, 1980)",
+      "url": "https://dl.acm.org/doi/10.5555/578458"
+    },
+    {
+      "title": "Actors: A Model of Concurrent Computation in Distributed Systems (Agha, 1986)",
+      "url": "https://doi.org/10.1145/6196.6201"
+    },
+    {
+      "title": "Reactive Streams Specification (Bainomugisha et al., 2016)",
+      "url": "https://dl.acm.org/doi/10.1145/2983990.2983996"
+    },
+    {
+      "title": "Structured Concurrency (Klein & Scully, 2020)",
+      "url": "https://doi.org/10.1145/3426425.3426943"
+    }
+  ],
+  "tags": [],
+  "details": [],
+  "content": "Concurrency primitives are high‑level abstract constructs that enable communication, synchronization, and coordination among concurrently executing tasks or processes. By encapsulating the complexity of threads, locks, and schedulers into discrete interfaces, these primitives allow developers to build scalable, maintainable, and robust concurrent systems. They form the foundation of structured concurrency, reactive programming, and actor‑based architectures.",
+  "sections": [
+    {
+      "title": "Common Primitives",
+      "content": "The core concurrency primitives include **locks** and **semaphores** for mutual exclusion and resource coordination; **channels** for message passing with buffering and blocking semantics (as in CSP); **futures** and **promises** for representing eventual results and enabling non‑blocking coordination; **iterators** and **generators** for lazy traversal and production of data streams via coroutines; **streams** for composable, potentially unbounded pipelines; **zippers** for managing localized focus and context during concurrent traversals and updates; and **actor mailboxes**, isolating actor state and queuing messages in the actor model. Each primitive provides a uniform, high‑level abstraction over low‑level concurrency mechanisms."
+    },
+    {
+      "title": "Applications and Patterns",
+      "content": "In structured concurrency, primitives like scope‑bound tasks and futures ensure proper lifecycle management and resource cleanup. The actor model leverages **actor mailboxes** to isolate state and process messages in fault‑tolerant systems. Reactive frameworks use streams and backpressure to handle real‑time data pipelines. Generators and iterators support incremental data consumption from I/O sources, while zippers facilitate undo/redo operations and backtracking in concurrent algorithms. **Software Transactional Memory (STM)** enables composable atomic memory transactions, simplifying synchronization by allowing code blocks to execute in isolation and rollback on conflict. These patterns improve code clarity and reduce concurrency‑related bugs."
+    },
+    {
+      "title": "Theoretical Foundations",
+      "content": "Concurrency primitives correspond to formal models: synchronous and asynchronous channels align with CSP (Hoare) and CCS (Milner); promises and futures follow monadic semantics enabling compositional reasoning; streams and generators relate to coalgebraic models of codata; zippers realize comonadic structures capturing context‑dependent computation; and STM draws on transactional logic and algebraic effects to model isolated state changes. This theoretical grounding supports proofs of correctness, liveness, and safety in concurrent systems."
+    },
+    {
+      "title": "Low‑Level Synchronization and Transactional Memory",
+      "content": "**Locks** enforce exclusive access to resources, preventing simultaneous modifications. **Semaphores** generalize this by allowing a fixed number of concurrent holders, suitable for resource pools. **Software Transactional Memory (STM)** abstracts shared-memory operations into atomic transactions: threads execute sequences of reads and writes in isolation, with the runtime detecting conflicts and automatically retrying or rolling back transactions. STM removes explicit lock management, preventing deadlocks and race conditions."
+    }
+  ]
+}

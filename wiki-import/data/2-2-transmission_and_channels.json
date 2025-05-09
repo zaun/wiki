@@ -1,0 +1,51 @@
+{
+    "title": "Transmission & Channels",
+    "parentTitle": "Informational",
+    "aliases": [
+        "Information Channels",
+        "Data Transmission"
+    ],
+    "links": [
+        {
+            "title": "Claude E. Shannon — A Mathematical Theory of Communication",
+            "url": "https://archive.org/details/bstj27-3-379"
+        },
+        {
+            "title": "IETF — RFC 791: Internet Protocol",
+            "url": "https://www.rfc-editor.org/rfc/rfc791.html"
+        },
+        {
+            "title": "International Telecommunication Union — ITU‑T Recommendation X.200 (OSI Reference Model)",
+            "url": "https://www.itu.int/rec/T-REC-X.200"
+        },
+        {
+            "title": "National Center for Biotechnology Information — Neural Coding: A Primer",
+            "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2810551/"
+        }
+    ],
+    "tags": [],
+    "details": [],
+    "content": "Information travels over channels—mediums or pathways that carry signals from a source to a destination. Channels may be physical (copper wiring, fiber optics, airwaves), conceptual (packet‑switched networks, peer‑to‑peer overlays), or biological (neural pathways, hormonal circulations). Each channel is characterized by its capacity, fidelity, and noise properties, which together determine how reliably and quickly information can be conveyed.",
+    "sections": [
+        {
+            "title": "Physical Channels",
+            "content": "Physical channels encompass tangible media such as twisted‑pair copper, coaxial cable, fiber‑optic strands, and electromagnetic spectrum. Their performance hinges on physical properties—attenuation, dispersion, and interference—and is often quantified in bit rate and signal‑to‑noise ratio. Fiber‑optic systems, for instance, leverage total internal reflection to achieve terabit‑scale throughput over long distances, while radio links must contend with multipath fading and atmospheric absorption."
+        },
+        {
+            "title": "Network Protocols and Layered Architectures",
+            "content": "Transmission protocols govern the packaging, sequencing, and error management of data across networks. Layered models—such as the OSI Reference Model (ITU‑T X.200) and the Internet Protocol Suite (RFC 791)—divide communication into discrete functions: physical, data link, network, transport, session, presentation, and application. This modular design enables interoperability among heterogeneous systems and simplifies troubleshooting."
+        },
+        {
+            "title": "Biological Channels",
+            "content": "In living organisms, information flows through neural and chemical pathways. Neurons transmit electrical signals (action potentials) along axons and communicate across synapses via neurotransmitters. Hormonal channels circulate chemical messengers through the bloodstream, modulating distant targets. Encoding schemes—rate codes, temporal codes—determine how stimulus features are represented and decoded by neural networks."
+        },
+        {
+            "title": "Channel Capacity and Noise",
+            "content": "Channel capacity—the maximum reliable data rate—is formalized by the Shannon–Hartley theorem, which relates capacity (C) to bandwidth (B) and signal‑to‑noise ratio (S/N): C = B · log₂(1 + S/N). Noise sources (thermal, shot, phase jitter) and interference constrain achievable rates, driving the development of error‑correcting codes (Reed–Solomon, LDPC) and modulation techniques (QAM, OFDM) to approach theoretical limits."
+        },
+        {
+            "title": "Security and Reliability",
+            "content": "Secure transmission ensures confidentiality, integrity, and authenticity. Cryptographic protocols (TLS, IPsec) layer encryption and key exchange atop transport services, protecting data against eavesdropping and tampering. Reliability mechanisms—acknowledgments, retransmissions, forward error correction—mitigate packet loss and bit errors, balancing throughput with latency to meet application requirements."
+        }
+    ]
+}

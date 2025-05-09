@@ -1,0 +1,59 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: Create S3 bucket and IAM backup user with access keys
+
+Parameters:
+  BackupBucketPrefix:
+    Type: String
+    Description: Prefix for the S3 bucket name
+    Default: backup-bucket
+
+Resources:
+
+  BackupBucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: !Sub "${BackupBucketPrefix}-${AWS::AccountId}-${AWS::Region}"
+
+  BackupUser:
+    Type: AWS::IAM::User
+    Properties:
+      UserName: backup-user
+
+  BackupUserPolicy:
+    Type: AWS::IAM::Policy
+    Properties:
+      PolicyName: BackupUserS3Access
+      Users:
+        - !Ref BackupUser
+      PolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+          - Effect: Allow
+            Action:
+              - s3:GetObject
+              - s3:PutObject
+              - s3:DeleteObject
+              - s3:ListBucket
+              - s3:GetBucketLocation
+              - s3:HeadBucket
+            Resource: "*"
+
+  BackupUserAccessKey:
+    Type: AWS::IAM::AccessKey
+    Properties:
+      UserName: !Ref BackupUser
+      Status: Active
+
+Outputs:
+
+  BackupAccessKeyId:
+    Description: Access Key ID for backup-user
+    Value: !Ref BackupUserAccessKey
+
+  BackupSecretAccessKey:
+    Description: Secret Access Key for backup-user
+    Value: !GetAtt BackupUserAccessKey.SecretAccessKey
+
+  FullBucketName:
+    Description: Final S3 bucket name
+    Value: !Sub "${BackupBucketPrefix}-${AWS::AccountId}-${AWS::Region}"

@@ -1,0 +1,49 @@
+{
+    "title": "Informational",
+    "aliases": [
+        "Information"
+    ],
+    "links": [
+        {
+            "title": "Claude E. Shannon — A Mathematical Theory of Communication",
+            "url": "https://archive.org/details/bstj27-3-379"
+        },
+        {
+            "title": "Stanford Encyclopedia of Philosophy — Information",
+            "url": "https://plato.stanford.edu/entries/information/"
+        },
+        {
+            "title": "Internet Encyclopedia of Philosophy — Information",
+            "url": "https://iep.utm.edu/information/"
+        },
+        {
+            "title": "Shannon–Hartley Theorem — original statement in The Bell System Technical Journal",
+            "url": "https://ieeexplore.ieee.org/document/6773024"
+        }
+    ],
+    "tags": [],
+    "details": [],
+    "content": "Information encompasses the patterns, structures, and symbols that reduce uncertainty and convey meaning across natural and artificial systems. It is instantiated wherever a distinguishable difference or arrangement can be interpreted by an observer or process—from the genetic sequences in living cells to the binary streams powering digital networks. At its core, information serves as the bridge between raw data and contextual understanding, acting as the fundamental currency of communication, computation, and knowledge.\n\nAcross biological and technological realms, informational processes govern replication, storage, processing, and transmission. Genetic codes carry hereditary instructions in organisms, while digital protocols encode multimedia for global distribution. These processes rely on systematic rules for encoding and decoding, ensuring that meaning travels intact across space and time. By abstracting away from specific media, the informational category unifies disparate phenomena under the shared principle of meaningful pattern exchange.\n\nThe study of information draws on diverse disciplines—mathematics, computer science, linguistics, biology, and philosophy—to explore how information is represented, manipulated, and interpreted. Information theory formalizes the quantification of uncertainty and channel capacity; cognitive science examines how minds process symbols; and communication engineering designs robust channels for signal integrity. Together, these perspectives reveal the pervasive role of information in shaping reality and driving innovation.",
+    "sections": [
+        {
+            "title": "Ontological Foundations",
+            "content": "Information can be understood as a relational concept that arises when a system reduces uncertainty by selecting one pattern among many possible alternatives. This selection could be as simple as the outcome of a coin toss or as complex as the semantic interpretation of a sentence. Unlike physical substances, information does not exist independently; it is always instantiated in a medium—whether molecular bonds in DNA or electrical pulses in computer hardware.\n\nPhilosophical treatments distinguish between syntactic information, concerning the form and structure of messages, and semantic information, addressing the meaning conveyed. A string of symbols may have high syntactic complexity yet carry no semantic content if it fails to map onto any agreed-upon concepts. Pragmatic information extends this view by considering the effects and uses of information within systems, such as decision-making in organisms or feedback control in engineered systems.\n\nFormal theories, notably Shannon’s information theory, abstract information as probabilistic entropy without regard to meaning. Although Shannon’s model applies primarily to signal transmission efficiency, it laid the groundwork for understanding the limits and capabilities of informational channels and inspired subsequent developments in data compression and error correction."
+        },
+        {
+            "title": "Media and Manifestations",
+            "content": "Informational content manifests in physical, biological, and digital forms, each governed by its own representational conventions. In biology, nucleic acids store genetic information through sequences of four nucleotide bases, directing protein synthesis and cellular processes. The fidelity of replication and transcription mechanisms ensures reliable inheritance of traits across generations.\n\nDigital media translate information into binary patterns—streams of zeros and ones—enabling versatile storage and processing by electronic systems. Text, images, audio, and video are all encoded according to file formats and protocols that specify structure, metadata, and error-checking mechanisms. These layers ensure that data can be parsed and rendered consistently across diverse platforms.\n\nAnalog signals represent information in continuous variations, such as sound waves or electromagnetic fields. While more susceptible to noise and degradation, analog representations offer a direct imprint of natural phenomena, exemplified by vinyl records, film photography, and traditional radio broadcasts. Hybrid techniques like pulse-code modulation marry analog sampling with digital quantization to optimize fidelity and robustness."
+        },
+        {
+            "title": "Encoding and Interpretation",
+            "content": "Central to informational systems is the process of encoding, which transforms ideas or observations into structured formats suitable for storage or transmission. Encoding schemes range from simple substitution ciphers in classical cryptography to sophisticated compression algorithms like JPEG for images and MP3 for audio, which exploit perceptual models to reduce redundancy without perceptible loss.\n\nDecoding reconstructs the original content or its approximation from encoded representations. Successful decoding depends on shared conventions between sender and receiver—such as programming languages, markup languages, or the genetic code. Misalignments in these conventions can lead to misinterpretation or data corruption, highlighting the importance of standards like Unicode for text encoding and FASTA for sequence data.\n\nError-correcting codes introduce deliberate redundancy to detect and correct errors during transmission or storage. Techniques such as Reed–Solomon codes and low-density parity-check codes are critical for ensuring data integrity in storage media, optical communications, and deep-space telemetry. Cryptographic encoding further secures information against unauthorized access by applying mathematical transforms that protect confidentiality and authenticity."
+        },
+        {
+            "title": "Channels and Transmission",
+            "content": "Information travels through channels—mediums that carry signals from source to destination. Channels may be physical (fiber optics, airwaves, copper cabling) or conceptual (distributed networks, peer-to-peer overlays). Each channel has a finite capacity determined by its physical properties and noise characteristics, as formalized by the Shannon–Hartley theorem.\n\nTransmission protocols govern how data is packaged, sequenced, and acknowledged across networks. Layered architectures like the OSI and TCP/IP models define standardized interfaces and services, enabling interoperability among heterogeneous hardware and software. Protocols manage routing, congestion control, and error recovery, ensuring reliable end-to-end communication even under adverse conditions.\n\nIn biological systems, channels include neural pathways, hormonal circulatory networks, and ecological interactions. Neural signals propagate via action potentials in neurons, conveying sensory inputs and coordinating responses. These natural channels emphasize the dynamic, context-sensitive nature of informational flows in living organisms."
+        },
+        {
+            "title": "Societal and Technological Impact",
+            "content": "The proliferation of informational technologies has profoundly reshaped human societies, economies, and cultures. The digital revolution has democratized access to information, enabling real-time communication, global collaboration, and data-driven innovation. Information economies prioritize knowledge production, distribution, and intellectual property as key drivers of growth.\n\nSocial dynamics and governance increasingly depend on informational infrastructures—electronic health records, financial transaction systems, and social media platforms. These systems raise critical concerns about privacy, security, and equity, as the aggregation and analysis of personal data challenge traditional notions of autonomy and consent. Ethical frameworks and regulatory policies strive to balance innovation with individual rights.\n\nEmerging paradigms such as quantum information, artificial intelligence, and the semantic web promise to expand informational capabilities further. Quantum computing leverages superposition and entanglement to process information in fundamentally new ways, while AI systems extract insights from vast datasets. These developments underscore the evolving nature of information as both a conceptual cornerstone and a practical resource shaping our future."
+        }
+    ]
+}

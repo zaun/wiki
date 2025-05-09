@@ -1,0 +1,68 @@
+{
+    "title": "Variant",
+    "parentTitle": "Type-System Constructs",
+    "aliases": [
+        "Tagged Union",
+        "Sum Type",
+        "Coproduct"
+    ],
+    "links": [
+        {
+            "title": "Encyclopedia of Mathematics – Coproduct",
+            "url": "https://encyclopediaofmath.org/wiki/Coproduct"
+        },
+        {
+            "title": "Britannica – Union (Computer Science)",
+            "url": "https://www.britannica.com/technology/union-data-structure"
+        },
+        {
+            "title": "Wikipedia – Tagged Union",
+            "url": "https://en.wikipedia.org/wiki/Tagged_union"
+        },
+        {
+            "title": "Wikipedia – Sum Type",
+            "url": "https://en.wikipedia.org/wiki/Sum_type"
+        },
+        {
+            "title": "Wikipedia – Algebraic Data Type",
+            "url": "https://en.wikipedia.org/wiki/Algebraic_data_type"
+        },
+        {
+            "title": "Cambridge University Press – Types and Programming Languages (Pierce)",
+            "url": "https://www.cambridge.org/core/books/types-and-programming-languages/BCB1E1784090C1F3C30D1DB0BAF8D5F2"
+        }
+    ],
+    "tags": [],
+    "details": [],
+    "content": "A Variant ADT (also called a tagged union or sum type) represents a choice among several alternative types, each paired with a discriminator. It abstracts the concept of a finite coproduct, enabling safe operations on heterogeneous values by ensuring that only the present variant can be accessed. Variants unify pattern matching and error‑handling constructs, offering expressive power for modeling optional, exceptional, or multi‑typed data in a type‑safe manner.",
+    "sections": [
+        {
+            "title": "Coproduct Foundations",
+            "content": "In category and type theory, a variant corresponds to a **coproduct** (sum) of types \\(T_1 + T_2 + \\cdots + T_n\\). Injection functions \\(\\mathrm{inj}_i: T_i \\to \\sum_j T_j\\) build variants, while a unique copairing function merges case analyses. This abstraction captures the essence of choice types across formal systems."
+        },
+        {
+            "title": "ADT Interface and Laws",
+            "content": "A Variant supports:\n\n- **injectᵢ(x)**: create a variant tagged as case i with payload x.\n- **match(v, handlers)**: dispatch on the tag, invoking the corresponding handler.\n- **tag(v)**: retrieve the discriminator identifying the current case.\n- **getᵢ(v)**: safely extract the payload if tag = i, else signal an error.\n\nAlgebraic laws include disjointness (injectᵢ(x) ≠ injectⱼ(y) for i ≠ j) and exhaustiveness (match handles all cases)."
+        },
+        {
+            "title": "Implementation Techniques",
+            "content": "Common layouts:\n\n- **Tagged union**: a struct with a tag field (enum) and a union/payload region sized to the largest case.\n- **Discriminated union**: language‑level constructs (Rust `enum`, Haskell `data`) enforcing tag/payload pairing and ensuring memory layout and safety.\n- **Class hierarchies**: in OO, each case is a subclass of a base Variant interface, with virtual methods for case handling.\n\nTrade‑offs involve memory overhead for tags vs. flexibility of dynamic dispatch."
+        },
+        {
+            "title": "Pattern Matching and Exhaustiveness",
+            "content": "Pattern matching provides declarative deconstruction of variants. Compilers can check **exhaustiveness**, ensuring handlers cover all cases, and **redundancy**, warning about unreachable branches. Languages like Haskell, OCaml, Rust, and Swift offer first‑class match expressions, while others simulate with switch statements and visitor patterns."
+        },
+        {
+            "title": "Use Cases and Examples",
+            "content": "Variants are ubiquitous:\n\n- **Option/Maybe**: `Some(x)` | `None` for nullable values.\n- **Result/Either**: `Ok(v)` | `Err(e)` for success/error.\n- **AST nodes**: different node types in compilers’ abstract syntax trees.\n- **Protocol messages**: union of possible message formats.\n- **Configuration options**: variant values for settings.\n\nThey replace ad hoc flags and nulls with structured, type‑checked representations."
+        },
+        {
+            "title": "Cross‑Paradigm Adaptations",
+            "content": "Functional languages treat variants as primitive. OO languages use class hierarchies or union types (C `union`). Database schemas emulate variants with NULLable columns or separate tables per variant. Logic and theorem provers encode variants via disjoint sum types in proof assistants."
+        },
+        {
+            "title": "Theoretical Perspectives",
+            "content": "Variants realize categorical coproducts with universal properties: given handlers \\(f_i: T_i \\to X\\), there exists a unique function \\(f: \\sum T_i \\to X\\) such that \\(f(\\mathrm{inj}_i(x)) = f_i(x)\\). This formalism underlies recursion and fold operations on variants, connecting to initial algebra semantics for inductive types."
+        }
+    ]
+}

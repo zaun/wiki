@@ -1,0 +1,60 @@
+{
+  "title": "Categories & Functors",
+  "parentTitle": "Type and Category Theory",
+  "aliases": ["Category Theory", "Functor"],
+  "links": [
+    {
+      "title": "Stanford Encyclopedia of Philosophy – Category Theory",
+      "url": "https://plato.stanford.edu/entries/category-theory/"
+    },
+    {
+      "title": "nLab – Category Theory",
+      "url": "https://ncatlab.org/nlab/show/category+theory"
+    },
+    {
+      "title": "Encyclopedia of Mathematics – Category",
+      "url": "https://encyclopediaofmath.org/wiki/Category"
+    },
+    {
+      "title": "Categories for the Working Mathematician – Saunders Mac Lane",
+      "url": "https://www.springer.com/gp/book/9780387984032"
+    },
+    {
+      "title": "MIT OpenCourseWare – Category Theory for Scientists",
+      "url": "https://ocw.mit.edu/courses/18-704-category-theory-for-scientists-spring-2013/"
+    }
+  ],
+  "tags": [],
+  "details": [],
+  "content": "Category theory studies mathematical structures by emphasizing the relationships (morphisms) between objects rather than the internal composition of objects themselves. A category consists of objects and arrows satisfying identity and associativity, while functors map between categories in a structure‑preserving way. Natural transformations compare functors, weaving a higher‑order layer of abstraction. This relational viewpoint unifies diverse domains—from algebra and topology to logic and computer science—through universal properties and dualities that transcend specific instantiations.",
+  "sections": [
+    {
+      "title": "Overview and Motivation",
+      "content": "Mathematicians observed recurring patterns—such as products, coproducts, and dualities—across disparate fields. Category theory abstracts these patterns into a single language of objects and arrows, providing a toolkit for transferring insights between areas. By focusing on how structures interact, category theory reveals deep analogies and promotes modular reasoning about complex systems."
+    },
+    {
+      "title": "Formal Definitions",
+      "content": "A category C consists of a class of objects, a class of morphisms with specified sources and targets, an identity morphism for each object, and an associative composition operation. A functor F from C to D assigns to each object X in C an object F(X) in D and to each morphism f: X → Y in C a morphism F(f): F(X) → F(Y) in D, preserving identities and composition. A natural transformation η: F ⇒ G between functors F, G: C → D assigns to each object X in C a morphism η_X: F(X) → G(X) in D such that for every f: X → Y in C, G(f) ∘ η_X = η_Y ∘ F(f)."
+    },
+    {
+      "title": "Historical Development",
+      "content": "Introduced by Samuel Eilenberg and Saunders Mac Lane in 1945 to formalize constructions in algebraic topology, category theory rapidly expanded. Grothendieck used it to redefine algebraic geometry via schemes; Lawvere and Tierney developed topos theory; Mac Lane and others extended it to categorical logic. Higher categories and enriched categories emerged in the late 20th century, further broadening its scope."
+    },
+    {
+      "title": "Core Constructions and Examples",
+      "content": "Key categorical constructs include limits and colimits (universal cones and cocones), adjoint functors (pairs F ⊣ G capturing optimal approximations), monoidal categories (categories with a tensor product), and dualities (opposite categories). Fundamental examples are Set (sets and functions), Top (topological spaces), Grp (groups), and Vect_k (vector spaces over a field k)."
+    },
+    {
+      "title": "Applications Across Disciplines",
+      "content": "In algebraic topology, homology and cohomology functors translate topological spaces to algebraic invariants. In algebraic geometry, schemes and sheaves live in categorical contexts. In logic and computer science, categories model type systems, semantics, and functional programming constructs like monads and applicative functors. Database theory uses categorical diagrams to represent schema mappings."
+    },
+    {
+      "title": "Advanced Extensions",
+      "content": "Enriched categories generalize hom‑sets to objects in a monoidal category, enabling metric and probabilistic structures. Higher categories (2‑categories, ∞‑categories) treat morphisms between morphisms, essential in modern homotopy theory. Topos theory recasts set theory in a categorical setting, offering alternative foundations for mathematics."
+    },
+    {
+      "title": "Philosophical and Structural Implications",
+      "content": "Category theory embodies structuralism by defining mathematical entities through their relations rather than intrinsic properties. It proposes an ontology of networks of morphisms, challenging set‑based foundations. Debates center on whether categories exist as Platonic ideals or as human‑constructed frameworks, and on the epistemic status of universal properties and naturality."
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+1. Iteration & Data Flow  
+   1.1 Iterator  
+   1.2 Generator  
+   1.3 Stream  
+   1.4 Zipper  
+   1.5 Observable / Reactive Stream  
+
+2. Control Flow  
+   2.1 Thread  
+   2.2 Process  
+   2.3 Fiber / Green Thread  
+   2.4 Promise / Future  
+   2.5 Task / Async Function  
+   2.6 Coroutine  
+   2.7 Callback  
+   2.8 Event / Event Emitter  
+   2.9 Continuation / Trampoline  
+
+3. Message Passing & Data Exchange  
+   3.1 Channel  
+   3.2 Actor  
+   3.3 Tuple Space  
+   3.4 Rendezvous (CSP‑style exchange)  
+
+4. Synchronization Primitives  
+   4.1 Lock (Mutex)  
+       4.1.1 Reader/Writer Lock  
+       4.1.2 Spinlock  
+   4.2 Semaphore  
+   4.3 Barrier  
+   4.4 Latch / CountDownLatch  
+   4.5 Condition Variable  
+   4.6 Atomic Object (Compare‑and‑Swap)  
+   4.7 Read‑Copy‑Update (RCU)  
+   4.8 Monitor / Critical Section  
+   4.9 Phaser / CyclicBarrier  
+
+5. Coordination & Multiplexing  
+   5.1 I/O Multiplexing  
+       5.1.1 Select  
+       5.1.2 Poll  
+       5.1.3 Waitset  
+       5.1.4 epoll / kqueue / IOCP  
+   5.2 Scheduler (Fiber / Green‑thread scheduler)  
+       5.2.1 Work‑Stealing Deque  
+       5.2.2 Thread Pool / Worker Pool  
+   5.3 Reactor / Proactor (Event Loop)  
+
+6. Memory Models & Transactions  
+   6.1 Memory Fence / Barrier  
+   6.2 Transactional Memory  

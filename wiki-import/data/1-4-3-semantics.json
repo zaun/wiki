@@ -1,0 +1,51 @@
+{
+  "title": "Semantics",
+  "parentTitle": "Logical and Semantic Frameworks",
+  "aliases": [
+    "Formal Semantics",
+    "Model-Theoretic Semantics"
+  ],
+  "links": [
+    {
+      "title": "Stanford Encyclopedia of Philosophy — Formal Semantics",
+      "url": "https://plato.stanford.edu/entries/formal-semantics/"
+    },
+    {
+      "title": "Stanford Encyclopedia of Philosophy — Model Theory",
+      "url": "https://plato.stanford.edu/entries/model-theory/"
+    },
+    {
+      "title": "Barbara H. Partee, Alice ter Meulen, Robert E. Wall — Mathematical Methods in Linguistics",
+      "url": "https://mitpress.mit.edu/9780262133807/mathematical-methods-in-linguistics/"
+    },
+    {
+      "title": "Jon Barwise & Robin Cooper — Generalized Quantifiers and Natural Language",
+      "url": "https://doi.org/10.1017/S0031819100041300"
+    }
+  ],
+  "tags": [],
+  "details": [],
+  "content": "Semantics provides formal tools to assign meanings to the expressions of a language by mapping syntactic forms to elements of mathematical structures (models). It ensures that symbolic manipulations correspond to interpretations in which statements can be evaluated as true or false, grounding logical inference in well-defined truth conditions.",
+  "sections": [
+    {
+      "title": "Truth‑Conditional Semantics",
+      "content": "At the core of formal semantics is the notion of truth conditions: each sentence is associated with the set of models in which it holds true. This approach, pioneered by Tarski, defines a semantic valuation function that assigns truth values based on an interpretation mapping predicates to relations and constants to elements of a domain."
+    },
+    {
+      "title": "Model‑Theoretic Framework",
+      "content": "Model theory studies the relationship between formal languages and their models—structures consisting of a domain and interpretation functions. Key concepts include satisfaction (a model satisfies a formula), entailment (all models of a theory satisfy a given sentence), and logical consequence."
+    },
+    {
+      "title": "Compositionality Principle",
+      "content": "The principle of compositionality holds that the meaning of a complex expression derives systematically from its parts and the rules used to combine them. This provides the foundation for inductive definitions of semantic valuation over the syntax tree of expressions."
+    },
+    {
+      "title": "Extensions and Variants",
+      "content": "Beyond classical first‑order semantics, there are enriched frameworks: modal semantics adds possible‑world structures; intensional semantics handles context‑sensitive expressions; and generalized quantifier theory extends the treatment of quantification beyond standard existential and universal forms."
+    },
+    {
+      "title": "Applications",
+      "content": "Formal semantics underlies programming language design (type safety, denotational semantics), natural language understanding (compositional parsing, semantic parsing), and knowledge representation (description logics, ontology languages like OWL). It supports verification by providing precise models against which specifications can be checked."
+    }
+  ]
+}

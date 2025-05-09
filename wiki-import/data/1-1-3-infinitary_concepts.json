@@ -1,0 +1,60 @@
+{
+  "title": "Infinitary Concepts",
+  "parentTitle": "Foundations of Abstraction",
+  "aliases": ["Actual Infinity", "Potential Infinity", "Transfinite"],
+  "links": [
+    {
+      "title": "Stanford Encyclopedia of Philosophy – Infinity",
+      "url": "https://plato.stanford.edu/entries/infinity/"
+    },
+    {
+      "title": "Stanford Encyclopedia of Philosophy – Transfinite Numbers",
+      "url": "https://plato.stanford.edu/entries/transfinite-numbers/"
+    },
+    {
+      "title": "Stanford Encyclopedia of Philosophy – Infinitary Logic",
+      "url": "https://plato.stanford.edu/entries/logic-infinity/"
+    },
+    {
+      "title": "Encyclopedia of Mathematics – Infinite Set",
+      "url": "https://encyclopediaofmath.org/wiki/Infinite_set"
+    },
+    {
+      "title": "Britannica – Infinity (Mathematics)",
+      "url": "https://www.britannica.com/science/infinity-mathematics"
+    },
+    {
+      "title": "Cambridge University Press – Set Theory (Jech)",
+      "url": "https://www.springer.com/gp/book/9783540440855"
+    }
+  ],
+  "tags": [],
+  "details": [],
+  "content": "Infinitary Concepts encompass the formal treatment of the infinite in mathematics: completed infinite collections, infinitely long expressions, and operations extending beyond any finite bound. Far from heuristic devices, these constructs—from infinite cardinals and ordinals to series, limits, and infinitary logics—form the backbone of set theory, analysis, topology, and model theory, while stirring profound debates on the nature of mathematical reality.",
+  "sections": [
+    {
+      "title": "Actual vs. Potential Infinity",
+      "content": "The ancient distinction contrasts **potential infinity** (an unending process, like generating successive natural numbers) with **actual infinity** (completed totalities, such as the set of all naturals). Modern axiomatic set theory embraces actual infinities, treating infinite sets as well-defined objects that can be compared, manipulated, and organized into hierarchies."
+    },
+    {
+      "title": "Transfinite Numbers: Ordinals and Cardinals",
+      "content": "Cantor’s theory introduces **ordinals**—well-ordered types extending beyond finite orderings—and **cardinals**—measures of set size up to bijection. Transfinite recursion defines arithmetic on these numbers, leading to rich hierarchies (ω, ω₁, ω₂, …) and deep questions like the Continuum Hypothesis and the role of large cardinals in the set-theoretic universe."
+    },
+    {
+      "title": "Infinitary Operations in Analysis and Algebra",
+      "content": "Infinite sums (series), products, limits, and closures are ubiquitous in analysis. Abstract algebra uses direct sums and products over infinite index sets. Formalizing these demands topological or order-theoretic frameworks to handle convergence, completeness, and universal constructions in categories and modules."
+    },
+    {
+      "title": "Infinitary Logics and Languages",
+      "content": "Infinitary logics L_{κ,λ} allow conjunctions and disjunctions of length < κ and quantification over < λ variables. They extend expressivity beyond first-order logic but generally sacrifice properties like compactness and decidability. In model theory, these logics enable characterizations of structures unreachable by finitary means."
+    },
+    {
+      "title": "Set-Theoretic Foundations and Large Cardinals",
+      "content": "While Zermelo–Fraenkel set theory (ZFC) codifies most infinite constructions, **forcing** and **inner model** techniques explore the independence of statements like the Continuum Hypothesis. **Large cardinal axioms** assert the existence of strong infinities (measurable, supercompact), calibrating the strength of set-theoretic principles and mapping the higher reaches of the infinite."
+    },
+    {
+      "title": "Philosophical and Ontological Reflections",
+      "content": "Infinitary concepts trigger debates on whether infinite entities have a Platonic existence or serve as mental constructs. Paradoxes (Hilbert’s Hotel, Galileo’s paradox) reveal the counterintuitive nature of the infinite, prompting inquiries into the coherence and meaning of completed infinities in mathematics and beyond."
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+    "name": "node-api-tests",
+    "version": "1.0.0",
+    "description": "Test suite for Node API at http://localhost:3000",
+    "scripts": {
+      "test": "NODE_OPTIONS=--experimental-vm-modules jest --runInBand"
+    },
+    "devDependencies": {
+      "jest": "^29.0.0",
+      "supertest": "^6.3.3"
+    },
+    "jest": {
+      "testEnvironment": "node",
+      "transform": {}
+    }
+  }
+  

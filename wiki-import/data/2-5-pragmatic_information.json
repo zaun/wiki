@@ -1,0 +1,51 @@
+{
+    "title": "Pragmatic Information",
+    "parentTitle": "Informational",
+    "aliases": [
+        "Contextual Information",
+        "Functional Information"
+    ],
+    "links": [
+        {
+            "title": "Claude E. Shannon & Warren Weaver — The Mathematical Theory of Communication",
+            "url": "https://archive.org/details/mathematicaltheo00shan"
+        },
+        {
+            "title": "Stanford Encyclopedia of Philosophy — Pragmatics",
+            "url": "https://plato.stanford.edu/entries/pragmatics/"
+        },
+        {
+            "title": "Luciano Floridi — The Philosophy of Information",
+            "url": "https://oxford.universitypressscholarship.com/view/10.1093/019823659X.001.0001/acprof-9780198236598"
+        },
+        {
+            "title": "Internet Encyclopedia of Philosophy — Information",
+            "url": "https://iep.utm.edu/information/"
+        }
+    ],
+    "tags": [],
+    "details": [],
+    "content": "Pragmatic information refers to the impact that communicated data has on an agent’s beliefs, decisions, or actions. Whereas syntactic information measures the structure of signals and semantic information measures truth‑bearing content, pragmatic information focuses on utility and relevance—how information changes the state of knowledge or behavior of a receiver in a given context.",
+    "sections": [
+        {
+            "title": "Definition and Scope",
+            "content": "Pragmatic information is defined by its function: it is that portion of a message which influences an agent’s decision‑making or behavior. It transcends mere decoding or truth assessment, emphasizing instead how data is interpreted and used in specific contexts. Key factors include relevance, timeliness, and the goals or needs of the receiver."
+        },
+        {
+            "title": "Measurement and Formal Models",
+            "content": "Formal approaches to pragmatic information extend Shannon’s framework by incorporating utility functions or decision‑theoretic criteria. Measures may weight bits according to their expected value to the receiver—higher weight for data that significantly alters optimal choices. Game‑theoretic and Bayesian models often serve as bases for quantifying pragmatic impact."
+        },
+        {
+            "title": "Context and Relevance",
+            "content": "Context determines what counts as pragmatically informative: the same message can carry high utility for one agent and none for another. Relevance hinges on shared background knowledge, current goals, and situational parameters. Effective communication thus requires alignment of sender and receiver contexts and affordances."
+        },
+        {
+            "title": "Applications and Challenges",
+            "content": "Pragmatic information underpins fields such as human–computer interaction, decision support systems, and adaptive learning environments. Designing interfaces or alerts that present only highly relevant data improves efficiency and reduces cognitive overload. Challenges include modeling receiver preferences, dynamic contexts, and unintended side‑effects of information flows."
+        },
+        {
+            "title": "Future Directions",
+            "content": "Advances in AI and personalized systems promise more refined delivery of pragmatic information—tailoring content to individual needs in real time. Ethical considerations arise around manipulation, privacy, and the boundary between persuasion and autonomy, highlighting the need for transparent models of pragmatic impact."
+        }
+    ]
+}

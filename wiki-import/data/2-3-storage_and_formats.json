@@ -1,0 +1,51 @@
+{
+    "title": "Storage & Formats",
+    "parentTitle": "Informational",
+    "aliases": [
+        "Information Storage",
+        "Data Formats"
+    ],
+    "links": [
+        {
+            "title": "ISO/IEC 11179 — Metadata Registries",
+            "url": "https://www.iso.org/standard/44898.html"
+        },
+        {
+            "title": "IETF — RFC 4180: Common Format and MIME Type for CSV Files",
+            "url": "https://www.rfc-editor.org/rfc/rfc4180.html"
+        },
+        {
+            "title": "ECMA International — ECMA‑404: The JSON Data Interchange Standard",
+            "url": "https://www.ecma-international.org/publications-and-standards/standards/ecma-404/"
+        },
+        {
+            "title": "ISO/IEC 14496‑12: MPEG‑4 Part 12: ISO Base Media File Format",
+            "url": "https://www.iso.org/standard/68960.html"
+        }
+    ],
+    "tags": [],
+    "details": [],
+    "content": "Information persists only if it can be stored in media and represented according to well‑defined formats. Storage media range from physical substrates—magnetic disks, optical disks, solid‑state modules—to purely virtual repositories like object stores and block devices. Formats specify how bits encode structure and meaning, whether in plain text, binary containers, or self‑describing schemas.",
+    "sections": [
+        {
+            "title": "Physical Storage Media",
+            "content": "Traditional media include magnetic tape and disk platters, which record bits via magnetization patterns, and optical discs that use pits and lands etched into a substrate. Solid‑state drives store charge in flash cells, offering high throughput and low latency. Each medium exhibits trade‑offs in capacity, durability, access speed, and cost per bit."
+        },
+        {
+            "title": "File Formats and Container Structures",
+            "content": "File formats define how data is organized on storage: plain‑text formats like CSV (RFC 4180) enable human readability and tool interoperability; binary formats like MPEG‑4 Part 12 (ISO/IEC 14496‑12) provide compact, multiplexed containers for audio, video, and metadata. Container formats wrap multiple streams and metadata into a single file, supporting indexing, streaming, and editing."
+        },
+        {
+            "title": "Data Structures and Schemas",
+            "content": "Beyond raw files, data structures impose logical organization: relational tables with fixed schemas enable SQL querying; hierarchical structures like XML trees support nested records; key‑value stores offer schema‑less flexibility; and graph databases encode nodes and edges for highly connected data. Schemas—formal definitions of fields, types, and relationships—ensure consistency and validation."
+        },
+        {
+            "title": "Self‑Describing and Metadata‑Driven Formats",
+            "content": "Self‑describing formats embed schema information alongside data. JSON (ECMA‑404) and XML include tags and attributes that convey semantics, while Protocol Buffers and Apache Avro use external schema registries (e.g., ISO/IEC 11179) to govern serialization. Metadata registries catalog these schemas and their versions, enabling governance and evolution without data loss."
+        },
+        {
+            "title": "Emerging Paradigms",
+            "content": "New storage paradigms blend decentralization and content‑addressability. Distributed ledger technologies replicate data across peers for immutability; IPFS uses content hashes as identifiers to enable deduplication and integrity checking; and object‑storage APIs abstract underlying media behind scalable, versioned buckets. Semantic formats (RDF, OWL) layer ontologies atop data to support machine reasoning and linked data."
+        }
+    ]
+}

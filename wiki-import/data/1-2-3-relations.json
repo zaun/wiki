@@ -1,0 +1,69 @@
+{
+  "title": "Relations",
+  "parentTitle": "Algebraic and Order Structures",
+  "aliases": [
+    "Binary Relation",
+    "Relational Structure",
+    "N‑ary Relation"
+  ],
+  "links": [
+    {
+      "title": "Stanford Encyclopedia of Philosophy – Relations",
+      "url": "https://plato.stanford.edu/entries/relations/"
+    },
+    {
+      "title": "Encyclopedia of Mathematics – Relation",
+      "url": "https://encyclopediaofmath.org/wiki/Relation"
+    },
+    {
+      "title": "Britannica – Relation (Mathematics)",
+      "url": "https://www.britannica.com/science/relation-mathematics"
+    },
+    {
+      "title": "nLab – Relation",
+      "url": "https://ncatlab.org/nlab/show/relation"
+    },
+    {
+      "title": "MIT OpenCourseWare – Discrete Mathematics: Relations",
+      "url": "https://ocw.mit.edu/courses/6-042j-mathematics-for-computer-science-spring-2015/pages/lecture-notes/"
+    },
+    {
+      "title": "Springer – Relations and Graphs",
+      "url": "https://link.springer.com/book/10.1007/978-3-642-68785-1"
+    }
+  ],
+  "tags": [],
+  "details": [],
+  "content": "Relations are abstract connectors that specify how elements of one or more sets associate with each other. As subsets of Cartesian products, they generalize functions, orders, and equivalences. Whether binary (pairs) or n‑ary (tuples), relations provide the formal backbone for logic, algebraic structures, data modeling, and graph theory—existing purely as symbolic objects governed by set‑theoretic and logical rules.",
+  "sections": [
+    {
+      "title": "Formal Foundations",
+      "content": "A **binary relation** R over sets A and B is any subset R ⊆ A × B. We write (a,b) ∈ R to denote that a is related to b. The **domain** of R is {a ∈ A | ∃b: (a,b) ∈ R}, and the **range** is {b ∈ B | ∃a: (a,b) ∈ R}. An **n‑ary relation** on A₁,…,Aₙ is a subset of A₁ ×…× Aₙ. Relations serve as interpretations of predicate symbols in logic and as the basis for defining functions (single‑valued, total relations)."
+    },
+    {
+      "title": "Algebra of Relations",
+      "content": "Relations admit operations analogous to set and function operations:\n\n- **Composition**: R ∘ S relates x to z if ∃y: (x,y)∈S and (y,z)∈R.\n- **Converse (Inverse)**: R⁻¹ = {(b,a) | (a,b) ∈ R}.\n- **Identity**: id_A = {(a,a) | a ∈ A}.\n- **Relational Power**: Rⁿ = R ∘ R ∘ … ∘ R (n times).\n- **Transitive Closure**: R* = ⋃_{n≥1} Rⁿ, capturing reachability in graphs."
+    },
+    {
+      "title": "Properties and Classification",
+      "content": "Key properties define important classes of relations:\n\n- **Reflexivity**: ∀a, (a,a) ∈ R.\n- **Symmetry**: (a,b) ∈ R ⇒ (b,a) ∈ R.\n- **Antisymmetry**: (a,b) ∈ R and (b,a) ∈ R ⇒ a = b.\n- **Transitivity**: (a,b) ∈ R and (b,c) ∈ R ⇒ (a,c) ∈ R.\n\nFrom these come:\n- **Equivalence Relations** (reflexive, symmetric, transitive),\n- **Partial Orders** (reflexive, antisymmetric, transitive),\n- **Total Orders** (partial orders that are connex),\n- **Preorders** (reflexive, transitive without antisymmetry)."
+    },
+    {
+      "title": "Representations and Modeling",
+      "content": "Binary relations can be visualized as **directed graphs** (nodes = elements, edges = pairs). **Adjacency matrices** over {0,1} encode relations as Boolean matrices, enabling algebraic manipulation. In logic, relations correspond to predicate interpretations in structures, and in database theory, tables instantiate n‑ary relations with named columns."
+    },
+    {
+      "title": "Relational Algebra and Databases",
+      "content": "In the relational model, **relations** (tables) are central. Operations include:\n\n- **Selection** (σ): filtering rows.\n- **Projection** (π): choosing columns.\n- **Join**: combining tables on matching attributes.\n- **Set operations**: union, intersection, difference.\n\nRelational algebra provides a declarative framework for querying and transforming data, forming the theoretical basis for SQL and modern database systems."
+    },
+    {
+      "title": "Applications in Logic and Computer Science",
+      "content": "Relations model state transitions in automata and state machines, capture type–value associations in semantics, and define access control in security policies. **Binary relation properties** guide algorithm design (e.g., graph reachability, topological sort), and **constraint satisfaction** problems often reduce to checking properties of relational instances."
+    },
+    {
+      "title": "Ontological and Philosophical Dimensions",
+      "content": "Philosophically, relations raise questions about their reality: **relationism** holds that relations are fundamental constituents of reality, whereas **substantivalism** treats relations as dependent on relata. In mathematics, debates around relational versus set‑based foundations probe whether relations are primitive or reducible to set membership and Cartesian products."
+    }
+  ],
+  "children": []
+}

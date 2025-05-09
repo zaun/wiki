@@ -1,0 +1,67 @@
+{
+    "title": "Bag",
+    "parentTitle": "Data Structures",
+    "aliases": [
+        "Multiset",
+        "Mset"
+    ],
+    "links": [
+        {
+            "title": "Encyclopedia of Mathematics – Multiset",
+            "url": "https://encyclopediaofmath.org/wiki/Multiset"
+        },
+        {
+            "title": "Wolfram MathWorld – Multiset",
+            "url": "https://mathworld.wolfram.com/Multiset.html"
+        },
+        {
+            "title": "Project Euclid – Multiset Theory",
+            "url": "https://projecteuclid.org/journals/notre-dame-journal-of-formal-logic/volume-30/issue-1/Multiset-theory/10.1305/ndjfl/1093634995"
+        },
+        {
+            "title": "Wikipedia – Multiset",
+            "url": "https://en.wikipedia.org/wiki/Multiset"
+        },
+        {
+            "title": "NIST DADS – Multiset",
+            "url": "https://xlinux.nist.gov/dads/HTML/multiset.html"
+        },
+        {
+            "title": "Springer – Mathematics of Multisets",
+            "url": "https://link.springer.com/chapter/10.1007/3-540-45523-x_17"
+        }
+    ],
+    "tags": [],
+    "details": [],
+    "content": "A Bag (or multiset) ADT represents a collection of elements where duplicates are allowed and order is irrelevant. Unlike a set, each element in a bag carries a multiplicity (count). The Bag interface specifies operations for inserting, removing, and querying multiplicities, abstracting away from any particular storage scheme while preserving multiset semantics.",
+    "sections": [
+        {
+            "title": "Concept and Motivation",
+            "content": "Bags generalize sets by tracking how many times each element appears. They model frequency‑based data (histograms, term counts in text), multiset rewriting systems, and polynomial collections. By focusing on counts rather than positions, bags capture use cases where repetition matters but order does not."
+        },
+        {
+            "title": "ADT Interface and Axiomatic Laws",
+            "content": "A Bag supports operations:\n\n- **add(x)**: increment the count of x by one (or by k).\n- **remove(x)**: decrement the count of x (removing if count reaches zero).\n- **count(x)**: return the current multiplicity of x (zero if absent).\n- **size()**: total number of elements (sum of all multiplicities).\n- **distinctSize()**: number of distinct elements.\n- **union(B2)**, **intersection(B2)**, **difference(B2)**: multiset operations combining or subtracting counts element‑wise.\n\nThese satisfy algebraic laws such as commutativity and associativity of union (with multiplicity addition) and idempotence of intersection on distinct elements."
+        },
+        {
+            "title": "Implementations and Data Structures",
+            "content": "Common implementations store a mapping from keys to counts:\n\n- **Hash table**: O(1) average‑case add/remove/count, with dynamic resizing.\n- **Balanced search tree**: O(log n) worst‑case operations, supports ordered traversal of distinct elements.\n- **Sorted array of pairs**: binary search for count, O(n) update but low memory overhead.\n- **List of pairs**: simple but O(n) lookup and update.\n\nPersistent functional variants use association lists or finger trees augmented with counts."
+        },
+        {
+            "title": "Complexity and Performance",
+            "content": "Hash‑based bags offer O(1) expected time for add/count/remove, with O(n) worst case under collisions. Tree‑based bags guarantee O(log n) for these operations. Union and intersection take O(n₁ + n₂) by merging distinct‑element sequences or by iterating over the smaller bag’s entries."
+        },
+        {
+            "title": "Algebraic Properties and Operations",
+            "content": "Multiset union adds multiplicities: (A ∪ B)(x) = A(x) + B(x). Intersection takes the minimum: (A ∩ B)(x) = min(A(x), B(x)). Difference subtracts counts non‑negatively: (A – B)(x) = max(0, A(x) – B(x)). The bag multiplication (A ⊕ B) and power operations extend these definitions to repeated union or scaling of multiplicities."
+        },
+        {
+            "title": "Applications in Computing and Mathematics",
+            "content": "Bags underpin term frequency analysis in information retrieval, resource allocation modeling, combinatorial enumeration (multinomial coefficients), and multiset rewriting in formal language theory. They also appear in probabilistic data structures (multiset sketches) for approximate frequency counts in streaming algorithms."
+        },
+        {
+            "title": "Philosophical and Theoretical Considerations",
+            "content": "Multisets prompt reflection on identity and indistinguishability: duplicates share identity but differ in count. They connect to foundational debates in combinatorics about labeled vs. unlabeled objects, and to ontology in abstract mathematics concerning the nature of collection vs. repetition."
+        }
+    ]
+}

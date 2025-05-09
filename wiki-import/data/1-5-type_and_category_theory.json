@@ -1,0 +1,51 @@
+{
+  "title": "Type and Category Theory",
+  "parentTitle": "Abstract",
+  "aliases": [
+    "Type Theory",
+    "Category Theory"
+  ],
+  "links": [
+    {
+      "title": "Stanford Encyclopedia of Philosophy — Type Theory",
+      "url": "https://plato.stanford.edu/entries/type-theory/"
+    },
+    {
+      "title": "Internet Encyclopedia of Philosophy — Category Theory",
+      "url": "https://iep.utm.edu/category-theory/"
+    },
+    {
+      "title": "Saunders Mac Lane — Categories for the Working Mathematician",
+      "url": "https://www.springer.com/gp/book/9780387984032"
+    },
+    {
+      "title": "Per Martin‐Löf — An Intuitionistic Theory of Types",
+      "url": "https://link.springer.com/chapter/10.1007/3-540-15950-0_6"
+    }
+  ],
+  "tags": [],
+  "details": [],
+  "content": "Type theory and category theory are foundational frameworks in mathematics and computer science that formalize structures and relationships. Type theory provides a system for classifying and constraining entities via types, supporting rigorous reasoning about functions, propositions, and data. Category theory abstracts mathematical concepts into objects and morphisms, revealing deep structural parallels across diverse domains.",
+  "sections": [
+    {
+      "title": "Historical Origins",
+      "content": "Type theory emerged in the early 20th century as a response to logical paradoxes in set theory, most notably through Bertrand Russell’s ramified theory of types. It was further developed by Alonzo Church in the lambda calculus and later by Per Martin‐Löf in intuitionistic type theory. Category theory was introduced by Samuel Eilenberg and Saunders Mac Lane in the 1940s to formalize relationships between algebraic topological constructions, quickly becoming a unifying language in modern mathematics."
+    },
+    {
+      "title": "Core Concepts in Type Theory",
+      "content": "Type theory classifies terms by types, ensuring that operations are applied only to compatible arguments. Key constructs include:\n\n• **Simple Types**: Basic building blocks for functions (A → B) and product types (A × B).\n• **Dependent Types**: Types that vary over values, enabling richer specifications (e.g., vectors of fixed length).\n• **Type Constructors**: Mechanisms to build new types (sum types, inductive types).\n• **Curry–Howard Correspondence**: A correspondence between proofs and programs, viewing propositions as types and proofs as inhabitants."
+    },
+    {
+      "title": "Core Concepts in Category Theory",
+      "content": "Category theory abstracts mathematical structures into objects and morphisms (arrows) that satisfy composition and identity laws. Central notions include:\n\n• **Functors**: Structure-preserving mappings between categories.\n• **Natural Transformations**: Morphisms between functors, capturing uniform transformations.\n• **Limits and Colimits**: Generalizations of constructions like products, coproducts, and quotients.\n• **Monads**: Endofunctors with unit and multiplication, used in semantics and computational effects."
+    },
+    {
+      "title": "Interplay and Applications",
+      "content": "Type theory and category theory intersect in areas such as categorical semantics of programming languages, where types correspond to objects and programs to morphisms. Dependent type theories find categorical models in locally cartesian closed categories. Applications span:\n\n• **Programming Languages**: Strongly typed languages (Haskell, Agda, Coq) leverage dependent and algebraic types.\n• **Formal Verification**: Proof assistants use type-theoretic foundations to verify software and mathematical proofs.\n• **Mathematical Unification**: Category theory provides a common language across algebra, topology, and logic."
+    },
+    {
+      "title": "Future Directions",
+      "content": "Ongoing research explores homotopy type theory, blending homotopy theory and type theory to model higher-dimensional structures. Category-theoretic approaches to quantum computing, database theory, and systems biology continue to uncover deep structural insights, affirming these frameworks’ roles as abstract yet practical tools."
+    }
+  ]
+}

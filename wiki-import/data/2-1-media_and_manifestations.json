@@ -1,0 +1,47 @@
+{
+    "title": "Media and Manifestations",
+    "parentTitle": "Informational",
+    "aliases": [
+        "Informational Media",
+        "Manifestations of Information"
+    ],
+    "links": [
+        {
+            "title": "National Center for Biotechnology Information — FASTA Format",
+            "url": "https://www.ncbi.nlm.nih.gov/guide/howto/fasta/"
+        },
+        {
+            "title": "Joint Photographic Experts Group — JPEG Standard",
+            "url": "https://jpeg.org/jpeg/index.html"
+        },
+        {
+            "title": "International Telecommunication Union — ITU‑T Recommendation G.711 (PCM)",
+            "url": "https://www.itu.int/rec/T-REC-G.711"
+        },
+        {
+            "title": "WHATWG — HTML Living Standard",
+            "url": "https://html.spec.whatwg.org"
+        }
+    ],
+    "tags": [],
+    "details": [],
+    "content": "Information requires a medium in which it can be instantiated, preserved, and transmitted. These media range from molecular structures in living organisms to electronic and electromagnetic systems in engineered devices. Though the core patterns remain abstract, the particular characteristics of each medium—its noise profile, capacity, and fidelity—shape how information is encoded, stored, and retrieved.\n\nManifestations of information reflect a trade‑off between permanence, capacity, and accessibility. Biological media optimize for replication and repair, digital media emphasize random access and error correction, and analog media permit continuous representation of natural phenomena. Hybrid techniques blend these approaches, sampling analog phenomena and encoding them digitally to balance fidelity with robustness.",
+    "sections": [
+        {
+            "title": "Biological Media",
+            "content": "In living systems, information is encoded in sequences of nucleotides within DNA and RNA molecules. The four-letter alphabet of nucleotide bases carries instructions for protein synthesis, development, and cellular regulation. Cellular machinery uses complementary base pairing to replicate and transcribe this information, achieving remarkable fidelity through proofreading enzymes and repair pathways.\n\nEpigenetic markers—chemical modifications to DNA or its associated proteins—provide an additional layer of informational control, influencing gene expression without altering the underlying sequence. These dynamic modifications enable organisms to adapt gene regulation in response to environmental cues, embedding contextual information alongside genetic code."
+        },
+        {
+            "title": "Digital Media",
+            "content": "Digital media represent information as discrete symbols, typically binary digits (bits). Files such as images (JPEG), audio (MP3), and text (HTML) rely on standardized formats and metadata conventions to ensure consistent interpretation across platforms. Error‑detecting and error‑correcting codes are integrated into storage and transmission protocols to maintain integrity in the presence of noise.\n\nRandom‑access memory and solid‑state storage allow rapid retrieval and modification of digital content, supporting applications from databases to interactive multimedia. Versioning systems track changes over time, embedding historical context within the data itself and enabling collaborative workflows."
+        },
+        {
+            "title": "Analog Media",
+            "content": "Analog media encode information in continuous variations of a physical quantity. Sound waves, light intensity, and electrical voltage can directly carry analog signals, as in vinyl records, film photography, and traditional radio broadcasts. While offering high resolution in principle, analog formats are susceptible to degradation, distortion, and cumulative noise.\n\nAnalog transmission channels—such as telephone lines or broadcast airwaves—lack the built‑in error correction of digital systems, necessitating amplification and equalization techniques. Nonetheless, analog media remain valued for their natural representation of continuous phenomena and their aesthetic qualities in art and music."
+        },
+        {
+            "title": "Hybrid and Transformative Techniques",
+            "content": "Hybrid methods sample analog signals at discrete intervals—pulse‑code modulation (PCM) in telephony, for example—converting continuous waveforms into digital sequences. Compression algorithms such as JPEG and MP3 apply perceptual models to reduce data rates by discarding information deemed imperceptible to human senses, blending signal processing with cognitive insights.\n\nTransformative encodings—cryptographic, steganographic, or markup‑based—further modify information to serve security, secrecy, or structural needs. XML and HTML wrap content in semantic tags, enabling machines to interpret and manipulate document structure, while encryption algorithms scramble bit patterns to protect confidentiality and authenticity."
+        }
+    ]
+}

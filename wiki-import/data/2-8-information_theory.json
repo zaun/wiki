@@ -1,0 +1,55 @@
+{
+    "title": "Information Theory",
+    "parentTitle": "Informational",
+    "aliases": [
+        "Shannon Theory",
+        "Communication Theory"
+    ],
+    "links": [
+        {
+            "title": "Claude E. Shannon — A Mathematical Theory of Communication",
+            "url": "https://archive.org/details/bstj27-3-379"
+        },
+        {
+            "title": "Thomas M. Cover & Joy A. Thomas — Elements of Information Theory",
+            "url": "https://www.wiley.com/en-us/Elements+of+Information+Theory%2C+2nd+Edition-p-9780471241959"
+        },
+        {
+            "title": "David J.C. MacKay — Information Theory, Inference, and Learning Algorithms",
+            "url": "https://www.inference.org.uk/mackay/itila/book.html"
+        },
+        {
+            "title": "ITU‑T Recommendation G.171: Transmission Characteristics",
+            "url": "https://www.itu.int/rec/T-REC-G.171"
+        }
+    ],
+    "tags": [],
+    "details": [],
+    "content": "Information Theory is the mathematical study of quantifying, encoding, transmitting, and decoding information. Founded by Claude Shannon, it provides fundamental limits on data compression, reliable communication over noisy channels, and measures of information content. The core concepts—entropy, mutual information, and channel capacity—offer rigorous tools for understanding trade‑offs between rate, reliability, and complexity in communication systems.",
+    "sections": [
+        {
+            "title": "Fundamental Concepts",
+            "content": "Entropy (H) quantifies the average uncertainty or information content in a random variable. Defined as H(X) = -∑x p(x) log₂ p(x), it sets the minimal average number of bits required to represent outcomes. Joint entropy, conditional entropy, and mutual information extend this measure to multiple variables, capturing structure and dependence among sources."
+        },
+        {
+            "title": "Source Coding and Compression",
+            "content": "Source coding theorems establish the limits of lossless and lossy compression. Shannon’s source coding theorem states that for a discrete memoryless source, no code can achieve an average length shorter than the source entropy. Practical algorithms—Huffman coding and arithmetic coding—approach these bounds, while rate–distortion theory characterizes the trade‑off between compression rate and reconstruction fidelity."
+        },
+        {
+            "title": "Channel Capacity and Noisy Channels",
+            "content": "Channel capacity (C) defines the maximum reliable communication rate over a given channel. For a discrete memoryless channel, Shannon’s channel coding theorem asserts that any rate below C can be achieved with arbitrarily low error using sufficiently long codes. Capacity formulas such as C = max_{p(x)} I(X;Y) guide the design of error‑correcting codes like Turbo codes and LDPC codes."
+        },
+        {
+            "title": "Error‑Correcting Codes",
+            "content": "Error‑correcting codes introduce redundancy to detect and correct errors during transmission. Block codes (Reed–Solomon and BCH) and convolutional codes (with Viterbi decoding) provide classical solutions, while modern capacity‑approaching codes (LDPC and Turbo) leverage iterative decoding. Code design balances error performance, complexity, and latency to meet system requirements."
+        },
+        {
+            "title": "Network Information Theory",
+            "content": "Extending point‑to‑point results, network information theory studies multi‑user scenarios such as multiple access channels, broadcast channels, and relay networks. Achievable rate regions and rigorous bounds (for example, the Slepian–Wolf theorem for distributed source coding) inform the design of complex communication networks and cooperative strategies."
+        },
+        {
+            "title": "Applications and Future Directions",
+            "content": "Beyond classical communication, information theory underpins data science, machine learning, and cryptography. Concepts like the information bottleneck and channel coding inform neural network regularization and secure transmission. Emerging research explores information‑theoretic limits in quantum communication, biological signaling, and socio‑technical systems."
+        }
+    ]
+}

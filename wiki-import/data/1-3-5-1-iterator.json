@@ -1,0 +1,68 @@
+{
+    "title": "Iterator",
+    "parentTitle": "Concurrency Primitives",
+    "aliases": [
+        "Cursor",
+        "Enumerator",
+        "Stream"
+    ],
+    "links": [
+        {
+            "title": "Design Patterns – Iterator Pattern",
+            "url": "https://sourcemaking.com/design_patterns/iterator"
+        },
+        {
+            "title": "Wikipedia – Iterator Pattern",
+            "url": "https://en.wikipedia.org/wiki/Iterator_pattern"
+        },
+        {
+            "title": "Oracle – Java Iterator Interface",
+            "url": "https://docs.oracle.com/javase/8/docs/api/java/util/Iterator.html"
+        },
+        {
+            "title": "Microsoft Docs – IEnumerator Interface",
+            "url": "https://docs.microsoft.com/dotnet/api/system.collections.ienumerator"
+        },
+        {
+            "title": "Python Documentation – Iterator Types",
+            "url": "https://docs.python.org/3/library/stdtypes.html#iterator-types"
+        },
+        {
+            "title": "MIT OpenCourseWare – Data Structures (6.006) Lecture on Iterators",
+            "url": "https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/pages/lecture-notes/"
+        }
+    ],
+    "tags": [],
+    "details": [],
+    "content": "An Iterator ADT provides a uniform way to traverse the elements of a container without exposing its underlying representation. By encapsulating the notion of a “current position” and advancing through a sequence, iterators decouple algorithms from data structures, enabling generic processing pipelines (filter, map, reduce) and supporting both finite and potentially infinite collections.",
+    "sections": [
+        {
+            "title": "Purpose and Motivation",
+            "content": "Iterators abstract the traversal mechanism: they let clients visit each element of a container in turn, regardless of whether the container is an array, linked list, tree, or graph. This separation of concerns fosters reusable algorithms and simplifies container implementations by localizing traversal logic."
+        },
+        {
+            "title": "Core Interface and Semantics",
+            "content": "Typical methods include:\n\n- **hasNext()** / **has_more()**: returns whether another element remains.\n- **next()** / **get()**: returns the current element and advances the iterator.\n- **peek()** (optional): inspects the next element without advancing.\n- **remove()** / **erase()** (optional): removes the last returned element from the underlying container.\n\nThe iterator maintains internal state (position, end marker) but does not permit direct container modifications except via its own removal method."
+        },
+        {
+            "title": "Kinds of Iterators",
+            "content": "Iterators come in variants:\n\n- **External versus Internal**: External iterators push control to the client (`while (it.hasNext())`), while internal iterators let the container drive traversal via callbacks or visitor functions.\n- **Bidirectional and Random‑Access**: Some iterators support moving backward or jumping by offset, enabling algorithms like binary search.\n- **Stream Generators**: Lazy iterators (generators) produce values on demand, suitable for infinite sequences or large data streams."
+        },
+        {
+            "title": "Implementation Strategies",
+            "content": "Implementations vary by container:\n\n- **Index‑based**: wrap an array index, O(1) access and advance.\n- **Pointer‑based**: store a pointer/reference to a node in a linked structure, moving to `next` or `child` pointers.\n- **Stack‑based for trees/graphs**: maintain an explicit stack or queue to simulate recursion for depth‑first or breadth‑first traversal.\n- **Cursor objects**: lightweight handles into database or file streams, fetching batches of records lazily."
+        },
+        {
+            "title": "Composability and Functional Patterns",
+            "content": "Iterators form the foundation of functional pipelines: `map`, `filter`, and `reduce` can be implemented as iterator adapters that wrap an underlying iterator, applying transformations lazily. This compositionality underlies stream APIs in modern languages, enabling declarative data processing without intermediate collections."
+        },
+        {
+            "title": "Concurrency and Fail‑Fast Behavior",
+            "content": "In multithreaded contexts, iterators may detect concurrent modifications and throw exceptions (fail‑fast). Alternatively, snapshot or weakly consistent iterators provide isolation or eventual consistency, trading up‑to‑date views for higher throughput in concurrent collections."
+        },
+        {
+            "title": "Applications and Best Practices",
+            "content": "Iterators appear in virtually every collection library and database cursor interface. Best practices include checking `hasNext()` before `next()`, avoiding modification of the container outside iterator APIs, and using bidirectional or random‑access iterators only when needed to maintain performance guarantees."
+        }
+    ]
+}

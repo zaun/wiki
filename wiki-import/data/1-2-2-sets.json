@@ -1,0 +1,68 @@
+{
+  "title": "Sets (Mathematics)",
+  "parentTitle": "Algebraic and Order Structures",
+  "aliases": [
+    "Set Theory",
+    "Collection"
+  ],
+  "links": [
+    {
+      "title": "Stanford Encyclopedia of Philosophy – Set Theory",
+      "url": "https://plato.stanford.edu/entries/set-theory/"
+    },
+    {
+      "title": "Encyclopedia of Mathematics – Set",
+      "url": "https://encyclopediaofmath.org/wiki/Set"
+    },
+    {
+      "title": "Britannica – Set (Mathematics)",
+      "url": "https://www.britannica.com/science/set-mathematics"
+    },
+    {
+      "title": "nLab – Set",
+      "url": "https://ncatlab.org/nlab/show/set"
+    },
+    {
+      "title": "Springer – Set Theory and the Continuum Hypothesis (Devlin)",
+      "url": "https://link.springer.com/book/10.1007/978-1-4757-1641-6"
+    },
+    {
+      "title": "MIT OpenCourseWare – Introduction to Set Theory",
+      "url": "https://ocw.mit.edu/courses/18-514-seminar-in-theory-of-numbers-fall-2013/lecture-notes/"
+    }
+  ],
+  "tags": [],
+  "details": [],
+  "content": "Sets are the most basic abstract entities in mathematics: unordered collections of distinct elements. They underpin virtually every area of formal reasoning by providing a uniform framework for grouping, comparing, and constructing objects. As ideal constructs, sets exist only as symbolic aggregates—defined by membership and governed by axioms—yet they give rise to rich hierarchies of size, structure, and logical power.",
+  "sections": [
+    {
+      "title": "Basic Concepts and Notation",
+      "content": "A set \\(A\\) is defined by its members: for any object \\(x\\), either \\(x \\in A\\) or \\(x \\notin A\\). Fundamental notions include the empty set (\\(\\emptyset\\)), singleton sets, and comprehension notation (\\(\\{x: P(x)\\}\\)). Extensionality asserts that two sets are equal exactly when they have the same members."
+    },
+    {
+      "title": "Operations and Set Algebra",
+      "content": "Sets admit algebraic operations:\n\n- **Union** (\\(A \\cup B\\)) and **Intersection** (\\(A \\cap B\\)),\n- **Difference** (\\(A \\setminus B\\)) and **Complement** (relative to a universe),\n- **Power Set** (\\(\\mathcal{P}(A)\\)) of all subsets,\n- **Cartesian Product** (\\(A \\times B\\)) of ordered pairs.\n\nThese operations satisfy laws analogous to Boolean algebra and are foundational in probability, logic, and topology."
+    },
+    {
+      "title": "Cardinality and the Infinite",
+      "content": "Sets may be **finite** or **infinite**. Two sets have the same **cardinality** if there is a bijection between them. Cantor’s diagonal argument shows that the set of natural numbers (\\(\\aleph_0\\)) is strictly smaller than the continuum of real numbers (\\(2^{\\aleph_0}\\)). Infinite cardinal arithmetic and ordinals classify and compare sizes of infinite collections."
+    },
+    {
+      "title": "Large‑Cardinal Hypotheses",
+      "content": "Large‑cardinal hypotheses posit the existence of strong infinite cardinals beyond those provable in ZFC—for example, inaccessible, Mahlo, measurable, and supercompact cardinals. These hypotheses often transcend standard set‑theoretic axioms and have deep implications for the structure of the set‑theoretic universe, impacting questions of determinacy, inner models, and the hierarchy of consistency strengths."
+    },
+    {
+      "title": "Paradoxes and Axiomatic Foundations",
+      "content": "Naive comprehension (forming \\(\\{x: P(x)\\}\\)) leads to paradoxes such as Russell’s. Axiomatic set theory (ZF/ZFC) replaces unrestricted comprehension with a schema of Separation, along with axioms like Replacement, Foundation, and Choice. This framework restores consistency and supports construction of the cumulative hierarchy of sets."
+    },
+    {
+      "title": "Applications in Mathematics and Computation",
+      "content": "Sets serve as the basic universe in most formal systems: functions are sets of ordered pairs, relations are subsets of Cartesian products, and structures (groups, spaces) are sets endowed with additional operations. In computer science, data types and databases model collections as sets, while formal specification languages use set comprehension for declarative queries."
+    },
+    {
+      "title": "Philosophical and Ontological Reflections",
+      "content": "Debates about sets probe their ontological status: **Platonists** view sets as existing timelessly, **nominalists** as mere linguistic constructs, and **structuralists** as positions within a relational network. Questions about the legitimacy of large cardinal axioms and the nature of the set‑theoretic universe remain central to the philosophy of mathematics."
+    }
+  ],
+  "children": []
+}

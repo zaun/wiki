@@ -1,0 +1,67 @@
+{
+    "title": "Parametric Type",
+    "parentTitle": "Type-System Constructs",
+    "aliases": [
+        "Generic Type",
+        "Parametric Polymorphism"
+    ],
+    "links": [
+        {
+            "title": "Wikipedia – Parametric Polymorphism",
+            "url": "https://en.wikipedia.org/wiki/Parametric_polymorphism"
+        },
+        {
+            "title": "Wikipedia – Generic Programming",
+            "url": "https://en.wikipedia.org/wiki/Generic_programming"
+        },
+        {
+            "title": "Oracle – Java Generics",
+            "url": "https://docs.oracle.com/javase/tutorial/java/generics/"
+        },
+        {
+            "title": "Microsoft Docs – Generic Types in C#",
+            "url": "https://docs.microsoft.com/dotnet/csharp/programming-guide/generics/"
+        },
+        {
+            "title": "C++ Reference – Templates",
+            "url": "https://en.cppreference.com/w/cpp/language/templates"
+        },
+        {
+            "title": "Cambridge University Press – Types and Programming Languages (Pierce)",
+            "url": "https://www.cambridge.org/core/books/types-and-programming-languages/BCB1E1784090C1F3C30D1DB0BAF8D5F2"
+        }
+    ],
+    "tags": [],
+    "details": [],
+    "content": "Parametric types (or generics) abstract over one or more type parameters, defining data structures and functions uniformly for all instantiations. They enable code reuse, type safety, and abstraction by decoupling algorithms from specific data representations. As an ADT, a Parametric Type describes a family of related concrete types indexed by type arguments, without prescribing particular implementation strategies.",
+    "sections": [
+        {
+            "title": "Overview and Motivation",
+            "content": "Parametric types allow the definition of containers and algorithms that work for any element type—for example, a `List<T>` or `Map<K,V>`—without rewriting code for each variant. This reduces duplication, enhances type safety by catching mismatches at compile time, and promotes high‑level abstraction in library design."
+        },
+        {
+            "title": "Type Constructors and Parameterization",
+            "content": "Formally, a parametric type is a type constructor taking type arguments: if `F` is a constructor of kind `* → *`, then `F<int>` and `F<string>` are concrete types. Kinds classify type constructors (e.g., `*`, `* → *`, `(* → *) → *`), ensuring that parameterization is applied correctly."
+        },
+        {
+            "title": "Parametric Polymorphism and Uniform Behavior",
+            "content": "Parametric polymorphism guarantees that code using a type parameter behaves uniformly for all instantiations. Reynolds’s abstraction theorem formalizes this uniformity, leading to “free theorems” (Wadler) that derive program properties solely from type signatures."
+        },
+        {
+            "title": "Language Support and Implementation",
+            "content": "Languages implement parametric types via:\n\n- **Generics** (Java, C#, Rust): runtime type erasure or reification strategies.\n- **Templates** (C++): compile‑time code generation (monomorphization), yielding efficient specialized code.\n- **Type Inference** (ML, Haskell): Hindley–Milner inference automates parameter instantiation.\n\nTrade‑offs involve code size, performance, and runtime type information."
+        },
+        {
+            "title": "Parametricity and Free Theorems",
+            "content": "Parametricity implies that polymorphic functions cannot inspect or manipulate values beyond the structure dictated by their type. From a signature like `∀A. List<A> → List<A>`, one can derive that the function must reorder or filter elements but cannot fabricate new ones—this yields powerful correctness guarantees."
+        },
+        {
+            "title": "Practical Applications",
+            "content": "Parametric types underpin standard library containers (`List<T>`, `Set<E>`), serialization frameworks, APIs for dependency injection, and domain‑specific languages. They enable compile‑time checks for protocols and data schemas, and support building generic algorithms in sorting, searching, and transformation."
+        },
+        {
+            "title": "Theoretical Perspectives",
+            "content": "In category theory, parametric types correspond to endofunctors on the category of types, and parametric polymorphic functions to natural transformations. This perspective unifies generic programming with algebraic data type semantics and informs language design through universal properties."
+        }
+    ]
+}

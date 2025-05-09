@@ -1,0 +1,66 @@
+{
+    "title": "Graph",
+    "parentTitle": "Data Structures",
+    "aliases": [
+        "Network"
+    ],
+    "links": [
+        {
+            "title": "Encyclopedia of Mathematics – Graph",
+            "url": "https://encyclopediaofmath.org/wiki/Graph"
+        },
+        {
+            "title": "Britannica – Graph Theory",
+            "url": "https://www.britannica.com/science/graph-theory"
+        },
+        {
+            "title": "MIT OpenCourseWare – Introduction to Algorithms (6.006) – Lecture on Graphs",
+            "url": "https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/pages/lecture-notes/"
+        },
+        {
+            "title": "Wiley – Data Structures & Algorithms in Java (Goodrich, Tamassia & Goldwasser) – Chapter on Graphs",
+            "url": "https://www.wiley.com/en-us/Data+Structures+and+Algorithms+in+Java%2C+6th+Edition-p-9781118771334"
+        },
+        {
+            "title": "Springer – Network Flows: Theory, Algorithms, and Applications (Ahuja, Magnanti & Orlin)",
+            "url": "https://link.springer.com/book/10.1007/978-1-4612-0354-0"
+        },
+        {
+            "title": "ACM DL – Survey of Graph Data Management",
+            "url": "https://dl.acm.org/doi/10.1145/2806416"
+        }
+    ],
+    "tags": [],
+    "details": [],
+    "content": "A Graph ADT models a collection of **vertices** (nodes) connected by **edges** (links), capturing relationships in an abstract network. Graphs may be directed or undirected, weighted or unweighted, and can accommodate multiple edges or self‐loops depending on the specification. By defining operations for adding and removing vertices/edges, querying adjacency, and traversing connections, the Graph ADT provides a flexible interface for representing complex structures—from social networks to dependency graphs—without prescribing a particular in‐memory layout.",
+    "sections": [
+        {
+            "title": "Core Concepts and Terminology",
+            "content": "A graph G = (V, E) consists of a set of vertices V and a set of edges E, where each edge is an unordered (undirected) or ordered (directed) pair of vertices. **Weights** may label edges with numerical values. **Multigraphs** allow multiple edges between the same vertices; **hypergraphs** generalize edges to connect any number of vertices. Special cases include **trees** (acyclic connected graphs) and **DAGs** (directed acyclic graphs)."
+        },
+        {
+            "title": "ADT Interface and Operations",
+            "content": "Typical operations:\n\n- **addVertex(v)** / **removeVertex(v)**: insert or delete a vertex (and incident edges).\n- **addEdge(u, v[, w])** / **removeEdge(u, v)**: connect or disconnect vertices, optionally with weight w.\n- **neighbors(v)**: list adjacent vertices (or outgoing/incoming for directed).\n- **hasEdge(u, v)**: test existence of an edge.\n- **vertexCount()**, **edgeCount()**: sizes of V and E.\n- **degree(v)** / **inDegree(v)** / **outDegree(v)**: number of incident edges.\n\nExtensions include **subgraph** extraction, **contract** edge, and **mergeVertices**."
+        },
+        {
+            "title": "Representation Strategies",
+            "content": "Common internal representations:\n\n- **Adjacency List**: map each vertex to a list of its incident edges; space O(V + E), efficient for sparse graphs.\n- **Adjacency Matrix**: 2D array M of size V×V with M[u][v] indicating edge presence or weight; O(V²) space, O(1) edge checks, good for dense graphs.\n- **Edge List**: flat list of (u, v[, w]) tuples; minimal space O(E), but O(V + E) scans needed for adjacency queries.\n\nChoice depends on graph density, memory constraints, and operation mix."
+        },
+        {
+            "title": "Traversal and Path‐Finding Primitives",
+            "content": "Graphs support exploratory operations:\n\n- **Depth‑First Search (DFS)** and **Breadth‑First Search (BFS)** for connectivity, component identification, and spanning trees.\n- **Shortest‐Path Algorithms**: Dijkstra (positive weights), Bellman‑Ford (negative weights), A* (heuristics).\n- **Minimum Spanning Trees**: Kruskal’s and Prim’s algorithms for undirected weighted graphs.\n- **Max‑Flow/Min‑Cut**: Ford‑Fulkerson, Edmonds‑Karp, and push‑relabel for network flow problems."
+        },
+        {
+            "title": "Performance and Trade‑Offs",
+            "content": "Operation complexities vary:\n\n- **Adjacency List**: O(1) addVertex, amortized O(1) addEdge; O(deg(v)) for neighbors; O(V + E) for full traversals.\n- **Adjacency Matrix**: O(1) addEdge and hasEdge; O(V) for neighbors; O(V²) space and traversal cost.\n\nDynamic graphs require attention to update costs; parallel and external‐memory variants address large‐scale datasets."
+        },
+        {
+            "title": "Applications and Domain Examples",
+            "content": "Graphs model:\n\n- **Social Networks**: users as vertices, relationships as edges, with centrality and community detection tasks.\n- **Knowledge Graphs**: entities and semantic relations for AI and search.\n- **Dependency Graphs**: build systems, compilers, and workflow engines.\n- **Transportation Networks**: routing in road, rail, and airline systems.\n- **Recommendation Systems**: bipartite user–item graphs for collaborative filtering."
+        },
+        {
+            "title": "Theoretical Perspectives",
+            "content": "Graph ADTs intersect with discrete mathematics and logic: graph properties (planarity, colorability, connectivity) define complexity classes (e.g., NP‑complete problems). Categorical approaches view graphs as presheaves or quivers, embedding them in algebraic and topological frameworks. Philosophically, graphs exemplify relational abstraction, capturing the essence of connectivity independent of a physical substrate."
+        }
+    ]
+}

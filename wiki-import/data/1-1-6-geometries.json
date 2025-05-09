@@ -1,0 +1,64 @@
+{
+  "title": "Geometries",
+  "parentTitle": "Foundations of Abstraction",
+  "aliases": ["Synthetic Geometry", "Analytic Geometry", "Algebraic Geometry", "Differential Geometry"],
+  "links": [
+    {
+      "title": "Euclid’s Elements",
+      "url": "https://www.gutenberg.org/ebooks/21076"
+    },
+    {
+      "title": "Stanford Encyclopedia of Philosophy – Non‑Euclidean Geometry",
+      "url": "https://plato.stanford.edu/entries/non-euclidean-geometry/"
+    },
+    {
+      "title": "Encyclopedia of Mathematics – Geometry",
+      "url": "https://encyclopediaofmath.org/wiki/Geometry"
+    },
+    {
+      "title": "nLab – Geometry",
+      "url": "https://ncatlab.org/nlab/show/geometry"
+    },
+    {
+      "title": "Britannica – Euclidean and Non‑Euclidean Geometry",
+      "url": "https://www.britannica.com/science/geometry"
+    },
+    {
+      "title": "Springer – Foundations of Geometry (Hilbert)",
+      "url": "https://link.springer.com/book/10.1007/978-3-642-98378-1"
+    }
+  ],
+  "tags": [],
+  "details": [],
+  "content": "Geometries are formal systems that capture the essence of space, shape, and the relationships between basic entities—points, lines, planes, and higher‑dimensional analogues—through axioms and transformation rules. From Euclid’s flat plane to curved and algebraic settings, geometries exist purely as abstract constructs, instantiated only by symbols, coordinates, or transformation groups, yet they drive vast areas of mathematics and its applications.",
+  "sections": [
+    {
+      "title": "Axiomatic Foundations",
+      "content": "Geometry begins by positing undefined primitives (points, lines, planes) and axioms governing incidence, betweenness, and congruence. Euclid’s five postulates define the flat (Euclidean) plane. Hilbert’s later axiomatization refines these to ensure logical completeness, independence, and clarity of primitive notions."
+    },
+    {
+      "title": "Euclidean vs. Non‑Euclidean Geometries",
+      "content": "Modifying Euclid’s parallel postulate gives rise to:\n\n- **Hyperbolic Geometry** (Lobachevsky, Bolyai): constant negative curvature, triangles sum to <180°.\n- **Elliptic Geometry** (Riemann): constant positive curvature, triangles sum to >180°.\n\nThese curved geometries underpin models of physical space in relativity and cosmology."
+    },
+    {
+      "title": "Analytic and Algebraic Perspectives",
+      "content": "Analytic geometry uses coordinate systems in \\(\\mathbb{R}^n\\) to describe geometric figures via equations. Algebraic geometry studies solution sets of polynomial equations (varieties) over arbitrary fields, linking geometry with commutative algebra and number theory."
+    },
+    {
+      "title": "Differential and Topological Interplay",
+      "content": "Differential geometry endows smooth manifolds with metrics and connections, enabling study of curvature, geodesics, and tensor fields. Topological concepts—homeomorphism, homology, fiber bundles—capture properties invariant under continuous deformations, bridging geometry with topology."
+    },
+    {
+      "title": "Transformation Groups and Symmetry",
+      "content": "Each geometry is characterized by its symmetry group: Euclidean isometries preserve distances; projective transformations preserve collinearity; affine transformations preserve parallelism. Lie groups formalize continuous symmetries, while algebraic groups appear in algebraic geometry."
+    },
+    {
+      "title": "Modern Applications and Extensions",
+      "content": "Geometric frameworks underlie general relativity (Lorentzian geometry), computer vision (projective camera models), robotics (configuration manifolds), and data science (manifold learning). Recent fields—tropical geometry, derived algebraic geometry, non‑commutative geometry—push classical ideas into new algebraic and categorical realms."
+    },
+    {
+      "title": "Philosophical Reflections on Space",
+      "content": "Debates around geometry ask whether its axioms reflect physical reality (as in Einstein’s relativity) or are mere conventions (as Poincaré argued). These questions sit at the crossroads of mathematics, physics, and philosophy, probing the nature of abstraction itself."
+    }
+  ]
+}

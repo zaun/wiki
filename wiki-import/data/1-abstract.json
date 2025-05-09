@@ -1,0 +1,105 @@
+{
+    "title": "Abstract",
+    "aliases": [],
+    "links": [
+        {
+            "title": "Stanford Encyclopedia of Philosophy — Abstract Objects",
+            "url": "https://plato.stanford.edu/entries/abstract-objects/"
+        },
+        {
+            "title": "Internet Encyclopedia of Philosophy — Concepts",
+            "url": "https://iep.utm.edu/concepts/"
+        },
+        {
+            "title": "Stanford Encyclopedia of Philosophy — Philosophy of Mathematics",
+            "url": "https://plato.stanford.edu/entries/philosophy-mathematics/"
+        },
+        {
+            "title": "Stanford Encyclopedia of Philosophy — Ontological Commitment",
+            "url": "https://plato.stanford.edu/entries/ontological-commitment/"
+        }
+    ],
+    "tags": [],
+    "details": [],
+    "content": "The Abstract category encompasses all entities that do not possess physical form or spatial–temporal extension but exist as conceptual, formal, or ideal objects. These include mathematical entities (such as numbers and sets), logical constructs (like propositions and proofs), algorithms, and other framework elements that underpin formal reasoning. While they lack material substance, abstract entities provide the structural backbone for mathematics, logic, computer science, and the formal sciences.\n\nAbstract entities are contrasted with concrete or physical entities in that they are not located in space or time; they do not have mass, energy, or causal efficacy in the physical world. Instead, they are instantiated or represented by physical tokens—such as written symbols, software code, or neural encodings—but are not reducible to them. Their ontological status has long been debated in philosophy, with positions ranging from Platonism (which treats them as timeless, non-spatial realities) to nominalism (which regards them as conceptual or linguistic conventions).\n\nDespite their intangibility, abstract entities are indispensable. They allow us to generalize patterns, formulate theories, construct formal systems, and communicate rigorously. Because they can be manipulated without reference to empirical constraints, they serve as a universal substrate for modeling, simulation, and symbolic reasoning.",
+    "sections": [
+        {
+            "title": "Definition and Ontological Status",
+            "content": "Abstract entities are defined by their lack of spatio-temporal properties and causal powers. They are typically identified by their invariant characteristics—for example, the number 7 is always the seventh positive integer, regardless of how or where it is represented. Philosophers debate whether such entities exist independently in a Platonic realm or are conceptual tools constructed by human minds.\n\nPlatonism posits that abstract entities are real, unchanging, and discovered rather than invented. Under this view, mathematical objects exist in a non-physical realm, and human minds gain access to them through intuition or intellectual insight.\n\nNominalism denies the independent existence of abstract entities, holding that discourse about numbers, sets, or properties can be paraphrased as talk about symbols or mental representations without committing to a separate abstract realm.\n\nStructuralism focuses on the roles that entities occupy within formal systems (e.g., the role of “first” in an ordered set), treating their identity as relational rather than substantive.\n\nBecause abstract entities do not interact causally with physical systems, they are not subject to empirical observation. Their study relies on formal logic, proof, symbolic manipulation, and abstract modeling."
+        },
+        {
+            "title": "Distinctions from and Dependencies on Other Categories",
+            "content": "While abstract entities are not physical, mental, or informational in themselves, they frequently serve as the formal substrate for other ontological domains:\n\nPhysical: Formal models in physics (e.g., Hilbert spaces, tensor fields, differential equations) are abstract structures used to describe and predict physical reality, but remain distinct from material phenomena.\n\nInformational: Abstract structures like grammars, encodings, or protocols may be instantiated as data, but they themselves remain purely formal.\n\nMental: Human cognition often instantiates and manipulates abstract entities, such as equations, proofs, and categories—but mental states and thoughts are not themselves abstract objects in this classification.\n\nSocial: Institutions may use abstract frameworks (e.g., voting algorithms, financial models), but social entities like laws or currencies are governed by convention and context, and are classified under the Social category.\n\nThese distinctions ensure that the Abstract category includes only ideal, formal, or logical constructs with no dependence on physical realization or subjective experience."
+        },
+        {
+            "title": "Domains Governed by Abstract Formalism",
+            "content": "Abstract entities are central to multiple formal domains:\n\nMathematics: All branches of pure mathematics—from arithmetic and algebra to topology and category theory—are concerned with abstract structures such as numbers, sets, groups, and spaces.\n\nLogic: Systems of deductive inference, proof theory, model theory, and formal semantics rely entirely on abstract propositions, relations, and symbolic operations.\n\nComputer Science: Algorithms, automata, formal languages, and computational complexity classes are abstract constructs that underpin programming, computation, and information theory.\n\nTheoretical Physics: The abstract mathematical formalism (e.g., manifolds, tensors, symmetries) underlying physical laws is independent of its material instantiations.\n\nFormal Design: Abstract blueprints and symbolic diagrams guide the construction of circuits, architectures, and networks but are not themselves physical objects.\n\nThese domains depend on abstract entities for structure, rigor, and generalization, regardless of whether the entities are ever instantiated in physical form."
+        },
+        {
+            "title": "Knowledge and Semantics of Abstract Entities",
+            "content": "The epistemology of abstract entities concerns how we access, understand, and justify knowledge about them. Rationalist approaches argue that we know abstract truths through reason, intuition, or innate faculties. Empiricist perspectives attempt to ground formal knowledge in sensory or cognitive mechanisms, though abstract entities are not directly observable.\n\nPhilosophers also debate ontological commitment—whether adopting a formal theory (e.g., arithmetic, set theory) implies commitment to the existence of abstract entities. Quine’s criterion ('to be is to be the value of a bound variable') offers one formal method of assessing such commitments.\n\nIn logic and the philosophy of language, abstract reference and truth-conditions raise questions about how formal systems can meaningfully describe entities that are non-empirical. Semantics, model theory, and modal logic explore how statements about abstract entities can be true or false in relation to formal models.\n\nThough they are not empirically accessible, abstract entities are often treated as necessary components of rigorous scientific and mathematical reasoning."
+        }
+    ],
+"citations": [
+    {
+      "source": {
+        "type": "website",
+        "title": "Stanford Encyclopedia of Philosophy",
+        "authors": ["José L. Falguera", "Concha Martínez‑Vidal", "Gideon Rosen"],
+        "publisher": "Stanford Encyclopedia of Philosophy",
+        "year": 2021,
+        "url": "https://plato.stanford.edu/"
+      },
+      "title": "Stanford Encyclopedia of Philosophy — Abstract Objects",
+      "page": "2.1",
+      "url": "https://plato.stanford.edu/entries/abstract-objects/",
+      "quote": "The modern distinction bears some resemblance to Plato’s distinction between Forms and Sensibles. But Plato’s Forms were supposed to be causes par excellence, whereas abstract objects are generally supposed to be causally inert.",
+      "note": ""
+    },
+    {
+      "source": {
+        "type": "website",
+        "title": "Internet Encyclopedia of Philosophy",
+        "authors": [],
+        "publisher": "Internet Encyclopedia of Philosophy",
+        "year": 0,
+        "url": "https://iep.utm.edu/"
+      },
+      "title": "Internet Encyclopedia of Philosophy — Concepts",
+      "page": "L1–L3",
+      "url": "https://iep.utm.edu/concepts/",
+      "quote": "Concepts are of central importance to an overall theory of cognition and the mind. Our thoughts, especially those that express or involve propositions, are analyzed and distinguished from one another by appeal to various facts involving concepts and our grasp of them.",
+      "note": ""
+    },
+    {
+      "source": {
+        "type": "website",
+        "title": "Stanford Encyclopedia of Philosophy",
+        "authors": ["Philip Kitcher"],
+        "publisher": "Stanford Encyclopedia of Philosophy",
+        "year": 2003,
+        "url": "https://plato.stanford.edu/"
+      },
+      "title": "Stanford Encyclopedia of Philosophy — Philosophy of Mathematics",
+      "page": "Introduction",
+      "url": "https://plato.stanford.edu/entries/philosophy-mathematics/",
+      "quote": "Philosophy of mathematics is concerned with problems that are closely related to central problems of metaphysics and epistemology.",
+      "note": ""
+    },
+    {
+      "source": {
+        "type": "website",
+        "title": "Stanford Encyclopedia of Philosophy",
+        "authors": ["Kevin Mulligan", "Peter Simons", "Barry Smith"],
+        "publisher": "Stanford Encyclopedia of Philosophy",
+        "year": 2024,
+        "url": "https://plato.stanford.edu/"
+      },
+      "title": "Stanford Encyclopedia of Philosophy — Ontological Commitment",
+      "page": "1.1",
+      "url": "https://plato.stanford.edu/entries/ontological-commitment/",
+      "quote": "Ontology, as etymology suggests, is the study of being, of what there is. The ontologist asks: What entities or kinds of entity exist?",
+      "note": ""
+    }
+  ]
+}

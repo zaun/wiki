@@ -1,0 +1,55 @@
+{
+  "title": "Data Structures",
+  "parentTitle": "Computational Abstractions",
+  "aliases": [
+    "Abstract Containers",
+    "Collection Types"
+  ],
+  "links": [
+    {
+      "title": "Introduction to Algorithms (Cormen, Leiserson, Rivest & Stein, MIT Press, 2009)",
+      "url": "https://mitpress.mit.edu/9780262046305/introduction-to-algorithms-third-edition/"
+    },
+    {
+      "title": "The Art of Computer Programming, Vol. 1: Fundamental Algorithms (Knuth, Addison‑Wesley, 1997)",
+      "url": "https://www-cs-faculty.stanford.edu/~knuth/taocp.html"
+    },
+    {
+      "title": "Algorithms + Data Structures = Programs (Wirth, Prentice Hall, 1976)",
+      "url": "https://dl.acm.org/doi/book/10.5555/578967"
+    },
+    {
+      "title": "Data Structures and Algorithm Analysis (Goodrich & Tamassia, Wiley, 2014)",
+      "url": "https://www.wiley.com/en-us/Data+Structures+and+Algorithm+Analysis+in+C%2B%2B%2C+4th+Edition-p-9780132847377"
+    },
+    {
+      "title": "Survey of Data Structures for Meshes and Graphs (Kunčar et al., ACM Computing Surveys, 2020)",
+      "url": "https://doi.org/10.1145/3386369"
+    }
+  ],
+  "tags": [],
+  "details": [],
+  "content": "Data structures are formal abstractions that organize and store data to support efficient operations—such as access, insertion, deletion, and traversal—under specified constraints. They serve as the conceptual backbone of algorithm design, characterizing the trade‑offs between time complexity, space usage, and implementation constraints across application domains. By selecting appropriate data structures, developers and theorists can achieve provable performance bounds and maintain clear separation between interface and representation.",
+  "sections": [
+    {
+      "title": "Fundamental Structures",
+      "content": "Core data structures include **arrays**, which provide contiguous storage with O(1) random access and O(n) insertion; **singly and doubly linked lists**, supporting O(1) insertion and deletion at known positions but O(n) access; **stacks** (LIFO) and **queues** (FIFO), implemented via arrays or linked lists for O(1) push/pop and enqueue/dequeue; **trees** (e.g., binary search trees), offering O(log n) search, insertion, and deletion when balanced; and **hash tables**, delivering amortized O(1) lookup through hashing and collision-resolution strategies. Each offers distinct performance and memory‑locality characteristics."
+    },
+    {
+      "title": "Complex and Specialized Structures",
+      "content": "Beyond the fundamentals, specialized data structures address sophisticated queries and constraints. **Balanced trees** (red‑black, AVL) guarantee worst‑case O(log n) operations. **Heaps** (binary, Fibonacci) underpin priority queues with O(log n) extract-min and amortized O(1) insertion. **B‑trees** optimize block‑oriented storage for databases and file systems. **Union–find (disjoint set)** supports near‑constant-time connectivity queries. **Suffix trees and suffix arrays** enable linear‑time string searches. **Bloom filters** offer probabilistic membership tests with tunable false‑positive rates. **Skip lists** provide probabilistic balancing as an alternative to trees. **Tries** (prefix trees) support efficient prefix queries. **Segment trees** and **Fenwick (binary indexed) trees** enable range queries on arrays. **Matrices** and **tensors** serve as multi‑dimensional indexed collections. **Multigraphs**, **hypergraphs**, and **directed acyclic graphs (DAGs)** extend graph abstractions. **Ordered maps** (tree‑based vs. hash‑based) maintain key ordering. **Double‑ended queues (deques)** and **circular buffers** support O(1) insertion and deletion at both ends."
+    },
+    {
+      "title": "Operations, Performance, and Trade‑Offs",
+      "content": "Operations on data structures are analyzed by worst‑case, average‑case, and amortized complexities. **Search**, **insert**, **delete**, and **traverse** form the basic operation set. Performance depends on implementation details: hash-table load factor affects collision frequency; tree‑balance invariants determine rotation costs; block size in B‑trees influences disk I/O. **Amortized analysis** (e.g., dynamic array resizing) provides average cost guarantees over sequences of operations. Choosing the right structure involves matching workload patterns—read‑heavy vs. write‑heavy, memory‑resident vs. disk‑resident—and understanding underlying hardware characteristics."
+    },
+    {
+      "title": "Memory and Concurrency Considerations",
+      "content": "Modern applications demand data structures that respect cache hierarchies and support concurrent access. **Cache‑friendly layouts** (van Emde Boas trees, cache‑oblivious B‑trees) minimize cache misses. **Concurrent data structures** (lock‑free queues, concurrent hash maps) enable multiple threads to operate safely without global locks, using atomic primitives and memory fences. **Persistent (immutable) structures**, such as functional finger trees or ropes, provide efficient versions-on-write semantics, enabling safe sharing and rollback in purely functional languages."
+    },
+    {
+      "title": "Implementation and Verification",
+      "content": "Rigorous implementation of data structures often involves **formal specification** of invariants (e.g., heap-order property) and **verification** via proof assistants (Coq, Isabelle/HOL) or model checking. **Design by contract** can embed preconditions, postconditions, and structural invariants in code. **Property-based testing** frameworks (QuickCheck, Hypothesis) validate that operations preserve axiomatic properties across random workloads. Verified libraries (e.g., CompCert’s verified red-black trees) demonstrate that high-assurance implementations are feasible for critical systems."
+    }
+  ]
+}

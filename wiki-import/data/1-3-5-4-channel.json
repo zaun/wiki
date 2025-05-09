@@ -1,0 +1,66 @@
+{
+    "title": "Channel",
+    "parentTitle": "Concurrency Primitives",
+    "aliases": [
+        "Communicating Channel"
+    ],
+    "links": [
+        {
+            "title": "Hoare’s Communicating Sequential Processes (CSP)",
+            "url": "https://en.wikipedia.org/wiki/Communicating_sequential_processes"
+        },
+        {
+            "title": "Go Programming Language – Channels",
+            "url": "https://golang.org/doc/effective_go#channels"
+        },
+        {
+            "title": "Erlang – Concurrency and Message Passing",
+            "url": "https://erlang.org/doc/reference_manual/processes.html"
+        },
+        {
+            "title": "Oracle – Java BlockingQueue Interface",
+            "url": "https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/BlockingQueue.html"
+        },
+        {
+            "title": "Python – asyncio.Queue",
+            "url": "https://docs.python.org/3/library/asyncio-queue.html"
+        },
+        {
+            "title": "MIT OpenCourseWare – Concurrent Data Structures (6.172)",
+            "url": "https://ocw.mit.edu/courses/6-172-performance-engineering-of-software-systems-fall-2018/pages/lecture-notes/"
+        }
+    ],
+    "tags": [],
+    "details": [],
+    "content": "A Channel ADT represents a first‑class conduit for passing messages or data items between concurrent participants. By decoupling senders and receivers, channels provide synchronization, buffering, and ordering semantics—enabling pipelines, event streams, and communication patterns without exposing low‑level locking or memory details.",
+    "sections": [
+        {
+            "title": "Synchronous vs. Buffered Channels",
+            "content": "Unbuffered (synchronous) channels block the sender until a receiver is ready, enforcing rendezvous communication. Buffered (asynchronous) channels provide a finite-capacity queue: sends proceed until the buffer is full, and receives block when it is empty, decoupling timing between producers and consumers."
+        },
+        {
+            "title": "ADT Interface and Core Operations",
+            "content": "Typical operations include:\n\n- **send(msg)**: enqueue or rendezvous with a receiver.\n- **receive()**: dequeue or rendezvous with a sender, returning the message.\n- **trySend(msg)** / **tryReceive()**: non‑blocking variants that fail immediately if unable to proceed.\n- **close()**: mark the channel as closed, causing further sends to error and pending receives to drain remaining items.\n- **isClosed()** / **capacity()** / **size()**: query channel state."
+        },
+        {
+            "title": "Implementation Strategies",
+            "content": "Channels are often built atop queues or ring buffers with mutexes and condition variables, or via lock‑free algorithms using atomic primitives. Unbuffered channels may use handoff protocols, while buffered channels implement circular buffers with head/tail indices and backpressure support."
+        },
+        {
+            "title": "Concurrency Patterns and Composition",
+            "content": "Channels enable patterns such as pipelines (chaining producers and consumers), fan‑in/fan‑out (merging or broadcasting), worker pools, and event streams. Higher‑level constructs—select (CSP ALT, Go select), multiplexing, and timeouts—allow coordination across multiple channels."
+        },
+        {
+            "title": "Backpressure and Flow Control",
+            "content": "By tuning buffer capacity and blocking behavior, channels provide inherent backpressure: slow consumers slow down producers automatically. This simplifies resource management in streaming and prevents unbounded memory growth in high‑throughput systems."
+        },
+        {
+            "title": "Performance and Fairness Considerations",
+            "content": "Channel performance depends on buffer strategy, synchronization costs, and contention. Fairness guarantees—such as FIFO ordering and round‑robin selection—affect latency and throughput. Optimizations include batching, lock‑elision, and wait‑free algorithms."
+        },
+        {
+            "title": "Theoretical Foundations",
+            "content": "Channels correspond to communication primitives in process calculi: synchronous channels in CSP and π‑calculus, asynchronous ones as buffered π‑calculus. Their semantics underpin formal reasoning about deadlock, liveness, and protocol correctness."
+        }
+    ]
+}

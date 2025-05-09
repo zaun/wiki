@@ -1,0 +1,19 @@
+{
+  "name": "wiki-import",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "html-entities": "^2.6.0",
+    "node-fetch": "^3.3.2",
+    "wikiapi": "^1.20.0",
+    "wtf_wikipedia": "^10.4.0",
+    "yargs": "github:yargs/yargs"
+  }
+}

@@ -1,0 +1,67 @@
+{
+    "title": "Zipper",
+    "parentTitle": "Concurrency Primitives",
+    "aliases": [
+        "Cursor",
+        "Location‑Context"
+    ],
+    "links": [
+        {
+            "title": "Wikipedia – Zipper (data structure)",
+            "url": "https://en.wikipedia.org/wiki/Zipper_(data_structure)"
+        },
+        {
+            "title": "nLab – Zipper",
+            "url": "https://ncatlab.org/nlab/show/zipper"
+        },
+        {
+            "title": "Gérard Huet – The Zipper (Functional Pearl)",
+            "url": "https://www.cs.ox.ac.uk/publications/publication890.pdf"
+        },
+        {
+            "title": "Springer – Purely Functional Data Structures (Okasaki) – Chapter on Zippers",
+            "url": "https://link.springer.com/book/10.1007/3-540-44645-0"
+        },
+        {
+            "title": "Cambridge University Press – Types and Programming Languages (Pierce)",
+            "url": "https://www.cambridge.org/core/books/types-and-programming-languages/BCB1E1784090C1F3C30D1DB0BAF8D5F2"
+        },
+        {
+            "title": "Learn You a Haskell – Zippers Tutorial",
+            "url": "http://learnyouahaskell.com/zippers"
+        }
+    ],
+    "tags": [],
+    "details": [],
+    "content": "A Zipper ADT provides a way to traverse and update a data structure by maintaining a focused position together with its surrounding context. By decomposing the structure into a subpart (the focus) and a context representing the rest, zippers enable efficient, localized edits without rebuilding the entire structure. They are particularly useful for navigable trees, lists, and other recursive collections.",
+    "sections": [
+        {
+            "title": "Concept and Motivation",
+            "content": "Rather than performing global updates, a zipper lets you “zip down” into a data structure to focus on a particular element, carry along the context needed to reconstruct the whole, and then “zip up” after making a local change. This approach yields O(1) updates at the focus and clean separation between traversal and modification logic."
+        },
+        {
+            "title": "Focus and Context Representation",
+            "content": "Formally, a zipper on a structure S is represented as a pair (focus, context) where the context encodes a path of breadcrumbs: each breadcrumb records what was to the left, what was to the right, and how to reattach on the way back up. For lists, the context is a pair of lists; for trees, it is a stack of parent nodes with their left and right subtrees."
+        },
+        {
+            "title": "Navigation Operations",
+            "content": "Typical zipper operations include:\n\n- **goDown(i)**: move focus to the i‑th child/subcomponent, pushing a breadcrumb onto the context.\n- **goUp()**: pop a breadcrumb, reconstructing the parent with the modified focus.\n- **goLeft()/goRight()** (for lists or siblings): shift focus horizontally, adjusting the context accordingly.\n\nThese operations preserve persistence by returning new zipper instances."
+        },
+        {
+            "title": "Modification at Focus",
+            "content": "With the focus isolated, operations such as **replace(x)**, **insert(x)**, or **delete()** apply directly to the focused element or its immediate neighbors. After modification, **goUp()** stitches the change back into the overall structure using the stored context."
+        },
+        {
+            "title": "Implementation Strategies",
+            "content": "Zippers can be implemented in functional languages without mutation by using immutable lists or stacks to represent the context. In imperative settings, context objects or cursors carry pointers to parent nodes and sibling lists. Memory overhead is minimal—linear in the depth of the focus path."
+        },
+        {
+            "title": "Applications and Examples",
+            "content": "Zippers power efficient editors, XML/JSON tree manipulators, and IDEs by enabling cursor‑based edits. They also simplify algorithms requiring backtracking, such as zipper-based depth‑first traversals, and support undo/redo by storing contexts as edit histories."
+        },
+        {
+            "title": "Theoretical Connections: Comonads",
+            "content": "Abstractly, zippers form a comonad: the context supplies a **duplicate** operation (yielding a structure of all possible foci) and an **extract** operation (retrieving the current focus). This comonadic view unifies navigation patterns and relates zippers to other context‑dependent computations."
+        }
+    ]
+}

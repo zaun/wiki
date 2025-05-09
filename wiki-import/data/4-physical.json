@@ -1,0 +1,355 @@
+{
+    "title": "Physical",
+    "aliases": [
+      "Material",
+      "Physical Entities"
+    ],
+    "links": [
+      {
+        "title": "Stanford Encyclopedia of Philosophy – Physicalism",
+        "url": "https://plato.stanford.edu/entries/physicalism/"
+      },
+      {
+        "title": "CERN – The Standard Model",
+        "url": "https://home.cern/science/physics/standard-model"
+      },
+      {
+        "title": "Internet Encyclopedia of Philosophy – Space and Time",
+        "url": "https://iep.utm.edu/space-time/"
+      },
+      {
+        "title": "Interactive: Scale of the Universe",
+        "url": "https://htwins.net/scale2/"
+      },
+      {
+        "title": "NIST – Fundamental Physical Constants",
+        "url": "https://physics.nist.gov/cuu/Constants/index.html"
+      }
+    ],
+    "tags": [],
+    "details": [],
+    "content": "The concept of the “physical” designates all that is materially real—entities and phenomena that occupy regions of space, persist through time, and exhibit properties amenable to observation or measurement. Physical things range from everyday objects like rocks and living organisms to fields such as light and magnetism, all governed by consistent natural laws. What unites these diverse manifestations is their tangibility in spacetime: they have location and duration, interact through forces, and yield quantifiable attributes such as mass, charge, and energy. By contrast, abstract constructs—mathematical objects or purely conceptual frameworks—do not themselves occupy space or have duration outside of thought. Thus, to say something is physical is to assert it is part of the material universe, open to empirical investigation and governed by the regularities we codify as the laws of physics.",
+    "citations": [
+      {
+        "source": {
+          "type": "website",
+          "title": "NASA Science",
+          "authors": ["NASA Science Staff"],
+          "publisher": "NASA",
+          "year": 2021,
+          "url": "https://science.nasa.gov/"
+        },
+        "title": "What is the Universe?",
+        "page": "1",
+        "url": "https://science.nasa.gov/exoplanets/what-is-the-universe/",
+        "quote": "The universe is everything. It includes all of space, and all the matter and energy that space contains. It even includes time itself and, of course, it includes you.",
+        "note": ""
+      },
+      {
+        "source": {
+          "type": "website",
+          "title": "Internet Encyclopedia of Philosophy",
+          "authors": [],
+          "publisher": "Internet Encyclopedia of Philosophy",
+          "year": 2022,
+          "url": "https://iep.utm.edu/"
+        },
+        "title": "Multiple Realizability (Section on Physicalism)",
+        "page": "Physicalism",
+        "url": "https://iep.utm.edu/mult-rea/",
+        "quote": "Physicalism: Everything is physical – all objects, properties, and events are the sort that can be exhaustively described and/or explained by the natural sciences.",
+        "note": ""
+      }
+    ],
+    "sections": [
+      {
+        "title": "Definition and Ontological Grounding",
+        "content": "At its most fundamental level, the physical encompasses anything that exists in space and time in a manner that can be detected or measured. Physical entities occupy specific regions of space at each moment of their existence, making it meaningful to ask “Where is it now?” and “How much space does it occupy?” They have definitive boundaries or extents, even if those boundaries are diffuse or dynamic, as in the case of a gas cloud. These concrete attributes allow us to interact with, manipulate, and study such entities. Therefore, spatial extension is a core criterion for physicality.\n\nPhysical entities also manifest persistence in time. They endure or undergo change in ways that can be recorded and analyzed. An object’s history—how it came to be, how it transforms—forms part of its physical description. Without temporal persistence, we cannot trace cause‑and‑effect relationships that underlie the physical sciences. Thus, to be physical is to have both spatial presence and temporal duration.\n\nMeasurement is at the heart of physics. Physical entities possess measurable properties such as mass, length, charge, and energy. These attributes can be quantified using standardized units, whether through direct measurement or through inference from observed effects. Quantification transforms the qualitative realm of perception into numerical data, enabling precise comparisons and predictions. Accordingly, measurability distinguishes physical from non‑physical phenomena.\n\nIn ontology, philosophers treat physical entities as the bedrock of reality. Concrete particulars—entities that exist as specific things in the world—contrast with abstract universals or mathematical objects that lack material instantiation. For centuries, thinkers have placed matter and its interactions at the foundation of existence, from Aristotle’s hylomorphic framework to modern physicalism. This philosophical grounding justifies the empirical approach of the natural sciences. It underscores confidence that studying matter and energy yields genuine insight into how the world operates.\n\nFinally, the notion of the physical embraces dynamic processes as well as static objects. From the orbits of planets to the flow of electrons, motion and change are intrinsic to the physical realm. Processes such as diffusion, wave propagation, and chemical reactions involve entities undergoing transformation over space and time. These dynamic phenomena are described by physical laws that predict how systems evolve. Consequently, the physical includes both things and the lawful changes they undergo.",
+        "citations": [
+          {
+            "source": {
+              "type": "website",
+              "title": "Stanford Encyclopedia of Philosophy",
+              "authors": [],
+              "publisher": "Stanford Encyclopedia of Philosophy",
+              "year": 2019,
+              "url": "https://plato.stanford.edu/"
+            },
+            "title": "Abstract Objects (Section 3.1)",
+            "page": "3.1",
+            "url": "https://plato.stanford.edu/entries/abstract-objects/",
+            "quote": "Paradigmatic concrete objects tend to occupy a relatively determinate spatial volume at each time at which they exist; it makes sense to ask of such an object, ‘Where is it now, and how much space does it occupy?’ By contrast, it makes no sense to ask how much space an abstract entity now occupies.",
+            "note": ""
+          },
+          {
+            "source": {
+              "type": "book",
+              "title": "Ontology",
+              "authors": ["Dale Jacquette"],
+              "publisher": "Cambridge University Press",
+              "year": 2002,
+              "url": "https://www.cambridge.org/"
+            },
+            "title": "Physical Entities (Chapter 8)",
+            "page": "8",
+            "url": "https://www.cambridge.org/core/books/ontology/physical-entities-space-time-matter-and-causation-physical-states-of-affairs-and-events-natural-laws/A383AB9ED718FB543CC2ED3443011E78",
+            "quote": "The existence of physical entities is further confirmed by empirical experience of the actual world in sense perception; as a result of our experience of the world we know that there are real existent external physical entities and states of affairs.",
+            "note": ""
+          }
+        ]
+      },
+      {
+        "title": "Historical Trajectory of Physical Concepts",
+        "content": "The Western tradition of inquiry into the physical world traces back to ancient Greece. Early philosophers sought underlying substances or principles that could explain the observable diversity of nature. Empedocles famously introduced four root elements—earth, water, air, and fire—as fundamental constituents of matter. This theory aimed to account for transformation and stability within physical processes. Though later superseded, it exemplified the first systematic attempt to categorize physical entities.\n\nIn parallel, atomism emerged with Leucippus and Democritus, who proposed that matter comprises indivisible units called “atoms.” They reasoned that by dividing matter repeatedly, one would eventually encounter the smallest, uncuttable pieces. While lacking experimental support in their time, this concept foreshadowed the modern atomic theory central to chemistry and physics. It suggested that qualitative changes in substances arise from rearrangements of these minute particles. Atomism thus laid a conceptual foundation for understanding the physical world at a deeper level.\n\nThe medieval and Renaissance periods saw a fusion of Greek ideas with theological and alchemical traditions. Natural philosophers debated the nature of material substances, often invoking Aristotelian notions of form and matter. Nevertheless, empirical observations began to challenge purely speculative accounts. The invention of telescopes and microscopes revealed previously unseen aspects of the physical world, prompting a gradual shift toward systematic measurement and experimentation.\n\nThe Scientific Revolution of the 17th century marked a decisive turning point. Isaac Newton’s formulation of the laws of motion and universal gravitation provided a unified framework for celestial and terrestrial phenomena. Under Newtonian mechanics, the physical universe became analogous to a vast clockwork, governed by precise mathematical relationships. This mechanistic worldview held sway for over two centuries, shaping both scientific investigation and philosophical understanding of physical reality.\n\nBy the 19th century, further advances transformed the concept of the physical. James Clerk Maxwell’s unification of electricity, magnetism, and light illustrated that seemingly distinct physical phenomena could reflect a single underlying reality. Subsequently, the discoveries of radioactivity and subatomic particles challenged the completeness of classical mechanics. Finally, in the 20th century, relativity and quantum theory revolutionized the foundations of physics, expanding the domain of what is considered physical beyond everyday intuition.",
+        "citations": [
+          {
+            "source": {
+              "type": "website",
+              "title": "Cambridge Forecast Group Blog",
+              "authors": ["Albert Einstein"],
+              "publisher": "Cambridge Forecast Group",
+              "year": 1929,
+              "url": "https://cambridgeforecast.wordpress.com/"
+            },
+            "title": "The History of Field Theory",
+            "page": "Lecture 1",
+            "url": "https://cambridgeforecast.wordpress.com/2007/01/03/",
+            "quote": "While physics wandered exclusively in the paths prepared by Newton, the following conception of physical reality prevailed: Matter is real, and matter undergoes only those changes which we conceive as movements in space.",
+            "note": ""
+          },
+          {
+            "source": {
+              "type": "website",
+              "title": "Science News",
+              "authors": ["Tom Siegfried"],
+              "publisher": "Science News",
+              "year": 2021,
+              "url": "https://www.sciencenews.org/"
+            },
+            "title": "The Quantum Revolution",
+            "page": "1",
+            "url": "https://www.sciencenews.org/century/quantum-physics-theory-revolution-reality-uncertainty",
+            "quote": "Quantum theory is the most dramatic shift in science’s conception of reality since the ancient Greeks deposed mythological explanations of natural phenomena in favor of logic and reason. After all, quantum physics itself seems to defy logic and reason.",
+            "note": ""
+          }
+        ]
+      },
+      {
+        "title": "Core Properties of Physical Entities",
+        "content": "Physical entities are characterized by measurable properties that form the basis of all scientific description. Chief among these is mass, which quantifies the amount of matter an object contains and appears in equations governing motion and gravity. Einstein’s relation (E=mc^2) unites mass and energy, revealing that mass itself is a form of condensed energy and can be converted in nuclear reactions. Charge is another fundamental property, determining how entities interact via the electromagnetic force. Without charge, the rich chemistry of life and technology would not exist.\n\nSpace and time themselves act as scaffolding for physical properties. An object’s spatial dimensions—length, area, volume—define its shape and how it occupies the world. Temporal duration, measured in seconds, minutes, or years, allows us to track an entity’s evolution and history. Velocity and acceleration describe how position changes over time, bridging space and time into kinematics. These spatiotemporal properties are measured against agreed standards, making them universally comparable.\n\nOther intrinsic properties arise in modern physics. Quantum spin, a type of intrinsic angular momentum, governs the behavior of subatomic particles and underlies phenomena like magnetism and the Pauli exclusion principle. Wavelength and frequency characterize wave-like entities such as light and matter waves, essential for understanding optics and quantum mechanics. Thermodynamic properties—temperature, entropy, pressure—describe how ensembles of particles behave as a collective. Each property provides a unique lens to probe the physical world, from the atomic scale to the cosmic.\n\nMeasurement of these properties relies on defined units. The meter is based on the distance light travels in a fixed fraction of a second, while the kilogram is tied to fundamental constants. Calibration against physical standards—such as reference masses or atomic transitions—ensures consistency across laboratories worldwide. Advances in metrology continually refine these definitions, enhancing the precision with which physical properties are known. As measurement improves, so too does our understanding of the subtleties of nature.\n\nLastly, the interplay of properties gives rise to emergent phenomena. Mass and charge together determine an object’s response to forces; temperature and volume shape gas laws; spin and statistics produce the stability of atoms. Properties rarely act in isolation; instead, they combine according to laws of nature to produce the rich tapestry of behavior we observe. Recognizing and quantifying these properties lies at the heart of physics and engineering, enabling prediction and control of physical systems.",
+        "citations": [
+          {
+            "source": {
+              "type": "website",
+              "title": "NIST – Fundamental Physical Constants",
+              "authors": [],
+              "publisher": "National Institute of Standards and Technology",
+              "year": 2019,
+              "url": "https://physics.nist.gov/cuu/Constants/index.html"
+            },
+            "title": "Fundamental Physical Constants: Speed of Light",
+            "page": "Speed of Light",
+            "url": "https://physics.nist.gov/cuu/Constants/c1.html",
+            "quote": "The speed of light in vacuum, defined to be exactly 299 792 458 m/s, is a defined constant of nature.",
+            "note": ""
+          },
+          {
+            "source": {
+              "type": "website",
+              "title": "NIST – Fundamental Physical Constants",
+              "authors": [],
+              "publisher": "National Institute of Standards and Technology",
+              "year": 2019,
+              "url": "https://physics.nist.gov/cuu/Constants/index.html"
+            },
+            "title": "Fundamental Physical Constants: Planck Constant",
+            "page": "Planck Constant",
+            "url": "https://physics.nist.gov/cuu/Constants/h.html",
+            "quote": "The Planck constant h has an exact value of 6.62607015×10^−34 J·s by definition of the kilogram.",
+            "note": ""
+          }
+        ]
+      },
+      {
+        "title": "Fundamental Forces and Natural Laws",
+        "content": "Physical entities interact according to a small set of fundamental laws and forces that apply universally. Laws of nature—such as Newton’s laws of motion or the laws of thermodynamics—describe consistent regularities in how matter and energy behave. Philosophers distinguish two views: the Regularity Theory, where laws merely summarize observed patterns, and the Necessitarian Theory, where laws are governing principles that nature must obey. Regardless of interpretation, these laws allow precise prediction and form the foundation of scientific explanation.\n\nForces mediate interactions among physical entities. Gravity, the weakest force by strength yet infinite in range, draws masses together and shapes the cosmos. Electromagnetism, vastly stronger, governs interactions between charged particles, binding atoms into molecules and enabling light and electricity. At subatomic scales, the strong nuclear force binds quarks into protons and neutrons, while the weak nuclear force drives radioactive decay and stellar nucleosynthesis. Together, these four forces account for every physical interaction known.\n\nMathematical expressions characterize both laws and forces. Newton’s law of universal gravitation uses an inverse-square formula to quantify gravitational attraction. Maxwell’s equations encapsulate electromagnetism in four concise relations describing electric and magnetic fields. Thermodynamic laws impart constraints on energy flow and efficiency. Quantum field theories express strong and weak interactions via exchange particles in a sophisticated mathematical framework. These equations not only summarize experiments but predict novel phenomena, guiding further discovery.\n\nEfforts to unify forces reflect an ongoing quest for simplicity in nature’s design. James Clerk Maxwell unified electricity and magnetism into electromagnetism. In the 20th century, the electroweak theory merged electromagnetic and weak forces under high‑energy conditions. Grand Unification Theories aim to bring strong interactions into the fold, and a final “Theory of Everything” would include gravity. Although a complete unification remains elusive, each step deepens our appreciation for the coherent structure underpinning physical reality.\n\nThe universality of laws and forces underscores the unity of physics. From falling apples and orbiting planets to atomic nuclei and quantum fields, the same principles apply across scales. This coherence allows technologies like satellites, nuclear reactors, and particle accelerators to function and be engineered. By decoding these fundamental interactions, humanity has gained unprecedented power to understand and shape the physical world.",
+        "citations": [
+          {
+            "source": {
+              "type": "website",
+              "title": "Internet Encyclopedia of Philosophy",
+              "authors": [],
+              "publisher": "Internet Encyclopedia of Philosophy",
+              "year": 2020,
+              "url": "https://iep.utm.edu/"
+            },
+            "title": "Laws of Nature (Introduction)",
+            "page": "Introduction",
+            "url": "https://iep.utm.edu/lawofnat/",
+            "quote": "Within metaphysics, there are two competing theories of Laws of Nature: the Regularity Theory, which holds that laws are mere descriptions of uniformities in the world, and the Necessitarian Theory, which treats laws as principles that govern natural phenomena.",
+            "note": ""
+          },
+          {
+            "source": {
+              "type": "website",
+              "title": "PreTeXt Physics Text",
+              "authors": ["A. I. Math"],
+              "publisher": "AIMATH",
+              "year": 2020,
+              "url": "https://aimath.org/"
+            },
+            "title": "The Four Fundamental Forces of Nature (Section 10.2)",
+            "page": "10.2",
+            "url": "https://aimath.org/~farmer/tmp/phys212supplement/sec_four_fundamental_forces.html",
+            "quote": "During the past century, physicists have typically talked about four “fundamental” forces: the strong force, the electromagnetic force, the weak force, and the gravitational force.",
+            "note": ""
+          }
+        ]
+      },
+      {
+        "title": "Scale and Structure of the Physical Universe",
+        "content": "The physical universe spans an almost inconceivable range of scales, from the tiniest quarks to the vast cosmic web. At the smallest end, subatomic particles like quarks and leptons measure less than 10^−18 meters, probed in high-energy accelerators. These particles assemble into protons, neutrons, and electrons, forming atoms roughly 10^−10 meters across. Aggregations of atoms build molecules, cells, organisms, and objects we interact with daily at meter scales. Scaling further, planets, stars, and galaxies occupy distances from thousands to billions of light‑years.\n\nOur own planet, with a diameter of about 12,800 kilometers, sits in a solar system where Earth orbits the Sun at 150 million kilometers. The Sun itself is one star among hundreds of billions in the Milky Way galaxy. Recent estimates place the Milky Way’s diameter at roughly 100,000 light‑years—about 9.5×10^20 meters. Yet our galaxy is but one of an estimated two trillion galaxies in the observable universe. This cosmic tapestry is woven into clusters and filaments separated by immense voids.\n\nAt intermediate scales, the behavior of matter and energy transitions from quantum phenomena to the classical laws of mechanics. A grain of sand (around 10^−4 meters) obeys laws of friction and elasticity rather than quantum uncertainty. Understanding which theories apply at which scale is a central task of physics. Renormalization and effective field theories help bridge these realms, ensuring consistency across orders of magnitude.\n\nTo put the disparity in perspective, the carbon nucleus at 10^−15 meters compared to the Milky Way at 10^21 meters spans 36 orders of magnitude in size. In other words, the galaxy is approximately 10^36 times larger than the nucleus of an atom. This vastness testifies to the unifying power of physical laws that apply from the quantum vacuum to superclusters of galaxies.\n\nDespite this enormity, physics achieves remarkable coherence across scales. The same constants, such as the speed of light or Planck’s constant, govern interactions whether in particle collisions or gravitational lensing of distant quasars. This unity enables us to use insights from nanotechnology to inform cosmology, illustrating that all scales are interconnected facets of the one physical universe.",
+        "citations": [
+          {
+            "source": {
+              "type": "website",
+              "title": "NASA Science",
+              "authors": ["NASA Science Staff"],
+              "publisher": "NASA",
+              "year": 2021,
+              "url": "https://science.nasa.gov/"
+            },
+            "title": "What is the Universe?",
+            "page": "2",
+            "url": "https://science.nasa.gov/exoplanets/what-is-the-universe/",
+            "quote": "The Sun is one among hundreds of billions of stars in the Milky Way galaxy, and most of those stars have their own planets... The Milky Way is but one of billions of galaxies in the observable universe— all of them... are thought to have supermassive black holes at their centers. It is, simply, everything.",
+            "note": ""
+          },
+          {
+            "source": {
+              "type": "website",
+              "title": "CSUN Sourcebook for Teaching Science",
+              "authors": [],
+              "publisher": "California State University, Northridge",
+              "year": 2015,
+              "url": "http://www.csun.edu/"
+            },
+            "title": "Orders of Magnitude (Section 8.2)",
+            "page": "8.2",
+            "url": "http://www.csun.edu/science/ref/measurement/orders_of_mag/sourcebook-8.2.pdf",
+            "quote": "The diameter of the Milky Way is 1×10^21 m, and the diameter of the carbon nucleus is 1×10^–14 m; the Milky Way is therefore approximately 10^35 times larger than the carbon atom.",
+            "note": ""
+          }
+        ]
+      },
+      {
+        "title": "Measurement and Empirical Methods",
+        "content": "Measurement transforms physical phenomena into quantitative data, underpinning experimental science. Units like the meter, kilogram, and second provide common language for recording observations. Precision instruments—from calipers to atomic clocks—reduce uncertainty and extend our senses. Calibration against reference standards ensures that measurements remain consistent across time and space. Without rigorous measurement, the reproducibility and reliability of scientific knowledge would collapse.\n\nThe International System of Units (SI) defines seven base units from which all others derive. The meter is defined by the exact value of the speed of light in vacuum; the second by the cesium atomic transition frequency. In 2019, the kilogram was redefined by fixing the Planck constant’s value, removing reliance on a physical prototype. These definitions tie units directly to fundamental constants, enhancing stability and universality.\n\nStandards institutes like NIST maintain and disseminate reference materials and calibration services. They develop primary realizations of units—such as interferometric techniques for the meter or watt balances for the kilogram. Laboratories worldwide link their secondary standards to these primaries, forming a traceability chain that preserves global consistency. Advances in quantum metrology promise even finer resolution, pushing measurement limits to new extremes.\n\nData acquisition systems record measurements digitally, enabling automated analysis and storage. Statistical methods assess uncertainty and ensure that reported values include confidence intervals. Blind tests, inter-laboratory comparisons, and peer review guard against systematic errors and bias. The empirical rigor of this methodology underlies the trust placed in scientific results, from engineering tolerances to drug efficacy trials.\n\nUltimately, measurement and empirical methods convert the abstract laws of physics into concrete applications. By quantifying the world, we can test hypotheses, refine theories, and engineer solutions. Whether measuring gravitational waves or nanoscale features on a chip, the principles are the same: observe, quantify, and compare against theoretical predictions. This cycle of measurement and refinement drives progress in both fundamental science and technology.",
+        "citations": [
+          {
+            "source": {
+              "type": "website",
+              "title": "NIST – SI Units and Standards",
+              "authors": [],
+              "publisher": "National Institute of Standards and Technology",
+              "year": 2020,
+              "url": "https://www.nist.gov/si-units"
+            },
+            "title": "SI Base Units: Meter",
+            "page": "Meter Section",
+            "url": "https://www.nist.gov/si-units/meter",
+            "quote": "Since 1983, the metre has been defined as the distance light travels in vacuum in 1/299,792,458 seconds.",
+            "note": ""
+          },
+          {
+            "source": {
+              "type": "website",
+              "title": "NIST – SI Units and Standards",
+              "authors": [],
+              "publisher": "National Institute of Standards and Technology",
+              "year": 2020,
+              "url": "https://www.nist.gov/si-units"
+            },
+            "title": "SI Base Units: Kilogram",
+            "page": "Kilogram Section",
+            "url": "https://www.nist.gov/si-units/kilogram",
+            "quote": "The kilogram is defined by assigning the Planck constant an exact value of 6.62607015×10^−34 J·s.",
+            "note": ""
+          }
+        ]
+      },
+      {
+        "title": "Technological and Practical Implications",
+        "content": "Mastery of physical principles has driven the development of transformative technologies. The invention of the transistor, based on semiconductor physics, gave birth to modern electronics and computing. Semiconductor devices rely on controlled manipulation of charge carriers, a direct application of quantum mechanics. Integrated circuits pack billions of these devices into chips no larger than a fingernail, powering everything from smartphones to data centers.\n\nEnergy technologies also stem from physics. Photovoltaic cells harness the photoelectric effect—light‑induced electron emission in semiconductors—to generate electricity. Nuclear reactors exploit controlled fission reactions of heavy nuclei, converting mass into energy according to (E=mc^2). Advances in materials science yield stronger alloys, superconductors, and nanomaterials with tailored physical properties for applications in transportation, construction, and medicine.\n\nMedical imaging exemplifies physics in service of health. X‑ray radiography uses high‑energy photons to visualize bone and tissue density variations. Magnetic resonance imaging (MRI) leverages nuclear magnetic resonance of hydrogen atoms to produce detailed soft‑tissue maps. Computed tomography (CT) combines X‑rays with digital reconstruction algorithms to generate cross‑sectional images. Positron emission tomography (PET) tracks radioactive tracers to reveal metabolic activity, aiding disease diagnosis and treatment planning.\n\nBeyond established fields, emerging technologies push the boundaries of the physical. Nanotechnology manipulates matter at scales of a few atoms, enabling new sensors, drug delivery systems, and quantum dots. Quantum computing exploits superposition and entanglement to perform certain calculations exponentially faster than classical computers. These frontiers rest on deep understanding of physical laws and the ability to engineer systems at the smallest scales.\n\nThe interplay between fundamental research and practical innovation demonstrates the power of physics. Discoveries about electron behavior lead to faster processors; insights into light‑matter interaction produce new therapies. As we continue to probe the physical world, future breakthroughs in energy, computation, and materials will undoubtedly follow, shaping society in ways we can only begin to imagine.",
+        "citations": [
+          {
+            "source": {
+              "type": "website",
+              "title": "GeeksforGeeks",
+              "authors": [],
+              "publisher": "GeeksforGeeks",
+              "year": 2023,
+              "url": "https://www.geeksforgeeks.org/"
+            },
+            "title": "Applications of Modern Physics (Medical Imaging)",
+            "page": "Medical Imaging",
+            "url": "https://www.geeksforgeeks.org/modern-physics/",
+            "quote": "Techniques based on principles of modern physics, such as X‑rays, magnetic resonance imaging (MRI), computed tomography (CT), and positron emission tomography (PET), are used for medical imaging to diagnose diseases, monitor treatments, and conduct research.",
+            "note": ""
+          },
+          {
+            "source": {
+              "type": "website",
+              "title": "GeeksforGeeks",
+              "authors": [],
+              "publisher": "GeeksforGeeks",
+              "year": 2023,
+              "url": "https://www.geeksforgeeks.org/"
+            },
+            "title": "Applications of Modern Physics (Semiconductors)",
+            "page": "Semiconductors",
+            "url": "https://www.geeksforgeeks.org/modern-physics/",
+            "quote": "Quantum mechanics plays a crucial role in understanding the behavior of electrons in semiconductors, leading to the development of transistors, diodes, integrated circuits, and other electronic devices that form the foundation of modern technology.",
+            "note": ""
+          }
+        ]
+      },
+      {
+        "title": "Physical vs. Abstract: Philosophical Debates",
+        "content": "A longstanding philosophical debate asks whether everything real is physical or if non‑physical realms exist. Dualists argue that mind and matter are distinct, with mental events belonging to an immaterial substance and physical events to a material one. René Descartes famously proposed that the mind is a non‑material thinking substance, while the body belongs to the material, non‑thinking realm. This Cartesian dualism treats consciousness as fundamentally outside the scope of physics.\n\nPhysicalists contend that mental phenomena supervene on physical processes—that brain states fully account for thoughts and sensations. According to this view, if one knew every detail of a brain’s physical configuration, one would know everything about the subject’s mental life. Physicalism thus extends the physical domain to include consciousness, treating it as an emergent property of complex material interactions.\n\nA key point of contention is the private, subjective nature of conscious experience versus the public, objective nature of physical properties. Physical attributes—mass, charge, velocity—can be observed and measured by multiple observers. In contrast, only the subject directly experiences their own pain or color sensations. This “explanatory gap” and the so‑called “hard problem of consciousness” challenge the completeness of physical explanation.\n\nSome philosophers propose neutral monism or panpsychism as alternatives, positing a more fundamental substance that underlies both mind and matter. Others suggest that new physics—beyond current theories—may be needed to account for consciousness. Regardless, the debate highlights that our conception of the physical is still evolving and may expand as we deepen our understanding of reality.\n\nThese philosophical discussions remind us that science operates within the physical domain by definition, leaving questions about the non‑physical to metaphysics. Whether future discoveries will absorb consciousness into physics or reaffirm a distinction remains an open question. For now, the boundary between physical and abstract keeps alive fundamental questions about the nature of existence.",
+        "citations": [
+          {
+            "source": {
+              "type": "website",
+              "title": "Stanford Encyclopedia of Philosophy",
+              "authors": [],
+              "publisher": "Stanford Encyclopedia of Philosophy",
+              "year": 2018,
+              "url": "https://plato.stanford.edu/"
+            },
+            "title": "Dualism (Section 1.1)",
+            "page": "1.1",
+            "url": "https://plato.stanford.edu/entries/dualism/",
+            "quote": "Conscious mental events are private to the subject, who has privileged access to them of a kind no one has to the physical.",
+            "note": ""
+          },
+          {
+            "source": {
+              "type": "website",
+              "title": "Embodied Philosophy",
+              "authors": [],
+              "publisher": "Embodied Philosophy",
+              "year": 2020,
+              "url": "https://www.embodiedphilosophy.com/"
+            },
+            "title": "Definition of Dualism",
+            "page": "Dualism",
+            "url": "https://www.embodiedphilosophy.com/definitions/dualism/",
+            "quote": "In Cartesian dualism, the mind is a non-material, thinking substance and the body is a material, non-thinking substance.",
+            "note": ""
+          }
+        ]
+      }
+    ]
+  }
+  

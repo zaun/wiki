@@ -1,0 +1,47 @@
+{
+    "title": "Semantic Information",
+    "parentTitle": "Informational",
+    "aliases": [
+        "Meaningful Information",
+        "Truthful Data"
+    ],
+    "links": [
+        {
+            "title": "Stanford Encyclopedia of Philosophy — Semantic Conceptions of Information",
+            "url": "https://plato.stanford.edu/entries/information-semantic/"
+        },
+        {
+            "title": "Yehoshua Bar‑Hillel & Rudolf Carnap — An Outline of a Theory of Semantic Information",
+            "url": "http://hum.uchicago.edu/~jagoldsm/Courses/2008HistoryOfLx/barhillelCarnap.pdf"
+        },
+        {
+            "title": "Luciano Floridi — Semantic Conceptions of Information",
+            "url": "https://doi.org/10.1093/acrefore/9780198754378.013.510"
+        },
+        {
+            "title": "Internet Encyclopedia of Philosophy — Information",
+            "url": "https://iep.utm.edu/information/"
+        }
+    ],
+    "tags": [],
+    "details": [],
+    "content": "Semantic information is information that is not only syntactically well‑formed but also carries meaning and, in many accounts, truth. Unlike Shannon information, which quantifies uncertainty reduction, semantic information assesses the content of messages in terms of their propositional content and accuracy. Early formalizations by Bar‑Hillel and Carnap treated semantic information as related to logical probability, while contemporary approaches—most notably by Floridi—define it as well‑formed, meaningful, and truthful data.\n\nBecause semantic information connects symbols to their referents or propositions about the world, it depends on shared conventions, background knowledge, and context. Assessing semantic information thus requires evaluating both the structure of the message and its correspondence to states of affairs. Applications range from natural language understanding and knowledge representation to bioinformatics and data quality assessment.",
+    "sections": [
+        {
+            "title": "Definitions and Criteria",
+            "content": "Semantic information is typically characterized by three criteria: well‑formedness (syntactic correctness), meaningfulness (semantic coherence), and truthfulness (factual accuracy). Bar‑Hillel and Carnap’s 1953 theory modeled semantic information in terms of logical probability, proposing that a less probable proposition carries more information when true. Floridi’s later account refines this into the “Strongly Semantic Information” (SSI) definition: information must be well‑formed, meaningful, and truthful."
+        },
+        {
+            "title": "Formal Measures",
+            "content": "Early measures of semantic information used logical probability and entailment to quantify informativeness. Popper extended this by linking information content to falsifiability: the more a proposition risks being false yet survives testing, the more information it conveys. Modern computational metrics evaluate semantic information via ontology‑based similarity measures and truth‑conditional models in formal semantics."
+        },
+        {
+            "title": "Context and Pragmatics",
+            "content": "Unlike purely syntactic models, semantic information depends on context: shared background knowledge, domain ontologies, and pragmatic conventions. Contextual factors determine which propositions count as meaningful and how truth conditions are evaluated. Pragmatic information theory incorporates effects on the receiver—such as relevance and impact—extending semantic models into usage and interpretation."
+        },
+        {
+            "title": "Applications and Challenges",
+            "content": "Semantic information is central to natural language processing, semantic web technologies, and knowledge representation, where meaning and truth are paramount. In bioinformatics, semantic annotations link genomic data to functional ontologies. Challenges include handling ambiguity, non‑literal language, and evolving contexts. Ensuring semantic interoperability across systems demands rigorous metadata, shared ontologies, and automated reasoning tools."
+        }
+    ]
+}
