@@ -79,9 +79,13 @@ export async function createSection(req, res) {
         );
 
         await tx.commit();
-        res.status(201).json({ id });
+        req.params.id = id;
+        await getSection(req, res);
     } catch (err) {
-        await tx.rollback();
+        console.log(err);
+        if (tx.isOpen()) {
+            await tx.rollback();
+        }
         res.status(500).json({ error: err.message });
     } finally {
         await s.close();
@@ -151,7 +155,9 @@ export async function getSection(req, res) {
             { nodeId, id }
         );
 
-        if (result.records.length === 0) return res.status(404).json({ error: 'Not found' });
+        if (result.records.length === 0) {
+            return res.status(404).json({ error: 'Not found' });
+        }
 
         const section = { ...result.records[0].get('s').properties };
         if (section.content === '' && Array.isArray(section.contents) && section.contents.length > 0) {
@@ -218,7 +224,7 @@ export async function patchSection(req, res) {
 
         // prepare new values (falling back to old)
 		const newTitle = title ?? old.title;
-		const newType = content ?? old.type;
+		const newType = type ?? old.type;
 		const newContent = content ?? oldContent;
         const newStatus = newContent.trim() === '' ? 'stub' : 'complete';
 
@@ -282,10 +288,12 @@ export async function patchSection(req, res) {
         );
 
         await tx.commit();
-        // still return the same ID — it's always the “current” section
-        res.json({ id: currentId });
+        await getSection(req, res);
     } catch (err) {
-        await tx.rollback();
+        console.log(err);
+        if (tx.isOpen()) {
+            await tx.rollback();
+        }
         res.status(500).json({ error: err.message });
     } finally {
         await s.close();
@@ -382,7 +390,10 @@ export async function moveSection(req, res) {
         await tx.commit();
         res.status(200).json({ success: true });
     } catch (err) {
-        await tx.rollback();
+        console.log(err);
+        if (tx.isOpen()) {
+            await tx.rollback();
+        }
         res.status(500).json({ error: err.message });
     } finally {
         await s.close();
@@ -453,7 +464,10 @@ export async function bulkReorderSections(req, res) {
         await tx.commit();
         res.status(200).json({ success: true });
     } catch (err) {
-        await tx.rollback();
+        console.log(err);
+        if (tx.isOpen()) {
+            await tx.rollback();
+        }
         res.status(500).json({ error: err.message });
     } finally {
         await s.close();

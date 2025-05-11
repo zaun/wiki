@@ -112,7 +112,18 @@ export async function createIndexes() {
 
     try {
         const statements = [
-			// 🧠 Node indexes and constraints
+            // 👤 User indexes and constraints
+            `CREATE CONSTRAINT user_id_unique IF NOT EXISTS FOR (u:User) REQUIRE u.id IS UNIQUE`,
+            `CREATE INDEX user_recoveryHash_index IF NOT EXISTS FOR (u:User) ON (u.recoveryHash)`,
+            `CREATE INDEX user_email_index IF NOT EXISTS FOR (u:User) ON (u.email)`,
+            `CREATE INDEX user_createdAt_index IF NOT EXISTS FOR (u:User) ON (u.createdAt)`,
+            `CREATE INDEX user_role_index IF NOT EXISTS FOR (u:User) ON (u.role)`,
+
+            // 🔐 WebAuthnCredential indexes and constraints
+            `CREATE CONSTRAINT webauthn_credential_id_unique IF NOT EXISTS FOR (c:WebAuthnCredential) REQUIRE c.id IS UNIQUE`,
+            `CREATE INDEX webauthn_created_index IF NOT EXISTS FOR (c:WebAuthnCredential) ON (c.addedAt)`,
+
+            // 🧠 Node indexes and constraints
 			`CREATE CONSTRAINT node_id_unique IF NOT EXISTS FOR (n:Node) REQUIRE n.id IS UNIQUE`,
 			`CREATE INDEX node_title_index IF NOT EXISTS FOR (n:Node) ON (n.title)`,
 			`CREATE INDEX node_aliases_index IF NOT EXISTS FOR (n:Node) ON (n.aliases)`,

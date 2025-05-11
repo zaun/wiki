@@ -9,11 +9,13 @@ import cors from 'cors';
 import fs from 'fs';
 import http from 'http';
 import https from 'https';
+import * as AuthHelpers from './api/auth.js';
 import * as NodeHandlers from './api/nodes.js';
 import * as SectionHandlers from './api/sections.js';
 import * as SearchHandlers from './api/search.js';
 import * as CitationHandlers from './api/citations.js';
 import * as ImageHandlers from './api/images.js';
+import * as UserHandlers from './api/users.js';
 import * as UtilHelpers from './api/util.js';
 import { verifyConnection, createIndexes, closeDriver } from './storage/neo4j.js';
 
@@ -51,12 +53,39 @@ await createIndexes();
 // Make sure the root exists
 await NodeHandlers.createRoot();
 await ImageHandlers.createImageRoot();
+await UserHandlers.createUserRoot()
 
 /**
  * Express router that handles all API routes.
  * Mounted at /api
  */
 const router = express.Router();
+
+// Auth and related function
+router.use(AuthHelpers.verifyAuth);
+router.get('/auth/register/options', AuthHelpers.registerOptions);
+router.post('/auth/register', AuthHelpers.register);
+router.get('/auth/login/options', AuthHelpers.loginOptions);
+router.post('/auth/login', AuthHelpers.login);
+router.get('/auth/recover/options', AuthHelpers.registerOptions);
+router.post('/auth/recover', AuthHelpers.recover);
+router.get('/auth/link/options', AuthHelpers.registerOptions);
+router.post('/auth/link', AuthHelpers.link);
+router.get('/auth/link/code', AuthHelpers.requireRegistered, AuthHelpers.generateLinkCode);
+
+// Route level security
+router.use((req, res, next) => {
+  if (['DELETE', 'MOVE', 'PATCH', 'POST', 'PUT'].includes(req.method)) {
+    return AuthHelpers.requireRegistered(req, res, next);
+  }
+  next();
+});
+
+// Users
+router.get('/user/:id', AuthHelpers.requireRegistered, UserHandlers.getUserDetails);
+router.patch('/user/:id', UserHandlers.updateUserProfile);
+router.patch('/user/:userId/credentials/:credentialId', UserHandlers.updateCredentialDetails);
+// router.delete('/user/:userId/credentials/:credentialId', UserHandlers.deleteCredential);
 
 // Nodes
 router.post('/nodes', NodeHandlers.createNode);
@@ -110,11 +139,11 @@ router.get('/images/:id', ImageHandlers.getImage);
 router.get('/search', SearchHandlers.search);
 
 // Citation Sources
-router.post('/citations', CitationHandlers.createCitation); // Create source
-router.get('/citations', CitationHandlers.listCitations);   // Optional: list/search
-router.get('/citations/:id', CitationHandlers.getCitation); // Get source
-router.patch('/citations/:id', CitationHandlers.updateCitation); // Update source
-router.delete('/citations/:id', CitationHandlers.deleteCitation); // Delete source
+router.post('/citations', CitationHandlers.createCitation);
+router.get('/citations', CitationHandlers.listCitations);
+router.get('/citations/:id', CitationHandlers.getCitation);
+router.patch('/citations/:id', CitationHandlers.updateCitation);
+router.delete('/citations/:id', CitationHandlers.deleteCitation);
 
 // Citation Merge
 router.post('/citations/:destId/merge/:sourceId', CitationHandlers.mergeCitations);
