@@ -22,8 +22,9 @@ export const useData = defineStore('data', () => {
      *
      * @param {string|number} nodeId - Identifier of the node.
      */
-    function ensureCitationCache(nodeId) {
-        cacheCitations.value[nodeId] = cacheCitations.value[nodeId] || [];
+    function ensureCache(nodeId) {
+        cacheSections.value[nodeId] ||= [];
+        cacheCitations.value[nodeId] ||= [];
     }
 
     /**
@@ -36,7 +37,7 @@ export const useData = defineStore('data', () => {
      * @returns {{ type: string, id: string|number, order: number, citations: Array }} The citation group entry.
      */
     function getOrCreateEntry(nodeId, type, id, order) {
-        ensureCitationCache(nodeId);
+        ensureCache(nodeId);
         let entry = cacheCitations.value[nodeId]
             .find((e) => e.type === type && e.id === id);
         if (!entry) {
@@ -90,7 +91,7 @@ export const useData = defineStore('data', () => {
      * @returns {Promise<boolean>} True if fetch succeeded, false otherwise.
      */
     async function fetchNode(nodeId) {
-        ensureCitationCache(nodeId);
+        ensureCache(nodeId);
         try {
             const resNode = await api.getNode(nodeId);
             cacheNodes.value[nodeId] = resNode.data;
@@ -121,7 +122,7 @@ export const useData = defineStore('data', () => {
      * @returns {Promise<boolean>} True if fetch succeeded, false otherwise.
      */
     async function fetchSections(nodeId) {
-        ensureCitationCache(nodeId);
+        ensureCache(nodeId);
         try {
             const resSec = await api.listSections(nodeId);
             cacheSections.value[nodeId] = resSec.data;
@@ -130,6 +131,7 @@ export const useData = defineStore('data', () => {
             cacheCitations.value[nodeId] = cacheCitations.value[nodeId]
                 .filter((c) => c.type !== 'section' || currentSecIds.has(c.id));
 
+            console.log(`[api] Loaded ${resSec.data.length} sections for node ${nodeId}`);
             for (let idx = 0; idx < resSec.data.length; idx++) {
                 const sec = resSec.data[idx];
                 const resCit = await api.listSectionCitations(nodeId, sec.id);
@@ -181,9 +183,9 @@ export const useData = defineStore('data', () => {
             return false;
         }
 
-        currentNode.value     = cacheNodes.value[nodeId];
+        currentNode.value = cacheNodes.value[nodeId];
         currentSections.value = cacheSections.value[nodeId];
-        currentCitations.value= cacheCitations.value[nodeId];
+        currentCitations.value = cacheCitations.value[nodeId];
         return true;
     }
 
@@ -250,6 +252,71 @@ export const useData = defineStore('data', () => {
         syncCurrent(nodeId);
 
         return updated;
+    }
+    
+    /**
+     * Create a new section for the node.
+     *
+     * @param {string|number} nodeId - Identifier of the node.
+     * @param {Object} payload - Section data to create.
+     * @returns {Promise<Object>} The created section object.
+     * @throws Will throw if the API call fails.
+     */
+    async function createSection(nodeId, payload) {
+        ensureCache(nodeId);
+
+        const res = await api.createSection(nodeId, payload);
+        const newSection = res.data;
+
+        cacheSections.value[nodeId].push(newSection);
+
+        syncCurrent(nodeId);
+        return newSection;
+    }
+
+    /**
+     * Update an existing section.
+     *
+     * @param {string|number} nodeId - Identifier of the node.
+     * @param {string|number} sectionId - Identifier of the section to update.
+     * @param {Object} payload - Section data to update.
+     * @returns {Promise<Object>} The updated section object.
+     * @throws Will throw if the API call fails.
+     */
+    async function updateSection(nodeId, sectionId, payload) {
+        ensureCache(nodeId);
+
+        const res = await api.updateSection(nodeId, sectionId, payload);
+        const updatedSection = res.data;
+
+        const idx = cacheSections.value[nodeId].findIndex((s) => s.id === sectionId);
+        if (idx !== -1) {
+            cacheSections.value[nodeId].splice(idx, 1, updatedSection);
+        } else {
+            throw Error("Updated section not in cache");
+        }
+
+        syncCurrent(nodeId);
+        return updatedSection;
+    }
+    
+    /**
+     * Delete a section from the node.
+     *
+     * @param {string|number} nodeId - Identifier of the node.
+     * @param {string|number} sectionId - Identifier of the section to delete.
+     * @returns {Promise<void>}
+     * @throws Will throw if the API call fails.
+     */
+    async function deleteSection(nodeId, sectionId) {
+        ensureCache(nodeId);
+
+        await api.deleteSection(nodeId, sectionId);
+        cacheCitations.value[nodeId] = cacheCitations.value[nodeId].filter(
+            (entry) => !(entry.type === 'section' && entry.id === sectionId),
+        );
+
+        syncCurrent(nodeId);
     }
 
     /**
@@ -344,6 +411,9 @@ export const useData = defineStore('data', () => {
         currentCitations,
         setNode,
         updateNode,
+        createSection,
+        updateSection,
+        deleteSection,
         createNodeCitation,
         createSectionCitation,
         updateNodeCitation,

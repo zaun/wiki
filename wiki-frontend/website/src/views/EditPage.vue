@@ -207,6 +207,7 @@ async function load() {
 function initializeForm() {
     const node = store.currentNode;
     form.node = { ...node };
+    console.log(222, store.currentSections);
     form.sections = store.currentSections.map(s => ({
         id: s.id,
         type: s.type || 'text',
@@ -313,8 +314,26 @@ async function onSetHeroDelete() {
 
 async function doSaveCitation() {
     try {
-        // save the citation (will create or update)
-        await store.saveCitation(editCitationParent, editCitation.value);
+        if (editCitation.value.source.id) {
+            api.updateCitationSource(editCitation.value.source.id, editCitation.value.source);
+        } else {
+            const source = await api.createCitationSource(editCitation.value.source);
+            editCitation.value.source.id = source.data.id;
+        }
+
+        if (editCitation.value.id) {
+            if (editCitationParent === 'node') {
+                await store.updateNodeCitation(form.node.id, editCitation.value);
+            } else {
+                await store.updateSectionCitation(form.node.id, editCitationParent, editCitation.value);
+            }
+        } else {
+            if (editCitationParent === 'node') {
+                await store.createNodeCitation(form.node.id, editCitation.value);
+            } else {
+                await store.createSectionCitation(form.node.id, editCitationParent, editCitation.value);
+            }
+        }
         editCitationOpen.value = false;
         snackbar.message = 'Citation saved';
         snackbar.color = 'success';
@@ -329,8 +348,10 @@ async function doSaveCitation() {
 
 async function doDeleteCitation() {
     try {
-        if (editCitation.value.id) {
-            await store.deleteCitation(editCitationParent, editCitation.value.id);
+        if (editCitationParent === 'node' && editCitation.value.id) {
+            await store.removeNodeCitation(form.node.id, editCitation.value.id);
+        } else if (editCitationParent !== 'node' && editCitation.value.id) {
+            await store.removeSectionCitation(form.node.id, editCitationParent, editCitation.value.id);
         }
         editCitationOpen.value = false;
         snackbar.message = 'Citation deleted';
@@ -371,9 +392,9 @@ async function doSaveSection(idx) {
     try {
         const sec = form.sections[idx];
         if (sec.id) {
-            await store.updateSection(sec.id, sec);
+            await store.updateSection(form.node.id, sec.id, sec);
         } else {
-            const newSection = await store.createSection(props.id, sec);
+            const newSection = await store.createSection(form.node.id, sec);
             form.sections[idx].id = newSection.id;
         }
         snackbar.message = 'Section saved';
@@ -392,7 +413,7 @@ async function doDeleteSection(idx) {
     try {
         const sec = form.sections[idx];
         if (sec.id) {
-            await store.deleteSection(sec.id);
+            await store.deleteSection(form.node.id, sec.id);
         }
         form.sections.splice(idx, 1);
         sectionEditState.value.splice(idx, 1);

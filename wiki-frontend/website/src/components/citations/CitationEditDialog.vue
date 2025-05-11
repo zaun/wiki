@@ -198,10 +198,19 @@ const emits = defineEmits([
 
 const citation = ref({});
 const isOpen = ref(props.isOpen);
+const resourceTypes = ref([
+    'Website',
+    'Book',
+    'Article',
+    'Journal',
+    'Newspaper',
+    'Report',
+    'Thesis',
+    'Paper',
+]);
 const searchDialog = ref(false);
 const searchQuery = ref('');
 const searchResults = ref([]);
-
 const form = reactive({});
 
 const isDialogOpen = computed(() => isOpen.value);

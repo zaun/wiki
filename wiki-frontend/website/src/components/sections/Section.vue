@@ -135,9 +135,19 @@ watch(internalEditing, (v) => {
 watch(
     () => props.modelValue,
     (v) => {
+        console.log(111, v.type);
         localSection.value = { ...v };
     },
 );
+
+/**
+ * Count characters in a string.
+ * @param {string} t - Input text.
+ * @returns {number} Number of words.
+ */
+function countChars(t) {
+    return t?.trim().length;
+}
 
 /**
  * Count words in a string.
@@ -145,7 +155,7 @@ watch(
  * @returns {number} Number of words.
  */
 function countWords(t) {
-    return t.trim().split(/\s+/).filter((w) => w).length;
+    return t?.trim().split(/\s+/).filter((w) => w).length;
 }
 
 /**
@@ -154,7 +164,7 @@ function countWords(t) {
  * @returns {number} Number of paragraphs.
  */
 function countParagraphs(t) {
-    return t.split(/\n+/).filter((p) => p.trim()).length;
+    return t?.split(/\n+/).filter((p) => p.trim()).length;
 }
 
 /**

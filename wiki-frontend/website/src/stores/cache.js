@@ -31,6 +31,7 @@ export const useCache = defineStore('cache', () => {
     const cacheNodes = ref({});
     const cacheSections = ref({});
     const cacheCitations = ref({});
+    let initilized = false;
     let db = null;
 
     /**
@@ -39,12 +40,24 @@ export const useCache = defineStore('cache', () => {
     watch(
         cacheNodes,
         async (nodes) => {
-            if (!db) await init();
-            const tx = db.transaction('nodes', 'readwrite');
-            for (const [_id, node] of Object.entries(nodes)) {
-                await tx.store.put(toRaw(node));
+            try {
+                await init();
+                const tx = db.transaction('nodes', 'readwrite');
+                const keys = Object.keys(nodes);
+                // console.log(`[cache] NODE ${keys.length} items`);
+                for (const key of keys) {
+                    const item = toRaw(nodes[key]);
+                    if (item.id)  {
+                        // console.log(`[cache] NODE -> ${item.title}`);
+                        tx.store.put(item);
+                    } else {
+                        console.log(`[cache] NODE -! ${JSON.stringify(item)}`);
+                    }
+                }
+                await tx.done;
+            } catch(err) {
+                console.error(err);
             }
-            await tx.done;
         },
         { deep: true },
     );
@@ -55,14 +68,23 @@ export const useCache = defineStore('cache', () => {
     watch(
         cacheSections,
         async (sectionsMap) => {
-            if (!db) await init();
-            const tx = db.transaction('sections', 'readwrite');
-            for (const [parentId, secs] of Object.entries(sectionsMap)) {
-                for (const sec of secs) {
-                    await tx.store.put({ ...toRaw(sec), parentId });
+            try {
+                await init();
+                const tx = db.transaction('sections', 'readwrite');
+                const keys = Object.keys(sectionsMap);
+                for (const key of keys) {
+                    const sections = sectionsMap[key];
+                    // console.log(`[cache] SECTION items ${sections.length} items`);
+                    for (const sec of sections) {
+                        const item = toRaw(sec);
+                        // console.log(`[cache] SECTION -> ${item.title}`);
+                        tx.store.put(item);
+                    }
                 }
+                await tx.done;
+            } catch(err) {
+                console.error(err);
             }
-            await tx.done;
         },
         { deep: true },
     );
@@ -73,20 +95,24 @@ export const useCache = defineStore('cache', () => {
     watch(
         cacheCitations,
         async (citsMap) => {
-            if (!db) await init();
-            const tx = db.transaction('citations', 'readwrite');
-            for (const [parentId, grps] of Object.entries(citsMap)) {
-                for (const grp of grps) {
-                    await tx.store.put({
-                        parentId,
-                        type: grp.type,
-                        id: grp.id,
-                        order: grp.order,
-                        citations: grp.citations.map((c) => toRaw(c)),
-                    });
+            try {
+                await init();
+                const tx = db.transaction('citations', 'readwrite');
+                const keys = Object.keys(citsMap);
+                for (const key of keys) {
+                    const citations = citsMap[key];
+                    // console.log(`[cache] CITATION items ${citations.length} items`);
+                    for (const cit of citations) {
+                        const item = toRaw(cit);
+                        item.nodeId = key;
+                        // console.log(`[cache] CITATION -> ${item.type}-${item.id}`);
+                        tx.store.put(item);
+                    }
                 }
+                await tx.done;
+            } catch(err) {
+                console.error(err);
             }
-            await tx.done;
         },
         { deep: true },
     );
@@ -97,14 +123,20 @@ export const useCache = defineStore('cache', () => {
      * @returns {Promise<void>}
      */
     async function init() {
-        if (db) return;
-        db = await openDB('UnendingWiki', 1, {
+        if (initilized) {
+            return initilized;
+        }
+
+        console.log('[cache] INIT');
+
+        initilized = openDB('UnendingWiki', 1, {
             upgrade(store) {
                 store.createObjectStore('nodes', { keyPath: 'id' });
                 store.createObjectStore('sections', { keyPath: 'id' });
-                store.createObjectStore('citations', { keyPath: ['parentId', 'type', 'id'] });
+                store.createObjectStore('citations', { keyPath: ['type', 'id'] });
             },
         });
+        db = await initilized;
 
         const [allNodes, allSections, allCits] = await Promise.all([
             db.getAll('nodes'),
@@ -114,19 +146,58 @@ export const useCache = defineStore('cache', () => {
 
         allNodes.forEach((n) => {
             cacheNodes.value[n.id] = n;
+            cacheSections.value[n.id] ||= [];
+            cacheCitations.value[n.id] ||= [];
         });
+
+        console.log(`[cache] Loading from database: nodes=${allNodes.length} sections=${allSections.length} citations=${allCits.length}`);
         allSections.forEach((s) => {
-            cacheSections.value[s.parentId] ||= [];
-            cacheSections.value[s.parentId].push(s);
+            if (s.nodeId) {
+                cacheSections.value[s.nodeId] ||= [];
+                const idx = cacheSections.value[s.nodeId].findIndex((section) => section.id === s.id);
+                if (idx === -1) {
+                    cacheSections.value[s.nodeId].push(s);
+                } else {
+                    const incomingDate = new Date(s.createdAt);
+                    const cachedDate = new Date(cacheSections.value[s.nodeId][idx].createdAt);
+                    if (incomingDate > cachedDate) {
+                        cacheSections.value[s.nodeId][idx] = s;
+                    }
+                }
+            } else {
+                console.log(`[cache] No node ID on section`, s);
+            }
         });
         allCits.forEach((c) => {
-            cacheCitations.value[c.parentId] ||= [];
-            cacheCitations.value[c.parentId].push({
-                type: c.type,
-                id: c.id,
-                order: c.order,
-                citations: c.citations,
-            });
+            if (c.nodeId && c.type && c.id) {
+                cacheCitations.value[c.nodeId] ||= [];
+                const idx = cacheCitations.value[c.nodeId].findIndex((citation) => citation.id === c.id);
+                if (idx === -1) {
+                    cacheCitations.value[c.nodeId].push({
+                        type: c.type,
+                        id: c.id,
+                        order: c.order,
+                        citations: c.citations,
+                    });
+                } else {
+                    const incomingDate = new Date(c.createdAt);
+                    const cachedDate = new Date(cacheCitations.value[c.nodeId][idx].createdAt);
+                    if (incomingDate > cachedDate) {
+                        cacheCitations.value[c.nodeId][idx] = {
+                            type: c.type,
+                            id: c.id,
+                            order: c.order,
+                            citations: c.citations,
+                        };
+                    }
+                }
+            } else {
+                console.log(`[cache] No node ID on citation`, s);
+            }
+        });
+
+        allNodes.forEach((n) => {
+            console.log(`Node ${n.id} has ${cacheSections.value[n.id].length} sections.`);
         });
     }
     init();

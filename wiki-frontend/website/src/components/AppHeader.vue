@@ -14,7 +14,7 @@
         </div>
 
         <div class="ml-auto d-flex align-center">
-            <template v-if="isViewRoute || isEditRoute">
+            <template v-if="isAuthenticated && (isViewRoute || isEditRoute)">
                 <v-menu offset-y>
                     <template #activator="{ props: menuProps }">
                         <v-btn icon v-bind="menuProps">
@@ -35,7 +35,7 @@
                 </v-menu>
             </template>
 
-            <template v-if="loggedIn">
+            <template v-if="isAuthenticated">
                 <v-menu offset-y>
                     <template #activator="{ props: menuProps }">
                         <v-btn icon v-bind="menuProps">
@@ -53,57 +53,37 @@
                 </v-menu>
             </template>
             <template v-else>
-                <v-btn text @click="login">Login</v-btn>
-                <v-btn text @click="signup">Sign Up</v-btn>
+                <v-btn text @click="doAuth">Get Started</v-btn>
             </template>
         </div>
     </v-app-bar>
+
+    <AuthDialog v-model="showAuth" />
 </template>
 
 <script setup>
 import { ref, computed } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
 
-// Get current route and router for navigation
+import AuthDialog from '@/components/AuthDialog.vue';
+import { useApi } from '@/stores/api';
+
+const api = useApi();
 const route = useRoute();
 const router = useRouter();
-
-/**
- * Props for AppBar component
- * @typedef {Object} AppBarProps
- * @property {boolean} [loggedIn=false] - Whether the user is authenticated.
- */
-
-const _props = defineProps({ loggedIn: { type: Boolean, default: false } });
-
-/**
- * Emits supported by AppBar
- * @typedef {Object} AppBarEmits
- * @property {(query: string) => void} search       - Emitted when user initiates a search.
- * @property {() => void} login                     - Emitted to trigger login flow.
- * @property {() => void} logout                    - Emitted to trigger logout.
- * @property {() => void} signup                    - Emitted to trigger sign-up flow.
- * @property {() => void} profile                   - Emitted to navigate to user profile.
- * @property {() => void} toggle-edit               - (Unused) Reserved for toggling edit mode.
- */
-const emit = defineEmits([
-    'toggle-edit',
-    'login',
-    'logout',
-    'signup',
-    'search',
-    'profile',
-]);
 
 /**
  * Search query model
  * @type {import('vue').Ref<string>}
  */
 const q = ref('');
+const showAuth = ref(false);
 
 const isEditRoute = computed(() => route.name === 'edit');
 const isHistoryRoute = computed(() => route.name === 'history');
 const isViewRoute = computed(() => route.name === 'view');
+
+const isAuthenticated = api.isAuthenticated;
 
 /**
  * Emit a `search` event with the current query string.
@@ -114,27 +94,20 @@ function doSearch() {
 }
 
 /**
- * Emit a `login` event.
+ * Show the authentication dialog.
  * @returns {void}
  */
-function login() {
-    emit('login');
+function doAuth() {
+    showAuth.value = true;
 }
 
 /**
  * Emit a `logout` event.
  * @returns {void}
  */
-function logout() {
-    emit('logout');
-}
-
-/**
- * Emit a `signup` event.
- * @returns {void}
- */
-function signup() {
-    emit('signup');
+async function logout() {
+    await api.authLogout();
+    router.replace('/');
 }
 
 /**
