@@ -20,7 +20,7 @@ export async function createSection(req, res) {
 
     try {
         const { nodeId } = req.params;
-        const { title, content, type } = req.body;
+        const { title, content, data, summary, type } = req.body;
         const now = new Date().toISOString();
         const id = uuidv7();
 
@@ -36,16 +36,38 @@ export async function createSection(req, res) {
         }
 
         const rawContent = content || '';
+        const rawData = JSON.stringify(data || '');
+        const rawSummary = summary || '';
         const status = rawContent.trim() === '' ? 'stub' : 'complete';
+
         let contentField = '';
         let contents = [];
-
         if (rawContent.length > 800_000) {
             for (let i = 0; i < rawContent.length; i += 800_000) {
                 contents.push(rawContent.slice(i, i + 800_000));
             }
         } else {
             contentField = rawContent;
+        }
+
+        let dataField = '';
+        let datas = [];
+        if (rawData.length > 800_000) {
+            for (let i = 0; i < rawData.length; i += 800_000) {
+                datas.push(rawData.slice(i, i + 800_000));
+            }
+        } else {
+            dataField = rawData;
+        }
+
+        let summaryField = '';
+        let summaries = [];
+        if (rawSummary.length > 800_000) {
+            for (let i = 0; i < rawSummary.length; i += 800_000) {
+                summaries.push(rawSummary.slice(i, i + 800_000));
+            }
+        } else {
+            summaryField = rawSummary;
         }
 
         // Atomic create + order assignment
@@ -59,6 +81,10 @@ export async function createSection(req, res) {
                 title: $title,
                 content: $content,
                 contents: $contents,
+                data: $data,
+                datas: $datas,
+                summary: $summary,
+                summaries: $summaries,
                 createdAt: $now,
                 updatedAt: $now,
                 type: $type,
@@ -72,6 +98,10 @@ export async function createSection(req, res) {
                 title,
                 content: contentField,
                 contents,
+                data: dataField,
+                datas,
+                summary: summaryField,
+                summaries,
                 now,
                 type,
                 status
@@ -122,6 +152,17 @@ export async function getSections(req, res) {
             }
             delete section.contents;
 
+            if (section.data === '' && Array.isArray(section.datas)) {
+                section.data = section.datas.join('');
+            }
+            delete section.datas;
+            section.data = JSON.parse(section.data);
+
+            if (section.summary === '' && Array.isArray(section.summaries)) {
+                section.summary = section.summaries.join('');
+            }
+            delete section.summaries;
+
             return {
                 ...section,
                 order,
@@ -163,8 +204,19 @@ export async function getSection(req, res) {
         if (section.content === '' && Array.isArray(section.contents) && section.contents.length > 0) {
             section.content = section.contents.join('');
         }
-
         delete section.contents;
+
+        if (section.data === '' && Array.isArray(section.datas)) {
+            section.data = section.datas.join('');
+        }
+        delete section.datas;
+        section.data = JSON.parse(section.data);
+
+        if (section.summary === '' && Array.isArray(section.summaries)) {
+            section.summary = section.summaries.join('');
+        }
+        delete section.summaries;
+
         res.json({ ...section, id, nodeId });
     } finally {
         await s.close();
@@ -185,7 +237,7 @@ export async function patchSection(req, res) {
 
     try {
         const { nodeId, id: currentId } = req.params;
-        const { title, content, type } = req.body;
+        const { title, content, data, summary, type } = req.body;
         const now = new Date().toISOString();
         const archiveId = uuidv7();
 
@@ -221,20 +273,45 @@ export async function patchSection(req, res) {
         if (oldContent === '' && Array.isArray(old.contents) && old.contents.length > 0) {
             oldContent = old.contents.join('');
         }
+        let oldData = old.data;
+        if (oldData === '' && Array.isArray(old.datas) && old.datas.length > 0) {
+            oldData = old.datas.join('');
+        }
+        oldData = JSON.parse(oldData);
+        let oldSummary = old.summary;
+        if (oldSummary === '' && Array.isArray(old.summaries) && old.summaries.length > 0) {
+            oldSummary = old.summaries.join('');
+        }
 
         // prepare new values (falling back to old)
 		const newTitle = title ?? old.title;
 		const newType = type ?? old.type;
 		const newContent = content ?? oldContent;
+		const newData = JSON.stringify(data ?? oldData);
+		const newSummary = summary ?? oldSummary;
         const newStatus = newContent.trim() === '' ? 'stub' : 'complete';
 
-        // split into contents[] if > 800k
+        // split into chunks if > 800k
         let newContents = [];
         if (newContent.length > 800_000) {
             for (let i = 0; i < newContent.length; i += 800_000) {
                 newContents.push(newContent.slice(i, i + 800_000));
             }
             newContent = '';
+        }
+        let newDatas = [];
+        if (newData.length > 800_000) {
+            for (let i = 0; i < newData.length; i += 800_000) {
+                newDatas.push(newData.slice(i, i + 800_000));
+            }
+            newData = '';
+        }
+        let newSummaries = [];
+        if (newSummary.length > 800_000) {
+            for (let i = 0; i < newSummary.length; i += 800_000) {
+                newSummaries.push(newSummary.slice(i, i + 800_000));
+            }
+            newSummary = '';
         }
 
         // create the archived copy
@@ -244,6 +321,10 @@ export async function patchSection(req, res) {
                 title:     $oldTitle,
                 content:   $oldContent,
                 contents:  $oldContents,
+                data:      $oldData,
+                datas:     $oldDatas,
+                summary:   $oldSummary,
+                summaries: $oldSummaries,
                 type:      $oldType,
                 status:    "archived",
                 createdAt: $oldCreatedAt,
@@ -254,6 +335,10 @@ export async function patchSection(req, res) {
                 oldTitle: old.title,
                 oldContent: old.content,
                 oldContents: old.contents || [],
+                oldData: old.data,
+                oldDatas: old.datas || [],
+                oldSummary: old.summary,
+                oldSummaries: old.summaries || [],
                 oldType: old.type,
                 oldCreatedAt: old.createdAt,
                 now
@@ -273,6 +358,10 @@ export async function patchSection(req, res) {
                 s.title     = $newTitle,
                 s.content   = $newContent,
                 s.contents  = $newContents,
+                s.data      = $newData,
+                s.datas     = $newDatas,
+                s.summary   = $newSummary,
+                s.summaries = $newSummaries,
                 s.type      = $newType,
                 s.status    = $newStatus,
                 s.updatedAt = $now`,
@@ -281,6 +370,10 @@ export async function patchSection(req, res) {
                 newTitle,
                 newContent,
                 newContents,
+                newData,
+                newDatas,
+                newSummary,
+                newSummaries,
                 newType,
                 newStatus,
                 now

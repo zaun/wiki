@@ -130,13 +130,13 @@ export async function createIndexes() {
 			`CREATE INDEX node_tags_index IF NOT EXISTS FOR (n:Node) ON (n.tags)`,
 			`CREATE INDEX node_createdAt_index IF NOT EXISTS FOR (n:Node) ON (n.createdAt)`,
 			`CREATE INDEX node_status_index IF NOT EXISTS FOR (n:Node) ON (n.status)`,
-			`CREATE INDEX node_type_index IF NOT EXISTS FOR (n:Node) ON (n.type)`,
 
             // Node detail indexes and contraints
             `CREATE CONSTRAINT detail_id_unique IF NOT EXISTS FOR (d:Detail) REQUIRE d.id IS UNIQUE;`,
             `CREATE INDEX detail_label_index IF NOT EXISTS FOR (d:Detail) ON (d.label);`,
             `CREATE INDEX detail_type_index IF NOT EXISTS FOR (d:Detail) ON (d.type);`,
             `CREATE INDEX detail_createdAt_index IF NOT EXISTS FOR (d:Detail) ON (d.createdAt);`,
+            `CREATE INDEX has_detail_index_index IF NOT EXISTS FOR ()-[r:HAS_DETAIL]-() ON (r.index);`,
 
 			// 📄 Section indexes and constraints
 			`CREATE CONSTRAINT section_id_unique IF NOT EXISTS FOR (s:Section) REQUIRE s.id IS UNIQUE`,
@@ -149,7 +149,7 @@ export async function createIndexes() {
             `CREATE CONSTRAINT citation_id_unique IF NOT EXISTS FOR (c:Citation) REQUIRE c.id IS UNIQUE;`,
             `CREATE INDEX citation_title_index IF NOT EXISTS FOR (c:Citation) ON (c.title);`,
             `CREATE INDEX citation_type_index IF NOT EXISTS FOR (c:Citation) ON (c.type);`,
-            `CREATE INDEX citation_author_index IF NOT EXISTS FOR (c:Citation) ON (c.author);`,
+            // (moved to full text) `CREATE INDEX citation_author_index IF NOT EXISTS FOR (c:Citation) ON (c.authors);`,
             `CREATE INDEX citation_publisher_index IF NOT EXISTS FOR (c:Citation) ON (c.publisher);`,
             `CREATE INDEX citation_year_index IF NOT EXISTS FOR (c:Citation) ON (c.year);`,
             `CREATE INDEX citation_createdAt_index IF NOT EXISTS FOR (c:Citation) ON (c.createdAt);`,
@@ -159,9 +159,13 @@ export async function createIndexes() {
             `CREATE INDEX citation_instance_quote_index IF NOT EXISTS FOR (i:CitationInstance) ON (i.quote);`,
             `CREATE INDEX citation_instance_page_index IF NOT EXISTS FOR (i:CitationInstance) ON (i.page);`,
             `CREATE INDEX citation_instance_createdAt_index IF NOT EXISTS FOR (i:CitationInstance) ON (i.createdAt);`,
+            `CREATE INDEX citation_instance_url_index IF NOT EXISTS FOR (i:CitationInstance) ON (i.url);`,
 
 			// 🔗 Relationship properties
 			`CREATE INDEX has_section_order_index IF NOT EXISTS FOR ()-[r:HAS_SECTION]-() ON (r.order)`,
+
+            // Image constrint
+            `CREATE CONSTRAINT image_id_unique IF NOT EXISTS FOR (img:Image) REQUIRE img.id IS UNIQUE;`,
         ];
 
         for (const stmt of statements) {
@@ -171,7 +175,7 @@ export async function createIndexes() {
         const fullTextIndexes = [{
             name: 'citation_fulltext_index',
             label: 'Citation',
-            properties: ['title', 'type', 'author', 'publisher'],
+            properties: ['title', 'type', 'authors', 'publisher'],
         },
         {
             name: 'node_fulltext_index',
@@ -181,7 +185,7 @@ export async function createIndexes() {
         {
             name: 'section_fulltext_index',
             label: 'Section',
-            properties: ['title', 'content'],
+            properties: ['title', 'content', 'contents', 'summary', 'summaries'],
         }];
 
         for (const { name, label, properties } of fullTextIndexes) {
