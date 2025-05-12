@@ -13,4 +13,3 @@ podman run -d --name wiki-backend \
   -e RECOVERY_KEY_SALT=9db9b172072a615f04b8998425c0025a95736c71f59245a88fbbeb6f12d93e51 \
   -e JWT_SECRET=a7e976d3628c625b03601295a503fc4368126529157c2737579ef8844031998c \
   registry.jgz.guru/wiki-backend
-  
