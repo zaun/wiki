@@ -4,6 +4,7 @@ import crypto from 'crypto'
 import { Fido2Lib } from 'fido2-lib'
 import { UAParser } from 'ua-parser-js';
 import * as UserHandlers from './users.js';
+import { v4 as uuidv4 } from 'uuid';
 
 const JWT_SECRET = process.env.JWT_SECRET
 
@@ -72,20 +73,46 @@ function signToken(userId, role = 'user') {
     return jwt.sign({ userId, role }, JWT_SECRET, { expiresIn: '7d' })
 }
 
-export function verifyAuth(req, res, next) {
+export async function verifyAuth(req, res, next) {
     const auth = req.headers.authorization
-    if (!auth || !auth.startsWith('Bearer ')) {
+    if (auth && auth.startsWith('Bearer ')) {
+        const token = auth.slice(7)
+        try {
+            const decoded = jwt.verify(token, JWT_SECRET)
+            req.userId = decoded.userId
+            req.role = decoded.role
+            next()
+        } catch {
+            return res.status(401).json({ error: 'Invalid token' })
+        }
+    }
+    else if (auth && auth.startsWith('ApiKey ')) {
+        const apiKey = auth.slice(7);
+        const s = session();
+        try {
+            const result = await s.run(`
+                MATCH (u:User {apiKey: $apiKey})
+                RETURN u.id AS userId, u.role AS role
+            `, { apiKey })
+
+            if (result.records.length > 0) {
+                const record = result.records[0].toObject()
+                req.userId = record.userId
+                req.role = record.role
+                next()
+            } else {
+                return res.status(401).json({ error: 'Invalid API key' })
+            }
+        } catch (err) {
+            console.error('Database error during API key verification:', err)
+            return res.status(500).json({ error: 'Authentication failed due to a server error' })
+        } finally {
+            await s.close()
+        }
+    }
+    else {
         req.role = 'guest'
         return next()
-    }
-    const token = auth.slice(7)
-    try {
-        const decoded = jwt.verify(token, JWT_SECRET)
-        req.userId = decoded.userId
-        req.role = decoded.role
-        next()
-    } catch {
-        return res.status(401).json({ error: 'Invalid token' })
     }
 }
 
@@ -222,6 +249,7 @@ export async function register(req, res) {
         const ip = req.headers['x-forwarded-for'] || req.socket.remoteAddress
         const now = new Date().toISOString()
         const deviceInfo = getDeviceInfoString(req);
+        const apiKey = uuidv4();
 
         await tx.run(`
             MATCH (root:User {id: $rootUserId})
@@ -229,6 +257,7 @@ export async function register(req, res) {
                 id: $userId,
                 recoveryHash: $hash,
                 role: $userRole,
+                apiKey: $apiKey,
                 lastLogin: datetime(),
                 createdAt: datetime(),
                 ips: [$ip],
@@ -249,6 +278,7 @@ export async function register(req, res) {
             userId,
             hash: hashed,
             userRole: 'user',
+            apiKey,
             credentialId,
             publicKey,
             initialCounter,

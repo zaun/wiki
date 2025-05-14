@@ -115,9 +115,10 @@ export async function createIndexes() {
             // 👤 User indexes and constraints
             `CREATE CONSTRAINT user_id_unique IF NOT EXISTS FOR (u:User) REQUIRE u.id IS UNIQUE`,
             `CREATE INDEX user_recoveryHash_index IF NOT EXISTS FOR (u:User) ON (u.recoveryHash)`,
-            `CREATE INDEX user_email_index IF NOT EXISTS FOR (u:User) ON (u.email)`,
-            `CREATE INDEX user_createdAt_index IF NOT EXISTS FOR (u:User) ON (u.createdAt)`,
-            `CREATE INDEX user_role_index IF NOT EXISTS FOR (u:User) ON (u.role)`,
+            // `CREATE INDEX user_email_index IF NOT EXISTS FOR (u:User) ON (u.email)`,
+            // `CREATE INDEX user_createdAt_index IF NOT EXISTS FOR (u:User) ON (u.createdAt)`,
+            // `CREATE INDEX user_role_index IF NOT EXISTS FOR (u:User) ON (u.role)`,
+            `CREATE INDEX user_apiKey_index IF NOT EXISTS FOR (u:User) ON (u.apiKey)`,
 
             // 🔐 WebAuthnCredential indexes and constraints
             `CREATE CONSTRAINT webauthn_credential_id_unique IF NOT EXISTS FOR (c:WebAuthnCredential) REQUIRE c.id IS UNIQUE`,
