@@ -135,7 +135,6 @@ watch(internalEditing, (v) => {
 watch(
     () => props.modelValue,
     (v) => {
-        console.log(111, v.type);
         localSection.value = { ...v };
     },
 );
