@@ -31,7 +31,7 @@ export const useCache = defineStore('cache', () => {
     const cacheNodes = ref({});
     const cacheSections = ref({});
     const cacheCitations = ref({});
-    let initilized = false;
+    let initialized = false;
     let db = null;
 
     /**
@@ -123,20 +123,20 @@ export const useCache = defineStore('cache', () => {
      * @returns {Promise<void>}
      */
     async function init() {
-        if (initilized) {
-            return initilized;
+        if (initialized) {
+            return initialized;
         }
 
         console.log('[cache] INIT');
 
-        initilized = openDB('UnendingWiki', 1, {
+        initialized = openDB('UnendingWiki', 1, {
             upgrade(store) {
                 store.createObjectStore('nodes', { keyPath: 'id' });
                 store.createObjectStore('sections', { keyPath: 'id' });
                 store.createObjectStore('citations', { keyPath: ['type', 'id'] });
             },
         });
-        db = await initilized;
+        db = await initialized;
 
         const [allNodes, allSections, allCits] = await Promise.all([
             db.getAll('nodes'),
@@ -146,8 +146,6 @@ export const useCache = defineStore('cache', () => {
 
         allNodes.forEach((n) => {
             cacheNodes.value[n.id] = n;
-            cacheSections.value[n.id] ||= [];
-            cacheCitations.value[n.id] ||= [];
         });
 
         console.log(`[cache] Loading from database: nodes=${allNodes.length} sections=${allSections.length} citations=${allCits.length}`);
@@ -178,6 +176,7 @@ export const useCache = defineStore('cache', () => {
                         id: c.id,
                         order: c.order,
                         citations: c.citations,
+                        createdAt: c.createdAt,
                     });
                 } else {
                     const incomingDate = new Date(c.createdAt);
@@ -188,11 +187,12 @@ export const useCache = defineStore('cache', () => {
                             id: c.id,
                             order: c.order,
                             citations: c.citations,
+                            createdAt: c.createdAt,
                         };
                     }
                 }
             } else {
-                console.log(`[cache] No node ID on citation`, s);
+                console.log(`[cache] No node ID on citation`, c);
             }
         });
 
