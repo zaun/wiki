@@ -6,6 +6,8 @@ import fetch from 'node-fetch'
 import yargs from 'yargs/yargs'
 import { hideBin } from 'yargs/helpers'
 
+const apiKey = 'cfd2f840-32a0-4388-8a93-6cae22e231ed';
+
 const argv = yargs(hideBin(process.argv))
     .usage('Usage: $0 --dir <path/to/json-directory> | --file <path/to/json-file>')
     .option('dir', { describe: 'Directory containing one or more .json page files', type: 'string' })
@@ -30,9 +32,23 @@ const uploadedSections = new Map()        // `${pageTitle}||${sectionTitle}` →
 // Collect all citations (page‑level and section‑level)
 let allCitations = []
 
+async function authenticatedFetch(url, options = {}) {
+    const headers = {
+        ...options.headers, // Start with any existing headers
+        'Authorization': `ApiKey ${apiKey}`, // Add or overwrite the Authorization header
+    };
+
+    const response = await fetch(url, {
+        ...options,
+        headers: headers,
+    });
+
+    return response;
+}
+
 async function lookupNode(title) {
     const url = `${API_BASE}/search?q=title:"${encodeURIComponent(title)}"`
-    const res = await fetch(url)
+    const res = await authenticatedFetch(url)
     if (!res.ok) throw new Error(`Lookup for "${title}" failed: ${res.status}`)
     const search = await res.json()
     const entities = search.results.filter(n => n.type !== 'entity')
@@ -51,7 +67,7 @@ async function uploadPage(page) {
     const existing = await lookupNode(page.title)
     let nodeId = existing
     if (!existing) {
-        const res = await fetch(`${API_BASE}/nodes`, {
+        const res = await authenticatedFetch(`${API_BASE}/nodes`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
@@ -76,7 +92,7 @@ async function uploadPage(page) {
     uploaded.set(page.title, nodeId)
 
     // 3) fetch existing sections for this node
-    const fetchSec = await fetch(`${API_BASE}/nodes/${nodeId}/sections`)
+    const fetchSec = await authenticatedFetch(`${API_BASE}/nodes/${nodeId}/sections`)
     const existingSecs = fetchSec.ok ? await fetchSec.json() : []
     // map title → {id, ...}
     const existingByTitle = new Map(
@@ -94,7 +110,7 @@ async function uploadPage(page) {
         if (existingByTitle.has(key)) {
             // PATCH existing
             const { id: sectionId } = existingByTitle.get(key)
-            const patchRes = await fetch(`${API_BASE}/nodes/${nodeId}/sections/${sectionId}`, {
+            const patchRes = await authenticatedFetch(`${API_BASE}/nodes/${nodeId}/sections/${sectionId}`, {
                 method: 'PATCH',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
@@ -112,7 +128,7 @@ async function uploadPage(page) {
 
         } else {
             // POST new
-            const createRes = await fetch(`${API_BASE}/nodes/${nodeId}/sections`, {
+            const createRes = await authenticatedFetch(`${API_BASE}/nodes/${nodeId}/sections`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
@@ -146,7 +162,7 @@ async function uploadPage(page) {
     for (const sec of existingSecs) {
         const key = sec.title.trim().toLowerCase()
         if (!seenTitles.has(key)) {
-            const delRes = await fetch(`${API_BASE}/nodes/${nodeId}/sections/${sec.id}`, {
+            const delRes = await authenticatedFetch(`${API_BASE}/nodes/${nodeId}/sections/${sec.id}`, {
                 method: 'DELETE'
             })
             if (delRes.ok) {
@@ -188,16 +204,16 @@ async function processSources() {
         const authors = Array.from(authorsSet)
 
         // try lookup by title, then by url
-        let res = await fetch(`${API_BASE}/citations?query=title:${encodeURIComponent(title)}`)
+        let res = await authenticatedFetch(`${API_BASE}/citations?query=title:"${encodeURIComponent(title)}"`)
         let matches = res.ok ? (await res.json()).results : []
         if (matches.length === 0) {
-            res = await fetch(`${API_BASE}/citations?query=url:${encodeURIComponent(url)}`)
+            res = await authenticatedFetch(`${API_BASE}/citations?query=url:"${encodeURIComponent(url)}"`)
             matches = res.ok ? (await res.json()).results : []
         }
 
         let sourceId
         if (matches.length === 0) {
-            const createRes = await fetch(`${API_BASE}/citations`, {
+            const createRes = await authenticatedFetch(`${API_BASE}/citations`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ type, title, url, publisher, year, authors }),
@@ -222,7 +238,7 @@ async function processSources() {
                 }
             }
             if (changed) {
-                const patchRes = await fetch(`${API_BASE}/citations/${sourceId}`, {
+                const patchRes = await authenticatedFetch(`${API_BASE}/citations/${sourceId}`, {
                     method: 'PATCH',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ authors: Array.from(existingAuthors) }),
@@ -258,8 +274,12 @@ async function processInstances() {
     for (const cit of allCitations) {
         const nodeId = uploaded.get(cit.pageTitle)
         const sourceId = cit.source?.id
-        if (!nodeId || !sourceId || !cit.url || !cit.quote) {
-            console.warn(`⚠ Skipping incomplete citation for "${cit.pageTitle}"`)
+        if (!nodeId || !sourceId || !cit.quote) {
+            console.warn(`⚠ Skipping incomplete citation for "${cit.pageTitle}", require pageTitle, source.id, quote`)
+            continue
+        }
+        if (!cit.url && !cit.page) {
+            console.warn(`⚠ Skipping incomplete citation for "${cit.pageTitle}", require page and/or url`)
             continue
         }
 
@@ -291,7 +311,7 @@ async function processInstances() {
         // fetch existing instances
         let instances = []
         try {
-            const listRes = await fetch(listUrl)
+            const listRes = await authenticatedFetch(listUrl)
             if (listRes.ok) instances = await listRes.json()
         } catch (err) {
             console.warn(`  ⚠ Could not fetch existing citations:`, err.message)
@@ -300,7 +320,7 @@ async function processInstances() {
         // try match by URL or title
         const match = instances.find(i => i.url === cit.url) || instances.find(i => i.title === cit.title)
         if (match) {
-            const patchRes = await fetch(`${baseUrl}/${match.id}`, {
+            const patchRes = await authenticatedFetch(`${baseUrl}/${match.id}`, {
                 method: 'PATCH',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(instanceBody),
@@ -311,7 +331,7 @@ async function processInstances() {
                 console.error(`✖ Failed to update instance id=${match.id}:`, await patchRes.text())
             }
         } else {
-            const postRes = await fetch(baseUrl, {
+            const postRes = await authenticatedFetch(baseUrl, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(instanceBody),
