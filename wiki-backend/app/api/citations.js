@@ -80,16 +80,13 @@ export async function listCitations(req, res) {
     try {
         if (query && typeof query === 'string') {
             // Full-text search
-            const result = await s.run(
-                `
+            const result = await s.run(`
                 CALL db.index.fulltext.queryNodes('citation_fulltext_index', $query)
                 YIELD node, score
                 RETURN node { .id, .title, .type, .authors, .publisher, .year, .url, .createdAt, .updatedAt } AS citation, score
                 ORDER BY score DESC
                 SKIP $skip LIMIT $limit
-                `,
-                { query, skip: neo4j.int(skip), limit: neo4j.int(pageSize + 1) }
-            );
+            `, { query, skip: neo4j.int(skip), limit: neo4j.int(pageSize + 1) });
 
             const records = result.records.slice(0, pageSize);
             const hasMore = result.records.length > pageSize;
@@ -104,15 +101,12 @@ export async function listCitations(req, res) {
             });
         } else {
             // Plain paged list
-            const result = await s.run(
-                `
+            const result = await s.run(`
                 MATCH (c:Citation)
                 RETURN c
                 ORDER BY c.title
                 SKIP $skip LIMIT $limit
-                `,
-                { skip: neo4j.int(skip), limit: neo4j.int(pageSize + 1) }
-            );
+            `, { skip: neo4j.int(skip), limit: neo4j.int(pageSize + 1) });
 
             const records = result.records.slice(0, pageSize);
             const hasMore = result.records.length > pageSize;
@@ -165,16 +159,32 @@ export async function updateCitation(req, res) {
 
         const result = await tx.run(`MATCH (c:Citation {id: $id}) RETURN c`, { id });
         if (result.records.length === 0) return res.status(404).json({ error: 'Update failed, citation not found' });
+        const oldCit = result.records[0].get('c').properties
 
-        await tx.run(
-            `MATCH (c:Citation {id: $id})
-       SET c += {
-         type: $type, title: $title, authors: $authors,
-         publisher: $publisher, year: $year, url: $url,
-         updatedAt: $now
-       }`,
-            { id, type, title, authors, publisher, year, url, now }
-        );
+        const updateType = type ?? oldCit.type;
+        const updateTitle = title ?? oldCit.title;
+        const updateAuthors = authors ?? oldCit.authors;
+        const updatePublisher = publisher ?? oldCit.publisher;
+        const updateYear = year ?? oldCit.year;
+        const updateUrl = url ?? oldCit.url;
+
+        await tx.run(`
+            MATCH (c:Citation {id: $id})
+            SET c += {
+                type: $type, title: $title, authors: $authors,
+                publisher: $publisher, year: $year, url: $url,
+                updatedAt: $now
+            }
+        `, {
+            id,
+            type: updateType,
+            title: updateTitle,
+            authors: updateAuthors,
+            publisher: updatePublisher,
+            year: updateYear,
+            url: updateUrl,
+            now
+        });
 
         await tx.commit();
         res.status(204).end();
