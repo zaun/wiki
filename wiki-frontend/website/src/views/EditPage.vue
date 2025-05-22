@@ -40,6 +40,10 @@
                     <v-icon left>mdi-plus</v-icon>Relationship
                 </v-btn>
             </div>
+
+            <v-spacer />
+
+            <span class="mr-2">Word Count: {{ totalWordCount }}</span>
         </v-toolbar>
     </div>
 
@@ -50,7 +54,7 @@
     <v-container v-else-if="!loading">
         <div>
             <Image :aspect-ratio="3.2" :src="heroImageURL" :can-edit="true" @error="onSetHeroError"
-                @delete="onSetHeroDelete" @clicked="onSetHero" />
+                @delete="onSetHeroDelete" @clicked="onSetHero" class="mb-2"/>
 
             <!-- Sidebar: Details & Relationships -->
             <div v-if="form.details.length || form.relationships.length" cols="12" sm="4">
@@ -83,7 +87,8 @@
             <div>
                 <v-form>
                     <Section v-model="form.node" v-model:isEditing="nodeEditState"
-                        :can-edit="nodeEditState || !anyEditing" :header-size="4" :hide-delete="true" @save="doSaveNode"
+                        :can-edit="nodeEditState || !anyEditing" :header-size="4"
+                        :hide-delete="true" :hide-type="true" @save="doSaveNode"
                         @edit-citation="(sId) => onEditCitation('node', sId)" />
 
                     <!-- sections -->
@@ -135,8 +140,10 @@ import Relationship from '@/components/Relationship.vue';
 import Section from '@/components/sections/Section.vue';
 import { useApi } from '@/stores/api';
 import { useData } from '@/stores/data';
+import { useLogger } from '@/stores/logger.js';
 
 const api = useApi();
+const logger = useLogger();
 const store = useData();
 
 const props = defineProps({ id: { type: String, required: true } });
@@ -186,10 +193,26 @@ const heroImageURL = computed(() => {
     }
     return url;
 });
+const totalWordCount = computed(() => {
+    function countWords(t) {
+        return t?.trim().split(/\s+/).filter((w) => w).length;
+    }
+
+    const total = Object.entries(form.sections).reduce(function (total, pair) {
+        const [key, value] = pair;
+        return total + countWords(value.content);
+    }, countWords(form.node.content));
+
+    return total;
+});
 
 let editCitationParent = null;
 
+/**
+ *
+ */
 async function load() {
+    logger.info('EDIT_PAGE', `Loading node ${props.id}`);
     loading.value = true;
     notFound.value = false;
 
@@ -204,15 +227,19 @@ async function load() {
     loading.value = false;
 }
 
+/**
+ *
+ */
 function initializeForm() {
     const node = store.currentNode;
     form.node = { ...node };
-    console.log(222, store.currentSections);
     form.sections = store.currentSections.map(s => ({
         id: s.id,
         type: s.type || 'text',
         title: s.title,
         content: s.content,
+        data: s.data,
+        summary: s.sumary,
     }));
     form.details = Array.isArray(node.details) ? node.details.map(d => ({ ...d })) : [];
     form.relationships = (node.relationships || [])
@@ -222,6 +249,9 @@ function initializeForm() {
 
 watch(() => props.id, load);
 
+/**
+ *
+ */
 function onEditCitation(sectionId, citationId) {
     editCitationParent = sectionId;
     const template = {
@@ -245,6 +275,9 @@ function onEditCitation(sectionId, citationId) {
     editCitationOpen.value = true;
 }
 
+/**
+ *
+ */
 function addRelationship() {
     form.relationships.push({ left: { id: 'SELF', title: '' }, right: { id: '', title: '' }, relationship: 'DEPENDS_ON' });
     nextTick(() => {
@@ -254,6 +287,9 @@ function addRelationship() {
     });
 }
 
+/**
+ *
+ */
 function addDetail() {
     form.details.push({ type: 'text', label: 'New Detail', value: '' });
     nextTick(() => {
@@ -263,6 +299,9 @@ function addDetail() {
     });
 }
 
+/**
+ *
+ */
 function onDetailsReorder(evt) {
     const { oldIndex, newIndex } = evt;
     if (oldIndex === newIndex) return;
@@ -271,6 +310,9 @@ function onDetailsReorder(evt) {
     doSaveNode();
 }
 
+/**
+ *
+ */
 async function doDeleteDetail(idx) {
     const toSave = !!form.details[idx].id;
     form.details.splice(idx, 1);
@@ -278,21 +320,30 @@ async function doDeleteDetail(idx) {
     if (toSave) await doSaveNode();
 }
 
+/**
+ *
+ */
 function addSection() {
     form.sections.push({ id: null, type: 'text', title: '', content: '' });
     nextTick(() => {
         const i = form.sections.length - 1;
         sectionEditState.value[i] = true;
-        sectionList.value?.children[i]?.scrollIntoView({ behavior: 'smooth' });
+        // sectionList.value?.children[i]?.scrollIntoView({ behavior: 'smooth' });
     });
 }
 
 // -- Save/Delete Hero --------------------------------
 
+/**
+ *
+ */
 function onSetHeroError(err) {
     console.error(err);
 }
 
+/**
+ *
+ */
 async function onSetHero(imageData) {
     if (
         !form.node.image ||
@@ -305,6 +356,9 @@ async function onSetHero(imageData) {
     }
 }
 
+/**
+ *
+ */
 async function onSetHeroDelete() {
     form.node.image = 'remove';
     await doSaveNode();
@@ -312,6 +366,9 @@ async function onSetHeroDelete() {
 
 // -- Save/Delete Citation --------------------------------
 
+/**
+ *
+ */
 async function doSaveCitation() {
     try {
         if (editCitation.value.source.id) {
@@ -339,13 +396,17 @@ async function doSaveCitation() {
         snackbar.color = 'success';
         snackbar.show = true;
     } catch (err) {
+        logger.error('EDIT_PAGE', `Failed to save citation: ${err.message}`);
+        logger.debug('EDIT_PAGE', err.stack);
         snackbar.message = 'Failed to save citation';
         snackbar.color = 'error';
         snackbar.show = true;
-        console.error(err);
     }
 }
 
+/**
+ *
+ */
 async function doDeleteCitation() {
     try {
         if (editCitationParent === 'node' && editCitation.value.id) {
@@ -358,15 +419,19 @@ async function doDeleteCitation() {
         snackbar.color = 'success';
         snackbar.show = true;
     } catch (err) {
+        logger.error('EDIT_PAGE', `Failed to delete citation: ${err.message}`);
+        logger.debug('EDIT_PAGE', err.stack);
         snackbar.message = 'Failed to delete citation';
         snackbar.color = 'error';
         snackbar.show = true;
-        console.error(err);
     }
 }
 
 // -- New: Save/Delete Node --------------------------------
 
+/**
+ *
+ */
 async function doSaveNode() {
     try {
         await store.updateNode({
@@ -379,15 +444,19 @@ async function doSaveNode() {
         snackbar.show = true;
         initializeForm();
     } catch (err) {
+        logger.error('EDIT_PAGE', `Failed to save node: ${err.message}`);
+        logger.debug('EDIT_PAGE', err.stack);
         snackbar.message = 'Failed to save node';
         snackbar.color = 'error';
         snackbar.show = true;
-        console.error(err);
     }
 }
 
 // -- New: Save/Delete Section --------------------------------
 
+/**
+ *
+ */
 async function doSaveSection(idx) {
     try {
         const sec = form.sections[idx];
@@ -402,13 +471,17 @@ async function doSaveSection(idx) {
         snackbar.show = true;
         initializeForm();
     } catch (err) {
+        logger.error('EDIT_PAGE', `Failed to save section: ${err.message}`);
+        logger.debug('EDIT_PAGE', err.stack);
         snackbar.message = 'Failed to save section';
         snackbar.color = 'error';
         snackbar.show = true;
-        console.error(err);
     }
 }
 
+/**
+ *
+ */
 async function doDeleteSection(idx) {
     try {
         const sec = form.sections[idx];
@@ -421,22 +494,29 @@ async function doDeleteSection(idx) {
         snackbar.color = 'success';
         snackbar.show = true;
     } catch (err) {
+        logger.error('EDIT_PAGE', `Failed to delete section: ${err.message}`);
+        logger.debug('EDIT_PAGE', err.stack);
         // rollback by reloading
         await load();
         snackbar.message = 'Failed to delete section';
         snackbar.color = 'error';
         snackbar.show = true;
-        console.error(err);
     }
 }
 
 // -- Scrolling Helpers --------------------------------
 
+/**
+ *
+ */
 function scrollToTop() {
     if (topAnchor.value) topAnchor.value.scrollIntoView({ behavior: 'smooth', block: 'start' });
     else window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
+/**
+ *
+ */
 function scrollToRelationship(idx) {
     const list = relationshipList.value;
     const target = list?.children[idx];
@@ -446,6 +526,9 @@ function scrollToRelationship(idx) {
     target.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 
+/**
+ *
+ */
 function scrollToDetail(idx) {
     const list = detailList.value;
     const target = list?.children[idx];

@@ -3,19 +3,22 @@ import { defineStore, storeToRefs } from 'pinia';
 import { ref } from 'vue';
 
 import { useApi } from './api';
-import { useCache } from './cache';
+// import { useCache } from './cache';
 
 /**
  * Pinia store for managing nodes, sections, and their citations.
  */
 export const useData = defineStore('data', () => {
     const api = useApi();
-    const cacheStore = useCache();
-    const { cacheNodes, cacheSections, cacheCitations } = storeToRefs(cacheStore);
+    // const cacheStore = useCache();
+    // const { cacheNodes, cacheSections, cacheCitations } = storeToRefs(cacheStore);
 
     const currentNode = ref({});
     const currentSections = ref([]);
     const currentCitations = ref([]);
+    const cacheNodes = ref({});
+    const cacheSections = ref({});
+    const cacheCitations = ref({});
 
     /**
      * Ensure that the citation cache array exists for the given node.

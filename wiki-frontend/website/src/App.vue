@@ -1,17 +1,16 @@
 <template>
   <v-app>
-    <!-- top bar -->
-    <AppHeader />
+    <div class="no-print">
+      <!-- top bar -->
+      <AppHeader />
 
-    <!-- Force v-main down so the scrollbar isn't under the AppHeader -->
-    <div class="app-spacer"></div>
+      <!-- Force v-main down so the scrollbar isn't under the AppHeader -->
+      <div class="app-spacer"></div>
+    </div>
 
     <!-- main content -->
     <v-main>
-      <router-view v-slot="{ Component, route }">
-        <!-- pass current edit mode down as a prop -->
-        <component :is="Component" :key="route.fullPath" v-bind="route.params" />
-      </router-view>
+      <router-view v-slot="{ Component, route }" />
     </v-main>
   </v-app>
 </template>
@@ -21,12 +20,15 @@ import AppHeader from '@/components/AppHeader.vue';
 </script>
 
 <style>
+
+
 html,
 body,
 #app,
-.v-application {
+.v-application,
+.v-application__wrap {
   height: 100%;
-  margin: 0;
+  width: 100%;
   overflow: hidden;
 }
 
@@ -42,5 +44,13 @@ main.v-main {
   flex: 1 1 auto;
   height: 100%;
   overflow-y: auto;
+}
+
+@media print {
+
+  .no-print {
+    display: none !important;
+  }
+
 }
 </style>

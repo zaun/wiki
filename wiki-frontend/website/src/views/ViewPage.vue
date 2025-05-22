@@ -13,14 +13,10 @@
             <Image v-if="node?.image" :aspect-ratio="3.2" :src="heroImageURL" />
 
             <!-- breadcrumb trail -->
-            <v-breadcrumbs class="mb-1 mt-0">
-                <template #divider>
-                    <span class="mx-2">/</span>
+            <v-breadcrumbs class="mb-1 mt-0" :items="breadcrumbs" divider="/">
+                <template #title="{ item }"">
+                   <v-btn variant="text" size="small" density="compact" class="pa-0 ma-0" :to="`/view/${item.id}`">{{ item.title }}</v-btn>
                 </template>
-                <v-breadcrumbs-item v-for="(crumb, i) in breadcrumbs" :key="crumb.id" :to="`/view/${crumb.id}`"
-                    :disabled="i === breadcrumbs.length - 1">
-                    {{ crumb.title }}
-                </v-breadcrumbs-item>
             </v-breadcrumbs>
 
             <div>
@@ -52,7 +48,7 @@
                     </div>
 
                     <!-- Citations -->
-                    <div v-if="citationGroups.length" class="my-6">
+                    <div v-if="citationCount > 0" class="my-6">
                         <div class="text-h4 mb-2">Citations</div>
                         <div class="citation-container">
                             <template v-for="(group, gIdx) in citationGroups" :key="group.key">
@@ -102,6 +98,10 @@ const notFound = ref(false);
 
 const breadcrumbs = computed(() => store.currentNode?.breadcrumbs || []);
 const children = computed(() => node.value.children || []);
+const citationCount = computed(() => {
+    const totalCitations = store.currentCitations.reduce((accumulator, currentItem) => accumulator + (currentItem.citations?.length ?? 0), 0);
+    return totalCitations;
+});
 const citationGroups = computed(() => store.currentCitations || []);
 const details = computed(() => node.value.details || []);
 const heroImageURL = computed(() => {

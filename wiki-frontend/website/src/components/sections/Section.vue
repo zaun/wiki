@@ -4,7 +4,8 @@
         <div v-if="!editable">
             <div :class="headerClass">
                 <span>{{ localSection.title }}</span>
-                <CitationView v-for="cit in citations" :key="cit.id" :citation="cit" view="CHIP" v-on="canEdit ? { edit: () => editCitation(cit.id) } : {}"/>
+                <CitationView v-for="cit in citations" :key="cit.id" :citation="cit" view="CHIP"
+                    v-on="canEdit ? { edit: () => editCitation(cit.id) } : {}" />
                 <v-chip v-if="canEdit" class="text-caption ml-1" size="small" density="compact" @click="editCitation()">
                     <v-icon left>mdi-plus</v-icon>
                 </v-chip>
@@ -18,6 +19,11 @@
                 <v-img :src="localSection.image" style="width: 25%; float: right;" />
                 <SimpleMarkdown :class="contentClass" :content="localSection.content" />
             </div>
+
+            <div v-else-if="contentType === 'data-table'">
+                <v-img :src="localSection.image" style="width: 25%; float: data;" />
+                <DataTable :class="contentClass" :value="localSection.data" />
+            </div>
             <div v-else v-html="localSection.content"></div>
 
             <div style="clear: both;"></div>
@@ -27,28 +33,47 @@
         <!-- edit mode -->
         <div v-else>
             <div :class="headerClass">
-                <v-text-field label="Header" :hide-details="true" v-model="localSection.title" class="flex-grow-1">
-                    <template #append-inner>
-                        <v-btn icon variant="plain" @click="onSave">
-                            <v-icon>mdi-check</v-icon>
-                        </v-btn>
-                        <v-btn icon variant="plain" @click="onClose">
-                            <v-icon>mdi-close</v-icon>
-                        </v-btn>
-                        <v-btn v-if="!hideDelete" icon variant="plain" @click="onDelete">
-                            <v-icon>mdi-trash-can-outline</v-icon>
-                        </v-btn>
-                    </template>
-                </v-text-field>
+                <v-text-field v-model="localSection.title" label="Header" :hide-details="true" class="flex-grow-1" />
+                <v-select v-if="!hideType" v-model="localSection.type" :items="contentTypes" label="Type"
+                    item-title="label" item-value="value" hide-details dense class="mr-2" style="max-width: 140px;" />
+                <v-btn icon density="compact" variant="plain" @click="onSave">
+                    <v-icon>mdi-check</v-icon>
+                </v-btn>
+                <v-btn icon density="compact" variant="plain" @click="onClose">
+                    <v-icon>mdi-close</v-icon>
+                </v-btn>
+                <v-btn v-if="!hideDelete" icon density="compact" variant="plain" @click="onDelete">
+                    <v-icon>mdi-trash-can-outline</v-icon>
+                </v-btn>
             </div>
 
-            <v-textarea v-model="localSection.content" label="Section Content" rows="3" auto-grow>
-                <template #details>
-                    {{ countChars(localSection.content) }} characters │
-                    {{ countWords(localSection.content) }} words │
-                    {{ countParagraphs(localSection.content) }} paragraphs
-                </template>
-            </v-textarea>
+            <div v-if="contentType === 'text'">
+                <v-textarea v-model="localSection.content" label="Section Content" rows="3" auto-grow>
+                    <template #details>
+                        {{ countChars(localSection.content) }} characters │
+                        {{ countWords(localSection.content) }} words │
+                        {{ countParagraphs(localSection.content) }} paragraphs
+                    </template>
+                </v-textarea>
+            </div>
+
+            <div v-else-if="contentType === 'data-table'">
+                <v-textarea v-model="localSection.content" label="Section Introduction" rows="3" auto-grow>
+                    <template #details>
+                        {{ countChars(localSection.content) }} characters │
+                        {{ countWords(localSection.content) }} words │
+                        {{ countParagraphs(localSection.content) }} paragraphs
+                    </template>
+                </v-textarea>
+                <DataTableEdit v-model="localSection.data" />
+                <v-textarea class="mt-4" v-model="localSection.summary" label="Section Sumary" rows="3" auto-grow>
+                    <template #details>
+                        {{ countChars(localSection.summary) }} characters │
+                        {{ countWords(localSection.summary) }} words │
+                        {{ countParagraphs(localSection.summary) }} paragraphs
+                    </template>
+                </v-textarea>
+            </div>
 
             <div style="clear: both;"></div>
             <v-divider class="mt-4" />
@@ -60,7 +85,9 @@
 import { ref, computed, watch } from 'vue';
 
 import CitationView from '@/components/citations/CitationView.vue';
-import SimpleMarkdown from '@/components/SimpleMarkdown.vue';
+import DataTable from '@/components/sections/DataTable.vue';
+import DataTableEdit from '@/components/sections/DataTableEdit.vue';
+import SimpleMarkdown from '@/components/sections/SimpleMarkdown.vue';
 import { useData } from '@/stores/data';
 
 const store = useData();
@@ -75,6 +102,10 @@ const props = defineProps({
         default: false,
     },
     hideDelete: {
+        type: Boolean,
+        default: false,
+    },
+    hideType: {
         type: Boolean,
         default: false,
     },
@@ -138,6 +169,33 @@ watch(
         localSection.value = { ...v };
     },
 );
+watch(
+    () => localSection.value.type,
+    (newType) => {
+        // If we’ve switched back to the original type, restore
+        // its original data (deep‐cloned to avoid mutating the prop).
+        if (newType === props.modelValue.type) {
+            localSection.value.data = cloneDeep(props.modelValue.data);
+        }
+        // If we’ve just switched _to_ a data-table, initialize from scratch.
+        else if (newType === 'data-table') {
+            localSection.value.data = {
+                headers: [],
+                rows: [],
+            };
+        }
+        // Otherwise (e.g. switching away from data-table) you
+        // could delete the key entirely or set it to null.
+        else {
+            delete localSection.value.data;
+        }
+    },
+);
+
+const contentTypes = [
+    { label: 'Text', value: 'text' },
+    { label: 'Data Table', value: 'data-table' },
+];
 
 /**
  * Count characters in a string.

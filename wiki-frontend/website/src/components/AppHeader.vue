@@ -14,26 +14,27 @@
         </div>
 
         <div class="ml-auto d-flex align-center">
-            <template v-if="isAuthenticated && (isViewRoute || isEditRoute)">
-                <v-menu offset-y>
-                    <template #activator="{ props: menuProps }">
-                        <v-btn icon v-bind="menuProps">
-                            <v-icon>mdi-file-document-outline</v-icon>
-                        </v-btn>
-                    </template>
-                    <v-list>
-                        <v-list-item :disabled="isViewRoute" @click="goTo('view')">
-                            <v-list-item-title>View</v-list-item-title>
-                        </v-list-item>
-                        <v-list-item :disabled="isEditRoute" @click="goTo('edit')">
-                            <v-list-item-title>Edit</v-list-item-title>
-                        </v-list-item>
-                        <v-list-item :disabled="isHistoryRoute" @click="goTo('history')">
-                            <v-list-item-title>History</v-list-item-title>
-                        </v-list-item>
-                    </v-list>
-                </v-menu>
-            </template>
+            <v-menu offset-y>
+                <template #activator="{ props: menuProps }">
+                    <v-btn icon v-bind="menuProps">
+                        <v-icon>mdi-file-document-outline</v-icon>
+                    </v-btn>
+                </template>
+                <v-list>
+                    <v-list-item :disabled="isViewRoute" @click="goTo('view')">
+                        <v-list-item-title>View</v-list-item-title>
+                    </v-list-item>
+                    <v-list-item  v-if="isAuthenticated" :disabled="isEditRoute" @click="goTo('edit')">
+                        <v-list-item-title>Edit</v-list-item-title>
+                    </v-list-item>
+                    <v-list-item :disabled="isHistoryRoute" @click="goTo('history')">
+                        <v-list-item-title>History</v-list-item-title>
+                    </v-list-item>
+                    <v-list-item :disabled="isExportyRoute" @click="goTo('export')">
+                        <v-list-item-title>Export</v-list-item-title>
+                    </v-list-item>
+                </v-list>
+            </v-menu>
 
             <template v-if="isAuthenticated">
                 <v-menu offset-y>
@@ -80,6 +81,7 @@ const q = ref('');
 const showAuth = ref(false);
 
 const isEditRoute = computed(() => route.name === 'edit');
+const isExportyRoute = computed(() => route.name === 'export');
 const isHistoryRoute = computed(() => route.name === 'history');
 const isViewRoute = computed(() => route.name === 'view');
 
