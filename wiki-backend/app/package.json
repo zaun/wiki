@@ -18,6 +18,7 @@
         "fido2-lib": "^3.5.3",
         "file-type": "^20.4.1",
         "jsonwebtoken": "^9.0.2",
+        "lucene": "^2.1.1",
         "neo4j-driver": "^5.28.1",
         "sharp": "^0.34.1",
         "ua-parser-js": "^2.0.3",

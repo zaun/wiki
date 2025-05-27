@@ -1,9 +1,9 @@
 import jwt from 'jsonwebtoken'
 import { session } from '../storage/neo4j.js'
+import { USER_ROOT_ID } from '../storage/special.js';
 import crypto from 'crypto'
 import { Fido2Lib } from 'fido2-lib'
 import { UAParser } from 'ua-parser-js';
-import * as UserHandlers from './users.js';
 import { v4 as uuidv4 } from 'uuid';
 
 const JWT_SECRET = process.env.JWT_SECRET
@@ -274,7 +274,7 @@ export async function register(req, res) {
             CREATE (u)-[:HAS_CREDENTIAL]->(c)
             CREATE (u)-[:BELONGS_TO]->(root)
         `, {
-            rootUserId: UserHandlers.ROOT_USER_ID,
+            rootUserId: USER_ROOT_ID,
             userId,
             hash: hashed,
             userRole: 'user',

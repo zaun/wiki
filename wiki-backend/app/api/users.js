@@ -6,42 +6,6 @@ import { session } from '../storage/neo4j.js';
 import { v7 as uuidv7 } from 'uuid';
 import neo4j from 'neo4j-driver';
 
-export const ROOT_USER_ID = '00000000-0000-0000-0000-000000000000';
-
-export async function createUserRoot() {
-    const s = session();
-    const tx = s.beginTransaction();
-    const now = new Date().toISOString();
-
-    try {
-        const now = new Date().toISOString();
-
-        const result = await tx.run('MATCH (n:User {id: $id}) RETURN n', { id: ROOT_USER_ID });
-
-        if (result.records.length > 0) {
-            await tx.commit();
-            console.log('✅ Root user already exists.');
-            return;
-        }
-
-        await tx.run(`
-            CREATE (r:User {
-                id: $id,
-                updatedAt: $now
-            })
-        `, { id: ROOT_USER_ID, now });
-
-        await tx.commit();
-        console.log('🌱 Root node created.');
-    } catch (err) {
-        await tx.rollback();
-        console.error('❌ Failed to create root user:', err);
-        throw err;
-    } finally {
-        await s.close();
-    }
-}
-
 export async function getUserDetails(req, res) {
     const requestedUserId = req.params.id;
     const currentUserId = req.userId;

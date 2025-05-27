@@ -17,7 +17,9 @@ import * as CitationHandlers from './api/citations.js';
 import * as ImageHandlers from './api/images.js';
 import * as UserHandlers from './api/users.js';
 import * as UtilHelpers from './api/util.js';
+import * as ExportHandlers from './api/export.js';
 import { verifyConnection, createIndexes, closeDriver } from './storage/neo4j.js';
+import { createRootNode, createRootImage, createUserRoot } from './storage/special.js';
 
 process.on('SIGINT', async () => {
     await closeDriver();
@@ -51,9 +53,9 @@ await verifyConnection();
 await createIndexes();
 
 // Make sure the root exists
-await NodeHandlers.createRoot();
-await ImageHandlers.createImageRoot();
-await UserHandlers.createUserRoot()
+await createRootNode();
+await createRootImage();
+await createUserRoot()
 
 /**
  * Express router that handles all API routes.
@@ -86,6 +88,10 @@ router.get('/user/:id', AuthHelpers.requireRegistered, UserHandlers.getUserDetai
 router.patch('/user/:id', UserHandlers.updateUserProfile);
 router.patch('/user/:userId/credentials/:credentialId', UserHandlers.updateCredentialDetails);
 // router.delete('/user/:userId/credentials/:credentialId', UserHandlers.deleteCredential);
+
+// Export
+router.get('/export/node/:id', ExportHandlers.exportNode);
+router.get('/export/tree/:id', ExportHandlers.exportTree);
 
 // Nodes
 router.post('/nodes', NodeHandlers.createNode);

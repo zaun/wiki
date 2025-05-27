@@ -5,6 +5,7 @@
 import crypto from 'crypto';
 import { v7 as uuidv7 } from 'uuid';
 import { session } from '../storage/neo4j.js';
+import { IMAGE_ROOT_ID } from '../storage/special.js';
 import {
   getFingerprint,
   saveImage,
@@ -15,7 +16,6 @@ import {
 } from '../storage/image.js';
 
 
-const IMAGE_ROOT_ID = '00000000-0000-0000-1111-000000000000';
 const SECRET_KEY = Buffer.from('5d513650e0c43ee9483566870b653216bc26912373774cf5efbcab124af3787a', 'hex');
 const HAMMING_THRESHOLD = 3;
 const FORCE_SAVE_WINDOW_MS = 5 * 60 * 1000;
@@ -63,41 +63,6 @@ function verifyForceSaveToken(token) {
   if (isNaN(ts)) return false;
 
   return (Date.now() - ts) <= FORCE_SAVE_WINDOW_MS;
-}
-
-export async function createImageRoot() {
-  const s = session();
-  const tx = s.beginTransaction();
-  const now = new Date().toISOString();
-
-  try {
-    const { records } = await tx.run(
-      'MATCH (r:ImageRoot {id: $id}) RETURN r',
-      { id: IMAGE_ROOT_ID }
-    );
-    if (records.length > 0) {
-      await tx.commit();
-      console.log('✅ ImageRoot already exists.');
-      return;
-    }
-
-    await tx.run(
-      `CREATE (r:ImageRoot {
-           id: $id,
-           createdAt: $now,
-           updatedAt: $now
-         })`,
-      { id: IMAGE_ROOT_ID, now }
-    );
-    await tx.commit();
-    console.log('🌱 ImageRoot created.');
-  } catch (err) {
-    await tx.rollback();
-    console.error('❌ Failed to create ImageRoot:', err);
-    throw err;
-  } finally {
-    await s.close();
-  }
 }
 
 export async function createImage(req, res) {

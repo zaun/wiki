@@ -125,7 +125,6 @@ export async function listCitations(req, res) {
     }
 }
 
-
 /**
  * @function getCitation
  * @description Retrieves a citation source by ID.

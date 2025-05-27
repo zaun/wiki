@@ -6,6 +6,8 @@ import { session } from '../storage/neo4j.js';
 import { v7 as uuidv7 } from 'uuid';
 import neo4j from 'neo4j-driver';
 
+const SUPPORTED_TYPES = ['text', 'data-table', 'music-score'];
+
 /**
  * @function createSection
  * @async
@@ -28,8 +30,8 @@ export async function createSection(req, res) {
         if (!title || typeof title !== 'string' || title.trim() === '') {
             return res.status(400).json({ error: 'Title is required and must be a non-empty string.' });
         }
-        if (!type || typeof type !== 'string' || !['text', 'cvs'].includes(type)) {
-            return res.status(400).json({ error: 'Type must be "text" or "cvs".' });
+        if (!type || typeof type !== 'string' || !SUPPORTED_TYPES.includes(type)) {
+            return res.status(400).json({ error: `Type must be ${SUPPORTED_TYPES.join(' or ')}.` });
         }
         if (content !== undefined && typeof content !== 'string') {
             return res.status(400).json({ error: 'Content must be a string if provided.' });
@@ -256,10 +258,10 @@ export async function patchSection(req, res) {
                 .status(400)
                 .json({ error: 'Title is required and must be a non-empty string.' });
         }
-        if (!type || !['text', 'cvs'].includes(type)) {
+        if (!type || !SUPPORTED_TYPES.includes(type)) {
             return res
                 .status(400)
-                .json({ error: 'Type must be "text" or "cvs".' });
+                .json({ error: `Type must be ${SUPPORTED_TYPES.join(' or ')}.` });
         }
         if (content !== undefined && typeof content !== 'string') {
             return res
@@ -286,9 +288,9 @@ export async function patchSection(req, res) {
         // prepare new values (falling back to old)
 		const newTitle = title ?? old.title;
 		const newType = type ?? old.type;
-		const newContent = content ?? oldContent;
-		const newData = JSON.stringify(data ?? oldData);
-		const newSummary = summary ?? oldSummary;
+		let newContent = content ?? oldContent;
+		let newData = JSON.stringify(data ?? oldData);
+		let newSummary = summary ?? oldSummary;
         const newStatus = newContent.trim() === '' ? 'stub' : 'complete';
 
         // split into chunks if > 800k
