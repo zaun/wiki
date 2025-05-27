@@ -1,21 +1,84 @@
+Entity format:
+
 {
-    "title": "Information Theory",
-    "parentTitle": "Informational",
-    "aliases": [
+    "title": "",                        // Title of the entity
+    "parentTitle": "",                  // Title of the parent entity
+    "aliases": [                        // Array of strings, alternate titles of this entity
     ],
-    "links": [
+    "links": [                          // List of external useful resources the viewer may be interested in
         {
-            "title": "",
-            "url": ""
+            "title": "",                // Page title
+            "url": ""                   // Page URL
         }
     ],
-    "tags": [],
-    "details": [],
-    "content": "",
-    "sections": [
+    "tags": [],                         // Leave blank for now
+    "details": [],                      // Leave blank for now
+    "content": "",                      // Summary/definition/introduciton to the entity (1-2 paragraphs)
+    "sections": [                       // Addtional section for added details on the entity (history, current status, location, Purpose, Applications, etc.) Think encyclopedia entry or wiki page.
         {
+            "title": "",                // Title of the section
+            "content": "",              // Content of the section (3-4 paragraphs)
+            "citations": [              // Citations for the section
+                {
+                "source": {             // A citation source
+                    "type": "",         // (required) website | book | journal | etc.
+                    "title": "",        // (required) The title of the source (for a website it would be the homepage title)
+                    "authors": [],      // Author(s) or the overal source, array of strings
+                    "publisher": "",    // Publisher of the source
+                    "year": ,           // Year published, 1st copyright year on website, etc.
+                    "url": ""           // (required) URL to resource (homepage for website, amazon link to book, etc)
+                },
+                "title": "",            // (required) The deep link title of a website page, a chapter title in a book, etc.
+                "page": "2.1",          // page #, section #, etc.
+                "url": "",              // (required) Deep link to exact article on a website / page if available for online books
+                "quote": "",            // The quoted text from this course instance referenced in the section
+                "note": ""              // General notes, "not a great souce but only one I could fined", etc. 
+                }
+            ]
+        }
+    ],
+    "citations": [                      // Same as a section citation, but for the entity content above
+        {
+        "source": {
+            "type": "",
             "title": "",
-            "content": ""
+            "authors": [],
+            "publisher": "",
+            "year": ,
+            "url": ""
+        },
+        "title": "",
+        "page": "2.1",
+        "url": "",
+        "quote": "",
+        "note": ""
+        }
+    ],
+    "relationships": [                  // Optional relationships
+        {
+            "left": "",                 // The Title of entity or SELF 
+            "relationship": "CONTAINS", // The relationship
+            "right": ""                 // The Title of entity or SELF
         }
     ]
 }
+
+
+Using the provided JSON entity structure, create a detailed encyclopedia-style entry for the node 3 Physical.
+Ensure the entry meets ALL the following criteria:
+
+* Include a comprehensive summary in the content field (1-2 paragraphs).
+* Divide additional details into multiple sections.
+* Include no less than 4 and no more than 10 sections.
+* Each section should include between 1 and 4 paragraphs with an average number of 3 per section.
+* Provide at least 2-4 source citations for each section and the overall entity.
+* It is *CURUCIAL to verify that citation URL* are valid and that the quote used if found within the givent URL.
+* Do not reference these citations inline within the text of the content and sections[].content fields.
+* TOTAL WORD COUNT between **2000 and 3000** across the *content* and *sections[].content* fields, citations *are not included* in the word count.
+* Wikipedia URLs may be included in the links array but MAY NOT be used as primary citation source entries in the citations arrays.
+* Wayback URLs MAY NOT be included in citations or links.
+* The level of detail should be sufficient for a user to understand the entity and find points to explore further within the ontology or cited sources.
+* If including information on key sub-subdomains, limit to a single section.
+
+
+

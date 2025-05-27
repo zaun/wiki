@@ -1,0 +1,238 @@
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix sh:   <http://www.w3.org/ns/shacl#> .
+@prefix un:   <http://unending.wiki/ontology/> .
+@prefix node: <http://unending.wiki/node/> .
+@prefix rel:  <http://unending.wiki/relationship/> .
+
+###############################################################################
+# RDFS DEFINITIONS (unchanged)
+###############################################################################
+
+un:Node a rdfs:Class ; rdfs:comment "Represents a conceptual entity or main object in the ontology." .
+un:id               a rdf:Property ; rdfs:domain un:Node ; rdfs:range xsd:string .
+un:title            a rdf:Property ; rdfs:domain un:Node ; rdfs:range xsd:string .
+un:content          a rdf:Property ; rdfs:domain un:Node ; rdfs:range xsd:string .
+un:createdAt        a rdf:Property ; rdfs:domain un:Node ; rdfs:range xsd:dateTime .
+un:updatedAt        a rdf:Property ; rdfs:domain un:Node ; rdfs:range xsd:dateTime .
+un:status           a rdf:Property ; rdfs:domain un:Node ; rdfs:range xsd:string .
+un:alias            a rdf:Property ; rdfs:domain un:Node ; rdfs:range xsd:string .
+un:parentIdentifier a rdf:Property ; rdfs:domain un:Node ; rdfs:range xsd:string .
+un:hasSection       a rdf:Property ; rdfs:domain un:Node ; rdfs:range un:Section .
+un:hasDetail        a rdf:Property ; rdfs:domain un:Node ; rdfs:range un:Detail .
+un:hasRelationshipStatement a rdf:Property ; rdfs:domain un:Node ; rdfs:range un:RelationshipStatement .
+
+un:Section a rdfs:Class .
+un:sectionOrder     a rdf:Property ; rdfs:domain un:Section ; rdfs:range xsd:integer .
+un:sectionTitle     a rdf:Property ; rdfs:domain un:Section ; rdfs:range xsd:string .
+un:sectionType      a rdf:Property ; rdfs:domain un:Section ; rdfs:range xsd:string .
+un:sectionContent   a rdf:Property ; rdfs:domain un:Section ; rdfs:range xsd:string .
+un:sectionData      a rdf:Property ; rdfs:domain un:Section ; rdfs:range xsd:string .
+un:sectionSummary   a rdf:Property ; rdfs:domain un:Section ; rdfs:range xsd:string .
+
+un:Detail a rdfs:Class .
+un:detailLabel      a rdf:Property ; rdfs:domain un:Detail ; rdfs:range xsd:string .
+un:detailType       a rdf:Property ; rdfs:domain un:Detail ; rdfs:range xsd:string .
+un:detailValue      a rdf:Property ; rdfs:domain un:Detail ; rdfs:range rdfs:Literal .
+
+un:RelationshipStatement a rdfs:Class .
+un:leftSubject      a rdf:Property ; rdfs:domain un:RelationshipStatement ; rdfs:range xsd:string .
+un:relationType     a rdf:Property ; rdfs:domain un:RelationshipStatement ; rdfs:range xsd:string .
+un:rightObject      a rdf:Property ; rdfs:domain un:RelationshipStatement ; rdfs:range xsd:string .
+
+un:DEPENDS_ON       a rdf:Property .
+un:CONTRASTS_WITH   a rdf:Property .
+un:CONTAINS         a rdf:Property .
+un:INVALIDATES      a rdf:Property .
+
+###############################################################################
+# SHACL CONSTRAINTS
+###############################################################################
+
+# Node constraints
+un:NodeShape a sh:NodeShape ;
+    sh:targetClass un:Node ;
+    sh:closed true ;
+    sh:ignoredProperties ( rdf:type ) ;
+
+    sh:property [
+        sh:path un:id ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:string ;
+        sh:message "Node 'id' must be a single string if provided."@en
+    ] ;
+    sh:property [
+        sh:path un:title ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:string ;
+        sh:message "Node must have exactly one title."@en
+    ] ;
+    sh:property [
+        sh:path un:content ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:string ;
+        sh:message "Node 'content' must be a single string."@en
+    ] ;
+    sh:property [
+        sh:path un:createdAt ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:dateTime ;
+        sh:message "Node 'createdAt' must be a single xsd:dateTime."@en
+    ] ;
+    sh:property [
+        sh:path un:updatedAt ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:dateTime ;
+        sh:message "Node 'updatedAt' must be a single xsd:dateTime."@en ] ;
+    sh:property [
+        sh:path un:status ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:string ;
+        sh:in ( "stub" "complete" "archived" ) ;
+        sh:message "Node 'status' must be 'stub', 'complete' or 'archived'."@en ] ;
+    sh:property [
+        sh:path un:alias ;
+        sh:datatype xsd:string ;
+        sh:message "Node 'alias' must be string."@en ] ;
+    sh:property [
+        sh:path un:parentIdentifier ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:string ;
+        sh:message "Node must have exactly one parentIdentifier."@en ] ;
+    sh:property [
+        sh:path un:hasSection ;
+        sh:class un:Section ;
+        sh:message "Node 'hasSection' must link to Section."@en ] ;
+    sh:property [
+        sh:path un:hasDetail ;
+        sh:class un:Detail ;
+        sh:message "Node 'hasDetail' must link to Detail."@en ] ;
+    sh:property [
+        sh:path un:hasRelationshipStatement ;
+        sh:class un:RelationshipStatement ;
+        sh:message "Node 'hasRelationshipStatement' must link to RelationshipStatement."@en
+    ] .
+
+# Section constraints
+un:SectionShape a sh:NodeShape ;
+    sh:targetClass un:Section ;
+    sh:closed true ;
+    sh:ignoredProperties ( rdf:type ) ;
+
+    # Title required
+    sh:property [
+      sh:path      un:sectionTitle ;
+      sh:minCount  1 ;
+      sh:maxCount  1 ;
+      sh:datatype   xsd:string ;
+      sh:message   "Section must have exactly one sectionTitle."@en
+    ] ;
+
+    # → enforce allowed sectionType values
+    sh:property [
+      sh:path      un:sectionType ;
+      sh:minCount  1 ;
+      sh:maxCount  1 ;
+      sh:datatype   xsd:string ;
+      sh:in         ( "text" "data-table" "music-score" ) ;
+      sh:message   "Section must have exactly one sectionType ('text','data-table','music-score')."@en
+    ] ;
+
+    # content / data / summary optional
+    sh:property [
+      sh:path      un:sectionContent ;
+      sh:maxCount  1 ;
+      sh:datatype   xsd:string ;
+      sh:message   "Section content must be a single string."@en
+    ] ;
+
+    sh:property [
+      sh:path      un:sectionData ;
+      sh:maxCount  1 ;
+      sh:datatype   xsd:string ;
+      sh:message   "Section data must be a single string."@en
+    ] ;
+
+    sh:property [
+      sh:path      un:sectionSummary ;
+      sh:maxCount  1 ;
+      sh:datatype   xsd:string ;
+      sh:message   "Section summary must be a single string."@en
+    ] ;
+
+    sh:property [
+      sh:path         un:sectionOrder ;
+      sh:minCount     1 ;
+      sh:maxCount     1 ;
+      sh:minInclusive 0 ;
+      sh:datatype     xsd:integer ;
+      sh:message      "Section order must be a non-negative integer."@en
+    ] ;
+
+    # Exactly one of content/data/summary
+    sh:xone (
+      [ sh:property [ sh:path un:sectionContent ; sh:minCount 1 ] ]
+      [ sh:property [ sh:path un:sectionData    ; sh:minCount 1 ] ]
+      [ sh:property [ sh:path un:sectionSummary ; sh:minCount 1 ] ]
+    ) ;
+    sh:message "A Section must have at least one of sectionContent, sectionData, or sectionSummary."@en .
+
+# Detail constraints
+un:DetailShape a sh:NodeShape ;
+    sh:targetClass un:Detail ;
+    sh:closed true ;
+    sh:ignoredProperties ( rdf:type ) ;
+
+    sh:property [
+        sh:path      un:detailLabel ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:string ;
+        sh:message "Detail must have exactly one detailLabel."@en
+    ] ;
+    sh:property [
+        sh:path      un:detailType ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:string ;
+        sh:message "Detail must have exactly one detailType."@en
+    ] ;
+    sh:property [
+        sh:path      un:detailValue ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:nodeKind   sh:Literal ;
+        sh:message "Detail must have exactly one detailValue."@en
+    ] .
+
+# RelationshipStatement constraints
+un:RelationshipStatementShape a sh:NodeShape ;
+    sh:targetClass un:RelationshipStatement ;
+    sh:closed true ;
+    sh:ignoredProperties ( rdf:type ) ;
+    
+    sh:property [
+        sh:path      un:leftSubject ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:string ;
+        sh:message "RelationshipStatement must have exactly one leftSubject."@en
+    ] ;
+    sh:property [
+        sh:path      un:relationType ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:string ;
+        sh:in ( "DEPENDS_ON" "CONTRASTS_WITH" "CONTAINS" "INVALIDATES" ) ;
+        sh:message "RelationshipStatement must have exactly one valid relationType."@en
+    ] ;
+    sh:property [
+        sh:path      un:rightObject ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:string ;
+        sh:message "RelationshipStatement must have exactly one rightObject."@en
+    ] .

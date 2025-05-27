@@ -1,413 +1,406 @@
-1. Grammar & Automata Foundations
-  1.1 Chomsky Hierarchy
-    1.1.1 Type‑0 (Unrestricted) & Turing Machines
-    1.1.2 Type‑1 (Context‑Sensitive) & Linear‑Bounded Automata
-    1.1.3 Type‑2 (Context‑Free) & Pushdown Automata
-    1.1.4 Type‑3 (Regular) & Finite Automata
-  1.2 Extended Formalisms
-    1.2.1 Attribute Grammars
-    1.2.2 Tree‑Adjoining Grammars
-    1.2.3 Tree & Graph Grammars
-    1.2.4 Grammar Transformations & Normal Forms
-      1.2.4.1 Chomsky Normal Form (CNF)
-      1.2.4.2 Greibach Normal Form (GNF)
-      1.2.4.3 Left‑factoring
-      1.2.4.4 Left‑recursion elimination
-  1.3 Grammar Notations
-    1.3.1 BNF / EBNF
-    1.3.2 ABNF
-    1.3.3 PEG (Parsing Expression Grammars)
-    1.3.4 Regular Expressions
-  1.4 Parser Generators & Tools
-    1.4.1 YACC / Bison
-    1.4.2 ANTLR
-    1.4.3 PEG.js / Rats!
-  1.5 Parsing Algorithms
-    1.5.1 LL(k) / LR(k) / LALR(k)
-    1.5.2 Earley / CYK
-    1.5.3 Recursive‑Descent
-  1.6 Concrete Language Families
-    1.6.1. Natural Human Languages
-      1.6.1.1. Indo‑European
-        1.6.1.1.1. English
-        1.6.1.1.2. Sanskrit
-        1.6.1.1.3. Spanish
-        1.6.1.1.4. Hindi
-      1.6.1.2. Afro‑Asiatic
-        1.6.1.2.1. Arabic
-        1.6.1.2.2. Hebrew
-      1.6.1.3. Sino‑Tibetan
-        1.6.1.3.1. Mandarin Chinese
-        1.6.1.3.2. Cantonese
-      1.6.1.4. Other Families
-        1.6.1.4.1. Uralic (Finnish, Hungarian)
-        1.6.1.4.2. Dravidian (Tamil, Telugu)
-    1.6.2 Technological Languages 
-      1.6.2.1 Textual & Programming Languages
-        1.6.2.1.1 Procedural & Low‑Level
-          1.6.2.1.1.1 C
-          1.6.2.1.1.2 Pascal
-          1.6.2.1.1.3 Fortran
-        1.6.2.1.2 Object‑Oriented
-          1.6.2.1.2.1 C++
-          1.6.2.1.2.2 Java
-          1.6.2.1.2.3 C#
-          1.6.2.1.2.4 Smalltalk
-        1.6.2.1.3 Functional
-          1.6.2.1.3.1 Haskell
-          1.6.2.1.3.2 OCaml
-          1.6.2.1.3.3 Scheme
-          1.6.2.1.3.4 Lisp
-          1.6.2.1.3.5 Erlang
-          1.6.2.1.3.6 Elixir
-        1.6.2.1.4 Scripting & Dynamic
-          1.6.2.1.4.1 JavaScript
-          1.6.2.1.4.2 TypeScript
-          1.6.2.1.4.3 Python
-          1.6.2.1.4.4 Perl
-          1.6.2.1.4.5 Ruby
-        1.6.2.1.5 Systems & Emerging
-          1.6.2.1.5.1 Rust
-          1.6.2.1.5.2 Go
-          1.6.2.1.5.3 Zig
-        1.6.2.1.6 Data‑Oriented & DSLs
-          1.6.2.1.6.1 SQL & Variants (T‑SQL, PL/SQL)
-          1.6.2.1.6.2 R
-          1.6.2.1.6.3 MATLAB
-      1.6.2.2 Markup & Document Languages
-        1.6.2.2.1 XML
-        1.6.2.2.2 XHTML
-        1.6.2.2.3 SVG
-        1.6.2.2.4 MathML
-        1.6.2.2.5 VoiceXML
-        1.6.2.2.6 Markdown
-        1.6.2.2.7 CommonMark
-        1.6.2.2.8 AsciiDoc
-        1.6.2.2.9 reStructuredText
-        1.6.2.2.10 LaTeX
-        1.6.2.2.11 ConTeXt
-        1.6.2.2.12 DocBook
-        1.6.2.2.13 DITA
-      1.6.2.3 Data Interchange & Serialization
-        1.6.2.3.1 JSON
-        1.6.2.3.2 JSON5
-        1.6.2.3.3 YAML
-        1.6.2.3.4 TOML
-        1.6.2.3.5 CSV
-        1.6.2.3.6 TSV
-        1.6.2.3.7 Fixed‑Width Text
-        1.6.2.3.8 Protocol Buffers
-        1.6.2.3.9 Apache Avro
-        1.6.2.3.10 Thrift
-        1.6.2.3.11 FlatBuffers
-        1.6.2.3.12 MessagePack
-        1.6.2.3.13 BSON
-        1.6.2.3.14 CBOR
-        1.6.2.3.15 UBJSON
-        1.6.2.3.16 EDIFACT
-        1.6.2.3.17 X12
-        1.6.2.3.18 FIX
-      1.6.2.4 Schema & Validation
-        1.6.2.4.1 XSD
-        1.6.2.4.2 RELAX NG
-        1.6.2.4.3 JSON Schema
-        1.6.2.4.4 OpenAPI Schema
-        1.6.2.4.5 ASN.1
-        1.6.2.4.6 Cap’n Proto Schema
-      1.6.2.5 Transformation & Styling
-        1.6.2.5.1 XSLT
-        1.6.2.5.2 XQuery Update
-        1.6.2.5.3 CSS
-        1.6.2.5.4 LESS
-        1.6.2.5.5 Sass
-        1.6.2.5.6 PostCSS
-      1.6.2.6 Query & Extraction
-        1.6.2.6.1 XPath
-        1.6.2.6.2 XQuery
-        1.6.2.6.3 SQL (ANSI, T‑SQL, PL/pgSQL)
-        1.6.2.6.4 SPARQL
-        1.6.2.6.5 GraphQL
-      1.6.2.7 Interface Definition Languages
-        1.6.2.7.1 CORBA IDL
-        1.6.2.7.2 Protocol Buffers IDL
-        1.6.2.7.3 Thrift IDL
-        1.6.2.7.4 OpenAPI / Swagger
-        1.6.2.7.5 GraphQL SDL
-      1.6.2.8 Bytecode, Object & Machine Formats
-        1.6.2.8.1 JVM .class
-        1.6.2.8.2 CIL (CLR)
-        1.6.2.8.3 WebAssembly
-        1.6.2.8.4 ELF
-        1.6.2.8.5 PE
-        1.6.2.8.6 Mach‑O
-        1.6.2.8.7 Firmware Images
-      1.6.2.9 Templating & Domain‑Specific DSLs
-        1.6.2.9.1 Mustache
-        1.6.2.9.2 Handlebars
-        1.6.2.9.3 Liquid
-        1.6.2.9.4 EJS
-        1.6.2.9.5 Nunjucks
-        1.6.2.9.6 Twig
-        1.6.2.9.7 ERB
-        1.6.2.9.8 JSP
-        1.6.2.9.9 Thymeleaf
-        1.6.2.9.10 PHP
-        1.6.2.9.11 Dockerfile
-        1.6.2.9.12 Kubernetes YAML
-        1.6.2.9.13 Nix
-        1.6.2.9.14 Systemd Unit
-  1.7. Symbol Schemas  
-    1.7.1. Alphabets  
-      1.7.1.1. Latin Alphabet  
-      1.7.1.2. Cyrillic Alphabet  
-      1.7.1.3. Greek Alphabet  
-      1.7.1.4. Arabic Abjad  
-      1.7.1.5. Devanagari Abugida  
-      1.7.1.6. Han Characters (Kanji/Hanzi)  
-      1.7.1.7. Hiragana & Katakana  
-    1.7.2. Number Systems  
-      1.7.2.1. Decimal (base‑10)  
-      1.7.2.2. Binary (base‑2)  
-      1.7.2.3. Octal (base‑8)  
-      1.7.2.4. Hexadecimal (base‑16)  
-      1.7.2.5. Roman Numerals  
-      1.7.2.6. Tally Marks (Unary) 
-
-2. Algebraic & Structural Properties
-  2.1 Closure Properties
-    2.1.1 Union
-    2.1.2 Intersection
-    2.1.3 Complement
-    2.1.4 Concatenation
-    2.1.5 Kleene Star (Iteration)
-    2.1.6 Homomorphism
-    2.1.7 Inverse Homomorphism
-    2.1.8 Reversal
-    2.1.9 Shuffle & Other Binary Operations
-    2.1.10 Quotient (Left & Right)
-  2.2 Decision Problems
-    2.2.1 Emptiness
-    2.2.2 Finiteness
-    2.2.3 Membership
-    2.2.4 Equivalence
-    2.2.5 Inclusion
-    2.2.6 Universality
-    2.2.7 Intersection Non‑Emptiness
-    2.2.8 Word Problem Variants
-    2.2.9 Equivalence & Inclusion
-  2.3 Pumping Lemmas
-    2.3.1 Regular Language Pumping Lemma
-    2.3.2 Context‑Free Language Pumping Lemma
-    2.3.3 Ogden’s Lemma
-    2.3.4 Bar-Hillel Lemma (General CFG)
-    2.3.5 Applications & Non‑Membership Proofs
-  2.4 Descriptional Complexity
-    2.4.1 Grammar Size (Productions, Nonterminals)
-    2.4.2 Automaton State Complexity
-    2.4.3 Trade‑offs between Grammar & Automaton
-    2.4.4 Succinctness & Succinct Description Languages
-    2.4.5 Lower/Upper Bounds & Incompressibility
-  2.5 Algebraic Characterizations
-    2.5.1 Syntactic Monoids
-    2.5.2 Transition Monoids & Semigroups
-    2.5.3 Pseudovarieties & Varieties of Languages
-    2.5.4 Reiterman’s Theorem & Eilenberg Correspondence
-    2.5.5 Profinite Methods
-  2.6 Semirings & Weighted Structures
-    2.6.1 Boolean Semiring (Unweighted Automata)
-    2.6.2 Tropical Semiring (Min/Plus)
-    2.6.3 Probability Semiring (Stochastic Automata)
-    2.6.4 Formal Power Series over Semirings
-    2.6.5 Weighted Automata & Transducers
-
-3. Semantics & Translation
-  3.1 Finite‑State Transducers
-    3.1.1 Mealy Machines
-    3.1.2 Moore Machines
-    3.1.3 Deterministic vs. Non‑Deterministic Transducers
-    3.1.4 Weighted Transducers
-    3.1.5 Composition & Inversion
-    3.1.6 Applications (Morphological Analysis, Tokenization, Phonology)
-    3.1.7 Tree Transducers
-  3.2 Syntax‑Directed Translation
-    3.2.1 Attribute Grammars
-      3.2.1.1 S‑Attributed Grammars
-      3.2.1.2 L‑Attributed Grammars
-    3.2.2 Semantic Actions
-    3.2.3 Translation Schemes & Directed Acyclic Graphs
-    3.2.4 Intermediate Representations (AST Annotations, IR Trees)
-  3.3 Compiler Front‑End → Back‑End
-    3.3.1 Front‑End
-        3.3.1.1 Lexical Analysis
-          3.3.1.1.1 Regular Expressions & DFAs
-          3.3.1.1.2 Scanner Generators (flex, ANTLR)
-        3.3.1.2 Syntax Analysis
-          3.3.1.2.1 CFG Parsing (LL, LR, LALR, GLR)
-          3.3.1.2.2 Parser Generators & Hand‑Written Parsers
-        3.3.1.3 Semantic Analysis
-          3.3.1.3.1 Symbol Table Management & Name Resolution
-          3.3.1.3.2 Type Checking & Inference
-          3.3.1.3.3 Attribute Evaluation & Scope Rules
-        3.3.1.4 Intermediate Representation
-          3.3.1.4.1 Abstract Syntax Trees (ASTs)
-          3.3.1.4.2 Control Flow Graphs (CFGs)
-          3.3.1.4.3 Static Single Assignment (SSA) Form
-    3.3.2 Back‑End
-        3.3.2.1 Code Optimization
-          3.3.2.1.1 Local Optimizations (Constant Folding, Dead Code Elimination)
-          3.3.2.1.2 Global Optimizations (Loop Transformations, Inlining)
-          3.3.2.1.3 Data‑Flow & Dependence Analysis
-        3.3.2.2 Code Generation
-          3.3.2.2.1 Instruction Selection & Pattern Matching
-          3.3.2.2.2 Register Allocation (Graph‑Coloring, Linear Scan)
-          3.3.2.2.3 Instruction Scheduling & Pipeline Awareness
-        3.3.2.3 Assembly & Linking
-          3.3.2.3.1 Assembly Emission & Directives
-          3.3.2.3.2 Linker Behavior & Loader Models
-        3.3.2.4 Target‑Specific Considerations
-          3.3.2.4.1 Calling Conventions & ABI Compliance
-          3.3.2.4.2 Endianness, Alignment & Memory Layout
-
-4. Formal Semantics & Type Systems
-  4.1 Operational Semantics
-    4.1.1 Structural (Small‑Step) Semantics
-    4.1.2 Natural (Big‑Step) Semantics
-    4.1.3 Transition Systems & Inference Rules
-    4.1.4 Evaluation Contexts & Reduction Strategies
-    4.1.5 Bisimulation & Behavioral Equivalence
-  4.2 Denotational Semantics
-    4.2.1 Semantic Domains (cpo’s, lattices)
-    4.2.2 Continuous Functions & Fixed‑Point Semantics
-    4.2.3 Environment, Store & State Models
-    4.2.4 Monadic Semantics for Effects
-    4.2.5 Denotational Equivalence & Full Abstraction
-  4.3 Axiomatic Semantics
-    4.3.1 Hoare Logic (Triples `{P} C {Q}`)
-    4.3.2 Weakest Preconditions & Strongest Postconditions
-    4.3.3 Loop Invariants & Proof Rules
-    4.3.4 Dynamic Logic & Modal Approaches
-    4.3.5 Partial vs. Total Correctness
-  4.4 Type Systems & Type Checking
-    4.4.1 Simple Type Systems (STLC)
-    4.4.2 Hindley–Milner & Type Inference
-    4.4.3 Polymorphism (Parametric, Ad Hoc)
-    4.4.4 Subtyping & Variance
-    4.4.5 Dependent Types & Refinement Types
-    4.4.6 Type Safety Proofs (Progress & Preservation)
-    4.4.7 Gradual Typing & Cast Semantics
-
-
-5. Grammar Learning & Inference
-  5.1 Grammar Induction
-    5.1.1 Identification in the Limit (Gold’s Model)
-    5.1.2 Distributional & Clustering Methods
-    5.1.3 Minimum Description Length & MDL‑Based Learning
-    5.1.4 Bayesian Grammar Induction (PCFG Priors)
-    5.1.5 MCMC & Sampling‑Based Approaches
-    5.1.6 Evolutionary & Genetic Algorithms
-    5.1.7 Bootstrapping & Semi‑Supervised Methods
-  5.2 Automata Learning
-    5.2.1 Active Learning (L* Algorithm, MAT Framework)
-    5.2.2 Passive Learning (RPNI, EDSM, State‑Merging)
-    5.2.3 Complexity Bounds & Sample Requirements
-    5.2.4 Angluin‑Style Counterexample Handling
-    5.2.5 Incremental & Online Automata Inference
-    5.2.6 Hybrid Symbolic–Statistical Learners
-  5.3 Statistical & Neural Methods
-    5.3.1 EM for PCFG Parameter Estimation
-    5.3.2 Maximum Entropy & Log‑Linear Models
-    5.3.3 Neural Sequence Models (RNNs, LSTMs)
-    5.3.4 Transformer‑Based Grammar Induction
-    5.3.5 Variational & Autoencoder Approaches
-    5.3.6 Adversarial Learning for Grammar Discovery
-    5.3.7 Evaluation Metrics & Perplexity  
-
-6. Stochastic & Weighted Formalisms
-  6.1 Probabilistic Automata & PCFGs
-    6.1.1 Probabilistic Finite Automata (PFA)
-      6.1.1.1 Definition & Semantics
-      6.1.1.2 Parameter Estimation (EM for PFA)
-      6.1.1.3 Decoding & Likelihood Computation
-    6.1.2 Probabilistic Context‑Free Grammars (PCFGs)
-      6.1.2.1 Rule Probabilities & Normalization
-      6.1.2.2 Training: Inside‑Outside Algorithm
-      6.1.2.3 Parsing: Probabilistic CYK, Probabilistic Earley
-    6.1.3 Smoothing & Back‑Off Techniques
-      6.1.3.1 Add‑One / Good‑Turing
-      6.1.3.2 Discounting & Interpolation
-    6.1.4 Applications
-      6.1.4.1 Statistical NLP (Parsing, Language Modeling)
-      6.1.4.2 Biosequence Modeling
-    6.1.5 Formal Power Series
-      6.1.5.1 Algebraic / rational series
-      6.1.5.2 Hadamard & Cauchy products
-  6.2 Weighted Automata & Transducers
-    6.2.1 Semiring Framework
-      6.2.1.1 Weight Structures (Boolean, Tropical, Log, Probability)
-      6.2.1.2 Algebraic Properties & Closure
-    6.2.2 Weighted Finite Automata (WFA)
-      6.2.2.1 Definition & Semantics
-      6.2.2.2 Weight Pushing & Normalization
-      6.2.2.3 Determinization & Minimization under a Semiring
-    6.2.3 Weighted Transducers
-      6.2.3.1 Mealy vs. Moore Formulations
-      6.2.3.2 Composition & Inversion
-    6.2.4 Core Algorithms
-      6.2.4.1 Shortest/Best‑Path (Viterbi on WFA)
-      6.2.4.2 Composition & Determinization
-      6.2.4.3 Weight Pushing & Pruning
-    6.2.5 Applications
-      6.2.5.1 Speech Recognition & ASR Lattices
-      6.2.5.2 Morphology & Tokenization Pipelines
-  6.3 Markov Models & HMMs
-    6.3.1 Markov Chains
-      6.3.1.1 Definition & Transition Matrices
-      6.3.1.2 Stationary Distributions & Ergodicity
-    6.3.2 Hidden Markov Models (HMMs)
-      6.3.2.1 States, Emissions & Transition Probabilities
-      6.3.2.2 Training: Baum‑Welch / Forward‑Backward
-      6.3.2.3 Decoding: Viterbi Algorithm
-    6.3.3 Scaling & Numerical Stability
-      6.3.3.1 Log‑Space Computations
-      6.3.3.2 Scaling Factors
-    6.3.4 Extensions & Variants
-      6.3.4.1 Input‑Output HMMs (IOHMM)
-      6.3.4.2 Conditional Random Fields (CRFs)
-    6.3.5 Applications
-      6.3.5.1 POS Tagging & Chunking
-      6.3.5.2 Speech & Handwriting Recognition
-
-7. Logic & Descriptive Complexity
-  7.1 Logic‑Automata Correspondence
-    7.1.1 First‑Order Logic (FO) on Words & Strings
-    7.1.2 Monadic Second‑Order Logic (MSO) & Büchi–Elgot–Trakhtenbrot Theorem
-    7.1.3 Weak MSO vs. Full MSO (Finite vs. Infinite Words)
-    7.1.4 Tree Automata & MSO on Trees (Rabin’s Theorem)
-    7.1.5 Decidability & Complexity of Satisfiability
-  7.2 Temporal Logics
-    7.2.1 Linear Temporal Logic (LTL)
-      7.2.1.1 Syntax & Semantics (Until, Next, Globally, Eventually)
-      7.2.1.2 Büchi Automaton Translation
-      7.2.1.3 Model Checking Complexity
-    7.2.2 Computation Tree Logic (CTL & CTL*)
-      7.2.2.1 State vs. Path Formulas
-      7.2.2.2 Fixpoint Characterization (μ‑Calculus Connection)
-      7.2.2.3 Model Checking Algorithms
-    7.2.3 Modal μ‑Calculus
-      7.2.3.1 Least/Greatest Fixpoints
-      7.2.3.2 Expressive Power & Alternation Depth
-      7.2.3.3 Model Checking via Parity Games
-  7.3 Complexity Classes & Descriptive Characterizations
-    7.3.1 NL (Nondeterministic Logarithmic Space)
-      7.3.1.1 FO + Transitive Closure (FO[TC]) Characterization
-      7.3.1.2 Graph Reachability & Savitch’s Theorem
-    7.3.2 P (Polynomial Time)
-      7.3.2.1 FO + Least Fixed‑Point (FO[LFP]) Characterization
-      7.3.2.2 PTIME‑Complete Problems (e.g., Circuit Value)
-    7.3.3 PSPACE (Polynomial Space)
-      7.3.3.1 SO + Transitive Closure Characterization
-      7.3.3.2 QBF & PSPACE‑Completeness
-    7.3.4 NP & Beyond (optional)
-      7.3.4.1 Existential Second‑Order Logic (∃SO) = NP (Fagin’s Theorem)
-      7.3.4.2 Higher‑Order Logic & EXPTIME/EXPSPACE Mappings
-
+1.3.3. Formal Languages
+  1.3.3.1. Grammar & Automata Foundations
+    1.3.3.1.1 Chomsky Hierarchy
+      1.3.3.1.1.1 Type‑0 (Unrestricted) & Turing Machines
+      1.3.3.1.1.2 Type‑1 (Context‑Sensitive) & Linear‑Bounded Automata
+      1.3.3.1.1.3 Type‑2 (Context‑Free) & Pushdown Automata
+      1.3.3.1.1.4 Type‑3 (Regular) & Finite Automata
+    1.3.3.1.2 Extended Formalisms
+      1.3.3.1.2.1 Attribute Grammars
+      1.3.3.1.2.2 Tree‑Adjoining Grammars
+      1.3.3.1.2.3 Tree & Graph Grammars
+      1.3.3.1.2.4 Grammar Transformations & Normal Forms
+        1.3.3.1.2.4.1 Chomsky Normal Form (CNF)
+        1.3.3.1.2.4.2 Greibach Normal Form (GNF)
+        1.3.3.1.2.4.3 Left‑factoring
+        1.3.3.1.2.4.4 Left‑recursion elimination
+    1.3.3.1.3 Grammar Notations
+      1.3.3.1.3.1 BNF / EBNF
+      1.3.3.1.3.2 ABNF
+      1.3.3.1.3.3 PEG (Parsing Expression Grammars)
+      1.3.3.1.3.4 Regular Expressions
+    1.3.3.1.4 Parser Generators & Tools
+      1.3.3.1.4.1 YACC / Bison
+      1.3.3.1.4.2 ANTLR
+      1.3.3.1.4.3 PEG.js / Rats!
+    1.3.3.1.5 Parsing Algorithms
+      1.3.3.1.5.1 LL(k) / LR(k) / LALR(k)
+      1.3.3.1.5.2 Earley / CYK
+      1.3.3.1.5.3 Recursive‑Descent
+    1.3.3.1.6 Concrete Language Families
+      1.3.3.1.6.1. Natural Human Languages
+        1.3.3.1.6.1.1. Indo‑European
+          1.3.3.1.6.1.1.1. English
+          1.3.3.1.6.1.1.2. Sanskrit
+          1.3.3.1.6.1.1.3. Spanish
+          1.3.3.1.6.1.1.4. Hindi
+        1.3.3.1.6.1.2. Afro‑Asiatic
+          1.3.3.1.6.1.2.1. Arabic
+          1.3.3.1.6.1.2.2. Hebrew
+        1.3.3.1.6.1.3. Sino‑Tibetan
+          1.3.3.1.6.1.3.1. Mandarin Chinese
+          1.3.3.1.6.1.3.2. Cantonese
+        1.3.3.1.6.1.4. Other Families
+          1.3.3.1.6.1.4.1. Uralic (Finnish, Hungarian)
+          1.3.3.1.6.1.4.2. Dravidian (Tamil, Telugu)
+      1.3.3.1.6.2 Technological Languages 
+        1.3.3.1.6.2.1 Textual & Programming Languages
+          1.3.3.1.6.2.1.1 Procedural & Low‑Level
+            1.3.3.1.6.2.1.1.1 C
+            1.3.3.1.6.2.1.1.2 Pascal
+            1.3.3.1.6.2.1.1.3 Fortran
+          1.3.3.1.6.2.1.2 Object‑Oriented
+            1.3.3.1.6.2.1.2.1 C++
+            1.3.3.1.6.2.1.2.2 Java
+            1.3.3.1.6.2.1.2.3 C#
+            1.3.3.1.6.2.1.2.4 Smalltalk
+          1.3.3.1.6.2.1.3 Functional
+            1.3.3.1.6.2.1.3.1 Haskell
+            1.3.3.1.6.2.1.3.2 OCaml
+            1.3.3.1.6.2.1.3.3 Scheme
+            1.3.3.1.6.2.1.3.4 Lisp
+            1.3.3.1.6.2.1.3.5 Erlang
+            1.3.3.1.6.2.1.3.6 Elixir
+          1.3.3.1.6.2.1.4 Scripting & Dynamic
+            1.3.3.1.6.2.1.4.1 JavaScript
+            1.3.3.1.6.2.1.4.2 TypeScript
+            1.3.3.1.6.2.1.4.3 Python
+            1.3.3.1.6.2.1.4.4 Perl
+            1.3.3.1.6.2.1.4.5 Ruby
+          1.3.3.1.6.2.1.5 Systems & Emerging
+            1.3.3.1.6.2.1.5.1 Rust
+            1.3.3.1.6.2.1.5.2 Go
+            1.3.3.1.6.2.1.5.3 Zig
+          1.3.3.1.6.2.1.6 Data‑Oriented & DSLs
+            1.3.3.1.6.2.1.6.1 SQL & Variants (T‑SQL, PL/SQL)
+            1.3.3.1.6.2.1.6.2 R
+            1.3.3.1.6.2.1.6.3 MATLAB
+        1.3.3.1.6.2.2 Markup & Document Languages
+          1.3.3.1.6.2.2.1 XML
+          1.3.3.1.6.2.2.2 XHTML
+          1.3.3.1.6.2.2.3 SVG
+          1.3.3.1.6.2.2.4 MathML
+          1.3.3.1.6.2.2.5 VoiceXML
+          1.3.3.1.6.2.2.6 Markdown
+          1.3.3.1.6.2.2.7 CommonMark
+          1.3.3.1.6.2.2.8 AsciiDoc
+          1.3.3.1.6.2.2.9 reStructuredText
+          1.3.3.1.6.2.2.10 LaTeX
+          1.3.3.1.6.2.2.11 ConTeXt
+          1.3.3.1.6.2.2.12 DocBook
+          1.3.3.1.6.2.2.13 DITA
+        1.3.3.1.6.2.3 Data Interchange & Serialization
+          1.3.3.1.6.2.3.1 JSON
+          1.3.3.1.6.2.3.2 JSON5
+          1.3.3.1.6.2.3.3 YAML
+          1.3.3.1.6.2.3.4 TOML
+          1.3.3.1.6.2.3.5 CSV
+          1.3.3.1.6.2.3.6 TSV
+          1.3.3.1.6.2.3.7 Fixed‑Width Text
+          1.3.3.1.6.2.3.8 Protocol Buffers
+          1.3.3.1.6.2.3.9 Apache Avro
+          1.3.3.1.6.2.3.10 Thrift
+          1.3.3.1.6.2.3.11 FlatBuffers
+          1.3.3.1.6.2.3.12 MessagePack
+          1.3.3.1.6.2.3.13 BSON
+          1.3.3.1.6.2.3.14 CBOR
+          1.3.3.1.6.2.3.15 UBJSON
+          1.3.3.1.6.2.3.16 EDIFACT
+          1.3.3.1.6.2.3.17 X12
+          1.3.3.1.6.2.3.18 FIX
+        1.3.3.1.6.2.4 Schema & Validation
+          1.3.3.1.6.2.4.1 XSD
+          1.3.3.1.6.2.4.2 RELAX NG
+          1.3.3.1.6.2.4.3 JSON Schema
+          1.3.3.1.6.2.4.4 OpenAPI Schema
+          1.3.3.1.6.2.4.5 ASN.1
+          1.3.3.1.6.2.4.6 Cap’n Proto Schema
+        1.3.3.1.6.2.5 Transformation & Styling
+          1.3.3.1.6.2.5.1 XSLT
+          1.3.3.1.6.2.5.2 XQuery Update
+          1.3.3.1.6.2.5.3 CSS
+          1.3.3.1.6.2.5.4 LESS
+          1.3.3.1.6.2.5.5 Sass
+          1.3.3.1.6.2.5.6 PostCSS
+        1.3.3.1.6.2.6 Query & Extraction
+          1.3.3.1.6.2.6.1 XPath
+          1.3.3.1.6.2.6.2 XQuery
+          1.3.3.1.6.2.6.3 SQL (ANSI, T‑SQL, PL/pgSQL)
+          1.3.3.1.6.2.6.4 SPARQL
+          1.3.3.1.6.2.6.5 GraphQL
+        1.3.3.1.6.2.7 Interface Definition Languages
+          1.3.3.1.6.2.7.1 CORBA IDL
+          1.3.3.1.6.2.7.2 Protocol Buffers IDL
+          1.3.3.1.6.2.7.3 Thrift IDL
+          1.3.3.1.6.2.7.4 OpenAPI / Swagger
+          1.3.3.1.6.2.7.5 GraphQL SDL
+        1.3.3.1.6.2.8 Bytecode, Object & Machine Formats
+          1.3.3.1.6.2.8.1 JVM .class
+          1.3.3.1.6.2.8.2 CIL (CLR)
+          1.3.3.1.6.2.8.3 WebAssembly
+          1.3.3.1.6.2.8.4 ELF
+          1.3.3.1.6.2.8.5 PE
+          1.3.3.1.6.2.8.6 Mach‑O
+          1.3.3.1.6.2.8.7 Firmware Images
+        1.3.3.1.6.2.9 Templating & Domain‑Specific DSLs
+          1.3.3.1.6.2.9.1 Mustache
+          1.3.3.1.6.2.9.2 Handlebars
+          1.3.3.1.6.2.9.3 Liquid
+          1.3.3.1.6.2.9.4 EJS
+          1.3.3.1.6.2.9.5 Nunjucks
+          1.3.3.1.6.2.9.6 Twig
+          1.3.3.1.6.2.9.7 ERB
+          1.3.3.1.6.2.9.8 JSP
+          1.3.3.1.6.2.9.9 Thymeleaf
+          1.3.3.1.6.2.9.10 PHP
+          1.3.3.1.6.2.9.11 Dockerfile
+          1.3.3.1.6.2.9.12 Kubernetes YAML
+          1.3.3.1.6.2.9.13 Nix
+          1.3.3.1.6.2.9.14 Systemd Unit
+    1.3.3.1.7. Symbol Schemas  
+      1.3.3.1.7.1. Alphabets  
+        1.3.3.1.7.1.1. Latin Alphabet  
+        1.3.3.1.7.1.2. Cyrillic Alphabet  
+        1.3.3.1.7.1.3. Greek Alphabet  
+        1.3.3.1.7.1.4. Arabic Abjad  
+        1.3.3.1.7.1.5. Devanagari Abugida  
+        1.3.3.1.7.1.6. Han Characters (Kanji/Hanzi)  
+        1.3.3.1.7.1.7. Hiragana & Katakana  
+      1.3.3.1.7.2. Number Systems  
+        1.3.3.1.7.2.1. Decimal (base‑10)  
+        1.3.3.1.7.2.2. Binary (base‑2)  
+        1.3.3.1.7.2.3. Octal (base‑8)  
+        1.3.3.1.7.2.4. Hexadecimal (base‑16)  
+        1.3.3.1.7.2.5. Roman Numerals  
+        1.3.3.1.7.2.6. Tally Marks (Unary) 
+  1.3.3.2. Algebraic & Structural Properties
+    1.3.3.2.1 Closure Properties
+      1.3.3.2.1.1 Union
+      1.3.3.2.1.2 Intersection
+      1.3.3.2.1.3 Complement
+      1.3.3.2.1.4 Concatenation
+      1.3.3.2.1.5 Kleene Star (Iteration)
+      1.3.3.2.1.6 Homomorphism
+      1.3.3.2.1.7 Inverse Homomorphism
+      1.3.3.2.1.8 Reversal
+      1.3.3.2.1.9 Shuffle & Other Binary Operations
+      1.3.3.2.1.10 Quotient (Left & Right)
+    1.3.3.2.2 Decision Problems
+      1.3.3.2.2.1 Emptiness
+      1.3.3.2.2.2 Finiteness
+      1.3.3.2.2.3 Membership
+      1.3.3.2.2.4 Equivalence
+      1.3.3.2.2.5 Inclusion
+      1.3.3.2.2.6 Universality
+      1.3.3.2.2.7 Intersection Non‑Emptiness
+      1.3.3.2.2.8 Word Problem Variants
+      1.3.3.2.2.9 Equivalence & Inclusion
+    1.3.3.2.3 Pumping Lemmas
+      1.3.3.2.3.1 Regular Language Pumping Lemma
+      1.3.3.2.3.2 Context‑Free Language Pumping Lemma
+      1.3.3.2.3.3 Ogden’s Lemma
+      1.3.3.2.3.4 Bar-Hillel Lemma (General CFG)
+      1.3.3.2.3.5 Applications & Non‑Membership Proofs
+    1.3.3.2.4 Descriptional Complexity
+      1.3.3.2.4.1 Grammar Size (Productions, Nonterminals)
+      1.3.3.2.4.2 Automaton State Complexity
+      1.3.3.2.4.3 Trade‑offs between Grammar & Automaton
+      1.3.3.2.4.4 Succinctness & Succinct Description Languages
+      1.3.3.2.4.5 Lower/Upper Bounds & Incompressibility
+    1.3.3.2.5 Algebraic Characterizations
+      1.3.3.2.5.1 Syntactic Monoids
+      1.3.3.2.5.2 Transition Monoids & Semigroups
+      1.3.3.2.5.3 Pseudovarieties & Varieties of Languages
+      1.3.3.2.5.4 Reiterman’s Theorem & Eilenberg Correspondence
+      1.3.3.2.5.5 Profinite Methods
+    1.3.3.2.6 Semirings & Weighted Structures
+      1.3.3.2.6.1 Boolean Semiring (Unweighted Automata)
+      1.3.3.2.6.2 Tropical Semiring (Min/Plus)
+      1.3.3.2.6.3 Probability Semiring (Stochastic Automata)
+      1.3.3.2.6.4 Formal Power Series over Semirings
+      1.3.3.2.6.5 Weighted Automata & Transducers
+  1.3.3.3. Semantics & Translation
+    1.3.3.3.1 Finite‑State Transducers
+      1.3.3.3.1.1 Mealy Machines
+      1.3.3.3.1.2 Moore Machines
+      1.3.3.3.1.3 Deterministic vs. Non‑Deterministic Transducers
+      1.3.3.3.1.4 Weighted Transducers
+      1.3.3.3.1.5 Composition & Inversion
+      1.3.3.3.1.6 Applications (Morphological Analysis, Tokenization, Phonology)
+      1.3.3.3.1.7 Tree Transducers
+    1.3.3.3.2 Syntax‑Directed Translation
+      1.3.3.3.2.1 Attribute Grammars
+        1.3.3.3.2.1.1 S‑Attributed Grammars
+        1.3.3.3.2.1.2 L‑Attributed Grammars
+      1.3.3.3.2.2 Semantic Actions
+      1.3.3.3.2.3 Translation Schemes & Directed Acyclic Graphs
+      1.3.3.3.2.4 Intermediate Representations (AST Annotations, IR Trees)
+    1.3.3.3.3 Compiler Front‑End → Back‑End
+      1.3.3.3.3.1 Front‑End
+          1.3.3.3.3.1.1 Lexical Analysis
+            1.3.3.3.3.1.1.1 Regular Expressions & DFAs
+            1.3.3.3.3.1.1.2 Scanner Generators (flex, ANTLR)
+          1.3.3.3.3.1.2 Syntax Analysis
+            1.3.3.3.3.1.2.1 CFG Parsing (LL, LR, LALR, GLR)
+            1.3.3.3.3.1.2.2 Parser Generators & Hand‑Written Parsers
+          1.3.3.3.3.1.3 Semantic Analysis
+            1.3.3.3.3.1.3.1 Symbol Table Management & Name Resolution
+            1.3.3.3.3.1.3.2 Type Checking & Inference
+            1.3.3.3.3.1.3.3 Attribute Evaluation & Scope Rules
+          1.3.3.3.3.1.4 Intermediate Representation
+            1.3.3.3.3.1.4.1 Abstract Syntax Trees (ASTs)
+            1.3.3.3.3.1.4.2 Control Flow Graphs (CFGs)
+            1.3.3.3.3.1.4.3 Static Single Assignment (SSA) Form
+      1.3.3.3.3.2 Back‑End
+          1.3.3.3.3.2.1 Code Optimization
+            1.3.3.3.3.2.1.1 Local Optimizations (Constant Folding, Dead Code Elimination)
+            1.3.3.3.3.2.1.2 Global Optimizations (Loop Transformations, Inlining)
+            1.3.3.3.3.2.1.3 Data‑Flow & Dependence Analysis
+          1.3.3.3.3.2.2 Code Generation
+            1.3.3.3.3.2.2.1 Instruction Selection & Pattern Matching
+            1.3.3.3.3.2.2.2 Register Allocation (Graph‑Coloring, Linear Scan)
+            1.3.3.3.3.2.2.3 Instruction Scheduling & Pipeline Awareness
+          1.3.3.3.3.2.3 Assembly & Linking
+            1.3.3.3.3.2.3.1 Assembly Emission & Directives
+            1.3.3.3.3.2.3.2 Linker Behavior & Loader Models
+          1.3.3.3.3.2.4 Target‑Specific Considerations
+            1.3.3.3.3.2.4.1 Calling Conventions & ABI Compliance
+            1.3.3.3.3.2.4.2 Endianness, Alignment & Memory Layout
+  1.3.3.4. Formal Semantics & Type Systems
+    1.3.3.4.1 Operational Semantics
+      1.3.3.4.1.1 Structural (Small‑Step) Semantics
+      1.3.3.4.1.2 Natural (Big‑Step) Semantics
+      1.3.3.4.1.3 Transition Systems & Inference Rules
+      1.3.3.4.1.4 Evaluation Contexts & Reduction Strategies
+      1.3.3.4.1.5 Bisimulation & Behavioral Equivalence
+    1.3.3.4.2 Denotational Semantics
+      1.3.3.4.2.1 Semantic Domains (cpo’s, lattices)
+      1.3.3.4.2.2 Continuous Functions & Fixed‑Point Semantics
+      1.3.3.4.2.3 Environment, Store & State Models
+      1.3.3.4.2.4 Monadic Semantics for Effects
+      1.3.3.4.2.5 Denotational Equivalence & Full Abstraction
+    1.3.3.4.3 Axiomatic Semantics
+      1.3.3.4.3.1 Hoare Logic (Triples `{P} C {Q}`)
+      1.3.3.4.3.2 Weakest Preconditions & Strongest Postconditions
+      1.3.3.4.3.3 Loop Invariants & Proof Rules
+      1.3.3.4.3.4 Dynamic Logic & Modal Approaches
+      1.3.3.4.3.5 Partial vs. Total Correctness
+    1.3.3.4.4 Type Systems & Type Checking
+      1.3.3.4.4.1 Simple Type Systems (STLC)
+      1.3.3.4.4.2 Hindley–Milner & Type Inference
+      1.3.3.4.4.3 Polymorphism (Parametric, Ad Hoc)
+      1.3.3.4.4.4 Subtyping & Variance
+      1.3.3.4.4.5 Dependent Types & Refinement Types
+      1.3.3.4.4.6 Type Safety Proofs (Progress & Preservation)
+      1.3.3.4.4.7 Gradual Typing & Cast Semantics
+  1.3.3.5. Grammar Learning & Inference
+    1.3.3.5.1 Grammar Induction
+      1.3.3.5.1.1 Identification in the Limit (Gold’s Model)
+      1.3.3.5.1.2 Distributional & Clustering Methods
+      1.3.3.5.1.3 Minimum Description Length & MDL‑Based Learning
+      1.3.3.5.1.4 Bayesian Grammar Induction (PCFG Priors)
+      1.3.3.5.1.5 MCMC & Sampling‑Based Approaches
+      1.3.3.5.1.6 Evolutionary & Genetic Algorithms
+      1.3.3.5.1.7 Bootstrapping & Semi‑Supervised Methods
+    1.3.3.5.2 Automata Learning
+      1.3.3.5.2.1 Active Learning (L* Algorithm, MAT Framework)
+      1.3.3.5.2.2 Passive Learning (RPNI, EDSM, State‑Merging)
+      1.3.3.5.2.3 Complexity Bounds & Sample Requirements
+      1.3.3.5.2.4 Angluin‑Style Counterexample Handling
+      1.3.3.5.2.5 Incremental & Online Automata Inference
+      1.3.3.5.2.6 Hybrid Symbolic–Statistical Learners
+    1.3.3.5.3 Statistical & Neural Methods
+      1.3.3.5.3.1 EM for PCFG Parameter Estimation
+      1.3.3.5.3.2 Maximum Entropy & Log‑Linear Models
+      1.3.3.5.3.3 Neural Sequence Models (RNNs, LSTMs)
+      1.3.3.5.3.4 Transformer‑Based Grammar Induction
+      1.3.3.5.3.5 Variational & Autoencoder Approaches
+      1.3.3.5.3.6 Adversarial Learning for Grammar Discovery
+      1.3.3.5.3.7 Evaluation Metrics & Perplexity  
+  1.3.3.6. Stochastic & Weighted Formalisms
+    1.3.3.6.1 Probabilistic Automata & PCFGs
+      1.3.3.6.1.1 Probabilistic Finite Automata (PFA)
+        1.3.3.6.1.1.1 Definition & Semantics
+        1.3.3.6.1.1.2 Parameter Estimation (EM for PFA)
+        1.3.3.6.1.1.3 Decoding & Likelihood Computation
+      1.3.3.6.1.2 Probabilistic Context‑Free Grammars (PCFGs)
+        1.3.3.6.1.2.1 Rule Probabilities & Normalization
+        1.3.3.6.1.2.2 Training: Inside‑Outside Algorithm
+        1.3.3.6.1.2.3 Parsing: Probabilistic CYK, Probabilistic Earley
+      1.3.3.6.1.3 Smoothing & Back‑Off Techniques
+        1.3.3.6.1.3.1 Add‑One / Good‑Turing
+        1.3.3.6.1.3.2 Discounting & Interpolation
+      1.3.3.6.1.4 Applications
+        1.3.3.6.1.4.1 Statistical NLP (Parsing, Language Modeling)
+        1.3.3.6.1.4.2 Biosequence Modeling
+      1.3.3.6.1.5 Formal Power Series
+        1.3.3.6.1.5.1 Algebraic / rational series
+        1.3.3.6.1.5.2 Hadamard & Cauchy products
+    1.3.3.6.2 Weighted Automata & Transducers
+      1.3.3.6.2.1 Semiring Framework
+        1.3.3.6.2.1.1 Weight Structures (Boolean, Tropical, Log, Probability)
+        1.3.3.6.2.1.2 Algebraic Properties & Closure
+      1.3.3.6.2.2 Weighted Finite Automata (WFA)
+        1.3.3.6.2.2.1 Definition & Semantics
+        1.3.3.6.2.2.2 Weight Pushing & Normalization
+        1.3.3.6.2.2.3 Determinization & Minimization under a Semiring
+      1.3.3.6.2.3 Weighted Transducers
+        1.3.3.6.2.3.1 Mealy vs. Moore Formulations
+        1.3.3.6.2.3.2 Composition & Inversion
+      1.3.3.6.2.4 Core Algorithms
+        1.3.3.6.2.4.1 Shortest/Best‑Path (Viterbi on WFA)
+        1.3.3.6.2.4.2 Composition & Determinization
+        1.3.3.6.2.4.3 Weight Pushing & Pruning
+      1.3.3.6.2.5 Applications
+        1.3.3.6.2.5.1 Speech Recognition & ASR Lattices
+        1.3.3.6.2.5.2 Morphology & Tokenization Pipelines
+    1.3.3.6.3 Markov Models & HMMs
+      1.3.3.6.3.1 Markov Chains
+        1.3.3.6.3.1.1 Definition & Transition Matrices
+        1.3.3.6.3.1.2 Stationary Distributions & Ergodicity
+      1.3.3.6.3.2 Hidden Markov Models (HMMs)
+        1.3.3.6.3.2.1 States, Emissions & Transition Probabilities
+        1.3.3.6.3.2.2 Training: Baum‑Welch / Forward‑Backward
+        1.3.3.6.3.2.3 Decoding: Viterbi Algorithm
+      1.3.3.6.3.3 Scaling & Numerical Stability
+        1.3.3.6.3.3.1 Log‑Space Computations
+        1.3.3.6.3.3.2 Scaling Factors
+      1.3.3.6.3.4 Extensions & Variants
+        1.3.3.6.3.4.1 Input‑Output HMMs (IOHMM)
+        1.3.3.6.3.4.2 Conditional Random Fields (CRFs)
+      1.3.3.6.3.5 Applications
+        1.3.3.6.3.5.1 POS Tagging & Chunking
+        1.3.3.6.3.5.2 Speech & Handwriting Recognition
+  1.3.3.7. Logic & Descriptive Complexity
+    1.3.3.7.1 Logic‑Automata Correspondence
+      1.3.3.7.1.1 First‑Order Logic (FO) on Words & Strings
+      1.3.3.7.1.2 Monadic Second‑Order Logic (MSO) & Büchi–Elgot–Trakhtenbrot Theorem
+      1.3.3.7.1.3 Weak MSO vs. Full MSO (Finite vs. Infinite Words)
+      1.3.3.7.1.4 Tree Automata & MSO on Trees (Rabin’s Theorem)
+      1.3.3.7.1.5 Decidability & Complexity of Satisfiability
+    1.3.3.7.2 Temporal Logics
+      1.3.3.7.2.1 Linear Temporal Logic (LTL)
+        1.3.3.7.2.1.1 Syntax & Semantics (Until, Next, Globally, Eventually)
+        1.3.3.7.2.1.2 Büchi Automaton Translation
+        1.3.3.7.2.1.3 Model Checking Complexity
+      1.3.3.7.2.2 Computation Tree Logic (CTL & CTL*)
+        1.3.3.7.2.2.1 State vs. Path Formulas
+        1.3.3.7.2.2.2 Fixpoint Characterization (μ‑Calculus Connection)
+        1.3.3.7.2.2.3 Model Checking Algorithms
+      1.3.3.7.2.3 Modal μ‑Calculus
+        1.3.3.7.2.3.1 Least/Greatest Fixpoints
+        1.3.3.7.2.3.2 Expressive Power & Alternation Depth
+        1.3.3.7.2.3.3 Model Checking via Parity Games
+    1.3.3.7.3 Complexity Classes & Descriptive Characterizations
+      1.3.3.7.3.1 NL (Nondeterministic Logarithmic Space)
+        1.3.3.7.3.1.1 FO + Transitive Closure (FO[TC]) Characterization
+        1.3.3.7.3.1.2 Graph Reachability & Savitch’s Theorem
+      1.3.3.7.3.2 P (Polynomial Time)
+        1.3.3.7.3.2.1 FO + Least Fixed‑Point (FO[LFP]) Characterization
+        1.3.3.7.3.2.2 PTIME‑Complete Problems (e.g., Circuit Value)
+      1.3.3.7.3.3 PSPACE (Polynomial Space)
+        1.3.3.7.3.3.1 SO + Transitive Closure Characterization
+        1.3.3.7.3.3.2 QBF & PSPACE‑Completeness
+      1.3.3.7.3.4 NP & Beyond (optional)
+        1.3.3.7.3.4.1 Existential Second‑Order Logic (∃SO) = NP (Fagin’s Theorem)
+        1.3.3.7.3.4.2 Higher‑Order Logic & EXPTIME/EXPSPACE Mappings

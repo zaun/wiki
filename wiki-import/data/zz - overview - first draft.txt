@@ -1,0 +1,1732 @@
+Category Breakdown (sofar, very incomplete, first draft, open to changes):
+1. Abstract
+    1.1. Foundations of Abstraction
+        1.1.1. Axiomatic Systems
+        1.1.2. Univeral Properties
+        1.1.3. Infinitary Concepts
+        1.1.4. Metamathematics
+        1.1.5. Dimensions and topologies
+        1.1.6. geometries
+    1.2. Algebraic and other order Structures
+        1.2.1. Order and Balance
+        1.2.2. Sets
+        1.2.3. Relations
+        1.2.4. Structures
+        1.2.5. Numbers
+    1.3. computational abstractions
+        1.3.1. Computability Models
+        1.3.2. Complexit Classes
+            1.3.2.1. Models & Resources
+                1.3.2.1.1. Turing‑machine frameworks
+                1.3.2.1.2. Random‑access machines (RAM)
+                1.3.2.1.3. Boolean circuits (uniform vs. non‑uniform)
+                1.3.2.1.4. Oracle machines & alternation
+                1.3.2.1.5. Resource measures: time, space, randomness, circuit size/depth
+            1.3.2.2. Deterministic & Nondeterministic Classes
+                1.3.2.2.1. L (DLOGSPACE) & NL
+                1.3.2.2.2. P
+                1.3.2.2.3. NP & co‑NP
+                1.3.2.2.4. PSPACE & NPSPACE
+                1.3.2.2.5. EXPTIME & NEXPTIME
+            1.3.2.3. Reductions & Completeness
+                1.3.2.3.1. Polynomial‑time many‑one & Turing reductions
+                1.3.2.3.2. Log‑space reductions
+                1.3.2.3.3. NC‑reductions (parallel reductions)
+                1.3.2.3.4. NP‑complete, PSPACE‑complete, EXPTIME‑complete, etc.
+            1.3.2.4. Hierarchy Theorems & Separation Results
+                1.3.2.4.1. Time Hierarchy Theorem
+                1.3.2.4.2. Space Hierarchy Theorem
+                1.3.2.4.3. Alternation Hierarchy (ATIME/ASPACE)
+                1.3.2.4.4. Savitch’s Theorem, Immerman–Szelepcsényi (NL = co‑NL)
+                1.3.2.4.5. Open separations (P vs NP, NP vs PSPACE, etc.)
+            1.3.2.5. Randomized & Probabilistic Classes
+                1.3.2.5.1. RP, co‑RP
+                1.3.2.5.2. BPP, ZPP
+                1.3.2.5.3. PP & promise classes
+                1.3.2.5.4. Relationships & derandomization hypotheses
+            1.3.2.6. Quantum Complexity
+                1.3.2.6.1. BQP
+                1.3.2.6.2. QMA & QIP
+                1.3.2.6.3. Quantum circuit models & uniformity
+                1.3.2.6.4. Comparisons with classical classes (BPP ⊆ BQP ⊆ PSPACE)
+            1.3.2.7. Circuit & Parallel Complexity
+                1.3.2.7.1. NCⁱ, NC, ACⁱ, AC
+                1.3.2.7.2. TCⁱ, TC (threshold circuits)
+                1.3.2.7.3. P/poly & advice classes
+                1.3.2.7.4. Circuit lower‑bound regimes
+            1.3.2.8. Counting & Functional Classes
+                1.3.2.8.1. #P & FP
+                1.3.2.8.2. PP (counting‑based probabilistic)
+                1.3.2.8.3. #L, GapL
+                1.3.2.8.4. Toda’s theorem (PH ⊆ P^#P)
+            1.3.2.9. Parameterized & Fine‑Grained Complexity
+                1.3.2.9.1. FPT, W‑hierarchy (W[1], W[2], …)
+                1.3.2.9.2. XP, para‑NP
+                1.3.2.9.3. Exponential Time Hypothesis (ETH, SETH)
+                1.3.2.9.4. Lower bounds for k‑SAT, clique, etc.
+            1.3.2.10. Descriptive & Logic‑Based Complexity
+                1.3.2.10.1. First‑order & monadic second‑order (FO, MSO)
+                1.3.2.10.2. Fixed‑point logics (FO[TC], FO[LFP])
+                1.3.2.10.3. Characterizations: P = FO[TC]? NP = SO∃?
+                1.3.2.10.4. Connections to finite model theory
+            1.3.2.11. Interactive Proofs & PCP
+                1.3.2.11.1. IP, AM, MA
+                1.3.2.11.2. MIP & MIP*
+                1.3.2.11.3. PCP Theorem & hardness of approximation
+                1.3.2.11.4. Zero‑knowledge proof systems
+            1.3.2.12. Derandomization & Pseudorandomness
+                1.3.2.12.1. Hardness‑vs‑randomness paradigm
+                1.3.2.12.2. Pseudorandom generators & extractors
+                1.3.2.12.3. Impagliazzo–Wigderson framework
+            1.3.2.13. Applications & Assumptions
+                1.3.2.13.1. Cryptographic hardness assumptions (one‑way functions, factoring)
+                1.3.2.13.2. Approximation algorithms & inapproximability
+                1.3.2.13.3. Algorithmic separations guiding practical methods
+            1.3.2.14. Emerging & Specialized Paradigms
+                1.3.2.14.1. Streaming & sublinear‑time complexity
+                1.3.2.14.2. Property testing & query complexity
+                1.3.2.14.3. Communication complexity
+                1.3.2.14.4. Quantum‑interactive and delegated computation models
+        1.3.3. Formal Languages
+            1.3.3.1. Grammar & Automata Foundations
+                1.3.3.1.1 Chomsky Hierarchy
+                1.3.3.1.1.1 Type‑0 (Unrestricted) & Turing Machines
+                1.3.3.1.1.2 Type‑1 (Context‑Sensitive) & Linear‑Bounded Automata
+                1.3.3.1.1.3 Type‑2 (Context‑Free) & Pushdown Automata
+                1.3.3.1.1.4 Type‑3 (Regular) & Finite Automata
+                1.3.3.1.2 Extended Formalisms
+                1.3.3.1.2.1 Attribute Grammars
+                1.3.3.1.2.2 Tree‑Adjoining Grammars
+                1.3.3.1.2.3 Tree & Graph Grammars
+                1.3.3.1.2.4 Grammar Transformations & Normal Forms
+                    1.3.3.1.2.4.1 Chomsky Normal Form (CNF)
+                    1.3.3.1.2.4.2 Greibach Normal Form (GNF)
+                    1.3.3.1.2.4.3 Left‑factoring
+                    1.3.3.1.2.4.4 Left‑recursion elimination
+                1.3.3.1.3 Grammar Notations
+                1.3.3.1.3.1 BNF / EBNF
+                1.3.3.1.3.2 ABNF
+                1.3.3.1.3.3 PEG (Parsing Expression Grammars)
+                1.3.3.1.3.4 Regular Expressions
+                1.3.3.1.4 Parser Generators & Tools
+                1.3.3.1.4.1 YACC / Bison
+                1.3.3.1.4.2 ANTLR
+                1.3.3.1.4.3 PEG.js / Rats!
+                1.3.3.1.5 Parsing Algorithms
+                1.3.3.1.5.1 LL(k) / LR(k) / LALR(k)
+                1.3.3.1.5.2 Earley / CYK
+                1.3.3.1.5.3 Recursive‑Descent
+                1.3.3.1.6 Concrete Language Families
+                1.3.3.1.6.1. Natural Human Languages
+                    1.3.3.1.6.1.1. Indo‑European
+                    1.3.3.1.6.1.1.1. English
+                    1.3.3.1.6.1.1.2. Sanskrit
+                    1.3.3.1.6.1.1.3. Spanish
+                    1.3.3.1.6.1.1.4. Hindi
+                    1.3.3.1.6.1.2. Afro‑Asiatic
+                    1.3.3.1.6.1.2.1. Arabic
+                    1.3.3.1.6.1.2.2. Hebrew
+                    1.3.3.1.6.1.3. Sino‑Tibetan
+                    1.3.3.1.6.1.3.1. Mandarin Chinese
+                    1.3.3.1.6.1.3.2. Cantonese
+                    1.3.3.1.6.1.4. Other Families
+                    1.3.3.1.6.1.4.1. Uralic (Finnish, Hungarian)
+                    1.3.3.1.6.1.4.2. Dravidian (Tamil, Telugu)
+                1.3.3.1.6.2 Technological Languages 
+                    1.3.3.1.6.2.1 Textual & Programming Languages
+                    1.3.3.1.6.2.1.1 Procedural & Low‑Level
+                        1.3.3.1.6.2.1.1.1 C
+                        1.3.3.1.6.2.1.1.2 Pascal
+                        1.3.3.1.6.2.1.1.3 Fortran
+                    1.3.3.1.6.2.1.2 Object‑Oriented
+                        1.3.3.1.6.2.1.2.1 C++
+                        1.3.3.1.6.2.1.2.2 Java
+                        1.3.3.1.6.2.1.2.3 C#
+                        1.3.3.1.6.2.1.2.4 Smalltalk
+                    1.3.3.1.6.2.1.3 Functional
+                        1.3.3.1.6.2.1.3.1 Haskell
+                        1.3.3.1.6.2.1.3.2 OCaml
+                        1.3.3.1.6.2.1.3.3 Scheme
+                        1.3.3.1.6.2.1.3.4 Lisp
+                        1.3.3.1.6.2.1.3.5 Erlang
+                        1.3.3.1.6.2.1.3.6 Elixir
+                    1.3.3.1.6.2.1.4 Scripting & Dynamic
+                        1.3.3.1.6.2.1.4.1 JavaScript
+                        1.3.3.1.6.2.1.4.2 TypeScript
+                        1.3.3.1.6.2.1.4.3 Python
+                        1.3.3.1.6.2.1.4.4 Perl
+                        1.3.3.1.6.2.1.4.5 Ruby
+                    1.3.3.1.6.2.1.5 Systems & Emerging
+                        1.3.3.1.6.2.1.5.1 Rust
+                        1.3.3.1.6.2.1.5.2 Go
+                        1.3.3.1.6.2.1.5.3 Zig
+                    1.3.3.1.6.2.1.6 Data‑Oriented & DSLs
+                        1.3.3.1.6.2.1.6.1 SQL & Variants (T‑SQL, PL/SQL)
+                        1.3.3.1.6.2.1.6.2 R
+                        1.3.3.1.6.2.1.6.3 MATLAB
+                    1.3.3.1.6.2.2 Markup & Document Languages
+                    1.3.3.1.6.2.2.1 XML
+                    1.3.3.1.6.2.2.2 XHTML
+                    1.3.3.1.6.2.2.3 SVG
+                    1.3.3.1.6.2.2.4 MathML
+                    1.3.3.1.6.2.2.5 VoiceXML
+                    1.3.3.1.6.2.2.6 Markdown
+                    1.3.3.1.6.2.2.7 CommonMark
+                    1.3.3.1.6.2.2.8 AsciiDoc
+                    1.3.3.1.6.2.2.9 reStructuredText
+                    1.3.3.1.6.2.2.10 LaTeX
+                    1.3.3.1.6.2.2.11 ConTeXt
+                    1.3.3.1.6.2.2.12 DocBook
+                    1.3.3.1.6.2.2.13 DITA
+                    1.3.3.1.6.2.3 Data Interchange & Serialization
+                    1.3.3.1.6.2.3.1 JSON
+                    1.3.3.1.6.2.3.2 JSON5
+                    1.3.3.1.6.2.3.3 YAML
+                    1.3.3.1.6.2.3.4 TOML
+                    1.3.3.1.6.2.3.5 CSV
+                    1.3.3.1.6.2.3.6 TSV
+                    1.3.3.1.6.2.3.7 Fixed‑Width Text
+                    1.3.3.1.6.2.3.8 Protocol Buffers
+                    1.3.3.1.6.2.3.9 Apache Avro
+                    1.3.3.1.6.2.3.10 Thrift
+                    1.3.3.1.6.2.3.11 FlatBuffers
+                    1.3.3.1.6.2.3.12 MessagePack
+                    1.3.3.1.6.2.3.13 BSON
+                    1.3.3.1.6.2.3.14 CBOR
+                    1.3.3.1.6.2.3.15 UBJSON
+                    1.3.3.1.6.2.3.16 EDIFACT
+                    1.3.3.1.6.2.3.17 X12
+                    1.3.3.1.6.2.3.18 FIX
+                    1.3.3.1.6.2.4 Schema & Validation
+                    1.3.3.1.6.2.4.1 XSD
+                    1.3.3.1.6.2.4.2 RELAX NG
+                    1.3.3.1.6.2.4.3 JSON Schema
+                    1.3.3.1.6.2.4.4 OpenAPI Schema
+                    1.3.3.1.6.2.4.5 ASN.1
+                    1.3.3.1.6.2.4.6 Cap’n Proto Schema
+                    1.3.3.1.6.2.5 Transformation & Styling
+                    1.3.3.1.6.2.5.1 XSLT
+                    1.3.3.1.6.2.5.2 XQuery Update
+                    1.3.3.1.6.2.5.3 CSS
+                    1.3.3.1.6.2.5.4 LESS
+                    1.3.3.1.6.2.5.5 Sass
+                    1.3.3.1.6.2.5.6 PostCSS
+                    1.3.3.1.6.2.6 Query & Extraction
+                    1.3.3.1.6.2.6.1 XPath
+                    1.3.3.1.6.2.6.2 XQuery
+                    1.3.3.1.6.2.6.3 SQL (ANSI, T‑SQL, PL/pgSQL)
+                    1.3.3.1.6.2.6.4 SPARQL
+                    1.3.3.1.6.2.6.5 GraphQL
+                    1.3.3.1.6.2.7 Interface Definition Languages
+                    1.3.3.1.6.2.7.1 CORBA IDL
+                    1.3.3.1.6.2.7.2 Protocol Buffers IDL
+                    1.3.3.1.6.2.7.3 Thrift IDL
+                    1.3.3.1.6.2.7.4 OpenAPI / Swagger
+                    1.3.3.1.6.2.7.5 GraphQL SDL
+                    1.3.3.1.6.2.8 Bytecode, Object & Machine Formats
+                    1.3.3.1.6.2.8.1 JVM .class
+                    1.3.3.1.6.2.8.2 CIL (CLR)
+                    1.3.3.1.6.2.8.3 WebAssembly
+                    1.3.3.1.6.2.8.4 ELF
+                    1.3.3.1.6.2.8.5 PE
+                    1.3.3.1.6.2.8.6 Mach‑O
+                    1.3.3.1.6.2.8.7 Firmware Images
+                    1.3.3.1.6.2.9 Templating & Domain‑Specific DSLs
+                    1.3.3.1.6.2.9.1 Mustache
+                    1.3.3.1.6.2.9.2 Handlebars
+                    1.3.3.1.6.2.9.3 Liquid
+                    1.3.3.1.6.2.9.4 EJS
+                    1.3.3.1.6.2.9.5 Nunjucks
+                    1.3.3.1.6.2.9.6 Twig
+                    1.3.3.1.6.2.9.7 ERB
+                    1.3.3.1.6.2.9.8 JSP
+                    1.3.3.1.6.2.9.9 Thymeleaf
+                    1.3.3.1.6.2.9.10 PHP
+                    1.3.3.1.6.2.9.11 Dockerfile
+                    1.3.3.1.6.2.9.12 Kubernetes YAML
+                    1.3.3.1.6.2.9.13 Nix
+                    1.3.3.1.6.2.9.14 Systemd Unit
+                1.3.3.1.7. Symbol Schemas  
+                1.3.3.1.7.1. Alphabets  
+                    1.3.3.1.7.1.1. Latin Alphabet  
+                    1.3.3.1.7.1.2. Cyrillic Alphabet  
+                    1.3.3.1.7.1.3. Greek Alphabet  
+                    1.3.3.1.7.1.4. Arabic Abjad  
+                    1.3.3.1.7.1.5. Devanagari Abugida  
+                    1.3.3.1.7.1.6. Han Characters (Kanji/Hanzi)  
+                    1.3.3.1.7.1.7. Hiragana & Katakana  
+                1.3.3.1.7.2. Number Systems  
+                    1.3.3.1.7.2.1. Decimal (base‑10)  
+                    1.3.3.1.7.2.2. Binary (base‑2)  
+                    1.3.3.1.7.2.3. Octal (base‑8)  
+                    1.3.3.1.7.2.4. Hexadecimal (base‑16)  
+                    1.3.3.1.7.2.5. Roman Numerals  
+                    1.3.3.1.7.2.6. Tally Marks (Unary) 
+            1.3.3.2. Algebraic & Structural Properties
+                1.3.3.2.1 Closure Properties
+                1.3.3.2.1.1 Union
+                1.3.3.2.1.2 Intersection
+                1.3.3.2.1.3 Complement
+                1.3.3.2.1.4 Concatenation
+                1.3.3.2.1.5 Kleene Star (Iteration)
+                1.3.3.2.1.6 Homomorphism
+                1.3.3.2.1.7 Inverse Homomorphism
+                1.3.3.2.1.8 Reversal
+                1.3.3.2.1.9 Shuffle & Other Binary Operations
+                1.3.3.2.1.10 Quotient (Left & Right)
+                1.3.3.2.2 Decision Problems
+                1.3.3.2.2.1 Emptiness
+                1.3.3.2.2.2 Finiteness
+                1.3.3.2.2.3 Membership
+                1.3.3.2.2.4 Equivalence
+                1.3.3.2.2.5 Inclusion
+                1.3.3.2.2.6 Universality
+                1.3.3.2.2.7 Intersection Non‑Emptiness
+                1.3.3.2.2.8 Word Problem Variants
+                1.3.3.2.2.9 Equivalence & Inclusion
+                1.3.3.2.3 Pumping Lemmas
+                1.3.3.2.3.1 Regular Language Pumping Lemma
+                1.3.3.2.3.2 Context‑Free Language Pumping Lemma
+                1.3.3.2.3.3 Ogden’s Lemma
+                1.3.3.2.3.4 Bar-Hillel Lemma (General CFG)
+                1.3.3.2.3.5 Applications & Non‑Membership Proofs
+                1.3.3.2.4 Descriptional Complexity
+                1.3.3.2.4.1 Grammar Size (Productions, Nonterminals)
+                1.3.3.2.4.2 Automaton State Complexity
+                1.3.3.2.4.3 Trade‑offs between Grammar & Automaton
+                1.3.3.2.4.4 Succinctness & Succinct Description Languages
+                1.3.3.2.4.5 Lower/Upper Bounds & Incompressibility
+                1.3.3.2.5 Algebraic Characterizations
+                1.3.3.2.5.1 Syntactic Monoids
+                1.3.3.2.5.2 Transition Monoids & Semigroups
+                1.3.3.2.5.3 Pseudovarieties & Varieties of Languages
+                1.3.3.2.5.4 Reiterman’s Theorem & Eilenberg Correspondence
+                1.3.3.2.5.5 Profinite Methods
+                1.3.3.2.6 Semirings & Weighted Structures
+                1.3.3.2.6.1 Boolean Semiring (Unweighted Automata)
+                1.3.3.2.6.2 Tropical Semiring (Min/Plus)
+                1.3.3.2.6.3 Probability Semiring (Stochastic Automata)
+                1.3.3.2.6.4 Formal Power Series over Semirings
+                1.3.3.2.6.5 Weighted Automata & Transducers
+            1.3.3.3. Semantics & Translation
+                1.3.3.3.1 Finite‑State Transducers
+                1.3.3.3.1.1 Mealy Machines
+                1.3.3.3.1.2 Moore Machines
+                1.3.3.3.1.3 Deterministic vs. Non‑Deterministic Transducers
+                1.3.3.3.1.4 Weighted Transducers
+                1.3.3.3.1.5 Composition & Inversion
+                1.3.3.3.1.6 Applications (Morphological Analysis, Tokenization, Phonology)
+                1.3.3.3.1.7 Tree Transducers
+                1.3.3.3.2 Syntax‑Directed Translation
+                1.3.3.3.2.1 Attribute Grammars
+                    1.3.3.3.2.1.1 S‑Attributed Grammars
+                    1.3.3.3.2.1.2 L‑Attributed Grammars
+                1.3.3.3.2.2 Semantic Actions
+                1.3.3.3.2.3 Translation Schemes & Directed Acyclic Graphs
+                1.3.3.3.2.4 Intermediate Representations (AST Annotations, IR Trees)
+                1.3.3.3.3 Compiler Front‑End → Back‑End
+                1.3.3.3.3.1 Front‑End
+                    1.3.3.3.3.1.1 Lexical Analysis
+                        1.3.3.3.3.1.1.1 Regular Expressions & DFAs
+                        1.3.3.3.3.1.1.2 Scanner Generators (flex, ANTLR)
+                    1.3.3.3.3.1.2 Syntax Analysis
+                        1.3.3.3.3.1.2.1 CFG Parsing (LL, LR, LALR, GLR)
+                        1.3.3.3.3.1.2.2 Parser Generators & Hand‑Written Parsers
+                    1.3.3.3.3.1.3 Semantic Analysis
+                        1.3.3.3.3.1.3.1 Symbol Table Management & Name Resolution
+                        1.3.3.3.3.1.3.2 Type Checking & Inference
+                        1.3.3.3.3.1.3.3 Attribute Evaluation & Scope Rules
+                    1.3.3.3.3.1.4 Intermediate Representation
+                        1.3.3.3.3.1.4.1 Abstract Syntax Trees (ASTs)
+                        1.3.3.3.3.1.4.2 Control Flow Graphs (CFGs)
+                        1.3.3.3.3.1.4.3 Static Single Assignment (SSA) Form
+                1.3.3.3.3.2 Back‑End
+                    1.3.3.3.3.2.1 Code Optimization
+                        1.3.3.3.3.2.1.1 Local Optimizations (Constant Folding, Dead Code Elimination)
+                        1.3.3.3.3.2.1.2 Global Optimizations (Loop Transformations, Inlining)
+                        1.3.3.3.3.2.1.3 Data‑Flow & Dependence Analysis
+                    1.3.3.3.3.2.2 Code Generation
+                        1.3.3.3.3.2.2.1 Instruction Selection & Pattern Matching
+                        1.3.3.3.3.2.2.2 Register Allocation (Graph‑Coloring, Linear Scan)
+                        1.3.3.3.3.2.2.3 Instruction Scheduling & Pipeline Awareness
+                    1.3.3.3.3.2.3 Assembly & Linking
+                        1.3.3.3.3.2.3.1 Assembly Emission & Directives
+                        1.3.3.3.3.2.3.2 Linker Behavior & Loader Models
+                    1.3.3.3.3.2.4 Target‑Specific Considerations
+                        1.3.3.3.3.2.4.1 Calling Conventions & ABI Compliance
+                        1.3.3.3.3.2.4.2 Endianness, Alignment & Memory Layout
+            1.3.3.4. Formal Semantics & Type Systems
+                1.3.3.4.1 Operational Semantics
+                1.3.3.4.1.1 Structural (Small‑Step) Semantics
+                1.3.3.4.1.2 Natural (Big‑Step) Semantics
+                1.3.3.4.1.3 Transition Systems & Inference Rules
+                1.3.3.4.1.4 Evaluation Contexts & Reduction Strategies
+                1.3.3.4.1.5 Bisimulation & Behavioral Equivalence
+                1.3.3.4.2 Denotational Semantics
+                1.3.3.4.2.1 Semantic Domains (cpo’s, lattices)
+                1.3.3.4.2.2 Continuous Functions & Fixed‑Point Semantics
+                1.3.3.4.2.3 Environment, Store & State Models
+                1.3.3.4.2.4 Monadic Semantics for Effects
+                1.3.3.4.2.5 Denotational Equivalence & Full Abstraction
+                1.3.3.4.3 Axiomatic Semantics
+                1.3.3.4.3.1 Hoare Logic (Triples `{P} C {Q}`)
+                1.3.3.4.3.2 Weakest Preconditions & Strongest Postconditions
+                1.3.3.4.3.3 Loop Invariants & Proof Rules
+                1.3.3.4.3.4 Dynamic Logic & Modal Approaches
+                1.3.3.4.3.5 Partial vs. Total Correctness
+                1.3.3.4.4 Type Systems & Type Checking
+                1.3.3.4.4.1 Simple Type Systems (STLC)
+                1.3.3.4.4.2 Hindley–Milner & Type Inference
+                1.3.3.4.4.3 Polymorphism (Parametric, Ad Hoc)
+                1.3.3.4.4.4 Subtyping & Variance
+                1.3.3.4.4.5 Dependent Types & Refinement Types
+                1.3.3.4.4.6 Type Safety Proofs (Progress & Preservation)
+                1.3.3.4.4.7 Gradual Typing & Cast Semantics
+            1.3.3.5. Grammar Learning & Inference
+                1.3.3.5.1 Grammar Induction
+                1.3.3.5.1.1 Identification in the Limit (Gold’s Model)
+                1.3.3.5.1.2 Distributional & Clustering Methods
+                1.3.3.5.1.3 Minimum Description Length & MDL‑Based Learning
+                1.3.3.5.1.4 Bayesian Grammar Induction (PCFG Priors)
+                1.3.3.5.1.5 MCMC & Sampling‑Based Approaches
+                1.3.3.5.1.6 Evolutionary & Genetic Algorithms
+                1.3.3.5.1.7 Bootstrapping & Semi‑Supervised Methods
+                1.3.3.5.2 Automata Learning
+                1.3.3.5.2.1 Active Learning (L* Algorithm, MAT Framework)
+                1.3.3.5.2.2 Passive Learning (RPNI, EDSM, State‑Merging)
+                1.3.3.5.2.3 Complexity Bounds & Sample Requirements
+                1.3.3.5.2.4 Angluin‑Style Counterexample Handling
+                1.3.3.5.2.5 Incremental & Online Automata Inference
+                1.3.3.5.2.6 Hybrid Symbolic–Statistical Learners
+                1.3.3.5.3 Statistical & Neural Methods
+                1.3.3.5.3.1 EM for PCFG Parameter Estimation
+                1.3.3.5.3.2 Maximum Entropy & Log‑Linear Models
+                1.3.3.5.3.3 Neural Sequence Models (RNNs, LSTMs)
+                1.3.3.5.3.4 Transformer‑Based Grammar Induction
+                1.3.3.5.3.5 Variational & Autoencoder Approaches
+                1.3.3.5.3.6 Adversarial Learning for Grammar Discovery
+                1.3.3.5.3.7 Evaluation Metrics & Perplexity  
+            1.3.3.6. Stochastic & Weighted Formalisms
+                1.3.3.6.1 Probabilistic Automata & PCFGs
+                1.3.3.6.1.1 Probabilistic Finite Automata (PFA)
+                    1.3.3.6.1.1.1 Definition & Semantics
+                    1.3.3.6.1.1.2 Parameter Estimation (EM for PFA)
+                    1.3.3.6.1.1.3 Decoding & Likelihood Computation
+                1.3.3.6.1.2 Probabilistic Context‑Free Grammars (PCFGs)
+                    1.3.3.6.1.2.1 Rule Probabilities & Normalization
+                    1.3.3.6.1.2.2 Training: Inside‑Outside Algorithm
+                    1.3.3.6.1.2.3 Parsing: Probabilistic CYK, Probabilistic Earley
+                1.3.3.6.1.3 Smoothing & Back‑Off Techniques
+                    1.3.3.6.1.3.1 Add‑One / Good‑Turing
+                    1.3.3.6.1.3.2 Discounting & Interpolation
+                1.3.3.6.1.4 Applications
+                    1.3.3.6.1.4.1 Statistical NLP (Parsing, Language Modeling)
+                    1.3.3.6.1.4.2 Biosequence Modeling
+                1.3.3.6.1.5 Formal Power Series
+                    1.3.3.6.1.5.1 Algebraic / rational series
+                    1.3.3.6.1.5.2 Hadamard & Cauchy products
+                1.3.3.6.2 Weighted Automata & Transducers
+                1.3.3.6.2.1 Semiring Framework
+                    1.3.3.6.2.1.1 Weight Structures (Boolean, Tropical, Log, Probability)
+                    1.3.3.6.2.1.2 Algebraic Properties & Closure
+                1.3.3.6.2.2 Weighted Finite Automata (WFA)
+                    1.3.3.6.2.2.1 Definition & Semantics
+                    1.3.3.6.2.2.2 Weight Pushing & Normalization
+                    1.3.3.6.2.2.3 Determinization & Minimization under a Semiring
+                1.3.3.6.2.3 Weighted Transducers
+                    1.3.3.6.2.3.1 Mealy vs. Moore Formulations
+                    1.3.3.6.2.3.2 Composition & Inversion
+                1.3.3.6.2.4 Core Algorithms
+                    1.3.3.6.2.4.1 Shortest/Best‑Path (Viterbi on WFA)
+                    1.3.3.6.2.4.2 Composition & Determinization
+                    1.3.3.6.2.4.3 Weight Pushing & Pruning
+                1.3.3.6.2.5 Applications
+                    1.3.3.6.2.5.1 Speech Recognition & ASR Lattices
+                    1.3.3.6.2.5.2 Morphology & Tokenization Pipelines
+                1.3.3.6.3 Markov Models & HMMs
+                1.3.3.6.3.1 Markov Chains
+                    1.3.3.6.3.1.1 Definition & Transition Matrices
+                    1.3.3.6.3.1.2 Stationary Distributions & Ergodicity
+                1.3.3.6.3.2 Hidden Markov Models (HMMs)
+                    1.3.3.6.3.2.1 States, Emissions & Transition Probabilities
+                    1.3.3.6.3.2.2 Training: Baum‑Welch / Forward‑Backward
+                    1.3.3.6.3.2.3 Decoding: Viterbi Algorithm
+                1.3.3.6.3.3 Scaling & Numerical Stability
+                    1.3.3.6.3.3.1 Log‑Space Computations
+                    1.3.3.6.3.3.2 Scaling Factors
+                1.3.3.6.3.4 Extensions & Variants
+                    1.3.3.6.3.4.1 Input‑Output HMMs (IOHMM)
+                    1.3.3.6.3.4.2 Conditional Random Fields (CRFs)
+                1.3.3.6.3.5 Applications
+                    1.3.3.6.3.5.1 POS Tagging & Chunking
+                    1.3.3.6.3.5.2 Speech & Handwriting Recognition
+            1.3.3.7. Logic & Descriptive Complexity
+                1.3.3.7.1 Logic‑Automata Correspondence
+                1.3.3.7.1.1 First‑Order Logic (FO) on Words & Strings
+                1.3.3.7.1.2 Monadic Second‑Order Logic (MSO) & Büchi–Elgot–Trakhtenbrot Theorem
+                1.3.3.7.1.3 Weak MSO vs. Full MSO (Finite vs. Infinite Words)
+                1.3.3.7.1.4 Tree Automata & MSO on Trees (Rabin’s Theorem)
+                1.3.3.7.1.5 Decidability & Complexity of Satisfiability
+                1.3.3.7.2 Temporal Logics
+                1.3.3.7.2.1 Linear Temporal Logic (LTL)
+                    1.3.3.7.2.1.1 Syntax & Semantics (Until, Next, Globally, Eventually)
+                    1.3.3.7.2.1.2 Büchi Automaton Translation
+                    1.3.3.7.2.1.3 Model Checking Complexity
+                1.3.3.7.2.2 Computation Tree Logic (CTL & CTL*)
+                    1.3.3.7.2.2.1 State vs. Path Formulas
+                    1.3.3.7.2.2.2 Fixpoint Characterization (μ‑Calculus Connection)
+                    1.3.3.7.2.2.3 Model Checking Algorithms
+                1.3.3.7.2.3 Modal μ‑Calculus
+                    1.3.3.7.2.3.1 Least/Greatest Fixpoints
+                    1.3.3.7.2.3.2 Expressive Power & Alternation Depth
+                    1.3.3.7.2.3.3 Model Checking via Parity Games
+                1.3.3.7.3 Complexity Classes & Descriptive Characterizations
+                1.3.3.7.3.1 NL (Nondeterministic Logarithmic Space)
+                    1.3.3.7.3.1.1 FO + Transitive Closure (FO[TC]) Characterization
+                    1.3.3.7.3.1.2 Graph Reachability & Savitch’s Theorem
+                1.3.3.7.3.2 P (Polynomial Time)
+                    1.3.3.7.3.2.1 FO + Least Fixed‑Point (FO[LFP]) Characterization
+                    1.3.3.7.3.2.2 PTIME‑Complete Problems (e.g., Circuit Value)
+                1.3.3.7.3.3 PSPACE (Polynomial Space)
+                    1.3.3.7.3.3.1 SO + Transitive Closure Characterization
+                    1.3.3.7.3.3.2 QBF & PSPACE‑Completeness
+                1.3.3.7.3.4 NP & Beyond (optional)
+                    1.3.3.7.3.4.1 Existential Second‑Order Logic (∃SO) = NP (Fagin’s Theorem)
+                    1.3.3.7.3.4.2 Higher‑Order Logic & EXPTIME/EXPSPACE Mappings
+        1.3.4. Data Structures
+            1.3.4.1. Collections  
+                1.3.4.1.1 Set  
+                1.3.4.1.2 Bitset / Bit Vector  
+                1.3.4.1.3 Arrays  
+                1.3.4.1.4 Linked Lists  
+                1.3.4.1.5 Stacks  
+                1.3.4.1.6 Queues  
+                    1.3.4.1.6.1 Simple FIFO Queue  
+                    1.3.4.1.6.2 Circular Buffer (Ring Buffer)  
+                    1.3.4.1.6.3 Deque (Double‑Ended Queue)  
+                    1.3.4.1.6.4 Priority Queue  
+                        1.3.4.1.6.4.1 Binary Heap  
+                        1.3.4.1.6.4.2 Pairing Heap  
+                        1.3.4.1.6.4.3 Fibonacci Heap  
+                        1.3.4.1.6.4.4 Binomial Heap  
+                        1.3.4.1.6.4.5 Leftist Heap  
+                        1.3.4.1.6.4.6 Skew Heap  
+                        1.3.4.1.6.4.7 Interval Heap  
+                    1.3.4.1.6.5 Calendar Queue  
+                    1.3.4.1.6.6 Skip‑Queue  
+                1.3.4.1.7 Tuples  
+                1.3.4.1.8 Bags (Multisets)  
+                1.3.4.1.9 Ordered & Sequence‑Enhanced  
+                    1.3.4.1.9.1 Skip List  
+                    1.3.4.1.9.2 Rope  
+                    1.3.4.1.9.3 Order‑Statistic Tree  
+                    1.3.4.1.9.4 Monotonic Queue  
+                    1.3.4.1.9.5 van Emde Boas Tree  
+                    1.3.4.1.9.6 Fusion Tree  
+                    1.3.4.1.9.7 Cartesian Tree  
+            1.3.4.2. Hierarchical & Relational  
+                1.3.4.2.1 Trees  
+                    1.3.4.2.1.1 General n‑ary Tree  
+                    1.3.4.2.1.2 Binary Tree  
+                    1.3.4.2.1.3 Binary Search Tree (BST)  
+                        1.3.4.2.1.3.1 AVL Tree  
+                        1.3.4.2.1.3.2 Red‑Black Tree  
+                        1.3.4.2.1.3.3 Splay Tree  
+                        1.3.4.2.1.3.4 Treap  
+                        1.3.4.2.1.3.5 AA‑Tree  
+                        1.3.4.2.1.3.6 Scapegoat Tree  
+                    1.3.4.2.1.4 Multiway Trees  
+                        1.3.4.2.1.4.1 B‑Tree  
+                        1.3.4.2.1.4.2 B+‑Tree  
+                        1.3.4.2.1.4.3 2‑3 Tree  
+                        1.3.4.2.1.4.4 2‑3‑4 Tree  
+                        1.3.4.2.1.4.5 LSM‑Tree  
+                        1.3.4.2.1.4.6 B Link‑Tree  
+                    1.3.4.2.1.5 Heap (as tree)  
+                        1.3.4.2.1.5.1 Binary Heap  
+                        1.3.4.2.1.5.2 d‑ary Heap  
+                    1.3.4.2.1.6 Trie (Prefix Tree)  
+                        1.3.4.2.1.6.1 Radix Tree (Compressed Trie)  
+                        1.3.4.2.1.6.2 Patricia Trie  
+                        1.3.4.2.1.6.3 Ternary Search Tree  
+                        1.3.4.2.1.6.4 Burst Trie  
+                    1.3.4.2.1.7 Range Trees  
+                        1.3.4.2.1.7.1 Segment Tree  
+                        1.3.4.2.1.7.2 Interval Tree  
+                        1.3.4.2.1.7.3 Fenwick Tree (Binary Indexed Tree)  
+                1.3.4.2.2 Graphs  
+                    1.3.4.2.2.1 Adjacency List  
+                    1.3.4.2.2.2 Adjacency Matrix  
+                    1.3.4.2.2.3 Incidence List/Matrix  
+                    1.3.4.2.2.4 Directed Graph  
+                    1.3.4.2.2.5 Undirected Graph  
+                    1.3.4.2.2.6 Weighted Graph  
+                    1.3.4.2.2.7 Multigraph  
+                    1.3.4.2.2.8 Directed Acyclic Graph (DAG)  
+                    1.3.4.2.2.9 Hypergraph  
+            1.3.4.3. Associative & Lookup  
+                1.3.4.3.1 Hash Table / Hash Map  
+                1.3.4.3.2 Hash Set  
+                1.3.4.3.3 Linked Hash Map  
+                1.3.4.3.4 Linked Hash Set  
+                1.3.4.3.5 Multimap  
+                1.3.4.3.6 Cuckoo Hash Table  
+                1.3.4.3.7 Hopscotch Hash Table  
+                1.3.4.3.8 Quotient Filter  
+                1.3.4.3.9 Cuckoo Filter  
+                1.3.4.3.10 Hop‑Forest  
+            1.3.4.4. Disjoint & Partition  
+                1.3.4.4.1 Union‑Find (Disjoint‑Set)  
+                1.3.4.4.2 Partition Refinement  
+                1.3.4.4.3 Split‑Find  
+                1.3.4.4.4 Dynamic Connectivity / Forests  
+                    1.3.4.4.4.1 Link‑Cut Tree  
+                    1.3.4.4.4.2 Euler‑Tour Tree  
+                    1.3.4.4.4.3 Top Tree  
+                    1.3.4.4.4.4 Dynamic Tree (Topology‑Tree variant)  
+                1.3.4.4.5 Persistent Disjoint‑Set  
+                1.3.4.4.6 Weighted / Cost‑Balanced Union‑Find  
+            1.3.4.5. Probabilistic & Sketch  
+                1.3.4.5.1 Bloom Filter  
+                1.3.4.5.2 Count–Min Sketch  
+                1.3.4.5.3 HyperLogLog  
+                1.3.4.5.4 MinHash  
+                1.3.4.5.5 LSH Table  
+            1.3.4.6. Domain‑Specific  
+                1.3.4.6.1 String & Text  
+                    1.3.4.6.1.1 Suffix Tree  
+                    1.3.4.6.1.2 Suffix Array  
+                    1.3.4.6.1.3 Suffix Automaton  
+                    1.3.4.6.1.4 Burrows–Wheeler Transform (BWT)  
+                    1.3.4.6.1.5 FM‑Index  
+                1.3.4.6.2 Spatial & Multidimensional  
+                    1.3.4.6.2.1 k‑d Tree  
+                    1.3.4.6.2.2 Quadtree  
+                    1.3.4.6.2.3 Octree  
+                    1.3.4.6.2.4 R‑Tree  
+                        1.3.4.6.2.4.1 R*‑Tree  
+                        1.3.4.6.2.4.2 X‑Tree  
+                    1.3.4.6.2.5 Voronoi Diagram  
+                    1.3.4.6.2.6 Ball Tree  
+                    1.3.4.6.2.7 Cover Tree  
+                    1.3.4.6.2.8 Vantage‑Point Tree (VP‑Tree)  
+                1.3.4.6.3 Tabular & Matrix  
+                    1.3.4.6.3.1 Dense Matrix  
+                    1.3.4.6.3.2 Sparse Matrix  
+                    1.3.4.6.3.3 Table / DataFrame  
+                    1.3.4.6.3.4 Adjacency / Incidence Table  
+            1.3.4.7. Persistence & Compression Variants  
+                1.3.4.7.1 Persistent & Versioned  
+                    1.3.4.7.1.1 Persistent Linked Structures (path‑copying)  
+                    1.3.4.7.1.2 Finger Tree  
+                    1.3.4.7.1.3 Zipper  
+                    1.3.4.7.1.4 HAMT (Hash Array‑Mapped Trie)  
+                    1.3.4.7.1.5 Vector‑Trie  
+                1.3.4.7.2 Succinct & Compressed  
+                    1.3.4.7.2.1 Rank‑Select Bit Vector  
+                    1.3.4.7.2.2 Wavelet Tree  
+                    1.3.4.7.2.3 Compressed Suffix Array  
+        1.3.5. Concurrency Primitives
+            1.3.5.1. Iteration & Data Flow  
+                1.3.5.1.1 Iterator  
+                1.3.5.1.2 Generator  
+                1.3.5.1.3 Stream  
+                1.3.5.1.4 Zipper  
+                1.3.5.1.5 Observable / Reactive Stream  
+            1.3.5.2. Control Flow  
+                1.3.5.2.1 Thread  
+                1.3.5.2.2 Process  
+                1.3.5.2.3 Fiber / Green Thread  
+                1.3.5.2.4 Promise / Future  
+                1.3.5.2.5 Task / Async Function  
+                1.3.5.2.6 Coroutine  
+                1.3.5.2.7 Callback  
+                1.3.5.2.8 Event / Event Emitter  
+                1.3.5.2.9 Continuation / Trampoline  
+            1.3.5.3. Message Passing & Data Exchange  
+                1.3.5.3.1 Channel  
+                1.3.5.3.2 Actor  
+                1.3.5.3.3 Tuple Space  
+                1.3.5.3.4 Rendezvous (CSP‑style exchange)  
+            1.3.5.4. Synchronization Primitives  
+                1.3.5.4.1 Lock (Mutex)  
+                    1.3.5.4.1.1 Reader/Writer Lock  
+                    1.3.5.4.1.2 Spinlock  
+                1.3.5.4.2 Semaphore  
+                1.3.5.4.3 Barrier  
+                1.3.5.4.4 Latch / CountDownLatch  
+                1.3.5.4.5 Condition Variable  
+                1.3.5.4.6 Atomic Object (Compare‑and‑Swap)  
+                1.3.5.4.7 Read‑Copy‑Update (RCU)  
+                1.3.5.4.8 Monitor / Critical Section  
+                1.3.5.4.9 Phaser / CyclicBarrier  
+            1.3.5.5. Coordination & Multiplexing  
+                1.3.5.5.1 I/O Multiplexing  
+                    1.3.5.5.1.1 Select  
+                    1.3.5.5.1.2 Poll  
+                    1.3.5.5.1.3 Waitset  
+                    1.3.5.5.1.4 epoll / kqueue / IOCP  
+                1.3.5.5.2 Scheduler (Fiber / Green‑thread scheduler)  
+                    1.3.5.5.2.1 Work‑Stealing Deque  
+                    1.3.5.5.2.2 Thread Pool / Worker Pool  
+                1.3.5.5.3 Reactor / Proactor (Event Loop)  
+            1.3.5.6. Memory Models & Transactions  
+                1.3.5.6.1 Memory Fence / Barrier  
+                1.3.5.6.2 Transactional Memory  
+        1.3.6. Algorithms
+            1.3.6.1. Fundamentals & Analysis  
+                1.3.6.1.1 Algorithm Analysis & Complexity  
+                    1.3.6.1.1.1 Asymptotic Notation (O, Ω, Θ, o)  
+                    1.3.6.1.1.2 Amortized Analysis  
+                    1.3.6.1.1.3 Complexity Classes (P, NP, NP‑complete, NP‑hard)  
+                    1.3.6.1.1.4 Reductions & Hardness  
+                    1.3.6.1.1.5 Approximation Hardness  
+                1.3.6.1.2 Algorithmic Paradigms  
+                    1.3.6.1.2.1 Divide & Conquer  
+                        1.3.6.1.2.1.1 Master Theorem  
+                        1.3.6.1.2.1.2 Karatsuba Multiplication  
+                        1.3.6.1.2.1.3 Strassen’s Matrix Multiply  
+                        1.3.6.1.2.1.4 Quickselect & QuickSort  
+                    1.3.6.1.2.2 Dynamic Programming  
+                        1.3.6.1.2.2.1 Memoization vs. Tabulation  
+                        1.3.6.1.2.2.2 Knapsack (0/1, Unbounded)  
+                        1.3.6.1.2.2.3 Longest Common Subsequence / Substring  
+                        1.3.6.1.2.2.4 Matrix Chain Multiplication  
+                        1.3.6.1.2.2.5 Optimal Binary Search Tree  
+                    1.3.6.1.2.3 Greedy Algorithms  
+                        1.3.6.1.2.3.1 Interval Scheduling  
+                        1.3.6.1.2.3.2 Huffman Coding  
+                        1.3.6.1.2.3.3 Fractional Knapsack  
+                        1.3.6.1.2.3.4 Dijkstra’s Algorithm  
+                    1.3.6.1.2.4 Backtracking  
+                        1.3.6.1.2.4.1 N‑Queens  
+                        1.3.6.1.2.4.2 Hamiltonian Path / Graph Coloring  
+                        1.3.6.1.2.4.3 Sudoku Solver  
+                    1.3.6.1.2.5 Branch & Bound  
+                        1.3.6.1.2.5.1 Traveling Salesman (Held–Karp)  
+                        1.3.6.1.2.5.2 Integer Programming  
+                    1.3.6.1.2.6 Randomized Algorithms  
+                        1.3.6.1.2.6.1 QuickSort (random pivot)  
+                        1.3.6.1.2.6.2 Las Vegas vs. Monte Carlo  
+                        1.3.6.1.2.6.3 Randomized Select  
+                    1.3.6.1.2.7 Parallel & Distributed Algorithms  
+                        1.3.6.1.2.7.1 MapReduce  
+                        1.3.6.1.2.7.2 Bulk Synchronous Parallel (BSP)  
+                        1.3.6.1.2.7.3 PRAM Models (EREW, CREW, CRCW)  
+                        1.3.6.1.2.7.4 Consensus & Fault‑Tolerant Distributed Algorithms  
+                            1.3.6.1.2.7.4.1 Leader election (Bully, Chang–Roberts)  
+                            1.3.6.1.2.7.4.2 Paxos, Raft  
+                            1.3.6.1.2.7.4.3 Lamport timestamps, Vector clocks  
+                            1.3.6.1.2.7.4.4 Practical Byzantine Fault Tolerance (PBFT)  
+                    1.3.6.1.2.8 Online Algorithms  
+                        1.3.6.1.2.8.1 Ski Rental  
+                        1.3.6.1.2.8.2 Paging / Caching (LRU, FIFO)  
+                        1.3.6.1.2.8.3 Competitive Ratio Analysis  
+            1.3.6.2. Core Methodologies  
+                1.3.6.2.1 Sorting & Selection  
+                    1.3.6.2.1.1 Elementary Sorts  
+                        1.3.6.2.1.1.1 Bubble Sort  
+                        1.3.6.2.1.1.2 Insertion Sort  
+                        1.3.6.2.1.1.3 Selection Sort  
+                    1.3.6.2.1.2 Efficient Comparison Sorts  
+                        1.3.6.2.1.2.1 Merge Sort  
+                            1.3.6.2.1.2.1.1 Top‑Down vs. Bottom‑Up  
+                            1.3.6.2.1.2.1.2 Parallel Merge Sort  
+                        1.3.6.2.1.2.2 Quick Sort  
+                            1.3.6.2.1.2.2.1 Lomuto vs. Hoare Partition  
+                            1.3.6.2.1.2.2.2 Randomized & 3‑Way QuickSort  
+                        1.3.6.2.1.2.3 Heap Sort  
+                        1.3.6.2.1.2.4 Introsort (std::sort)  
+                    1.3.6.2.1.3 Non‑Comparison Sorts  
+                        1.3.6.2.1.3.1 Counting Sort  
+                        1.3.6.2.1.3.2 Radix Sort  
+                        1.3.6.2.1.3.3 Bucket Sort  
+                    1.3.6.2.1.4 Selection  
+                        1.3.6.2.1.4.1 Quickselect  
+                        1.3.6.2.1.4.2 Median of Medians  
+                1.3.6.2.2 Searching  
+                    1.3.6.2.2.1 Unstructured Search  
+                        1.3.6.2.2.1.1 Linear Search  
+                        1.3.6.2.2.1.2 Sentinel Search  
+                    1.3.6.2.2.2 Structured Search  
+                        1.3.6.2.2.2.1 Binary Search  
+                            1.3.6.2.2.2.1.1 Lower/Upper Bound  
+                            1.3.6.2.2.2.1.2 Exponential Search  
+                        1.3.6.2.2.2.2 Interpolation Search  
+                        1.3.6.2.2.2.3 Fibonacci Search  
+                    1.3.6.2.2.3 Finger Search & Jump Search  
+                1.3.6.2.3 Graph & Network Algorithms  
+                    1.3.6.2.3.1 Traversal  
+                        1.3.6.2.3.1.1 Breadth‑First Search (BFS)  
+                        1.3.6.2.3.1.2 Depth‑First Search (DFS)  
+                        1.3.6.2.3.1.3 Bidirectional Search  
+                    1.3.6.2.3.2 Shortest Path  
+                        1.3.6.2.3.2.1 Dijkstra’s Algorithm  
+                        1.3.6.2.3.2.2 Bellman‑Ford  
+                        1.3.6.2.3.2.3 A* Search  
+                            1.3.6.2.3.2.3.1 Heuristic Functions  
+                        1.3.6.2.3.2.4 Floyd‑Warshall  
+                        1.3.6.2.3.2.5 Johnson’s Algorithm  
+                    1.3.6.2.3.3 Minimum Spanning Tree  
+                        1.3.6.2.3.3.1 Kruskal’s Algorithm  
+                        1.3.6.2.3.3.2 Prim’s Algorithm  
+                        1.3.6.2.3.3.3 Borůvka’s Algorithm  
+                    1.3.6.2.3.4 Network Flow  
+                        1.3.6.2.3.4.1 Ford‑Fulkerson / Edmonds‑Karp  
+                        1.3.6.2.3.4.2 Dinic’s Algorithm  
+                        1.3.6.2.3.4.3 Push‑Relabel  
+                        1.3.6.2.3.4.4 Circulation with Demands  
+                    1.3.6.2.3.5 Matching & Covering  
+                        1.3.6.2.3.5.1 Bipartite Matching (Hopcroft–Karp)  
+                        1.3.6.2.3.5.2 General Matching (Edmonds’ blossom)  
+                        1.3.6.2.3.5.3 Vertex/Edge Cover & Independent Set Approximations  
+                1.3.6.2.4 String & Text Algorithms  
+                    1.3.6.2.4.1 Exact Matching  
+                        1.3.6.2.4.1.1 Knuth‑Morris‑Pratt (KMP)  
+                        1.3.6.2.4.1.2 Boyer‑Moore & Horspool  
+                        1.3.6.2.4.1.3 Rabin‑Karp  
+                    1.3.6.2.4.2 Suffix Structures  
+                        1.3.6.2.4.2.1 Suffix Tree Construction (Ukkonen)  
+                        1.3.6.2.4.2.2 Suffix Array & Kasai’s LCP  
+                        1.3.6.2.4.2.3 Generalized Suffix Automaton  
+                    1.3.6.2.4.3 Approximate Matching  
+                        1.3.6.2.4.3.1 Edit Distance (Levenshtein)  
+                        1.3.6.2.4.3.2 Bit‑parallel Algorithms (Myers)  
+                        1.3.6.2.4.3.3 Landau–Vishkin  
+                1.3.6.2.5 Computational Geometry  
+                    1.3.6.2.5.1 Convex Hull  
+                        1.3.6.2.5.1.1 Graham Scan  
+                        1.3.6.2.5.1.2 Andrew’s Monotone Chain  
+                        1.3.6.2.5.1.3 Quickhull  
+                    1.3.6.2.5.2 Triangulation  
+                        1.3.6.2.5.2.1 Delaunay Triangulation (Bowyer–Watson)  
+                        1.3.6.2.5.2.2 Ear Clipping  
+                    1.3.6.2.5.3 Proximity & Range  
+                        1.3.6.2.5.3.1 kd‑Tree Range Search  
+                        1.3.6.2.5.3.2 Range Tree Query  
+                        1.3.6.2.5.3.3 Nearest Neighbor Search (Ball Tree, VP‑Tree)  
+                    1.3.6.2.5.4 Line & Segment  
+                        1.3.6.2.5.4.1 Bentley‑Ottmann Intersection  
+                        1.3.6.2.5.4.2 Point‑Location Structures  
+                    1.3.6.2.5.5 Topology & Extensions  
+                        1.3.6.2.5.5.1 Strongly Connected Components (Kosaraju, Tarjan)  
+                        1.3.6.2.5.5.2 Planarity Testing (Hopcroft–Tarjan)  
+                        1.3.6.2.5.5.3 Persistent Homology Basics  
+                1.3.6.2.6 Numerical & Algebraic Algorithms  
+                    1.3.6.2.6.1 Arithmetic & Number Theory  
+                        1.3.6.2.6.1.1 Euclidean GCD / Extended GCD  
+                        1.3.6.2.6.1.2 Modular Exponentiation  
+                        1.3.6.2.6.1.3 Primality Testing (Miller‑Rabin, AKS)  
+                        1.3.6.2.6.1.4 Integer Factorization (Pollard’s Rho)  
+                    1.3.6.2.6.2 Linear Algebra  
+                        1.3.6.2.6.2.1 Gaussian Elimination  
+                        1.3.6.2.6.2.2 Strassen & Coppersmith‑Winograd  
+                        1.3.6.2.6.2.3 QR / SVD Decomposition  
+                    1.3.6.2.6.3 Transforms  
+                        1.3.6.2.6.3.1 Fast Fourier Transform (FFT)  
+                        1.3.6.2.6.3.2 Number Theoretic Transform (NTT)  
+                    1.3.6.2.6.4 Root‑Finding & Integration  
+                        1.3.6.2.6.4.1 Root Solvers (Bisection, Newton‑Raphson, Secant)  
+                        1.3.6.2.6.4.2 Numerical Integration (Trapezoidal, Simpson, Gaussian Quadrature)  
+                        1.3.6.2.6.4.3 ODE Solvers (Euler, Runge‑Kutta)  
+                1.3.6.2.7 Optimization & Approximation  
+                    1.3.6.2.7.1 Exact Optimization  
+                        1.3.6.2.7.1.1 Simplex Method (LP)  
+                        1.3.6.2.7.1.2 Branch & Cut (IP)  
+                    1.3.6.2.7.2 Approximation Schemes  
+                        1.3.6.2.7.2.1 PTAS / FPTAS  
+                        1.3.6.2.7.2.2 Greedy Approximation  
+                    1.3.6.2.7.3 Metaheuristics  
+                        1.3.6.2.7.3.1 Simulated Annealing  
+                        1.3.6.2.7.3.2 Genetic Algorithms  
+                        1.3.6.2.7.3.3 Particle Swarm Optimization  
+                1.3.6.2.8 Cryptographic Algorithms  
+                    1.3.6.2.8.1 Symmetric Encryption  
+                        1.3.6.2.8.1.1 Block Ciphers (AES, DES, 3DES)  
+                        1.3.6.2.8.1.2 Stream Ciphers (RC4, ChaCha20)  
+                        1.3.6.2.8.1.3 Modes of Operation (CBC, GCM, CTR)  
+                    1.3.6.2.8.2 Asymmetric Encryption  
+                        1.3.6.2.8.2.1 RSA  
+                        1.3.6.2.8.2.2 Elliptic‑Curve Cryptography (ECC)  
+                    1.3.6.2.8.3 Hash Functions & MAC  
+                        1.3.6.2.8.3.1 SHA Family, MD5, BLAKE2  
+                        1.3.6.2.8.3.2 HMAC / CMAC  
+                    1.3.6.2.8.4 Digital Signatures & Key Exchange  
+                        1.3.6.2.8.4.1 DSA / ECDSA  
+                        1.3.6.2.8.4.2 Diffie‑Hellman / ECDH  
+                1.3.6.2.9 Data Compression  
+                    1.3.6.2.9.1 Entropy Coding  
+                        1.3.6.2.9.1.1 Huffman Coding  
+                        1.3.6.2.9.1.2 Arithmetic Coding  
+                    1.3.6.2.9.2 Dictionary Methods  
+                        1.3.6.2.9.2.1 LZ77 / LZ78 / LZW  
+                        1.3.6.2.9.2.2 LZ4 / LZO / Zstd  
+                    1.3.6.2.9.3 Transform‑Based  
+                        1.3.6.2.9.3.1 Burrows–Wheeler Transform (BWT)  
+                        1.3.6.2.9.3.2 Move‑to‑Front  
+            1.3.6.3. Streaming & Scheduling  
+                1.3.6.3.1 Streaming & Sketching  
+                    1.3.6.3.1.1 Sampling  
+                        1.3.6.3.1.1.1 Reservoir Sampling  
+                        1.3.6.3.1.1.2 Weighted Sampling  
+                    1.3.6.3.1.2 Sketches  
+                        1.3.6.3.1.2.1 Count–Min Sketch  
+                        1.3.6.3.1.2.2 HyperLogLog  
+                        1.3.6.3.1.2.3 Quantile Sketches (GK, t‑digest)  
+                    1.3.6.3.1.3 Frequent‑Items  
+                        1.3.6.3.1.3.1 Lossy Counting  
+                        1.3.6.3.1.3.2 Space‑Saving  
+                1.3.6.3.2 Scheduling & Resource Allocation  
+                    1.3.6.3.2.1 Scheduling Policies  
+                        1.3.6.3.2.1.1 Round‑Robin  
+                        1.3.6.3.2.1.2 Priority Scheduling  
+                        1.3.6.3.2.1.3 Fair‑Share Scheduling  
+                    1.3.6.3.2.2 Load Balancing  
+                        1.3.6.3.2.2.1 Work‑Stealing Algorithms  
+                        1.3.6.3.2.2.2 Weighted Least-Connection  
+            1.3.6.4. Specialized & Modern Domains  
+                1.3.6.4.1 Machine Learning & Data Mining Algorithms  
+                    1.3.6.4.1.1 Supervised Learning (k‑NN, Decision Trees, SVM)  
+                    1.3.6.4.1.2 Unsupervised Learning (k‑Means, DBSCAN, Hierarchical Clustering)  
+                    1.3.6.4.1.3 Dimensionality Reduction (PCA, t‑SNE)  
+                    1.3.6.4.1.4 Ensemble Methods (Random Forests, Boosting)  
+                1.3.6.4.2 Property Testing & Sublinear‑Time Algorithms  
+                    1.3.6.4.2.1 Graph Property Testing (Connectivity, Bipartiteness)  
+                    1.3.6.4.2.2 Distribution Testing (Uniformity, Identity)  
+                    1.3.6.4.2.3 Local Algorithms for Massive Data  
+                1.3.6.4.3 Algorithmic Game Theory & Mechanism Design  
+                    1.3.6.4.3.1 Auction Algorithms (Vickrey, Myerson)  
+                    1.3.6.4.3.2 Price of Anarchy / Price of Stability  
+                    1.3.6.4.3.3 Equilibrium Computation (Nash, Correlated)  
+                1.3.6.4.4 Bioinformatics & Text‑Mining Algorithms  
+                    1.3.6.4.4.1 Sequence Alignment (Needleman–Wunsch, Smith–Waterman)  
+                    1.3.6.4.4.2 BLAST Heuristics  
+                    1.3.6.4.4.3 TF‑IDF and PageRank (Web‑Scale Graph Mining)  
+    1.4. logical and semantic frameworks
+        1.4.1. Logical Systems
+        1.4.2. Model theory
+        1.4.3. Semantics
+        1.4.4. Proofs and Proof Systems
+    1.5. Type and category theory
+        1.5.1. Type System Constructs
+            1.5.1.1. Variant
+            1.5.1.2. Parametric Type
+            1.5.1.3. Recursive Type
+        1.5.2. Categoies and functions
+2. Informational
+    2.1. Media & Manifestations  
+        2.1.1. Franchises 
+            2.1.1.1. Star Trek  
+                2.1.1.1.1. TV Shows  
+                2.1.1.1.2. Films  
+                2.1.1.1.3. Books  
+                2.1.1.1.4. Audio Works  
+            2.1.1.2. Star Wars  
+                2.1.1.2.1. TV Shows  
+                2.1.1.2.2. Films  
+                2.1.1.2.3. Books  
+                2.1.1.2.4. Audio Works  
+            2.1.1.3. Stargate  
+                2.1.1.3.1. TV Shows  
+                2.1.1.3.2. Films  
+                2.1.1.3.3. Books  
+                2.1.1.3.4. Audio Works  
+        2.1.2. General Media
+            2.1.2.1. Textual Works  
+                2.1.2.1.1. Books  
+                2.1.2.1.2. Articles  
+                2.1.2.1.3. Poems  
+                2.1.2.1.4. Scripts & Plays  
+            2.1.2.2. Graphic Works  
+                2.1.2.2.1. Drawings  
+                2.1.2.2.2. Photographs  
+                2.1.2.2.3. Diagrams  
+                2.1.2.2.4. Paintings  
+            2.1.2.3. Auditory Works  
+                2.1.2.3.1. Music  
+                2.1.2.3.2. Spoken Word  
+                2.1.2.3.3. Soundscapes & Field Recordings  
+            2.12..4. Audiovisual Works  
+                2.1.2.4.1. Films  
+                2.1.2.4.2. TV Shows  
+                2.1.2.4.3. Videos  
+                2.1.2.4.4. Animations & Motion Graphics  
+            2.1.2.5. Tactile Works  
+                2.1.2.5.1. Braille Documents  
+                2.1.2.5.2. Embossed Patterns  
+                2.1.2.5.3. Tactile Graphics & Maps  
+    2.2. Transmission & Channels  
+        2.2.1. Digital Networks & Protocols  
+            2.2.1.1. Packet‑Switched Networks  
+                2.2.1.1.1. Internet (IP)  
+                2.2.1.1.2. MPLS  
+            2.2.1.2. Circuit‑Switched Networks  
+                2.2.1.2.1. PSTN  
+                2.2.1.2.2. Legacy ISDN  
+            2.2.1.3. Overlay & Peer‑to‑Peer Networks  
+                2.2.1.3.1. VPNs  
+                2.2.1.3.2. BitTorrent  
+            2.2.1.4. Application‑Layer Protocols  
+                2.2.1.4.1. HTTP / HTTPS  
+                2.2.1.4.2. SMTP / IMAP / POP3  
+                2.2.1.4.3. FTP / SFTP  
+                2.2.1.4.4. MQTT / AMQP  
+            2.2.1.5. Transport‑Layer Protocols  
+                2.2.1.5.1. TCP  
+                2.2.1.5.2. UDP  
+                2.2.1.5.3. QUIC  
+            2.2.1.6. Link‑Layer Protocols  
+                2.2.1.6.1. Ethernet  
+                2.2.1.6.2. Wi‑Fi (IEEE 802.11)  
+                2.2.1.6.3. Bluetooth (IEEE 802.15.1)  
+            2.2.1.7. Physical‑Layer Technologies  
+                2.2.1.7.1. Fiber Optics  
+                2.2.1.7.2. DSL / Cable Modems  
+                2.2.1.7.3. Cellular (4G/5G)  
+                2.2.1.7.4. Satellite  
+        2.2.2. Analog Signals  
+            2.2.2.1. Radio Frequency Bands  
+                2.2.2.1.1. AM / FM Broadcast  
+                2.2.2.1.2. Shortwave / HF  
+                2.2.2.1.3. UHF / VHF  
+            2.2.2.2. Analog Audio  
+                2.2.2.2.1. Vinyl Records  
+                2.2.2.2.2. Cassette Tapes  
+            2.2.2.3. Analog Video  
+                2.2.2.3.1. NTSC / PAL / SECAM Broadcast  
+                2.2.2.3.2. VHS / Betamax  
+            2.2.2.4. Continuous Electrical Signals  
+                2.2.2.4.1. Sensor Outputs (thermocouples, strain gauges)  
+                2.2.2.4.2. Biomedical Signals (ECG, EEG)  
+        2.2.3. Biological Signals  
+            2.2.3.1. Genetic Information Carriers  
+                2.2.3.1.1. DNA Replication / Transcription  
+                2.2.3.1.2. RNA Signaling  
+            2.2.3.2. Neural Signals  
+                2.2.3.2.1. Action Potentials  
+                2.2.3.2.2. Neurotransmitter Release  
+            2.2.3.3. Hormonal & Endocrine Signals  
+                2.2.3.3.1. Insulin, Adrenaline  
+                2.2.3.3.2. Pheromones  
+            2.2.3.4. Cellular & Biochemical Messengers  
+                2.2.3.4.1. Second Messengers (cAMP, cGMP)  
+                2.2.3.4.2. Cytokines & Growth Factors  
+    2.3. Storage & Formats  
+        2.3.1. Physical Media  
+            2.3.1.1. Paper & Parchment  
+            2.3.1.2. Magnetic Media  
+                2.3.1.2.1. Hard Disk Drives  
+                2.3.1.2.2. Magnetic Tape  
+            2.3.1.3. Optical Media  
+                2.3.1.3.1. CD / DVD / Blu‑ray  
+            2.3.1.4. Solid‑State Media  
+                2.3.1.4.1. Flash Drives  
+                2.3.1.4.2. SSDs  
+            2.3.1.5. Microfilm & Microfiche  
+            2.3.1.6. Stone / Clay Tablets (historical)  
+        2.3.2. Digital File Formats & Data Structures  
+            2.3.2.1. Plain‑Text Formats  
+                2.3.2.1.1. TXT  
+                2.3.2.1.2. CSV / TSV  
+            2.3.2.2. Markup & Structured Text  
+                2.3.2.2.1. HTML  
+                2.3.2.2.2. XML  
+                2.3.2.2.3. Markdown  
+            2.3.2.3. Binary Container Formats  
+                2.3.2.3.1. ZIP  
+                2.3.2.3.2. TAR  
+                2.3.2.3.3. ISO  
+            2.3.2.4. Media Codecs & Encodings  
+                2.3.2.4.1. JPEG  
+                2.3.2.4.2. PNG  
+                2.3.2.4.3. MP3  
+                2.3.2.4.4. H.264  
+            2.3.2.5. Database Models  
+                2.3.2.5.1. Relational (SQL)  
+                2.3.2.5.2. NoSQL Document  
+                2.3.2.5.3. NoSQL Key‑Value  
+                2.3.2.5.4. NoSQL Graph  
+            2.3.2.6. File Systems & Block Devices  
+                2.3.2.6.1. NTFS  
+                2.3.2.6.2. ext4  
+                2.3.2.6.3. APFS  
+                2.3.2.6.4. LVM  
+                2.3.2.6.5. RAID  
+        2.3.3. Biological Storage  
+            2.3.3.1. DNA Data Storage  
+            2.3.3.2. Epigenetic Marks (methylation patterns)  
+            2.3.3.3. Protein‑Based Encoding  
+            2.3.3.4. Neural Memory Traces (synaptic weights)  
+            2.3.3.5. Mineralization & Fossil Records  
+    2.4. Semantic Information  
+        2.4.1. Ontologies & Taxonomies  
+        2.4.2. Conceptual Graphs & Knowledge Models  
+        2.4.3. Semantic Schemas (e.g. RDF, OWL)  
+        2.4.4. Frames & Semantic Roles  
+        2.4.5. Controlled Vocabularies & Thesauri  
+    2.5. Pragmatic Information  
+        2.5.1. Speech Acts & Communicative Intent  
+        2.5.2. Directive & Performative Messages  
+        2.5.3. Metadata & Metainformation  
+        2.5.4. Feedback & Control Signals  
+        2.5.5. Contextual & Situational Use Cases  
+    2.6. Error Handling & Security  
+        2.6.1. Error‑Correcting Codes  
+        2.6.2. Cryptographic Encodings  
+        2.6.3. Authentication & Authorization Protocols  
+        2.6.4. Secure‑Channel Protocols (TLS, IPsec)  
+        2.6.5. Integrity & Non‑repudiation Mechanisms  
+    2.7. Interpretation & Processing  
+        2.7.1. Parsing & Lexical Analysis  
+        2.7.2. Compression Algorithms  
+        2.7.3. Signal Processing  
+        2.7.4. Data Transformation & ETL  
+        2.7.5. Data Visualization & Rendering  
+        2.7.6. Machine Learning & AI‑Driven Analysis  
+    2.8. Information Theory  
+        2.8.1. Entropy & Redundancy  
+        2.8.2. Channel Capacity & Noise  
+        2.8.3. Mutual & Conditional Information  
+        2.8.4. Source & Channel Coding Theorems  
+        2.8.5. Rate‑Distortion & Lossy Coding  
+        2.8.6. Network Information Theory  
+        2.8.7. Algorithmic Information Content  
+3. Physical
+    3.1 Matter - The substance of which physical entities are composed, at all scales from fundamental to bulk.
+        3.1.1 Subatomic Particles – Elementary and composite quanta that constitute atoms and mediate
+            3.1.1.1 Quarks (up, down, charm, strange, top, bottom)
+            3.1.1.2 Leptons (electron, muon, tau, neutrinos)
+            3.1.1.3 Gauge Bosons (photon, gluon, W⁺/W⁻/Z⁰)
+            3.1.1.4 Hadrons (baryons, mesons)
+            3.1.1.5 Hypothetical Particles (axion, graviton, dark-matter candidates)
+        3.1.2 Atoms – Electrically neutral or ionized bound states of nucleus + electrons.
+            3.1.2.1 Atomic Structure (nucleus, electron shells)
+            3.1.2.2 Isotopes & Nuclides (stable, radioactive)
+            3.1.2.3 Ions & Ionization Energies
+        3.1.3 Molecules – Chemically bonded assemblies of atoms.
+            3.1.3.1 Elementary Molecules (diatomic, triatomic)
+            3.1.3.2 Organic Molecules (hydrocarbons, functionalized)
+            3.1.3.3 Macromolecules (polymers, proteins, nucleic acids)
+            3.1.3.4 Molecular Complexes & Clusters (coordination compounds, van der Waals clusters)
+        3.1.4 Bulk Phases – Macroscopic aggregations of matter in distinct states.
+            3.1.4.1 Solids
+                3.1.4.1.1 Crystalline (lattices, metals, ceramics)
+                3.1.4.1.2 Amorphous (glasses, gels)
+                3.1.4.1.3 Quasicrystals
+            3.1.4.2 Liquids (viscous, superfluid helium)
+            3.1.4.3 Gases (ideal, real)
+            3.1.4.4 Plasmas (ionized gases)
+            3.1.4.5 Colloids & Emulsions
+            3.1.4.6 Granular & Particulate Media
+    3.2 Objects & Structures – Stable or semi-stable assemblies of matter with coherent form.
+        3.2.1 Natural Objects & Structures
+            3.2.1.1 Minerals & Crystal Structures
+            3.2.1.2 Rock Formations (igneous, sedimentary, metamorphic)
+            3.2.1.3 Ecosystems & Biomes
+            3.2.1.4 Atmospheric & Oceanic Structures (fronts, gyres)
+            3.2.1.5 Hydrosphere & Cryosphere Forms (rivers, glaciers)
+        3.2.2 Biological Organisms
+            3.2.2.1 Cellular & Tissue Architectures – The building blocks of organisms: cells and their organized groupings into tissues.
+                3.2.2.1.1 Cell Types
+                    3.2.2.1.1.1 Prokaryotic Cells
+                    3.2.2.1.1.2 Eukaryotic Cells
+                3.2.2.1.2 Tissue Types
+                    3.2.2.1.2.1 Epithelial Tissues
+                    3.2.2.1.2.2 Connective Tissues
+                    3.2.2.1.2.3 Muscle Tissues
+                    3.2.2.1.2.4 Nervous Tissues
+            3.2.2.2 Organisms – Unit organisms classified by major kingdoms or clades.
+                3.2.2.2.1 Plants
+                    3.2.2.2.1.1 Glaucophytes - Freshwater unicells with cyanelles
+                    3.2.2.2.1.2 Rhodophyta - Red algae, mostly multicellular marine
+                    3.2.2.2.1.3 Chlorophyta - Green algae
+                    3.2.2.2.1.4 Streptophyta - Charophycean algae + land plants.
+                        3.2.2.2.1.4.1 Charophyta - Freshwater cousins of Embryophyta.
+                        3.2.2.2.1.4.2 Embryophyta – Descended from charophycean ancestors; possess multicellular sporophyte.
+                            3.2.2.2.1.4.2.1 Bryophyta – Gametophyte-dominant, no true xylem/phloem.  
+                                3.2.2.2.1.4.2.1.1 Marchantiophyta (liverworts)  
+                                3.2.2.2.1.4.2.1.2 Bryophyta (mosses)  
+                                3.2.2.2.1.4.2.1.3 Anthocerotophyta (hornworts)  
+                                3.2.2.2.1.4.2.1.4 Extinct Bryophyta-grade clades
+                            3.2.2.2.1.4.2.2 Tracheophytes – Possess lignified vascular tissue; sporophyte-dominant.  
+                                3.2.2.2.1.4.2.2.1 Lycophyta (clubmosses & allies)  
+                                    3.2.2.2.1.4.2.2.1.1 Lycopodiaceae  
+                                    3.2.2.2.1.4.2.2.1.2 Selaginellaceae  
+                                    3.2.2.2.1.4.2.2.1.3 Isoëtaceae  
+                                    3.2.2.2.1.4.2.2.1.4 Extinct Zosterophyllophytes & Drepanophycalean Fossils  
+                                3.2.2.2.1.4.2.2.2 Monilophyta (ferns & horsetails)  
+                                    3.2.2.2.1.4.2.2.2.1 Equisetopsida (horsetails)  
+                                    3.2.2.2.1.4.2.2.2.2 Polypodiopsida (true ferns)  
+                                    3.2.2.2.1.4.2.2.2.3 Extinct Rhyniopsids & Trimerophytes  
+                                3.2.2.2.1.4.2.2.3 Spermatophyta (seed plants)  
+                                    3.2.2.2.1.4.2.2.3.1 Gymnosperms  
+                                    3.2.2.2.1.4.2.2.3.1.1 Cycadophyta (cycads)  
+                                    3.2.2.2.1.4.2.2.3.1.2 Ginkgophyta (ginkgo)  
+                                    3.2.2.2.1.4.2.2.3.1.3 Pinophyta (conifers)
+                                        3.2.2.2.1.4.2.2.3.1.3.1 Pinales (pine order)
+                                            3.2.2.2.1.4.2.2.3.1.3.1.1 Pinaceae (pine family)
+                                    3.2.2.2.1.4.2.2.3.1.4 Gnetophyta (Gnetum, Ephedra, Welwitschia)  
+                                    3.2.2.2.1.4.2.2.3.1.5 Extinct Pteridosperms & Glossopterids  
+                                3.2.2.2.1.4.2.2.3.2 Angiosperms (flowering plants)  
+                                    3.2.2.2.1.4.2.2.3.2.1 Basal Angiosperms (Amborella, Nymphaeales)  
+                                    3.2.2.2.1.4.2.2.3.2.2 Magnoliids  
+                                    3.2.2.2.1.4.2.2.3.2.3 Monocots  
+                                    3.2.2.2.1.4.2.2.3.2.4 Eudicots (core dicots)  
+                                    3.2.2.2.1.4.2.2.3.2.5 Extinct Early Cretaceous Lineages  
+                            3.2.2.2.1.4.2.3 Extinct Embryophyte Clades 
+                                3.2.2.2.1.4.2.3.1 Rhyniophytes  
+                                3.2.2.2.1.4.2.3.2 Progymnosperms  
+                                3.2.2.2.1.4.2.3.3 Other Paleozoic Plant Fossils  
+                3.2.2.2.2 Animals – Multicellular heterotrophs with gastrulation and, in most clades, true tissues and organs.
+                    3.2.2.2.2.1 Porifera – Sponges; sessile filter‐feeders without true tissues
+                        3.2.2.2.2.1.1 Calcarea
+                        3.2.2.2.2.1.2 Demospongiae
+                        3.2.2.2.2.1.3 Hexactinellida
+                        3.2.2.2.2.1.4 Homoscleromorpha
+                    3.2.2.2.2.2 Placozoa – Simple, amoeboid multicellular disks
+                        3.2.2.2.2.2.1 Trichoplax adhaerens
+                        3.2.2.2.2.2.2 Haplotype clades (genetic lineages)
+                    3.2.2.2.2.3 Cnidaria – Radially symmetric predators and reef‐builders
+                        3.2.2.2.2.3.1 Anthozoa (corals, sea anemones)
+                        3.2.2.2.2.3.2 Hydrozoa (hydroids, Portuguese man‐o-war)
+                        3.2.2.2.2.3.3 Scyphozoa (true jellyfish)
+                        3.2.2.2.2.3.4 Cubozoa (box jellies)
+                    3.2.2.2.2.4 Ctenophora – Comb jellies with ciliary “combs”
+                        3.2.2.2.2.4.1 Tentaculata
+                        3.2.2.2.2.4.2 Nuda
+                    3.2.2.2.2.5 Bilateria – Bilaterally symmetric, triploblastic animals
+                        3.2.2.2.2.5.1 Xenacoelomorpha – Simple acoelomate worms  
+                            3.2.2.2.2.5.1.1 Acoelomorpha  
+                            3.2.2.2.2.5.1.2 Xenoturbellida  
+                            3.2.2.2.2.5.2 Deuterostomia – Mouth forms second; includes chordates and allies  
+                                3.2.2.2.2.5.2.1 Echinodermata – Five‐fold symmetry adults  
+                                    3.2.2.2.2.5.2.1.1 Asteroidea (sea stars)  
+                                    3.2.2.2.2.5.2.1.2 Echinoidea (sea urchins, sand dollars)  
+                                    3.2.2.2.2.5.2.1.3 Holothuroidea (sea cucumbers)  
+                                    3.2.2.2.2.5.2.1.4 Ophiuroidea (brittle stars)  
+                                    3.2.2.2.2.5.2.1.5 Crinoidea (feather stars)  
+                                3.2.2.2.2.5.2.2 Hemichordata – Acorn worms and pterobranchs  
+                                    3.2.2.2.2.5.2.2.1 Enteropneusta  
+                                    3.2.2.2.2.5.2.2.2 Pterobranchia  
+                                3.2.2.2.2.5.2.3 Chordata – Notochord and dorsal nerve cord  
+                                    3.2.2.2.2.5.2.3.1 Cephalochordata (lancelets)  
+                                    3.2.2.2.2.5.2.3.2 Urochordata (tunicates)  
+                                    3.2.2.2.2.5.2.3.3 Vertebrata  
+                                        3.2.2.2.2.5.2.3.3.1 Cyclostomata (jawless fish: lampreys, hagfish)  
+                                        3.2.2.2.2.5.2.3.3.2 Gnathostomata (jawed vertebrates)  
+                                            3.2.2.2.2.5.2.3.3.2.1 Chondrichthyes (cartilaginous fish)  
+                                            3.2.2.2.2.5.2.3.3.2.2 Osteichthyes (bony fish)  
+                                                3.2.2.2.2.5.2.3.3.2.2.1 Actinopterygii (ray‐finned fish)  
+                                                3.2.2.2.2.5.2.3.3.2.2.2 Sarcopterygii (lobe‐finned fish & tetrapods)  
+                                                    3.2.2.2.2.5.2.3.3.2.2.2.1 Dipnoi (lungfish)  
+                                                    3.2.2.2.2.5.2.3.3.2.2.2.2 Tetrapoda  
+                                                        3.2.2.2.2.5.2.3.3.2.2.2.2.1 Amphibia (frogs, salamanders)  
+                                                        3.2.2.2.2.5.2.3.3.2.2.2.2.2 Amniota  
+                                                            3.2.2.2.2.5.2.3.3.2.2.2.2.2.1 Mammalia  
+                                                                3.2.2.2.2.5.2.3.3.2.2.2.2.2.1.1 Monotremata  
+                                                                3.2.2.2.2.5.2.3.3.2.2.2.2.2.1.2 Marsupialia  
+                                                                3.2.2.2.2.5.2.3.3.2.2.2.2.2.1.3 Eutheria  
+                                                            3.2.2.2.2.5.2.3.3.2.2.2.2.2.2 Sauropsida  
+                                                                3.2.2.2.2.5.2.3.3.2.2.2.2.2.2.1 Testudines  
+                                                                3.2.2.2.2.5.2.3.3.2.2.2.2.2.2.2 Lepidosauria  
+                                                                3.2.2.2.2.5.2.3.3.2.2.2.2.2.2.3 Archosauria  
+                                                                    3.2.2.2.2.5.2.3.3.2.2.2.2.2.2.3.1 Aves  
+                        3.2.2.2.2.5.3 Protostomia – Mouth forms first; diverse invertebrates  
+                            3.2.2.2.2.5.3.1 Ecdysozoa – Grow by molting  
+                                3.2.2.2.2.5.3.1.1 Nematoda  
+                                3.2.2.2.2.5.3.1.2 Nematomorpha  
+                                3.2.2.2.2.5.3.1.3 Priapulida  
+                                3.2.2.2.2.5.3.1.4 Kinorhyncha  
+                                3.2.2.2.2.5.3.1.5 Loricifera  
+                                3.2.2.2.2.5.3.1.6 Onychophora  
+                                3.2.2.2.2.5.3.1.7 Tardigrada  
+                                3.2.2.2.2.5.3.1.8 Arthropoda  
+                                    3.2.2.2.2.5.3.1.8.1 Chelicerata  
+                                    3.2.2.2.2.5.3.1.8.2 Myriapoda  
+                                    3.2.2.2.2.5.3.1.8.3 Pancrustacea  
+                                    3.2.2.2.2.5.3.1.8.3.1 Crustacea  
+                                    3.2.2.2.2.5.3.1.8.3.2 Hexapoda  
+                            3.2.2.2.2.5.3.2 Spiralia (Lophotrochozoa) – Grow by gradual addition  
+                                3.2.2.2.2.5.3.2.1 Platyhelminthes  
+                                3.2.2.2.2.5.3.2.2 Gastrotricha  
+                                3.2.2.2.2.5.3.2.3 Rotifera  
+                                3.2.2.2.2.5.3.2.4 Gnathifera  
+                                3.2.2.2.2.5.3.2.5 Lophophorata (Brachiopoda, Phoronida, Bryozoa)  
+                                3.2.2.2.2.5.3.2.6 Mollusca  
+                                    3.2.2.2.2.5.3.2.6.1 Gastropoda  
+                                    3.2.2.2.2.5.3.2.6.2 Bivalvia  
+                                    3.2.2.2.2.5.3.2.6.3 Cephalopoda  
+                                3.2.2.2.2.5.3.2.7 Annelida  
+                                    3.2.2.2.2.5.3.2.7.1 Polychaeta  
+                                    3.2.2.2.2.5.3.2.7.2 Clitellata  
+                3.2.2.2.3 Fungi
+                    3.2.2.2.3.1 Ascomycota
+                    3.2.2.2.3.2 Basidiomycota
+                3.2.2.2.4 Protists
+                    3.2.2.2.4.1 Protozoa
+                    3.2.2.2.4.2 Algae
+            3.2.2.3 Groups – Groups of conspecifics and their multispecies assemblages in space and time.
+                3.2.2.3.1 Populations
+                    3.2.2.3.1.1 Population Structure (age, spatial, genetic)
+                    3.2.2.3.1.2 Population Dynamics (growth, mortality, migration)
+                3.2.2.3.2 Communities
+                    3.2.2.3.2.1 Species Assemblages (richness, evenness)
+                    3.2.2.3.2.2 Trophic Networks (food webs, energy flow)
+                    3.2.2.3.2.3 Succession & Stability (primary, secondary)
+            3.2.2.4 Bio-assemblies – Structures constructed by organisms or communities.
+                3.2.2.4.1 Reefs
+                    3.2.2.4.1.1 Coral Reefs
+                    3.2.2.4.1.2 Oyster Reefs
+                3.2.2.4.2 Nests
+                    3.2.2.4.2.1 Avian Nests (cup, cavity, platform)
+                    3.2.2.4.2.2 Insect Nests (ant hills, termite mounds)
+                3.2.2.4.3 Hives & Colonies
+                    3.2.2.4.3.1 Bee Hives (natural, managed)
+                    3.2.2.4.3.2 Wasp Nests (paper, mud)
+        3.2.3 Astronomical Bodies
+            3.2.3.1 Planetary Bodies & Satellites
+            3.2.3.2 Stars & Stellar Remnants (white dwarfs, neutron stars, black holes)
+            3.2.3.3 Nebulae & Interstellar Medium
+            3.2.3.4 Star Clusters & Associations
+            3.2.3.5 Galaxies & Large-Scale Cosmic Web
+        3.2.4 Geological Formations
+            3.2.4.1 Tectonic Plates & Boundaries
+            3.2.4.2 Mountain Ranges & Basins
+            3.2.4.3 Volcanoes & Fissures
+            3.2.4.4 Canyons, Valleys, Karst Systems
+            3.2.4.5 Sedimentary Layers & Strata
+        3.2.5 Artificial Objects & Structures
+            3.2.5.1 Tools, Instruments
+            3.2.5.2 Machines & Engines
+            3.2.5.3 Infrastructure (bridges, buildings, pipelines)
+            3.2.5.4 Vehicles & Vessels
+            3.2.5.5 Electronic & Mechanical Assemblies
+    3.3 Phenomena & Interactions – Manifestations of forces and field effects among physical entities.
+        3.3.1 Fundamental Forces
+            3.3.1.1 Strong Nuclear
+            3.3.1.2 Electromagnetic
+            3.3.1.3 Weak Nuclear
+            3.3.1.4 Gravitational
+        3.3.2 Emergent & Effective Forces
+            3.3.2.1 Friction & Drag
+            3.3.2.2 Viscous & Lubrication Forces
+            3.3.2.3 Surface Tension & Capillarity
+        3.3.3 Electromagnetic Phenomena
+            3.3.3.1 Electric Fields & Potentials
+            3.3.3.2 Magnetic Fields & Flux
+            3.3.3.3 Electromagnetic Spectrum (radio → γ-ray)
+        3.3.4 Wave Phenomena
+            3.3.4.1 Mechanical Waves (acoustic, elastic)
+            3.3.4.2 Electromagnetic Waves
+            3.3.4.3 Quantum Matter Waves
+        3.3.5 Quantum Effects
+            3.3.5.1 Superposition & Coherence
+            3.3.5.2 Entanglement
+            3.3.5.3 Tunneling
+    3.4 Processes – Time-directed sequences of state changes in physical systems.
+        3.4.1 Mechanical Processes
+            3.4.1.1 Kinematics & Trajectories
+            3.4.1.2 Dynamics (Newton’s Laws)
+            3.4.1.3 Statics & Equilibrium
+            3.4.1.4 Continuum Mechanics
+                3.4.1.4.1 Solid Mechanics (stress, strain)
+                3.4.1.4.2 Fluid Mechanics
+                    3.4.1.4.2.1 Fluid Statics
+                    3.4.1.4.2.2 Fluid Dynamics (Navier–Stokes)
+        3.4.2 Thermal Processes
+            3.4.2.1 Heat Transfer
+                3.4.2.1.1 Conduction
+                3.4.2.1.2 Convection
+                3.4.2.1.3 Radiation
+            3.4.2.2 Thermodynamic Cycles (Carnot, Rankine)
+            3.4.2.3 Phase-Change Kinetics
+        3.4.3 Chemical Processes
+            3.4.3.1 Reaction Kinetics & Rate Laws
+            3.4.3.2 Catalysis & Inhibition
+            3.4.3.3 Electrochemical & Photochemical Reactions
+        3.4.4 Nuclear Processes
+            3.4.4.1 Radioactive Decay (α/β/γ)
+            3.4.4.2 Fission & Fusion Reactions
+            3.4.4.3 Nuclear Transmutation
+        3.4.5 Geological & Geophysical Processes
+            3.4.5.1 Plate Tectonics & Orogeny
+            3.4.5.2 Erosion, Sedimentation, Weathering
+            3.4.5.3 Volcanism & Magmatism
+            3.4.5.4 Hydrological Cycle (runoff, glaciation)
+    3.5 Properties & Quantities – Attributes and numerical measures characterizing physical systems.
+        3.5.1 Fundamental (SI Base)
+            3.5.1.1 Mass, Length, Time, Electric Current
+            3.5.1.2 Temperature, Amount of Substance, Luminous Intensity
+        3.5.2 Derived Quantities
+            3.5.2.1 Velocity, Acceleration
+            3.5.2.2 Force, Energy, Power, Pressure
+            3.5.2.3 Torque, Momentum
+        3.5.3 Material Properties
+            3.5.3.1 Density, Viscosity
+            3.5.3.2 Elastic Moduli, Hardness
+            3.5.3.3 Thermal & Electrical Conductivity
+        3.5.4 Thermodynamic Properties
+            3.5.4.1 Temperature, Entropy, Enthalpy
+            3.5.4.2 Specific Heat, Heat Capacity
+        3.5.5 Electromagnetic & Optical
+            3.5.5.1 Permittivity, Permeability
+            3.5.5.2 Refractive Index, Absorption & Scattering Coefficients
+    3.6 Energy Forms – Capacities for work or heat in various guises.
+        3.6.1 Kinetic Energy
+        3.6.2 Potential Energy
+            3.6.2.1 Gravitational
+            3.6.2.2 Elastic
+            3.6.2.3 Chemical
+            3.6.2.4 Electric
+        3.6.3 Thermal (Heat)
+        3.6.4 Chemical
+        3.6.5 Nuclear
+        3.6.6 Radiant (Photonic)
+    3.7 Spatio-Temporal Patterns – Phenomena whose primary identity is their pattern through space and/or time.
+        3.7.1 Events & Histories
+            3.7.1.1 Point Events (collisions, decays)
+            3.7.1.2 Extended Events (oscillations, orbits)
+            3.7.1.3 Cycles & Rhythms (seasonal, vibrational)
+        3.7.2 Fields & Distributions
+            3.7.2.1 Scalar Fields (temperature, pressure)
+            3.7.2.2 Vector Fields (velocity, force)
+            3.7.2.3 Tensor Fields (stress, strain)
+        3.7.3 Trajectories & Paths (particle tracks, flow lines)
+        3.7.4 Propagation Fronts (shock waves, diffusion fronts)
+    3.8 Applied & Interdisciplinary – Domains at the intersection of “physical” with other sciences and engineering.
+        3.8.1 Materials Science
+            3.8.1.1 Crystallography
+            3.8.1.2 Polymers & Composites
+            3.8.1.3 Nanomaterials & Thin Films
+            3.8.1.4 Biomaterials
+        3.8.2 Biophysics
+            3.8.2.1 Membrane Mechanics
+            3.8.2.2 Structural Biology & Protein Dynamics
+            3.8.2.3 Cellular & Tissue Biomechanics
+            3.8.2.4 Neurophysics
+        3.8.3 Geophysics
+            3.8.3.1 Seismology
+            3.8.3.2 Geodesy & Gravimetry
+            3.8.3.3 Geophysical Fluid Dynamics
+            3.8.3.4 Remote Sensing
+        3.8.4 Astrophysics
+            3.8.4.1 Stellar Structure & Evolution
+            3.8.4.2 Planetary Science & Exoplanets
+            3.8.4.3 High-Energy & Relativistic Phenomena
+            3.8.4.4 Cosmology & Large-Scale Structure
+4. Mental
+    4.1 Consciousness & Awareness – States and capacities by which an agent is aware of internal and external experiences.
+        4.1.1 Phenomenal Consciousness
+        4.1.2 Access Consciousness
+        4.1.3 Self-Awareness
+        4.1.4 Altered States
+            4.1.4.1 Sleep & Dreaming
+            4.1.4.2 Meditation & Mindfulness
+            4.1.4.3 Hypnosis
+            4.1.4.4 Drug-Induced States
+            4.1.4.5 Disorders of Consciousness (coma, vegetative state)
+    4.2 Cognitive Processes – Internal information-processing functions that underlie perception, thought, memory, and learning.
+        4.2.1 Perception
+            4.2.1.1 Vision
+            4.2.1.2 Hearing
+            4.2.1.3 Touch
+            4.2.1.4 Taste & Smell
+            4.2.1.5 Proprioception & Vestibular
+            4.2.1.6 Interoception
+            4.2.1.7 Crossmodal Integration
+        4.2.2 Attention
+            4.2.2.1 Selective
+            4.2.2.2 Sustained
+            4.2.2.3 Divided
+            4.2.2.4 Executive Control
+        4.2.3 Memory – Systems for encoding, storing, and retrieving information.
+            4.2.3.1 Sensory Memory
+            4.2.3.2 Short-Term & Working Memory
+                4.2.3.2.1 Phonological Loop
+                4.2.3.2.2 Visuospatial Sketchpad
+                4.2.3.2.3 Central Executive
+            4.2.3.3 Long-Term Memory
+                4.2.3.3.1 Explicit
+                    4.2.3.3.1.1 Episodic
+                    4.2.3.3.1.2 Semantic
+                4.2.3.3.2 Implicit
+                    4.2.3.3.2.1 Procedural
+                    4.2.3.3.2.2 Associative (conditioning, priming)
+        4.2.4 Thinking & Reasoning
+            4.2.4.1 Deductive
+            4.2.4.2 Inductive
+            4.2.4.3 Abductive
+            4.2.4.4 Heuristics & Biases
+            4.2.4.5 Problem Solving
+        4.2.5 Learning – Processes by which experience induces lasting change in behavior or knowledge.
+            4.2.5.1 Classical Conditioning
+            4.2.5.2 Operant Conditioning
+            4.2.5.3 Observational Learning
+            4.2.5.4 Statistical & Implicit Learning
+            4.2.5.5 Reinforcement Learning
+        4.2.6 Metacognition – Awareness and regulation of one’s own cognitive processes.
+            4.2.6.1 Metacognitive Knowledge
+            4.2.6.2 Monitoring
+            4.2.6.3 Control
+    4.3 Affective Processes – Phenomena of emotion, mood, and related regulation.
+        4.3.1 Emotions
+            4.3.1.1 Basic (joy, sadness, fear, anger, disgust, surprise)
+            4.3.1.2 Complex (guilt, pride, envy, compassion)
+        4.3.2 Mood (episodic vs. chronic affective states)
+        4.3.3 Emotional Regulation (reappraisal, suppression, acceptance)
+        4.3.4 Arousal & Valence Dimensions
+    4.3.5 Affective Disorders (depression, anxiety, bipolar, PTSD)
+        4.4 Language & Communication – Systems and processes for symbolic and non-symbolic exchange.
+            4.4.1 Language Production (conceptualization → articulation)
+            4.4.2 Language Comprehension (phonological, syntactic, semantic, pragmatic)
+            4.4.3 Inner Speech (self-talk, silent thought)
+            4.4.4 Nonverbal Communication (gestures, facial expression, prosody)
+            4.4.5 Social Interaction (turn-taking, speech acts, discourse)
+    4.5 Volition & Motivation – Drives and executive functions that initiate and guide goal-directed action.
+        4.5.1 Motivation (intrinsic vs. extrinsic; drives: hunger, thirst, sex, achievement)
+        4.5.2 Intentions (goal-setting, implementation intentions, prospective memory)
+        4.5.3 Decision-Making (utility theory, heuristics, prospect theory)
+        4.5.4 Self-Control & Executive Function (inhibition, cognitive flexibility)
+        4.5.5 Behavioral Activation & Avoidance Systems
+    4.6 Mental Imagery & Representation – Internal models and simulations of objects, events, and scenarios.
+        4.6.1 Mental Imagery (visual, auditory, motor; vividness)
+        4.6.2 Mental Models (spatial, physical, social reasoning)
+        4.6.3 Concepts & Categories (prototypes, exemplars, theory-based)
+        4.6.4 Beliefs & Desires (propositional attitudes)
+        4.6.5 Semantic Networks & Schemas
+    4.7 Self & Identity – Representations and experiences of one’s own personhood.
+        4.7.1 Self-Concept (self-schemas, roles, attributes)
+        4.7.2 Self-Awareness (private vs. public; metacognitive)
+        4.7.3 Personal Identity (narrative, psychological continuity)
+        4.7.4 Social Identity (group memberships, in-group/out-group)
+        4.7.5 Autobiographical Memory (episodic life-story recall)
+    4.8 Temporal Dynamics & Development – Changes in mental processes across time scales and life span.
+        4.8.1 State Fluctuations (circadian, attentional lapses)
+        4.8.2 Learning Trajectories & Expertise Development
+        4.8.3 Neurodevelopment & Cognitive Aging
+        4.8.4 Time Perception & Interval Timing
+    4.9 Clinical & Applied Domains – Applied perspectives on mental phenomena in health, technology, and education.
+        4.9.1 Clinical Psychology (assessment, DSM/ICD, psychotherapy)
+        4.9.2 Neuropsychology (lesion studies, assessment of cognitive deficits)
+        4.9.3 Educational Psychology (instructional design, motivation, metacognition training)
+        4.9.4 Cognitive Neuroscience (fMRI, EEG/MEG, TMS; neural correlates)
+        4.9.5 Affective Computing & HCI (emotion recognition, adaptive interfaces)
+        4.9.6 Psychopharmacology & Neuromodulation (drugs, rTMS, DBS)
+5. Social
+    5.1 Social Structures – Relational patterns and units that instantiate the building blocks of society.
+        5.1.1 Dyads & Small Groups – Minimal interaction units, from two‐person ties to task‐oriented teams.
+            5.1.1.1 Dyads (pair bonds, friendships)
+            5.1.1.2 Triads (alliances, coalitions)
+            5.1.1.3 Cliques & Circles (tight‐knit subgroups)
+            5.1.1.4 Teams & Task Groups (temporary project ensembles)
+        5.1.2 Communities – Aggregations with shared identity or territory.
+            5.1.2.1 Geographic Communities (neighborhoods, villages)
+            5.1.2.2 Virtual Communities (online forums, gaming guilds)
+            5.1.2.3 Identity‐Based Communities (ethnic, religious, LGBTQ+ networks)
+            5.1.2.4 Professional & Interest Groups (trade associations, hobby clubs)
+        5.1.3 Organizations & Networks – Formalized entities and the ties that connect them.
+            5.1.3.1 Formal Organizations (corporations, NGOs, bureaucracies)
+            5.1.3.2 Informal Networks (loose affiliations, social capital brokers)
+            5.1.3.3 Organizational Fields & Ecologies (industries, sectors)
+        5.1.4 Stratification & Inequality – Ranked arrangements based on power, wealth, prestige, or status.
+            5.1.4.1 Class Systems (socioeconomic strata)
+            5.1.4.2 Caste & Estate Systems (hereditary hierarchies)
+            5.1.4.3 Gender Stratification (role hierarchies, glass ceilings)
+            5.1.4.4 Racial & Ethnic Hierarchies (systemic privilege, marginalization)
+    5.2 Social Institutions – Enduring frameworks that organize collective needs and expectations.
+        5.2.1 Family & Kinship Systems – Patterns of descent, inheritance, and household organization.
+            5.2.1.1 Nuclear & Extended Families
+            5.2.1.2 Lineage & Clan Structures
+            5.2.1.3 Marriage Forms (monogamy, polygamy)
+            5.2.1.4 Inheritance Rules & Residence Norms
+        5.2.2 Economic Institutions – Arrangements governing production, distribution, and consumption.
+            5.2.2.1 Markets & Price Mechanisms
+            5.2.2.2 Corporations & Cooperatives
+            5.2.2.3 Financial Systems (banks, credit unions, microfinance)
+        5.2.3 Political Institutions – Structures that exercise authority, allocate resources, and adjudicate disputes.
+            5.2.3.1 State & Government Forms (unitary, federal)
+                5.2.3.1.1 Hereditary Rule – Authority vested by birth or dynastic succession.
+                    5.2.3.1.1.1 Monarchy
+                        5.2.3.1.1.1.1 Absolute Monarchy
+                        5.2.3.1.1.1.2 Constitutional Monarchy
+                        5.2.3.1.1.1.3 Elective Monarchy
+                        5.2.3.1.1.1.4 Federal Monarchy
+                    5.2.3.1.1.1 Sultanate
+                    5.2.3.1.1.2 Principality
+                    5.2.3.1.1.3 Emirate
+                    5.2.3.1.1.4 Empire / Imperial Rule
+                5.2.3.1.2 Popular Rule – Sovereignty resides directly or indirectly with the citizenry.
+                    5.2.3.1.2.1 Direct Democracy
+                    5.2.3.1.2.2 Representative Democracy
+                        5.2.3.1.2.2.1 Parliamentary Democracy
+                        5.2.3.1.2.2.2 Presidential Democracy
+                        5.2.3.1.2.2.3 Semi-Presidential Democracy
+                        5.2.3.1.2.2.4 Hybrid Presidential-Parliamentary
+                    5.2.3.1.2.3 Liquid Democracy
+                    5.2.3.1.2.4 Participatory Democracy
+                5.2.3.1.3 Oligarchic Rule – Power concentrated in a small group by virtue of status, wealth or achievement.
+                    5.2.3.1.3.1 Aristocracy (rule by “best,” often hereditary nobility)
+                    5.2.3.1.3.2 Plutocracy (rule by wealth)
+                    5.2.3.1.3.3 Gerontocracy (rule by elders)
+                    5.2.3.1.3.4 Meritocracy (rule by merit-based elites)
+                    5.2.3.1.3.5 Technocratic Oligarchy (rule by technical experts)
+                5.2.3.1.4 Religious Rule – Authority derived from sacred texts, clerical office or divine sanction.
+                    5.2.3.1.4.1 Theocracy
+                    5.2.3.1.4.2 Ecclesiocracy (clerical hierarchy governs separate from civil authority)
+                    5.2.3.1.4.3 Caliphate (Islamic law under a caliph)
+                    5.2.3.1.4.4 Papal State (territorial rule by the pope)
+                    5.2.3.1.4.5 Divine Kingship (monarch as living deity or god’s viceroy)
+                5.2.3.1.5 Military Rule – Governance by armed forces or officers’ council.
+                    5.2.3.1.5.1 Military Junta
+                    5.2.3.1.5.2 Stratocracy (formal constitution vests power in the military)
+                    5.2.3.1.5.3 Praetorianism (army intervenes in politics informally)
+                5.2.3.1.6 Corporate Rule – Control exercised by commercial or industrial interests.
+                    5.2.3.1.6.1 Corporatocracy (rule by corporate boards or cartels)
+                    5.2.3.1.6.2 Merchant Oligarchy (rule by trading guilds)
+                5.2.3.1.7 Authoritarian & Totalitarian Rule – Limited pluralism; power centralised in a leader or party.
+                    5.2.3.1.7.1 One-Party State
+                    5.2.3.1.7.2 Personalist Dictatorship
+                    5.2.3.1.7.3 Totalitarian Regime
+                5.2.3.1.8 Hybrid & Transitional Forms – Systems combining democratic and authoritarian elements.
+                    5.2.3.1.8.1 Illiberal Democracy (elections without full civil liberties)
+                    5.2.3.1.8.2 Competitive Authoritarianism (formal democracy with unfair bias)
+                    5.2.3.1.8.3 Dominant-Party System
+                    5.2.3.1.8.4 Co-Governance (power-sharing among factions)
+                5.2.3.1.9 Stateless & Decentralised – Absence of centralized sovereignty or formal state.
+                    5.2.3.1.9.1 Confederation (weak central authority, strong member units)
+                    5.2.3.1.9.2 Anarchy
+                        5.2.3.1.9.2.1 Mutualist Anarchy
+                        5.2.3.1.9.2.2 Anarcho-Syndicalism
+                        5.2.3.1.9.2.3 Anarcho-Communism
+                        5.2.3.1.9.2.4 Agorism
+                    5.2.3.1.9.3 Tribal Confederacy (loosely allied kin groups)
+            5.2.3.2 Political Parties & Factions
+            5.2.3.3 Electoral Systems & Voting Mechanisms
+            5.2.3.4 Bureaucracies & Public Administration
+        5.2.4 Legal & Judicial Institutions – Codified rules and enforcement bodies regulating behavior.
+            5.2.4.1 Legal Codes & Statutes
+            5.2.4.2 Courts & Tribunals
+            5.2.4.3 Law Enforcement Agencies
+            5.2.4.4 Alternative Dispute Resolution (mediation, arbitration)
+        5.2.5 Educational Institutions – Systems for formal transmission of knowledge and skills.
+            5.2.5.1 Primary & Secondary Schools
+            5.2.5.2 Universities & Research Institutes
+            5.2.5.3 Vocational & Adult Education
+        5.2.6 Religious & Spiritual Institutions – Organized beliefs and rituals addressing existential questions.
+            5.2.6.1 Churches, Temples, Mosques, Shrines
+            5.2.6.2 Clerical Hierarchies & Lay Organizations
+            5.2.6.3 Ritual Calendars & Pilgrimage Networks
+    5.3 Social Processes – Dynamic sequences of interaction that produce social phenomena.
+        5.3.1 Socialization & Enculturation – Transmission of norms, values, and roles across generations.
+            5.3.1.1 Primary Socialization (family, peers)
+            5.3.1.2 Secondary Socialization (schools, media)
+        5.3.2 Communication & Discourse – Exchanges of information and meaning.
+            5.3.2.1 Interpersonal Communication (verbal, nonverbal)
+            5.3.2.2 Mass Communication (press, broadcasting)
+            5.3.2.3 Digital Communication (social platforms, messaging)
+        5.3.3 Cooperation & Collective Action – Coordinated efforts toward shared goals.
+            5.3.3.1 Coordination Mechanisms (norms, incentives)
+            5.3.3.2 Collective Goods Provision (public goods, commons)
+            5.3.3.3 Group Decision Processes (consensus, voting)
+        5.3.4 Competition & Conflict – Contestation over scarce resources or divergent interests.
+            5.3.4.1 Resource Competition (markets, ecological niches)
+            5.3.4.2 Interpersonal Conflict (disputes, bullying)
+            5.3.4.3 Collective Conflict (wars, strikes, protests)
+            5.3.4.4 Conflict Resolution (negotiation, peace‐building)
+        5.3.5 Social Influence & Persuasion – Mechanisms of compliance, conformity, and belief change.
+            5.3.5.1 Conformity & Normative Influence
+            5.3.5.2 Obedience & Authority
+            5.3.5.3 Persuasive Communication (rhetoric, propaganda)
+        5.3.6 Network Dynamics – Formation and evolution of ties among actors.
+            5.3.6.1 Tie Formation & Dissolution
+            5.3.6.2 Diffusion & Contagion (ideas, innovations)
+            5.3.6.3 Structural Holes & Brokerage
+    5.4 Culture & Norms – Shared symbols, values, and rules that guide interpretation and action.
+        5.4.1 Beliefs & Worldviews (religious, ideological)
+        5.4.2 Values & Moral Codes (individualism, collectivism)
+        5.4.3 Customs & Traditions (rituals, ceremonies)
+        5.4.4 Symbols & Semiotics (language, iconography)
+        5.4.5 Art, Music & Performance (folk arts, popular culture)
+        5.4.6 Etiquette & Social Norms (taboos, dress codes)
+        5.4.7 Material Culture (architecture, artifacts, technology use)
+    5.5 Social Roles & Identities – Patterned expectations and self‐concepts that locate individuals in the social order.
+        5.5.1 Role Theory (role‐set, strain, exit)
+        5.5.2 Status & Prestige Systems (honorifics, reputation)
+        5.5.3 Identity Formation & Management (self‐categorization)
+        5.5.4 Intersectionality (race × gender × class)
+        5.5.5 Gender & Sexuality Identities (norms, fluidity)
+        5.5.6 Ethnic, Racial & National Identities (diaspora, assimilation)
+        5.5.7 Life‐Course Roles (childhood, adulthood, elderhood)
+    5.6 Social Systems – Integrated assemblages of institutions and processes sustaining collective life.
+        5.6.1 Economic Systems (capitalism, socialism, informal economies)
+        5.6.2 Political Systems (democracy, authoritarianism, hybrid regimes)
+        5.6.3 Legal Systems (common law, civil law, customary law)
+        5.6.4 Health & Welfare Systems (public health, social insurance)
+        5.6.5 Education & Knowledge Systems (credentialing, research infrastructures)
+        5.6.6 Environmental Governance (regulation, commons management)
+        5.6.7 Technological Infrastructures (digital, transportation, utilities)
+    5.7 Social Change & Movements – Large‐scale shifts in structures, values, and collective practices.
+        5.7.1 Social Movements & Advocacy (civil rights, environmentalism)
+        5.7.2 Revolutions & Regime Change (political, technological)
+        5.7.3 Policy Reform & Institutional Innovation
+        5.7.4 Globalization & Transnationalism (trade, migration, networks)
+        5.7.5 Modernization & Development (urbanization, industrialization)
+        5.7.6 Innovation Diffusion & Adoption S‐Curves
+    5.8 Technology & Society – Interplay between technological artifacts, social structures, and cultural meaning.
+        5.8.1 Mass Media & Journalism (news ecologies, gatekeeping)
+        5.8.2 Social Media & Online Communities (platform governance)
+        5.8.3 Digital Divide & Access Inequality
+        5.8.4 Surveillance, Privacy & Ethics (datafication, panopticons)
+        5.8.5 Algorithmic Governance & AI (bias, accountability)
+        5.8.6 Human–Computer Interaction & UX Cultures
+        5.8.7 Cyberactivism & Hacktivism
+    5.9 Applied & Interdisciplinary Domains – Fields integrating social theory with practice to address collective challenges.
+        5.9.1 Public Policy & Administration
+        5.9.2 Urban Planning & Community Development
+        5.9.3 Public Health & Epidemiology (social determinants)
+        5.9.4 Social Work & Human Services
+        5.9.5 Organizational Studies & Management
+        5.9.6 Environmental Social Science
+        5.9.7 Demography & Population Studies
+        5.9.8 Marketing, Advertising & Consumer Behavior
+6. Meta - The processes, methods, and models for constructing or analyzing entities in other categories
+    6.1 Conceptual Frameworks & Meta-models – Abstract patterns and languages for capturing the structure of domains.
+        6.1.1 Abstraction Techniques – Methods for identifying essential features and hiding details
+        6.1.2 Design Patterns – Reusable solutions to recurring modeling problems
+        6.1.3 Reference Architectures – Standardized blueprints for system organization
+        6.1.4 Meta-modeling Languages – Formal languages (UML, MOF, Ecore) for defining modeling languages
+    6.2 Classification & Ontology Engineering – Schemes and practitioners’ methods for organizing and naming concepts.
+        6.2.1 Ontology Construction – Class, property and axiom design in OWL/RDF
+        6.2.2 Taxonomy & Thesaurus Development – Hierarchical and associative term‐grouping
+        6.2.3 Terminology Management – Vocabulary curation, versioning, multilingual labels
+        6.2.4 Schema & Metadata Standards – Dublin Core, ISO 11179, SKOS design
+    6.3 Formal Methods & Logic – Symbolic languages and inference engines for precise specification and proof.
+        6.3.1 Specification Languages – Z, Alloy, TLA⁺ for system requirements and invariants
+        6.3.2 Theorem Proving & Proof Assistants – Coq, Isabelle, Lean for formal proof development
+        6.3.3 Model Checking & Static Analysis – SPIN, NuSMV, abstract interpretation tools
+        6.3.4 Type Theories & Formal Semantics – Dependent types, operational/denotational semantics
+    6.4 Modeling & Simulation – Mathematical and computational instantiations of conceptual models.
+        6.4.1 Mathematical Modeling – Differential equations, optimization formulations
+        6.4.2 Computational Simulation – Finite‐element, discrete‐event, cellular automata
+        6.4.3 Agent-Based & Multi-Agent Models – Autonomous actor interactions and emergent behavior
+        6.4.4 System Dynamics & Feedback Models – Stock‐flow diagrams and causal loop analysis
+    6.5 Data & Knowledge Representation – Structures and languages for encoding, storing, and querying information.
+        6.5.1 Data Modeling & Schemas – ER diagrams, relational and NoSQL schema design
+        6.5.2 Knowledge Graphs & Semantic Networks – RDF triples, property graphs
+        6.5.3 Meta-languages – UML, SysML, DSLs for domain-specific syntax
+        6.5.4 Ontology Languages – OWL, SHACL, RIF for constraint and rule definition
+    6.6 Methodologies & Processes – Structured approaches to research, design, and project execution.
+        6.6.1 Scientific Method – Hypothesis formulation, experimentation, statistical inference
+        6.6.2 Engineering & Design Processes – Requirements engineering, prototyping, user-centered design
+        6.6.3 Project & Program Management – Waterfall, Agile/Scrum, PRINCE2, risk management
+        6.6.4 Quality & Process Improvement – Lean, Six Sigma, CMMI, continuous integration
+    6.7 Evaluation & Validation – Techniques for verifying correctness and assessing fitness for purpose.
+        6.7.1 Verification Techniques – Unit testing, formal proof, model validation
+        6.7.2 Validation & Validation Protocols – User acceptance, field trials, benchmark comparison
+        6.7.3 Metrics & Benchmarking – KPIs, performance counters, SLAs, baseline studies
+        6.7.4 Sensitivity & Uncertainty Analysis – Monte Carlo, parameter sweeps, error propagation
+    6.8 Meta-Analysis & Meta-Research – Higher-order synthesis of methods and results across studies or models.
+        6.8.1 Statistical Meta-Analysis – Effect size aggregation, random/fixed-effects models
+        6.8.2 Systematic Reviews & Evidence Mapping – Protocols for literature synthesis
+        6.8.3 Meta-Model Evaluation – Comparative analysis of modeling languages and frameworks
+        6.8.4 Methodological Research – Studies on method effectiveness, reproducibility, bias analysis

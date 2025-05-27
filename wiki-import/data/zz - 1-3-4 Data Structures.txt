@@ -1,138 +1,133 @@
-1. Collections  
-   1.1 Set  
-   1.2 Bitset / Bit Vector  
-   1.3 Arrays  
-   1.4 Linked Lists  
-   1.5 Stacks  
-   1.6 Queues  
-       1.6.1 Simple FIFO Queue  
-       1.6.2 Circular Buffer (Ring Buffer)  
-       1.6.3 Deque (Double‑Ended Queue)  
-       1.6.4 Priority Queue  
-           1.6.4.1 Binary Heap  
-           1.6.4.2 Pairing Heap  
-           1.6.4.3 Fibonacci Heap  
-           1.6.4.4 Binomial Heap  
-           1.6.4.5 Leftist Heap  
-           1.6.4.6 Skew Heap  
-           1.6.4.7 Interval Heap  
-       1.6.5 Calendar Queue  
-       1.6.6 Skip‑Queue  
-   1.7 Tuples  
-   1.8 Bags (Multisets)  
-   1.9 Ordered & Sequence‑Enhanced  
-       1.9.1 Skip List  
-       1.9.2 Rope  
-       1.9.3 Order‑Statistic Tree  
-       1.9.4 Monotonic Queue  
-       1.9.5 van Emde Boas Tree  
-       1.9.6 Fusion Tree  
-       1.9.7 Cartesian Tree  
-
-2. Hierarchical & Relational  
-   2.1 Trees  
-       2.1.1 General n‑ary Tree  
-       2.1.2 Binary Tree  
-       2.1.3 Binary Search Tree (BST)  
-           2.1.3.1 AVL Tree  
-           2.1.3.2 Red‑Black Tree  
-           2.1.3.3 Splay Tree  
-           2.1.3.4 Treap  
-           2.1.3.5 AA‑Tree  
-           2.1.3.6 Scapegoat Tree  
-       2.1.4 Multiway Trees  
-           2.1.4.1 B‑Tree  
-           2.1.4.2 B+‑Tree  
-           2.1.4.3 2‑3 Tree  
-           2.1.4.4 2‑3‑4 Tree  
-           2.1.4.5 LSM‑Tree  
-           2.1.4.6 B Link‑Tree  
-       2.1.5 Heap (as tree)  
-           2.1.5.1 Binary Heap  
-           2.1.5.2 d‑ary Heap  
-       2.1.6 Trie (Prefix Tree)  
-           2.1.6.1 Radix Tree (Compressed Trie)  
-           2.1.6.2 Patricia Trie  
-           2.1.6.3 Ternary Search Tree  
-           2.1.6.4 Burst Trie  
-       2.1.7 Range Trees  
-           2.1.7.1 Segment Tree  
-           2.1.7.2 Interval Tree  
-           2.1.7.3 Fenwick Tree (Binary Indexed Tree)  
-   2.2 Graphs  
-       2.2.1 Adjacency List  
-       2.2.2 Adjacency Matrix  
-       2.2.3 Incidence List/Matrix  
-       2.2.4 Directed Graph  
-       2.2.5 Undirected Graph  
-       2.2.6 Weighted Graph  
-       2.2.7 Multigraph  
-       2.2.8 Directed Acyclic Graph (DAG)  
-       2.2.9 Hypergraph  
-
-3. Associative & Lookup  
-   3.1 Hash Table / Hash Map  
-   3.2 Hash Set  
-   3.3 Linked Hash Map  
-   3.4 Linked Hash Set  
-   3.5 Multimap  
-   3.6 Cuckoo Hash Table  
-   3.7 Hopscotch Hash Table  
-   3.8 Quotient Filter  
-   3.9 Cuckoo Filter  
-   3.10 Hop‑Forest  
-
-4. Disjoint & Partition  
-   4.1 Union‑Find (Disjoint‑Set)  
-   4.2 Partition Refinement  
-   4.3 Split‑Find  
-   4.4 Dynamic Connectivity / Forests  
-       4.4.1 Link‑Cut Tree  
-       4.4.2 Euler‑Tour Tree  
-       4.4.3 Top Tree  
-       4.4.4 Dynamic Tree (Topology‑Tree variant)  
-   4.5 Persistent Disjoint‑Set  
-   4.6 Weighted / Cost‑Balanced Union‑Find  
-
-5. Probabilistic & Sketch  
-   5.1 Bloom Filter  
-   5.2 Count–Min Sketch  
-   5.3 HyperLogLog  
-   5.4 MinHash  
-   5.5 LSH Table  
-
-6. Domain‑Specific  
-   6.1 String & Text  
-       6.1.1 Suffix Tree  
-       6.1.2 Suffix Array  
-       6.1.3 Suffix Automaton  
-       6.1.4 Burrows–Wheeler Transform (BWT)  
-       6.1.5 FM‑Index  
-   6.2 Spatial & Multidimensional  
-       6.2.1 k‑d Tree  
-       6.2.2 Quadtree  
-       6.2.3 Octree  
-       6.2.4 R‑Tree  
-           6.2.4.1 R*‑Tree  
-           6.2.4.2 X‑Tree  
-       6.2.5 Voronoi Diagram  
-       6.2.6 Ball Tree  
-       6.2.7 Cover Tree  
-       6.2.8 Vantage‑Point Tree (VP‑Tree)  
-   6.3 Tabular & Matrix  
-       6.3.1 Dense Matrix  
-       6.3.2 Sparse Matrix  
-       6.3.3 Table / DataFrame  
-       6.3.4 Adjacency / Incidence Table  
-
-7. Persistence & Compression Variants  
-   7.1 Persistent & Versioned  
-       7.1.1 Persistent Linked Structures (path‑copying)  
-       7.1.2 Finger Tree  
-       7.1.3 Zipper  
-       7.1.4 HAMT (Hash Array‑Mapped Trie)  
-       7.1.5 Vector‑Trie  
-   7.2 Succinct & Compressed  
-       7.2.1 Rank‑Select Bit Vector  
-       7.2.2 Wavelet Tree  
-       7.2.3 Compressed Suffix Array  
+1.3.4. Data Structures
+    1.3.4.1. Collections  
+        1.3.4.1.1 Set  
+        1.3.4.1.2 Bitset / Bit Vector  
+        1.3.4.1.3 Arrays  
+        1.3.4.1.4 Linked Lists  
+        1.3.4.1.5 Stacks  
+        1.3.4.1.6 Queues  
+            1.3.4.1.6.1 Simple FIFO Queue  
+            1.3.4.1.6.2 Circular Buffer (Ring Buffer)  
+            1.3.4.1.6.3 Deque (Double‑Ended Queue)  
+            1.3.4.1.6.4 Priority Queue  
+                1.3.4.1.6.4.1 Binary Heap  
+                1.3.4.1.6.4.2 Pairing Heap  
+                1.3.4.1.6.4.3 Fibonacci Heap  
+                1.3.4.1.6.4.4 Binomial Heap  
+                1.3.4.1.6.4.5 Leftist Heap  
+                1.3.4.1.6.4.6 Skew Heap  
+                1.3.4.1.6.4.7 Interval Heap  
+            1.3.4.1.6.5 Calendar Queue  
+            1.3.4.1.6.6 Skip‑Queue  
+        1.3.4.1.7 Tuples  
+        1.3.4.1.8 Bags (Multisets)  
+        1.3.4.1.9 Ordered & Sequence‑Enhanced  
+            1.3.4.1.9.1 Skip List  
+            1.3.4.1.9.2 Rope  
+            1.3.4.1.9.3 Order‑Statistic Tree  
+            1.3.4.1.9.4 Monotonic Queue  
+            1.3.4.1.9.5 van Emde Boas Tree  
+            1.3.4.1.9.6 Fusion Tree  
+            1.3.4.1.9.7 Cartesian Tree  
+    1.3.4.2. Hierarchical & Relational  
+        1.3.4.2.1 Trees  
+            1.3.4.2.1.1 General n‑ary Tree  
+            1.3.4.2.1.2 Binary Tree  
+            1.3.4.2.1.3 Binary Search Tree (BST)  
+                1.3.4.2.1.3.1 AVL Tree  
+                1.3.4.2.1.3.2 Red‑Black Tree  
+                1.3.4.2.1.3.3 Splay Tree  
+                1.3.4.2.1.3.4 Treap  
+                1.3.4.2.1.3.5 AA‑Tree  
+                1.3.4.2.1.3.6 Scapegoat Tree  
+            1.3.4.2.1.4 Multiway Trees  
+                1.3.4.2.1.4.1 B‑Tree  
+                1.3.4.2.1.4.2 B+‑Tree  
+                1.3.4.2.1.4.3 2‑3 Tree  
+                1.3.4.2.1.4.4 2‑3‑4 Tree  
+                1.3.4.2.1.4.5 LSM‑Tree  
+                1.3.4.2.1.4.6 B Link‑Tree  
+            1.3.4.2.1.5 Heap (as tree)  
+                1.3.4.2.1.5.1 Binary Heap  
+                1.3.4.2.1.5.2 d‑ary Heap  
+            1.3.4.2.1.6 Trie (Prefix Tree)  
+                1.3.4.2.1.6.1 Radix Tree (Compressed Trie)  
+                1.3.4.2.1.6.2 Patricia Trie  
+                1.3.4.2.1.6.3 Ternary Search Tree  
+                1.3.4.2.1.6.4 Burst Trie  
+            1.3.4.2.1.7 Range Trees  
+                1.3.4.2.1.7.1 Segment Tree  
+                1.3.4.2.1.7.2 Interval Tree  
+                1.3.4.2.1.7.3 Fenwick Tree (Binary Indexed Tree)  
+        1.3.4.2.2 Graphs  
+            1.3.4.2.2.1 Adjacency List  
+            1.3.4.2.2.2 Adjacency Matrix  
+            1.3.4.2.2.3 Incidence List/Matrix  
+            1.3.4.2.2.4 Directed Graph  
+            1.3.4.2.2.5 Undirected Graph  
+            1.3.4.2.2.6 Weighted Graph  
+            1.3.4.2.2.7 Multigraph  
+            1.3.4.2.2.8 Directed Acyclic Graph (DAG)  
+            1.3.4.2.2.9 Hypergraph  
+    1.3.4.3. Associative & Lookup  
+        1.3.4.3.1 Hash Table / Hash Map  
+        1.3.4.3.2 Hash Set  
+        1.3.4.3.3 Linked Hash Map  
+        1.3.4.3.4 Linked Hash Set  
+        1.3.4.3.5 Multimap  
+        1.3.4.3.6 Cuckoo Hash Table  
+        1.3.4.3.7 Hopscotch Hash Table  
+        1.3.4.3.8 Quotient Filter  
+        1.3.4.3.9 Cuckoo Filter  
+        1.3.4.3.10 Hop‑Forest  
+    1.3.4.4. Disjoint & Partition  
+        1.3.4.4.1 Union‑Find (Disjoint‑Set)  
+        1.3.4.4.2 Partition Refinement  
+        1.3.4.4.3 Split‑Find  
+        1.3.4.4.4 Dynamic Connectivity / Forests  
+            1.3.4.4.4.1 Link‑Cut Tree  
+            1.3.4.4.4.2 Euler‑Tour Tree  
+            1.3.4.4.4.3 Top Tree  
+            1.3.4.4.4.4 Dynamic Tree (Topology‑Tree variant)  
+        1.3.4.4.5 Persistent Disjoint‑Set  
+        1.3.4.4.6 Weighted / Cost‑Balanced Union‑Find  
+    1.3.4.5. Probabilistic & Sketch  
+        1.3.4.5.1 Bloom Filter  
+        1.3.4.5.2 Count–Min Sketch  
+        1.3.4.5.3 HyperLogLog  
+        1.3.4.5.4 MinHash  
+        1.3.4.5.5 LSH Table  
+    1.3.4.6. Domain‑Specific  
+        1.3.4.6.1 String & Text  
+            1.3.4.6.1.1 Suffix Tree  
+            1.3.4.6.1.2 Suffix Array  
+            1.3.4.6.1.3 Suffix Automaton  
+            1.3.4.6.1.4 Burrows–Wheeler Transform (BWT)  
+            1.3.4.6.1.5 FM‑Index  
+        1.3.4.6.2 Spatial & Multidimensional  
+            1.3.4.6.2.1 k‑d Tree  
+            1.3.4.6.2.2 Quadtree  
+            1.3.4.6.2.3 Octree  
+            1.3.4.6.2.4 R‑Tree  
+                1.3.4.6.2.4.1 R*‑Tree  
+                1.3.4.6.2.4.2 X‑Tree  
+            1.3.4.6.2.5 Voronoi Diagram  
+            1.3.4.6.2.6 Ball Tree  
+            1.3.4.6.2.7 Cover Tree  
+            1.3.4.6.2.8 Vantage‑Point Tree (VP‑Tree)  
+        1.3.4.6.3 Tabular & Matrix  
+            1.3.4.6.3.1 Dense Matrix  
+            1.3.4.6.3.2 Sparse Matrix  
+            1.3.4.6.3.3 Table / DataFrame  
+            1.3.4.6.3.4 Adjacency / Incidence Table  
+    1.3.4.7. Persistence & Compression Variants  
+        1.3.4.7.1 Persistent & Versioned  
+            1.3.4.7.1.1 Persistent Linked Structures (path‑copying)  
+            1.3.4.7.1.2 Finger Tree  
+            1.3.4.7.1.3 Zipper  
+            1.3.4.7.1.4 HAMT (Hash Array‑Mapped Trie)  
+            1.3.4.7.1.5 Vector‑Trie  
+        1.3.4.7.2 Succinct & Compressed  
+            1.3.4.7.2.1 Rank‑Select Bit Vector  
+            1.3.4.7.2.2 Wavelet Tree  
+            1.3.4.7.2.3 Compressed Suffix Array  

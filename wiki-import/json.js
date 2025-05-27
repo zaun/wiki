@@ -6,12 +6,17 @@ import fetch from 'node-fetch'
 import yargs from 'yargs/yargs'
 import { hideBin } from 'yargs/helpers'
 
-const apiKey = 'cfd2f840-32a0-4388-8a93-6cae22e231ed';
+const apiKey = '7808ae8d-5f8d-427d-bbb7-5e9c1698b719';
 
 const argv = yargs(hideBin(process.argv))
     .usage('Usage: $0 --dir <path/to/json-directory> | --file <path/to/json-file>')
     .option('dir', { describe: 'Directory containing one or more .json page files', type: 'string' })
     .option('file', { describe: 'Single .json file to process', type: 'string' })
+    .option('exclude', {
+        describe: 'Filename to exclude when --dir is used (e.g., "excluded_page.json")',
+        type: 'string',
+        implies: 'dir' // This option only makes sense if --dir is used
+    })
     .conflicts('dir', 'file')
     .check(argv => {
         if (!argv.dir && !argv.file) {
@@ -22,15 +27,22 @@ const argv = yargs(hideBin(process.argv))
     .help('h').alias('h', 'help')
     .parse()
 
-const { dir, file } = argv
+const { dir, file, exclude } = argv
 const API_BASE = 'http://localhost:3000/api'
 
 // Maps to remember created nodes & sections
-const uploaded = new Map()                // pageTitle → nodeId
-const uploadedSections = new Map()        // `${pageTitle}||${sectionTitle}` → sectionId
+const uploaded = new Map()                // pageTitle ➡️ nodeId
+const uploadedSections = new Map()        // `${pageTitle}||${sectionTitle}` ➡️ sectionId
 
 // Collect all citations (page‑level and section‑level)
 let allCitations = []
+
+function escapeLucene(str) {
+  return str.replace(
+    /([+\-!(){}\[\]^"~*?:\\/])/g,
+    '\\$1'
+  );
+}
 
 async function authenticatedFetch(url, options = {}) {
     const headers = {
@@ -47,14 +59,19 @@ async function authenticatedFetch(url, options = {}) {
 }
 
 async function lookupNode(title) {
-    const url = `${API_BASE}/search?q=title:"${encodeURIComponent(title)}"`
-    const res = await authenticatedFetch(url)
-    if (!res.ok) throw new Error(`Lookup for "${title}" failed: ${res.status}`)
-    const search = await res.json()
-    const entities = search.results.filter(n => n.type !== 'entity')
-    const wanted = title.trim().toLowerCase()
-    const exact = entities.find(n => n.title?.trim().toLowerCase() === wanted)
-    return exact ? exact.id : null
+    try {
+        const url = `${API_BASE}/search?q=title:"${encodeURIComponent(escapeLucene(title))}"`
+        const res = await authenticatedFetch(url)
+        if (!res.ok) throw new Error(`Lookup for "${title}" failed: ${res.status}: ${await res.text()}`)
+        const search = await res.json()
+        const entities = search.results.filter(n => n.type !== 'entity')
+        const wanted = title.trim().toLowerCase()
+        const exact = entities.find(n => n.title?.trim().toLowerCase() === wanted)
+        return exact ? exact.id : null
+    } catch (err) {
+        console.error('!!!', err);
+        return null;
+    }
 }
 
 async function uploadPage(page) {
@@ -74,6 +91,7 @@ async function uploadPage(page) {
                 parentId: page.parentId || null,
                 title: page.title,
                 tags: page.tags || [],
+                subtitle: page.subtitle,
                 content: page.content,
                 aliases: page.aliases || [],
                 links: page.links || [],
@@ -81,20 +99,40 @@ async function uploadPage(page) {
             })
         })
         if (!res.ok) {
-            console.error(`✖ failed to create "${page.title}":`, await res.text())
+            console.error(`❎ failed to create "${page.title}":`, await res.text())
             return
         }
         nodeId = (await res.json()).id
-        console.log(`✔ Added "${page.title}" (id ${nodeId})`)
+        console.log(`✅ Added "${page.title}" (id ${nodeId})`)
     } else {
-        console.log(`ℹ "${page.title}" exists (id ${existing}); using it`)
+        const res = await authenticatedFetch(`${API_BASE}/nodes/${nodeId}`, {
+            method: 'PATCH',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                id: nodeId,
+                parentId: page.parentId || null,
+                title: page.title,
+                subtitle: page.subtitle || 'Missing subtitle',
+                tags: page.tags || [],
+                content: page.content,
+                aliases: page.aliases || [],
+                links: page.links || [],
+                details: page.details || [],
+            })
+        })
+        if (!res.ok) {
+            console.error(`❎ failed to update "${page.title}":`, await res.text())
+            return
+        }
+        nodeId = (await res.json()).id
+        console.log(`✅ Updated "${page.title}" (id ${nodeId})`)
     }
     uploaded.set(page.title, nodeId)
 
     // 3) fetch existing sections for this node
     const fetchSec = await authenticatedFetch(`${API_BASE}/nodes/${nodeId}/sections`)
     const existingSecs = fetchSec.ok ? await fetchSec.json() : []
-    // map title → {id, ...}
+    // map title ➡️ {id, ...}
     const existingByTitle = new Map(
         existingSecs.map(s => [s.title.trim().toLowerCase(), s])
     )
@@ -117,13 +155,15 @@ async function uploadPage(page) {
                     title: sec.title,
                     type: sec.type || 'text',
                     content: sec.content,
+                    data: sec.data,
+                    summary: sec.summary,
                 })
             })
             if (!patchRes.ok) {
-                console.error(`  ✖ failed to update section "${sec.title}":`, await patchRes.text())
+                console.error(`  ❎ failed to update section "${sec.title}":`, await patchRes.text())
                 continue
             }
-            console.log(`  ↻ Updated section "${sec.title}" (id ${sectionId})`)
+            console.log(`✅ Updated section "${sec.title}" (id ${sectionId})`)
             uploadedSections.set(`${page.title}||${sec.title}`, sectionId)
 
         } else {
@@ -135,14 +175,16 @@ async function uploadPage(page) {
                     title: sec.title,
                     type: sec.type || 'text',
                     content: sec.content,
+                    data: sec.data,
+                    summary: sec.summary,
                 })
             })
             if (!createRes.ok) {
-                console.error(`  ✖ failed to create section "${sec.title}":`, await createRes.text())
+                console.error(`  ❎ failed to create section "${sec.title}":`, await createRes.text())
                 continue
             }
             const { id: sectionId } = await createRes.json()
-            console.log(`  ✔ Created section "${sec.title}" (id ${sectionId})`)
+            console.log(`  ✅ Created section "${sec.title}" (id ${sectionId})`)
             uploadedSections.set(`${page.title}||${sec.title}`, sectionId)
         }
 
@@ -161,14 +203,14 @@ async function uploadPage(page) {
     // 5) delete any existing sections not present in JSON
     for (const sec of existingSecs) {
         const key = sec.title.trim().toLowerCase()
-        if (!seenTitles.has(key)) {
+        if (!seenTitles.has(key) && page.sections !== undefined) {
             const delRes = await authenticatedFetch(`${API_BASE}/nodes/${nodeId}/sections/${sec.id}`, {
                 method: 'DELETE'
             })
             if (delRes.ok) {
                 console.log(`  ─ Deleted stale section "${sec.title}" (id ${sec.id})`)
             } else {
-                console.error(`  ✖ failed to delete section "${sec.title}":`, await delRes.text())
+                console.error(`  ❎ failed to delete section "${sec.title}":`, await delRes.text())
             }
         }
     }
@@ -220,9 +262,9 @@ async function processSources() {
             })
             if (createRes.ok) {
                 sourceId = (await createRes.json()).id
-                console.log(`✔ Created source            id=${sourceId} title=${title}`)
+                console.log(`✅ Created source            id=${sourceId} title=${title}`)
             } else {
-                console.error(`✖ Failed to create source ${title}:`, await createRes.text())
+                console.error(`❎ Failed to create source ${title}:`, await createRes.text())
                 continue
             }
         } else {
@@ -244,9 +286,9 @@ async function processSources() {
                     body: JSON.stringify({ authors: Array.from(existingAuthors) }),
                 })
                 if (patchRes.ok) {
-                    console.log(`✔ Updated authors on source id=${sourceId} title=${title}`)
+                    console.log(`✅ Updated authors on source id=${sourceId} title=${title}`)
                 } else {
-                    console.error(`✖ Failed to patch source    id=${sourceId} title=${title}:`, await patchRes.text())
+                    console.error(`❎ Failed to patch source    id=${sourceId} title=${title}:`, await patchRes.text())
                 }
             } else {
                 console.log(`ℹ Source already up‑to‑date id=${sourceId} title=${title}`)
@@ -326,9 +368,9 @@ async function processInstances() {
                 body: JSON.stringify(instanceBody),
             })
             if (patchRes.ok) {
-                console.log(`✔ Updated citation instance id=${match.id} title=${cit.title}`)
+                console.log(`✅ Updated citation instance id=${match.id} title=${cit.title}`)
             } else {
-                console.error(`✖ Failed to update instance id=${match.id}:`, await patchRes.text())
+                console.error(`❎ Failed to update instance id=${match.id}:`, await patchRes.text())
             }
         } else {
             const postRes = await authenticatedFetch(baseUrl, {
@@ -338,9 +380,9 @@ async function processInstances() {
             })
             if (postRes.ok) {
                 const j = await postRes.json()
-                console.log  (`✔ Created citation instance id=${j.id} title=${cit.title}`)
+                console.log  (`✅ Created citation instance id=${j.id} title=${cit.title}`)
             } else {
-                console.error(`✖ Failed to attach citation instance    title=${cit.title}`, await postRes.text())
+                console.error(`❎ Failed to attach citation instance    title=${cit.title}`, await postRes.text())
             }
         }
     }
@@ -359,9 +401,14 @@ async function main() {
         const entries = await fs.readdir(dir, { withFileTypes: true })
         for (const e of entries) {
             if (e.isFile() && e.name.endsWith('.json')) {
-                const raw = await fs.readFile(path.join(dir, e.name), 'utf8')
-                const doc = JSON.parse(raw)
-                pages.push(...(Array.isArray(doc) ? doc : [doc]))
+                if (exclude && e.name === exclude) {
+                    console.log('Excluding file: ' + e.name);
+                } else {
+                    console.log('Parsing file: ' + e.name);
+                    const raw = await fs.readFile(path.join(dir, e.name), 'utf8')
+                    const doc = JSON.parse(raw)
+                    pages.push(...(Array.isArray(doc) ? doc : [doc]))
+                }
             }
         }
     }
@@ -376,7 +423,7 @@ async function main() {
         const existingId = await lookupNode(title)
         if (existingId) {
             uploaded.set(title, existingId)
-            console.log(`ℹ Resolved existing parent "${title}" → id ${existingId}`)
+            console.log(`ℹ️ Resolved existing parent "${title}" ➡️ id ${existingId}`)
         }
     }
 
@@ -387,7 +434,9 @@ async function main() {
         for (let i = pending.length - 1; i >= 0; i--) {
             const page = pending[i]
             if (!page.parentTitle || uploaded.has(page.parentTitle)) {
-                if (page.parentTitle) page.parentId = uploaded.get(page.parentTitle)
+                if (page.parentTitle) {
+                    page.parentId = uploaded.get(page.parentTitle)
+                }
                 await uploadPage(page)
                 pending.splice(i, 1)
                 madeProgress = true

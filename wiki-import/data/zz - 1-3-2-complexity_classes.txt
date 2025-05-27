@@ -1,84 +1,72 @@
-1. Models & Resources
-   1.1 Turing‑machine frameworks
-   1.2 Random‑access machines (RAM)
-   1.3 Boolean circuits (uniform vs. non‑uniform)
-   1.4 Oracle machines & alternation
-   1.5 Resource measures: time, space, randomness, circuit size/depth
-
-2. Deterministic & Nondeterministic Classes
-   2.1 L (DLOGSPACE) & NL
-   2.2 P
-   2.3 NP & co‑NP
-   2.4 PSPACE & NPSPACE
-   2.5 EXPTIME & NEXPTIME
-
-3. Reductions & Completeness
-   3.1 Polynomial‑time many‑one & Turing reductions
-   3.2 Log‑space reductions
-   3.3 NC‑reductions (parallel reductions)
-   3.4 NP‑complete, PSPACE‑complete, EXPTIME‑complete, etc.
-
-4. Hierarchy Theorems & Separation Results
-   4.1 Time Hierarchy Theorem
-   4.2 Space Hierarchy Theorem
-   4.3 Alternation Hierarchy (ATIME/ASPACE)
-   4.4 Savitch’s Theorem, Immerman–Szelepcsényi (NL = co‑NL)
-   4.5 Open separations (P vs NP, NP vs PSPACE, etc.)
-
-5. Randomized & Probabilistic Classes
-   5.1 RP, co‑RP
-   5.2 BPP, ZPP
-   5.3 PP & promise classes
-   5.4 Relationships & derandomization hypotheses
-
-6. Quantum Complexity
-   6.1 BQP
-   6.2 QMA & QIP
-   6.3 Quantum circuit models & uniformity
-   6.4 Comparisons with classical classes (BPP ⊆ BQP ⊆ PSPACE)
-
-7. Circuit & Parallel Complexity
-   7.1 NCⁱ, NC, ACⁱ, AC
-   7.2 TCⁱ, TC (threshold circuits)
-   7.3 P/poly & advice classes
-   7.4 Circuit lower‑bound regimes
-
-8. Counting & Functional Classes
-   8.1 #P & FP
-   8.2 PP (counting‑based probabilistic)
-   8.3 #L, GapL
-   8.4 Toda’s theorem (PH ⊆ P^#P)
-
-9. Parameterized & Fine‑Grained Complexity
-   9.1 FPT, W‑hierarchy (W[1], W[2], …)
-   9.2 XP, para‑NP
-   9.3 Exponential Time Hypothesis (ETH, SETH)
-   9.4 Lower bounds for k‑SAT, clique, etc.
-
-10. Descriptive & Logic‑Based Complexity
-    10.1 First‑order & monadic second‑order (FO, MSO)
-    10.2 Fixed‑point logics (FO[TC], FO[LFP])
-    10.3 Characterizations: P = FO[TC]? NP = SO∃?
-    10.4 Connections to finite model theory
-
-11. Interactive Proofs & PCP
-    11.1 IP, AM, MA
-    11.2 MIP & MIP*
-    11.3 PCP Theorem & hardness of approximation
-    11.4 Zero‑knowledge proof systems
-
-12. Derandomization & Pseudorandomness
-    12.1 Hardness‑vs‑randomness paradigm
-    12.2 Pseudorandom generators & extractors
-    12.3 Impagliazzo–Wigderson framework
-
-13. Applications & Assumptions
-    13.1 Cryptographic hardness assumptions (one‑way functions, factoring)
-    13.2 Approximation algorithms & inapproximability
-    13.3 Algorithmic separations guiding practical methods
-
-14. Emerging & Specialized Paradigms
-    14.1 Streaming & sublinear‑time complexity
-    14.2 Property testing & query complexity
-    14.3 Communication complexity
-    14.4 Quantum‑interactive and delegated computation models
+1.3.2. Complexit Classes
+   1.3.2.1. Models & Resources
+      1.3.2.1.1. Turing‑machine frameworks
+      1.3.2.1.2. Random‑access machines (RAM)
+      1.3.2.1.3. Boolean circuits (uniform vs. non‑uniform)
+      1.3.2.1.4. Oracle machines & alternation
+      1.3.2.1.5. Resource measures: time, space, randomness, circuit size/depth
+   1.3.2.2. Deterministic & Nondeterministic Classes
+      1.3.2.2.1. L (DLOGSPACE) & NL
+      1.3.2.2.2. P
+      1.3.2.2.3. NP & co‑NP
+      1.3.2.2.4. PSPACE & NPSPACE
+      1.3.2.2.5. EXPTIME & NEXPTIME
+   1.3.2.3. Reductions & Completeness
+      1.3.2.3.1. Polynomial‑time many‑one & Turing reductions
+      1.3.2.3.2. Log‑space reductions
+      1.3.2.3.3. NC‑reductions (parallel reductions)
+      1.3.2.3.4. NP‑complete, PSPACE‑complete, EXPTIME‑complete, etc.
+   1.3.2.4. Hierarchy Theorems & Separation Results
+      1.3.2.4.1. Time Hierarchy Theorem
+      1.3.2.4.2. Space Hierarchy Theorem
+      1.3.2.4.3. Alternation Hierarchy (ATIME/ASPACE)
+      1.3.2.4.4. Savitch’s Theorem, Immerman–Szelepcsényi (NL = co‑NL)
+      1.3.2.4.5. Open separations (P vs NP, NP vs PSPACE, etc.)
+   1.3.2.5. Randomized & Probabilistic Classes
+      1.3.2.5.1. RP, co‑RP
+      1.3.2.5.2. BPP, ZPP
+      1.3.2.5.3. PP & promise classes
+      1.3.2.5.4. Relationships & derandomization hypotheses
+   1.3.2.6. Quantum Complexity
+      1.3.2.6.1. BQP
+      1.3.2.6.2. QMA & QIP
+      1.3.2.6.3. Quantum circuit models & uniformity
+      1.3.2.6.4. Comparisons with classical classes (BPP ⊆ BQP ⊆ PSPACE)
+   1.3.2.7. Circuit & Parallel Complexity
+      1.3.2.7.1. NCⁱ, NC, ACⁱ, AC
+      1.3.2.7.2. TCⁱ, TC (threshold circuits)
+      1.3.2.7.3. P/poly & advice classes
+      1.3.2.7.4. Circuit lower‑bound regimes
+   1.3.2.8. Counting & Functional Classes
+      1.3.2.8.1. #P & FP
+      1.3.2.8.2. PP (counting‑based probabilistic)
+      1.3.2.8.3. #L, GapL
+      1.3.2.8.4. Toda’s theorem (PH ⊆ P^#P)
+   1.3.2.9. Parameterized & Fine‑Grained Complexity
+      1.3.2.9.1. FPT, W‑hierarchy (W[1], W[2], …)
+      1.3.2.9.2. XP, para‑NP
+      1.3.2.9.3. Exponential Time Hypothesis (ETH, SETH)
+      1.3.2.9.4. Lower bounds for k‑SAT, clique, etc.
+   1.3.2.10. Descriptive & Logic‑Based Complexity
+      1.3.2.10.1. First‑order & monadic second‑order (FO, MSO)
+      1.3.2.10.2. Fixed‑point logics (FO[TC], FO[LFP])
+      1.3.2.10.3. Characterizations: P = FO[TC]? NP = SO∃?
+      1.3.2.10.4. Connections to finite model theory
+   1.3.2.11. Interactive Proofs & PCP
+      1.3.2.11.1. IP, AM, MA
+      1.3.2.11.2. MIP & MIP*
+      1.3.2.11.3. PCP Theorem & hardness of approximation
+      1.3.2.11.4. Zero‑knowledge proof systems
+   1.3.2.12. Derandomization & Pseudorandomness
+      1.3.2.12.1. Hardness‑vs‑randomness paradigm
+      1.3.2.12.2. Pseudorandom generators & extractors
+      1.3.2.12.3. Impagliazzo–Wigderson framework
+   1.3.2.13. Applications & Assumptions
+      1.3.2.13.1. Cryptographic hardness assumptions (one‑way functions, factoring)
+      1.3.2.13.2. Approximation algorithms & inapproximability
+      1.3.2.13.3. Algorithmic separations guiding practical methods
+   1.3.2.14. Emerging & Specialized Paradigms
+      1.3.2.14.1. Streaming & sublinear‑time complexity
+      1.3.2.14.2. Property testing & query complexity
+      1.3.2.14.3. Communication complexity
+      1.3.2.14.4. Quantum‑interactive and delegated computation models

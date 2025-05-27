@@ -10,8 +10,15 @@
   "license": "ISC",
   "type": "module",
   "dependencies": {
+    "@rdfjs/data-model": "^2.1.0",
+    "@rdfjs/dataset": "^2.0.2",
+    "@rdfjs/environment": "^1.0.0",
+    "@zazuko/env-node": "^3.0.0",
     "html-entities": "^2.6.0",
+    "n3": "^1.25.2",
     "node-fetch": "^3.3.2",
+    "rdf-ext": "^2.5.2",
+    "rdf-validate-shacl": "^0.6.3",
     "wikiapi": "^1.20.0",
     "wtf_wikipedia": "^10.4.0",
     "yargs": "github:yargs/yargs"
