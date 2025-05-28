@@ -226,6 +226,15 @@
                             1.1.7.7.1.1.9.5 Church-Turing Thesis (as a formal statement within computability theory) - While not a theorem in the mathematical sense (it's a hypothesis about the nature of computation), its formal counterparts relating different models of computation (e.g., Turing machines and lambda calculus) are theorems.
                             1.1.7.7.1.1.9.6 Tarski's Undefinability Theorem - States that arithmetical truth cannot be defined in arithmetic.
                             1.1.7.7.1.1.9.7 Craig's Interpolation Theorem - States that if \(\phi \models \psi\) is a valid entailment in first-order logic, then there exists an interpolant sentence \(\chi\) whose non-logical symbols occur in both \(\phi\) and \(\psi\), such that \(\phi \models \chi\) and \(\chi \models \psi\).
+                1.1.7.7.2 Empirical Proposition - A statement whose truth value is determined by observation, experience, or scientific investigation of the physical or social world.
+                    1.1.7.7.2.1 Scientific Hypothesis - A proposed explanation for a phenomenon, which can be tested through experimentation or observation.
+                    1.1.7.7.2.2 Scientific Law (Empirical) - A descriptive generalization about how the natural world behaves under stated circumstances, based on repeated empirical observations.
+                1.1.7.7.3 Normative Proposition - A statement that expresses a value judgment, a prescription, or a rule about how things should be, rather than how they are.
+                    1.1.7.7.3.1 Ethical Proposition - A statement concerning moral rightness or wrongness, good or bad, duty or obligation.
+                    1.1.7.7.3.2 Legal Proposition - A statement within a legal system that prescribes, permits, or prohibits actions, or defines rights and obligations.
+                1.1.7.7.4 Definition - A statement that explains the meaning of a word, phrase, or concept, often by specifying its essential qualities or properties.
+                    1.1.7.7.4.1 Lexical - A definition that explains how a term is actually used by speakers of a language.
+                        1.1.7.7.4.1.1 English Lexical - A lexical definition for a term as used in the English language.
         1.1.8 Mathematical Field/System - A distinct branch or area of study within mathematics, characterized by a coherent set of concepts, theories, methods, and problems.
             1.1.8.1 Algebra - The branch of mathematics dealing with symbols and the rules for manipulating these symbols in formulas; it serves as a unifying thread of almost all of mathematics.
                 1.1.8.1.1 Elementary Algebra

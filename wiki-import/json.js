@@ -112,7 +112,7 @@ async function uploadPage(page) {
                 id: nodeId,
                 parentId: page.parentId || null,
                 title: page.title,
-                subtitle: page.subtitle || 'Missing subtitle',
+                subtitle: page.subtitle,
                 tags: page.tags || [],
                 content: page.content,
                 aliases: page.aliases || [],

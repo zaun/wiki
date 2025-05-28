@@ -79,6 +79,3 @@ Ensure the entry meets ALL the following criteria:
 * Wayback URLs MAY NOT be included in citations or links.
 * The level of detail should be sufficient for a user to understand the entity and find points to explore further within the ontology or cited sources.
 * If including information on key sub-subdomains, limit to a single section.
-
-
-

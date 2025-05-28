@@ -1135,6 +1135,51 @@
     "subtitle": "States that if \\(\\phi \\models \\psi\\) is a valid entailment in first-order logic, then there exists an interpolant sentence \\(\\chi\\) whose non-logical symbols occur in both \\(\\phi\\) and \\(\\psi\\), such that \\(\\phi \\models \\chi\\) and \\(\\chi \\models \\psi\\)."
   },
   {
+    "title": "Empirical Proposition",
+    "parentTitle": "Proposition / Predicate",
+    "subtitle": "A statement whose truth value is determined by observation, experience, or scientific investigation of the physical or social world."
+  },
+  {
+    "title": "Scientific Hypothesis",
+    "parentTitle": "Empirical Proposition",
+    "subtitle": "A proposed explanation for a phenomenon, which can be tested through experimentation or observation."
+  },
+  {
+    "title": "Scientific Law (Empirical)",
+    "parentTitle": "Empirical Proposition",
+    "subtitle": "A descriptive generalization about how the natural world behaves under stated circumstances, based on repeated empirical observations."
+  },
+  {
+    "title": "Normative Proposition",
+    "parentTitle": "Proposition / Predicate",
+    "subtitle": "A statement that expresses a value judgment, a prescription, or a rule about how things should be, rather than how they are."
+  },
+  {
+    "title": "Ethical Proposition",
+    "parentTitle": "Normative Proposition",
+    "subtitle": "A statement concerning moral rightness or wrongness, good or bad, duty or obligation."
+  },
+  {
+    "title": "Legal Proposition",
+    "parentTitle": "Normative Proposition",
+    "subtitle": "A statement within a legal system that prescribes, permits, or prohibits actions, or defines rights and obligations."
+  },
+  {
+    "title": "Definition",
+    "parentTitle": "Proposition / Predicate",
+    "subtitle": "A statement that explains the meaning of a word, phrase, or concept, often by specifying its essential qualities or properties."
+  },
+  {
+    "title": "Lexical",
+    "parentTitle": "Definition",
+    "subtitle": "A definition that explains how a term is actually used by speakers of a language."
+  },
+  {
+    "title": "English Lexical",
+    "parentTitle": "Lexical",
+    "subtitle": "A lexical definition for a term as used in the English language."
+  },
+  {
     "title": "Mathematical Field/System",
     "parentTitle": "Foundations of Abstraction",
     "subtitle": "A distinct branch or area of study within mathematics, characterized by a coherent set of concepts, theories, methods, and problems."

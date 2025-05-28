@@ -1,0 +1,93 @@
+I need detailed lexical entries for 10 common English words. For each word, please provide the following sections, adhering strictly to the JSON format provided.
+
+Crucially, all definitions and explanations must be in your own words, avoiding direct quotes or close paraphrases from existing dictionaries.
+
+Required Information for Each Word:
+
+Title: The English word itself.
+
+Content:
+
+Include a phonetic transcription using the IPA (International Phonetic Alphabet) above the defintions.
+Include a pronunciation key explaining the IPA symbols used for that specific word under the phonetic transcription.
+Provide a clear, concise definition for each distinct meaning of the word.
+
+Grammatical Information:
+
+Identify the part(s) of speech (e.g., noun, verb, adjective, adverb).
+For Nouns: List plural forms (e.g., child → children). If gender/case is relevant in English (rare for common nouns, but specify if it were a general request), mention it.
+For Verbs: List principal parts (base, past simple, past participle) and specify if it's transitive (Vt) or intransitive (Vi). Note any irregular forms.
+For Adjectives/Adverbs: List comparative and superlative forms (e.g., good → better → best).
+
+Etymology:
+
+Trace the word's historical origin, starting with its immediate predecessor (e.g., Old English, Old French).
+Go back as far as possible (e.g., Proto-Germanic, Proto-Indo-European), clearly indicating the source languages or roots.
+Briefly explain how the meaning or form evolved if significant.
+
+Usage Examples:
+
+Provide 3-4 clear, distinct sentences for each major definition, demonstrating the word's typical use in context.
+
+Idioms and Phrases:
+
+List common idioms or fixed phrases using the word, along with a brief explanation of their meaning.
+
+Details:
+
+Regional Usage: Common English, British English, American English, etc.
+Style: Formal, Informal, Slang, Colloquial, Archaic, Obsolete, Technical, Literary, Offensive, Euphemism
+Semantic Field: exampele (Colors, Body Parts, Emotions, Cooking)
+Frequency : State if the word is considered 'very common', 'common', 'less common', or similar, based on general English corpus data.
+Formatting Instructions:
+
+Please output the information in a JSON array format, where each word is an object following this structure:
+
+{
+    "title": "<WORD>",
+    "parentTitle": "English Lexical",
+    "content": "<CONTENT>",
+    "details": [
+        {
+            "label": "Region",
+            "type": "text",
+            "value": "<REGIONAL>"
+        }, 
+        {
+            "label": "Style",
+            "type": "text",
+            "value": "<STYLE>"
+        }, 
+        {
+            "label": "Semantic Fields",
+            "type": "text",
+            "value": "<SEMANTIC FIELDS>"
+        }, 
+        {
+            "label": "Frequency",
+            "type": "text",
+            "value": "<FREQUENCY>"
+        }
+    ],
+    "sections": [
+        {
+            "title": "Grammatical Information",
+            "content": "<GRAMMAR>"
+        },
+        {
+            "title": "Etymology",
+            "content": "<ETYMOLOGY>"
+        },
+        {
+            "title": "Usage Examples",
+            "content": "<USAGE>"
+        },
+        {
+            "title": "Idioms and Phrases",
+            "content": "<IDIOMS>"
+        }
+    ]
+}
+
+Start with the following 10 words, in this exact order, from the common English word list:
+look, want, give, use, find, tell, ask, work, seem, fee
