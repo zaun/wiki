@@ -20,8 +20,6 @@ import AppHeader from '@/components/AppHeader.vue';
 </script>
 
 <style>
-
-
 html,
 body,
 #app,
@@ -47,10 +45,20 @@ main.v-main {
 }
 
 @media print {
-
   .no-print {
     display: none !important;
   }
 
+  html,
+  body,
+  #app,
+  .v-application,
+  .v-application__wrap {
+    height: auto;
+  }
+
+  main.v-main {
+    height: auto;
+  }
 }
 </style>

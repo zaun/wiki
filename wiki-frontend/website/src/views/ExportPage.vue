@@ -40,10 +40,11 @@ const jsonExport = computed(() => {
     const parent = breadcrumbs.value[breadcrumbs.value.length-2];
     const data = {
         title: node.value.title,
-        parentTitle: parent.title === 'Unending.Wiki' ? '' : parent.title,
+        parentTitle: node.value.title === 'Unending.Wiki' ? '' : parent.title,
         content: node.value.content,
         sections: [],
-        details: [],
+        details: details.value,
+        relationships: relationships.value,
         citations: [],
     };
 
@@ -54,6 +55,10 @@ const jsonExport = computed(() => {
             content: s.content,
             citations: [],
         };
+
+        if (s.type === 'music-score') {
+            section.data = s.data;
+        }
 
         if (s.type === 'data-table') {
             section.data = s.data;

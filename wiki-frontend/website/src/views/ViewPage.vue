@@ -62,9 +62,11 @@
             </div>
 
             <!-- Subpages -->
-            <div v-if="children.length" class="mt-8">
-                <h3 class="mb-4">Subpages</h3>
-                <TreeNodes :nodes="children" />
+            <div v-if="children.length" class="no-print">
+                <h3 class="mt-4">Categories</h3>
+                <div v-if="children.length" class="d-flex flex-wrap mt-4" style="gap: 20px;">
+                    <TreeNodes :nodes="children" />
+                </div>
             </div>
         </v-container>
 

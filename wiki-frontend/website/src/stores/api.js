@@ -18,6 +18,10 @@ export function useApi() {
         return config;
     }, (error) => Promise.reject(error));
 
+    /**
+     * Sets the authentication token and updates localStorage accordingly.
+     * @param {string|null} newToken - The new authentication token, or null to clear it.
+     */
     function setToken(newToken) {
         authToken.value = newToken;
 
@@ -97,7 +101,10 @@ export function useApi() {
         getImageUrl(id) { return `${API_BASE}/images/${id}`; },
 
         // Search
-        search(query) { return client.get('/search', { params: { q: query } }); },
+        async search(query) { 
+            const response = await client.get('/search', { params: { q: query } });
+            return response.data;
+        },
 
         // Utilities
         fetchTitle(params) { return client.get('/utility/fetchTitle', { params }); },

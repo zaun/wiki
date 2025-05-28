@@ -1,5 +1,5 @@
-// src/stores/logger.js
 import { defineStore } from 'pinia';
+import StackTrace from 'stacktrace-js';
 import { ref, readonly } from 'vue';
 
 /**
@@ -37,11 +37,13 @@ export const useLogger = defineStore('logger', () => {
     /** Maximum number of entries to keep */
     const MAX_LOGS = 1000;
 
+    let _userFramePromise = null;
+
     /** Definitions for the available log levels */
     const LOG_LEVELS = {
-        NONE:  { value: 0, name: 'NONE ' },
+        NONE: { value: 0, name: 'NONE ' },
         ERROR: { value: 1, name: 'ERROR' },
-        INFO:  { value: 2, name: 'INFO ' },
+        INFO: { value: 2, name: 'INFO ' },
         DEBUG: { value: 3, name: 'DEBUG' },
     };
 
@@ -101,6 +103,19 @@ export const useLogger = defineStore('logger', () => {
         return true;
     }
 
+    function getCircularReplacer() {
+        const seen = new WeakSet();
+        return (key, value) => {
+            if (typeof value === "object" && value !== null) {
+                if (seen.has(value)) {
+                    return;
+                }
+                seen.add(value);
+            }
+            return value;
+        };
+    }
+
     /**
      * Safely stringify an object, catching circular references.
      * @private
@@ -111,8 +126,39 @@ export const useLogger = defineStore('logger', () => {
         try {
             return JSON.stringify(obj, null, 2);
         } catch {
-            return String(obj);
+            // Stupid slow, but works.
+            return JSON.stringify(obj, getCircularReplacer(), 2);
         }
+    }
+
+    // once, kick off a single trace so the sourcemap is loaded
+    function _warmUpSourceMaps() {
+        if (_userFramePromise) {
+            return;
+        }
+
+        // We dont care, just loading js maps
+        _userFramePromise = StackTrace.get().catch(() => { });
+    }
+
+    async function _getCallerFrame() {
+        _warmUpSourceMaps();
+        return await StackTrace.get().then((frames) => {
+            let lastInternal = -1;
+            // console.log(frames);
+            frames.forEach((f, i) => {
+                if (/logger\.js|pinia\.mjs/.test(f.fileName)) {
+                    lastInternal = i;
+                }
+            });
+
+            let userFrame = frames[lastInternal + 1];
+            if (!userFrame || !/\.vue$/.test(userFrame.fileName)) {
+                userFrame = frames.find((f) => /\.vue$/.test(f.fileName));
+            }
+
+            return userFrame || frames[0];
+        });
     }
 
     /**
@@ -122,13 +168,23 @@ export const useLogger = defineStore('logger', () => {
      * @param {string} topic
      * @param {any} message
      */
-    function _addLogEntry(level, topic, message) {
+    async function _addLogEntry(level, topic, message) {
         const secs = (Date.now() - startTime) / 1000;
         const fixed = secs.toFixed(3);
         const timestamp = fixed.padStart(8, '0') + 's';
         const topicPadded = topic.padStart(9, ' ');
 
-        const entry = { timestamp, level: level.name, topic: topicPadded, message };
+        const frame = await _getCallerFrame();
+        const file = (frame.fileName || 'unknown').split('/').pop();
+        const line = frame.lineNumber || 0;
+
+        const entry = {
+            timestamp,
+            level: level.name,
+            topic: topicPadded,
+            message,
+            caller: `${file}:${line}`,
+        };
 
         if (_logs.value.length >= MAX_LOGS) {
             _logs.value.shift();
@@ -139,17 +195,13 @@ export const useLogger = defineStore('logger', () => {
             return;
         }
 
-        const method =
-            // eslint-disable-next-line no-console
-            (console[level.name.toLowerCase()] || console.log).bind(console);
+        // eslint-disable-next-line no-console
+        const method = (console[level.name.toLowerCase()] || console.log).bind(console);
 
         if (typeof message === 'string') {
-            method(`${timestamp} [${level.name}] [${topicPadded}] ${message}`);
+            method(`${entry.timestamp} [${entry.level}] [${entry.topic}] [${entry.caller}] ${message}`);
         } else {
-            method(
-                `${timestamp} [${level.name}] [${topicPadded}]\n` +
-                safeStringify(message),
-            );
+            method(`${entry.timestamp} [${entry.level}] [${entry.topic}] [${entry.caller}]\n ${safeStringify(message)}`);
         }
     }
 

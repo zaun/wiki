@@ -15,9 +15,19 @@
                 </v-btn>
             </div>
 
+            <div v-if="localSection.subtitle" class="text-subtitle-2">{{ localSection.subtitle }}</div>
+
             <div v-if="contentType === 'text'">
                 <v-img :src="localSection.image" style="width: 25%; float: right;" />
                 <SimpleMarkdown :class="contentClass" :content="localSection.content" />
+            </div>
+
+            <div v-else-if="contentType === 'gallery'">
+                <Gallery :class="contentClass" :content="localSection.data" />
+            </div>
+
+            <div v-else-if="contentType === 'music-score'">
+                <MusicScore :class="contentClass" :content="localSection.data" />
             </div>
 
             <div v-else-if="contentType === 'data-table'">
@@ -57,6 +67,14 @@
                 </v-textarea>
             </div>
 
+            <div v-else-if="contentType === 'gallery'">
+                <GalleryEdit :class="contentClass" :content="localSection.data" />
+            </div>
+
+            <div v-else-if="contentType === 'music-score'">
+                <MusicScoreEdit :class="contentClass" v-model="localSection.data" />
+            </div>
+
             <div v-else-if="contentType === 'data-table'">
                 <v-textarea v-model="localSection.content" label="Section Introduction" rows="3" auto-grow>
                     <template #details>
@@ -87,6 +105,10 @@ import { ref, computed, watch } from 'vue';
 import CitationView from '@/components/citations/CitationView.vue';
 import DataTable from '@/components/sections/DataTable.vue';
 import DataTableEdit from '@/components/sections/DataTableEdit.vue';
+import Gallery from '@/components/sections/Gallery.vue';
+import GalleryEdit from '@/components/sections/GalleryEdit.vue';
+import MusicScore from '@/components/sections/MusicScore.vue';
+import MusicScoreEdit from '@/components/sections/MusicScoreEdit.vue';
 import SimpleMarkdown from '@/components/sections/SimpleMarkdown.vue';
 import { useData } from '@/stores/data';
 
@@ -193,8 +215,11 @@ watch(
 );
 
 const contentTypes = [
+    { label: 'Atom', value: 'atom' },
     { label: 'Text', value: 'text' },
+    { label: 'Gallery', value: 'gallery' },
     { label: 'Data Table', value: 'data-table' },
+    { label: 'Music Score', value: 'music-score' },
 ];
 
 /**

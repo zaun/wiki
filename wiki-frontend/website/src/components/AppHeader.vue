@@ -5,16 +5,17 @@
 
 <template>
     <v-app-bar app fixed elevation="2">
-        <v-toolbar-title @click="goHome" class="cursor-pointer">
-            Unending.Wiki
+        <v-toolbar-title>
+            <span class="cursor-pointer" @click="goHome">Unending.Wiki</span>
         </v-toolbar-title>
-
-        <div class="search-container">
-            <v-text-field v-model="q" placeholder="Search…" hide-details dense clearable @keyup.enter="doSearch" />
-        </div>
+        <v-spacer />
 
         <div class="ml-auto d-flex align-center">
-            <v-menu offset-y>
+            <v-btn icon  @click="goTo('search')">
+                <v-icon>mdi-magnify</v-icon>
+            </v-btn>
+
+            <v-menu v-if="showPage" offset-y>
                 <template #activator="{ props: menuProps }">
                     <v-btn icon v-bind="menuProps">
                         <v-icon>mdi-file-document-outline</v-icon>
@@ -73,27 +74,16 @@ const api = useApi();
 const route = useRoute();
 const router = useRouter();
 
-/**
- * Search query model
- * @type {import('vue').Ref<string>}
- */
-const q = ref('');
+
 const showAuth = ref(false);
 
 const isEditRoute = computed(() => route.name === 'edit');
 const isExportyRoute = computed(() => route.name === 'export');
 const isHistoryRoute = computed(() => route.name === 'history');
 const isViewRoute = computed(() => route.name === 'view');
+const showPage = computed(() => ['view', 'edit', 'history', 'export'].includes(route.name));
 
 const isAuthenticated = api.isAuthenticated;
-
-/**
- * Emit a `search` event with the current query string.
- * @returns {void}
- */
-function doSearch() {
-    emit('search', q.value);
-}
 
 /**
  * Show the authentication dialog.

@@ -1,6 +1,14 @@
 <!--
 @file MarkdownRenderer.vue
-@description Renders a subset of Markdown syntax to HTML: bold, italic, inline code, lists, and paragraphs. Escapes HTML and supports escaped asterisks.
+@description Renders a custom Markdown syntax to HTML:
+    **     : bold
+    ==     : highlight
+    *      : italic
+    `      : inline code
+    $$     : math display
+    \(     : math inline
+    * item : lists
+    \n\n   : paragraphs
 -->
 
 <template>
@@ -146,7 +154,7 @@ function parseBlocks(markdown) {
 /** INLINE PARSER **/
 function tokenizeInline(text) {
     const tokens = [];
-    const regex = /(\$\$[\s\S]+?\$\$|\\\([\s\S]+?\\\)|`[^`]+`|\*\*|[*])/g;
+    const regex = /(\$\$[\s\S]+?\$\$|\\\([\s\S]+?\\\)|`[^`]+`|\*\*|[*]|==)/g;
     let last = 0;
     let m;
     while ((m = regex.exec(text))) {
@@ -199,6 +207,15 @@ function parseInline(text) {
                 container.children.push(node);
                 stack.push(node);
             }
+        } else if (tk.content === '==') {
+            if (container.marker === '==') {
+                delete container.marker;
+                stack.pop();
+            } else {
+                const node = { type: 'highlight', children: [], marker: '==' };
+                container.children.push(node);
+                stack.push(node);
+            }
         } else if (tk.content.startsWith('`')) {
             // code span
             const code = tk.content.slice(1, -1);
@@ -247,7 +264,7 @@ function renderBlocks(blocks) {
             } else if (blk.type === 'list') {
                 const tag = blk.ordered ? 'ol' : 'ul';
                 const items = blk.items
-                    .map((itemBlocks) =>`<li class="md-list-item">${itemBlocks
+                    .map((itemBlocks) => `<li class="md-list-item">${itemBlocks
                         .map((b) => renderBlocks([b]))
                         .join('')}</li>`)
                     .join('');
@@ -269,6 +286,8 @@ function renderInline(nodes) {
                     return `<em>${renderInline(n.children)}</em>`;
                 case 'code':
                     return `<code class="md-code">${n.content}</code>`;
+                case 'highlight':
+                    return `<mark>${renderInline(n.children)}</mark>`;
                 case 'math-inline':
                     return katex.renderToString(n.content, {
                         throwOnError: false,

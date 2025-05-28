@@ -37,7 +37,7 @@ const logger = useLogger();
 
 config.setLocale();
 
-logger.setLevel(2);
+logger.setLevel(3);
 logger.setTopic(null);
 logger.info('APP', 'Startup');
 
