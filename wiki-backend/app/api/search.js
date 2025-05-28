@@ -63,6 +63,15 @@ export async function search(req, res) {
         return res.status(400).json({ error: 'Invalid query syntax.' });
     }
 
+    function extractTerms(node, out = []) {
+        if (!node) return out;
+        if (node.left) extractTerms(node.left, out);
+        if (node.right) extractTerms(node.right, out);
+        if (node.term) out.push(node.term.toLowerCase());
+        return out;
+    }
+    const terms = extractTerms(ast);
+
     const page = Math.max(parseInt(req.query.page, 10) || 1, 1);
     const size = Math.max(parseInt(req.query.size, 10) || 20, 1);
     const skip = (page - 1) * size;
@@ -100,7 +109,8 @@ export async function search(req, res) {
 		RETURN node AS node,
 			score AS score,
 			'entity' AS type,
-			node.content AS matchContent
+			node.content AS matchContent,
+			'' AS sectionTitle
 
 		UNION ALL
 
@@ -112,7 +122,8 @@ export async function search(req, res) {
 		RETURN parent AS node,
 			score AS score,
 			'section' AS type,
-			'(' + sec.title + ') ' + sec.content AS matchContent
+			sec.content AS matchContent,
+			sec.title AS sectionTitle
 
 		UNION ALL
 
@@ -124,13 +135,14 @@ export async function search(req, res) {
 		RETURN cnode AS node,
 			score AS score,
 			'citation' AS type,
-			(cit.title + ', ' + cit.author + ', ' + cit.publisher) AS matchContent
+			(cit.title + ', ' + cit.author + ', ' + cit.publisher) AS matchContent,
+			'' AS sectionTitle
 	}
-	WITH node, score, type, matchContent
+	WITH node, score, type, matchContent, sectionTitle
 	WHERE node.status IN ['complete', 'stub']
 	WITH 
 		node,
-		collect({c: matchContent, s: score, t: type}) AS hits,
+		collect({c: matchContent, s: score, t: type, s: sectionTitle}) AS hits,
 		node.summary AS fallback,
 		sum(score) AS qualityScore
 	WITH
@@ -143,7 +155,7 @@ export async function search(req, res) {
 		qualityScore,
 		CASE 
 			WHEN size(realHits) > 0 THEN
-			reduce(best = {c:'', s:toFloat(0), t:''}, h IN realHits |
+			reduce(best = {c:'', s:toFloat(0), t:'', s: ''}, h IN realHits |
 				CASE WHEN h.s > best.s THEN h ELSE best END
 			)
 			ELSE
@@ -152,6 +164,7 @@ export async function search(req, res) {
 	RETURN
 		node.id        AS id,
 		node.title     AS title,
+		content.s      AS subtitle,
 		content.c      AS content,
 		content.t      AS type,
 		node.status    AS status,
@@ -171,19 +184,48 @@ export async function search(req, res) {
         console.log('nodeQuery:', nodeQuery);
         console.log('sectionQuery:', sectionQuery);
         console.log('citationQuery:', citationQuery);
+        console.log('terms:', terms);
 
-        const nodes = result.records.map(r => ({
-            id: r.get('id'),
-            title: r.get('title'),
-            summary: r.get('content'),
-            status: r.get('status'),
-            matchType: r.get('type'),
-            qualityScore: r.get('qualityScore'),
-        }));
+        const nodes = result.records.map(r => {
+            let paragraphs = (r.get('content') || '').split('\n');
+            let summary = paragraphs[0];
+
+            const pScores = {};
+            paragraphs.forEach((p, idx) => {
+                pScores[idx] = 0;
+                terms.forEach((t) => {
+                    if (p.indexOf(t) !== -1) {
+                        pScores[idx] += 1;
+                    }
+                })
+            });
+
+            let bestIdx = 0;
+            let maxScore = -1;
+            Object.entries(pScores).forEach(([idx, score]) => {
+                if (score > maxScore) {
+                    bestIdx = parseInt(idx, 10);
+                    maxScore = score;
+                }
+            });
+
+            summary = paragraphs[bestIdx] || '';
+
+            return {
+                id: r.get('id'),
+                title: r.get('title'),
+                subtitle: r.get('subtitle'),
+                summary: summary,
+                status: r.get('status'),
+                matchType: r.get('type'),
+                qualityScore: r.get('qualityScore'),
+            };
+        });
 
         res.json({
             page,
             size,
+            terms,
             results: nodes
         });
     } catch (err) {
