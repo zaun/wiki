@@ -8,7 +8,7 @@ import path from 'path'; // For path manipulation
 const API_KEY = process.env.GEMINI_API_KEY;
 const MODEL_NAME = "gemini-2.5-flash-preview-05-20";
 const API_VERSION = "v1beta";
-const INPUT_FILE = './data/lexicon/Oxford 5000.txt'; // Your input file with one word per line
+const INPUT_FILE = './data/lexicon/Oxford 3000.txt'; // Your input file with one word per line
 const OUTPUT_FILE = './lexical_entries.json'; // Output JSON file
 const ERROR_WORDS_FILE = './error_words.txt'; // File to store words that caused parsing errors
 

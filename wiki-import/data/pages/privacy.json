@@ -1,0 +1,87 @@
+{
+  "title": "Privacy Policy",
+  "content": {
+    "type": "container",
+    "id": "privacy-main-container",
+    "backgroundColor": "#ffffff",
+    "paddingTop": "40px",
+    "paddingBottom": "40px",
+    "marginTop": "0px",
+    "marginBottom": "0px",
+    "flexDirection": "column",
+    "justifyContent": "flex-start",
+    "alignItems": "center",
+    "flexWrap": "nowrap",
+    "gap": "24px",
+    "items": [
+      {
+        "type": "markdown",
+        "id": "privacy-title",
+        "value": "# Privacy Policy"
+      },
+      {
+        "type": "image",
+        "id": "privacy-hero-image",
+        "src": "https://placehold.co/800x400/b3d9ff/000000?text=Your+Privacy+Matters",
+        "alt": "Abstract image representing data privacy and security",
+        "caption": "Your privacy is a cornerstone of the OmniOntos project.",
+        "width": "80%",
+        "height": "300px",
+        "objectFit": "cover",
+        "margin": "0 auto"
+      },
+      {
+        "type": "container",
+        "id": "privacy-content-container",
+        "flexDirection": "column",
+        "justifyContent": "flex-start",
+        "alignItems": "stretch",
+        "gap": "16px",
+        "padding": "0 10%",
+        "width": "100%",
+        "items": [
+          {
+            "type": "markdown",
+            "id": "privacy-intro-markdown",
+            "value": "Welcome to OmniOntos. Your privacy is paramount to us. This policy outlines how we handle information when you visit or interact with our site, particularly regarding user accounts and data access."
+          },
+          {
+            "type": "markdown",
+            "id": "data-collection-markdown",
+            "value": "## Data Collection and Use\n\nOmniOntos is designed for public exploration, meaning accounts are **not needed to view or use the ontology**. We aim to collect minimal personal data.\n\n### For Unauthenticated Users\nWhen you browse the ontology without an account, we do not collect any personally identifiable information. We may collect anonymous, aggregated data (e.g., page views, popular search terms) for analytical purposes to improve our services, which cannot be used to identify you personally.\n\n### For Authenticated Users (API Access, Export, Paid Accounts)\nIf you choose to create an account, which is required for API access and export features, we collect information necessary for authentication and service provision. Paid accounts are required for edit and discussion access.\n\n* **Authentication Data:** We utilize **WebAuthn tokens** for account security. This means we do not store passwords. Your WebAuthn credentials are used to verify your identity securely.\n* **Usage Data for API/Exports:** For users with API access, we may log API request metadata (e.g., timestamp, endpoint accessed, originating IP address) to monitor usage, ensure service stability, and enforce rate limits if applicable. This data is not used to identify individuals unless strictly necessary for security or to investigate abuse.\n* **Billing Information (for Paid Accounts):** If you opt for a paid account (currently $1 a day for edit and discussion access), we will collect billing information necessary to process payments. This processing is handled by a third-party payment processor, and we do not store your full payment card details on our servers.\n* **Contribution Data (for Paid Accounts):** For users with edit and discussion access, any content you contribute (e.g., proposed ontology edits, discussion comments) will be associated with your user ID. This content, and its association with your user ID, will be publicly visible and part of the ontology's collaborative history."
+          },
+          {
+            "type": "markdown",
+            "id": "data-sharing-markdown",
+            "value": "## Data Sharing and Disclosure\n\nWe do not sell, rent, or trade your personal information to third parties. We may share information only in the following limited circumstances:\n\n* **With your Consent:** We may share information if you give us explicit consent to do so.\n* **For Legal Reasons:** We may disclose your information if required by law, subpoena, or other legal process, or if we reasonably believe that such disclosure is necessary to protect our rights, property, or safety, or the rights, property, or safety of others.\n* **Aggregated or Anonymized Data:** We may share aggregated or anonymized data that cannot be used to identify you, for purposes such as research, analytics, or reporting."
+          },
+          {
+            "type": "markdown",
+            "id": "data-security-markdown",
+            "value": "## Data Security\n\nWe prioritize the security of your information. We implement robust security measures, including the use of **WebAuthn tokens for authentication**, to protect against unauthorized access, alteration, disclosure, or destruction of your personal data. However, no method of transmission over the Internet or electronic storage is 100% secure, and we cannot guarantee absolute security."
+          },
+          {
+            "type": "markdown",
+            "id": "your-rights-markdown",
+            "value": "## Your Rights\n\nDepending on your location, you may have certain rights regarding your personal information, including:\n\n* **Access:** The right to request access to the personal data we hold about you.\n* **Correction:** The right to request correction of inaccurate or incomplete personal data.\n* **Deletion:** The right to request deletion of your personal data, subject to certain exceptions (e.g., data required for legal compliance or maintaining the integrity of publicly contributed content).\n\nTo exercise these rights, please contact us using the information provided below."
+          },
+          {
+            "type": "markdown",
+            "id": "changes-to-policy-markdown",
+            "value": "## Changes to This Privacy Policy\n\nWe may update this Privacy Policy from time to time to reflect changes in our practices or for other operational, legal, or regulatory reasons. We will notify you of any significant changes by posting the new policy on this page and updating the 'Last Updated' date. We encourage you to review this policy periodically."
+          },
+          {
+            "type": "markdown",
+            "id": "contact-us-markdown",
+            "value": "## Contact Us\n\nIf you have any questions or concerns about this Privacy Policy or our data practices, please contact us at:\n\n[Your Contact Email Address Here]"
+          },
+          {
+            "type": "markdown",
+            "id": "last-updated-markdown",
+            "value": "Last Updated: May 30, 2025"
+          }
+        ]
+      }
+    ]
+  }
+}

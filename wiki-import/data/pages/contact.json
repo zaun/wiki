@@ -1,0 +1,101 @@
+{
+  "title": "contact",
+  "content": {
+    "type": "container",
+    "id": "contact-main-container",
+    "backgroundColor": "#ffffff",
+    "paddingTop": "40px",
+    "paddingBottom": "40px",
+    "marginTop": "0px",
+    "marginBottom": "0px",
+    "flexDirection": "column",
+    "justifyContent": "flex-start",
+    "alignItems": "center",
+    "flexWrap": "nowrap",
+    "gap": "24px",
+    "items": [
+      {
+        "type": "markdown",
+        "id": "contact-title",
+        "value": "# Contact & Support"
+      },
+      {
+        "type": "image",
+        "id": "contact-hero-image",
+        "src": "https://placehold.co/800x400/b3d9ff/000000?text=Connect+with+Us",
+        "alt": "Abstract image representing communication and connection",
+        "caption": "We're here to help you navigate and contribute to OmniOntos.",
+        "width": "80%",
+        "height": "300px",
+        "objectFit": "cover",
+        "margin": "0 auto"
+      },
+      {
+        "type": "container",
+        "id": "contact-content-area",
+        "flexDirection": "column",
+        "justifyContent": "flex-start",
+        "alignItems": "stretch",
+        "gap": "24px",
+        "padding": "0 10%",
+        "width": "100%",
+        "items": [
+          {
+            "type": "markdown",
+            "id": "get-in-touch-section",
+            "value": "## Get In Touch\n\nWhether you have a question about the ontology, need technical support, want to report a bug, or have a suggestion, we're eager to hear from you."
+          },
+          {
+            "type": "container",
+            "id": "contact-options-container",
+            "flexDirection": "row",
+            "justifyContent": "space-around",
+            "alignItems": "flex-start",
+            "gap": "24px",
+            "flexWrap": "wrap",
+            "items": [
+              {
+                "type": "markdown",
+                "id": "email-support-block",
+                "flexGrow": 1,
+                "flexBasis": "45%",
+                "padding": "20px",
+                "backgroundColor": "#f8f8f8",
+                "horizontalAlignment": "center",
+                "value": "### General Inquiries & Support\n\nFor any questions about the project, technical issues, or general feedback, please reach out via email.\n\n[**support@omni-ontos.org**](mailto:support@omni-ontos.org)"
+              },
+              {
+                "type": "markdown",
+                "id": "bug-report-block",
+                "flexGrow": 1,
+                "flexBasis": "45%",
+                "padding": "20px",
+                "backgroundColor": "#f8f8f8",
+                "horizontalAlignment": "center",
+                "value": "### Report a Bug / Issue\n\nFound something not working as expected? Please let us know the details so we can fix it.\n\n[**bugs@omni-ontos.org**](mailto:bugs@omni-ontos.org)"
+              }
+            ]
+          },
+          {
+            "type": "markdown",
+            "id": "feedback-section",
+            "value": "## Have Feedback or a Suggestion?\n\nAs a single-person initiative, your input is incredibly valuable. If you have ideas for new categories, improvements to existing definitions, or suggestions for the site's features, please don't hesitate to share. OmniOntos is a collaborative vision, and your insights help shape its future."
+          },
+          {
+            "type": "markdown",
+            "id": "support-the-project-section",
+            "value": "## Support the Project\n\nOmniOntos is a passion project built for the benefit of universal knowledge organization. If you find value in this initiative and wish to see it grow and evolve, consider supporting us.\n\nPaid accounts (currently $1 a day) will unlock advanced features like direct editing proposals and participation in community discussions, helping to shape the ontology firsthand.\n\nYour support enables continued development, infrastructure maintenance, and expansion of this ambitious framework."
+          },
+          {
+            "type": "button",
+            "id": "support-button-bottom",
+            "label": "Learn About Paid Access",
+            "url": "/support-details",
+            "style": "primary",
+            "margin": "0 auto"
+          }
+        ]
+      }
+    ]
+  }
+}

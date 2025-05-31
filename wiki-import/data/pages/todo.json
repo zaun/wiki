@@ -1,0 +1,77 @@
+{
+  "title": "todo",
+  "content": {
+    "type": "container",
+    "id": "todo-main-container",
+    "backgroundColor": "#ffffff",
+    "paddingTop": "40px",
+    "paddingBottom": "40px",
+    "marginTop": "0px",
+    "marginBottom": "0px",
+    "flexDirection": "column",
+    "justifyContent": "flex-start",
+    "alignItems": "center",
+    "flexWrap": "nowrap",
+    "gap": "24px",
+    "items": [
+      {
+        "type": "markdown",
+        "id": "todo-title",
+        "value": "# OmniOntos Project To Do List"
+      },
+      {
+        "type": "image",
+        "id": "todo-hero-image",
+        "src": "https://placehold.co/800x400/b3d9ff/000000?text=Building+the+Future",
+        "alt": "Abstract image representing a roadmap or progress",
+        "caption": "Our journey towards a universal ontology, one step at a time.",
+        "width": "80%",
+        "height": "300px",
+        "objectFit": "cover",
+        "margin": "0 auto"
+      },
+      {
+        "type": "container",
+        "id": "todo-content-area",
+        "flexDirection": "column",
+        "justifyContent": "flex-start",
+        "alignItems": "stretch",
+        "gap": "24px",
+        "padding": "0 10%",
+        "width": "100%",
+        "items": [
+          {
+            "type": "markdown",
+            "id": "todo-intro",
+            "value": "Welcome to the OmniOntos development roadmap! As a one-person project, development proceeds with focused effort. This page outlines what's currently being worked on, what's next, and our grander vision. Your interest and support keep this project moving forward!"
+          },
+          {
+            "type": "markdown",
+            "id": "current-focus-section",
+            "value": "## Current Focus (MVP Launch Priorities)\n\nOur immediate goal is to establish a stable and valuable public presence. This includes:\n\n[ ] **Core Ontology Viewer:** Ensuring the hierarchical Browse experience is smooth, fast, and intuitive.\n[ ] **Basic Keyword Search:** Implementing robust search functionality across node titles and descriptions.\n[ ] **API Functionality:** Stabilizing the read-only API endpoints for programmatic access.\n[ ] **Essential Public Pages:** Finalizing the Intro, Privacy Policy, and Contact/Support pages (what you're seeing now!).\n[ ] **WebAuthn Integration for Accounts:** Setting up secure, passwordless authentication for future paid features and API access."
+          },
+          {
+            "type": "markdown",
+            "id": "ontology-content-enrichment-section",
+            "value": "## Ontology Content Enrichment (Ongoing Task)\n\nWith over 1860 topics in the hierarchy, the ongoing task is to transform shallow nodes into rich, encyclopedic articles. This is a continuous process, prioritized to deliver maximum value.\n\n[ ] **Top-Level Categories:** Fully flesh out the `content` and `sections` for all 6 core domains (Abstract, Informational, Physical, Mental, Social, Meta). These are the entry points and foundational definitions.\n[ ] **Second-Level Categories:** Begin enriching the `content` and `sections` for key second-level categories and their immediate children, demonstrating the depth of each main domain.\n[ ] **High-Interest / Unique Nodes:** Prioritize adding detailed `content` and `sections` to nodes that are particularly complex, representative, or likely to attract user interest (e.g., specialized content like music scores, or foundational scientific concepts).\n[ ] **Minimum Richness for All Nodes:** Ensure every single node, at minimum, has a robust `content` field (expanded beyond a single-sentence summary) providing at least 2-3 paragraphs of overview, even if `sections` remain empty for now.\n[ ] **Iterative Deepening:** Continuously cycle through the ontology, progressively adding more `sections` and further detail to existing nodes as time and resources permit."
+          },
+          {
+            "type": "markdown",
+            "id": "next-up-section",
+            "value": "## Next Up (Phase 2: Community Foundations)\n\nOnce the core public viewing experience is solid, the next phase will introduce the foundational elements for community interaction and paid features:\n\n[ ] **Paid Account System:** Implementing the `$1 a day` paid account structure and integrating a secure payment gateway.\n[ ] **Contributor Access Controls:** Setting up the internal systems to distinguish between free and paid users, enabling specific features for contributors.\n[ ] **Basic Edit Proposal Interface:** A simple form for paid users to propose textual edits to existing node summaries/descriptions. This will initiate the moderation workflow.\n[X] **Discussion Forum Integration:** Linking discussions to specific ontology nodes, allowing paid users to comment and engage in structured conversations."
+          },
+          {
+            "type": "markdown",
+            "id": "future-enhancements-section",
+            "value": "## Future Enhancements (Long-Term Vision)\n\nThis project has immense potential, and these are some of the ambitious features planned for the future:\n\n[ ] **Advanced Ontology Editor:** A rich, intuitive interface for proposing complex changes, including new nodes, new branches, and managing all types of relationships (`DEPENDS_ON`, `CONTRASTS_WITH`, `CONTAINS`, `INVALIDATES`).\n[ ] **Graph Visualization Tool:** An interactive, dynamic visualization that allows users to explore the ontology not just as a tree, but as a semantic network, highlighting all defined relationships.\n[ ] **Robust Versioning System:** Comprehensive tracking of all changes, with the ability to view historical versions of the ontology and individual nodes, and to roll back changes.\n[ ] **Semantic Validation Tools:** Automated checks to ensure logical consistency and prevent invalid relationships or definitions.\n[ ] **Reputation/Gamification System:** Mechanisms to acknowledge and reward valuable contributions from the community.\n[ ] **Community Moderation Tools:** Tools to empower trusted community members to assist in the review and moderation of contributions.\n[ ] **Enhanced Search & Filtering:** More sophisticated search capabilities, allowing filtering by relationship type, domain, or specific attributes.\n[ ] **Diverse Export Formats:** Support for additional standard ontology and data formats (e.g., OWL, RDF, JSON-LD).\n[ ] **Multi-Language Support:** Expanding the ontology itself and the platform interface to support multiple natural languages."
+          },
+          {
+            "type": "markdown",
+            "id": "how-you-can-help-section",
+            "value": "## How You Can Help\n\nAs the sole developer, every bit of support makes a huge difference:\n\n[ ] **Explore & Share:** The more people who explore and understand OmniOntos, the more interest it generates. Share it with colleagues and friends!\n[ ] **Provide Feedback:** Use the [Contact page](#) to send us your thoughts, bug reports, or suggestions. Your input directly influences development priorities.\n[ ] **Become a Paid Supporter:** Your paid account (for future editing and discussion access) directly funds the development time and infrastructure needed to bring these ambitious features to life.\n[ ] **Spread the Word:** Tell others about this unique project and its potential!"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -2,7 +2,7 @@ I've been building a formal, hierarchical ontology designed to categorize everyt
 
 Overview
 --------
-The ontology serves as a universal classification framework capable of organizing all known and potential entities. It is structured as a multi-level hierarchy, with no arbitrary limits on depth or breadth—only what is logically necessary to fully encompass each category. The top levels divide reality into broad domains, and each subsequent level breaks these down into more specific and meaningful subcategories. Every node includes a title, summary, and detailed sections to describe the category in full.
+The Unending Ontology serves as a universal classification framework capable of organizing all known and potential entities. It is structured as a multi-level hierarchy, with no arbitrary limits on depth or breadth—only what is logically necessary to fully encompass each category. The top levels divide reality into broad domains, and each subsequent level breaks these down into more specific and meaningful subcategories. Every node includes a title, summary, and detailed sections to describe the category in full.
 
 Top-Level Categories (final)
 ----------------------------
