@@ -60,6 +60,11 @@ export function useApi() {
             setToken(null);
         },
 
+        // Page
+        getPage(id) {
+            return client.get(`/pages/${id}`).catch((e) => ({ status: e.status }));
+        },
+
         // Nodes
         getNode(id) { return client.get(`/nodes/${id}`); },
         createNode(payload) { return client.post('/nodes', payload); },

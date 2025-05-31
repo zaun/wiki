@@ -31,7 +31,9 @@ const html = computed(() => {
 });
 
 /** AST node types **/
-/** @typedef {{
+/**
+ * 
+ * @typedef {{
  *    type: 'paragraph',
  *    text: string
  * }} ParagraphNode
