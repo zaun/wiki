@@ -10,6 +10,7 @@ import fs from 'fs';
 import http from 'http';
 import https from 'https';
 import * as AuthHelpers from './api/auth.js';
+import * as PageHandler from './api/page.js';
 import * as NodeHandlers from './api/nodes.js';
 import * as SectionHandlers from './api/sections.js';
 import * as SearchHandlers from './api/search.js';
@@ -19,7 +20,12 @@ import * as UserHandlers from './api/users.js';
 import * as UtilHelpers from './api/util.js';
 import * as ExportHandlers from './api/export.js';
 import { verifyConnection, createIndexes, closeDriver } from './storage/neo4j.js';
-import { createRootNode, createRootImage, createUserRoot } from './storage/special.js';
+import {
+    createRootNode,
+    createRootImage,
+    createUserRoot,
+    createPageNode,
+} from './storage/special.js';
 
 process.on('SIGINT', async () => {
     await closeDriver();
@@ -56,12 +62,14 @@ await createIndexes();
 await createRootNode();
 await createRootImage();
 await createUserRoot()
+await createPageNode();
 
 /**
  * Express router that handles all API routes.
  * Mounted at /api
  */
 const router = express.Router();
+
 
 // Auth and related function
 router.use(AuthHelpers.verifyAuth);
@@ -88,6 +96,12 @@ router.get('/user/:id', AuthHelpers.requireRegistered, UserHandlers.getUserDetai
 router.patch('/user/:id', UserHandlers.updateUserProfile);
 router.patch('/user/:userId/credentials/:credentialId', UserHandlers.updateCredentialDetails);
 // router.delete('/user/:userId/credentials/:credentialId', UserHandlers.deleteCredential);
+
+// Page routes
+router.post('/pages', PageHandler.createPage);
+router.get('/pages/:id', PageHandler.getPage);
+router.patch('/pages/:id', AuthHelpers.requireRegistered, PageHandler.patchPage);
+router.delete('/pages/:id', AuthHelpers.requireRegistered, PageHandler.deletePage);
 
 // Export
 router.get('/export/node/:id', ExportHandlers.exportNode);

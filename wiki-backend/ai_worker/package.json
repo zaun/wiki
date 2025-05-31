@@ -1,0 +1,15 @@
+{
+    "name": "ai-worker",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "author": "",
+    "license": "ISC",
+    "type": "module",
+    "scripts": {
+        "start": "node index.js"
+    },
+    "dependencies": {
+        "neo4j-driver": "^5.28.1"
+    }
+}

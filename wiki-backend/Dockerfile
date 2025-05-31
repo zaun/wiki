@@ -5,17 +5,34 @@ LABEL image-name="wiki-backend"
 LABEL maintainer="your-email@example.com"
 LABEL version="1.0.0"
 
-# Set working dir
-WORKDIR /usr/src/app
+# REST API BACKEND
+WORKDIR /usr/src/rest
 
-# Copy only package files and install deps first
-COPY app/package*.json ./
+COPY rest/package*.json ./
 RUN npm ci --omit=dev
 
-# Copy your server sources
-COPY app/index.js .
-COPY app/api ./api/
-COPY app/storage ./storage/
+COPY rest/index.js .
+COPY rest/api ./api/
+COPY rest/storage ./storage/
+
+# AI WORKBER BACKEND
+WORKDIR /usr/src/ai_worker
+
+COPY ai_worker/package*.json ./
+RUN npm ci --omit=dev
+
+COPY ai_worker/index.js .
+
+# STARTUP SCRIPT
+WORKDIR /usr/src
+
+RUN cat <<EOF > start.sh
+#!/bin/bash
+node ./ai_worker/index.js &
+node ./rest/index.js
+EOF
+
+RUN chmod +x start.sh
 
 # Environment variables
 ENV PORT=3000
@@ -33,4 +50,5 @@ ENV DB_LOG_LEVEL="none"
 # Expose HTTP and HTTPS
 EXPOSE 3000 3030
 
-CMD ["node", "index.js"]
+
+CMD ["/usr/src/start.sh"]

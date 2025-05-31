@@ -6,6 +6,8 @@
 import { int } from 'neo4j-driver';
 import { v7 as uuidv7 } from 'uuid';
 import { session } from '../storage/neo4j.js';
+import { NODE_ROOT_ID } from './special.js';
+
 /**
  * Private Constants
  */
@@ -14,7 +16,6 @@ const MAX_CHILD_DEPTH = 2;
 /**
  * Public Constants
  */
-export const NODE_ROOT_ID = '00000000-0000-0000-0000-000000000000';
 export const VALID_CROP_PROPS = ['height', 'width', 'x', 'y'];
 export const VALID_DETAIL_TYPES = ['currency', 'date', 'header', 'link', 'list', 'number', 'text', 'image'];
 export const VALID_RELATIONSHIPS = ['DEPENDS_ON', 'CONTRASTS_WITH', 'CONTAINS', 'INVALIDATES'];
