@@ -345,6 +345,14 @@ export async function dbNodeFetch(id) {
         }
     }
 
+    if (node.aiReview) {
+        try {
+            node.aiReview = JSON.parse(node.aiReview);
+        } catch {
+            delete node.aiReview;
+        }
+    }
+
     // Assemble
     return {
         ...node,
@@ -515,7 +523,7 @@ export async function dbNodePatch(id, opts) {
             CREATE (arch:Node {
                 id:         $archId,
                 title:      n.title,
-                subtitle: n.subtitle,
+                subtitle:   n.subtitle,
                 content:    n.content,
                 createdAt:  n.createdAt,
                 updatedAt:  $now,
@@ -523,7 +531,8 @@ export async function dbNodePatch(id, opts) {
                 aliases:    n.aliases,
                 tags:       n.tags,
                 links:      n.links,
-                imageCrop:  n.imageCrop
+                imageCrop:  n.imageCrop,
+                aiReview:   n.aiReview
             })
             FOREACH (od IN oldDetails |
                 CREATE (ad:Detail {
@@ -586,6 +595,8 @@ export async function dbNodePatch(id, opts) {
 
         // update the node’s own props
         const setClauses = [];
+        const removeClauses = [];
+
         const params = {
             id,
             now
@@ -623,9 +634,13 @@ export async function dbNodePatch(id, opts) {
             ELSE 'complete' END
         `);
 
+        // Remove the existing ai review
+        removeClauses.push('n.aiReview');
+
         await tx.run(`
             MATCH (n:Node {id:$id})
             SET ${setClauses.join(',\n')}
+            ${removeClauses.length ? `REMOVE ${removeClauses.join(',\n')}` : ''}
         `, params);
 
         // imageCrop
@@ -672,6 +687,36 @@ export async function dbNodePatch(id, opts) {
     } catch (err) {
         await tx.rollback();
         throw err;
+    } finally {
+        await s.close();
+    }
+}
+
+/**
+ * Updates a Node's review properties.
+ *
+ * @param {object} opts
+ * @param {string} opts.id     - The ID of the node to update.
+ * @param {string} opts.review - The review content to set.
+ * @param {string} opts.flag   - The flag to set.
+ * @returns {Promise<void>}
+ */
+export async function dbNodeReview({ id, review, flag, isAI }) {
+    const s = session();
+    try {
+        if (isAI) {
+            await s.run(`
+                MATCH (n:Node {id: $id})
+                SET n.aiReview = $review
+                SET n.aiFlag = $flag
+            `, { id, review, flag });
+        } else {
+            await s.run(`
+                MATCH (n:Node {id: $id})
+                SET n.review = $review
+                SET n.flag = $flag
+            `, { id, review, flag });
+        }
     } finally {
         await s.close();
     }
@@ -727,4 +772,3 @@ export async function dbNodeTree(id, depth = 100) {
         await s.close();
     }
 }
-
