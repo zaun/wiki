@@ -613,7 +613,12 @@ export async function dbSectionPatch(nodeId, currentId, updates) {
         }
 
         // Status always based on final content
-        const newStatus = effectiveContent.trim() === '' ? 'stub' : 'complete';
+        let newStatus = 'stub';
+        if ((updates.content !== undefined && updates.content.trim() !== '') ||
+            (updates.summary !== undefined && updates.summary.trim() !== '') ||
+            (updateData !== undefined && updateData.trim() !== '')) {
+            newStatus = 'complete';
+        }
         setClauses.push('s.status = $newStatus');
         params.newStatus = newStatus;
 
@@ -621,7 +626,7 @@ export async function dbSectionPatch(nodeId, currentId, updates) {
         setClauses.push('s.updatedAt = $now');
 
         // Remove the existing ai review
-        removeClauses.push('n.aiReview');
+        removeClauses.push('s.aiReview');
 
         // Update the existing section IN-PLACE using dynamic SET clauses
         await tx.run(`
