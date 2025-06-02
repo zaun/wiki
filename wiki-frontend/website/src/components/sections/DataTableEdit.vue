@@ -1,11 +1,14 @@
 <template>
-    <v-data-table-virtual ref="dataTable" density="compact" :headers="headers" :items="items" class="mt-2 data-table">
+    {{ localData.headers.length }}
+    <v-data-table-virtual ref="dataTable" density="compact" :headers="localData.headers" :items="items"
+        class="mt-2 data-table">
         <!-- custom headers slot -->
         <template #headers>
-            <draggable :model-value="headers" tag="tr" item-key="headerKey" direction="horizontal" :move="onMove"
-                @end="onDragEnd">
+            <draggable :model-value="localData.headers" tag="tr" item-key="headerKey" direction="horizontal"
+                :move="onMove" @end="onDragEnd">
                 <template #item="{ element, index }">
-                    <th v-if="element.type === 'placeholder'" :key="`placeholder_${element.headerKey}`" class="px-0"></th>
+                    <th v-if="element.type === 'placeholder'" :key="`placeholder_${element.headerKey}`" class="px-0">
+                    </th>
                     <th v-else :key="element.headerKey" class="v-data-table__th v-data-table-column--align-start px-4"
                         :style="{ width: element.width }" @mouseenter="hovered = index" @mouseleave="hovered = null">
                         <div class="v-data-table-header__content">
@@ -93,7 +96,7 @@
         <!-- your rows -->
         <template #item="{ item, index }">
             <tr @contextmenu.prevent="openRowContextMenu($event, item, index)">
-                <td v-for="(col, colIndex) in headers" :key="col.headerKey" class="pa-1"
+                <td v-for="(col, colIndex) in localData.headers" :key="col.headerKey" class="pa-1"
                     :class="{ 'px-0': col.type === 'placeholder' }">
                     <v-text-field v-if="col.type !== 'placeholder'" v-model="item[colIndex]" density="compact"
                         hide-details single-line variant="plain" @update:model-value="onColUpdate" @blur="onColUpdate"
@@ -165,54 +168,11 @@ const resizing = ref({ index: null, startX: 0, startW: 0 });
 const rowContextMenuX = ref(0);
 const rowContextMenuY = ref(0);
 const showRowContextMenu = ref(false);
+const totalWidth = ref(0);
 
-const headers = computed(() => localData.value.headers || []);
 const items = computed(() => localData.value.rows || []);
-const totalWidth = computed(() => headers.value.reduce((sum, col) => {
-    if (col.type === 'placeholder') return sum;
 
-    const w = parseInt(col.width || '0', 10);
-    return sum + (isNaN(w) ? 0 : w);
-}, 0));
-
-watch(
-    [totalWidth, containerWidth],
-    async ([tw, cw]) => {
-        await nextTick();
-
-        // your existing table-width logic
-        const tableEl = dataTable.value.$el.querySelector('table');
-        if (tableEl) {
-            tableEl.style.width = tw + 'px';
-        }
-
-        // compute extra space
-        const diff = cw - tw;
-        const ew = diff > 0 ? diff : 0;
-        extraWidth.value = ew;
-
-        // find any existing placeholder
-        const hdrs = localData.value.headers;
-        const idx = hdrs.findIndex(h => h.type === 'placeholder');
-
-        if (ew > 0) {
-            const wpx = ew + 'px';
-            if (idx === -1) {
-                hdrs.push({
-                    title: '',
-                    headerKey: '__placeholder_key__',
-                    type: 'placeholder',
-                    width: wpx,
-                });
-            } else {
-                hdrs[idx].width = wpx;
-            }
-        } else if (idx !== -1) {
-            hdrs.splice(idx, 1);
-        }
-    },
-    { immediate: true },
-);
+watch([totalWidth, containerWidth], updatePlaceholder, { immediate: true });
 watch(
     () => props.modelValue,
     (nv) => {
@@ -252,6 +212,8 @@ watch(
             });
         }
         localData.value = newLocalData;
+
+        updateTotalWidth();
     },
     { deep: true, immediate: true },
 );
@@ -261,6 +223,54 @@ watch(editing, async idx => {
         editField.value?.focus?.();
     }
 });
+watch(localData.value.headers, updateTotalWidth);
+
+function updateTotalWidth() {
+    totalWidth.value = localData.value.headers.reduce((sum, col) => {
+        if (col.type === 'placeholder') return sum;
+
+        const w = parseInt(col.width || '0', 10);
+        return sum + (isNaN(w) ? 0 : w);
+    }, 0);
+    updatePlaceholder();
+}
+
+function updatePlaceholder() {
+    const tw = totalWidth.value;
+    const cw = containerWidth.value;
+
+    nextTick(() => {
+        const tableEl = dataTable.value.$el.querySelector('table');
+        if (tableEl) {
+            tableEl.style.width = tw + 'px';
+        }
+    });
+
+    // compute extra space
+    const diff = cw - tw;
+    const ew = diff > 0 ? diff : 0;
+    extraWidth.value = ew;
+
+    // find any existing placeholder
+    const hdrs = localData.value.headers;
+    const idx = hdrs.findIndex(h => h.type === 'placeholder');
+
+    if (ew > 0) {
+        const wpx = ew + 'px';
+        if (idx === -1) {
+            hdrs.push({
+                title: '',
+                headerKey: '__placeholder_key__',
+                type: 'placeholder',
+                width: wpx,
+            });
+        } else {
+            hdrs[idx].width = wpx;
+        }
+    } else if (idx !== -1) {
+        hdrs.splice(idx, 1);
+    }
+}
 
 function getHeaderKey() {
     return `hkey_${Date.now()}_${Math.random().toString(36).substring(2, 9)}`;
@@ -336,7 +346,7 @@ function onResizeStart(e, idx) {
     resizing.value = {
         index: idx,
         startX: e.clientX,
-        startW: parseInt(headers.value[idx].width, 10) || 0,
+        startW: parseInt(localData.value.headers[idx].width, 10) || 0,
     };
     window.addEventListener('mousemove', onResizing);
     window.addEventListener('mouseup', onResizeEnd);
@@ -347,8 +357,10 @@ function onResizing(e) {
     const delta = e.clientX - resizing.value.startX;
     const newW = resizing.value.startW + delta;
     if (newW >= 75) {
-        headers.value[resizing.value.index].width = newW + 'px';
+        localData.value.headers[resizing.value.index].width = newW + 'px';
     }
+
+    updateTotalWidth();
 }
 
 function onResizeEnd() {
@@ -399,7 +411,7 @@ function onAddNewRow(idx, pos, count = 1) {
     }
 
     // Determine the number of cells needed for a new row, based on actual data headers
-    const actualDataHeaders = headers.value.filter(
+    const actualDataHeaders = localData.value.headers.filter(
         (h) => h.type !== 'placeholder',
     );
     const numCells = actualDataHeaders.length;
