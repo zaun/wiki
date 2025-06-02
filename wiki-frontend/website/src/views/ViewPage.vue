@@ -1,21 +1,25 @@
 <!--
-@file NodeView.vue
+@file ViewPage.vue
 @description Displays a node page. Handles loading and 404 state.
 -->
 
 <template>
     <div>
+        <ReviewAlert v-if="!loading && !notFound" :review="reviewItems" />
+
         <!-- 404 -->
         <NotFound v-if="!loading && notFound" />
 
         <!-- ready -->
         <v-container v-else-if="!loading">
+
             <Image v-if="node?.image" :aspect-ratio="3.2" :src="heroImageURL" />
 
             <!-- breadcrumb trail -->
             <v-breadcrumbs class="mb-1 mt-0" :items="breadcrumbs" divider="/">
                 <template #title="{ item }"">
-                   <v-btn variant="text" size="small" density="compact" class="pa-0 ma-0" :to="`/view/${item.id}`">{{ item.title }}</v-btn>
+                   <v-btn variant="text" size="small" density="compact" class="pa-0 ma-0" :to="`/view/${item.id}`">{{
+                    item.title }}</v-btn>
                 </template>
             </v-breadcrumbs>
 
@@ -38,7 +42,11 @@
                 <!-- Main Content -->
                 <div class="main-content" ref="sectionList">
                     <!-- Main node summary -->
-                    <Section :header-size="4" v-model="node" />
+                    <Section :header-size="4" v-model="node">
+                        <!-- <template #appendTitle>
+                            <Voting />
+                        </template> -->
+                    </Section>
 
                     <!-- sections -->
                     <div class="my-6">
@@ -60,6 +68,10 @@
                     </div>
                 </div>
             </div>
+
+            <!-- <span v-if="reviewRating > -1">
+                Review Rating: {{ reviewRating }} / 10
+            </span> -->
 
             <!-- Subpages -->
             <div v-if="children.length" class="no-print">
@@ -86,8 +98,10 @@ import Detail from '@/components/Detail.vue';
 import Image from '@/components/Image.vue';
 import NotFound from '@/components/NotFound.vue';
 import Relationship from '@/components/Relationship.vue';
+import ReviewAlert from '@/components/ReviewAlert.vue';
 import Section from '@/components/sections/Section.vue';
 import TreeNodes from '@/components/TreeNodes.vue';
+import Voting from '@/components/Voting.vue';
 import { useApi } from '@/stores/api';
 import { useData } from '@/stores/data';
 
@@ -97,6 +111,8 @@ const store = useData();
 
 const loading = ref(true);
 const notFound = ref(false);
+const ratingItems = ref([]);
+const reviewItems = ref([]);
 
 const breadcrumbs = computed(() => store.currentNode?.breadcrumbs || []);
 const children = computed(() => node.value.children || []);
@@ -140,6 +156,30 @@ async function load() {
     }
 
     loading.value = false;
+
+    // Update review items
+    reviewItems.value = [];
+    ratingItems.values = [];
+    if (store.currentNode.aiReview) {
+        store.currentNode.aiReview.forEach((item) => {
+            if (item.hasOwnProperty('result')) {
+                reviewItems.value.push({ ...item, title: 'Summary' });
+            } else {
+                ratingItems.value.push({ ...item, title: 'Summary' });
+            }
+        });
+    }
+    store.currentSections.forEach((section) => {
+        if (section.aiReview) {
+            section.aiReview.forEach((item) => {
+                if (item.hasOwnProperty('result')) {
+                    reviewItems.value.push({ ...item, title: section.title });
+                } else {
+                    ratingItems.value.push({ ...item, title: section.title });
+                }
+            });
+        }
+    });
 }
 
 // Initial load on mount

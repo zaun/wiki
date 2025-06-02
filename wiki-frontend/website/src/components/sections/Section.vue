@@ -10,6 +10,7 @@
                     <v-icon left>mdi-plus</v-icon>
                 </v-chip>
                 <v-spacer />
+                <slot v-if="!canEdit" name="appendTitle"></slot>
                 <v-btn v-if="canEdit" icon variant="plain" @click="onEdit">
                     <v-icon>mdi-pencil-outline</v-icon>
                 </v-btn>
@@ -46,10 +47,10 @@
                 <v-text-field v-model="localSection.title" label="Header" :hide-details="true" class="flex-grow-1" />
                 <v-select v-if="!hideType" v-model="localSection.type" :items="contentTypes" label="Type"
                     item-title="label" item-value="value" hide-details dense class="mr-2" style="max-width: 140px;" />
-                <v-btn icon density="compact" variant="plain" @click="onSave">
+                <v-btn icon density="compact" variant="plain" @click="onSave" :disabled="isSaveDisabled">
                     <v-icon>mdi-check</v-icon>
                 </v-btn>
-                <v-btn icon density="compact" variant="plain" @click="onClose">
+                <v-btn icon density="compact" variant="plain" @click="onClose" :disabled="isCancelDisabled">
                     <v-icon>mdi-close</v-icon>
                 </v-btn>
                 <v-btn v-if="!hideDelete" icon density="compact" variant="plain" @click="onDelete">
@@ -170,9 +171,11 @@ const contentClass = computed(() => `text-body-${props.contentSize}`);
 const contentType = computed(() => localSection.value.type ?? 'text');
 const editable = computed(() => internalEditing.value);
 const headerClass = computed(() => `text-h${props.headerSize} d-flex justify-space-between align-center`);
+const isCancelDisabled = computed(() => !localSection.value.id || localSection.value.id.trim() === '');
 const isDirty = computed(() =>
     JSON.stringify(localSection.value) !== JSON.stringify(props.modelValue),
 );
+const isSaveDisabled = computed(() => !localSection.value.title || localSection.value.title.trim() === '');
 
 watch(
     () => props.isEditing,
