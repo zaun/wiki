@@ -17,7 +17,7 @@ import * as SearchHandlers from './api/search.js';
 import * as CitationHandlers from './api/citations.js';
 import * as ImageHandlers from './api/images.js';
 import * as UserHandlers from './api/users.js';
-import * as UtilHelpers from './api/util.js';
+import * as UtilHelpers from './util.js';
 import * as ExportHandlers from './api/export.js';
 import { verifyConnection, createIndexes, closeDriver } from './storage/neo4j.js';
 import {
@@ -70,9 +70,30 @@ await createPageNode();
  */
 const router = express.Router();
 
+// =====================
+// MIDDLEWARE
+// =====================
 
-// Auth and related function
+// Extract user authentication info (sets req.userId, req.roles)
 router.use(AuthHelpers.verifyAuth);
+
+// Simple authenticated check for routes that require login
+const requireAuthenticated = (req, res, next) => {
+    if (!req.userId) {
+        return res.status(401).json({ error: 'Authentication required' });
+    }
+    next();
+};
+
+// =====================
+// AUTHENTICATION ROUTES
+// =====================
+
+router.use('/auth', (req, res, next) => {
+    res.setHeader('X-Content-Type-Options', 'nosniff');
+    res.setHeader('X-Frame-Options', 'DENY');
+    next();
+});
 router.get('/auth/register/options', AuthHelpers.registerOptions);
 router.post('/auth/register', AuthHelpers.register);
 router.get('/auth/login/options', AuthHelpers.loginOptions);
@@ -81,110 +102,116 @@ router.get('/auth/recover/options', AuthHelpers.registerOptions);
 router.post('/auth/recover', AuthHelpers.recover);
 router.get('/auth/link/options', AuthHelpers.registerOptions);
 router.post('/auth/link', AuthHelpers.link);
-router.get('/auth/link/code', AuthHelpers.requireRegistered, AuthHelpers.generateLinkCode);
+router.get('/auth/link/code', requireAuthenticated, AuthHelpers.generateLinkCode);
 
-// Route level security
-router.use((req, res, next) => {
-  if (['DELETE', 'MOVE', 'PATCH', 'POST', 'PUT'].includes(req.method)) {
-    return AuthHelpers.requireRegistered(req, res, next);
-  }
-  next();
-});
+// =====================
+// USER MANAGEMENT
+// =====================
 
-// Users
-router.get('/user/:id', AuthHelpers.requireRegistered, UserHandlers.getUserDetails);
-router.patch('/user/:id', UserHandlers.updateUserProfile);
-router.patch('/user/:userId/credentials/:credentialId', UserHandlers.updateCredentialDetails);
-// router.delete('/user/:userId/credentials/:credentialId', UserHandlers.deleteCredential);
+router.get('/users/:id', requireAuthenticated, UserHandlers.getUserDetails);
+router.patch('/users/:id', requireAuthenticated, UserHandlers.updateUserProfile);
+// router.get('/users/:userId/credentials', requireAuthenticated, UserHandlers.getCredentials);
+router.patch('/users/:userId/credentials/:credentialId', requireAuthenticated, UserHandlers.updateCredential);
+// router.delete('/users/:userId/credentials/:credentialId', requireAuthenticated, UserHandlers.deleteCredential);
 
-// Page routes
-router.post('/pages', PageHandler.createPage);
+// User actions
+// router.post('/users/:userId/suspend', requireAuthenticated, UserHandlers.suspendUser);
+// router.post('/users/:userId/ban', requireAuthenticated, UserHandlers.banUser);
+// router.post('/users/:userId/warn', requireAuthenticated, UserHandlers.warnUser);
+
+// =====================
+// CMS PAGES
+// =====================
+
+router.post('/pages', requireAuthenticated, PageHandler.createPage);
 router.get('/pages/:id', PageHandler.getPage);
-router.patch('/pages/:id', AuthHelpers.requireRegistered, PageHandler.patchPage);
-router.delete('/pages/:id', AuthHelpers.requireRegistered, PageHandler.deletePage);
+router.patch('/pages/:id', requireAuthenticated, PageHandler.patchPage);
+router.delete('/pages/:id', requireAuthenticated, PageHandler.deletePage);
 
-// Export
-router.get('/export/node/:id', ExportHandlers.exportNode);
-router.get('/export/tree/:id', ExportHandlers.exportTree);
+// =====================
+// NODES (MAIN CONTENT)
+// =====================
 
-// Nodes
-router.post('/nodes', NodeHandlers.createNode);
+router.post('/nodes', requireAuthenticated, NodeHandlers.createNode);
 router.get('/nodes/:id', NodeHandlers.getNode);
-router.patch('/nodes/:id', NodeHandlers.patchNode);
-router.delete('/nodes/:id', NodeHandlers.deleteNode);
-router.get('/nodes/:id/history', NodeHandlers.getNodeHistory);
+router.patch('/nodes/:id', requireAuthenticated, NodeHandlers.patchNode);
+router.delete('/nodes/:id', requireAuthenticated, NodeHandlers.deleteNode);
+router.get('/nodes/:id/history', requireAuthenticated, NodeHandlers.getNodeHistory);
+router.get('/nodes/:id/history/:histId', requireAuthenticated, NodeHandlers.getNodeHistory);
 router.get('/nodes/:id/children', NodeHandlers.getChildNodes);
-if (forceStandard) {
-    router.post('/nodes/:id', NodeHandlers.moveNode);
-} else {
-    router.use('/nodes/:id', (req, res, next) => {
-        if (req.method === 'MOVE') {
-            return NodeHandlers.moveNode(req, res);
-        }
-        next();
-    });
-}
+// router.get('/nodes/:id/tree', NodeHandlers.getNodeTree);
 
-// Sections
-router.post('/nodes/:nodeId/sections', SectionHandlers.createSection);
+// Node actions
+router.post('/nodes/:id/export', requireAuthenticated, ExportHandlers.exportNode);
+router.post('/nodes/:id/exportTree', requireAuthenticated, ExportHandlers.exportTree);
+router.post('/nodes/:id/move', requireAuthenticated, NodeHandlers.moveNode);
+// router.post('/nodes/:id/lock', requireAuthenticated, NodeHandlers.lockNode);
+// router.post('/nodes/:id/lockTree', requireAuthenticated, NodeHandlers.lockNodeTree);
+// router.post('/nodes/:id/unlock', requireAuthenticated, NodeHandlers.unlockNode);
+// router.post('/nodes/:id/history/:histId/revert', requireAuthenticated, NodeHandlers.revertNode);
+
+// =====================
+// SECTIONS (NODE CONTENT PARTS)
+// =====================
+
+router.post('/nodes/:nodeId/sections', requireAuthenticated, SectionHandlers.createSection);
 router.get('/nodes/:nodeId/sections', SectionHandlers.getSections);
-router.get('/nodes/:nodeId/sections/:id', SectionHandlers.getSection);
-router.patch('/nodes/:nodeId/sections/:id', SectionHandlers.patchSection);
-router.get('/nodes/:nodeId/sections/:id/history', SectionHandlers.getSectionHistory);
-router.delete('/nodes/:nodeId/sections/:id', SectionHandlers.deleteSection);
-if (forceStandard) {
-    router.post('/nodes/:nodeId/sections', SectionHandlers.bulkReorderSections);
-    router.post('/nodes/:nodeId/sections/:id', SectionHandlers.moveSection);
-} else {
-    router.use('/nodes/:nodeId/sections', (req, res, next) => {
-        if (req.method === 'MOVE') {
-            return SectionHandlers.bulkReorderSections(req, res);
-        }
-        next();
-    });
-    router.use('/nodes/:nodeId/sections/:id', (req, res, next) => {
-        if (req.method === 'MOVE') {
-            return SectionHandlers.moveSection(req, res);
-        }
-        next();
-    });
-}
+// router.get('/nodes/:nodeId/sections/:id', NodeHandlers.getSection);
+router.patch('/nodes/:nodeId/sections/:id', requireAuthenticated, SectionHandlers.patchSection);
+router.delete('/nodes/:nodeId/sections/:id', requireAuthenticated, SectionHandlers.deleteSection);
+router.get('/nodes/:nodeId/sections/:id/history', requireAuthenticated, SectionHandlers.getSectionHistory);
 
-// Image routes
-router.post('/images', ImageHandlers.createImage);
-router.get('/images', ImageHandlers.searchImage);
-router.get('/images/:id', ImageHandlers.getImage);
+// Section actions
+router.post('/nodes/:nodeId/sections/reorder', requireAuthenticated, SectionHandlers.bulkReorderSections);
+router.post('/nodes/:nodeId/sections/:id/move', requireAuthenticated, SectionHandlers.moveSection);
+// router.post('/nodes/:nodeId/sections/:id/history/:histId/revert', requireAuthenticated, SectionHandlers.revertNode);
 
-// Search
+// =====================
+// IMAGES
+// =====================
+
+router.post('/images', requireAuthenticated, ImageHandlers.createImage);
+router.get('/images', requireAuthenticated, ImageHandlers.searchImage);
+// router.get('/images/:id', NodeHandlers.getImage);
+
+// =====================
+// SEARCH
+// =====================
+
 router.get('/search', SearchHandlers.search);
 
-// Citation Sources
-router.post('/citations', CitationHandlers.createCitation);
+// =====================
+// CITATIONS
+// =====================
+
+// Citation sources
+router.post('/citations', requireAuthenticated, CitationHandlers.createCitation);
 router.get('/citations', CitationHandlers.listCitations);
 router.get('/citations/:id', CitationHandlers.getCitation);
-router.patch('/citations/:id', CitationHandlers.updateCitation);
-router.delete('/citations/:id', CitationHandlers.deleteCitation);
+router.patch('/citations/:id', requireAuthenticated, CitationHandlers.updateCitation);
+router.delete('/citations/:id', requireAuthenticated, CitationHandlers.deleteCitation);
 
-// Citation Merge
-router.post('/citations/:destId/merge/:sourceId', CitationHandlers.mergeCitations);
-
-// Citation Instances
+// Citation management
+router.post('/citations/:destId/merge/:sourceId', requireAuthenticated, CitationHandlers.mergeCitations);
 router.get('/citations/:id/instances', CitationHandlers.listInstancesByCitation);
 
-// Node Citation Attachments
+// Node citations
 router.get('/nodes/:nodeId/citations', CitationHandlers.listNodeCitations);
-router.post('/nodes/:nodeId/citations', CitationHandlers.createNodeCitationInstance);
-router.patch('/nodes/:nodeId/citations/:id', CitationHandlers.updateNodeCitationInstance);
-router.delete('/nodes/:nodeId/citations/:id', CitationHandlers.deleteNodeCitationInstance);
+router.post('/nodes/:nodeId/citations', requireAuthenticated, CitationHandlers.createNodeCitationInstance);
+router.patch('/nodes/:nodeId/citations/:id', requireAuthenticated, CitationHandlers.updateNodeCitationInstance);
+router.delete('/nodes/:nodeId/citations/:id', requireAuthenticated, CitationHandlers.deleteNodeCitationInstance);
 
-// Section Citation Attachments
+// Section citations
 router.get('/nodes/:nodeId/sections/:sectionId/citations', CitationHandlers.listSectionCitations);
-router.post('/nodes/:nodeId/sections/:sectionId/citations', CitationHandlers.createSectionCitationInstance);
-router.patch('/nodes/:nodeId/sections/:sectionId/citations/:id', CitationHandlers.updateSectionCitationInstance);
-router.delete('/nodes/:nodeId/sections/:sectionId/citations/:id', CitationHandlers.deleteSectionCitationInstance);
+router.post('/nodes/:nodeId/sections/:sectionId/citations', requireAuthenticated, CitationHandlers.createSectionCitationInstance);
+router.patch('/nodes/:nodeId/sections/:sectionId/citations/:id', requireAuthenticated, CitationHandlers.updateSectionCitationInstance);
+router.delete('/nodes/:nodeId/sections/:sectionId/citations/:id', requireAuthenticated, CitationHandlers.deleteSectionCitationInstance);
 
-// Utility routes
-router.get('/utility/fetchTitle', UtilHelpers.fetchTitle);
+// =====================
+// UTILITIES
+// =====================
+
+router.get('/utilities/fetch-title', UtilHelpers.fetchTitle);
 
 /**
  * Main Express application instance

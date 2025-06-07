@@ -43,7 +43,7 @@ export async function createSection(req, res) {
     // For now, I'm assuming it can be any JSON-serializable object or string.
 
     try {
-        const newSectionId = await dbSectionCreate(nodeId, { title, content, data, summary, type });
+        const newSectionId = await dbSectionCreate(nodeId, req.userId, req.roles, { title, content, data, summary, type });
 
         // Reuse getSection to fetch and return the newly created section
         req.params.id = newSectionId; // Set the ID for getSection to use
@@ -73,7 +73,7 @@ export async function getSections(req, res) {
     const { nodeId } = req.params;
 
     try {
-        const sections = await dbSectionFetchAll(nodeId);
+        const sections = await dbSectionFetchAll(nodeId, req.userId, req.roles);
         res.json(sections);
     } catch (err) {
         console.error('Error fetching sections:', err);
@@ -92,7 +92,7 @@ export async function getSection(req, res) {
     const { nodeId, id } = req.params;
 
     try {
-        const section = await dbSectionFetch(nodeId, id);
+        const section = await dbSectionFetch(nodeId, id, req.userId, req.roles);
 
         if (!section) {
             return res.status(404).json({ error: 'Not found' });
@@ -114,7 +114,7 @@ export async function getSection(req, res) {
  * @param {import('express').Response} res
  */
 export async function patchSection(req, res) {
-    const { nodeId, id: currentId } = req.params;
+    const { nodeId, id: sectionId } = req.params;
     const { title, content, data, summary, type } = req.body;
 
     // Validate inputs
@@ -136,7 +136,7 @@ export async function patchSection(req, res) {
     // Add validation for 'data' if needed (e.g., must be an object)
 
     try {
-        await dbSectionPatch(nodeId, currentId, { title, content, data, summary, type });
+        await dbSectionPatch(nodeId, sectionId, req.userId, req.roles, { title, content, data, summary, type });
         // After successful patch, fetch and return the updated section
         await getSection(req, res);
     } catch (err) {
@@ -164,7 +164,7 @@ export async function deleteSection(req, res) {
     const { nodeId, id } = req.params;
 
     try {
-        const deleted = await dbSectionDelete(nodeId, id);
+        const deleted = await dbSectionDelete(nodeId, id, req.userId, req.roles);
 
         if (!deleted) {
             return res.status(404).json({ error: 'Section not found for this node.' });
@@ -195,7 +195,7 @@ export async function moveSection(req, res) {
     }
 
     try {
-        const moved = await dbSectionMove(nodeId, id, toIndex);
+        const moved = await dbSectionMove(nodeId, id, req.userId, req.roles, toIndex);
 
         if (!moved) {
             return res.status(404).json({ error: 'Section not found under this node.' });
@@ -244,7 +244,7 @@ export async function bulkReorderSections(req, res) {
     }
 
     try {
-        const success = await dbSectionBulkReorder(nodeId, orderedIds);
+        const success = await dbSectionBulkReorder(nodeId, req.userId, req.roles, orderedIds);
 
         if (success) {
             res.status(200).json({ success: true, message: 'Sections reordered successfully.' });
@@ -281,7 +281,7 @@ export async function getSectionHistory(req, res) {
     const page = Math.max(parseInt(req.query.page ?? '0', 10), 0);
 
     try {
-        const history = await dbSectionHistory(nodeId, id, page, pageSize);
+        const history = await dbSectionHistory(nodeId, id, req.userId, req.roles, page, pageSize);
         res.json(history);
     } catch (err) {
         console.error('Error fetching section history:', err);

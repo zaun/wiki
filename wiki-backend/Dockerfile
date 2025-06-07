@@ -12,6 +12,7 @@ COPY rest/package*.json ./
 RUN npm ci --omit=dev
 
 COPY rest/index.js .
+COPY rest/util.js .
 COPY rest/api ./api/
 COPY rest/storage ./storage/
 
@@ -28,7 +29,7 @@ WORKDIR /usr/src
 
 RUN cat <<EOF > start.sh
 #!/bin/bash
-node ./ai_worker/index.js &
+# node ./ai_worker/index.js &
 node ./rest/index.js
 EOF
 

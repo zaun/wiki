@@ -260,7 +260,7 @@ export async function createNode(req, res) {
 
         nodeValidate({ aliases, details, links, tags, relationships });
 
-        const newId = await dbNodeCreate({
+        const newId = await dbNodeCreate(req.userId, req.roles, {
             title,
             content,
             subtitle,
@@ -275,10 +275,25 @@ export async function createNode(req, res) {
         });
 
         return res.status(201).json({ id: newId });
-    } catch (err) {
-        console.error(err)
-        const status = err.message.includes('required') ? 400 : 500;
-        return res.status(status).json({ error: err.message });
+    } catch (err) {console.error('Create node error:', err);
+
+        if (err.message.startsWith('INVALID_')) {
+            return res.status(400).json({ error: err.message });
+        }
+
+        switch (err.message) {
+            case 'INSUFFICIENT_PERMISSIONS':
+                return res.status(403).json({ error: 'Insufficient permissions' });
+            case 'PARENT_NODE_NOT_FOUND':
+                return res.status(404).json({ error: 'Parent node not found' });
+            case 'DATA_INTEGRITY_ERROR':
+                return res.status(409).json({ error: 'Data integrity error' });
+            default:
+                if (err.message.includes('required') || err.message.includes('must be')) {
+                    return res.status(400).json({ error: err.message });
+                }
+                return res.status(500).json({ error: 'Failed to create node' });
+        }
     }
 }
 
@@ -302,15 +317,25 @@ export async function getNode(req, res) {
     const { id } = req.params;
 
     try {
-        const node = await dbNodeFetch(id);
+        const node = await dbNodeFetch(id, req.userId, req.roles);
         if (!node) {
             return res.status(404).json({ error: 'Not found' });
         }
 
         res.json(node);
-    } catch (e) {
-        console.error(e);
-        res.status(500).json({ error: e.message });
+    } catch (err) {
+        console.error('Get node error:', err);
+
+        if (err.message.startsWith('INVALID_')) {
+            return res.status(400).json({ error: err.message });
+        }
+
+        switch (err.message) {
+            case 'INSUFFICIENT_PERMISSIONS':
+                return res.status(403).json({ error: 'Insufficient permissions' });
+            default:
+                return res.status(500).json({ error: 'Failed to fetch node' });
+        }
     }
 }
 
@@ -326,11 +351,21 @@ export async function getNode(req, res) {
 export async function getChildNodes(req, res) {
     const { id } = req.params;
     try {
-        const children = await dbNodeChildren(id);
+        const children = await dbNodeChildren(id, req.userId, req.roles);
         return res.json(children);
     } catch (err) {
-        console.error(err);
-        return res.status(500).json({ error: err.message });
+        console.error('Get child nodes error:', err);
+
+        if (err.message.startsWith('INVALID_')) {
+            return res.status(400).json({ error: err.message });
+        }
+
+        switch (err.message) {
+            case 'INSUFFICIENT_PERMISSIONS':
+                return res.status(403).json({ error: 'Insufficient permissions' });
+            default:
+                return res.status(500).json({ error: 'Failed to fetch child nodes' });
+        }
     }
 }
 
@@ -366,35 +401,34 @@ export async function patchNode(req, res) {
     const { id } = req.params;
     const body = req.body;
 
-    // basic validations
-    if (body.image && typeof body.image !== 'string' && body.image !== 'remove') {
-        return res.status(400).json({ error: 'image must be uuid or "remove"' });
-    }
-
-    if (body.hasOwnProperty('imageCrop')) {
-        if (typeof body.imageCrop !== 'object' || !body.imageCrop) {
-            return res.status(400).json({ error: 'imageCrop must be an object' });
+    try {
+        // Basic validations
+        if (body.image && typeof body.image !== 'string' && body.image !== 'remove') {
+            return res.status(400).json({ error: 'image must be uuid or "remove"' });
         }
 
-        for (const p of VALID_CROP_PROPS) {
-            if (typeof body.imageCrop[p] !== 'number') {
-                return res.status(400).json({ error: `imageCrop.${p} must be a number` });
+        if (body.hasOwnProperty('imageCrop')) {
+            if (typeof body.imageCrop !== 'object' || !body.imageCrop) {
+                return res.status(400).json({ error: 'imageCrop must be an object' });
+            }
+
+            for (const p of VALID_CROP_PROPS) {
+                if (typeof body.imageCrop[p] !== 'number') {
+                    return res.status(400).json({ error: `imageCrop.${p} must be a number` });
+                }
             }
         }
-    }
 
-    // validate arrays + relationships
-    nodeValidate({
-        aliases: body.aliases ?? [],
-        links: body.links ?? [],
-        tags: body.tags ?? [],
-        details: body.details ?? [],
-        relationships: body.relationships ?? [],
-    });
+        // Validate arrays + relationships
+        nodeValidate({
+            aliases: body.aliases ?? [],
+            links: body.links ?? [],
+            tags: body.tags ?? [],
+            details: body.details ?? [],
+            relationships: body.relationships ?? [],
+        });
 
-    try {
-        // 3) perform all DB updates
-        await dbNodePatch(id, {
+        const result = await dbNodePatch(id, req.userId, req.roles, {
             title: body.title,
             content: body.content,
             subtitle: body.subtitle,
@@ -407,18 +441,42 @@ export async function patchNode(req, res) {
             relationships: body.relationships,
         });
 
-        // 4) fetch & return the new version
-        const updated = await dbNodeFetch(id);
-        if (!updated) {
-            return res.status(404).json({ error: 'Not found after patch' });
+        // For pending updates, return the result directly
+        if (result.status === 'pending') {
+            return res.json({ 
+                id: result.id, 
+                status: 'pending',
+                message: 'Changes submitted for review'
+            });
         }
+
+        // Fetch & return the updated version
+        const updated = await dbNodeFetch(id, req.userId, req.roles);
+        if (!updated) {
+            return res.status(404).json({ error: 'Node not found after update' });
+        }
+        
         return res.json(updated);
     } catch (err) {
-        console.error(err);
-        if (err.message === 'NOT_FOUND') {
-            return res.status(404).json({ error: 'Node not found' });
+        console.error('Patch node error:', err);
+
+        if (err.message.startsWith('INVALID_')) {
+            return res.status(400).json({ error: err.message });
         }
-        return res.status(500).json({ error: err.message });
+
+        switch (err.message) {
+            case 'NODE_NOT_FOUND':
+                return res.status(404).json({ error: 'Node not found' });
+            case 'INSUFFICIENT_PERMISSIONS':
+                return res.status(403).json({ error: 'Insufficient permissions' });
+            case 'DATA_INTEGRITY_ERROR':
+                return res.status(409).json({ error: 'Data integrity error' });
+            default:
+                if (err.message.includes('must be') || err.message.includes('required')) {
+                    return res.status(400).json({ error: err.message });
+                }
+                return res.status(500).json({ error: 'Failed to update node' });
+        }
     }
 }
 
@@ -443,11 +501,23 @@ export async function patchNode(req, res) {
 export async function deleteNode(req, res) {
     const { id } = req.params
     try {
-        await dbNodeDelete(id)
+        await dbNodeDelete(id, req.userId, req.roles)
         return res.status(204).end()
     } catch (err) {
-        console.error(err)
-        return res.status(500).json({ error: err.message })
+        console.error('Delete node error:', err);
+
+        if (err.message.startsWith('INVALID_')) {
+            return res.status(400).json({ error: err.message });
+        }
+
+        switch (err.message) {
+            case 'NODE_NOT_FOUND':
+                return res.status(404).json({ error: 'Node not found' });
+            case 'INSUFFICIENT_PERMISSIONS':
+                return res.status(403).json({ error: 'Insufficient permissions' });
+            default:
+                return res.status(500).json({ error: 'Failed to delete node' });
+        }
     }
 }
 
@@ -476,11 +546,21 @@ export async function getNodeHistory(req, res) {
     const page = Math.max(parseInt(req.query.page ?? '0', 10), 0);
 
     try {
-        const data = await dbNodeHistory(id, page, 50);
+        const data = await dbNodeHistory(id, req.userId, req.roles, page, 50);
         return res.json(data);
     } catch (err) {
-        console.error(err);
-        return res.status(500).json({ error: err.message });
+        console.error('Get node history error:', err);
+
+        if (err.message.startsWith('INVALID_')) {
+            return res.status(400).json({ error: err.message });
+        }
+
+        switch (err.message) {
+            case 'INSUFFICIENT_PERMISSIONS':
+                return res.status(403).json({ error: 'Insufficient permissions' });
+            default:
+                return res.status(500).json({ error: 'Failed to fetch node history' });
+        }
     }
 }
 
@@ -504,20 +584,26 @@ export async function moveNode(req, res) {
     }
 
     try {
-        await dbNodeMove(id, newParentId);
+        await dbNodeMove(id, newParentId, req.userId, req.roles);
         return res.status(200).json({ message: 'Node moved successfully.' });
     } catch (err) {
-        if (err.message === 'NOT_FOUND') {
-            return res.status(404).json({ error: 'Node or new parent not found.' });
+        console.error('Move node error:', err);
+
+        if (err.message.startsWith('INVALID_')) {
+            return res.status(400).json({ error: err.message });
         }
 
-        if (err.message === 'CIRCULAR') {
-            return res.status(400).json({
-                error: 'Cannot move a node under one of its own descendants.',
-            });
+        switch (err.message) {
+            case 'NODE_NOT_FOUND':
+                return res.status(404).json({ error: 'Node or new parent not found' });
+            case 'CIRCULAR':
+                return res.status(400).json({ 
+                    error: 'Cannot move a node under one of its own descendants' 
+                });
+            case 'INSUFFICIENT_PERMISSIONS':
+                return res.status(403).json({ error: 'Insufficient permissions' });
+            default:
+                return res.status(500).json({ error: 'Failed to move node' });
         }
-
-        console.error(err);
-        return res.status(500).json({ error: err.message });
     }
 }

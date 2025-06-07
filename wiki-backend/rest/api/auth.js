@@ -15,7 +15,8 @@ const baseFido2Config = {
     attestation: 'none',
     authenticatorRequireResidentKey: true,
     authenticatorUserVerification: 'preferred',
-}
+};
+
 /**
  * Generates a user-friendly device information string from an Express request object.
  * @param {object} req - The Express request object.
@@ -24,33 +25,33 @@ const baseFido2Config = {
  */
 function getDeviceInfoString(req) {
     if (!req || !req.headers || !req.headers['user-agent']) {
-        return 'Unknown Device/Browser'
+        return 'Unknown Device/Browser';
     }
 
-    const userAgentString = req.headers['user-agent']
-    const parser = new UAParser(userAgentString)
-    const uaResult = parser.getResult()
+    const userAgentString = req.headers['user-agent'];
+    const parser = new UAParser(userAgentString);
+    const uaResult = parser.getResult();
 
-    let deviceInfo = ''
+    let deviceInfo = '';
 
     // Browser information
     if (uaResult.browser && uaResult.browser.name) {
-        deviceInfo += uaResult.browser.name
+        deviceInfo += uaResult.browser.name;
         if (uaResult.browser.major) {
-            deviceInfo += ` ${uaResult.browser.major}`
+            deviceInfo += ` ${uaResult.browser.major}`;
         }
     } else {
-        deviceInfo += 'Unknown Browser'
+        deviceInfo += 'Unknown Browser';
     }
 
     // OS information
     if (uaResult.os && uaResult.os.name) {
-        deviceInfo += ` on ${uaResult.os.name}`
+        deviceInfo += ` on ${uaResult.os.name}`;
         if (uaResult.os.version) {
-            deviceInfo += ` ${uaResult.os.version}`
+            deviceInfo += ` ${uaResult.os.version}`;
         }
     } else {
-        deviceInfo += ' on Unknown OS'
+        deviceInfo += ' on Unknown OS';
     }
 
     // Device type (if available and useful, e.g., for mobile/tablet)
@@ -58,7 +59,7 @@ function getDeviceInfoString(req) {
         deviceInfo += ` (${uaResult.device.type})`
     }
 
-    return deviceInfo.trim()
+    return deviceInfo.trim();
 }
 
 
@@ -66,11 +67,11 @@ function hashRecoveryKey(key) {
     return crypto
         .createHmac('sha512', process.env.RECOVERY_KEY_SALT)
         .update(key)
-        .digest('hex')
+        .digest('hex');
 }
 
-function signToken(userId, role = 'user') {
-    return jwt.sign({ userId, role }, JWT_SECRET, { expiresIn: '7d' })
+function signToken(userId, roles = []) {
+    return jwt.sign({ userId, roles }, JWT_SECRET, { expiresIn: '7d' });
 }
 
 export async function verifyAuth(req, res, next) {
@@ -80,7 +81,7 @@ export async function verifyAuth(req, res, next) {
         try {
             const decoded = jwt.verify(token, JWT_SECRET)
             req.userId = decoded.userId
-            req.role = decoded.role
+            req.roles = decoded.roles
             next()
         } catch {
             return res.status(401).json({ error: 'Invalid token' })
@@ -92,13 +93,13 @@ export async function verifyAuth(req, res, next) {
         try {
             const result = await s.run(`
                 MATCH (u:User {apiKey: $apiKey})
-                RETURN u.id AS userId, u.role AS role
+                RETURN u.id AS userId, u.roles AS role
             `, { apiKey })
 
             if (result.records.length > 0) {
                 const record = result.records[0].toObject()
                 req.userId = record.userId
-                req.role = record.role
+                req.roles = record.roles
                 next()
             } else {
                 return res.status(401).json({ error: 'Invalid API key' })
@@ -111,7 +112,7 @@ export async function verifyAuth(req, res, next) {
         }
     }
     else {
-        req.role = 'guest'
+        req.roles = [ 'content:read' ];
         return next()
     }
 }
@@ -251,17 +252,72 @@ export async function register(req, res) {
         const deviceInfo = getDeviceInfoString(req);
         const apiKey = uuidv4();
 
+        // Check if this is the first user
+        const userCountResult = await tx.run(`
+            MATCH (u:User)
+            RETURN count(u) AS userCount
+        `);
+        const userCount = userCountResult.records[0].get('userCount').toNumber();
+
+        let userRoles;
+        if (userCount === 0) {
+            userRoles = ['admin:superuser'];
+        } else {
+            userRoles = ['content:read'];
+        }
+
         await tx.run(`
             MATCH (root:User {id: $rootUserId})
             CREATE (u:User {
                 id: $userId,
+
+                // Authentication
                 recoveryHash: $hash,
-                role: $userRole,
                 apiKey: $apiKey,
+
+                // Security
+                roles: $userRoles,
+                reputation: 0,
+                loginAttempts: 0,
+                lockUntil: null,
+
+                // Security tracking
+                ips: [$ip],
+                ipDates: [$now],
+
+                // Moderation
+                suspendedUntil: null,
+                banned: false,
+                banReason: '',
+                warnings: [],
+                moderationNotes: '',
+
+                // Email
+                email: '',
+                eduEmail: '',
+                workEmail: '',
+
+                // Email Verification
+                emailVerified: false,
+                emailVerificationToken: '',
+                emailVerificationExpires: null,
+                eduEmailVerified: false,
+                eduEmailVerificationToken: '',
+                eduEmailVerificationExpires: null,
+                workEmailVerified: false,
+                workEmailVerificationToken: '',
+                workEmailVerificationExpires: null,
+
+                // Profile
+                displayName: '',
+                bio: '',
+                timezone: 'UTC',
+                language: 'en',
+
+                // Timestamps
                 lastLogin: datetime(),
                 createdAt: datetime(),
-                ips: [$ip],
-                ipDates: [$now]
+                updatedAt: datetime()
             })
             CREATE (c:WebAuthnCredential {
                 id: $credentialId,
@@ -277,7 +333,7 @@ export async function register(req, res) {
             rootUserId: USER_ROOT_ID,
             userId,
             hash: hashed,
-            userRole: 'user',
+            userRoles,
             apiKey,
             credentialId,
             publicKey,
@@ -287,9 +343,9 @@ export async function register(req, res) {
             now,
         })
 
-        await tx.commit()
-        const token = signToken(userId, 'user')
-        res.json({ recoveryKey, token })
+        await tx.commit();
+        const token = signToken(userId, userRoles);
+        res.json({ recoveryKey, token });
     } catch (err) {
         console.log(err);
         if (tx.isOpen()) {
@@ -414,7 +470,7 @@ export async function login(req, res) {
         const credentialId = rawIdBuf.toString('base64url')
         const credResult = await tx.run(`
             MATCH (u:User)-[:HAS_CREDENTIAL]->(c:WebAuthnCredential {id: $credentialId})
-            RETURN u.id AS userId, u.role AS role, c.publicKey AS publicKeyPem, toInteger(coalesce(c.counter, 0)) AS prevCounter, c.active as active
+            RETURN u.id AS userId, u.roles AS roles, c.publicKey AS publicKeyPem, toInteger(coalesce(c.counter, 0)) AS prevCounter, c.active as active
         `, { credentialId })
 
         if (credResult.records.length === 0) {
@@ -423,14 +479,14 @@ export async function login(req, res) {
         }
 
         const rec = credResult.records[0].toObject()
-        
+
         if (!rec.active) {
             await tx.rollback();
             return res.status(401).json({ error: 'Inactive credential' });
         }
 
         const userId = rec.userId
-        const role = rec.role
+        const roles = rec.roles
         const publicKeyPem = rec.publicKeyPem
         const prevCounter = rec.prevCounter.toNumber()
 
@@ -470,7 +526,7 @@ export async function login(req, res) {
         `, { userId, ip, now })
 
         await tx.commit()
-        const token = signToken(userId, role)
+        const token = signToken(userId, roles)
         res.json({ token })
     } catch (err) {
         console.log(err)
@@ -631,7 +687,7 @@ export async function recover(req, res) {
 
 export async function generateLinkCode(req, res) {
     // From verifyAuth middleware
-    const currentUserId = req.userId; 
+    const currentUserId = req.userId;
 
     const s = session();
     const tx = s.beginTransaction();
@@ -781,7 +837,7 @@ export async function link(req, res) {
             initialCounter,
             deviceInfo,
         });
-        
+
         // Update user's last login info
         const ip = req.headers['x-forwarded-for'] || req.socket.remoteAddress;
         const now = new Date().toISOString();
@@ -809,9 +865,47 @@ export async function link(req, res) {
     }
 }
 
-export function requireRegistered(req, res, next) {
-    if (req.role === 'guest') {
-        return res.status(403).json({ error: 'Login required' });
-    }
-    next();
+export function requireRole(checkFor) {
+    return (req, res, next) => {
+        let hasPermission = false;
+
+        const userRoles = Array.isArray(req.roles) ? req.roles : [];
+
+        // Helper function to check if a user role matches a required role pattern
+        const doesRoleMatch = (userRole, requiredRolePattern) => {
+            if (requiredRolePattern.endsWith(':*')) {
+                // Handle wildcard patterns like 'admin:*' or 'user:profile:*'
+                const prefix = requiredRolePattern.slice(0, -1); // Remove the '*'
+                return userRole.startsWith(prefix);
+            } else {
+                // Handle exact matches
+                return userRole === requiredRolePattern;
+            }
+        };
+
+        // Always allow 'admin:superuser'
+        if (userRoles.includes('admin:superuser')) {
+            hasPermission = true;
+        } else {
+            const rolesToCheck = Array.isArray(checkFor) ? checkFor : [checkFor];
+
+            for (const requiredRolePattern of rolesToCheck) {
+                for (const userRole of userRoles) {
+                    if (doesRoleMatch(userRole, requiredRolePattern)) {
+                        hasPermission = true;
+                        break; // Found a matching role, no need to check further for this required pattern
+                    }
+                }
+                if (hasPermission) {
+                    break; // If a match was found for any requiredRolePattern, we can stop
+                }
+            }
+        }
+
+        if (!hasPermission) {
+            return res.status(403).json({ error: 'permission denied' });
+        }
+
+        next();
+    };
 }
