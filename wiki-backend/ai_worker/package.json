@@ -10,6 +10,7 @@
         "start": "node index.js"
     },
     "dependencies": {
-        "neo4j-driver": "^5.28.1"
+        "neo4j-driver": "^5.28.1",
+        "uuid": "^11.1.0"
     }
 }

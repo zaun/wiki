@@ -5,6 +5,7 @@ import crypto from 'crypto'
 import { Fido2Lib } from 'fido2-lib'
 import { UAParser } from 'ua-parser-js';
 import { v4 as uuidv4 } from 'uuid';
+import { getWebId } from '../util.js';
 
 const JWT_SECRET = process.env.JWT_SECRET
 
@@ -93,7 +94,7 @@ export async function verifyAuth(req, res, next) {
         try {
             const result = await s.run(`
                 MATCH (u:User {apiKey: $apiKey})
-                RETURN u.id AS userId, u.roles AS role
+                RETURN u.id AS userId, u.roles AS roles
             `, { apiKey })
 
             if (result.records.length > 0) {
@@ -260,7 +261,8 @@ export async function register(req, res) {
         const userCount = userCountResult.records[0].get('userCount').toNumber();
 
         let userRoles;
-        if (userCount === 0) {
+        if (userCount === 1) {
+            // Only root user node
             userRoles = ['admin:superuser'];
         } else {
             userRoles = ['content:read'];
@@ -345,7 +347,7 @@ export async function register(req, res) {
 
         await tx.commit();
         const token = signToken(userId, userRoles);
-        res.json({ recoveryKey, token });
+        res.json({ recoveryKey, token, userId: getWebId(userId), roles: userRoles });
     } catch (err) {
         console.log(err);
         if (tx.isOpen()) {
@@ -527,7 +529,7 @@ export async function login(req, res) {
 
         await tx.commit()
         const token = signToken(userId, roles)
-        res.json({ token })
+        res.json({ token, userId: getWebId(userId), roles })
     } catch (err) {
         console.log(err)
         if (tx.isOpen()) {
@@ -558,7 +560,7 @@ export async function recover(req, res) {
         const userLookupResult = await tx.run(`
             MATCH (u:User {recoveryHash: $hashedProvidedRecoveryKey})
             WHERE u.recoveryHash IS NOT NULL AND u.recoveryHash <> "" 
-            RETURN u.id AS actualUserId, u.role AS userRole
+            RETURN u.id AS actualUserId, u.roles AS userRoles
         `, { hashedProvidedRecoveryKey });
 
         if (userLookupResult.records.length === 0) {
@@ -567,7 +569,7 @@ export async function recover(req, res) {
                 .status(403)
                 .json({ error: 'Invalid or already used recovery key.' });
         }
-        const { actualUserId, userRole } = userLookupResult.records[0].toObject();
+        const { actualUserId, userRoles } = userLookupResult.records[0].toObject();
 
         // Fetch and Consume RegistrationAttempt
         const challengeResult = await tx.run(`
@@ -672,8 +674,8 @@ export async function recover(req, res) {
         await tx.commit();
 
         // Sign JWT
-        const token = signToken(actualUserId, userRole);
-        res.json({ recoveryKey: newPlainRecoveryKey, token })
+        const token = signToken(actualUserId, userRoles);
+        res.json({ recoveryKey: newPlainRecoveryKey, token, userId: getWebId(actualUserId), roles: userRoles })
     } catch (err) {
         console.error('Account recovery with new authenticator error:', err);
         if (tx.isOpen()) {
@@ -754,14 +756,14 @@ export async function link(req, res) {
             WHERE dla.expiresAt > datetime()
             WITH u, dla, r_dla
             DETACH DELETE dla
-            RETURN u.id AS actualUserId, u.role AS userRole
+            RETURN u.id AS actualUserId, u.roles AS userRoles
         `, { linkCode });
 
         if (linkValidationResult.records.length === 0) {
             await tx.rollback();
             return res.status(400).json({ error: 'Invalid or expired link code.' });
         }
-        const { actualUserId, userRole } = linkValidationResult.records[0].toObject();
+        const { actualUserId, userRoles } = linkValidationResult.records[0].toObject();
 
         // Fetch and Consume RegistrationAttempt
         const challengeResult = await tx.run(`
@@ -852,8 +854,8 @@ export async function link(req, res) {
         await tx.commit();
 
         // Sign JWT for the new device (Device B)
-        const token = signToken(actualUserId, userRole);
-        res.json({ token });
+        const token = signToken(actualUserId, userRoles);
+        res.json({ token, userId: getWebId(actualUserId), roles: userRoles});
     } catch (err) {
         console.error('Link new device error:', err);
         if (tx.isOpen()) {

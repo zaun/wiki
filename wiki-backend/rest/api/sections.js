@@ -43,10 +43,10 @@ export async function createSection(req, res) {
     // For now, I'm assuming it can be any JSON-serializable object or string.
 
     try {
-        const newSectionId = await dbSectionCreate(nodeId, req.userId, req.roles, { title, content, data, summary, type });
+        const { id } = await dbSectionCreate(nodeId, req.userId, req.roles, { title, content, data, summary, type });
 
         // Reuse getSection to fetch and return the newly created section
-        req.params.id = newSectionId; // Set the ID for getSection to use
+        req.params.id = id; // Set the ID for getSection to use
         await getSection(req, res); // Call getSection to return the full section object
     } catch (err) {
         console.error('Error creating section:', err);

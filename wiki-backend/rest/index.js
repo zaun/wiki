@@ -19,6 +19,7 @@ import * as ImageHandlers from './api/images.js';
 import * as UserHandlers from './api/users.js';
 import * as UtilHelpers from './util.js';
 import * as ExportHandlers from './api/export.js';
+import * as ReviewHandlers from './api/review.js';
 import { verifyConnection, createIndexes, closeDriver } from './storage/neo4j.js';
 import {
     createRootNode,
@@ -136,6 +137,7 @@ router.post('/nodes', requireAuthenticated, NodeHandlers.createNode);
 router.get('/nodes/:id', NodeHandlers.getNode);
 router.patch('/nodes/:id', requireAuthenticated, NodeHandlers.patchNode);
 router.delete('/nodes/:id', requireAuthenticated, NodeHandlers.deleteNode);
+router.post('/nodes/:id', requireAuthenticated, ReviewHandlers.reviewNode, NodeHandlers.createNode);
 router.get('/nodes/:id/history', requireAuthenticated, NodeHandlers.getNodeHistory);
 router.get('/nodes/:id/history/:histId', requireAuthenticated, NodeHandlers.getNodeHistory);
 router.get('/nodes/:id/children', NodeHandlers.getChildNodes);
@@ -156,7 +158,7 @@ router.post('/nodes/:id/move', requireAuthenticated, NodeHandlers.moveNode);
 
 router.post('/nodes/:nodeId/sections', requireAuthenticated, SectionHandlers.createSection);
 router.get('/nodes/:nodeId/sections', SectionHandlers.getSections);
-// router.get('/nodes/:nodeId/sections/:id', NodeHandlers.getSection);
+router.get('/nodes/:nodeId/sections/:id', SectionHandlers.getSection);
 router.patch('/nodes/:nodeId/sections/:id', requireAuthenticated, SectionHandlers.patchSection);
 router.delete('/nodes/:nodeId/sections/:id', requireAuthenticated, SectionHandlers.deleteSection);
 router.get('/nodes/:nodeId/sections/:id/history', requireAuthenticated, SectionHandlers.getSectionHistory);

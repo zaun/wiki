@@ -6,6 +6,98 @@
 
 import DiffMatchPatch from 'diff-match-patch';
 
+const CUSTOM_BASE57_ALPHABET = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz01234';
+
+/**
+ * Converts a standard UUID string (e.g., "7d4d1a0f-ffa6-41bb-bc30-969a99bce41b")
+ * to a Base64URL encoded string.
+ *
+ * @param {string} uuid - The UUID string with dashes.
+ * @returns {string} The Base64URL encoded string.
+ * @throws {Error} If the input is not a valid UUID string.
+ */
+export function getWebId(uuid) {
+    if (!uuid || typeof uuid !== 'string') {
+        throw new Error('Invalid UUID: Input must be a string.');
+    }
+
+    // Remove dashes from UUID
+    const hex = uuid.replace(/-/g, '');
+
+    // Check if it's a valid hex string for a UUID
+    if (!/^[0-9a-fA-F]{32}$/.test(hex)) {
+        throw new Error('Invalid UUID format: Expected 32 hexadecimal characters after removing dashes.');
+    }
+
+    // Convert hex string (32 chars) to a BigInt (128 bits)
+    // '0x' prefix is needed for BigInt conversion from hex string
+    const bigIntUUID = BigInt('0x' + hex);
+
+    // Convert BigInt to Base57 string
+    let webId = '';
+    let num = bigIntUUID;
+
+    // Handle the case of 0 explicitly if it were possible (UUIDs are never 0)
+    if (num === 0n) {
+        return CUSTOM_BASE57_ALPHABET[0];
+    }
+
+    while (num > 0n) {
+        const remainder = num % BigInt(CUSTOM_BASE57_ALPHABET.length);
+        webId = CUSTOM_BASE57_ALPHABET[Number(remainder)] + webId;
+        num = num / BigInt(CUSTOM_BASE57_ALPHABET.length);
+    }
+
+    // Pad the string to 22 characters if it's shorter.
+    const expectedLength = 22; // As calculated previously for 128 bits in Base57
+    while (webId.length < expectedLength) {
+        webId = CUSTOM_BASE57_ALPHABET[0] + webId;
+    }
+
+    return webId;
+}
+
+/**
+ * Converts a Base64URL encoded string back to a standard UUID string (with dashes).
+ *
+ * @param {string} webId - The Base64URL encoded string.
+ * @returns {string} The UUID string with dashes.
+ * @throws {Error} If the input is not a valid Base64URL string or cannot be converted to a UUID.
+ */
+export function getDBId(webId) {
+    if (!webId || typeof webId !== 'string') {
+        throw new Error('Invalid Base57 ID: Input must be a string.');
+    }
+
+    let bigIntUUID = 0n;
+    const base = BigInt(CUSTOM_BASE57_ALPHABET.length);
+
+    // Ensure the input string only contains characters from our alphabet
+    for (const char of webId) {
+        if (CUSTOM_BASE57_ALPHABET.indexOf(char) === -1) {
+            throw new Error(`Invalid Base57 ID: Contains character '${char}' not in alphabet.`);
+        }
+    }
+
+    for (let i = 0; i < webId.length; i++) {
+        const char = webId[i];
+        const value = BigInt(CUSTOM_BASE57_ALPHABET.indexOf(char));
+        bigIntUUID = bigIntUUID * base + value;
+    }
+
+    // Convert BigInt to hex string
+    // Pad with leading zeros to ensure it's 32 hex characters (128 bits)
+    let hex = bigIntUUID.toString(16);
+    while (hex.length < 32) {
+        hex = '0' + hex;
+    }
+
+    // Format as UUID with dashes
+    const uuid = `${hex.substring(0, 8)}-${hex.substring(8, 12)}-${hex.substring(12, 16)}-${hex.substring(16, 20)}-${hex.substring(20)}`;
+
+    return uuid;
+}
+
 /**
  * Fetches the title from a given URL by parsing the HTML <title> tag.
  * Express.js route handler that takes a URL query parameter and returns the extracted title.
@@ -486,7 +578,7 @@ export function checkUserPermission(roles, reqUserID, userId) {
     if (roles.includes('admin:superuser')) {
         return {
             publicRead: true,
-            isOwner: false,
+            isOwner: reqUserID == userId,
             maxSuspend: 30,
             canWarn: true,
             canBan: true,

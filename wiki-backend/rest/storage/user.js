@@ -44,6 +44,9 @@ export async function dbUserFetch(reqUserId, roles, userId) {
         throw new Error('INSUFFICIENT_PERMISSIONS');
     }
 
+    console.log('reqUserId', reqUserId)
+    console.log('userId', userId)
+
     const s = session();
     try {
         const result = await s.run(`
@@ -52,7 +55,7 @@ export async function dbUserFetch(reqUserId, roles, userId) {
             OPTIONAL MATCH (u)-[:HAS_DEVICE_LINK_ATTEMPT]->(link:DeviceLinkAttempt)
             WHERE link IS NULL OR link.expiresAt > datetime()
             RETURN
-                u { .id, .role, .email, .displayName, .createdAt, .lastLogin, .ips, .ipDates } AS user,
+                u { .id, .roles, .email, .displayName, .createdAt, .lastLogin, .ips, .ipDates } AS user,
                 collect(DISTINCT cred { .id, .publicKey, .counter, .deviceInfo, .active, .addedAt }) AS credentials,
                 collect(DISTINCT link { .id, .shortCode, .createdAt, .expiresAt }) AS activeLinks
         `, { userId });
@@ -64,15 +67,59 @@ export async function dbUserFetch(reqUserId, roles, userId) {
         const record = result.records[0];
         const user = record.get('user');
 
+        if (user.createdAt) {
+            try {
+                user.createdAt = new Date(user.createdAt).toISOString();
+            } catch (e) {
+                console.error("Error converting createdAt to ISO format:", e);
+            }
+        }
+
+        if (user.updatedAt) {
+            try {
+                user.updatedAt = new Date(user.updatedAt).toISOString();
+            } catch (e) {
+                console.error("Error converting updatedAt to ISO format:", e);
+            }
+        }
+
+        if (user.lastLogin) {
+            try {
+                user.lastLogin = new Date(user.lastLogin).toISOString();
+            } catch (e) {
+                console.error("Error converting lastLogin to ISO format:", e);
+            }
+        }
+
         if (permissions.isOwner) {
-            user.credentials = record.get('credentials').filter(c => c && c.id);
-            user.activeLinks = record.get('activeLinks').filter(l => l && l.id);
+            console.log('Owner');
+            user.credentials = record.get('credentials').filter(c => c && c.id).map((c) => { 
+                if (c.addedAt) {
+                    try {
+                        c.addedAt = new Date(c.addedAt).toISOString();
+                    } catch {
+                        delete c.addedAt;
+                    }
+                }
+                return c;
+            });
+            user.activeLinks = record.get('activeLinks').filter(l => l && l.id).map((l) => { 
+                if (l.addedAt) {
+                    try {
+                        l.addedAt = new Date(l.addedAt).toISOString();
+                    } catch {
+                        delete l.addedAt;
+                    }
+                }
+                return l;
+            });
             delete user.recoveryHash;       // Can't be viewed, only replaced
             delete user.moderationNotes;    // Not public to the user
             delete user.emailVerificationToken;
             delete user.eduEmailVerificationExpires;
             delete user.workEmailVerificationExpires;
         } else {
+            console.log('Not owner');
             // Check if user has moderation permissions
             if (permissions.maxSuspend <= 0 &&
                 !permissions.canWarn &&

@@ -5,13 +5,14 @@
  */
 
 import { dbUserFetch, dbUserUpdate, dbUserCredentialUpdate } from '../storage/user.js';
+import { getDBId } from '../util.js';
 
 /**
  * Express handler to fetch user details including credentials and active device links.
  * GET /api/users/:id
  */
 export async function getUserDetails(req, res) {
-    const userId = req.params.id;
+    const userId = getDBId(req.params.id);
     const reqUserId = req.userId;
     const roles = Array.isArray(req.roles) ? req.roles : (req.role ? [req.role] : []);
 
@@ -42,7 +43,7 @@ export async function getUserDetails(req, res) {
  * PATCH /api/users/:id
  */
 export async function updateUserProfile(req, res) {
-    const userId = req.params.id;
+    const userId = getDBId(req.params.id);
     const reqUserId = req.userId;
     const roles = Array.isArray(req.roles) ? req.roles : (req.role ? [req.role] : []);
     const { email, displayName } = req.body;
@@ -79,7 +80,7 @@ export async function updateUserProfile(req, res) {
  * PATCH /api/users/:userId/credentials/:credentialId
  */
 export async function updateCredential(req, res) {
-    const userId = req.params.userId;
+    const userId = getDBId(req.params.id);
     const credentialId = req.params.credentialId;
     const reqUserId = req.userId;
     const roles = Array.isArray(req.roles) ? req.roles : (req.role ? [req.role] : []);

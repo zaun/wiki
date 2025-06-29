@@ -39,7 +39,7 @@ export async function createRootNode() {
         await tx.run(`
             CREATE (n:Node {
                 id: $id,
-                title: "Unending.Wiki",
+                title: "OmniOntos",
                 content: "",
                 createdAt: $now,
                 updatedAt: $now,

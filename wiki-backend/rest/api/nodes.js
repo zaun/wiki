@@ -199,10 +199,10 @@ function nodeValidate({ aliases, details, links, tags, relationships }) {
  *   and optionally creates additional relationships.
  *
  * Required body properties:
- *   • `title` (string)   – non‑empty  
+ *   • `title`    (string)   – non‑empty  
+ *   • `content`  (string)
  *
  * Optional body properties:
- *   • `content`  (string)  
  *   • `image.id` (string)  
  *   • `aliases`  (string[])  
  *   • `tags`     (string[])  
@@ -221,9 +221,10 @@ function nodeValidate({ aliases, details, links, tags, relationships }) {
  */
 export async function createNode(req, res) {
     try {
+        const { id } = req.params;
         const {
             title,
-            content = '',
+            content,
             subtitle = '',
             parentId,
             aliases = [],
@@ -235,8 +236,26 @@ export async function createNode(req, res) {
             relationships = [],
         } = req.body;
 
+        // If this is a POST to a specific node, then use that node as the parent
+        let pId = parentId;
+        if (id) {
+            pId = id;
+        } else {
+            // Only super users can post direcrly to the nodes collection
+            if (!Array.isArray(req.roles)) {
+                throw new Error('INVALID_ROLES');
+            }
+            if (!req.roles.includes('admin:superuser')) {
+                throw new Error('INSUFFICIENT_PERMISSIONS');
+            }            
+        }
+
         if (!title || typeof title !== 'string') {
             throw new Error('title is required and must be a non-empty string');
+        }
+
+        if (!content || typeof content !== 'string') {
+            throw new Error('content is required and must be a non-empty string');
         }
 
         if (image && typeof image !== 'string') {
@@ -264,7 +283,7 @@ export async function createNode(req, res) {
             title,
             content,
             subtitle,
-            parentId,
+            parentId: pId,
             aliases,
             details,
             links,

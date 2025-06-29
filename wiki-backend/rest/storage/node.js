@@ -157,7 +157,7 @@ export async function dbNodeCreate(userId, roles, {
         }
 
         details.forEach((d, index) => {
-            if (!d.label || !r.type || !r.value) {
+            if (!d.label || !d.type || !d.value) {
                 throw new Error(`INVALID_DETAIL_STRUCTURE at index ${index}`);
             }
         });
@@ -230,7 +230,7 @@ export async function dbNodeCreate(userId, roles, {
         }
 
         const record = parentInfoRes.records[0];
-        const parentLevel = record.get('parentLevel');
+        const parentLevel = Number(record.get('parentLevel'));
         const parentDomain = record.get('parentDomain');
         const parentTitle = record.get('parentTitle');
         const hasPathToRoot = record.get('hasPathToRoot');
@@ -631,6 +631,22 @@ export async function dbNodeFetch(id, userId, roles) {
             node.aiReview = JSON.parse(node.aiReview);
         } catch {
             delete node.aiReview;
+        }
+    }
+
+    if (node.createdAt) {
+        try {
+            node.createdAt = new Date(node.createdAt).toISOString();
+        } catch (e) {
+            console.error("Error converting createdAt to ISO format:", e);
+        }
+    }
+
+    if (node.updatedAt) {
+        try {
+            node.updatedAt = new Date(node.updatedAt).toISOString();
+        } catch (e) {
+            console.error("Error converting updatedAt to ISO format:", e);
         }
     }
 

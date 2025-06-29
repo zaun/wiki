@@ -115,6 +115,23 @@ export async function dbPageFetch(id) {
     }
 
     page.content = JSON.parse(page.content);
+
+    if (page.createdAt) {
+        try {
+            page.createdAt = new Date(page.createdAt).toISOString();
+        } catch (e) {
+            console.error("Error converting createdAt to ISO format:", e);
+        }
+    }
+
+    if (page.updatedAt) {
+        try {
+            page.updatedAt = new Date(page.updatedAt).toISOString();
+        } catch (e) {
+            console.error("Error converting updatedAt to ISO format:", e);
+        }
+    }
+    
     return page;
 }
 

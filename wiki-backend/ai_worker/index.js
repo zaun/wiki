@@ -59,150 +59,75 @@ const closeDriver = async () => {
 const session = () =>
     dbName ? driver.session({ database: dbName }) : driver.session();
 
+async function askOllama(prompt) {
+    const requestBody = {
+        model: 'phi4',
+        stream: false,
+        prompt,
+    };
 
-const getNode = async () => {
-    const s = session();
+    const controller = new AbortController();
+    const duration = 60 * 1000 * 60;
+    const timeoutId = setTimeout(() => controller.abort(), duration);
+    const start = new Date();
 
     try {
-        const result = await s.run(`
-            MATCH (n:Node)
-            WHERE n.title IS NOT NULL AND n.title <> ''
-                AND n.content IS NOT NULL AND n.content <> ''
-                AND n.aiReview IS NULL
-                AND n.status IS NOT NULL AND n.status = 'complete'
-            RETURN n
-            LIMIT 1
-        `);
+        console.log(`Asking Ollama...`);
+        const url = 'http://192.168.0.206:11434/api/generate';
+        const response = await fetch(url, {
+            signal: controller.signal,
+            headersTimeout: duration,
+            bodyTimeout: duration,
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(requestBody),
+        });
 
-        const record = result.records[0];
-        if (record) {
-            const node = record.get('n');
-            return node?.properties ?? null;
-        } else {
-            return null;
+        clearTimeout(timeoutId);
+
+        if (!response.ok) {
+            const errorText = await response.text();
+            return { success: false };
+        }
+
+        const answer = await response.json();
+        try {
+            let generatedText = answer.response;
+            // Strip ```json and ```
+            if (generatedText.startsWith('```json')) {
+                generatedText = generatedText.substring(7);
+            }
+            if (generatedText.endsWith('```')) {
+                generatedText = generatedText.substring(0, generatedText.length - 3);
+            }
+            generatedText = generatedText.trim();
+
+            let parsedJson = JSON.stringify(generatedText);
+
+            const end = new Date();
+            const durationMilliseconds = end.getTime() - start.getTime();
+            console.log('Duration in ms: ', durationMilliseconds);
+            console.log(`Valid response...`);
+            return { success: true, result: parsedJson };
+        } catch (parseError) {
+            const end = new Date();
+            const durationMilliseconds = end.getTime() - start.getTime();
+            console.log('Duration in ms: ', durationMilliseconds);
+            console.log(`Invalid response...  ${parseError}`);
+            console.log(generatedText);
+            return { success: false };
         }
     } catch (error) {
-        console.error('Error:', error);
-    } finally {
-        await s.close();
+        const end = new Date();
+        const durationMilliseconds = end.getTime() - start.getTime();
+        console.log('Duration in ms: ', durationMilliseconds);
+        console.error('Fetch error:', error);
+        return { success: false };
     }
 }
 
-
-const getSection = async () => {
-    const s = session();
-
-    try {
-        const result = await s.run(`
-            MATCH (n:Node)-[:HAS_SECTION]->(s:Section)
-            WHERE s.title IS NOT NULL AND s.title <> ''
-                AND s.content IS NOT NULL AND s.content <> ''
-                AND s.aiReview IS NULL
-                AND s.status IS NOT NULL AND s.status = 'complete'
-            RETURN s, n.title AS nodeTitle
-            LIMIT 1
-        `);
-
-        const record = result.records[0];
-        if (record) {
-            const section = record.get('s');
-            const nodeTitle = record.get('nodeTitle');
-            return {
-                section: section?.properties ?? null,
-                nodeTitle: nodeTitle ?? null,
-            };
-        } else {
-            return null;
-        }
-    } catch (error) {
-        console.error('Error:', error);
-    } finally {
-        await s.close();
-    }
-};
-
-async function saveNodeReview({ id, review, flag }) {
-    const s = session();
-    try {
-        await s.run(`
-            MATCH (n:Node {id: $id})
-            SET n.aiReview = $review
-            SET n.aiFlag = $flag
-        `, { id, review: JSON.stringify(review), flag });
-        console.log('Saved...')
-    } finally {
-        await s.close();
-    }
-}
-
-async function saveSectionReview({ id, review, flag }) {
-    const s = session();
-    try {
-        await s.run(`
-            MATCH (s:Section {id: $id})
-            SET s.aiReview = $review
-            SET s.aiFlag = $flag
-        `, { id, review: JSON.stringify(review), flag });
-        console.log('Saved...')
-    } finally {
-        await s.close();
-    }
-}
-
-function getPrompt(title, content) {
-        const prompt = `
-## Analyze Text for Factual and Logical Issues
-
-**Text for Analysis:**
-
-"""
-Title: ${title}
-
-${content}
-"""
-
-**Instructions for Analysis:**
-
-For the provided text, answer the following questions. Your response should be a JSON array, where each object corresponds to a question and follows the example format provided. Verify JSON array and objects are valid.
-
----
-
-1.  **Factual Claims Check:** Is there any information presented that directly contradicts widely accepted facts or information likely to be found in mainstream, reputable sources?
-    * **Response Format:** \`{"id": 1, "result": TRUE/FALSE, "statement": "Contradictory statement if TRUE", "notes": "Explanation of contradiction if TRUE"}\`
-
-2.  **Internal Consistency Check:** Are there any logical inconsistencies or direct contradictions within the provided text itself?
-    * **Response Format:** \`{"id": 2, "result": TRUE/FALSE, "statement": "Contradictory statements if TRUE", "notes": "Explanation if TRUE"}\`
-
-3.  **Reference Fabrication/Misrepresentation Check:** Does this text refer to studies, data, or external sources that appear to be fabricated or misrepresented?
-    * **Response Format:** \`{"id": 3, "result": TRUE/FALSE, "statement": "Fabricated/misrepresented reference if TRUE", "notes": "Explanation if TRUE"}\`
-
-4.  **Bias/Subjectivity Check:** Does the text contain strong subjective opinions, unsubstantiated claims, or language that demonstrates clear bias, deviating from an objective or neutral tone?
-    * **Response Format:** \`{"id": 4, "result": TRUE/FALSE, "statement": "Biased statement if TRUE", "notes": "Explanation if TRUE"}\`
-
-5.  **Sensitive Content Check:** Does the text discuss any potentially sensitive, offensive, or highly controversial topics without adequate context or a neutral stance?
-    * **Response Format:** \`{"id": 5, "result": TRUE/FALSE, "statement": "Sensitive content if TRUE", "notes": "Explanation if TRUE"}\`
-
-6.  **Clarity & Readability Score:** Rate the clarity and readability of the following text on a scale of 1 to 10, where 1 is extremely unclear/difficult to read and 10 is exceptionally clear and easy to understand.
-    * **Response Format:** \`{"id": 6, "score": NUMBER (1 as lowest quality, 10 as highest), "notes": "Explanation if SCORE"}\`
-
-7.  **Coherence & Flow Score:** Considering the logical progression of ideas and transitions between sentences and paragraphs, rate the coherence and flow of the following text on a scale of 1 to 10.
-    * **Response Format:** \`{"id": 7, "score": NUMBER (1 as lowest quality, 10 as highest), "notes": "Explanation if SCORE"}\`
-
-8.  **Completeness/Thoroughness Score:** Based on the apparent intent of this section, rate how thoroughly it addresses its implied topic or sub-topic on a scale of 1 to 10, where 1 is incomplete/superficial and 10 is comprehensive/thorough within its scope.
-    * **Response Format:** \`{"id": 8, "score": NUMBER (1 as lowest quality, 10 as highest), "notes": "Explanation if SCORE"}\`
-
-9.  **Grammar, Spelling & Punctuation Score:** Rate the correctness of grammar, spelling, and punctuation in the following text on a scale of 1 to 10, where 1 indicates numerous errors and 10 is virtually flawless.
-    * **Response Format:** \`{"id": 9, "score": NUMBER (1 as lowest quality, 10 as highest), "notes": "Explanation if SCORE"}\`
-
-10. **Engagement Score:** Rate the overall engagement and appeal of the following text for a general audience on a scale of 1 to 10, where 1 is very dull/unengaging and 10 is captivating/highly engaging.
-    * **Response Format:** \`{"id": 10, "score": NUMBER (1 as lowest quality, 10 as highest), "notes": "Explanation if SCORE"}\`
-
----
-
-    `;
-
-    return prompt;
-}
 
 async function askGemini(prompt) {
     const url = `https://generativelanguage.googleapis.com/${aiVersion}/models/${aiModel}:generateContent?key=${aiKey}`;
@@ -276,115 +201,225 @@ async function askGemini(prompt) {
     }
 }
 
-const reviewNode = async () => {
-    const node = await getNode();
-    if (!node) {
-        return;
-    }
+const getTopic = async () => {
+    const s = session();
 
-    if (node.aiReview) {
-        console.log('Already reviewed');
-        return;
-    }
+    try {
+        const result = await s.run(`
+            MATCH (n:Node)
+            WHERE n.title IS NOT NULL AND n.title <> ''
+            AND n.content IS NOT NULL AND n.content <> ''
+            // AND n.id = '01976093-bd3f-73fc-a6a4-6b7d37286af3'
+            AND n.aiReview IS NULL
+            AND n.status IS NOT NULL AND n.status <> 'archived'
+            LIMIT 1
+            OPTIONAL MATCH path_to_root = (root:Node)-[:HAS_CHILD*]->(n)
+            WHERE NOT EXISTS { (root)<-[:HAS_CHILD]-() }
+            OPTIONAL MATCH breadcrumb_path = (a:Node)-[:HAS_CHILD*]->(n)
+            WITH n, path_to_root, breadcrumb_path
+            ORDER BY length(breadcrumb_path) DESC
+            LIMIT 1 // Ensures we get the longest path for breadcrumbs if multiple exist
 
-    console.log(`Reviwing: ${node.title} ${node.id}`);
+            OPTIONAL MATCH (n)-[:HAS_SECTION]->(s:Section)
 
-    const prompt = getPrompt(node.title, node.content);
+            RETURN
+                n.id AS id,
+                n.title AS title,
+                n.content AS content,
+                CASE WHEN path_to_root IS NOT NULL AND size(nodes(path_to_root)) > 1
+                    THEN nodes(path_to_root)[1].title
+                    ELSE null
+                END AS domain,
+                COLLECT(DISTINCT CASE WHEN breadcrumb_path IS NOT NULL THEN [x IN nodes(breadcrumb_path) | { id: x.id, title: x.title }] ELSE [] END) AS breadcrumbs,
+                COLLECT(DISTINCT {
+                    id: s.id,
+                    type: s.type,
+                    title: s.title,
+                    content: s.content,
+                    data: s.data,
+                    summary: s.summary
+                }) AS sections
+        `);
 
-    const response = await askGemini(prompt);
+        const record = result.records[0];
+        if (record) {
+            const rawBreadcrumbs = record.get('breadcrumbs');
+            const breadcrumbs = rawBreadcrumbs.length > 0 ? rawBreadcrumbs[0] : [];
 
-    if (response.success && Array.isArray(response.result)) {
-        const review = response.result;
 
-        if (review.length !== 10) {
-            console.log('Review length not 10');
-            console.log(response.result);
-            return;
+            // Filter out null sections if no sections were found (COLLECT on OPTIONAL MATCH can include a null entry)
+            const sections = record.get('sections').filter(section => section.type !== null);
+
+            return {
+                id: record.get('id'),
+                domain: record.get('domain'),
+                title: record.get('title'),
+                content: record.get('content'),
+                breadcrumbs: breadcrumbs,
+                sections: sections
+            };
+        } else {
+            return null;
         }
-
-        let pass = true;
-        let flag = false
-        for (let idx = 0; idx <review.length; idx++) {
-            if (review[idx].id !== idx + 1) {
-                pass = false;
-                console.log('Review id invalid');
-            }
-
-            if (idx < 5 && review[idx].result === false) {
-                delete review[idx].statement
-                delete review[idx].notes
-            }
-
-            if (idx < 5 && review[idx].result === true) {
-                flag = true;
-            }
-        }
-
-        if (!pass) {
-            console.log(response.result);
-            return;
-        }
-
-        await saveNodeReview({ id: node.id, review, flag });
+    } catch (error) {
+        console.error('Error:', error);
+        return null;
+    } finally {
+        await s.close();
     }
-    
-    return;
 }
 
+async function saveNodeReview(id, review, flag) {
+    const s = session();
+    try {
+        await s.run(`
+            MATCH (n:Node {id: $id})
+            SET n.aiReview = $review
+            SET n.aiFlag = $flag
+        `, { id, review: JSON.stringify(review), flag });
+        console.log('  Saved node review...')
+    } finally {
+        await s.close();
+    }
+}
 
-const reviewSection = async () => {
-    const info = await getSection();
-    if (!info) {
+async function saveSectionReview(id, review, flag) {
+    const s = session();
+    try {
+        await s.run(`
+            MATCH (s:Section {id: $id})
+            SET s.aiReview = $review
+            SET s.aiFlag = $flag
+        `, { id, review: JSON.stringify(review), flag });
+        console.log('  Saved section review...')
+    } finally {
+        await s.close();
+    }
+}
+
+async function reviewTopic () {
+    const topic = await getTopic();
+    if (!topic) {
+        console.log(`Topic not found`);
         return;
     }
+    console.log(`Reviewing: ${topic.title} - ${topic.id}`);
 
-    if (info.section.aiReview) {
-        console.log('Already reviewed');
-        return;
-    }
+    let document = `Section ID: 0\n\nTitle: ${topic.title}\n\nSummary:\n${topic.content}\n\n`;
+    topic.sections.forEach((s, idx) => {
+        document += `---\n\nSection ID: ${idx + 1}\n\nSection Title: ${s.title}\n\nContent:\n${s.content}\n\n${s.summary}\n\n`;
+    });
 
-    console.log(`Reviwing section: ${info.section.title} ${info.section.id}`);
+    const prompt = `
+## Analyze Text for Factual and Logical Issues
 
-    const prompt = getPrompt(`${info.nodeTitle}: ${info.section.title}`, info.section.content);
+**Text for Analysis:**
 
-    const response = await askGemini(prompt);
+"""
+${document}
+"""
 
-    if (response.success && Array.isArray(response.result)) {
-        const review = response.result;
+**Instructions for Analysis:**
 
-        if (review.length !== 10) {
-            console.log('Review length not 10');
-            console.log(response.result);
+For the provided text, answer the following questions, for the Topic symmary and for each Topic Section. Your response should be a JSON array, where each object corrisponds to a part of the Topic beinf reviews. Each objec should have an array where each object corresponds to a question and follows the example format provided. Verify JSON array and objects are valid.
+**Response Format:** [{ sectionID: SECTION_ID, results: RESULT_ARRAY }]
+
+---
+
+1.  **Is-A-Kind-Of Check:** Is the current topic strictly a is-a-kind-of for its location?
+    * **Response Format:** \`{"id": 1, "result": TRUE/FALSE, "statement": "Proper location is FALSE", "notes": "Explanation of is-a-kind-of falure if FALSE"}\`
+
+2.  **Factual Claims Check:** Is there any information presented that directly contradicts widely accepted facts or information likely to be found in mainstream, reputable sources?
+    * **Response Format:** \`{"id": 2, "result": TRUE/FALSE, "statement": "Contradictory statement if TRUE", "notes": "Explanation of contradiction if TRUE"}\`
+
+3.  **Internal Consistency Check:** Are there any logical inconsistencies or direct contradictions within the provided text itself?
+    * **Response Format:** \`{"id": 3, "result": TRUE/FALSE, "statement": "Contradictory statements if TRUE", "notes": "Explanation if TRUE"}\`
+
+4.  **Reference Fabrication/Misrepresentation Check:** Does this text refer to studies, data, or external sources that appear to be fabricated or misrepresented?
+    * **Response Format:** \`{"id": 4, "result": TRUE/FALSE, "statement": "Fabricated/misrepresented reference if TRUE", "notes": "Explanation if TRUE"}\`
+
+5.  **Bias/Subjectivity Check:** Does the text contain strong subjective opinions, unsubstantiated claims, or language that demonstrates clear bias, deviating from an objective or neutral tone? The subject matter should be taken into account, for example music may includes subjective opinions and value judgments while acknowledging differing views,
+    * **Response Format:** \`{"id": 5, "result": TRUE/FALSE, "statement": "Biased statement if TRUE", "notes": "Explanation if TRUE"}\`
+
+6.  **Sensitive Content Check:** Does the text discuss any potentially sensitive, offensive, or highly controversial topics without adequate context or a neutral stance?
+    * **Response Format:** \`{"id": 6, "result": TRUE/FALSE, "statement": "Sensitive content if TRUE", "notes": "Explanation if TRUE"}\`
+
+7.  **Clarity & Readability Score:** Rate the clarity and readability of the following text on a scale of 1 to 10, where 1 is extremely unclear/difficult to read and 10 is exceptionally clear and easy to understand.
+    * **Response Format:** \`{"id": 7, "score": NUMBER (1 as lowest quality, 10 as highest), "notes": "Explanation if SCORE"}\`
+
+8.  **Coherence & Flow Score:** Considering the logical progression of ideas and transitions between sentences and paragraphs, rate the coherence and flow of the following text on a scale of 1 to 10.
+    * **Response Format:** \`{"id": 8, "score": NUMBER (1 as lowest quality, 10 as highest), "notes": "Explanation if SCORE"}\`
+
+9.  **Completeness/Thoroughness Score:** Based on the apparent intent of this section, rate how thoroughly it addresses its implied topic or sub-topic on a scale of 1 to 10, where 1 is incomplete/superficial and 10 is comprehensive/thorough within its scope.
+    * **Response Format:** \`{"id": 9, "score": NUMBER (1 as lowest quality, 10 as highest), "notes": "Explanation if SCORE"}\`
+
+10.  **Grammar, Spelling & Punctuation Score:** Rate the correctness of grammar, spelling, and punctuation in the following text on a scale of 1 to 10, where 1 indicates numerous errors and 10 is virtually flawless.
+    * **Response Format:** \`{"id": 10, "score": NUMBER (1 as lowest quality, 10 as highest), "notes": "Explanation if SCORE"}\`
+
+11. **Engagement Score:** Rate the overall engagement and appeal of the following text for a general audience on a scale of 1 to 10, where 1 is very dull/unengaging and 10 is captivating/highly engaging.
+    * **Response Format:** \`{"id": 11, "score": NUMBER (1 as lowest quality, 10 as highest), "notes": "Explanation if SCORE"}\`
+
+12. **Comprehensibility Score (ISCED Level 2: Lower Secondary Education):** On a scale of 1 to 10, how comprehensible is this text for a student in lower secondary education (typically ages 12-15)?
+    * **Response Format:** \`{"id": 12, "title": "Comprehensibility Score (ISCED Level 2: Lower Secondary Education)", "score": NUMBER (1 as lowest comprehensibility, 10 as highest), "notes": "Explanation of the score for this audience."}\`
+
+13. **Comprehensibility Score (ISCED Level 3: Upper Secondary Education):** On a scale of 1 to 10, how comprehensible is this text for a student in lower secondary education (typically ages 16-18)?
+    * **Response Format:** \`{"id": 13, "title": "Comprehensibility Score (ISCED Level 3: Upper Secondary Education)", "score": NUMBER (1 as lowest comprehensibility, 10 as highest), "notes": "Explanation of the score for this audience."}\`
+
+14. **Comprehensibility Score (ISCED Level 6: Bachelor's or equivalent level):** On a scale of 1 to 10, how comprehensible is this text for a student at the bachelor's degree level or equivalent?
+    * **Response Format:** \`{"id": 14, "title": "Comprehensibility Score (ISCED Level 6: Bachelor's or equivalent level)", "score": NUMBER (1 as lowest comprehensibility, 10 as highest), "notes": "Explanation of the score for this audience."}\`
+
+---
+
+**Verify output is valid JSON**
+
+---
+
+    `;
+
+    // const review = await askOllama(prompt);
+    const answer = await askGemini(prompt);
+    if (answer.success) {
+        const reviews = answer.result;
+        if (reviews.length !== topic.sections.length + 1) {
+            console.log('Invalid Length');
+            return;
+        }
+        let foundZ = 0;
+        for (let i = 0; i < reviews.length; i += 1) {
+            if (reviews[i].sectionID === 0) {
+                foundZ += 1;
+            } else if (topic.sections[reviews[i].sectionID - 1] === undefined) {
+                console.log(`Review ID Issue: ${i} - ${reviews[i].sectionID} - ${reviews[i].sectionID - 1} - ${topic.sections.length}`);
+                return;
+            }
+        }
+
+        if (foundZ === 0 || foundZ > 1) {
+            console.log('Multi-Zero ID');
             return;
         }
 
-        let pass = true;
-        let flag = false
-        for (let idx = 0; idx <review.length; idx++) {
-            if (review[idx].id !== idx + 1) {
-                pass = false;
-                console.log('Review id invalid');
+        for (let i = 0; i < reviews.length; i += 1) {
+            const review = reviews[i].results;
+            let flag = false
+            for (let idx = 0; idx <review.length; idx++) {
+                if (idx < 5 && review[idx].result === false) {
+                    delete review[idx].statement
+                    delete review[idx].notes
+                }
+
+                if (idx < 5 && review[idx].result === true) {
+                    flag = true;
+                }
             }
 
-            if (idx < 5 && review[idx].result === false) {
-                delete review[idx].statement
-                delete review[idx].notes
-            }
-
-            if (idx < 5 && review[idx].result === true) {
-                flag = true;
+            if (reviews[i].sectionID === 0) {
+                await saveNodeReview(topic.id, review, flag);
+            } else {
+                await saveSectionReview(topic.sections[reviews[i].sectionID - 1].id, review, flag);
             }
         }
-
-        if (!pass) {
-            console.log(response.result);
-            return;
-        }
-
-        await saveSectionReview({ id: section.id, review, flag });
     }
-    
-    return;
 }
 
 const delay = (ms) => new Promise(resolve => setTimeout(resolve, ms));
@@ -392,14 +427,9 @@ const delay = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 const main = async () => {
     do {
         try {
-            await reviewNode();
+            await reviewTopic();
         } finally {
-            await delay(10 * 1000);
-        }
-        try {
-            await reviewSection();
-        } finally {
-            await delay(10 * 1000);
+            await delay(60 * 1000);
         }
     } while (true);
 }

@@ -312,6 +312,9 @@ export async function dbSectionCreate(nodeId, userId, roles, {
             throw new Error('NODE_NOT_FOUND');
         }
 
+        const newSection = createResult.records[0];
+        const sectionId = newSection.get('sectionId');
+
         // After creating a new section
         await tx.run(`
             MATCH (s:Section {id: $sectionId}), (u:User {id: $userId})
@@ -533,6 +536,22 @@ export async function dbSectionFetch(nodeId, sectionId, userId, roles) {
             }
         }
 
+        if (section.createdAt) {
+            try {
+                section.createdAt = new Date(section.createdAt).toISOString();
+            } catch (e) {
+                console.error("Error converting createdAt to ISO format:", e);
+            }
+        }
+
+        if (section.updatedAt) {
+            try {
+                section.updatedAt = new Date(section.updatedAt).toISOString();
+            } catch (e) {
+                console.error("Error converting updatedAt to ISO format:", e);
+            }
+        }
+
         return {
             ...section,
             contributors,
@@ -635,6 +654,22 @@ export async function dbSectionFetchAll(nodeId, userId, roles) {
                     section.aiReview = JSON.parse(section.aiReview);
                 } catch {
                     delete section.aiReview;
+                }
+            }
+
+            if (section.createdAt) {
+                try {
+                    section.createdAt = new Date(section.createdAt).toISOString();
+                } catch (e) {
+                    console.error("Error converting createdAt to ISO format:", e);
+                }
+            }
+
+            if (section.updatedAt) {
+                try {
+                    section.updatedAt = new Date(section.updatedAt).toISOString();
+                } catch (e) {
+                    console.error("Error converting updatedAt to ISO format:", e);
                 }
             }
 
@@ -915,6 +950,9 @@ export async function dbSectionPatch(nodeId, sectionId, userId, roles, {
     summary,
     type,
 }) {
+    const currentExecutionId = uuidv7(); // Unique ID for THIS specific function call
+    console.log(`[${currentExecutionId}] dbSectionPatch START for sectionId: ${sectionId}`);
+
     if (!nodeId || typeof nodeId !== 'string') {
         throw new Error('INVALID_NODE_ID');
     }
@@ -945,7 +983,6 @@ export async function dbSectionPatch(nodeId, sectionId, userId, roles, {
     }
 
     const now = new Date().toISOString();
-    const archiveId = uuidv7();
     const s = session();
     const tx = s.beginTransaction();
 
@@ -1015,6 +1052,8 @@ export async function dbSectionPatch(nodeId, sectionId, userId, roles, {
 
         if (security.newPending) {
             const pendingSectionId = uuidv7();
+            console.log(`[${currentExecutionId}] (Pending Logic) Generated pendingSectionId: ${pendingSectionId}`);
+            console.log(`  Creading a pending section for ${sectionId} as ${pendingSectionId}`);
 
             // Copy section and set its status to 'pending_update'
             await tx.run(`
@@ -1125,17 +1164,28 @@ export async function dbSectionPatch(nodeId, sectionId, userId, roles, {
             `, params);
 
             await tx.commit();
+            console.log(`[${currentExecutionId}] (Pending Logic) Transaction committed. Pending section ID: ${pendingSectionId}`);
             return { id: pendingSectionId, status: 'pending' };
         }
 
         // Not Pending, direct edit
         else {
+            const archiveId = uuidv7();
+            console.log(`[${currentExecutionId}] (Direct Edit Logic) Generated archiveId: ${archiveId}`);
+
+            const result = await tx.run('MATCH (s:Section {id: $archiveId}) RETURN s', { archiveId });
+            if (result.records.length > 0) {
+                console.log(`[${currentExecutionId}] ${archiveId} FOUND}`);
+            } else {
+                console.log(`[${currentExecutionId}] ${archiveId} NOT FOUND`);
+            }
+
             // Archive old version
             await tx.run(`
                 MATCH (s:Section {id: $sectionId})
-                OPTIONAL MATCH (original)-[:CREATED_BY]->(originalCreator:User)
+                OPTIONAL MATCH (s)-[:CREATED_BY]->(originalCreator:User)
                 CREATE (arch:Section {
-                    id:        $archId,
+                    id:        $archiveId,
                     title:     s.title,
                     content:   s.content,
                     contents:  s.contents,
@@ -1154,7 +1204,7 @@ export async function dbSectionPatch(nodeId, sectionId, userId, roles, {
                     CREATE (arch)-[:CREATED_BY]->(originalCreator)
                 )
                 CREATE (s)-[:PREVIOUS_VERSION_OF]->(arch)
-            `, { sectionId, archId: archiveId, now });
+            `, { sectionId, archiveId, now });
 
             // Update the section's properties
             const setClauses = [];
@@ -1247,13 +1297,16 @@ export async function dbSectionPatch(nodeId, sectionId, userId, roles, {
             `, { sectionId, userId });
 
             await tx.commit();
+            console.log(`[${currentExecutionId}] (Direct Edit Logic) Transaction committed. Section ID: ${sectionId}`);
             return { id: sectionId, status: 'updated' };
         }
     } catch (err) {
         await tx.rollback();
+        console.error(`[${currentExecutionId}] Error patching section ${sectionId}:`, err);
         throw err;
     } finally {
         await s.close();
+        console.log(`[${currentExecutionId}] dbSectionPatch END for sectionId: ${sectionId}`);
     }
 }
 
