@@ -7,7 +7,8 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "lint": "eslint src"
+    "lint": "eslint src",
+    "test": "vitest"
   },
   "dependencies": {
     "@mdi/font": "^7.4.47",
@@ -15,8 +16,10 @@
     "@tonejs/midi": "^2.0.28",
     "axios": "^1.8.4",
     "cropperjs": "^2.0.0",
+    "diff_match_patch": "^0.1.1",
     "idb": "^8.0.3",
     "katex": "^0.16.22",
+    "mermaid": "^11.6.0",
     "pinia": "^3.0.2",
     "stacktrace-js": "^2.0.2",
     "three": "^0.176.0",
@@ -30,12 +33,16 @@
     "vuetify": "^3.8.0-beta.0"
   },
   "devDependencies": {
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/vue": "^8.1.0",
     "@vitejs/plugin-vue": "^5.2.3",
     "eslint": "^9.26.0",
     "eslint-plugin-import": "^2.31.0",
     "eslint-plugin-jsdoc": "^50.6.11",
     "eslint-plugin-vue": "^10.1.0",
+    "jsdom": "^26.1.0",
     "sass": "^1.86.3",
-    "vite": "^6.3.1"
+    "vite": "^6.3.1",
+    "vitest": "^3.2.4"
   }
 }

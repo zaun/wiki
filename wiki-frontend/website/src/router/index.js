@@ -2,24 +2,40 @@
 import { createRouter, createWebHistory } from 'vue-router';
 
 import { useApi } from '@/stores/api';
-import EditPage from '@/views/EditPage.vue';
-import ExportPage from '@/views/ExportPage.vue';
-import SearchPage from '@/views/SearchPage.vue';
-import SitePage from '@/views/SitePage.vue';
-import ViewPage from '@/views/ViewPage.vue';
+import EditView from '@/views/EditView.vue';
+import ExportView from '@/views/ExportView.vue';
+import PageView from '@/views/PageView.vue';
+import ProfileView from '@/views/ProfileView.vue';
+import SearchView from '@/views/SearchView.vue';
+import TopicView from '@/views/TopicView.vue';
 
 const api = useApi();
 
 // if !api.isAuthenticated don't allow access to edit
 const routes = [
     { path: '/', redirect: '/page/welcome' },
-    { path: '/page/:id', name: 'page', component: SitePage, props: true },
-    { path: '/view/:id', name: 'view', component: ViewPage, props: true },
-    { path: '/search', name: 'search', component: SearchPage, props: true },
+    { path: '/page/:id', name: 'page', component: PageView, props: true },
+    {
+        path: '/profile/:id?',
+        name: 'profile',
+        component: ProfileView,
+        props: true,
+        beforeEnter: (to, _from, next) => {
+            const isInvalidId = to.params.id === 'null' || to.params.id === 'undefined' || to.params.id === null || to.params.id === undefined || to.params.id === '';
+            if (isInvalidId) {
+                console.log('Invalid profile ID');
+                return next({ name: 'page', params: { id: 'welcome' } });
+            }
+            console.log('Valid profile ID');
+            next();
+        },
+    },
+    { path: '/view/:id', name: 'view', component: TopicView, props: true },
+    { path: '/search', name: 'search', component: SearchView, props: true },
     {
         path: '/export/:id',
         name: 'export',
-        component: ExportPage,
+        component: ExportView,
         props: true,
         beforeEnter: (to, from, next) => {
             if (api.isAuthenticated.value) {
@@ -34,7 +50,7 @@ const routes = [
     {
         path: '/edit/:id',
         name: 'edit',
-        component: EditPage,
+        component: EditView,
         props: true,
         beforeEnter: (to, from, next) => {
             if (api.isAuthenticated.value) {

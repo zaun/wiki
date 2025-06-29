@@ -1,0 +1,657 @@
+{
+  "title": "Overview Contributor",
+  "maxWidth": "900px",
+  "content": {
+    "type": "container",
+    "id": "main-page-container",
+    "backgroundColor": "#ffffff",
+    "paddingTop": "24px",
+    "paddingBottom": "32px",
+    "marginTop": "0px",
+    "marginBottom": "0px",
+    "flexDirection": "column",
+    "justifyContent": "flex-start",
+    "alignItems": "stretch",
+    "flexWrap": "nowrap",
+    "gap": "32px",
+    "items": [
+      {
+        "type": "container",
+        "id": "header-section",
+        "backgroundColor": "#f8f9fa",
+        "padding": "40px 32px",
+        "flexDirection": "column",
+        "justifyContent": "center",
+        "alignItems": "center",
+        "gap": "16px",
+        "items": [
+          {
+            "type": "markdown",
+            "id": "page-title",
+            "horizontalAlignment": "center",
+            "value": "# OmniOntos: The Structured Encyclopedia\n## Contributor Overview"
+          },
+          {
+            "type": "markdown",
+            "id": "page-subtitle",
+            "horizontalAlignment": "center",
+            "value": "**A semantic encyclopedia that organizes all human knowledge into a navigable, hierarchical structure - \"Organize Everything and Understand Anything\"**"
+          }
+        ]
+      },
+      {
+        "type": "container",
+        "id": "main-content",
+        "padding": "0px 24px",
+        "flexDirection": "column",
+        "justifyContent": "flex-start",
+        "alignItems": "stretch",
+        "gap": "40px",
+        "items": [
+          {
+            "type": "container",
+            "id": "intro-section",
+            "backgroundColor": "#e8f4f8",
+            "padding": "32px",
+            "flexDirection": "row",
+            "alignItems": "flex-start",
+            "gap": "20px",
+            "items": [
+              {
+                "type": "icon",
+                "id": "intro-icon",
+                "name": "lightbulb-on"
+              },
+              {
+                "type": "markdown",
+                "id": "intro-text",
+                "flexGrow": 1,
+                "value": "OmniOntos is a **semantic encyclopedia** that organizes all human knowledge into a navigable, hierarchical structure. Unlike traditional encyclopedias, every article (Topic) has a precise place in a logical hierarchy, and unlike formal ontologies, every entry is written as a comprehensive, accessible article. This bridges the gap between Wikipedia's accessibility and formal knowledge systems' rigor, creating a new category of knowledge organization tool."
+              }
+            ]
+          },
+          {
+            "type": "container",
+            "id": "why-section",
+            "flexDirection": "column",
+            "gap": "20px",
+            "items": [
+              {
+                "type": "container",
+                "id": "why-header",
+                "flexDirection": "row",
+                "alignItems": "center",
+                "gap": "12px",
+                "items": [
+                  {
+                    "type": "icon",
+                    "id": "why-icon",
+                    "name": "help-circle"
+                  },
+                  {
+                    "type": "markdown",
+                    "id": "why-title",
+                    "value": "## Why OmniOntos?"
+                  }
+                ]
+              },
+              {
+                "type": "markdown",
+                "id": "why-content",
+                "value": "OmniOntos solves a fundamental problem in knowledge organization: existing systems are either rigorous but inaccessible (formal ontologies) or accessible but unstructured (Wikipedia).\n\n**OmniOntos provides:**\n- **Encyclopedia-quality articles** at every level of detail\n- **Systematic navigation** from broad overviews to technical specifics\n- **Semantic structure** that enhances rather than replaces readability\n- **Multiple entry points** - approach any topic from your preferred angle\n- **Connected understanding** - see how concepts relate across domains\n\nEach Topic is designed as a comprehensive encyclopedia article, with broader topics providing overviews and deeper topics offering technical detail."
+              }
+            ]
+          },
+          {
+            "type": "container",
+            "id": "domains-section",
+            "backgroundColor": "#f0f8f0",
+            "padding": "32px",
+            "flexDirection": "column",
+            "justifyContent": "flex-start",
+            "alignItems": "stretch",
+            "gap": "24px",
+            "items": [
+              {
+                "type": "container",
+                "id": "domains-header",
+                "flexDirection": "row",
+                "alignItems": "center",
+                "justifyContent": "center",
+                "gap": "12px",
+                "items": [
+                  {
+                    "type": "icon",
+                    "id": "domains-icon",
+                    "name": "hexagon-multiple"
+                  },
+                  {
+                    "type": "markdown",
+                    "id": "domains-title",
+                    "value": "## Domains (Top-Level Topics)"
+                  }
+                ]
+              },
+              {
+                "type": "markdown",
+                "id": "domains-intro",
+                "horizontalAlignment": "center",
+                "value": "OmniOntos begins by classifying reality into six fundamental domains. These broad categories ensure a comprehensive and distinct foundation for all subsequent classification:"
+              },
+              {
+                "type": "container",
+                "id": "domains-list",
+                "flexDirection": "column",
+                "gap": "16px",
+                "items": [
+                  {
+                    "type": "container",
+                    "id": "domain-1",
+                    "backgroundColor": "#ffffff",
+                    "padding": "20px",
+                    "flexDirection": "row",
+                    "alignItems": "flex-start",
+                    "gap": "16px",
+                    "items": [
+                      {
+                        "type": "icon",
+                        "id": "abstract-icon",
+                        "name": "sigma"
+                      },
+                      {
+                        "type": "markdown",
+                        "id": "abstract-content",
+                        "flexGrow": 1,
+                        "value": "**1. Abstract:** The domain encompassing pure abstractions not dependent on physical, mental, or social instantiation. This includes formal systems (such as logic, mathematics, and theoretical computer science constructs like algorithms as abstract procedures), conceptual entities defined by axioms or universal properties, and theoretical structures whose existence is solely in the conceptual or formal realm."
+                      }
+                    ]
+                  },
+                  {
+                    "type": "container",
+                    "id": "domain-2",
+                    "backgroundColor": "#ffffff",
+                    "padding": "20px",
+                    "flexDirection": "row",
+                    "alignItems": "flex-start",
+                    "gap": "16px",
+                    "items": [
+                      {
+                        "type": "icon",
+                        "id": "informational-icon",
+                        "name": "database"
+                      },
+                      {
+                        "type": "markdown",
+                        "id": "informational-content",
+                        "flexGrow": 1,
+                        "value": "**2. Informational:** The domain encompassing information as abstract patterns, structures, representations, and meanings, independent of their specific physical carriers or instantiations. This includes fundamental forms, properties, logical structures, processes of transformation and analysis, and abstract characteristics of information content and representation itself."
+                      }
+                    ]
+                  },
+                  {
+                    "type": "container",
+                    "id": "domain-3",
+                    "backgroundColor": "#ffffff",
+                    "padding": "20px",
+                    "flexDirection": "row",
+                    "alignItems": "flex-start",
+                    "gap": "16px",
+                    "items": [
+                      {
+                        "type": "icon",
+                        "id": "physical-icon",
+                        "name": "atom"
+                      },
+                      {
+                        "type": "markdown",
+                        "id": "physical-content",
+                        "flexGrow": 1,
+                        "value": "**3. Physical:** The fundamental domain of tangible reality and its intrinsic characteristics within space-time. This domain encompasses entities that possess mass, energy, occupy space, and persist through time, as well as the forces, fields, properties, states, structures, and dynamics intrinsic to such physical existence."
+                      }
+                    ]
+                  },
+                  {
+                    "type": "container",
+                    "id": "domain-4",
+                    "backgroundColor": "#ffffff",
+                    "padding": "20px",
+                    "flexDirection": "row",
+                    "alignItems": "flex-start",
+                    "gap": "16px",
+                    "items": [
+                      {
+                        "type": "icon",
+                        "id": "mental-icon",
+                        "name": "brain"
+                      },
+                      {
+                        "type": "markdown",
+                        "id": "mental-content",
+                        "flexGrow": 1,
+                        "value": "**4. Mental:** The domain encompassing the subjective, experiential, and internal states, processes, content, and capacities associated with individual conscious agents. This includes consciousness itself, affective states, sensory experiences, cognitive processes, volitional processes, and mental content. The focus is on the first-person perspective and the phenomena that constitute inner mental life."
+                      }
+                    ]
+                  },
+                  {
+                    "type": "container",
+                    "id": "domain-5",
+                    "backgroundColor": "#ffffff",
+                    "padding": "20px",
+                    "flexDirection": "row",
+                    "alignItems": "flex-start",
+                    "gap": "16px",
+                    "items": [
+                      {
+                        "type": "icon",
+                        "id": "social-icon",
+                        "name": "account-group"
+                      },
+                      {
+                        "type": "markdown",
+                        "id": "social-content",
+                        "flexGrow": 1,
+                        "value": "**5. Social:** The domain encompassing the entities, structures, processes, forms, and emergent phenomena arising from the interaction, relationship, and organization of multiple conscious agents. This includes collective entities, patterned relationships, enduring frameworks, dynamic interactions, and integrated collective arrangements."
+                      }
+                    ]
+                  },
+                  {
+                    "type": "container",
+                    "id": "domain-6",
+                    "backgroundColor": "#ffffff",
+                    "padding": "20px",
+                    "flexDirection": "row",
+                    "alignItems": "flex-start",
+                    "gap": "16px",
+                    "items": [
+                      {
+                        "type": "icon",
+                        "id": "meta-icon",
+                        "name": "tools"
+                      },
+                      {
+                        "type": "markdown",
+                        "id": "meta-content",
+                        "flexGrow": 1,
+                        "value": "**6. Meta:** The domain encompassing the higher-order concepts, formal languages, methods, processes, models, and frameworks used for constructing, analyzing, managing, evaluating, or understanding entities, systems, or concepts within any other domain. This includes methodologies for inquiry and practice, formal techniques, and frameworks for designing or governing complex systems."
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "container",
+            "id": "principles-section",
+            "backgroundColor": "#fff8e1",
+            "padding": "32px",
+            "flexDirection": "column",
+            "gap": "24px",
+            "items": [
+              {
+                "type": "container",
+                "id": "principles-header",
+                "flexDirection": "row",
+                "alignItems": "center",
+                "justifyContent": "center",
+                "gap": "12px",
+                "items": [
+                  {
+                    "type": "icon",
+                    "id": "principles-icon",
+                    "name": "rule"
+                  },
+                  {
+                    "type": "markdown",
+                    "id": "principles-title",
+                    "value": "## Core Principles and Structure"
+                  }
+                ]
+              },
+              {
+                "type": "markdown",
+                "id": "principles-content",
+                "value": "OmniOntos is built on several key principles that ensure its logical consistency and comprehensive nature:\n\n- **Strict Hierarchy (\"is-a-kind-of\"):** The foundational relationship is subsumption: every Sub-Topic is a more specific kind of its parent Topic. This forms a single, unambiguous inheritance structure.\n- **Unlimited Depth & Granularity:** The hierarchy extends as deeply as necessary, past a minimum of six levels, to capture all logical distinctions.\n- **No \"Catch-All\" Categories:** Every Topic must have a precise and logically valid place. Generic \"Other\" or \"Miscellaneous\" categories are strictly disallowed.\n- **Self-Contained Topic Definitions:** Each Topic is comprehensively defined with its own summary and sections, independent of its parent or sub-topics.\n- **Semantic Classification:** OmniOntos is designed to support intelligent classification based on meaning, not just keywords."
+              }
+            ]
+          },
+          {
+            "type": "container",
+            "id": "hierarchy-section",
+            "flexDirection": "column",
+            "gap": "20px",
+            "items": [
+              {
+                "type": "container",
+                "id": "hierarchy-header",
+                "flexDirection": "row",
+                "alignItems": "center",
+                "gap": "12px",
+                "items": [
+                  {
+                    "type": "icon",
+                    "id": "hierarchy-icon",
+                    "name": "file-tree"
+                  },
+                  {
+                    "type": "markdown",
+                    "id": "hierarchy-title",
+                    "value": "## The \"Is-A-Kind-Of\" Hierarchy"
+                  }
+                ]
+              },
+              {
+                "type": "markdown",
+                "id": "hierarchy-content",
+                "value": "At its core, OmniOntos uses a strict, tree-like hierarchy. Every Sub-Topic is a specific kind of its parent Topic. This means any entity or concept under a Sub-Topic is also valid for its parent Topic. All properties and definitions from a parent Topic are inherited by its Sub-Topics. This fundamental \"is-a-kind-of\" rule strictly defines a Topic's position, ensuring a clear and logical structure from the Top-Level Topics down to the most granular detail."
+              }
+            ]
+          },
+          {
+            "type": "container",
+            "id": "relationships-section",
+            "backgroundColor": "#f0f8f0",
+            "padding": "32px",
+            "flexDirection": "column",
+            "gap": "24px",
+            "items": [
+              {
+                "type": "container",
+                "id": "relationships-header",
+                "flexDirection": "row",
+                "alignItems": "center",
+                "justifyContent": "center",
+                "gap": "12px",
+                "items": [
+                  {
+                    "type": "icon",
+                    "id": "relationships-icon",
+                    "name": "vector-link"
+                  },
+                  {
+                    "type": "markdown",
+                    "id": "relationships-title",
+                    "value": "## Optional Relationships"
+                  }
+                ]
+              },
+              {
+                "type": "markdown",
+                "id": "relationships-intro",
+                "value": "Beyond the core \"is-a-kind-of\" hierarchy, OmniOntos allows for optional, directed relationships between Topics. These relationships capture more complex connections, dependencies, or oppositions that aren't expressed by the primary hierarchy alone."
+              },
+              {
+                "type": "container",
+                "id": "relationships-list",
+                "flexDirection": "column",
+                "gap": "12px",
+                "items": [
+                  {
+                    "type": "markdown",
+                    "id": "depends-on",
+                    "value": "- **DEPENDS_ON:** When one Topic's existence or function relies on another.\n  *Example: A Theorem DEPENDS_ON its Axioms.*"
+                  },
+                  {
+                    "type": "markdown",
+                    "id": "contrasts-with",
+                    "value": "- **CONTRASTS_WITH:** Indicates a significant conceptual distinction between two Topics.\n  *Example: Light CONTRASTS_WITH Darkness.*"
+                  },
+                  {
+                    "type": "markdown",
+                    "id": "contains",
+                    "value": "- **CONTAINS:** Describes a whole-to-part relationship.\n  *Example: A Building CONTAINS a Room.*"
+                  },
+                  {
+                    "type": "markdown",
+                    "id": "invalidates",
+                    "value": "- **INVALIDATES:** When one Topic renders another obsolete or false.\n  *Example: General Relativity INVALIDATES Newtonian Gravity (at high speeds/strong fields).*"
+                  },
+                  {
+                    "type": "markdown",
+                    "id": "created-by",
+                    "value": "- **CREATED_BY:** When one Topic originates or produces another.\n  *Example: A Symphony CREATED_BY a Composer.*"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "container",
+            "id": "complex-concepts-section",
+            "flexDirection": "column",
+            "gap": "20px",
+            "items": [
+              {
+                "type": "container",
+                "id": "complex-header",
+                "flexDirection": "row",
+                "alignItems": "center",
+                "gap": "12px",
+                "items": [
+                  {
+                    "type": "icon",
+                    "id": "complex-icon",
+                    "name": "puzzle"
+                  },
+                  {
+                    "type": "markdown",
+                    "id": "complex-title",
+                    "value": "## Handling Complex Concepts"
+                  }
+                ]
+              },
+              {
+                "type": "markdown",
+                "id": "complex-intro",
+                "value": "Many real-world entities span multiple domains. Rather than forcing artificial choices, OmniOntos decomposes complex concepts into their constituent aspects, placing each where it naturally belongs and connecting them through optional relationships."
+              },
+              {
+                "type": "container",
+                "id": "examples-container",
+                "backgroundColor": "#e8f4f8",
+                "padding": "24px",
+                "flexDirection": "column",
+                "gap": "20px",
+                "items": [
+                  {
+                    "type": "markdown",
+                    "id": "dna-example",
+                    "value": "**Example: DNA**\n- \"DNA Molecule\" (Physical) → The chemical structure, bonds, molecular properties\n- \"DNA\" (Informational) → The genetic code, information encoding principles\n- Connected via: DNA DEPENDS_ON DNA Molecule"
+                  },
+                  {
+                    "type": "markdown",
+                    "id": "ml-example",
+                    "value": "**Example: Machine Learning**\n- \"Machine Learning\" (Mental) → Cognitive modeling, learning processes\n- \"Neural Network Algorithm\" (Abstract) → Mathematical procedures\n- \"GPU Computing System\" (Physical) → Hardware requirements\n- Connected via: Machine Learning DEPENDS_ON both algorithms and hardware"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "container",
+            "id": "topic-structure-section",
+            "backgroundColor": "#fff8e1",
+            "padding": "32px",
+            "flexDirection": "column",
+            "gap": "24px",
+            "items": [
+              {
+                "type": "container",
+                "id": "structure-header",
+                "flexDirection": "row",
+                "alignItems": "center",
+                "justifyContent": "center",
+                "gap": "12px",
+                "items": [
+                  {
+                    "type": "icon",
+                    "id": "structure-icon",
+                    "name": "file-document-outline"
+                  },
+                  {
+                    "type": "markdown",
+                    "id": "structure-title",
+                    "value": "## Topic Structure and Content"
+                  }
+                ]
+              },
+              {
+                "type": "markdown",
+                "id": "structure-intro",
+                "value": "Topics in OmniOntos are not free-form text. Each Topic is composed of a Summary, Sections, and Details, all designed for structured content:"
+              },
+              {
+                "type": "markdown",
+                "id": "structure-details",
+                "value": "**Summary:** A concise overview, typically 1-3 paragraphs, directly on the Topic Node.\n\n**Section:** Additional content tied to the Topic, with each section having a specific type for formatted data. Examples include:\n- **\"Text\":** Allows very limited Markdown (styling, MathML) but no links, tables, or headings\n- **\"Sheet-Music\":** Designed to display MusicXML\n- **\"Data-Table\":** Allows for Excel-like data representation\n- **Future plans** include support for \"Mermaid.js\" for diagrams and other specialized formats\n\n**Detail:** Key/Value data pairs tied to a Topic for structured data.\n\nFunctionally speaking, a Node and its Summary, Sections, and Details together constitute a single Topic."
+              }
+            ]
+          },
+          {
+            "type": "container",
+            "id": "navigation-section",
+            "flexDirection": "column",
+            "gap": "20px",
+            "items": [
+              {
+                "type": "container",
+                "id": "navigation-header",
+                "flexDirection": "row",
+                "alignItems": "center",
+                "gap": "12px",
+                "items": [
+                  {
+                    "type": "icon",
+                    "id": "navigation-icon",
+                    "name": "compass"
+                  },
+                  {
+                    "type": "markdown",
+                    "id": "navigation-title",
+                    "value": "## Navigation Example"
+                  }
+                ]
+              },
+              {
+                "type": "markdown",
+                "id": "navigation-content",
+                "value": "A user interested in electric vehicles might encounter:\n\n- **\"Transportation\"** (Social) → Broad overview of mobility systems\n- **\"Electric Vehicles\"** (Physical → Vehicles) → Technology, environmental impact\n- **\"Lithium-Ion Battery\"** (Physical → Energy Storage) → Technical specifications\n- **\"Environmental Impact of EVs\"** (Social → Environmental Issues) → Policy implications\n\nEach topic provides comprehensive coverage at its level, with relationships guiding users to related concepts across domains."
+              }
+            ]
+          },
+          {
+            "type": "container",
+            "id": "terminology-section",
+            "backgroundColor": "#f0f8f0",
+            "padding": "32px",
+            "flexDirection": "column",
+            "gap": "24px",
+            "items": [
+              {
+                "type": "container",
+                "id": "terminology-header",
+                "flexDirection": "row",
+                "alignItems": "center",
+                "justifyContent": "center",
+                "gap": "12px",
+                "items": [
+                  {
+                    "type": "icon",
+                    "id": "terminology-icon",
+                    "name": "book-alphabet"
+                  },
+                  {
+                    "type": "markdown",
+                    "id": "terminology-title",
+                    "value": "## Key Terminology"
+                  }
+                ]
+              },
+              {
+                "type": "markdown",
+                "id": "terminology-content",
+                "value": "To ensure clear communication, OmniOntos uses the following terms:\n\n- **Domain:** The 6 top level Topics\n- **Topic:** An individual item in the hierarchy\n- **Sub-Topics:** The item in the hierarchy directly below the current Topic\n- **Node:** (Technical, not user facing) A single item in the hierarchy\n- **Summary:** (Technical, visible in the editor) Content directly on a Node, usually 1-3 paragraphs\n- **Section:** (Technical, visible in the editor) Additional content tied to Topic, can be additional text, data table, sheet music, flow chart, images, etc.\n- **Detail:** (Technical, visible in the editor) Key/Value data pairs tied to a Topic"
+              }
+            ]
+          },
+          {
+            "type": "container",
+            "id": "cta-section",
+            "backgroundColor": "#2c3e50",
+            "foregroundColor": "#ffffff",
+            "padding": "40px",
+            "flexDirection": "column",
+            "justifyContent": "center",
+            "alignItems": "center",
+            "gap": "20px",
+            "items": [
+              {
+                "type": "markdown",
+                "id": "cta-text",
+                "foregroundColor": "#ffffff",
+                "horizontalAlignment": "center",
+                "value": "### Ready to Contribute?\n\nExplore the technical details or start navigating the ontology structure."
+              },
+              {
+                "type": "container",
+                "id": "cta-buttons",
+                "flexDirection": "row",
+                "justifyContent": "center",
+                "alignItems": "center",
+                "flexWrap": "wrap",
+                "gap": "16px",
+                "items": [
+                  {
+                    "type": "button",
+                    "id": "technical-btn",
+                    "label": "Technical Overview",
+                    "url": "/page/overview-technical",
+                    "style": "primary"
+                  },
+                  {
+                    "type": "button",
+                    "id": "general-btn",
+                    "label": "General Overview",
+                    "url": "/page/overview-general",
+                    "style": "secondary"
+                  },
+                  {
+                    "type": "button",
+                    "id": "explore-btn",
+                    "label": "Explore Ontology",
+                    "url": "/view/00000000-0000-0000-0000-000000000000",
+                    "style": "outline"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "container",
+        "id": "footer-section",
+        "padding": "24px",
+        "backgroundColor": "#f8f9fa",
+        "flexDirection": "row",
+        "justifyContent": "space-between",
+        "alignItems": "center",
+        "flexWrap": "wrap",
+        "gap": "16px",
+        "items": [
+          {
+            "type": "markdown",
+            "id": "footer-links",
+            "value": "[Welcome](/page/welcome) • [Overview](/page/overview) • [Code of Conduct](/page/code-of-conduct) • [Contact](/page/contact) • [Privacy Policy](/page/privacy-policy)"
+          },
+          {
+            "type": "markdown",
+            "id": "footer-github",
+            "horizontalAlignment": "right",
+            "value": "[GitHub: OmniOntos](https://github.com/OmniOntos/)"
+          }
+        ]
+      }
+    ]
+  }
+}

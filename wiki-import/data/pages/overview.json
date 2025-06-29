@@ -1,0 +1,541 @@
+{
+  "title": "Overview",
+  "maxWidth": "900px",
+  "content": {
+    "type": "container",
+    "id": "main-page-container",
+    "backgroundColor": "#ffffff",
+    "paddingTop": "0px",
+    "paddingBottom": "32px",
+    "flexDirection": "column",
+    "justifyContent": "flex-start",
+    "alignItems": "stretch",
+    "gap": "0px",
+    "items": [
+      {
+        "type": "container",
+        "id": "header-section",
+        "backgroundColor": "#f8f9fa",
+        "foregroundColor": "#ffffff",
+        "padding": "48px 32px",
+        "flexDirection": "column",
+        "justifyContent": "center",
+        "alignItems": "center",
+        "gap": "16px",
+        "items": [
+          {
+            "type": "markdown",
+            "id": "header-title",
+            "foregroundColor": "#ffffff",
+            "horizontalAlignment": "center",
+            "value": "# OmniOntos Overview\n## Choose Your Path"
+          },
+          {
+            "type": "markdown",
+            "id": "header-subtitle",
+            "foregroundColor": "#ffffff",
+            "horizontalAlignment": "center",
+            "value": "We've created three different overviews tailored to different audiences and interests. Choose the one that best matches your needs:"
+          }
+        ]
+      },
+      {
+        "type": "container",
+        "id": "overview-selection",
+        "padding": "48px 32px",
+        "flexDirection": "column",
+        "justifyContent": "flex-start",
+        "alignItems": "stretch",
+        "gap": "32px",
+        "items": [
+          {
+            "type": "container",
+            "id": "general-overview-section",
+            "backgroundColor": "#f8f9fa",
+            "padding": "32px",
+            "flexDirection": "row",
+            "justifyContent": "space-between",
+            "alignItems": "center",
+            "gap": "32px",
+            "items": [
+              {
+                "type": "container",
+                "id": "general-content",
+                "flexGrow": 2,
+                "flexDirection": "column",
+                "gap": "16px",
+                "items": [
+                  {
+                    "type": "container",
+                    "id": "general-header",
+                    "flexDirection": "row",
+                    "alignItems": "center",
+                    "gap": "12px",
+                    "items": [
+                      {
+                        "type": "icon",
+                        "id": "general-icon",
+                        "name": "book-open-variant"
+                      },
+                      {
+                        "type": "markdown",
+                        "id": "general-title",
+                        "value": "## General Overview\n### For Everyone: Students, Researchers, Curious Learners"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "markdown",
+                    "id": "general-description",
+                    "value": "**Perfect if you want to understand:**\n• What OmniOntos is and why it matters\n• How it differs from Wikipedia and other knowledge systems\n• The six-domain structure and navigation principles\n• Real-world examples of how it works\n• Why structured knowledge organization is important\n\n**Audience:** Anyone interested in learning about OmniOntos\n**Reading time:** 10-15 minutes\n**Technical level:** Beginner-friendly"
+                  }
+                ]
+              },
+              {
+                "type": "container",
+                "id": "general-action",
+                "flexGrow": 1,
+                "flexDirection": "column",
+                "justifyContent": "center",
+                "alignItems": "center",
+                "gap": "16px",
+                "items": [
+                  {
+                    "type": "button",
+                    "id": "general-button",
+                    "label": "Read General Overview",
+                    "url": "/page/overview-general",
+                    "style": "primary"
+                  },
+                  {
+                    "type": "markdown",
+                    "id": "general-recommendation",
+                    "horizontalAlignment": "center",
+                    "value": "**Recommended for most users**"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "container",
+            "id": "contributor-overview-section",
+            "backgroundColor": "#e8f4f8",
+            "padding": "32px",
+            "flexDirection": "row",
+            "justifyContent": "space-between",
+            "alignItems": "center",
+            "gap": "32px",
+            "items": [
+              {
+                "type": "container",
+                "id": "contributor-content",
+                "flexGrow": 2,
+                "flexDirection": "column",
+                "gap": "16px",
+                "items": [
+                  {
+                    "type": "container",
+                    "id": "contributor-header",
+                    "flexDirection": "row",
+                    "alignItems": "center",
+                    "gap": "12px",
+                    "items": [
+                      {
+                        "type": "icon",
+                        "id": "contributor-icon",
+                        "name": "account-edit"
+                      },
+                      {
+                        "type": "markdown",
+                        "id": "contributor-title",
+                        "value": "## Contributor Overview\n### For Content Creators and Domain Experts"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "markdown",
+                    "id": "contributor-description",
+                    "value": "**Perfect if you want to understand:**\n• How to create and edit content in OmniOntos\n• The strict hierarchy and \"is-a-kind-of\" relationships\n• Content structure: Topics, Sections, and Details\n• How to handle complex concepts through decomposition\n• Quality standards and community guidelines\n• The reputation system and verification process\n\n**Audience:** Writers, educators, subject matter experts, potential contributors\n**Reading time:** 20-25 minutes\n**Technical level:** Intermediate"
+                  }
+                ]
+              },
+              {
+                "type": "container",
+                "id": "contributor-action",
+                "flexGrow": 1,
+                "flexDirection": "column",
+                "justifyContent": "center",
+                "alignItems": "center",
+                "gap": "16px",
+                "items": [
+                  {
+                    "type": "button",
+                    "id": "contributor-button",
+                    "label": "Read Contributor Overview",
+                    "url": "/page/overview-contributor",
+                    "style": "primary"
+                  },
+                  {
+                    "type": "markdown",
+                    "id": "contributor-recommendation",
+                    "horizontalAlignment": "center",
+                    "value": "**Essential for contributors**"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "container",
+            "id": "technical-overview-section",
+            "backgroundColor": "#f0f8f0",
+            "padding": "32px",
+            "flexDirection": "row",
+            "justifyContent": "space-between",
+            "alignItems": "center",
+            "gap": "32px",
+            "items": [
+              {
+                "type": "container",
+                "id": "technical-content",
+                "flexGrow": 2,
+                "flexDirection": "column",
+                "gap": "16px",
+                "items": [
+                  {
+                    "type": "container",
+                    "id": "technical-header",
+                    "flexDirection": "row",
+                    "alignItems": "center",
+                    "gap": "12px",
+                    "items": [
+                      {
+                        "type": "icon",
+                        "id": "technical-icon",
+                        "name": "cog"
+                      },
+                      {
+                        "type": "markdown",
+                        "id": "technical-title",
+                        "value": "## Technical Overview\n### For Engineers, Developers, and Data Analysts"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "markdown",
+                    "id": "technical-description",
+                    "value": "**Perfect if you want to understand:**\n• Data model and system architecture\n• Node structure and hierarchical relationships\n• API design and database schemas\n• Semantic integration and external resources\n• Scalability and performance requirements\n• Version control and data integrity systems\n\n**Audience:** Software engineers, data scientists, system architects, API users\n**Reading time:** 25-30 minutes\n**Technical level:** Advanced"
+                  }
+                ]
+              },
+              {
+                "type": "container",
+                "id": "technical-action",
+                "flexGrow": 1,
+                "flexDirection": "column",
+                "justifyContent": "center",
+                "alignItems": "center",
+                "gap": "16px",
+                "items": [
+                  {
+                    "type": "button",
+                    "id": "technical-button",
+                    "label": "Read Technical Overview",
+                    "url": "/page/overview-technical",
+                    "style": "primary"
+                  },
+                  {
+                    "type": "markdown",
+                    "id": "technical-recommendation",
+                    "horizontalAlignment": "center",
+                    "value": "**Deep technical details**"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "container",
+        "id": "reading-path-section",
+        "backgroundColor": "#f8f9fa",
+        "padding": "48px 32px",
+        "flexDirection": "column",
+        "justifyContent": "flex-start",
+        "alignItems": "stretch",
+        "gap": "24px",
+        "items": [
+          {
+            "type": "container",
+            "id": "reading-path-header",
+            "flexDirection": "row",
+            "justifyContent": "center",
+            "alignItems": "center",
+            "gap": "12px",
+            "items": [
+              {
+                "type": "icon",
+                "id": "reading-path-icon",
+                "name": "book-multiple"
+              },
+              {
+                "type": "markdown",
+                "id": "reading-path-title",
+                "horizontalAlignment": "center",
+                "value": "## Suggested Reading Paths"
+              }
+            ]
+          },
+          {
+            "type": "container",
+            "id": "reading-paths",
+            "flexDirection": "row",
+            "justifyContent": "space-between",
+            "alignItems": "flex-start",
+            "gap": "24px",
+            "flexWrap": "wrap",
+            "items": [
+              {
+                "type": "container",
+                "id": "newcomer-path-container",
+                "flexGrow": 1,
+                "flexBasis": "250px",
+                "padding": "24px",
+                "backgroundColor": "#ffffff",
+                "flexDirection": "column",
+                "gap": "12px",
+                "items": [
+                  {
+                    "type": "container",
+                    "id": "newcomer-header",
+                    "flexDirection": "row",
+                    "alignItems": "center",
+                    "gap": "8px",
+                    "items": [
+                      {
+                        "type": "icon",
+                        "id": "newcomer-icon",
+                        "name": "star"
+                      },
+                      {
+                        "type": "markdown",
+                        "id": "newcomer-path",
+                        "value": "### First-Time Visitor"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "markdown",
+                    "id": "newcomer-description",
+                    "value": "1. **General Overview** (start here)\n2. Explore the ontology\n3. Return for Contributor Overview if interested\n\n*Perfect introduction to OmniOntos*"
+                  }
+                ]
+              },
+              {
+                "type": "container",
+                "id": "contributor-path-container",
+                "flexGrow": 1,
+                "flexBasis": "250px",
+                "padding": "24px",
+                "backgroundColor": "#ffffff",
+                "flexDirection": "column",
+                "gap": "12px",
+                "items": [
+                  {
+                    "type": "container",
+                    "id": "contributor-path-header",
+                    "flexDirection": "row",
+                    "alignItems": "center",
+                    "gap": "8px",
+                    "items": [
+                      {
+                        "type": "icon",
+                        "id": "contributor-path-icon",
+                        "name": "pencil"
+                      },
+                      {
+                        "type": "markdown",
+                        "id": "contributor-path",
+                        "value": "### Potential Contributor"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "markdown",
+                    "id": "contributor-path-description",
+                    "value": "1. **General Overview** (context)\n2. **Contributor Overview** (detailed)\n3. Technical Overview (optional)\n\n*Complete preparation for contributing*"
+                  }
+                ]
+              },
+              {
+                "type": "container",
+                "id": "developer-path-container",
+                "flexGrow": 1,
+                "flexBasis": "250px",
+                "padding": "24px",
+                "backgroundColor": "#ffffff",
+                "flexDirection": "column",
+                "gap": "12px",
+                "items": [
+                  {
+                    "type": "container",
+                    "id": "developer-path-header",
+                    "flexDirection": "row",
+                    "alignItems": "center",
+                    "gap": "8px",
+                    "items": [
+                      {
+                        "type": "icon",
+                        "id": "developer-path-icon",
+                        "name": "laptop"
+                      },
+                      {
+                        "type": "markdown",
+                        "id": "developer-path",
+                        "value": "### Developer/Analyst"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "markdown",
+                    "id": "developer-path-description",
+                    "value": "1. **Technical Overview** (primary)\n2. General Overview (context)\n3. Contributor Overview (optional)\n\n*Focus on implementation details*"
+                  }
+                ]
+              },
+              {
+                "type": "container",
+                "id": "comprehensive-path-container",
+                "flexGrow": 1,
+                "flexBasis": "250px",
+                "padding": "24px",
+                "backgroundColor": "#ffffff",
+                "flexDirection": "column",
+                "gap": "12px",
+                "items": [
+                  {
+                    "type": "container",
+                    "id": "comprehensive-path-header",
+                    "flexDirection": "row",
+                    "alignItems": "center",
+                    "gap": "8px",
+                    "items": [
+                      {
+                        "type": "icon",
+                        "id": "comprehensive-path-icon",
+                        "name": "magnify"
+                      },
+                      {
+                        "type": "markdown",
+                        "id": "comprehensive-path",
+                        "value": "### Comprehensive Study"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "markdown",
+                    "id": "comprehensive-path-description",
+                    "value": "1. **General Overview**\n2. **Contributor Overview**\n3. **Technical Overview**\n\n*Complete understanding of OmniOntos*"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "container",
+        "id": "quick-start-section",
+        "backgroundColor": "#2c3e50",
+        "foregroundColor": "#ffffff",
+        "padding": "48px 32px",
+        "flexDirection": "column",
+        "justifyContent": "center",
+        "alignItems": "center",
+        "gap": "24px",
+        "items": [
+          {
+            "type": "container",
+            "id": "quick-start-header",
+            "flexDirection": "row",
+            "justifyContent": "center",
+            "alignItems": "center",
+            "gap": "12px",
+            "items": [
+              {
+                "type": "icon",
+                "id": "quick-start-icon",
+                "name": "rocket-launch"
+              },
+              {
+                "type": "markdown",
+                "id": "quick-start-title",
+                "foregroundColor": "#ffffff",
+                "horizontalAlignment": "center",
+                "value": "## Ready to Jump In?"
+              }
+            ]
+          },
+          {
+            "type": "markdown",
+            "id": "quick-start-subtitle",
+            "foregroundColor": "#ffffff",
+            "horizontalAlignment": "center",
+            "value": "Or skip the reading and explore the ontology directly:"
+          },
+          {
+            "type": "container",
+            "id": "quick-start-actions",
+            "flexDirection": "row",
+            "justifyContent": "center",
+            "alignItems": "center",
+            "gap": "16px",
+            "flexWrap": "wrap",
+            "items": [
+              {
+                "type": "button",
+                "id": "explore-ontology",
+                "label": "Explore the Ontology",
+                "url": "/view/00000000-0000-0000-0000-000000000000",
+                "style": "primary"
+              },
+              {
+                "type": "button",
+                "id": "back-to-welcome",
+                "label": "Back to Welcome",
+                "url": "/page/welcome",
+                "style": "secondary"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "container",
+        "id": "footer-section",
+        "backgroundColor": "#f8f9fa",
+        "padding": "24px",
+        "flexDirection": "row",
+        "justifyContent": "space-between",
+        "alignItems": "center",
+        "flexWrap": "wrap",
+        "gap": "16px",
+        "items": [
+          {
+            "type": "markdown",
+            "id": "footer-links",
+            "value": "[Contact](/page/contact) • [Code of Conduct](/page/code-of-conduct) • [Privacy Policy](/page/privacy-policy)"
+          },
+          {
+            "type": "markdown",
+            "id": "footer-github",
+            "horizontalAlignment": "right",
+            "value": "[GitHub: OmniOntos](https://github.com/OmniOntos/)"
+          }
+        ]
+      }
+    ]
+  }
+}

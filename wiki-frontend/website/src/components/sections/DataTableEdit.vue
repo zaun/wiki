@@ -1,15 +1,14 @@
 <template>
-    {{ localData.headers.length }}
     <v-data-table-virtual ref="dataTable" density="compact" :headers="localData.headers" :items="items"
         class="mt-2 data-table">
         <!-- custom headers slot -->
         <template #headers>
-            <draggable :model-value="localData.headers" tag="tr" item-key="headerKey" direction="horizontal"
-                :move="onMove" @end="onDragEnd">
+            <draggable :model-value="localData.headers" tag="tr" item-key="title" direction="horizontal" :move="onMove"
+                @end="onDragEnd">
                 <template #item="{ element, index }">
-                    <th v-if="element.type === 'placeholder'" :key="`placeholder_${element.headerKey}`" class="px-0">
+                    <th v-if="element.type === 'placeholder'" :key="`placeholder_${index}`" class="px-0">
                     </th>
-                    <th v-else :key="element.headerKey" class="v-data-table__th v-data-table-column--align-start px-4"
+                    <th v-else :key="index" class="v-data-table__th v-data-table-column--align-start px-4"
                         :style="{ width: element.width }" @mouseenter="hovered = index" @mouseleave="hovered = null">
                         <div class="v-data-table-header__content">
                             <!-- inline‐edit title -->
@@ -41,8 +40,8 @@
                                     <v-divider />
                                     <v-menu location="end" open-on-hover activator="parent" offset="2"
                                         close-on-content-click>
-                                        <template #activator="{ props: subMenuActivatorProps }">
-                                            <v-list-item v-bind="subMenuActivatorProps" title="Set Type">
+                                        <template #activator="{ props: subMenuTypeProps }">
+                                            <v-list-item v-bind="subMenuTypeProps" title="Set Type">
                                                 <template #prepend>
                                                     <v-icon>mdi-tune-variant</v-icon>
                                                 </template>
@@ -52,7 +51,7 @@
                                             </v-list-item>
                                         </template>
                                         <v-list density="compact">
-                                            <v-list-item v-for="colType in columnTypes" :key="colType.value"
+                                            <v-list-item v-for="colType in typeColumns" :key="colType.value"
                                                 :title="colType.text" @click="onSetColumnType(index, colType.value)">
                                                 <template v-if="element.type === colType.value" #append>
                                                     <v-icon color="primary">mdi-check</v-icon>
@@ -60,6 +59,27 @@
                                             </v-list-item>
                                         </v-list>
                                     </v-menu>
+                                    <!-- <v-menu v-if="colType.value=='currency'" location="end" open-on-hover offset="2"
+                                        close-on-content-click>
+                                        <template #activator="{ props: subMenuCurrencyProps }">
+                                            <v-list-item v-bind="subMenuCurrencyProps" title="Set Type">
+                                                <template #prepend>
+                                                    <v-icon>mdi-tune-variant</v-icon>
+                                                </template>
+                                                <template #append>
+                                                    <v-icon>mdi-chevron-right</v-icon>
+                                                </template>
+                                            </v-list-item>
+                                        </template>
+                                        <v-list density="compact">
+                                            <v-list-item v-for="currType in typeCurrencies" :key="currType.value"
+                                                :title="currType.text" @click="onSetColumnCurrencyType(index, currType.value)">
+                                                <template v-if="element.currencyType === currType.value" #append>
+                                                    <v-icon color="primary">mdi-check</v-icon>
+                                                </template>
+                                            </v-list-item>
+                                        </v-list>
+                                    </v-menu> -->
                                     <v-divider />
                                     <v-list-item @click="onAddColumn(index, 'before')">
                                         <template v-slot:prepend>
@@ -94,14 +114,22 @@
         </template>
 
         <!-- your rows -->
-        <template #item="{ item, index }">
-            <tr @contextmenu.prevent="openRowContextMenu($event, item, index)">
-                <td v-for="(col, colIndex) in localData.headers" :key="col.headerKey" class="pa-1"
-                    :class="{ 'px-0': col.type === 'placeholder' }">
-                    <v-text-field v-if="col.type !== 'placeholder'" v-model="item[colIndex]" density="compact"
-                        hide-details single-line variant="plain" @update:model-value="onColUpdate" @blur="onColUpdate"
-                        class="ma-0" />
-                    <span v-else></span>
+        <template #item="{ item, index: rIdx }">
+            <tr @contextmenu.prevent="openRowContextMenu($event, item, rIdx)">
+                <td v-for="(col, cIdx) in localData.headers" :key="`${rIdx}-${cIdx}`" class="pa-1"
+                    :class="{ 'px-0': col.type === 'placeholder' }" @click="onCellEdit(rIdx, cIdx)">
+                    <template v-if="isEditable.c == cIdx && isEditable.r == rIdx">
+                        <v-text-field v-if="col.type !== 'placeholder'" v-model="item[cIdx]" density="compact"
+                            hide-details single-line variant="plain" @update:model-value="onCellUpdate"
+                            @blur="onCellBlur" class="ma-0" autofocus />
+                        <span v-else></span>
+                    </template>
+                    <template v-else>
+                        <div class="py-1 text-body-1" v-if="col.type === 'number'">{{ formatNumber(item[cIdx]) }}</div>
+                        <div class="py-1 text-body-1" v-else-if="col.type === 'currency'">{{ formatCurrency(item[cIdx]) }}</div>
+                        <div class="py-1 text-body-1" v-else-if="col.type === 'placeholder'"></div>
+                        <div class="py-1 text-body-1" v-else>{{ item[cIdx] }}</div>
+                    </template>
                 </td>
             </tr>
         </template>
@@ -150,12 +178,6 @@ const props = defineProps({
 
 const emit = defineEmits(['update:modelValue']);
 
-const columnTypes = ref([
-    { text: "Text", value: "text" },
-    { text: "Number", value: "number" },
-    { text: "Date", value: "date" },
-    { text: "Currency", value: "currency" },
-]);
 const containerWidth = ref(0);
 const contextRowIndex = ref(null);
 const dataTable = ref(null);
@@ -163,12 +185,25 @@ const editField = ref(null);
 const editing = ref(null);
 const extraWidth = ref(0);
 const hovered = ref(null);
+const isEditable = ref({ r: -1, c: -1 });
 const localData = ref({ ...props.modelValue });
 const resizing = ref({ index: null, startX: 0, startW: 0 });
 const rowContextMenuX = ref(0);
 const rowContextMenuY = ref(0);
 const showRowContextMenu = ref(false);
 const totalWidth = ref(0);
+const typeColumns = ref([
+    { text: "Text", value: "string" },
+    { text: "Number", value: "number" },
+    { text: "Date", value: "date" },
+    { text: "Currency", value: "currency" },
+]);
+const typeCurrencies = ref([
+    { text: "Text", value: "string" },
+    { text: "Number", value: "number" },
+    { text: "Date", value: "date" },
+    { text: "Currency", value: "currency" },
+]);
 
 const items = computed(() => localData.value.rows || []);
 
@@ -176,22 +211,20 @@ watch([totalWidth, containerWidth], updatePlaceholder, { immediate: true });
 watch(
     () => props.modelValue,
     (nv) => {
+        console.log('localData update');
         const newLocalData = JSON.parse(JSON.stringify(nv)); // Deep copy
 
         if (!newLocalData.headers || newLocalData.headers.length === 0) {
             newLocalData.headers = [{
                 title: 'Column A',
-                headerKey: getHeaderKey(),
                 type: 'string',
                 width: '150px',
             }, {
                 title: 'Column B',
-                headerKey: getHeaderKey(),
                 type: 'string',
                 width: '150px',
             }, {
                 title: 'Column C',
-                headerKey: getHeaderKey(),
                 type: 'string',
                 width: '150px',
             }];
@@ -202,20 +235,31 @@ watch(
                     }
                 });
             }
-        } else {
-            newLocalData.headers.forEach(h => {
-                if (!h.headerKey) {
-                    h.headerKey = (h.type === 'placeholder')
-                        ? '__placeholder_key__'
-                        : getHeaderKey();
-                }
-            });
         }
-        localData.value = newLocalData;
+
+        // localData.value = newLocalData;
+
+        if (!localData.value.headers) {
+            localData.value.headers = [];
+        }
+        localData.value.headers.splice(
+            0,
+            localData.value.headers.length,
+            ...newLocalData.headers,
+        );
+
+        if (!localData.value.rows) {
+            localData.value.rows = [];
+        }
+        localData.value.rows.splice(
+            0,
+            localData.value.rows.length,
+            ...newLocalData.rows
+        );
 
         updateTotalWidth();
     },
-    { deep: true, immediate: true },
+    { immediate: true },
 );
 watch(editing, async idx => {
     if (idx !== null) {
@@ -223,7 +267,7 @@ watch(editing, async idx => {
         editField.value?.focus?.();
     }
 });
-watch(localData.value.headers, updateTotalWidth);
+// watch(() => localData.value.headers.length, updateTotalWidth);
 
 function updateTotalWidth() {
     totalWidth.value = localData.value.headers.reduce((sum, col) => {
@@ -260,7 +304,6 @@ function updatePlaceholder() {
         if (idx === -1) {
             hdrs.push({
                 title: '',
-                headerKey: '__placeholder_key__',
                 type: 'placeholder',
                 width: wpx,
             });
@@ -272,20 +315,11 @@ function updatePlaceholder() {
     }
 }
 
-function getHeaderKey() {
-    return `hkey_${Date.now()}_${Math.random().toString(36).substring(2, 9)}`;
-}
-
 function updateModelValue() {
     const dataToEmit = {
         ...localData.value,
         headers: localData.value.headers
-            .filter((header) => header.type !== "placeholder")
-            .map((header) => {
-                // eslint-disable-next-line no-unused-vars
-                const { headerKey, ...headerWithoutKey } = header;
-                return headerWithoutKey;
-            }),
+            .filter((header) => header.type !== "placeholder"),
     };
     emit("update:modelValue", dataToEmit);
 }
@@ -373,7 +407,6 @@ function onResizeEnd() {
 function onAddColumn(idx, pos) {
     const col = {
         title: 'New',
-        headerKey: getHeaderKey(),
         type: 'string',
         width: '150px',
         minWidth: '150px',
@@ -390,8 +423,20 @@ function onAddColumn(idx, pos) {
     updateModelValue();
 }
 
-function onColUpdate() {
+function onCellUpdate() {
+    showRowContextMenu.value = false;
     updateModelValue();
+}
+
+function onCellBlur() {
+    updateModelValue();
+    isEditable.value = { r: -1, c: -1 };
+}
+
+function onCellEdit(rIdx, cIdx) {
+    if (isEditable.value.r !== rIdx || isEditable.value.c !== cIdx) {
+        isEditable.value = { r: rIdx, c: cIdx };
+    }
 }
 
 /**
@@ -490,9 +535,42 @@ function openRowContextMenu(event, itemWrapper, clickIndex) {
     });
 }
 
+function onSetColumnType(index, type) {
+    localData.value.headers[index].type = type;
+    updateModelValue();
+}
+
 function formatDate(val) {
     const d = new Date(val);
     return isNaN(d) ? '' : d.toLocaleDateString();
+}
+
+function formatNumber(val) {
+    if (val === '') {
+        return '';
+    }
+
+    let r;
+    if (/^-?\d+(\.\d+)?$/.test(val)) {
+        r = parseFloat(val);
+    } else {
+        r =  NaN;
+    }
+    return isNaN(r) ? `NaN(${val})` : r.toLocaleString();
+}
+
+function formatCurrency(val) {
+    if (val === '') {
+        return '';
+    }
+
+    let r;
+    if (/^-?\d+(\.\d+)?$/.test(val)) {
+        r = parseFloat(val);
+    } else {
+        r =  NaN;
+    }
+    return isNaN(r) ? `NaN(${val})` : r.toLocaleString();
 }
 
 onMounted(() => {

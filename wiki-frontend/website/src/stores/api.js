@@ -3,7 +3,11 @@ import axios from 'axios';
 import { ref, computed } from 'vue';
 
 const API_BASE = import.meta.env.VITE_API_BASE || 'http://localhost:3000/api';
+
 const authToken = ref(localStorage.getItem('authToken'));
+const userId = ref(localStorage.getItem('authUserId'));
+const userRoles = ref(localStorage.getItem('authRoles'));
+
 /**
  * Factory for the API client.
  *
@@ -32,14 +36,38 @@ export function useApi() {
         }
     }
 
+    function setUserId(id) {
+        userId.value = id;
+
+        if (id) {
+            localStorage.setItem('authUserId', id);
+        } else {
+            localStorage.removeItem('authUserId');
+        }
+    }
+
+    function setUserRoles(roles) {
+        userRoles.value = roles;
+
+        if (roles) {
+            localStorage.setItem('authRoles', roles);
+        } else {
+            localStorage.removeItem('authRoles');
+        }
+    }
+
     return {
         isAuthenticated: computed(() => authToken.value !== null),
+        userId: computed(() => authToken.value === null ? null : userId.value),
+        userRoles: computed(() => authToken.value === null ? null : userRoles.value),
 
         // Auth
         async authGetRegisterOptions() { return client.get(`/auth/register/options`); },
         async authRegister(attemptId, webauthnAttestation) {
             const response = await client.post('/auth/register', { attemptId, webauthnAttestation });
             setToken(response.data?.token ?? null);
+            setUserId(response.data?.userId ?? null);
+            setUserRoles(response.data?.roles ?? null);
             return response;
         },
 
@@ -47,6 +75,8 @@ export function useApi() {
         async authLogin(attemptId, webauthnAttestation) {
             const response = await client.post('/auth/login', { attemptId, webauthnAttestation });
             setToken(response.data?.token ?? null);
+            setUserId(response.data?.userId ?? null);
+            setUserRoles(response.data?.roles ?? null);
             return response;
         },
 
@@ -58,6 +88,8 @@ export function useApi() {
         authAddCredential(webauthnAttestation) { return client.post('/auth/register/credential', { webauthnAttestation }); },
         authLogout() {
             setToken(null);
+            setUserId(null);
+            setUserRoles(null);
         },
 
         // Page
@@ -67,7 +99,7 @@ export function useApi() {
 
         // Nodes
         getNode(id) { return client.get(`/nodes/${id}`); },
-        createNode(payload) { return client.post('/nodes', payload); },
+        createNode(parentId, payload) { return client.post(`/nodes/${parentId}`, payload); },
         updateNode(id, payload) { return client.patch(`/nodes/${id}`, payload); },
         deleteNode(id) { return client.delete(`/nodes/${id}`); },
         moveNode(id, newParentId) { return client.request({ method: 'MOVE', url: `/nodes/${id}`, data: { newParentId } }); },
@@ -109,6 +141,15 @@ export function useApi() {
         async search(query) { 
             const response = await client.get('/search', { params: { q: query } });
             return response.data;
+        },
+
+        // Users
+        async getUser(id) {
+            try {
+                return await client.get(`/users/${id}`);
+            } catch (e) {
+                return { status: e.status };
+            }
         },
 
         // Utilities

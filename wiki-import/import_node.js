@@ -6,7 +6,7 @@ import fetch from 'node-fetch'
 import yargs from 'yargs/yargs'
 import { hideBin } from 'yargs/helpers'
 
-const apiKey = '7808ae8d-5f8d-427d-bbb7-5e9c1698b719';
+const apiKey = 'dd94df9a-61b0-4e86-ada6-a661fbc7bbae';
 
 const argv = yargs(hideBin(process.argv))
     .usage('Usage: $0 --dir <path/to/json-directory> | --file <path/to/json-file>')
@@ -436,6 +436,9 @@ async function main() {
             if (!page.parentTitle || uploaded.has(page.parentTitle)) {
                 if (page.parentTitle) {
                     page.parentId = uploaded.get(page.parentTitle)
+                }
+                if (!page.content) {
+                    page.content = ' ';
                 }
                 await uploadNode(page)
                 pending.splice(i, 1)

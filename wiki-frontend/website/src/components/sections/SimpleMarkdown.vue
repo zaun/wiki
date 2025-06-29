@@ -69,7 +69,13 @@ function parseBlocks(markdown) {
 
     function flushParagraph() {
         if (!paraLines.length) return;
-        blocks.push({ type: 'paragraph', text: paraLines.join(' ') });
+        let text = paraLines.join(' ');
+        let centered = false;
+        if (text.startsWith('/')) {
+            centered = true;
+            text = text.slice(1).trim();
+        }
+        blocks.push({ type: 'paragraph', text, centered });
         paraLines = [];
     }
 
@@ -80,7 +86,10 @@ function parseBlocks(markdown) {
         ) {
             const { node } = listStack.pop();
             if (listStack.length) {
-                listStack[listStack.length - 1].node.items.push(node.items);
+                const parentList = listStack[listStack.length - 1].node;
+                const lastItemBlocks =
+                    parentList.items[parentList.items.length - 1];
+                lastItemBlocks.push(node);
             } else {
                 blocks.push(node);
             }
@@ -262,7 +271,9 @@ function renderBlocks(blocks) {
         .map((blk) => {
             if (blk.type === 'paragraph') {
                 const inln = parseInline(blk.text);
-                return `<p class="md-paragraph">${renderInline(inln)}</p>`;
+                const cls = ['md-paragraph'];
+                if (blk.centered) cls.push('text-center');
+                return `<p class="${cls.join(' ')}">${renderInline(inln)}</p>`;
             } else if (blk.type === 'list') {
                 const tag = blk.ordered ? 'ol' : 'ul';
                 const items = blk.items

@@ -1,74 +1,244 @@
 {
   "title": "Code of Conduct",
+  "maxWidth": "800px",
   "content": {
     "type": "container",
-    "id": "coc-main-container",
+    "id": "main-page-container",
     "backgroundColor": "#ffffff",
-    "paddingTop": "40px",
-    "paddingBottom": "40px",
+    "paddingTop": "24px",
+    "paddingBottom": "32px",
     "marginTop": "0px",
     "marginBottom": "0px",
     "flexDirection": "column",
     "justifyContent": "flex-start",
-    "alignItems": "center",
+    "alignItems": "stretch",
     "flexWrap": "nowrap",
-    "gap": "24px",
+    "gap": "32px",
     "items": [
       {
-        "type": "markdown",
-        "id": "coc-title",
-        "value": "# OmniOntos Project Code of Conduct"
-      },
-      {
-        "type": "image",
-        "id": "coc-hero-image",
-        "src": "https://placehold.co/800x400/b3d9ff/000000?text=Respectful+Collaboration",
-        "alt": "Abstract image representing ethical collaboration and communication",
-        "caption": "Fostering a constructive and inclusive environment for all.",
-        "width": "80%",
-        "height": "300px",
-        "objectFit": "cover",
-        "margin": "0 auto"
-      },
-      {
         "type": "container",
-        "id": "coc-content-area",
+        "id": "header-section",
+        "backgroundColor": "#f8f9fa",
+        "padding": "40px 32px",
         "flexDirection": "column",
-        "justifyContent": "flex-start",
-        "alignItems": "stretch",
-        "gap": "24px",
-        "padding": "0 10%",
-        "width": "100%",
+        "justifyContent": "center",
+        "alignItems": "center",
+        "gap": "16px",
         "items": [
           {
             "type": "markdown",
-            "id": "coc-intro",
-            "value": "The OmniOntos project is dedicated to providing a harassment-free and inclusive experience for everyone, regardless of background, expertise, or personal characteristics. We believe that a diverse and welcoming community is essential for building a truly universal and logically complete ontology. This Code of Conduct outlines our expectations for participation within our discussion forums, proposed edits, and all other forms of interaction within the OmniOntos community."
+            "id": "page-title",
+            "horizontalAlignment": "center",
+            "value": "# Code of Conduct\n## Building Knowledge Together"
           },
           {
             "type": "markdown",
-            "id": "expected-behavior-section",
-            "value": "## Expected Behavior\n\nWe expect all participants to adhere to the following principles:\n\n* **Be Respectful and Considerate:** Treat all community members with respect, kindness, and empathy. Disagreements should be handled constructively and professionally.\n* **Be Inclusive:** Welcome and support people of all backgrounds and perspectives. Avoid language or actions that could be perceived as exclusionary or offensive.\n* **Focus on the Ontology:** Discussions and contributions should remain focused on the technical and conceptual aspects of the ontology. Stay on topic and contribute to the logical completeness and accuracy of the system.\n* **Be Constructive:** When providing feedback or proposing changes, offer constructive criticism and actionable suggestions. Frame your input positively and with the goal of improvement.\n* **Assume Good Intent:** When interpreting others' comments or contributions, assume they are acting with good intentions unless there is clear evidence to the contrary.\n* **Be Patient:** Remember that this is a complex, ambitious project, and we are a small team (currently a one-man-show). Patience and understanding are greatly appreciated."
+            "id": "page-subtitle",
+            "horizontalAlignment": "center",
+            "value": "OmniOntos is a collaborative project built on mutual respect, intellectual honesty, and shared commitment to organizing human knowledge."
+          }
+        ]
+      },
+      {
+        "type": "container",
+        "id": "main-content",
+        "padding": "0px 24px",
+        "flexDirection": "column",
+        "justifyContent": "flex-start",
+        "alignItems": "stretch",
+        "gap": "32px",
+        "items": [
+          {
+            "type": "container",
+            "id": "core-principles",
+            "backgroundColor": "#e8f4f8",
+            "padding": "32px",
+            "flexDirection": "column",
+            "justifyContent": "flex-start",
+            "alignItems": "stretch",
+            "gap": "20px",
+            "items": [
+              {
+                "type": "container",
+                "id": "principle-respect",
+                "backgroundColor": "#ffffff",
+                "padding": "20px",
+                "flexDirection": "row",
+                "alignItems": "flex-start",
+                "gap": "16px",
+                "items": [
+                  {
+                    "type": "icon",
+                    "id": "respect-icon",
+                    "name": "account-heart"
+                  },
+                  {
+                    "type": "markdown",
+                    "id": "respect-text",
+                    "flexGrow": 1,
+                    "value": "### Be Respectful\n\nTreat all contributors with courtesy and professionalism. Disagree with ideas, not people. Personal attacks, harassment, or discriminatory language will not be tolerated."
+                  }
+                ]
+              },
+              {
+                "type": "container",
+                "id": "principle-honest",
+                "backgroundColor": "#ffffff",
+                "padding": "20px",
+                "flexDirection": "row",
+                "alignItems": "flex-start",
+                "gap": "16px",
+                "items": [
+                  {
+                    "type": "icon",
+                    "id": "honest-icon",
+                    "name": "shield-check"
+                  },
+                  {
+                    "type": "markdown",
+                    "id": "honest-text",
+                    "flexGrow": 1,
+                    "value": "### Be Honest\n\nProvide accurate information and cite reliable sources. Don't present opinions as facts. If you're unsure about something, say so. Admit mistakes and learn from them."
+                  }
+                ]
+              },
+              {
+                "type": "container",
+                "id": "principle-collaborative",
+                "backgroundColor": "#ffffff",
+                "padding": "20px",
+                "flexDirection": "row",
+                "alignItems": "flex-start",
+                "gap": "16px",
+                "items": [
+                  {
+                    "type": "icon",
+                    "id": "collaborative-icon",
+                    "name": "handshake"
+                  },
+                  {
+                    "type": "markdown",
+                    "id": "collaborative-text",
+                    "flexGrow": 1,
+                    "value": "### Be Collaborative\n\nWork together to improve content. Assume good faith in others' contributions. Discuss disagreements constructively and seek consensus when possible."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "container",
+            "id": "content-standards",
+            "flexDirection": "column",
+            "justifyContent": "flex-start",
+            "alignItems": "stretch",
+            "gap": "24px",
+            "items": [
+              {
+                "type": "markdown",
+                "id": "content-title",
+                "value": "## Content Standards"
+              },
+              {
+                "type": "markdown",
+                "id": "content-guidelines",
+                "value": "**Quality First:** Contribute accurate, well-researched content. Use reliable sources and maintain neutral point of view.\n\n**Follow the Structure:** Respect OmniOntos's hierarchical organization. Place topics in their logical domains and maintain the \"is-a-kind-of\" relationships.\n\n**No Plagiarism:** Always attribute sources and respect copyright. Original writing and proper citations are essential.\n\n**Stay On Topic:** Keep discussions focused on improving the encyclopedia. Off-topic conversations belong elsewhere."
+              }
+            ]
+          },
+          {
+            "type": "container",
+            "id": "prohibited-behavior",
+            "backgroundColor": "#fff3cd",
+            "padding": "24px",
+            "flexDirection": "column",
+            "justifyContent": "flex-start",
+            "alignItems": "stretch",
+            "gap": "16px",
+            "items": [
+              {
+                "type": "markdown",
+                "id": "prohibited-title",
+                "value": "## What's Not Allowed"
+              },
+              {
+                "type": "markdown",
+                "id": "prohibited-list",
+                "value": "- **Spam or advertising** - OmniOntos is not a marketing platform\n- **Vandalism** - Deliberately damaging or disrupting content\n- **Edit wars** - Repeatedly reverting changes without discussion\n- **Sock puppeting** - Using multiple accounts to manipulate votes or discussions\n- **Doxxing** - Sharing personal information about others\n- **Threats or harassment** - Creating a hostile environment for anyone"
+              }
+            ]
+          },
+          {
+            "type": "container",
+            "id": "enforcement",
+            "flexDirection": "column",
+            "justifyContent": "flex-start",
+            "alignItems": "stretch",
+            "gap": "20px",
+            "items": [
+              {
+                "type": "markdown",
+                "id": "enforcement-title",
+                "value": "## Enforcement"
+              },
+              {
+                "type": "markdown",
+                "id": "enforcement-process",
+                "value": "Violations may result in:\n\n1. **Warning** - First-time minor violations\n2. **Temporary restrictions** - Limited editing privileges\n3. **Suspension** - Temporary account suspension\n4. **Permanent ban** - For serious or repeated violations\n\nAll actions are reviewable through our community appeal process."
+              }
+            ]
+          },
+          {
+            "type": "container",
+            "id": "reporting",
+            "backgroundColor": "#f0f8f0",
+            "padding": "24px",
+            "flexDirection": "row",
+            "alignItems": "center",
+            "gap": "16px",
+            "items": [
+              {
+                "type": "icon",
+                "id": "reporting-icon",
+                "name": "flag"
+              },
+              {
+                "type": "markdown",
+                "id": "reporting-text",
+                "flexGrow": 1,
+                "value": "### Report Issues\n\nIf you encounter behavior that violates this code of conduct, please report it through our flagging system or contact the moderation team directly."
+              }
+            ]
           },
           {
             "type": "markdown",
-            "id": "unacceptable-behavior-section",
-            "value": "## Unacceptable Behavior\n\nThe following behaviors are considered unacceptable and will not be tolerated:\n\n* **Harassment:** Any form of harassment, including but not limited to offensive verbal comments, intimidation, stalking, unwelcome sexual attention, or discriminatory jokes and language.\n* **Discrimination:** Any discrimination based on age, body size, disability, ethnicity, gender identity and expression, level of experience, nationality, personal appearance, race, religion, sexual identity and orientation, or other protected characteristics.\n* **Personal Attacks:** Insulting or derogatory comments, ad hominem attacks, or engaging in flame wars.\n* **Trolling or Gish Galloping:** Deliberately disrupting discussions, posting irrelevant or off-topic material, or overwhelming discussions with excessive or misleading information.\n* **Spamming:** Posting unsolicited or irrelevant advertisements, repetitive messages, or any form of commercial solicitation.\n* **Doxing:** Sharing private information of others without their explicit consent.\n* **Impersonation:** Pretending to be another person or entity.\n* **Any other conduct that is disruptive or interferes with the positive atmosphere of the community.**"
+            "id": "conclusion",
+            "horizontalAlignment": "center",
+            "value": "## Remember\n\nOmniOntos succeeds when we all contribute our best efforts toward building a comprehensive, accurate, and well-organized encyclopedia. Thank you for being part of this community."
+          }
+        ]
+      },
+      {
+        "type": "container",
+        "id": "footer-section",
+        "padding": "24px",
+        "backgroundColor": "#f8f9fa",
+        "flexDirection": "row",
+        "justifyContent": "space-between",
+        "alignItems": "center",
+        "flexWrap": "wrap",
+        "gap": "16px",
+        "items": [
+          {
+            "type": "markdown",
+            "id": "footer-links",
+            "value": "[Welcome](/page/welcome) • [Overview](/page/overview) • [Contact](/page/contact) • [Privacy Policy](/page/privacy-policy)"
           },
           {
             "type": "markdown",
-            "id": "reporting-guidelines-section",
-            "value": "## Reporting Guidelines\n\nIf you experience or witness behavior that violates this Code of Conduct, please report it immediately by contacting us at:\n\n[**conduct@omni-ontos.org**](mailto:conduct@omni-ontos.org)\n\nAll reports will be handled with discretion and confidentiality. Please provide as much detail as possible, including:\n\n* Your name and contact information (optional, but helpful for follow-up).\n* The names of the individuals involved.\n* A description of the incident, including date, time, and location (if applicable).\n* Any relevant context or witnesses."
-          },
-          {
-            "type": "markdown",
-            "id": "enforcement-section",
-            "value": "## Enforcement\n\nViolations of this Code of Conduct will be addressed by the OmniOntos project administrator(s) in a timely and fair manner. Consequences for violating the Code of Conduct may include, but are not limited to:\n\n* A warning.\n* Temporary suspension from discussion or editing privileges.\n* Permanent ban from the OmniOntos community.\n\nWe reserve the right to remove any content or accounts that violate this Code of Conduct or are otherwise deemed inappropriate or harmful to the community."
-          },
-          {
-            "type": "markdown",
-            "id": "coc-conclusion",
-            "value": "By participating in the OmniOntos community, you agree to abide by this Code of Conduct. We appreciate your cooperation in helping us create a positive and productive environment for everyone."
+            "id": "footer-github",
+            "horizontalAlignment": "right",
+            "value": "[GitHub: OmniOntos](https://github.com/OmniOntos/)"
           }
         ]
       }

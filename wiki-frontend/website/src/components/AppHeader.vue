@@ -6,7 +6,7 @@
 <template>
     <v-app-bar app fixed elevation="2">
         <v-toolbar-title>
-            <span class="cursor-pointer" @click="goHome">Unending.Wiki</span>
+            <span class="cursor-pointer" @click="goHome">OmniOntos</span>
         </v-toolbar-title>
         <v-spacer />
 
@@ -21,18 +21,27 @@
                         <v-icon>mdi-file-document-outline</v-icon>
                     </v-btn>
                 </template>
-                <v-list>
+                <v-list class="header-menu">
                     <v-list-item :disabled="isViewRoute" @click="goTo('view')">
-                        <v-list-item-title>View</v-list-item-title>
+                        <template v-slot:prepend><v-icon icon="mdi-clipboard-outline"></v-icon></template>
+                        <v-list-item-title>View Topic</v-list-item-title>
                     </v-list-item>
-                    <v-list-item  v-if="isAuthenticated" :disabled="isEditRoute" @click="goTo('edit')">
-                        <v-list-item-title>Edit</v-list-item-title>
+                    <v-list-item  v-if="isAuthenticated" :disabled="!isViewRoute" @click="goTo('edit')">
+                        <template v-slot:prepend><v-icon icon="mdi-clipboard-edit-outline"></v-icon></template>
+                        <v-list-item-title>Edit Topic</v-list-item-title>
                     </v-list-item>
-                    <v-list-item :disabled="isHistoryRoute" @click="goTo('history')">
-                        <v-list-item-title>History</v-list-item-title>
+                    <v-list-item  v-if="isAuthenticated" :disabled="!isViewRoute" @click="doCreateTopic">
+                        <template v-slot:prepend><v-icon icon="mdi-clipboard-plus-outline"></v-icon></template>
+                        <v-list-item-title>New Sub-Topic</v-list-item-title>
                     </v-list-item>
-                    <v-list-item :disabled="isExportyRoute" @click="goTo('export')">
-                        <v-list-item-title>Export</v-list-item-title>
+                    <v-divider />
+                    <v-list-item :disabled="isEditRoute || isHistoryRoute" @click="goTo('history')">
+                        <template v-slot:prepend><v-icon icon="mdi-clipboard-clock-outline"></v-icon></template>
+                        <v-list-item-title>Topic History</v-list-item-title>
+                    </v-list-item>
+                    <v-list-item :disabled="isEditRoute || isExportyRoute" @click="goTo('export')">
+                        <template v-slot:prepend><v-icon icon="mdi-clipboard-arrow-down-outline"></v-icon></template>
+                        <v-list-item-title>Topic Export</v-list-item-title>
                     </v-list-item>
                 </v-list>
             </v-menu>
@@ -44,11 +53,13 @@
                             <v-icon>mdi-account</v-icon>
                         </v-btn>
                     </template>
-                    <v-list>
+                    <v-list class="header-menu">
                         <v-list-item @click="goToProfile">
+                            <template v-slot:prepend><v-icon icon="mdi-card-account-details-outline"></v-icon></template>
                             <v-list-item-title>Profile</v-list-item-title>
                         </v-list-item>
                         <v-list-item @click="logout">
+                            <template v-slot:prepend><v-icon icon="mdi-logout"></v-icon></template>
                             <v-list-item-title>Logout</v-list-item-title>
                         </v-list-item>
                     </v-list>
@@ -61,6 +72,7 @@
     </v-app-bar>
 
     <AuthDialog v-model="showAuth" />
+    <CreateTopicDialog v-model="showCreateTopic" @create="createTopic"/>
 </template>
 
 <script setup>
@@ -68,14 +80,15 @@ import { ref, computed } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
 
 import AuthDialog from '@/components/AuthDialog.vue';
+import CreateTopicDialog from '@/components/CreateTopicDialog.vue';
 import { useApi } from '@/stores/api';
 
 const api = useApi();
 const route = useRoute();
 const router = useRouter();
 
-
 const showAuth = ref(false);
+const showCreateTopic = ref(false);
 
 const isEditRoute = computed(() => route.name === 'edit');
 const isExportyRoute = computed(() => route.name === 'export');
@@ -94,6 +107,18 @@ function doAuth() {
 }
 
 /**
+ * Show the create topic dialog.
+ * @returns {void}
+ */
+function doCreateTopic() {
+    showCreateTopic.value = true;
+}
+
+function createTopic(data) {
+    console.log(111, data);
+}
+
+/**
  * Emit a `logout` event.
  * @returns {void}
  */
@@ -107,7 +132,10 @@ async function logout() {
  * @returns {void}
  */
 function goToProfile() {
-    emit('profile');
+    router.push({
+        name: 'profile',
+        params: { id: api.userId.value },
+    });
 }
 
 /**
@@ -158,5 +186,9 @@ function goHome() {
 
 .align-center {
     align-items: center;
+}
+
+.header-menu :deep(.v-list-item__prepend) {
+    width: 35px;
 }
 </style>

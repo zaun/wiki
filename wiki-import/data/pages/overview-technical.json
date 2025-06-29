@@ -1,0 +1,967 @@
+{
+  "title": "Overview Technical",
+  "maxWidth": "900px",
+  "content": {
+    "type": "container",
+    "id": "main-page-container",
+    "backgroundColor": "#ffffff",
+    "paddingTop": "24px",
+    "paddingBottom": "32px",
+    "marginTop": "0px",
+    "marginBottom": "0px",
+    "flexDirection": "column",
+    "justifyContent": "flex-start",
+    "alignItems": "stretch",
+    "flexWrap": "nowrap",
+    "gap": "32px",
+    "items": [
+      {
+        "type": "container",
+        "id": "header-section",
+        "backgroundColor": "#f8f9fa",
+        "padding": "40px 32px",
+        "flexDirection": "column",
+        "justifyContent": "center",
+        "alignItems": "center",
+        "gap": "16px",
+        "items": [
+          {
+            "type": "markdown",
+            "id": "page-title",
+            "horizontalAlignment": "center",
+            "value": "# OmniOntos: The Structured Encyclopedia\n## Technical Overview"
+          },
+          {
+            "type": "markdown",
+            "id": "page-subtitle",
+            "horizontalAlignment": "center",
+            "value": "**Conceptual data model and system behaviors for engineers and data analysts**"
+          }
+        ]
+      },
+      {
+        "type": "container",
+        "id": "main-content",
+        "padding": "0px 24px",
+        "flexDirection": "column",
+        "justifyContent": "flex-start",
+        "alignItems": "stretch",
+        "gap": "40px",
+        "items": [
+          {
+            "type": "container",
+            "id": "introduction-section",
+            "backgroundColor": "#e8f4f8",
+            "padding": "32px",
+            "flexDirection": "row",
+            "alignItems": "flex-start",
+            "gap": "20px",
+            "items": [
+              {
+                "type": "icon",
+                "id": "intro-icon",
+                "name": "rocket-launch"
+              },
+              {
+                "type": "container",
+                "id": "intro-content",
+                "flexGrow": 1,
+                "flexDirection": "column",
+                "gap": "16px",
+                "items": [
+                  {
+                    "type": "markdown",
+                    "id": "intro-title",
+                    "value": "## Introduction & Core Purpose"
+                  },
+                  {
+                    "type": "markdown",
+                    "id": "intro-text",
+                    "value": "OmniOntos functions as a **structured encyclopedia** built on semantic foundations. Each Topic represents a comprehensive encyclopedia article while maintaining rigorous hierarchical organization and semantic relationships. Its core purpose is to provide universal, accessible knowledge with the navigational benefits of formal ontological structure.\n\nFor technical stakeholders, this means a consistent, navigable data model that supports complex queries, provides rich semantic context, and enables systematic knowledge exploration from broad overviews to detailed technical content.\n\n**Key Innovation:** Complex multi-domain concepts are handled through **conceptual decomposition** - separating distinct aspects into their natural domains while maintaining unity through semantic relationships."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "container",
+            "id": "core-entity-section",
+            "backgroundColor": "#fff8e1",
+            "padding": "32px",
+            "flexDirection": "column",
+            "gap": "24px",
+            "items": [
+              {
+                "type": "container",
+                "id": "entity-header",
+                "flexDirection": "row",
+                "alignItems": "center",
+                "gap": "16px",
+                "items": [
+                  {
+                    "type": "icon",
+                    "id": "entity-icon",
+                    "name": "cube-outline"
+                  },
+                  {
+                    "type": "markdown",
+                    "id": "entity-title",
+                    "value": "## The Core Entity: A Node (Topic)"
+                  }
+                ]
+              },
+              {
+                "type": "markdown",
+                "id": "entity-description",
+                "value": "Every conceptual entity within OmniOntos is fundamentally represented as a **Node**. From a user perspective, these Nodes are always presented as **Topics**. Each Node is a distinct, addressable unit, ensuring referential integrity and consistency across the ontology."
+              },
+              {
+                "type": "container",
+                "id": "node-characteristics",
+                "flexDirection": "column",
+                "gap": "16px",
+                "items": [
+                  {
+                    "type": "markdown",
+                    "id": "node-chars-title",
+                    "value": "### Key Node Characteristics:"
+                  },
+                  {
+                    "type": "markdown",
+                    "id": "node-chars-list",
+                    "value": "- **Unique Identification:** Each Node possesses a globally unique identifier (UUID)\n- **Hierarchical Position:** Every Node (except Domains) has precisely one parent Node via \"is-a-kind-of\" relationship\n- **Content & Metadata:** Rich content organized into logical Sections with structured Details\n- **Image Association:** Nodes can be linked to dedicated Image entities"
+                  }
+                ]
+              },
+              {
+                "type": "container",
+                "id": "content-structure",
+                "backgroundColor": "#ffffff",
+                "padding": "20px",
+                "flexDirection": "column",
+                "gap": "12px",
+                "items": [
+                  {
+                    "type": "markdown",
+                    "id": "content-title",
+                    "value": "### Node Content Structure:"
+                  },
+                  {
+                    "type": "markdown",
+                    "id": "content-details",
+                    "value": "- **Core Properties:** Standard attributes (title, subtitle, timestamps, status)\n- **Content Sections:** Rich, detailed content with titles, summaries, and structured data\n- **Structured Details:** Granular attribute-value pairs for precise querying\n- **Version Control:** Complete change history for every Node and Section"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "container",
+            "id": "hierarchy-section",
+            "backgroundColor": "#f0f8f0",
+            "padding": "32px",
+            "flexDirection": "column",
+            "gap": "24px",
+            "items": [
+              {
+                "type": "container",
+                "id": "hierarchy-header",
+                "flexDirection": "row",
+                "alignItems": "center",
+                "gap": "16px",
+                "items": [
+                  {
+                    "type": "icon",
+                    "id": "hierarchy-icon",
+                    "name": "file-tree"
+                  },
+                  {
+                    "type": "markdown",
+                    "id": "hierarchy-title",
+                    "value": "## Structural Integrity: The Hierarchy"
+                  }
+                ]
+              },
+              {
+                "type": "markdown",
+                "id": "hierarchy-description",
+                "value": "The ontology's foundation rests upon six immutable Domains, serving as the conceptual roots of the entire system. These provide comprehensive and distinct foundations for all subsequent classification."
+              },
+              {
+                "type": "container",
+                "id": "domains-grid",
+                "flexDirection": "row",
+                "justifyContent": "space-between",
+                "alignItems": "flex-start",
+                "flexWrap": "wrap",
+                "gap": "16px",
+                "items": [
+                  {
+                    "type": "container",
+                    "id": "domain-abstract-tech",
+                    "flexGrow": 1,
+                    "flexBasis": "280px",
+                    "backgroundColor": "#ffffff",
+                    "padding": "16px",
+                    "flexDirection": "column",
+                    "gap": "8px",
+                    "items": [
+                      {
+                        "type": "container",
+                        "id": "abstract-header",
+                        "flexDirection": "row",
+                        "alignItems": "center",
+                        "gap": "8px",
+                        "items": [
+                          {
+                            "type": "icon",
+                            "id": "abstract-icon-small",
+                            "name": "sigma"
+                          },
+                          {
+                            "type": "markdown",
+                            "id": "abstract-title-small",
+                            "value": "**Abstract**"
+                          }
+                        ]
+                      },
+                      {
+                        "type": "markdown",
+                        "id": "abstract-desc-small",
+                        "value": "Pure abstractions independent of physical instantiation. Formal systems, mathematical concepts, theoretical structures."
+                      }
+                    ]
+                  },
+                  {
+                    "type": "container",
+                    "id": "domain-informational-tech",
+                    "flexGrow": 1,
+                    "flexBasis": "280px",
+                    "backgroundColor": "#ffffff",
+                    "padding": "16px",
+                    "flexDirection": "column",
+                    "gap": "8px",
+                    "items": [
+                      {
+                        "type": "container",
+                        "id": "informational-header",
+                        "flexDirection": "row",
+                        "alignItems": "center",
+                        "gap": "8px",
+                        "items": [
+                          {
+                            "type": "icon",
+                            "id": "informational-icon-small",
+                            "name": "database"
+                          },
+                          {
+                            "type": "markdown",
+                            "id": "informational-title-small",
+                            "value": "**Informational**"
+                          }
+                        ]
+                      },
+                      {
+                        "type": "markdown",
+                        "id": "informational-desc-small",
+                        "value": "Information patterns and structures independent of physical carriers. Encoding, transmission, interpretation principles."
+                      }
+                    ]
+                  },
+                  {
+                    "type": "container",
+                    "id": "domain-physical-tech",
+                    "flexGrow": 1,
+                    "flexBasis": "280px",
+                    "backgroundColor": "#ffffff",
+                    "padding": "16px",
+                    "flexDirection": "column",
+                    "gap": "8px",
+                    "items": [
+                      {
+                        "type": "container",
+                        "id": "physical-header",
+                        "flexDirection": "row",
+                        "alignItems": "center",
+                        "gap": "8px",
+                        "items": [
+                          {
+                            "type": "icon",
+                            "id": "physical-icon-small",
+                            "name": "atom"
+                          },
+                          {
+                            "type": "markdown",
+                            "id": "physical-title-small",
+                            "value": "**Physical**"
+                          }
+                        ]
+                      },
+                      {
+                        "type": "markdown",
+                        "id": "physical-desc-small",
+                        "value": "Tangible reality within space-time. Matter, energy, forces, and physical phenomena."
+                      }
+                    ]
+                  },
+                  {
+                    "type": "container",
+                    "id": "domain-mental-tech",
+                    "flexGrow": 1,
+                    "flexBasis": "280px",
+                    "backgroundColor": "#ffffff",
+                    "padding": "16px",
+                    "flexDirection": "column",
+                    "gap": "8px",
+                    "items": [
+                      {
+                        "type": "container",
+                        "id": "mental-header",
+                        "flexDirection": "row",
+                        "alignItems": "center",
+                        "gap": "8px",
+                        "items": [
+                          {
+                            "type": "icon",
+                            "id": "mental-icon-small",
+                            "name": "brain"
+                          },
+                          {
+                            "type": "markdown",
+                            "id": "mental-title-small",
+                            "value": "**Mental**"
+                          }
+                        ]
+                      },
+                      {
+                        "type": "markdown",
+                        "id": "mental-desc-small",
+                        "value": "Subjective states and processes of individual conscious agents. Cognition, perception, emotions."
+                      }
+                    ]
+                  },
+                  {
+                    "type": "container",
+                    "id": "domain-social-tech",
+                    "flexGrow": 1,
+                    "flexBasis": "280px",
+                    "backgroundColor": "#ffffff",
+                    "padding": "16px",
+                    "flexDirection": "column",
+                    "gap": "8px",
+                    "items": [
+                      {
+                        "type": "container",
+                        "id": "social-header",
+                        "flexDirection": "row",
+                        "alignItems": "center",
+                        "gap": "8px",
+                        "items": [
+                          {
+                            "type": "icon",
+                            "id": "social-icon-small",
+                            "name": "account-group"
+                          },
+                          {
+                            "type": "markdown",
+                            "id": "social-title-small",
+                            "value": "**Social**"
+                          }
+                        ]
+                      },
+                      {
+                        "type": "markdown",
+                        "id": "social-desc-small",
+                        "value": "Collective entities and phenomena from agent interactions. Organizations, cultures, institutions."
+                      }
+                    ]
+                  },
+                  {
+                    "type": "container",
+                    "id": "domain-meta-tech",
+                    "flexGrow": 1,
+                    "flexBasis": "280px",
+                    "backgroundColor": "#ffffff",
+                    "padding": "16px",
+                    "flexDirection": "column",
+                    "gap": "8px",
+                    "items": [
+                      {
+                        "type": "container",
+                        "id": "meta-header",
+                        "flexDirection": "row",
+                        "alignItems": "center",
+                        "gap": "8px",
+                        "items": [
+                          {
+                            "type": "icon",
+                            "id": "meta-icon-small",
+                            "name": "tools"
+                          },
+                          {
+                            "type": "markdown",
+                            "id": "meta-title-small",
+                            "value": "**Meta**"
+                          }
+                        ]
+                      },
+                      {
+                        "type": "markdown",
+                        "id": "meta-desc-small",
+                        "value": "Methods and frameworks for understanding other domains. Methodologies, analysis tools."
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "container",
+                "id": "is-a-kind-of",
+                "backgroundColor": "#ffffff",
+                "padding": "20px",
+                "flexDirection": "column",
+                "gap": "12px",
+                "items": [
+                  {
+                    "type": "markdown",
+                    "id": "relationship-title",
+                    "value": "### The \"Is-A-Kind-Of\" Relationship"
+                  },
+                  {
+                    "type": "markdown",
+                    "id": "relationship-desc",
+                    "value": "This relationship forms the cornerstone of OmniOntos's structure as the **exclusive mechanism for primary classification**:\n\n- **Single Parentage:** Every Node has one parent through this relationship\n- **Acyclicity:** Loops are strictly forbidden\n- **Transitive Inheritance:** Properties flow from parent to all descendants\n- **Scalability:** Supports arbitrary depth and breadth"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "container",
+            "id": "relationships-section",
+            "backgroundColor": "#f8f4fc",
+            "padding": "32px",
+            "flexDirection": "column",
+            "gap": "24px",
+            "items": [
+              {
+                "type": "container",
+                "id": "relationships-header",
+                "flexDirection": "row",
+                "alignItems": "center",
+                "gap": "16px",
+                "items": [
+                  {
+                    "type": "icon",
+                    "id": "relationships-icon",
+                    "name": "vector-link"
+                  },
+                  {
+                    "type": "markdown",
+                    "id": "relationships-title",
+                    "value": "## Optional Relationships"
+                  }
+                ]
+              },
+              {
+                "type": "markdown",
+                "id": "relationships-description",
+                "value": "Beyond the rigid \"is-a-kind-of\" hierarchy, OmniOntos allows for defined **optional, named, and directed relationships** between any two Nodes. These relationships enrich the semantic network by capturing diverse connections that cannot be expressed through subsumption alone."
+              },
+              {
+                "type": "container",
+                "id": "relationship-types",
+                "flexDirection": "row",
+                "justifyContent": "space-between",
+                "alignItems": "flex-start",
+                "flexWrap": "wrap",
+                "gap": "16px",
+                "items": [
+                  {
+                    "type": "container",
+                    "id": "depends-on",
+                    "flexGrow": 1,
+                    "flexBasis": "200px",
+                    "backgroundColor": "#ffffff",
+                    "padding": "16px",
+                    "flexDirection": "column",
+                    "gap": "8px",
+                    "items": [
+                      {
+                        "type": "markdown",
+                        "id": "depends-title",
+                        "value": "**DEPENDS_ON**"
+                      },
+                      {
+                        "type": "markdown",
+                        "id": "depends-desc",
+                        "value": "Logical, structural, or functional dependency\n\n*Example: Theorem → Axiom*"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "container",
+                    "id": "contrasts-with",
+                    "flexGrow": 1,
+                    "flexBasis": "200px",
+                    "backgroundColor": "#ffffff",
+                    "padding": "16px",
+                    "flexDirection": "column",
+                    "gap": "8px",
+                    "items": [
+                      {
+                        "type": "markdown",
+                        "id": "contrasts-title",
+                        "value": "**CONTRASTS_WITH**"
+                      },
+                      {
+                        "type": "markdown",
+                        "id": "contrasts-desc",
+                        "value": "Significant conceptual distinction or opposition\n\n*Example: Light ↔ Darkness*"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "container",
+                    "id": "contains",
+                    "flexGrow": 1,
+                    "flexBasis": "200px",
+                    "backgroundColor": "#ffffff",
+                    "padding": "16px",
+                    "flexDirection": "column",
+                    "gap": "8px",
+                    "items": [
+                      {
+                        "type": "markdown",
+                        "id": "contains-title",
+                        "value": "**CONTAINS**"
+                      },
+                      {
+                        "type": "markdown",
+                        "id": "contains-desc",
+                        "value": "Whole-to-part compositional relationship\n\n*Example: Building → Room*"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "container",
+                    "id": "invalidates",
+                    "flexGrow": 1,
+                    "flexBasis": "200px",
+                    "backgroundColor": "#ffffff",
+                    "padding": "16px",
+                    "flexDirection": "column",
+                    "gap": "8px",
+                    "items": [
+                      {
+                        "type": "markdown",
+                        "id": "invalidates-title",
+                        "value": "**INVALIDATES**"
+                      },
+                      {
+                        "type": "markdown",
+                        "id": "invalidates-desc",
+                        "value": "One concept superseding another\n\n*Example: General Relativity → Newtonian Gravity*"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "container",
+                    "id": "created-by",
+                    "flexGrow": 1,
+                    "flexBasis": "200px",
+                    "backgroundColor": "#ffffff",
+                    "padding": "16px",
+                    "flexDirection": "column",
+                    "gap": "8px",
+                    "items": [
+                      {
+                        "type": "markdown",
+                        "id": "created-title",
+                        "value": "**CREATED_BY**"
+                      },
+                      {
+                        "type": "markdown",
+                        "id": "created-desc",
+                        "value": "Links creation to originator\n\n*Example: Symphony → Composer*"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "container",
+            "id": "system-behavior-section",
+            "backgroundColor": "#fff0f0",
+            "padding": "32px",
+            "flexDirection": "column",
+            "gap": "24px",
+            "items": [
+              {
+                "type": "container",
+                "id": "behavior-header",
+                "flexDirection": "row",
+                "alignItems": "center",
+                "gap": "16px",
+                "items": [
+                  {
+                    "type": "icon",
+                    "id": "behavior-icon",
+                    "name": "cog"
+                  },
+                  {
+                    "type": "markdown",
+                    "id": "behavior-title",
+                    "value": "## System Behavior & Technical Features"
+                  }
+                ]
+              },
+              {
+                "type": "container",
+                "id": "technical-features",
+                "flexDirection": "row",
+                "justifyContent": "space-between",
+                "alignItems": "flex-start",
+                "flexWrap": "wrap",
+                "gap": "20px",
+                "items": [
+                  {
+                    "type": "container",
+                    "id": "data-integrity",
+                    "flexGrow": 1,
+                    "flexBasis": "300px",
+                    "backgroundColor": "#ffffff",
+                    "padding": "20px",
+                    "flexDirection": "column",
+                    "gap": "12px",
+                    "items": [
+                      {
+                        "type": "container",
+                        "id": "integrity-header",
+                        "flexDirection": "row",
+                        "alignItems": "center",
+                        "gap": "8px",
+                        "items": [
+                          {
+                            "type": "icon",
+                            "id": "integrity-icon",
+                            "name": "shield-check"
+                          },
+                          {
+                            "type": "markdown",
+                            "id": "integrity-title",
+                            "value": "**Data Validation**"
+                          }
+                        ]
+                      },
+                      {
+                        "type": "markdown",
+                        "id": "integrity-desc",
+                        "value": "Automated checks for structural consistency, single parentage enforcement, and content format validation."
+                      }
+                    ]
+                  },
+                  {
+                    "type": "container",
+                    "id": "semantic-integration",
+                    "flexGrow": 1,
+                    "flexBasis": "300px",
+                    "backgroundColor": "#ffffff",
+                    "padding": "20px",
+                    "flexDirection": "column",
+                    "gap": "12px",
+                    "items": [
+                      {
+                        "type": "container",
+                        "id": "semantic-header",
+                        "flexDirection": "row",
+                        "alignItems": "center",
+                        "gap": "8px",
+                        "items": [
+                          {
+                            "type": "icon",
+                            "id": "semantic-icon",
+                            "name": "brain"
+                          },
+                          {
+                            "type": "markdown",
+                            "id": "semantic-title",
+                            "value": "**AI Integration**"
+                          }
+                        ]
+                      },
+                      {
+                        "type": "markdown",
+                        "id": "semantic-desc",
+                        "value": "Integration with external knowledge resources for semantic understanding and automated classification."
+                      }
+                    ]
+                  },
+                  {
+                    "type": "container",
+                    "id": "api-access",
+                    "flexGrow": 1,
+                    "flexBasis": "300px",
+                    "backgroundColor": "#ffffff",
+                    "padding": "20px",
+                    "flexDirection": "column",
+                    "gap": "12px",
+                    "items": [
+                      {
+                        "type": "container",
+                        "id": "api-header",
+                        "flexDirection": "row",
+                        "alignItems": "center",
+                        "gap": "8px",
+                        "items": [
+                          {
+                            "type": "icon",
+                            "id": "api-icon",
+                            "name": "api"
+                          },
+                          {
+                            "type": "markdown",
+                            "id": "api-title",
+                            "value": "**Programmatic Access**"
+                          }
+                        ]
+                      },
+                      {
+                        "type": "markdown",
+                        "id": "api-desc",
+                        "value": "Robust API for hierarchy traversal, content retrieval, and modification with access controls."
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "container",
+            "id": "community-section",
+            "backgroundColor": "#f0f0ff",
+            "padding": "32px",
+            "flexDirection": "column",
+            "gap": "24px",
+            "items": [
+              {
+                "type": "container",
+                "id": "community-header",
+                "flexDirection": "row",
+                "alignItems": "center",
+                "gap": "16px",
+                "items": [
+                  {
+                    "type": "icon",
+                    "id": "community-icon",
+                    "name": "account-group"
+                  },
+                  {
+                    "type": "markdown",
+                    "id": "community-title",
+                    "value": "## Community & Quality Assurance"
+                  }
+                ]
+              },
+              {
+                "type": "markdown",
+                "id": "community-description",
+                "value": "The system incorporates sophisticated community management and quality control mechanisms:"
+              },
+              {
+                "type": "container",
+                "id": "qa-features",
+                "flexDirection": "row",
+                "justifyContent": "space-between",
+                "alignItems": "flex-start",
+                "flexWrap": "wrap",
+                "gap": "20px",
+                "items": [
+                  {
+                    "type": "container",
+                    "id": "reputation-system",
+                    "flexGrow": 1,
+                    "flexBasis": "250px",
+                    "backgroundColor": "#ffffff",
+                    "padding": "16px",
+                    "flexDirection": "column",
+                    "gap": "8px",
+                    "items": [
+                      {
+                        "type": "markdown",
+                        "id": "reputation-title",
+                        "value": "**Dual Reputation System**"
+                      },
+                      {
+                        "type": "markdown",
+                        "id": "reputation-desc",
+                        "value": "Site-wide community trust combined with domain-specific expertise for progressive privileges."
+                      }
+                    ]
+                  },
+                  {
+                    "type": "container",
+                    "id": "ai-review",
+                    "flexGrow": 1,
+                    "flexBasis": "250px",
+                    "backgroundColor": "#ffffff",
+                    "padding": "16px",
+                    "flexDirection": "column",
+                    "gap": "8px",
+                    "items": [
+                      {
+                        "type": "markdown",
+                        "id": "ai-title",
+                        "value": "**AI-Assisted Review**"
+                      },
+                      {
+                        "type": "markdown",
+                        "id": "ai-desc",
+                        "value": "Automated evaluation of accuracy, bias, clarity, and completeness with scoring and flagging."
+                      }
+                    ]
+                  },
+                  {
+                    "type": "container",
+                    "id": "version-control",
+                    "flexGrow": 1,
+                    "flexBasis": "250px",
+                    "backgroundColor": "#ffffff",
+                    "padding": "16px",
+                    "flexDirection": "column",
+                    "gap": "8px",
+                    "items": [
+                      {
+                        "type": "markdown",
+                        "id": "version-title",
+                        "value": "**Complete History**"
+                      },
+                      {
+                        "type": "markdown",
+                        "id": "version-desc",
+                        "value": "Full change tracking for every Node and Section with temporal querying capabilities."
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "container",
+            "id": "architecture-section",
+            "backgroundColor": "#f8f8f8",
+            "padding": "32px",
+            "flexDirection": "column",
+            "gap": "24px",
+            "items": [
+              {
+                "type": "container",
+                "id": "arch-header",
+                "flexDirection": "row",
+                "alignItems": "center",
+                "gap": "16px",
+                "items": [
+                  {
+                    "type": "icon",
+                    "id": "arch-icon",
+                    "name": "server"
+                  },
+                  {
+                    "type": "markdown",
+                    "id": "arch-title",
+                    "value": "## Technical Architecture Highlights"
+                  }
+                ]
+              },
+              {
+                "type": "markdown",
+                "id": "arch-description",
+                "value": "**Scalability:** Engineered to handle substantial growth in Nodes, content, and relationships while maintaining performance\n\n**Data Model:** UUID-based Node identification with PostgreSQL backend for ACID compliance\n\n**API Design:** RESTful interface with GraphQL capabilities for complex relationship queries\n\n**Security:** Role-based access control with WebAuthn authentication and comprehensive audit logging"
+              }
+            ]
+          },
+          {
+            "type": "container",
+            "id": "cta-section",
+            "backgroundColor": "#2c3e50",
+            "foregroundColor": "#ffffff",
+            "padding": "40px",
+            "flexDirection": "column",
+            "justifyContent": "center",
+            "alignItems": "center",
+            "gap": "20px",
+            "items": [
+              {
+                "type": "markdown",
+                "id": "cta-text",
+                "foregroundColor": "#ffffff",
+                "horizontalAlignment": "center",
+                "value": "### Ready to Build with OmniOntos?\n\nExplore the technical implementation or contribute to the project."
+              },
+              {
+                "type": "container",
+                "id": "cta-buttons",
+                "flexDirection": "row",
+                "justifyContent": "center",
+                "alignItems": "center",
+                "flexWrap": "wrap",
+                "gap": "16px",
+                "items": [
+                  {
+                    "type": "button",
+                    "id": "github-btn",
+                    "label": "View on GitHub",
+                    "url": "https://github.com/OmniOntos/",
+                    "style": "primary"
+                  },
+                  {
+                    "type": "button",
+                    "id": "api-docs-btn",
+                    "label": "API Documentation",
+                    "url": "/page/overview-contributor",
+                    "style": "secondary"
+                  },
+                  {
+                    "type": "button",
+                    "id": "explore-ontology-btn",
+                    "label": "Explore Ontology",
+                    "url": "/view/00000000-0000-0000-0000-000000000000",
+                    "style": "outline"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "container",
+        "id": "footer-section",
+        "padding": "24px",
+        "backgroundColor": "#f8f9fa",
+        "flexDirection": "row",
+        "justifyContent": "space-between",
+        "alignItems": "center",
+        "flexWrap": "wrap",
+        "gap": "16px",
+        "items": [
+          {
+            "type": "markdown",
+            "id": "footer-links",
+            "value": "[Welcome](/page/welcome) • [Overview](/page/overview) • [Code of Conduct](/page/code-of-conduct) • [Contact](/page/contact) • [Privacy Policy](/page/privacy-policy)"
+          },
+          {
+            "type": "markdown",
+            "id": "footer-github",
+            "horizontalAlignment": "right",
+            "value": "[GitHub: OmniOntos](https://github.com/OmniOntos/)"
+          }
+        ]
+      }
+    ]
+  }
+}

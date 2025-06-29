@@ -65,6 +65,10 @@ const props = defineProps({
 const flags = ref([]);
 const reviewPrompts = ref([
     {
+        title: 'Is-A-Kind-Of Check',
+        detail: 'Is the current topic strictly a is-a-kind-of for its location?',
+    },
+    {
         title: 'Factual Claims Check',
         detail: 'Is there any information presented that directly contradicts widely accepted facts or information likely to be found in mainstream, reputable sources?',
     },
@@ -90,7 +94,13 @@ const showDialog = ref(false);
 watch(
     () => props.review,
     (v) => {
-        flags.value = v.filter((i) => i.result === true);
+        flags.value = v.filter((i, idx) => {
+            if (idx === 0) {
+                return i.result === false;
+            } else {
+                return i.result === true;
+            }
+        });
     },
     { immediate: true },
 );

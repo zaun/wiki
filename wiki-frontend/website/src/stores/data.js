@@ -390,13 +390,7 @@ export const useData = defineStore('data', () => {
         cacheCitations.value[id] ||= [];
 
         try {
-            let res;
-            if (id) {
-                res = await api.updateNode(id, fields);
-            } else {
-                res = await api.createNode(fields);
-                fields.id = res.data.id;
-            }
+            const res = await api.updateNode(id, fields);
 
             cacheNodes.value[id] = res.data;
             currentNode.value = cacheNodes.value[id];

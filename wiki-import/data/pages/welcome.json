@@ -1,18 +1,25 @@
 {
-  "title": "welcome",
+  "title": "Welcome",
+  "maxWidth": "900px",
   "content": {
     "type": "container",
-    "id": "page-wrapper",
+    "id": "main-page-container",
+    "backgroundColor": "#ffffff",
+    "paddingTop": "24px",
+    "paddingBottom": "32px",
+    "marginTop": "0px",
+    "marginBottom": "0px",
     "flexDirection": "column",
     "justifyContent": "flex-start",
     "alignItems": "stretch",
-    "gap": "0px",
+    "flexWrap": "nowrap",
+    "gap": "32px",
     "items": [
       {
         "type": "container",
         "id": "hero-section",
-        "backgroundColor": "#1a1a2e",
-        "padding": "60px 20px",
+        "backgroundColor": "#f8f9fa",
+        "padding": "48px 32px",
         "flexDirection": "column",
         "justifyContent": "center",
         "alignItems": "center",
@@ -20,256 +27,229 @@
         "items": [
           {
             "type": "markdown",
-            "id": "hero-heading",
+            "id": "hero-title",
             "horizontalAlignment": "center",
-            "value": "# OmniOntos: The Unending Ontology\n## Organize Everything. Understand Anything.",
-            "color": "#e0e0ff"
+            "value": "# OmniOntos\n## The Structured Encyclopedia\n\n**Organize Everything. Understand Anything.**"
           },
           {
-            "type": "image",
-            "id": "hero-illustration",
-            "src": "https://placehold.co/800x400/b3d9ff/000000?text=The+Fabric+of+Reality",
-            "alt": "Abstract illustration of interconnected knowledge",
-            "width": "80%",
-            "height": "auto",
-            "margin": "20px 0"
-          },
-          {
-            "type": "container",
-            "id": "hero-buttons",
-            "flexDirection": "row",
-            "justifyContent": "center",
-            "alignItems": "center",
-            "gap": "20px",
-            "items": [
-              {
-                "type": "button",
-                "id": "explore-button",
-                "label": "Explore the Ontology",
-                "url": "#explore",
-                "style": "primary",
-                "width": "220px",
-                "height": "50px"
-              },
-              {
-                "type": "button",
-                "id": "support-button",
-                "label": "Support the Project",
-                "url": "#support",
-                "style": "secondary",
-                "width": "220px",
-                "height": "50px"
-              }
-            ]
+            "type": "markdown",
+            "id": "hero-subtitle",
+            "horizontalAlignment": "center",
+            "value": "Imagine Wikipedia, but perfectly organized. Every article has its logical place, and you can navigate from the biggest ideas down to the smallest details without getting lost."
           }
         ]
       },
       {
         "type": "container",
-        "id": "intro-section",
-        "backgroundColor": "#ffffff",
-        "padding": "60px 20px",
-        "flexDirection": "row",
-        "justifyContent": "center",
-        "alignItems": "flex-start",
-        "flexWrap": "wrap",
+        "id": "main-content",
+        "padding": "0px 24px",
+        "flexDirection": "column",
+        "justifyContent": "flex-start",
+        "alignItems": "stretch",
         "gap": "40px",
         "items": [
           {
             "type": "markdown",
-            "id": "intro-text-block",
-            "flexBasis": "45%",
-            "flexGrow": 1,
-            "value": "### Your Universal Framework for Knowledge.\n\nImagine a single, interconnected system capable of categorizing **everything**—real or imagined, tangible or abstract. The Unending Ontology is building that future: a formal, hierarchical system to precisely organize all known and potential entities."
+            "id": "what-is-section",
+            "value": "## What Makes OmniOntos Different?\n\nOmniOntos bridges the gap between **Wikipedia's accessibility** and **formal ontologies' precision**. Unlike traditional encyclopedias with alphabetical ordering or informal link structures, every topic in OmniOntos has a **precise, logical place** in a comprehensive knowledge hierarchy.\n\n**The result?** You can start with any broad concept and systematically drill down to exactly the level of detail you need, with full context at every step."
           },
           {
-            "type": "image",
-            "id": "intro-image",
-            "src": "https://placehold.co/800x400/b3d9ff/000000?text=Universal+Knowledge",
-            "alt": "Illustration of interconnected knowledge nodes",
-            "width": "45%",
-            "height": "auto",
-            "flexGrow": 1,
-            "min-width": "300px"
-          }
-        ]
-      },
-      {
-        "type": "container",
-        "id": "domains-intro",
-        "backgroundColor": "#f0f2f5",
-        "padding": "60px 20px",
-        "flexDirection": "column",
-        "justifyContent": "center",
-        "alignItems": "center",
-        "gap": "24px",
-        "items": [
-          {
-            "type": "markdown",
-            "id": "domains-heading",
-            "horizontalAlignment": "center",
-            "value": "## Dive Deep. No Limits.\nOur multi-level hierarchy ensures every concept finds its exact place. No \"catch-all\" categories, just clear distinctions across a minimum of six levels, and as many more as needed."
-          }
-        ]
-      },
-      {
-        "type": "container",
-        "id": "core-domains-grid",
-        "backgroundColor": "#f0f2f5",
-        "padding": "0px 20px 60px",
-        "flexDirection": "row",
-        "justifyContent": "center",
-        "alignItems": "stretch",
-        "flexWrap": "wrap",
-        "gap": "20px",
-        "items": [
-          {
             "type": "container",
-            "id": "abstract-card",
-            "flexBasis": "30%",
-            "flexGrow": 1,
-            "min-width": "280px",
-            "backgroundColor": "#ffffff",
-            "padding": "30px",
+            "id": "key-features",
+            "backgroundColor": "#e8f4f8",
+            "padding": "32px",
             "flexDirection": "column",
             "justifyContent": "flex-start",
-            "alignItems": "center",
-            "gap": "10px",
+            "alignItems": "stretch",
+            "gap": "24px",
             "items": [
-              { "type": "markdown", "value": "### Abstract" },
-              { "type": "markdown", "value": "Logic, Math, Formal Systems." }
+              {
+                "type": "markdown",
+                "id": "features-title",
+                "horizontalAlignment": "center",
+                "value": "### Core Innovations"
+              },
+              {
+                "type": "container",
+                "id": "features-grid",
+                "flexDirection": "row",
+                "justifyContent": "space-between",
+                "alignItems": "flex-start",
+                "flexWrap": "wrap",
+                "gap": "24px",
+                "items": [
+                  {
+                    "type": "container",
+                    "id": "feature-1",
+                    "flexGrow": 1,
+                    "flexBasis": "300px",
+                    "padding": "20px",
+                    "backgroundColor": "#ffffff",
+                    "flexDirection": "column",
+                    "gap": "12px",
+                    "items": [
+                      {
+                        "type": "icon",
+                        "id": "hierarchy-icon",
+                        "name": "file-tree"
+                      },
+                      {
+                        "type": "markdown",
+                        "id": "feature-1-text",
+                        "value": "**Perfect Hierarchy**\n\nEvery topic has exactly one logical place. Navigate from broad overviews to technical details with complete context."
+                      }
+                    ]
+                  },
+                  {
+                    "type": "container",
+                    "id": "feature-2",
+                    "flexGrow": 1,
+                    "flexBasis": "300px",
+                    "padding": "20px",
+                    "backgroundColor": "#ffffff",
+                    "flexDirection": "column",
+                    "gap": "12px",
+                    "items": [
+                      {
+                        "type": "icon",
+                        "id": "domains-icon",
+                        "name": "hexagon-multiple"
+                      },
+                      {
+                        "type": "markdown",
+                        "id": "feature-2-text",
+                        "value": "**Six Universal Domains**\n\nAll knowledge organized into Abstract, Informational, Physical, Mental, Social, and Meta domains."
+                      }
+                    ]
+                  },
+                  {
+                    "type": "container",
+                    "id": "feature-3",
+                    "flexGrow": 1,
+                    "flexBasis": "300px",
+                    "padding": "20px",
+                    "backgroundColor": "#ffffff",
+                    "flexDirection": "column",
+                    "gap": "12px",
+                    "items": [
+                      {
+                        "type": "icon",
+                        "id": "decomposition-icon",
+                        "name": "vector-link"
+                      },
+                      {
+                        "type": "markdown",
+                        "id": "feature-3-text",
+                        "value": "**Conceptual Decomposition**\n\nComplex topics spanning multiple domains are intelligently separated and reconnected through semantic relationships."
+                      }
+                    ]
+                  }
+                ]
+              }
             ]
           },
           {
             "type": "container",
-            "id": "informational-card",
-            "flexBasis": "30%",
-            "flexGrow": 1,
-            "min-width": "280px",
-            "backgroundColor": "#ffffff",
-            "padding": "30px",
+            "id": "navigation-section",
+            "backgroundColor": "#f0f8f0",
+            "padding": "32px",
             "flexDirection": "column",
             "justifyContent": "flex-start",
             "alignItems": "center",
-            "gap": "10px",
+            "gap": "24px",
             "items": [
-              { "type": "markdown", "value": "### Informational" },
-              { "type": "markdown", "value": "Patterns, Structures, Data (e.g., Calendars!)." }
+              {
+                "type": "markdown",
+                "id": "nav-title",
+                "horizontalAlignment": "center",
+                "value": "## Learn More About OmniOntos"
+              },
+              {
+                "type": "markdown",
+                "id": "nav-description",
+                "horizontalAlignment": "center",
+                "value": "Choose the overview that matches your interests and expertise level:"
+              },
+              {
+                "type": "container",
+                "id": "overview-buttons",
+                "flexDirection": "row",
+                "justifyContent": "center",
+                "alignItems": "center",
+                "flexWrap": "wrap",
+                "gap": "16px",
+                "items": [
+                  {
+                    "type": "button",
+                    "id": "general-overview-btn",
+                    "label": "General Overview",
+                    "url": "/page/overview-general",
+                    "style": "primary"
+                  },
+                  {
+                    "type": "button",
+                    "id": "contributor-overview-btn",
+                    "label": "For Contributors",
+                    "url": "/page/overview-contributor",
+                    "style": "secondary"
+                  },
+                  {
+                    "type": "button",
+                    "id": "technical-overview-btn",
+                    "label": "Technical Details",
+                    "url": "/page/overview-technical",
+                    "style": "secondary"
+                  }
+                ]
+              }
             ]
           },
           {
             "type": "container",
-            "id": "physical-card",
-            "flexBasis": "30%",
-            "flexGrow": 1,
-            "min-width": "280px",
-            "backgroundColor": "#ffffff",
-            "padding": "30px",
+            "id": "examples-section",
+            "padding": "32px 0px",
             "flexDirection": "column",
             "justifyContent": "flex-start",
-            "alignItems": "center",
-            "gap": "10px",
+            "alignItems": "stretch",
+            "gap": "24px",
             "items": [
-              { "type": "markdown", "value": "### Physical" },
-              { "type": "markdown", "value": "Tangible Reality, Forces, Properties." }
+              {
+                "type": "markdown",
+                "id": "examples-title",
+                "horizontalAlignment": "center",
+                "value": "### See It In Action"
+              },
+              {
+                "type": "markdown",
+                "id": "examples-text",
+                "value": "**Example Navigation Path:**\n\n**Transportation** → **Electric Vehicles** → **Tesla Model 3** → **Battery System** → **Lithium-Ion Chemistry**\n\nEach level provides complete context while allowing you to go as deep as your interests require. No more getting lost in Wikipedia rabbit holes or struggling with overly technical ontologies."
+              }
             ]
           },
           {
             "type": "container",
-            "id": "mental-card",
-            "flexBasis": "30%",
-            "flexGrow": 1,
-            "min-width": "280px",
-            "backgroundColor": "#ffffff",
-            "padding": "30px",
+            "id": "cta-section",
+            "backgroundColor": "#2c3e50",
+            "foregroundColor": "#ffffff",
+            "padding": "40px",
             "flexDirection": "column",
-            "justifyContent": "flex-start",
-            "alignItems": "center",
-            "gap": "10px",
-            "items": [
-              { "type": "markdown", "value": "### Mental" },
-              { "type": "markdown", "value": "Subjective States, Conscious Processes." }
-            ]
-          },
-          {
-            "type": "container",
-            "id": "social-card",
-            "flexBasis": "30%",
-            "flexGrow": 1,
-            "min-width": "280px",
-            "backgroundColor": "#ffffff",
-            "padding": "30px",
-            "flexDirection": "column",
-            "justifyContent": "flex-start",
-            "alignItems": "center",
-            "gap": "10px",
-            "items": [
-              { "type": "markdown", "value": "### Social" },
-              { "type": "markdown", "value": "Interactions, Organizations of Agents." }
-            ]
-          },
-          {
-            "type": "container",
-            "id": "meta-card",
-            "flexBasis": "30%",
-            "flexGrow": 1,
-            "min-width": "280px",
-            "backgroundColor": "#ffffff",
-            "padding": "30px",
-            "flexDirection": "column",
-            "justifyContent": "flex-start",
-            "alignItems": "center",
-            "gap": "10px",
-            "items": [
-              { "type": "markdown", "value": "### Meta" },
-              { "type": "markdown", "value": "Higher-Order Concepts for Analysis." }
-            ]
-          }
-        ]
-      },
-      {
-        "type": "container",
-        "id": "cta-section",
-        "backgroundColor": "#1a1a2e",
-        "padding": "60px 20px",
-        "flexDirection": "column",
-        "justifyContent": "center",
-        "alignItems": "center",
-        "gap": "30px",
-        "items": [
-          {
-            "type": "markdown",
-            "id": "cta-heading",
-            "horizontalAlignment": "center",
-            "value": "## Precision. Collaboration. Progress.\n\nWhile currently driven by one builder, our vision is a vibrant community. Secure user accounts will unlock powerful features.",
-            "color": "#e0e0ff"
-          },
-          {
-            "type": "container",
-            "id": "cta-buttons-group",
-            "flexDirection": "row",
             "justifyContent": "center",
             "alignItems": "center",
-            "flexWrap": "wrap",
             "gap": "20px",
             "items": [
               {
-                "type": "button",
-                "id": "explore-api-button",
-                "label": "Access the API",
-                "url": "#api",
-                "style": "primary",
-                "width": "200px",
-                "height": "50px"
+                "type": "markdown",
+                "id": "cta-text",
+                "foregroundColor": "#ffffff",
+                "horizontalAlignment": "center",
+                "value": "### Ready to Explore?\n\nExperience the future of structured knowledge organization."
               },
               {
                 "type": "button",
-                "id": "support-project-button",
-                "label": "Support the Project",
-                "url": "#support",
-                "style": "secondary",
-                "width": "200px",
-                "height": "50px"
+                "id": "explore-btn",
+                "label": "Explore the Ontology",
+                "url": "/view/00000000-0000-0000-0000-000000000000",
+                "style": "primary"
               }
             ]
           }
@@ -278,26 +258,24 @@
       {
         "type": "container",
         "id": "footer-section",
-        "backgroundColor": "#33334d",
-        "padding": "30px 20px",
-        "flexDirection": "column",
-        "justifyContent": "center",
+        "padding": "24px",
+        "backgroundColor": "#f8f9fa",
+        "flexDirection": "row",
+        "justifyContent": "space-between",
         "alignItems": "center",
-        "gap": "15px",
+        "flexWrap": "wrap",
+        "gap": "16px",
         "items": [
           {
             "type": "markdown",
-            "id": "contact-links",
-            "horizontalAlignment": "center",
-            "value": "[Privacy Policy](#privacy) | [Contact Us](#contact)",
-            "color": "#cccccc"
+            "id": "footer-links",
+            "value": "[Overview](/page/overview) • [Code of Conduct](/page/code-of-conduct) • [Contact](/page/contact) • [Privacy Policy](/page/privacy-policy)"
           },
           {
             "type": "markdown",
-            "id": "copyright",
-            "horizontalAlignment": "center",
-            "value": "Join us in building the most comprehensive classification framework ever conceived.\n\n© 2025 OmniOntos. All rights reserved.",
-            "color": "#aaaaaa"
+            "id": "footer-github",
+            "horizontalAlignment": "right",
+            "value": "[GitHub: OmniOntos](https://github.com/OmniOntos/)"
           }
         ]
       }

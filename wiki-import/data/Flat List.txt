@@ -757,143 +757,841 @@
                             3.1.1.1.2.2.11.2 Halo Nucleus - An atomic nucleus with a compact core and one or more loosely bound nucleons forming a diffuse "halo" at a relatively large distance.
                             3.1.1.1.2.2.11.3 Superheavy Element Nucleus - The nucleus of a superheavy element, typically with atomic number Z > 104, often characterized by short half-lives and unique decay modes.
             3.1.1.2 Atom - smallest unit of a chemical element.
-                3.1.1.2.1 Hydrogen Atom (Z=1)
-                3.1.1.2.2 Helium Atom (Z=2)
-                3.1.1.2.3 Lithium Atom (Z=3)
-                3.1.1.2.4 Beryllium Atom (Z=4)
-                3.1.1.2.5 Boron Atom (Z=5)
-                3.1.1.2.6 Carbon Atom (Z=6)
-                3.1.1.2.7 Nitrogen Atom (Z=7)
-                3.1.1.2.8 Oxygen Atom (Z=8)
-                3.1.1.2.9 Fluorine Atom (Z=9)
-                3.1.1.2.10 Neon Atom (Z=10)
-                3.1.1.2.11 Sodium Atom (Z=11)
-                3.1.1.2.12 Magnesium Atom (Z=12)
-                3.1.1.2.13 Aluminium Atom (Z=13)
-                3.1.1.2.14 Silicon Atom (Z=14)
-                3.1.1.2.15 Phosphorus Atom (Z=15)
-                3.1.1.2.16 Sulfur Atom (Z=16)
-                3.1.1.2.17 Chlorine Atom (Z=17)
-                3.1.1.2.18 Argon Atom (Z=18)
-                3.1.1.2.19 Potassium Atom (Z=19)
-                3.1.1.2.20 Calcium Atom (Z=20)
-                3.1.1.2.21 Scandium Atom (Z=21)
-                3.1.1.2.22 Titanium Atom (Z=22)
-                3.1.1.2.23 Vanadium Atom (Z=23)
-                3.1.1.2.24 Chromium Atom (Z=24)
-                3.1.1.2.25 Manganese Atom (Z=25)
-                3.1.1.2.26 Iron Atom (Z=26)
-                3.1.1.2.27 Cobalt Atom (Z=27)
-                3.1.1.2.28 Nickel Atom (Z=28)
-                3.1.1.2.29 Copper Atom (Z=29)
-                3.1.1.2.30 Zinc Atom (Z=30)
-                3.1.1.2.31 Gallium Atom (Z=31)
-                3.1.1.2.32 Germanium Atom (Z=32)
-                3.1.1.2.33 Arsenic Atom (Z=33)
-                3.1.1.2.34 Selenium Atom (Z=34)
-                3.1.1.2.35 Bromine Atom (Z=35)
-                3.1.1.2.36 Krypton Atom (Z=36)
-                3.1.1.2.37 Rubidium Atom (Z=37)
-                3.1.1.2.38 Strontium Atom (Z=38)
-                3.1.1.2.39 Yttrium Atom (Z=39)
-                3.1.1.2.40 Zirconium Atom (Z=40)
-                3.1.1.2.41 Niobium Atom (Z=41)
-                3.1.1.2.42 Molybdenum Atom (Z=42)
-                3.1.1.2.43 Technetium Atom (Z=43)
-                3.1.1.2.44 Ruthenium Atom (Z=44)
-                3.1.1.2.45 Rhodium Atom (Z=45)
-                3.1.1.2.46 Palladium Atom (Z=46)
-                3.1.1.2.47 Silver Atom (Z=47)
-                3.1.1.2.48 Cadmium Atom (Z=48)
-                3.1.1.2.49 Indium Atom (Z=49)
-                3.1.1.2.50 Tin Atom (Z=50)
-                3.1.1.2.51 Antimony Atom (Z=51)
-                3.1.1.2.52 Tellurium Atom (Z=52)
-                3.1.1.2.53 Iodine Atom (Z=53)
-                3.1.1.2.54 Xenon Atom (Z=54)
-                3.1.1.2.55 Caesium Atom (Z=55)
-                3.1.1.2.56 Barium Atom (Z=56)
-                3.1.1.2.57 Lanthanum Atom (Z=57)
-                3.1.1.2.58 Cerium Atom (Z=58)
-                3.1.1.2.59 Praseodymium Atom (Z=59)
-                3.1.1.2.60 Neodymium Atom (Z=60)
-                3.1.1.2.61 Promethium Atom (Z=61)
-                3.1.1.2.62 Samarium Atom (Z=62)
-                3.1.1.2.63 Europium Atom (Z=63)
-                3.1.1.2.64 Gadolinium Atom (Z=64)
-                3.1.1.2.65 Terbium Atom (Z=65)
-                3.1.1.2.66 Dysprosium Atom (Z=66)
-                3.1.1.2.67 Holmium Atom (Z=67)
-                3.1.1.2.68 Erbium Atom (Z=68)
-                3.1.1.2.69 Thulium Atom (Z=69)
-                3.1.1.2.70 Ytterbium Atom (Z=70)
-                3.1.1.2.71 Lutetium Atom (Z=71)
-                3.1.1.2.72 Hafnium Atom (Z=72)
-                3.1.1.2.73 Tantalum Atom (Z=73)
-                3.1.1.2.74 Tungsten Atom (Z=74)
-                3.1.1.2.75 Rhenium Atom (Z=75)
-                3.1.1.2.76 Osmium Atom (Z=76)
-                3.1.1.2.77 Iridium Atom (Z=77)
-                3.1.1.2.78 Platinum Atom (Z=78)
-                3.1.1.2.79 Gold Atom (Z=79)
-                3.1.1.2.80 Mercury Atom (Z=80)
-                3.1.1.2.81 Thallium Atom (Z=81)
-                3.1.1.2.82 Lead Atom (Z=82)
-                3.1.1.2.83 Bismuth Atom (Z=83)
-                3.1.1.2.84 Polonium Atom (Z=84)
-                3.1.1.2.85 Astatine Atom (Z=85)
-                3.1.1.2.86 Radon Atom (Z=86)
-                3.1.1.2.87 Francium Atom (Z=87)
-                3.1.1.2.88 Radium Atom (Z=88)
-                3.1.1.2.89 Actinium Atom (Z=89)
-                3.1.1.2.90 Thorium Atom (Z=90)
-                3.1.1.2.91 Protactinium Atom (Z=91)
-                3.1.1.2.92 Uranium Atom (Z=92)
-                3.1.1.2.93 Neptunium Atom (Z=93)
-                3.1.1.2.94 Plutonium Atom (Z=94)
-                3.1.1.2.95 Americium Atom (Z=95)
-                3.1.1.2.96 Curium Atom (Z=96)
-                3.1.1.2.97 Berkelium Atom (Z=97)
-                3.1.1.2.98 Californium Atom (Z=98)
-                3.1.1.2.99 Einsteinium Atom (Z=99)
-                3.1.1.2.100 Fermium Atom (Z=100)
-                3.1.1.2.101 Mendelevium Atom (Z=101)
-                3.1.1.2.102 Nobelium Atom (Z=102)
-                3.1.1.2.103 Lawrencium Atom (Z=103)
-                3.1.1.2.104 Rutherfordium Atom (Z=104)
-                3.1.1.2.105 Dubnium Atom (Z=105)
-                3.1.1.2.106 Seaborgium Atom (Z=106)
-                3.1.1.2.107 Bohrium Atom (Z=107)
-                3.1.1.2.108 Hassium Atom (Z=108)
-                3.1.1.2.109 Meitnerium Atom (Z=109)
-                3.1.1.2.110 Darmstadtium Atom (Z=110)
-                3.1.1.2.111 Roentgenium Atom (Z=111)
-                3.1.1.2.112 Copernicium Atom (Z=112)
-                3.1.1.2.113 Nihonium Atom (Z=113)
-                3.1.1.2.114 Flerovium Atom (Z=114)
-                3.1.1.2.115 Moscovium Atom (Z=115)
-                3.1.1.2.116 Livermorium Atom (Z=116)
-                3.1.1.2.117 Tennessine Atom (Z=117)
-                3.1.1.2.118 Oganesson Atom (Z=118)
+                3.1.1.2.1 Hydrogen Atom
+                3.1.1.2.2 Helium Atom
+                3.1.1.2.3 Lithium Atom
+                3.1.1.2.4 Beryllium Atom
+                3.1.1.2.5 Boron Atom
+                3.1.1.2.6 Carbon Atom
+                3.1.1.2.7 Nitrogen Atom
+                3.1.1.2.8 Oxygen Atom
+                3.1.1.2.9 Fluorine Atom
+                3.1.1.2.10 Neon Atom
+                3.1.1.2.11 Sodium Atom
+                3.1.1.2.12 Magnesium Atom
+                3.1.1.2.13 Aluminium Atom
+                3.1.1.2.14 Silicon Atom
+                3.1.1.2.15 Phosphorus Atom
+                3.1.1.2.16 Sulfur Atom
+                3.1.1.2.17 Chlorine Atom
+                3.1.1.2.18 Argon Atom
+                3.1.1.2.19 Potassium Atom
+                3.1.1.2.20 Calcium Atom
+                3.1.1.2.21 Scandium Atom
+                3.1.1.2.22 Titanium Atom
+                3.1.1.2.23 Vanadium Atom
+                3.1.1.2.24 Chromium Atom
+                3.1.1.2.25 Manganese Atom
+                3.1.1.2.26 Iron Atom
+                3.1.1.2.27 Cobalt Atom
+                3.1.1.2.28 Nickel Atom
+                3.1.1.2.29 Copper Atom
+                3.1.1.2.30 Zinc Atom
+                3.1.1.2.31 Gallium Atom
+                3.1.1.2.32 Germanium Atom
+                3.1.1.2.33 Arsenic Atom
+                3.1.1.2.34 Selenium Atom
+                3.1.1.2.35 Bromine Atom
+                3.1.1.2.36 Krypton Atom
+                3.1.1.2.37 Rubidium Atom
+                3.1.1.2.38 Strontium Atom
+                3.1.1.2.39 Yttrium Atom
+                3.1.1.2.40 Zirconium Atom
+                3.1.1.2.41 Niobium Atom
+                3.1.1.2.42 Molybdenum Atom
+                3.1.1.2.43 Technetium Atom
+                3.1.1.2.44 Ruthenium Atom
+                3.1.1.2.45 Rhodium Atom
+                3.1.1.2.46 Palladium Atom
+                3.1.1.2.47 Silver Atom
+                3.1.1.2.48 Cadmium Atom
+                3.1.1.2.49 Indium Atom
+                3.1.1.2.50 Tin Atom
+                3.1.1.2.51 Antimony Atom
+                3.1.1.2.52 Tellurium Atom
+                3.1.1.2.53 Iodine Atom
+                3.1.1.2.54 Xenon Atom
+                3.1.1.2.55 Caesium Atom
+                3.1.1.2.56 Barium Atom
+                3.1.1.2.57 Lanthanum Atom
+                3.1.1.2.58 Cerium Atom
+                3.1.1.2.59 Praseodymium Atom
+                3.1.1.2.60 Neodymium Atom
+                3.1.1.2.61 Promethium Atom
+                3.1.1.2.62 Samarium Atom
+                3.1.1.2.63 Europium Atom
+                3.1.1.2.64 Gadolinium Atom
+                3.1.1.2.65 Terbium Atom
+                3.1.1.2.66 Dysprosium Atom
+                3.1.1.2.67 Holmium Atom
+                3.1.1.2.68 Erbium Atom
+                3.1.1.2.69 Thulium Atom
+                3.1.1.2.70 Ytterbium Atom
+                3.1.1.2.71 Lutetium Atom
+                3.1.1.2.72 Hafnium Atom
+                3.1.1.2.73 Tantalum Atom
+                3.1.1.2.74 Tungsten Atom
+                3.1.1.2.75 Rhenium Atom
+                3.1.1.2.76 Osmium Atom
+                3.1.1.2.77 Iridium Atom
+                3.1.1.2.78 Platinum Atom
+                3.1.1.2.79 Gold Atom
+                3.1.1.2.80 Mercury Atom
+                3.1.1.2.81 Thallium Atom
+                3.1.1.2.82 Lead Atom
+                3.1.1.2.83 Bismuth Atom
+                3.1.1.2.84 Polonium Atom
+                3.1.1.2.85 Astatine Atom
+                3.1.1.2.86 Radon Atom
+                3.1.1.2.87 Francium Atom
+                3.1.1.2.88 Radium Atom
+                3.1.1.2.89 Actinium Atom
+                3.1.1.2.90 Thorium Atom
+                3.1.1.2.91 Protactinium Atom
+                3.1.1.2.92 Uranium Atom
+                3.1.1.2.93 Neptunium Atom
+                3.1.1.2.94 Plutonium Atom
+                3.1.1.2.95 Americium Atom
+                3.1.1.2.96 Curium Atom
+                3.1.1.2.97 Berkelium Atom
+                3.1.1.2.98 Californium Atom
+                3.1.1.2.99 Einsteinium Atom
+                3.1.1.2.100 Fermium Atom
+                3.1.1.2.101 Mendelevium Atom
+                3.1.1.2.102 Nobelium Atom
+                3.1.1.2.103 Lawrencium Atom
+                3.1.1.2.104 Rutherfordium Atom
+                3.1.1.2.105 Dubnium Atom
+                3.1.1.2.106 Seaborgium Atom
+                3.1.1.2.107 Bohrium Atom
+                3.1.1.2.108 Hassium Atom
+                3.1.1.2.109 Meitnerium Atom
+                3.1.1.2.110 Darmstadtium Atom
+                3.1.1.2.111 Roentgenium Atom
+                3.1.1.2.112 Copernicium Atom
+                3.1.1.2.113 Nihonium Atom
+                3.1.1.2.114 Flerovium Atom
+                3.1.1.2.115 Moscovium Atom
+                3.1.1.2.116 Livermorium Atom
+                3.1.1.2.117 Tennessine Atom
+                3.1.1.2.118 Oganesson Atom
             3.1.1.3 Molecule - group of atoms bonded together.
             3.1.1.4 Bulk Phase - macroscopic state of matter with uniform properties.
                 3.1.1.4.1 Solid - retains a fixed shape and volume.
+                    3.1.1.4.1.1 Crystalline Solid - A solid in which the atoms, ions, or molecules are arranged in a highly ordered, repeating three-dimensional pattern (a crystal lattice). They have a sharp, well-defined melting point.
+                    3.1.1.4.1.2 Amorphous Solid - A solid in which the atoms, ions, or molecules are not arranged in a regular, repeating pattern. They lack long-range order and tend to soften over a range of temperatures rather than having a sharp melting point.
+                    3.1.1.4.1.3 Quasicrystal - A solid with an ordered but non-periodic atomic structure. They exhibit rotational symmetries forbidden to true crystals (e.g., five-fold symmetry).
+                    3.1.1.4.1.4 Liquid Crystal - A state of matter that has properties between those of a conventional liquid and a solid crystal. It can flow like a liquid but has some degree of long-range orientational order of its molecules, giving it anisotropic (direction-dependent) properties.
                 3.1.1.4.2 Liquid - takes shape of container; fixed volume.
+                    3.1.1.4.2.1 Newtonian Fluid - A fluid whose viscosity (resistance to flow) remains constant, regardless of the shear stress applied. Its flow behavior is described by a linear relationship between shear stress and shear rate.
+                    3.1.1.4.2.2 Non-Newtonian Fluid - A fluid whose viscosity changes depending on the applied shear stress or shear rate. Their flow behavior is more complex and cannot be described by a single constant viscosity.
+                    3.1.1.4.2.3 Superfluid - A quantum state of matter that exhibits frictionless flow, meaning it can flow indefinitely without losing kinetic energy. It occurs at extremely low temperatures.
                 3.1.1.4.3 Gas - takes shape and volume of container.
+                    3.1.1.4.3.1 Ideal Gas - A theoretical gas composed of randomly moving point particles that do not interact with each other except for perfectly elastic collisions. It obeys the ideal gas law. Used as a simplified model for real gases.
+                    3.1.1.4.3.2 Real Gas - A gas whose molecules occupy volume and interact with each other through attractive and repulsive forces. Their behavior deviates from ideal gas behavior, especially at high pressures and low temperatures.
                 3.1.1.4.4 Plasma - ionized gas with collective behavior.
+                    3.1.1.4.4.1 Thermal Plasma - A plasma where the electrons and heavy particles (ions and neutral atoms) are in thermal equilibrium, meaning they have roughly the same temperature.
+                    3.1.1.4.4.2 Non-Thermal Plasma (Cold Plasma) - A plasma where the electrons are at a much higher temperature than the heavy particles. This allows for plasma effects at lower overall gas temperatures, making it useful for sensitive applications.
+                    3.1.1.4.4.3 Space Plasma (Astrophysical Plasma) - Plasma that exists in various forms throughout space, from stellar interiors to the interstellar medium, solar wind, and planetary magnetospheres. It typically involves complex magnetic fields.
+                    33.1.1.4.4.4 Quark-Gluon Plasma (QGP) - A state of matter in quantum chromodynamics (QCD) which exists at extremely high temperature and density. It is thought to have existed for a very short time after the Big Bang and can be created in particle accelerators. Here, quarks and gluons are deconfined.
             3.1.1.5 Composite Material - made from two or more constituent materials.
         3.1.2 Physical Object - bounded collections of substances
             3.1.2.1 Natural Object - exists independently of human creation.
-                3.1.2.1.1 Biological Organism - a living physical entity.
+                3.1.2.1.1 Biological Organism - a living physical entity. Phylogenetic Classification
+                    3.1.2.1.1.1 Bacteria - These are prokaryotic organisms that represent one of the oldest and most diverse groups of life.
+                        3.1.2.1.1.1.1 Pseudomonadota (formerly Proteobacteria) - A highly diverse and ecologically significant phylum, encompassing a wide range of metabolic types. Many well-known bacteria, including many pathogens (e.g., E. coli, Salmonella) and environmental microbes, belong here.
+                        3.1.2.1.1.1.2 Bacillota (formerly Firmicutes) - Characterized by a typically Gram-positive cell wall structure, this phylum includes many species important in medicine (pathogens like Staphylococcus, probiotics like Lactobacillus) and industry (fermentation).
+                        3.1.2.1.1.1.3 Actinomycetota (formerly Actinobacteria) - Another major Gram-positive phylum, known for complex life cycles, abundant antibiotic production (e.g., Streptomyces), and significant roles in soil decomposition and nutrient cycling. Includes Mycobacterium.
+                        3.1.2.1.1.1.4 Bacteroidota (formerly Bacteroidetes) - Abundant in the gut microbiota of animals, including humans, and diverse in environmental niches. Many members are obligate anaerobes and important for carbohydrate fermentation.
+                        3.1.2.1.1.1.5 Cyanobacteria - Photosynthetic bacteria, often called "blue-green algae." They perform oxygenic photosynthesis and were crucial in oxygenating Earth's early atmosphere, forming the base of many aquatic food webs.
+                        3.1.2.1.1.1.6 Spirochaetota (formerly Spirochaetes) - Characterized by their unique spiral shape and corkscrew-like motility due to internal flagella (endoflagella). Includes important human pathogens like Treponema pallidum (syphilis) and Borrelia burgdorferi (Lyme disease).
+                        3.1.2.1.1.1.7 Chloroflexota (formerly Chloroflexi) - A metabolically versatile phylum, including green non-sulfur bacteria (anoxygenic phototrophs) and many thermophilic species found in hot springs; they exhibit diverse morphologies and carbon metabolisms.
+                        3.1.2.1.1.1.8 Chlorobiota (formerly Chlorobi) - Known as green sulfur bacteria, these are obligate anaerobic photoautotrophs that perform anoxygenic photosynthesis using bacteriochlorophylls and sulfur compounds as electron donors.
+                        3.1.2.1.1.1.9 Deinococcota (formerly Deinococcus-Thermus) - A phylum famous for its members' extreme resistance to radiation (e.g., Deinococcus radiodurans) and high temperatures (e.g., Thermus aquaticus, source of Taq polymerase).
+                        3.1.2.1.1.1.10 Thermotogota (formerly Thermotogae) - Primarily hyperthermophilic and anaerobic bacteria, often found in hot springs and marine hydrothermal vents. They are characterized by a unique "toga-like" outer membrane.
+                        3.1.2.1.1.1.11 Aquificota (formerly Aquificae) - Considered among the earliest diverging bacterial lineages, these are highly thermophilic and chemolithoautotrophic bacteria, often found in hot springs and hydrothermal vents, deriving energy from inorganic compounds.
+                        3.1.2.1.1.1.12 Planctomycetota (formerly Planctomycetes) - A phylogenetically distinct group known for unique cell biology, including the absence of peptidoglycan in cell walls and, for some, internal membrane-bound compartments (e.g., Anammox bacteria that perform anaerobic ammonium oxidation).
+                        3.1.2.1.1.1.13 Acidobacteriota (formerly Acidobacteria) - A widespread and diverse phylum, particularly abundant in soils and other terrestrial environments, known for their metabolic versatility and often adaptation to acidic conditions.
+                        3.1.2.1.1.1.14 Verrucomicrobiota (formerly Verrucomicrobia) - A morphologically and metabolically diverse phylum found in various environments, including soils, aquatic habitats, and as symbionts. Some members possess unique wart-like cell appendages.
+                    3.1.2.1.1.2 Archaea - Archaea are prokaryotic organisms. However, phylogenetic studies revealed that they are evolutionarily distinct from Bacteria and, are more closely related to Eukarya than to Bacteria
+                        3.1.2.1.1.2.1 Euryarchaeota - This is one of the largest and most diverse archaeal phyla, encompassing a wide range of metabolic types and ecological niches. It includes the well-known methanogens (methane producers), halophiles (salt-lovers), and some thermophiles (heat-lovers).
+                        3.1.2.1.1.2.2 Crenarchaeota - Traditionally recognized as another large archaeal phylum, it primarily includes thermophilic (heat-loving) and acidophilic (acid-loving) organisms often found in extreme environments like hot springs and hydrothermal vents.
+                        3.1.2.1.1.2.3 Thaumarchaeota - A widely distributed phylum that gained recognition for its abundance in marine and terrestrial environments, particularly for its role in the global nitrogen cycle as ammonia-oxidizing archaea (AOA).
+                        3.1.2.1.1.2.4 Korarchaeota - A relatively small phylum primarily identified from environmental DNA sequences (initially from hot springs). Its members are often considered to be deeply branching and sometimes thought to represent an ancient lineage.
+                        3.1.2.1.1.2.5 Nanoarchaeota - A unique phylum characterized by extremely small cell sizes and often existing as obligate symbionts or parasites of other archaea (e.g., Nanoarchaeum equitans growing on Ignicoccus hospitilis).
+                    3.1.2.1.1.3 Eukarya - This domain includes all organisms whose cells have a true nucleus and other membrane-bound organelles.
+                        3.1.2.1.1.3.1 Archaeplastida - This supergroup includes all organisms descended from the ancient endosymbiotic event where a heterotrophic eukaryote engulfed a cyanobacterium, leading to the evolution of chloroplasts. It encompasses land plants, red algae, and green algae.
+                            3.1.2.1.1.3.1.1 Glaucophyta (Glaucophytes) - A small, ancient phylum of unicellular freshwater algae, considered the most basal group within Archaeplastida. They are unique for retaining peptidoglycan in their chloroplast outer membrane (called cyanelles), a remnant of their cyanobacterial endosymbiont.
+                            3.1.2.1.1.3.1.2 Rhodophyta (Red Algae) - A large and ancient phylum of primarily multicellular marine algae. They are characterized by accessory photosynthetic pigments (phycoerythrins and phycocyanins) that give them their red color, allowing them to absorb blue light at greater depths.
+                            3.1.2.1.1.3.1.3 Viridiplantae (Green Plants / Chloroplastida) - This large clade includes all green algae and all land plants. They are characterized by having chlorophyll a and b, storing starch as their food reserve, and having cell walls made of cellulose. This is the lineage that gave rise to all terrestrial vegetation.
+                        3.1.2.1.1.3.2 SAR Supergroup (Stramenopiles, Alveolates, Rhizarians) - A vast and diverse supergroup unified by molecular phylogenetic data, although morphologically disparate.
+                        3.1.2.1.1.3.3 Amoebozoa - Characterized by the presence of lobe-shaped pseudopods used for movement and feeding. This group includes true amoebas, slime molds (both cellular and plasmodial), and some parasitic forms.
+                        3.1.2.1.1.3.4 Opisthokonta - This supergroup includes both Animals and Fungi, as well as their closest protistan relatives (e.g., choanoflagellates). A key unifying feature is the presence of a posterior flagellum in motile cells (like sperm).
+                        3.1.2.1.1.3.5 Excavata - A diverse supergroup often characterized by a feeding groove ("excavated" appearance) on one side of the cell, and sometimes unusual mitochondria or multiple flagella. Includes many free-living, symbiotic, and parasitic forms.
+                        3.1.2.1.1.3.6 Cryptista - A group of mostly unicellular flagellates, many of which are photosynthetic (cryptophytes) due to a secondary endosymbiosis event. Their precise placement relative to other supergroups has been debated but they are increasingly recognized as a distinct basal lineage.
+                        3.1.2.1.1.3.7 Haptista - A diverse supergroup of mostly unicellular algae, well-known for haptophytes (which include coccolithophores, key primary producers in oceans) and centrohelids. They often have a unique appendage called a haptonema.
                 3.1.2.1.2 Astronomical Body - a naturally occurring physical entity in space.
+                    3.1.2.1.2.1 Star - A massive, luminous sphere of plasma held together by its own gravity. It generates energy through nuclear fusion in its core, primarily converting hydrogen to helium.
+                    3.1.2.1.2.1.1 Main Sequence Star - A star that is actively fusing hydrogen into helium in its core. This is the longest and most stable phase of a star's life, and about 90% of all stars, including our Sun, are in this stage. They vary widely in mass, temperature, and luminosity (from hot, blue O-type stars to cool, red M-type stars).
+                        3.1.2.1.2.1.2 Red Giant - An evolved star that has exhausted the hydrogen fuel in its core and begun fusing hydrogen in a shell around a helium core. This causes its outer layers to expand significantly and cool, giving it a reddish hue and increased luminosity.
+                        3.1.2.1.2.1.3 Red Supergiant - A very massive, evolved star (much more massive than the Sun) that has exhausted hydrogen in its core and expanded to an enormous size, becoming one of the largest stars by volume. They are typically cool and very luminous.
+                        3.1.2.1.2.1.4 Blue Supergiant / Hypergiant - Extremely hot, massive, and luminous stars. Blue supergiants are typically massive main-sequence stars that have evolved slightly, while hypergiants are even more luminous and unstable, pushing the theoretical limits of stellar brightness. Both are very rare and have very short lifespans.
+                        3.1.2.1.2.1.5 White Dwarf - The dense, hot core remnant of a low to intermediate-mass star (like our Sun) after it has shed its outer layers. It no longer undergoes fusion and slowly cools over billions of years.
+                        3.1.2.1.2.1.6 Neutron Star - The extremely dense remnant core of a massive star that has undergone a supernova explosion. It is composed almost entirely of neutrons, packed together incredibly tightly. Some rapidly rotating neutron stars are observed as pulsars.
+                        3.1.2.1.2.1.7 Brown Dwarf - A celestial object that is larger than a planet but not massive enough to sustain stable hydrogen fusion in its core, which is the defining characteristic of a true star. They can briefly fuse deuterium. Often called "failed stars."
+                        3.1.2.1.2.1.8 Protostar - A very young star that is still gathering mass from its parent molecular cloud. This is the earliest stage of stellar evolution before nuclear fusion begins.
+                    3.1.2.1.2.2 Planet - A celestial body that orbits a star or stellar remnant, is massive enough to be rounded by its own gravity, but is not massive enough to cause thermonuclear fusion, and has cleared its neighboring region of planetesimals.
+                        3.1.2.1.2.2.1 Rocky Planet - A planet composed primarily of silicate rocks or metals, with a solid surface. They are typically smaller than gas giants and have relatively high densities.
+                        3.1.2.1.2.2.2 Gas Giant - A massive planet composed mainly of hydrogen and helium, with a relatively small rocky or metallic core (if any) surrounded by a deep atmosphere of gases. They lack a well-defined solid surface.
+                        3.1.2.1.2.2.3 Ice Giant - A large planet primarily composed of heavier elements than hydrogen and helium, such as oxygen, carbon, nitrogen, and sulfur. These elements are typically found in the form of "ices" (volatiles) under high pressure. They have a distinct interior structure from gas giants.
+                        3.1.2.1.2.2.4 Super-Earth - An planet with a mass greater than Earth's but substantially less than that of the Solar System's ice giants (Uranus and Neptune). Their composition can vary, ranging from rocky to icy-rocky.
+                        3.1.2.1.2.2.5 Mini-Neptune (or Sub-Neptune) - An planet that is smaller than Neptune but larger than a Super-Earth, likely with a significant hydrogen-helium atmosphere enveloping a rocky/icy core. They are not found in our Solar System.
+                        3.1.2.1.2.2.6 Orphan Planet (or Rogue Planet/Free-Floating Planet) - A planetary-mass object that has been ejected from its stellar system and orbits the galactic center directly, rather than orbiting a star. While they don't orbit a star, they meet the other criteria for a planet (mass, self-gravity leading to sphericity, no fusion).
+                        3.1.2.1.2.2.7 Dwarf Planet - A celestial body that orbits a star or stellar remnant, is massive enough to be rounded by its own gravity, but has not cleared its neighboring region of other objects.
+                    3.1.2.1.2.3 Natural Satellite (Moon) - A celestial body that orbits a planet, dwarf planet, or minor planet.
+                        3.1.2.1.2.4.1 Regular Moon - A moon that typically formed in situ from the same circumplanetary disk of gas and dust that surrounded its parent body. These moons generally have near-circular, prograde (orbiting in the same direction as the parent planet's rotation), and low-inclination orbits. They tend to be larger, more spherical, and can exhibit significant geological activity.
+                            3.1.2.1.2.4.1.1 Large Icy Moon - A regular moon primarily composed of water ice and rock, massive enough to have achieved hydrostatic equilibrium (be spherical), and often exhibiting significant geological activity driven by tidal forces or internal heat.
+                                3.1.2.1.2.4.1.1.1 Europa (Jupiter)
+                                3.1.2.1.2.4.1.1.2 Ganymede (Jupiter)
+                                3.1.2.1.2.4.1.1.3 Callisto (Jupiter)
+                                3.1.2.1.2.4.1.1.4 Enceladus (Saturn)
+                                3.1.2.1.2.4.1.1.5 Tethys (Saturn)
+                                3.1.2.1.2.4.1.1.6 Dione (Saturn)
+                                3.1.2.1.2.4.1.1.7 Rhea (Saturn)
+                                3.1.2.1.2.4.1.1.8 Titan (Saturn)
+                                3.1.2.1.2.4.1.1.9 Iapetus (Saturn)
+                                3.1.2.1.2.4.1.1.10 Miranda (Uranus)
+                                3.1.2.1.2.4.1.1.11 Ariel (Uranus)
+                                3.1.2.1.2.4.1.1.12 Umbriel (Uranus)
+                                3.1.2.1.2.4.1.1.13 Titania (Uranus)
+                                3.1.2.1.2.4.1.1.14 Oberon (Uranus)
+                            3.1.2.1.2.4.1.2 Large Rocky/Volcanic Moon - A regular moon composed predominantly of rock and/or metal, massive enough to be spherical, and often volcanically active due to intense tidal heating or substantial internal heat.
+                                3.1.2.1.2.4.1.2.1 Luna (Earth)
+                                3.1.2.1.2.4.1.2.2 Io (Jupiter)
+                            3.1.2.1.2.4.1.3 Small, Irregular Shape - These are moons that formed in situ within the circumplanetary disk, maintaining regular, near-circular, prograde orbits close to their parent planet, but are too small to have achieved hydrostatic equilibrium and thus have irregular shapes. Many act as shepherd moons for planetary rings.
+                                3.1.2.1.2.4.1.3.1 Pan (Saturn)
+                                3.1.2.1.2.4.1.3.2 Atlas (Saturn)
+                                3.1.2.1.2.4.1.3.3 Prometheus (Saturn)
+                                3.1.2.1.2.4.1.3.4 Pandora (Saturn)
+                                3.1.2.1.2.4.1.3.5 Epimetheus (Saturn)
+                                3.1.2.1.2.4.1.3.6 Janus (Saturn)
+                                3.1.2.1.2.4.1.3.7 Helene (Saturn)
+                                3.1.2.1.2.4.1.3.8 Telesto (Saturn)
+                                3.1.2.1.2.4.1.3.9 Calypso (Saturn)
+                                3.1.2.1.2.4.1.3.10 Methone (Saturn)
+                                3.1.2.1.2.4.1.3.11 Anthe (Saturn)
+                                3.1.2.1.2.4.1.3.12 Pallene (Saturn)
+                                3.1.2.1.2.4.1.3.13 Cordelia (Uranus)
+                                3.1.2.1.2.4.1.3.14 Ophelia (Uranus)
+                                3.1.2.1.2.4.1.3.15 Bianca (Uranus)
+                                3.1.2.1.2.4.1.3.16 Cressida (Uranus)
+                                3.1.2.1.2.4.1.3.17 Desdemona (Uranus)
+                                3.1.2.1.2.4.1.3.18 Juliet (Uranus)
+                                3.1.2.1.2.4.1.3.19 Portia (Uranus)
+                                3.1.2.1.2.4.1.3.20 Rosalind (Uranus)
+                                3.1.2.1.2.4.1.3.21 Belinda (Uranus)
+                                3.1.2.1.2.4.1.3.22 Puck (Uranus)
+                                3.1.2.1.2.4.1.3.23 Perdita (Uranus)
+                                3.1.2.1.2.4.1.3.24 Mab (Uranus)
+                                3.1.2.1.2.4.1.3.25 Cupid (Uranus)
+                                3.1.2.1.2.4.1.3.26 Naiad (Neptune)
+                                3.1.2.1.2.4.1.3.27 Thalassa (Neptune)
+                                3.1.2.1.2.4.1.3.28 Despina (Neptune)
+                                3.1.2.1.2.4.1.3.29 Galatea (Neptune)
+                                3.1.2.1.2.4.1.3.30 Larissa (Neptune)
+                                3.1.2.1.2.4.1.3.31 Proteus (Neptune)
+                        3.1.2.1.2.4.2 Irregular Moon - A moon that is believed to have been captured by the parent body's gravity after forming elsewhere (e.g., from the asteroid or Kuiper belt). These moons typically have distant, eccentric, highly inclined, and often retrograde (orbiting opposite to the parent planet's rotation) orbits. They are generally smaller, irregularly shaped, and are thought to be geologically inactive.
+                            3.1.2.1.2.4.2.1 Prograde Irregular Moon - An irregular moon that orbits its parent body in the same direction as the parent body's rotation. These are typically found in closer, though still irregular, orbits than retrograde irregulars.
+                                3.1.2.1.2.4.2.1.1 Phobos
+                                3.1.2.1.2.4.2.1.2 Deimos
+                                3.1.2.1.2.4.2.1.3 Himalia
+                                3.1.2.1.2.4.2.1.4 Elara
+                                3.1.2.1.2.4.2.1.5 Lysithea
+                                3.1.2.1.2.4.2.1.6 Leda
+                                3.1.2.1.2.4.2.1.7 Ersa
+                                3.1.2.1.2.4.2.1.8 Pandia
+                                3.1.2.1.2.4.2.1.9 Kiviuq
+                                3.1.2.1.2.4.2.1.10 Ijiraq
+                                3.1.2.1.2.4.2.1.11 Paaliaq
+                                3.1.2.1.2.4.2.1.12 Siarnaq
+                                3.1.2.1.2.4.2.1.13 Albiorix
+                                3.1.2.1.2.4.2.1.14 S/2007 S 2
+                                3.1.2.1.2.4.2.1.15 Francisco
+                                3.1.2.1.2.4.2.1.16 Caliban
+                                3.1.2.1.2.4.2.1.17 Stephano
+                                3.1.2.1.2.4.2.1.18 Nereid
+                                3.1.2.1.2.4.2.1.19 Halimede
+                                3.1.2.1.2.4.2.1.20 Sao
+                                3.1.2.1.2.4.2.1.21 Laomedeia
+                            3.1.2.1.2.4.2.2 Retrograde Irregular Moon - An irregular moon that orbits its parent body in the opposite direction to the parent body's rotation. These are typically found in more distant and highly inclined orbits.
+                                3.1.2.1.2.4.2.2.1 Pasiphae
+                                3.1.2.1.2.4.2.2.2 Sinope
+                                3.1.2.1.2.4.2.2.3 Carme
+                                3.1.2.1.2.4.2.2.4 Ananke
+                                3.1.2.1.2.4.2.2.5 Callirrhoe
+                                3.1.2.1.2.4.2.2.6 Megaclite
+                                3.1.2.1.2.4.2.2.7 Phoebe
+                                3.1.2.1.2.4.2.2.8 Skathi
+                                3.1.2.1.2.4.2.2.9 Narvi
+                                3.1.2.1.2.4.2.2.10 Ymir
+                                3.1.2.1.2.4.2.2.11 Sycorax
+                                3.1.2.1.2.4.2.2.12 Prospero
+                                3.1.2.1.2.4.2.2.13 Setebos
+                                3.1.2.1.2.4.2.2.14 Triton
+                                3.1.2.1.2.4.2.2.15 Psamathe
+                                3.1.2.1.2.4.2.2.16 Neso
+                    3.1.2.1.2.4 Minor Planet - An astronomical object in orbit around a star that is neither a planet nor exclusively a comet, including asteroids, centaurs, and trans-Neptunian objects.
+                    3.1.2.1.2.5 Comet - An icy, small solar system body that, when passing close to a star, heats up and begins to outgas, displaying a visible atmosphere (coma) and sometimes a tail.
+                    3.1.2.1.2.6 Nebula - An interstellar cloud of dust, hydrogen, helium, and other ionized gases. They are often regions where stars are forming (stellar nurseries) or the remnants of dying stars.
+                    3.1.2.1.2.7 Galaxy - A gravitationally bound system of stars, stellar remnants, interstellar gas, dust, and dark matter.
+                    3.1.2.1.2.8 Black Hole - A region of spacetime where gravity is so strong that nothing—no particles or even electromagnetic radiation such as light—can escape from it.
                 3.1.2.1.3 Geological Formation - natural accumulation of mineral matter.
             3.1.2.2 Artificial Object - created by human or intelligent agent.
-                3.1.2.2.1 Tool - used to achieve a goal.
+                3.1.2.2.1 Tool - an artificial object designed or adapted to perform a specific function, typically to aid in accomplishing a task, manipulating materials, or achieving a goal through physical or mechanical means.
+                    3.1.2.2.1.1 Musical Instrument - a device created or adapted to produce musical sound.
+                        3.1.2.2.1.1.1 Idiophone - instrument that produces sound primarily by the vibration of its own material, without strings, membranes, or air columns.
+                            3.1.2.2.1.1.1.1 Struck Idiophone - idiophone set in vibration by being struck.
+                                3.1.2.2.1.1.1.1.1 Directly Struck Idiophone - instrument is struck directly by the player, such as with a hand, stick, beater, or mechanical action.
+                                    3.1.2.2.1.1.1.1.1.1 Concussion Idiophone or Clapper - two or more complementary sonorous parts are struck against each other to produce sound.
+                                        3.1.2.2.1.1.1.1.1.1.1 Concussion Sticks or Stick Clappers - two sticks struck together to create sound.
+                                        3.1.2.2.1.1.1.1.1.1.2 Concussion Plaques or Plaque Clappers - two flat objects struck together to create sound.
+                                        3.1.2.2.1.1.1.1.1.1.3 Concussion Troughs or Trough Clappers - two trough-shaped objects struck together to create sound.
+                                        3.1.2.2.1.1.1.1.1.1.4 Concussion Vessels or Vessel Clappers - two vessel-shaped objects struck together to create sound.
+                                            3.1.2.2.1.1.1.1.1.1.4.1 Castanets - natural and hollowed-out vessel clappers used to produce rhythmic sounds.
+                                            3.1.2.2.1.1.1.1.1.1.4.2 Cymbals - vessel clappers with manufactured rim, producing a sustained ringing sound.
+                                    3.1.2.2.1.1.1.1.1.2 Percussion Idiophone - instrument is struck with a non-sonorous object or against a non-sonorous object to produce sound.
+                                        3.1.2.2.1.1.1.1.1.2.1 Percussion Sticks - sticks struck by hand or beater to produce sound.
+                                            3.1.2.2.1.1.1.1.1.2.1.1 Individual Percussion Sticks - a single stick used to produce sound.
+                                            3.1.2.2.1.1.1.1.1.2.1.2 Sets of Percussion Sticks - multiple sticks combined into one instrument, such as a xylophone.
+                                        3.1.2.2.1.1.1.1.1.2.2 Percussion Plaques - flat objects struck to produce sound.
+                                            3.1.2.2.1.1.1.1.1.2.2.1 Individual Percussion Plaques - a single plaque used to produce sound.
+                                            3.1.2.2.1.1.1.1.1.2.2.2 Sets of Percussion Plaques - multiple plaques, such as a lithophone or metallophone.
+                                        3.1.2.2.1.1.1.1.1.2.3 Percussion Tubes - tubes struck to produce sound.
+                                            3.1.2.2.1.1.1.1.1.2.3.1 Individual Percussion Tubes - a single tube used to produce sound.
+                                            3.1.2.2.1.1.1.1.1.2.3.2 Sets of Percussion Tubes - multiple tubes used together.
+                                        3.1.2.2.1.1.1.1.1.2.4 Percussion Vessels - vessel-shaped objects struck to produce sound.
+                                            3.1.2.2.1.1.1.1.1.2.4.1 Gongs - percussion vessels where vibration is strongest near the vertex.
+                                                3.1.2.2.1.1.1.1.1.2.4.1.1 Individual Gongs - a single gong used to produce sound.
+                                                3.1.2.2.1.1.1.1.1.2.4.1.2 Sets of Gongs - multiple gongs used together.
+                                            3.1.2.2.1.1.1.1.1.2.4.2 Bells - percussion vessels where vibration is weakest near the vertex.
+                                                3.1.2.2.1.1.1.1.1.2.4.2.1 Individual Bells - a single bell used to produce sound.
+                                                    3.1.2.2.1.1.1.1.1.2.4.2.1.1 Resting Bells - bells whose opening faces upward.
+                                                    3.1.2.2.1.1.1.1.1.2.4.2.1.2 Hanging Bells - bells suspended from the apex.
+                                                        3.1.2.2.1.1.1.1.1.2.4.2.1.2.1 Hanging Bells without Internal Strikers - bells without a clapper.
+                                                        3.1.2.2.1.1.1.1.1.2.4.2.1.2.2 Hanging Bells with Internal Strikers - bells with a clapper inside.
+                                                3.1.2.2.1.1.1.1.1.2.4.2.2 Sets of Bells or Chimes - multiple bells used together.
+                                                    3.1.2.2.1.1.1.1.1.2.4.2.2.1 Sets of Resting Bells - multiple resting bells.
+                                                    3.1.2.2.1.1.1.1.1.2.4.2.2.2 Sets of Hanging Bells - multiple hanging bells.
+                                                        3.1.2.2.1.1.1.1.1.2.4.2.2.2.1 Sets of Hanging Bells without Internal Strikers - multiple hanging bells without clappers.
+                                                        3.1.2.2.1.1.1.1.1.2.4.2.2.2.2 Sets of Hanging Bells with Internal Strikers - multiple hanging bells with clappers.
+                                3.1.2.2.1.1.1.1.2 Indirectly Struck Idiophone - idiophone set in vibration by indirect action, such as shaking or scraping.
+                                    3.1.2.2.1.1.1.1.2.1 Shaken Idiophone or Rattle - sound produced by shaking the instrument.
+                                        3.1.2.2.1.1.1.1.2.1.1 Suspension Rattle - perforated idiophones mounted together and shaken to strike each other.
+                                            3.1.2.2.1.1.1.1.2.1.1.1 Strung Rattle - rattling objects strung in rows on a cord.
+                                            3.1.2.2.1.1.1.1.2.1.1.2 Stick Rattle - rattling objects strung on a bar or ring.
+                                        3.1.2.2.1.1.1.1.2.1.2 Frame Rattle - rattling objects attached to a carrier against which they strike.
+                                            3.1.2.2.1.1.1.1.2.1.2.1 Pendant Rattle - rattling objects hang from the frame.
+                                            3.1.2.2.1.1.1.1.2.1.2.2 Sliding Rattle - rattling objects slide along the frame.
+                                        3.1.2.2.1.1.1.1.2.1.3 Vessel Rattle - rattling objects enclosed in a vessel.
+                                    3.1.2.2.1.1.1.1.2.2 Scraped Idiophone - sound produced by scraping a notched surface.
+                                        3.1.2.2.1.1.1.1.2.2.1 Scraped Stick - stick is scraped, with or without resonator.
+                                            3.1.2.2.1.1.1.1.2.2.1.1 Without Resonator - stick is scraped without a resonator.
+                                            3.1.2.2.1.1.1.1.2.2.1.2 With Resonator - stick is scraped with a resonator.
+                                        3.1.2.2.1.1.1.1.2.2.2 Scraped Tube - tube is scraped, with or without resonator.
+                                            3.1.2.2.1.1.1.1.2.2.2.1 Without Resonator - tube is scraped without a resonator.
+                                            3.1.2.2.1.1.1.1.2.2.2.2 With Resonator - tube is scraped with a resonator.
+                                        3.1.2.2.1.1.1.1.2.2.3 Scraped Vessel - vessel is scraped, with or without resonator.
+                                            3.1.2.2.1.1.1.1.2.2.3.1 Without Resonator - vessel is scraped without a resonator.
+                                            3.1.2.2.1.1.1.1.2.2.3.2 With Resonator - vessel is scraped with a resonator.
+                                        3.1.2.2.1.1.1.1.2.2.4 Scraped Wheel - cog rattle or ratchet, with or without resonator.
+                                            3.1.2.2.1.1.1.1.2.2.4.1 Without Resonator - wheel is scraped without a resonator.
+                                            3.1.2.2.1.1.1.1.2.2.4.2 With Resonator - wheel is scraped with a resonator.
+                                    3.1.2.2.1.1.1.1.2.3 Split Idiophone - instrument with two springy arms connected at one end, which jangle or vibrate on recoil.
+                            3.1.2.2.1.1.1.2 Plucked Idiophone - idiophone set in vibration by being plucked.
+                                3.1.2.2.1.1.1.2.1 Frame Plucked Idiophone - lamellae vibrate within a frame or hoop.
+                                    3.1.2.2.1.1.1.2.1.1 Clack Idiophone or Cricri - lamella is carved in the surface of a fruit shell, which serves as resonator.
+                                    3.1.2.2.1.1.1.2.1.2 Guimbarde or Jaw Harp - lamella is mounted in a rod- or plaque-shaped frame and depends on the player's mouth cavity for resonance.
+                                        3.1.2.2.1.1.1.2.1.2.1 Idioglot Guimbarde - lamella is cut through the frame of the instrument.
+                                            3.1.2.2.1.1.1.2.1.2.1.1 Individual Idioglot Guimbarde - single idioglot jaw harp.
+                                            3.1.2.2.1.1.1.2.1.2.1.2 Sets of Idioglot Guimbardes - multiple idioglot jaw harps.
+                                        3.1.2.2.1.1.1.2.1.2.2 Heteroglot Guimbarde - lamella is attached to the frame.
+                                            3.1.2.2.1.1.1.2.1.2.2.1 Individual Heteroglot Guimbarde - single heteroglot jaw harp.
+                                            3.1.2.2.1.1.1.2.1.2.2.2 Sets of Heteroglot Guimbardes - multiple heteroglot jaw harps.
+                                3.1.2.2.1.1.1.2.2 Comb Plucked Idiophone - lamellae are tied to a board or cut out from a board like the teeth of a comb.
+                                    3.1.2.2.1.1.1.2.2.1 With Laced On Lamellae - lamellae are attached to the board.
+                                        3.1.2.2.1.1.1.2.2.1.1 Without Resonator - no resonator present.
+                                        3.1.2.2.1.1.1.2.2.1.2 With Resonator - resonator present.
+                                    3.1.2.2.1.1.1.2.2.2 With Cut-Out Lamellae - lamellae are cut from the board (e.g., musical box).
+                                        3.1.2.2.1.1.1.2.2.2.1 Without Resonator - no resonator present.
+                                        3.1.2.2.1.1.1.2.2.2.2 With Resonator - resonator present.
+                                    3.1.2.2.1.1.1.2.3 Mixed Sets of Combs - sets of comb plucked idiophones.
+                            3.1.2.2.1.1.1.3 Friction Idiophone - idiophone set in vibration by friction.
+                                3.1.2.2.1.1.1.3.1 Friction Stick - stick is rubbed to produce sound.
+                                    3.1.2.2.1.1.1.3.1.1 Individual Friction Stick - single friction stick.
+                                    3.1.2.2.1.1.1.3.1.2 Sets of Friction Sticks - multiple friction sticks.
+                                3.1.2.2.1.1.1.3.2 Friction Plaque - plaque is rubbed to produce sound.
+                                    3.1.2.2.1.1.1.3.2.1 Individual Friction Plaque - single friction plaque.
+                                    3.1.2.2.1.1.1.3.2.2 Sets of Friction Plaques - multiple friction plaques.
+                                3.1.2.2.1.1.1.3.3 Friction Vessel - vessel is rubbed to produce sound (e.g., singing bowl).
+                                    3.1.2.2.1.1.1.3.3.1 Individual Friction Vessel - single friction vessel.
+                                    3.1.2.2.1.1.1.3.3.2 Sets of Friction Vessels - multiple friction vessels.
+                                3.1.2.2.1.1.1.3.4 Sets of Friction Idiophones - sets of friction idiophones.
+                            3.1.2.2.1.1.1.4 Blown Idiophone - idiophone set in vibration by air movement.
+                                3.1.2.2.1.1.1.4.1 Blown Stick - sticks vibrate when air is blown over them.
+                                3.1.2.2.1.1.1.4.2 Blown Plaque - plaques vibrate when air is blown over them.
+                                3.1.2.2.1.1.1.4.3 Mixed Sets of Blown Idiophones - sets of blown idiophones with mixed forms.
+                            3.1.2.2.1.1.1.5 Unclassified Idiophone - idiophone that does not fit into the above categories.
+                        3.1.2.2.1.1.2 Membranophone - instrument that produces sound primarily by means of a vibrating stretched membrane.
+                            3.1.2.2.1.1.2.1 Struck Membranophone - membranophone in which the membrane is set in vibration by being struck.
+                                3.1.2.2.1.1.2.1.1 Directly Struck Membranophone - membrane is struck directly by hand, stick, beater, or similar implement.
+                                    3.1.2.2.1.1.2.1.1.1 Dish- or Bowl-Shaped Body (Kettle Drums) - drum body is shaped like a dish or bowl.
+                                        3.1.2.2.1.1.2.1.1.1.1 Single Instrument - one kettle drum.
+                                        3.1.2.2.1.1.2.1.1.1.2 Sets of Instruments - multiple kettle drums played together.
+                                    3.1.2.2.1.1.2.1.1.2 Tubular Body (Tubular Drums) - drum body is tubular.
+                                        3.1.2.2.1.1.2.1.1.2.1 Cylindrical Drums - body has same diameter at middle and end.
+                                            3.1.2.2.1.1.2.1.1.2.1.1 Only One Usable Membrane - only one end has a membrane.
+                                                3.1.2.2.1.1.2.1.1.2.1.1.1 End Without Membrane is Open - open at the other end.
+                                                3.1.2.2.1.1.2.1.1.2.1.1.2 End Without Membrane is Closed - closed at the other end.
+                                            3.1.2.2.1.1.2.1.1.2.1.2 Two Usable Membranes - both ends have membranes.
+                                                3.1.2.2.1.1.2.1.1.2.1.2.1 Single Instrument - one cylindrical drum with two membranes.
+                                                3.1.2.2.1.1.2.1.1.2.1.2.2 Sets of Instruments - multiple cylindrical drums with two membranes.
+                                            3.1.2.2.1.1.2.1.1.2.1.3 Mixed Sets of Cylindrical Drums - sets with different types of cylindrical drums.
+                                        3.1.2.2.1.1.2.1.1.2.2 Barrel Drums - body is barrel-shaped.
+                                            3.1.2.2.1.1.2.1.1.2.2.1 Only One Usable Membrane - only one end has a membrane.
+                                                3.1.2.2.1.1.2.1.1.2.2.1.1 End Without Membrane is Open - open at the other end.
+                                                3.1.2.2.1.1.2.1.1.2.2.1.2 End Without Membrane is Closed - closed at the other end.
+                                            3.1.2.2.1.1.2.1.1.2.2.2 Two Usable Membranes - both ends have membranes.
+                                                3.1.2.2.1.1.2.1.1.2.2.2.1 Single Instrument - one barrel drum with two membranes.
+                                                3.1.2.2.1.1.2.1.1.2.2.2.2 Sets of Instruments - multiple barrel drums with two membranes.
+                                            3.1.2.2.1.1.2.1.1.2.2.3 Mixed Sets of Barrel Drums - sets with different types of barrel drums.
+                                        3.1.2.2.1.1.2.1.1.2.3 Hourglass-Shaped Body - drum body is hourglass-shaped.
+                                            3.1.2.2.1.1.2.1.1.2.3.1 Only One Usable Membrane - only one end has a membrane.
+                                                3.1.2.2.1.1.2.1.1.2.3.1.1 End Without Membrane is Open - open at the other end.
+                                                3.1.2.2.1.1.2.1.1.2.3.1.2 End Without Membrane is Closed - closed at the other end.
+                                            3.1.2.2.1.1.2.1.1.2.3.2 Two Usable Membranes - both ends have membranes.
+                                                3.1.2.2.1.1.2.1.1.2.3.2.1 Single Instrument - one hourglass drum with two membranes.
+                                                3.1.2.2.1.1.2.1.1.2.3.2.2 Sets of Instruments - multiple hourglass drums with two membranes.
+                                            3.1.2.2.1.1.2.1.1.2.3.3 Mixed Sets of Hourglass Drums - sets with different types of hourglass drums.
+                                        3.1.2.2.1.1.2.1.1.2.4 Conical-Shaped Body (Conical Drums) - drum body is conical.
+                                            3.1.2.2.1.1.2.1.1.2.4.1 Only One Usable Membrane - only one end has a membrane.
+                                                3.1.2.2.1.1.2.1.1.2.4.1.1 End Without Membrane is Open - open at the other end.
+                                                3.1.2.2.1.1.2.1.1.2.4.1.2 End Without Membrane is Closed - closed at the other end.
+                                            3.1.2.2.1.1.2.1.1.2.4.2 Two Usable Membranes - both ends have membranes.
+                                                3.1.2.2.1.1.2.1.1.2.4.2.1 Single Instrument - one conical drum with two membranes.
+                                                3.1.2.2.1.1.2.1.1.2.4.2.2 Sets of Instruments - multiple conical drums with two membranes.
+                                            3.1.2.2.1.1.2.1.1.2.4.3 Mixed Sets of Single-Conical Drums - sets with different types of conical drums.
+                                            3.1.2.2.1.1.2.1.1.2.4.4 Double-Conical Drums - body is double-conical.
+                                                3.1.2.2.1.1.2.1.1.2.4.4.1 Only One Usable Membrane - only one end has a membrane.
+                                                    3.1.2.2.1.1.2.1.1.2.4.4.1.1 End Without Membrane is Open - open at the other end.
+                                                    3.1.2.2.1.1.2.1.1.2.4.4.1.2 End Without Membrane is Closed - closed at the other end.
+                                                3.1.2.2.1.1.2.1.1.2.4.4.2 Two Usable Membranes - both ends have membranes.
+                                                    3.1.2.2.1.1.2.1.1.2.4.4.2.1 Single Instrument - one double-conical drum with two membranes.
+                                                    3.1.2.2.1.1.2.1.1.2.4.4.2.2 Sets of Instruments - multiple double-conical drums with two membranes.
+                                                3.1.2.2.1.1.2.1.1.2.4.4.3 Mixed Sets of Double-Conical Drums - sets with different types of double-conical drums.
+                                            3.1.2.2.1.1.2.1.1.2.4.5 Mixed Sets of Conical Drums - sets with different types of conical drums.
+                                        3.1.2.2.1.1.2.1.1.2.5 Goblet-Shaped Body (Goblet Drums) - drum body is goblet-shaped.
+                                            3.1.2.2.1.1.2.1.1.2.5.1 Only One Usable Membrane - only one end has a membrane.
+                                                3.1.2.2.1.1.2.1.1.2.5.1.1 End Without Membrane is Open - open at the other end.
+                                                3.1.2.2.1.1.2.1.1.2.5.1.2 End Without Membrane is Closed - closed at the other end.
+                                            3.1.2.2.1.1.2.1.1.2.5.2 Two Usable Membranes - both ends have membranes.
+                                                3.1.2.2.1.1.2.1.1.2.5.2.1 Single Instrument - one goblet drum with two membranes.
+                                                3.1.2.2.1.1.2.1.1.2.5.2.2 Sets of Instruments - multiple goblet drums with two membranes.
+                                            3.1.2.2.1.1.2.1.1.2.5.3 Mixed Sets of Goblet Drums - sets with different types of goblet drums.
+                                        3.1.2.2.1.1.2.1.1.2.6 Mixed Sets of Tubular Drums - sets with different types of tubular drums.
+                                    3.1.2.2.1.1.2.1.1.3 Shallow Body (Frame Drums) - drum body depth is not greater than the radius of the membrane.
+                                        3.1.2.2.1.1.2.1.1.3.1 No Handle - frame drum without a handle.
+                                            3.1.2.2.1.1.2.1.1.3.1.1 Only One Usable Membrane - only one end has a membrane.
+                                            3.1.2.2.1.1.2.1.1.3.1.2 Two Usable Membranes - both ends have membranes.
+                                        3.1.2.2.1.1.2.1.1.3.2 With Handle - frame drum with a handle.
+                                            3.1.2.2.1.1.2.1.1.3.2.1 Only One Usable Membrane - only one end has a membrane.
+                                            3.1.2.2.1.1.2.1.1.3.2.2 Two Usable Membranes - both ends have membranes.
+                                3.1.2.2.1.1.2.1.2 Indirectly Struck Membranophone - membrane is set in vibration by indirect means, such as shaking.
+                                    3.1.2.2.1.1.2.1.2.1 Shaken Membranophone - membrane is vibrated by objects inside the drum (rattle drums).
+                            3.1.2.2.1.1.2.2 Plucked Membranophone - membrane is set in vibration by plucking a string attached to it.
+                                3.1.2.2.1.1.2.2.1 Plucked Drum - string is plucked, causing the membrane to vibrate.
+                            3.1.2.2.1.1.2.3 Friction Membranophone - membrane is set in vibration by friction.
+                                3.1.2.2.1.1.2.3.1 Friction Drum with Stick - membrane is vibrated from a stick that is rubbed or used to rub the membrane.
+                                    3.1.2.2.1.1.2.3.1.1 Stick Inserted in Membrane - stick is inserted in a hole in the membrane.
+                                        3.1.2.2.1.1.2.3.1.1.1 Stick Cannot Be Moved - stick is fixed and rubbed.
+                                        3.1.2.2.1.1.2.3.1.1.2 Stick is Semi-Movable - stick can be moved and rubbed.
+                                        3.1.2.2.1.1.2.3.1.1.3 Stick is Freely Movable - stick is freely moved and rubbed.
+                                    3.1.2.2.1.1.2.3.1.2 Stick Tied Upright to Membrane - stick is tied upright to the membrane.
+                                3.1.2.2.1.1.2.3.2 Friction Drum with Cord - cord attached to the membrane is rubbed.
+                                    3.1.2.2.1.1.2.3.2.1 Drum Held Stationary - drum is held while playing.
+                                        3.1.2.2.1.1.2.3.2.1.1 Only One Usable Membrane - only one end has a membrane.
+                                        3.1.2.2.1.1.2.3.2.1.2 Two Usable Membranes - both ends have membranes.
+                                    3.1.2.2.1.1.2.3.2.2 Drum Twirled by Cord - drum is twirled by a cord, which rubs in a notch on the stick held by the player.
+                                3.1.2.2.1.1.2.3.3 Hand Friction Drum - membrane is rubbed by hand.
+                            3.1.2.2.1.1.2.4 Singing Membrane (Kazoo) - membrane modifies other sounds by vibrating.
+                                3.1.2.2.1.1.2.4.1 Free Kazoo - membrane is vibrated by an unbroken column of wind, without a chamber.
+                                3.1.2.2.1.1.2.4.2 Tube or Vessel Kazoo - membrane is placed in a box, tube, or other container.
+                            3.1.2.2.1.1.2.5 Unclassified Membranophone - membranophone that does not fit into the above categories.
+                        3.1.2.2.1.1.3 Chordophone - instrument that produces sound primarily by means of vibrating strings stretched between fixed points.
+                            3.1.2.2.1.1.3.1 Simple Chordophone or Zither - instrument consisting of strings and a string bearer, with or without a resonator box.
+                                3.1.2.2.1.1.3.1.1 Bar Zither - string bearer is bar-shaped.
+                                    3.1.2.2.1.1.3.1.1.1 Musical Bow - flexible bar zither, often curved.
+                                        3.1.2.2.1.1.3.1.1.1.1 Idiochord Musical Bow - string is cut from the bark of the cane, remaining attached at each end.
+                                            3.1.2.2.1.1.3.1.1.1.1.1 Mono-Idiochord Musical Bow - one string only.
+                                            3.1.2.2.1.1.3.1.1.1.1.2 Poly-Idiochord Musical Bow or Harp-Bow - several strings.
+                                        3.1.2.2.1.1.3.1.1.1.2 Heterochord Musical Bow - string is of separate material from the bearer.
+                                            3.1.2.2.1.1.3.1.1.1.2.1 Mono-Heterochord Musical Bow - one heterochord string only.
+                                                3.1.2.2.1.1.3.1.1.1.2.1.1 Without Resonator.
+                                                    3.1.2.2.1.1.3.1.1.1.2.1.1.1 Without Tuning Noose.
+                                                    3.1.2.2.1.1.3.1.1.1.2.1.1.2 With Tuning Noose.
+                                                3.1.2.2.1.1.3.1.1.1.2.1.2 With Resonator.
+                                                    3.1.2.2.1.1.3.1.1.1.2.1.2.1 With Independent Resonator.
+                                                        3.1.2.2.1.1.3.1.1.1.2.1.2.1.1 Without Tuning Noose.
+                                                        3.1.2.2.1.1.3.1.1.1.2.1.2.1.2 With Tuning Noose.
+                                                    3.1.2.2.1.1.3.1.1.1.2.1.2.2 With Resonator Attached.
+                                                        3.1.2.2.1.1.3.1.1.1.2.1.2.2.1 Without Tuning Noose.
+                                                        3.1.2.2.1.1.3.1.1.1.2.1.2.2.2 With Tuning Noose.
+                                            3.1.2.2.1.1.3.1.1.1.2.2 Poly-Heterochord Musical Bow - several heterochord strings.
+                                                3.1.2.2.1.1.3.1.1.1.2.2.1 Without Tuning Noose.
+                                                3.1.2.2.1.1.3.1.1.1.2.2.2 With Tuning Noose.
+                                    3.1.2.2.1.1.3.1.1.2 Stick Zither - rigid string carrier.
+                                        3.1.2.2.1.1.3.1.1.2.1 Musical Bow/Stick - one rigid and one flexible end.
+                                            3.1.2.2.1.1.3.1.1.2.1.1 One Resonator Gourd.
+                                            3.1.2.2.1.1.3.1.1.2.1.2 Several Resonator Gourds.
+                                        3.1.2.2.1.1.3.1.1.2.2 True Stick Zither - round sticks, not hollow, used as string carrier.
+                                            3.1.2.2.1.1.3.1.1.2.2.1 One Resonator Gourd.
+                                            3.1.2.2.1.1.3.1.1.2.2.2 Several Resonator Gourds.
+                                3.1.2.2.1.1.3.1.2 Tube Zither - string bearer is a tube.
+                                    3.1.2.2.1.1.3.1.2.1 Whole Tube Zither - string carrier is a complete tube.
+                                        3.1.2.2.1.1.3.1.2.1.1 Idiochord Tube Zither - string is cut from the tube.
+                                            3.1.2.2.1.1.3.1.2.1.1.1 Without Extra Resonator.
+                                            3.1.2.2.1.1.3.1.2.1.1.2 With Extra Resonator.
+                                        3.1.2.2.1.1.3.1.2.1.2 Heterochord Tube Zither - string is separate from the tube.
+                                            3.1.2.2.1.1.3.1.2.1.2.1 Without Extra Resonator.
+                                            3.1.2.2.1.1.3.1.2.1.2.2 With Extra Resonator.
+                                    3.1.2.2.1.1.3.1.2.2 Half-Tube Zither - strings stretched along the convex surface of a gutter.
+                                        3.1.2.2.1.1.3.1.2.2.1 Idiochord Half-Tube Zither.
+                                            3.1.2.2.1.1.3.1.2.2.1.1 Without Extra Resonator.
+                                            3.1.2.2.1.1.3.1.2.2.1.2 With Extra Resonator.
+                                        3.1.2.2.1.1.3.1.2.2.2 Heterochord Half-Tube Zither.
+                                            3.1.2.2.1.1.3.1.2.2.2.1 Without Extra Resonator.
+                                            3.1.2.2.1.1.3.1.2.2.2.2 With Extra Resonator.
+                                3.1.2.2.1.1.3.1.3 Raft Zither - string bearer is composed of canes tied together in the manner of a raft.
+                                    3.1.2.2.1.1.3.1.3.1 Idiochord Raft Zither.
+                                        3.1.2.2.1.1.3.1.3.1.1 Without Extra Resonator.
+                                        3.1.2.2.1.1.3.1.3.1.2 With Extra Resonator.
+                                    3.1.2.2.1.1.3.1.3.2 Heterochord Raft Zither.
+                                        3.1.2.2.1.1.3.1.3.2.1 Without Extra Resonator.
+                                        3.1.2.2.1.1.3.1.3.2.2 With Extra Resonator.
+                                3.1.2.2.1.1.3.1.4 Board Zither - string bearer is a board.
+                                    3.1.2.2.1.1.3.1.4.1 True Board Zither.
+                                        3.1.2.2.1.1.3.1.4.1.1 Without Resonator.
+                                        3.1.2.2.1.1.3.1.4.1.2 With Resonator.
+                                            3.1.2.2.1.1.3.1.4.1.2.1 With Resonator Bowl.
+                                            3.1.2.2.1.1.3.1.4.1.2.2 With Resonator Box - includes piano.
+                                            3.1.2.2.1.1.3.1.4.1.2.3 With Resonator Tube.
+                                    3.1.2.2.1.1.3.1.4.2 Board Zither Variations.
+                                        3.1.2.2.1.1.3.1.4.2.1 Ground Zither.
+                                            3.1.2.2.1.1.3.1.4.2.1.1 Without Resonator.
+                                            3.1.2.2.1.1.3.1.4.2.1.2 With Resonator.
+                                                3.1.2.2.1.1.3.1.4.2.1.2.1 With Resonator Bowl.
+                                                3.1.2.2.1.1.3.1.4.2.1.2.2 With Resonator Box.
+                                                3.1.2.2.1.1.3.1.4.2.1.2.3 With Resonator Tube.
+                                        3.1.2.2.1.1.3.1.4.2.2 Harp Zither.
+                                            3.1.2.2.1.1.3.1.4.2.2.1 Without Resonator.
+                                            3.1.2.2.1.1.3.1.4.2.2.2 With Resonator.
+                                                3.1.2.2.1.1.3.1.4.2.2.2.1 With Resonator Bowl.
+                                                3.1.2.2.1.1.3.1.4.2.2.2.2 With Resonator Box.
+                                                3.1.2.2.1.1.3.1.4.2.2.2.3 With Resonator Tube.
+                                3.1.2.2.1.1.3.1.5 Trough Zither - strings are stretched across the mouth of a trough.
+                                    3.1.2.2.1.1.3.1.5.1 Without Resonator.
+                                    3.1.2.2.1.1.3.1.5.2 With Resonator.
+                                3.1.2.2.1.1.3.1.6 Frame Zither - strings are stretched across an open frame.
+                                    3.1.2.2.1.1.3.1.6.1 Without Resonator.
+                                    3.1.2.2.1.1.3.1.6.2 With Resonator.
+                            3.1.2.2.1.1.3.2 Composite Chordophone - instrument with a resonator as an integral part, including lutes, harps, and similar.
+                                3.1.2.2.1.1.3.2.1 Lute - strings run parallel to the resonator's surface.
+                                    3.1.2.2.1.1.3.2.1.1 Bow Lute - each string has its own flexible carrier.
+                                    3.1.2.2.1.1.3.2.1.2 Yoke Lute or Lyre - strings attached to a yoke in the same plane as the sound-table.
+                                        3.1.2.2.1.1.3.2.1.2.1 Bowl Lyre.
+                                        3.1.2.2.1.1.3.2.1.2.2 Box Lyre.
+                                    3.1.2.2.1.1.3.2.1.3 Handle Lute - string bearer is a plain handle.
+                                        3.1.2.2.1.1.3.2.1.3.1 Spike Lute.
+                                            3.1.2.2.1.1.3.2.1.3.1.1 Spike Bowl Lute.
+                                            3.1.2.2.1.1.3.2.1.3.1.2 Spike Box Lute.
+                                            3.1.2.2.1.1.3.2.1.3.1.3 Spike Tube Lute.
+                                            3.1.2.2.1.1.3.2.1.3.1.4 Spike Frame Lute.
+                                        3.1.2.2.1.1.3.2.1.3.2 Necked Lute.
+                                            3.1.2.2.1.1.3.2.1.3.2.1 Necked Bowl Lute - e.g., mandolin, balalaika.
+                                            3.1.2.2.1.1.3.2.1.3.2.2 Necked Box Lute - e.g., guitar, violin.
+                                        3.1.2.2.1.1.3.2.1.3.3 Tanged Lute or Semi-Spike Lute or Half-Spike Lute.
+                                            3.1.2.2.1.1.3.2.1.3.3.1 Tanged Bowl Lute.
+                                            3.1.2.2.1.1.3.2.1.3.3.2 Tanged Box Lute.
+                                3.1.2.2.1.1.3.2.2 Harp - strings run perpendicular to the resonator's surface.
+                                    3.1.2.2.1.1.3.2.2.1 Open Harp - no pillar.
+                                        3.1.2.2.1.1.3.2.2.1.1 Arched Harp.
+                                        3.1.2.2.1.1.3.2.2.1.2 Angular Harp.
+                                    3.1.2.2.1.1.3.2.2.2 Frame Harp - has a pillar.
+                                        3.1.2.2.1.1.3.2.2.2.1 Without Tuning Mechanism.
+                                            3.1.2.2.1.1.3.2.2.2.1.1 Diatonic Frame Harp.
+                                                3.1.2.2.1.1.3.2.2.2.1.1.1 All Strings in One Plane.
+                                                3.1.2.2.1.1.3.2.2.2.1.1.2 Strings in Two Planes Crossing Each Other.
+                                            3.1.2.2.1.1.3.2.2.2.1.2 Chromatic Frame Harp.
+                                                3.1.2.2.1.1.3.2.2.2.1.2.1 All Strings in One Plane - inline chromatic harp.
+                                                3.1.2.2.1.1.3.2.2.2.1.2.2 Strings in Two Planes Crossing Each Other - cross-strung harp.
+                                        3.1.2.2.1.1.3.2.2.2.2 With Tuning Action.
+                                            3.1.2.2.1.1.3.2.2.2.2.1 Manual Tuning Action - lever harp.
+                                                3.1.2.2.1.1.3.2.2.2.2.1.1 All Strings in One Plane.
+                                                3.1.2.2.1.1.3.2.2.2.2.1.2 Strings in Two Planes Crossing Each Other.
+                                            3.1.2.2.1.1.3.2.2.2.2.2 Pedal Action - pedal harp.
+                                                3.1.2.2.1.1.3.2.2.2.2.2.1 All Strings in One Plane.
+                                                3.1.2.2.1.1.3.2.2.2.2.2.2 Strings in Two Planes Crossing Each Other.
+                                3.1.2.2.1.1.3.2.3 Harp Lute - hybrid with features of both harp and lute; strings at right angles to the sound-table, with notched bridges.
+                            3.1.2.2.1.1.3.3 Unclassified Chordophone - chordophone that does not fit into the above categories.
+                        3.1.2.2.1.1.4 Aerophone - instrument that produces sound primarily by means of vibrating air, without the vibration of strings or membranes.
+                            3.1.2.2.1.1.4.1 Free Aerophone - instrument in which the vibrating air is not contained within the instrument.
+                                3.1.2.2.1.1.4.1.1 Displacement Free Aerophone - air is set in motion by a sharp edge or moving object (e.g., bullroarer).
+                                3.1.2.2.1.1.4.1.2 Interruptive Free Aerophone - air stream is periodically interrupted (e.g., siren, harmonica).
+                                    3.1.2.2.1.1.4.1.2.1 Idiophonic Interruptive Aerophone or Reed - air stream is directed against a lamella, setting it in periodic vibration.
+                                        3.1.2.2.1.1.4.1.2.1.1 Concussion Reed - two lamellae make a gap which closes periodically during their vibration.
+                                        3.1.2.2.1.1.4.1.2.1.2 Percussion Reed - a single lamella strikes against a frame.
+                                        3.1.2.2.1.1.4.1.2.1.3 Free-Reed Instrument - reed vibrates within a closely fitting slot (e.g., accordion, harmonica).
+                                        3.1.2.2.1.1.4.1.2.1.4 Band Reed Instrument - air hits the sharp edge of a band under tension.
+                                    3.1.2.2.1.1.4.1.2.2 Non-Idiophonic Interruptive Instrument - interruptive agent is not a reed.
+                                        3.1.2.2.1.1.4.1.2.2.1 Rotating Aerophone - interruptive agent rotates in its own plane (e.g., siren disk).
+                                        3.1.2.2.1.1.4.1.2.2.2 Whirling Aerophone - interruptive agent turns on its axis (e.g., bullroarer, whirly tube).
+                                3.1.2.2.1.1.4.1.3 Plosive Aerophone - sound is caused by a single compression and release of air (e.g., udu).
+                                3.1.2.2.1.1.4.1.4 Mixed Sets of Free Aerophones - sets of free aerophones of different types.
+                            3.1.2.2.1.1.4.2 Non-Free Aerophone (Wind Instrument Proper) - instrument in which the vibrating air is contained within the instrument.
+                                3.1.2.2.1.1.4.2.1 Edge-Blown Aerophone (Flute) - air is directed against an edge.
+                                    3.1.2.2.1.1.4.2.1.1 Flute Without Duct - player creates a ribbon-shaped stream of air with their lips.
+                                        3.1.2.2.1.1.4.2.1.1.1 End-Blown Flute - player blows against the sharp rim at the upper open end of a tube.
+                                        3.1.2.2.1.1.4.2.1.1.2 Side-Blown Flute - player blows against the sharp rim of a hole in the side of the tube.
+                                        3.1.2.2.1.1.4.2.1.1.3 Vessel Flute - body of the pipe is vessel-shaped.
+                                    3.1.2.2.1.1.4.2.1.2 Flute With Duct (Duct Flute) - a narrow duct directs the air-stream against the sharp edge of a lateral orifice.
+                                        3.1.2.2.1.1.4.2.1.2.1 Flute With External Duct - duct is outside the wall of the flute.
+                                        3.1.2.2.1.1.4.2.1.2.2 Flute With Internal Duct - duct is inside the tube.
+                                        3.1.2.2.1.1.4.2.1.2.3 Vessel Flute With Duct - vessel-shaped body with duct.
+                                3.1.2.2.1.1.4.2.2 Reed Aerophone - air vibrates a reed.
+                                    3.1.2.2.1.1.4.2.2.1 Double Reed Instrument - two lamellae beat against one another (e.g., oboe, bassoon).
+                                    3.1.2.2.1.1.4.2.2.2 Single Reed Instrument - pipe has a single reed (e.g., clarinet, saxophone).
+                                    3.1.2.2.1.1.4.2.2.3 Reedpipe With Free Reed - reed vibrates through a closely fitted frame, with fingerholes (e.g., bawu, hulusi).
+                                    3.1.2.2.1.1.4.2.2.4 Reedpipe With Band Reed - band reed in a pipe.
+                                    3.1.2.2.1.1.4.2.2.5 Non-Idiophonic Interruptor Pipe - interruptive agent is not a reed.
+                                        3.1.2.2.1.1.4.2.2.5.1 Rotating Aerophone Pipe - disk rotates in its own plane.
+                                        3.1.2.2.1.1.4.2.2.5.2 Whirling Aerophone Pipe - tube turns on its axis.
+                                3.1.2.2.1.1.4.2.3 Trumpet Aerophone - air is set in motion by the player's lips.
+                                    3.1.2.2.1.1.4.2.3.1 Natural Trumpet - no means of changing pitch except by player's lips (e.g., bugle, didgeridoo).
+                                        3.1.2.2.1.1.4.2.3.1.1 Conch - conch shell used as trumpet.
+                                        3.1.2.2.1.1.4.2.3.1.2 Tubular Trumpet - tube is straight or curved.
+                                    3.1.2.2.1.1.4.2.3.2 Chromatic Trumpet - pitch can be altered mechanically.
+                                        3.1.2.2.1.1.4.2.3.2.1 Keyed Trumpet - pitch changed by keys (e.g., ophicleide).
+                                        3.1.2.2.1.1.4.2.3.2.2 Slide Trumpet - pitch changed by slide (e.g., trombone).
+                                        3.1.2.2.1.1.4.2.3.2.3 Valved Trumpet - pitch changed by valves (e.g., trumpet, tuba).
+                                3.1.2.2.1.1.4.2.4 Mixed Sets of Wind Instruments - sets of wind instruments of different types.
+                            3.1.2.2.1.1.4.3 Mixed Sets of Aerophones - sets of aerophones of different types played together.
+                        3.1.2.2.1.1.5 Electrophone - instrument that produces or modifies sound primarily by electrical means.
+                            3.1.2.2.1.1.5.1 Electrically Actuated Acoustic Instrument - acoustic instrument where sound is produced by traditional means but actuated electrically (e.g., pipe organ with electric action).
+                            3.1.2.2.1.1.5.2 Electrically Amplified Acoustic Instrument - acoustic instrument whose sound is amplified electrically (e.g., electric guitar, electric violin).
+                            3.1.2.2.1.1.5.3 Electrical Oscillation Instrument - instrument where sound is produced by electrical oscillators (e.g., theremin, synthesizer).
                 3.1.2.2.2 Machine - device using power to perform tasks.
                 3.1.2.2.3 Building - structure with walls and a roof.
                 3.1.2.2.4 Vehicle - device used for transport.
                 3.1.2.2.5 Furniture - movable objects for comfort or utility.
                 3.1.2.2.6 Clothing - items worn on the body.
+                    3.1.2.2.6.1 Upper Body Garment (Tops) - Garments primarily designed to cover the torso and/or arms.
+                        3.1.2.2.6.1.1 Shirt - A garment with a collar, sleeves, and a full-length opening at the front, typically fastened with buttons.
+                        3.1.2.2.6.1.2 T-Shirt - A collarless, short-sleeved garment of T-shape, usually made of cotton jersey.
+                        3.1.2.2.6.1.3 Sweater - A knitted garment worn on the upper body, typically pulled over the head or buttoned/zippered at the front.
+                        3.1.2.2.6.1.4 Blouse - A loose-fitting upper garment for women or children, typically gathered at the waist or hips.
+                        3.1.2.2.6.1.5 Vest - A sleeveless upper-body garment that covers the torso.
+                    3.1.2.2.6.2 Lower Body Garment (Bottoms) - Garments primarily designed to cover the waist, hips, and/or legs.
+                        3.1.2.2.6.2.1 Pants (Trousers) - A garment covering the body from the waist to the ankles, with a separate covering for each leg.
+                        3.1.2.2.6.2.2 Skirt - A garment hanging from the waist and covering all or part of the legs, forming the lower part of a dress or worn separately.
+                        3.1.2.2.6.2.3 Shorts - A garment similar to pants but with legs that extend only to the thigh or knee.
+                        3.1.2.2.6.2.4 Skort - A hybrid garment consisting of shorts with a fabric panel resembling a skirt covering the front (and sometimes the back), combining the appearance of a skirt with the practicality of shorts.
+                    3.1.2.2.6.3 One-Piece Garment - Garments that combine coverage for both the upper and lower body in a single, connected piece.
+                        3.1.2.2.6.3.1 Dress - A single garment that covers the body and extends down over the legs, typically worn by women.
+                        3.1.2.2.6.3.2 Jumpsuit - A one-piece garment that combines a top with pants, typically worn by women.
+                        3.1.2.2.6.3.3 Romper - A one-piece garment combining a top with shorts, typically worn by women or children.
+                        3.1.2.2.6.3.4 Overalls - A one-piece garment consisting of trousers with a bib attached, typically worn as workwear.
+                    3.1.2.2.6.4 Outerwear - Garments worn as the outermost layer, primarily for warmth, protection from elements, or fashion.
+                        3.1.2.2.6.4.1 Coat - A long outer garment, typically worn over other clothes for warmth or protection.
+                        3.1.2.2.6.4.2 Jacket - A short coat, often extending to the waist or hips, worn for warmth, protection, or fashion.
+                    3.1.2.2.6.5 Undergarment - Garments worn directly against the skin, underneath outer clothing, for hygiene, support, warmth, or modesty.
+                        3.1.2.2.6.5.1 Underwear - Garments worn on the lower body or torso beneath outer clothing.
+                        3.1.2.2.6.5.2 Bra (Brassiere) - An undergarment worn by women to support or cover the breasts.
+                        3.1.2.2.6.5.3 Undershirt - A shirt worn next to the skin, typically under a shirt or other top.
+                        3.1.2.2.6.5.4 Sleepwear - Garments specifically designed to be worn while sleeping.
+                    3.1.2.2.6.6 Footwear - Items primarily designed to be worn on the feet for protection, comfort, and fashion.
+                        3.1.2.2.6.6.1 Shoes - Outer coverings for the feet, typically ending below the ankle.
+                        3.1.2.2.6.6.2 Boots - Footwear that extends up the ankle, leg, or thigh.
+                        3.1.2.2.6.6.3 Sandals - Footwear consisting of a sole held to the foot by straps or thongs.
+                    3.1.2.2.6.7 Headwear - Items primarily designed to be worn on the head.
+                        3.1.2.2.6.7.1 Hat - A shaped covering for the head, typically with a brim and/or crown.
+                        3.1.2.2.6.7.2 Cap - A soft, close-fitting head covering, often with a visor.
+                    3.1.2.2.6.8 Handwear - Items primarily designed to be worn on the hands.
+                        3.1.2.2.6.8.1 Gloves - A covering for the hand having separate sheaths for each finger and the thumb.
+                        3.1.2.2.6.8.2 Mittens - A covering for the hand having a separate enclosure for the thumb but a single enclosure for all four fingers.
+                    3.1.2.2.6.9 Hosiery - Close-fitting, often elastic garments covering the foot and/or leg, worn under other clothing.
+                        3.1.2.2.6.9.1 Socks - A garment worn on the foot, usually extending to the ankle or part of the calf.
+                        3.1.2.2.6.9.2 Stockings - Close-fitting garments covering the foot and leg, extending higher than socks.
+                    3.1.2.2.6.10 Swimwear - Garments designed for swimming or other water-based activities.
+                3.1.2.2.7 Weapon – an artificial object designed or adapted to inflict damage, harm, or death to living beings, or to destroy or incapacitate objects, typically used for offense, defense, or deterrence in conflict or combat situations.
+                    3.1.2.2.7.1 Bladed Weapon – a weapon featuring one or more sharpened edges or points, designed or adapted for cutting, slashing, stabbing, or thrusting.
+                        3.1.2.2.7.1.1 Sword – a long-bladed weapon intended for slashing, thrusting, or both.
+                            3.1.2.2.7.1.1.1 Longsword – a European double-edged sword with a cruciform hilt, used with two hands.
+                            3.1.2.2.7.1.1.2 Broadsword – a European sword with a wide, straight, double-edged blade.
+                            3.1.2.2.7.1.1.3 Sabre – a curved, single-edged sword with a hand guard, used primarily for slashing.
+                            3.1.2.2.7.1.1.4 Rapier – a slender, sharply pointed sword, optimized for thrusting.
+                            3.1.2.2.7.1.1.5 Katana – a Japanese curved, single-edged sword with a circular or squared guard.
+                            3.1.2.2.7.1.1.6 Wakizashi – a Japanese short sword, companion to the katana.
+                            3.1.2.2.7.1.1.7 Tachi – a Japanese curved sword, predecessor to the katana, worn edge-down.
+                            3.1.2.2.7.1.1.8 Uchigatana – a Japanese sword with a curved blade, worn edge-up.
+                            3.1.2.2.7.1.1.9 Scimitar – a Middle Eastern curved, single-edged sword.
+                            3.1.2.2.7.1.1.10 Falchion – a European single-edged, broad-bladed sword.
+                            3.1.2.2.7.1.1.11 Cutlass – a short, broad sabre with a straight or slightly curved blade, used by sailors.
+                            3.1.2.2.7.1.1.12 Claymore – a large Scottish two-handed sword with a cross hilt.
+                            3.1.2.2.7.1.1.13 Jian – a double-edged straight sword from China.
+                            3.1.2.2.7.1.1.14 Dao – a single-edged Chinese sword, often with a curved blade.
+                            3.1.2.2.7.1.1.15 Gladius – a short Roman double-edged sword for stabbing.
+                            3.1.2.2.7.1.1.16 Spatha – a longer Roman sword, used by cavalry and infantry.
+                            3.1.2.2.7.1.1.17 Xiphos – a short, double-edged Greek sword.
+                            3.1.2.2.7.1.1.18 Kopis – a Greek single-edged, forward-curving sword.
+                            3.1.2.2.7.1.1.19 Kukri – a Nepalese inwardly curved, single-edged sword.
+                            3.1.2.2.7.1.1.20 Messer – a German single-edged sword, resembling a large knife.
+                            3.1.2.2.7.1.1.21 Shamshir – a Persian curved, single-edged sword.
+                            3.1.2.2.7.1.1.22 Talwar – an Indian curved, single-edged sword.
+                            3.1.2.2.7.1.1.23 Ulfberht – a type of high-quality Viking Age sword.
+                            3.1.2.2.7.1.1.24 Zweihander – a large German two-handed sword.
+                            3.1.2.2.7.1.1.25 Estoc – a European sword with a long, narrow, pointed blade for thrusting.
+                            3.1.2.2.7.1.1.26 Shotel – an Ethiopian sword with a strongly curved blade.
+                            3.1.2.2.7.1.1.27 Khopesh – an Egyptian sickle-sword with a curved blade.
+                            3.1.2.2.7.1.1.28 Makraka – an African sword with a distinctive curved blade.
+                            3.1.2.2.7.1.1.29 Flamberge – a sword with a wavy, flame-like blade.
+                            3.1.2.2.7.1.1.30 Backsword – a sword with a single-edged blade and a flat back.
+                            3.1.2.2.7.1.1.31 Basket-hilted sword – a sword with a basket-shaped guard to protect the hand.
+                            3.1.2.2.7.1.1.32 Cinquedea – a short, broad-bladed Italian sword.
+                            3.1.2.2.7.1.1.33 Kopesh – an alternate spelling of khopesh, see 3.1.2.2.7.1.1.27.
+                            3.1.2.2.7.1.1.34 Parang – a Malaysian/Indonesian sword with a broad, curved blade.
+                            3.1.2.2.7.1.1.35 Yatagan – a Turkish sword with a double-curved blade.
+                            3.1.2.2.7.1.1.36 Kris – a Southeast Asian sword with a wavy blade.
+                            3.1.2.2.7.1.1.37 Mameluke sword – a curved, cross-hilted sword of Middle Eastern origin.
+                            3.1.2.2.7.1.1.38 Patissa – an ancient Indian straight sword.
+                            3.1.2.2.7.1.1.39 Shashka – a single-edged, curved sword from the Caucasus.
+                            3.1.2.2.7.1.1.40 Kilij – a Turkish sabre with a slightly curved blade.
+                        3.1.2.2.7.1.2 Dagger – a short, pointed, double-edged blade designed for stabbing or thrusting.
+                            3.1.2.2.7.1.2.1 Dirk – a long thrusting dagger, especially of Scottish origin.
+                            3.1.2.2.7.1.2.2 Stiletto – a slender dagger with a needle-like point, designed for stabbing.
+                            3.1.2.2.7.1.2.3 Kris (Keris) – a Southeast Asian dagger with a wavy blade.
+                            3.1.2.2.7.1.2.4 Pugio – a Roman dagger with a broad, leaf-shaped blade.
+                            3.1.2.2.7.1.2.5 Rondel dagger – a medieval European dagger with a round guard and pommel.
+                            3.1.2.2.7.1.2.6 Bollock dagger – a dagger with a distinctively shaped hilt, popular in medieval Europe.
+                            3.1.2.2.7.1.2.7 Baselard – a late medieval dagger with a characteristic H-shaped hilt.
+                            3.1.2.2.7.1.2.8 Jambiya – a curved, double-edged dagger from the Middle East.
+                            3.1.2.2.7.1.2.9 Khanjar – a curved, double-edged dagger from Oman and surrounding regions.
+                            3.1.2.2.7.1.2.10 Parazonium – a Roman ceremonial dagger.
+                            3.1.2.2.7.1.2.11 Seax – a Germanic single-edged knife or dagger.
+                            3.1.2.2.7.1.2.12 Misericorde – a long, narrow dagger used to deliver the death stroke.
+                            3.1.2.2.7.1.2.13 Couteau de chasse – a French hunting dagger.
+                            3.1.2.2.7.1.2.14 Push dagger – a dagger with a T-shaped handle for punching.
+                            3.1.2.2.7.1.2.15 Trench knife – a combat knife with a knuckle guard, used in trench warfare.
+                        3.1.2.2.7.1.3 Knife – a bladed weapon with a single edge, typically shorter than a sword.
+                            3.1.2.2.7.1.3.1 Bowie knife – a large, fixed-blade fighting knife.
+                            3.1.2.2.7.1.3.2 Combat knife – a knife designed for military use in close combat.
+                            3.1.2.2.7.1.3.3 Trench knife – a combat knife with a knuckle guard, used in trench warfare.
+                            3.1.2.2.7.1.3.4 Bayonet – a blade that can be attached to the muzzle of a rifle.
+                            3.1.2.2.7.1.3.5 Machete – a broad, heavy knife used for cutting vegetation and as a weapon.
+                            3.1.2.2.7.1.3.6 Kukri – a Nepalese inwardly curved, single-edged knife.
+                            3.1.2.2.7.1.3.7 Karambit – a small, curved knife from Southeast Asia.
+                            3.1.2.2.7.1.3.8 Tanto – a Japanese short, single or double-edged knife.
+                            3.1.2.2.7.1.3.9 Dirk – a long thrusting knife, especially of Scottish origin.
+                            3.1.2.2.7.1.3.10 Stiletto – a slender knife with a needle-like point.
+                        3.1.2.2.7.1.4 Spearhead/Bladed Polearm – a pole weapon with a bladed head for thrusting, slashing, or both.
+                            3.1.2.2.7.1.4.1 Spear – a pole weapon with a pointed, bladed head for thrusting.
+                            3.1.2.2.7.1.4.2 Lance – a long spear used by cavalry.
+                            3.1.2.2.7.1.4.3 Halberd – a polearm with an axe blade topped with a spike.
+                            3.1.2.2.7.1.4.4 Glaive – a polearm with a single-edged blade on the end.
+                            3.1.2.2.7.1.4.5 Naginata – a Japanese polearm with a curved blade.
+                            3.1.2.2.7.1.4.6 Guandao – a Chinese polearm with a broad, curved blade.
+                            3.1.2.2.7.1.4.7 Bardiche – a long poleaxe with a large, curved blade.
+                            3.1.2.2.7.1.4.8 Partisan – a polearm with a broad, double-edged blade.
+                            3.1.2.2.7.1.4.9 Spetum – a polearm with a long, flat blade and two prongs.
+                            3.1.2.2.7.1.4.10 Ranseur – a polearm with a central blade and two lateral projections.
+                            3.1.2.2.7.1.4.11 Fauchard – a polearm with a curved blade, similar to a scythe.
+                            3.1.2.2.7.1.4.12 Billhook – a polearm with a hooked blade.
+                            3.1.2.2.7.1.4.13 Voulge – a polearm with a broad, cleaver-like blade.
+                            3.1.2.2.7.1.4.14 Guisarme – a polearm with a hook and spike.
+                            3.1.2.2.7.1.4.15 Lochaber axe – a Scottish polearm with a broad blade and hook.
+                            3.1.2.2.7.1.4.16 Sovnya – a Russian polearm with a curved, single-edged blade.
+                            3.1.2.2.7.1.4.17 Sickle – a short, curved blade mounted on a pole, used as a weapon.
+                            3.1.2.2.7.1.4.18 Kama – a Japanese sickle-like weapon, often used in pairs.
+                            3.1.2.2.7.1.4.19 Hook sword – a Chinese sword with a hook-shaped blade, often used in pairs.
+                        3.1.2.2.7.1.5 Axe/Hatchet – a weapon with a bladed head mounted on a handle, used for chopping or cleaving.
+                            3.1.2.2.7.1.5.1 Battle axe – a large axe designed for combat.
+                            3.1.2.2.7.1.5.2 Tomahawk – a small, single-handed axe from North America.
+                            3.1.2.2.7.1.5.3 Dane axe – a long-handled axe used by Vikings.
+                            3.1.2.2.7.1.5.4 Francisca – a throwing axe used by the Franks.
+                            3.1.2.2.7.1.5.5 Labrys – a double-headed axe from ancient Crete.
+                            3.1.2.2.7.1.5.6 Bardiche – a long poleaxe with a large, curved blade.
+                            3.1.2.2.7.1.5.7 Tabar – a Persian battle axe.
+                            3.1.2.2.7.1.5.8 Sagaris – a single-bladed axe from ancient Persia.
+                        3.1.2.2.7.1.6 Flexible Sword – a sword with a flexible or whip-like blade.
+                            3.1.2.2.7.1.6.1 Urumi – a South Indian sword with a flexible, whip-like blade.
+                        3.1.2.2.7.1.7 Gauntlet Sword – a sword integrated with a gauntlet.
+                            3.1.2.2.7.1.7.1 Pata (gauntlet sword) – an Indian sword with a straight blade attached to a gauntlet.
+                        3.1.2.2.7.1.8 Exotic Bladed Weapon – a bladed weapon with a unique or unusual form.
+                            3.1.2.2.7.1.8.1 Emeici – a pair of Chinese metal rods with sharp ends, used for stabbing.
+                            3.1.2.2.7.1.8.2 Bagh nakh – an Indian weapon with claw-like blades worn on the hand.
+                            3.1.2.2.7.1.8.3 Katar – an Indian push dagger with a H-shaped handle.
+                            3.1.2.2.7.1.8.4 Haladie – a double-edged dagger from India with two blades.
+                            3.1.2.2.7.1.8.5 Macuahuitl – an Aztec weapon with obsidian blades embedded in a wooden club.
+                            3.1.2.2.7.1.8.6 Yatagan – a Turkish sword with a double-curved blade.
+                            3.1.2.2.7.1.8.7 Kris sword – a Southeast Asian sword with a wavy blade.
+                            3.1.2.2.7.1.8.8 Khanda – a double-edged straight sword from India.
+                            3.1.2.2.7.1.8.9 Dha – a single-edged sword from Southeast Asia.
+                            3.1.2.2.7.1.8.10 Flyssa – a long, narrow-bladed sword from Algeria.
+                            3.1.2.2.7.1.8.11 Falx – a curved, sickle-like sword from Dacia.
+                    3.1.2.2.7.2 Projectile Weapon – a weapon that propels a projectile by mechanical, chemical, or other means to strike a distant target.
+                        3.1.2.2.7.2.1 Thrown Projectile – a projectile weapon propelled by manual throwing force.
+                            3.1.2.2.7.2.1.1 Javelin – a light spear designed to be thrown.
+                            3.1.2.2.7.2.1.2 Throwing axe – a small axe designed for throwing.
+                            3.1.2.2.7.2.1.3 Throwing hammer – a hammer-like weapon designed to be thrown.
+                            3.1.2.2.7.2.1.4 Boomerang – a curved, aerodynamic throwing tool that returns to the thrower.
+                            3.1.2.2.7.2.1.5 Shuriken – a star-shaped Japanese throwing weapon.
+                            3.1.2.2.7.2.1.6 Chakram – a circular throwing weapon with a sharpened rim from India.
+                            3.1.2.2.7.2.1.7 Throwing knife – a knife optimized for throwing accuracy.
+                        3.1.2.2.7.2.2 Bow – a ranged weapon using tension in a flexible arc to launch arrows.
+                            3.1.2.2.7.2.2.1 Longbow – a tall, powerful bow with long, straight limbs.
+                            3.1.2.2.7.2.2.2 Recurve bow – a bow with limbs that curve away from the archer when unstrung.
+                            3.1.2.2.7.2.2.3 Compound bow – a bow that uses a system of pulleys and cams for mechanical advantage.
+                            3.1.2.2.7.2.2.4 Crossbow – a bow mounted on a stock that shoots bolts.
+                                3.1.2.2.7.2.2.4.1 Arbalest – a powerful crossbow with a heavy steel prod.
+                                3.1.2.2.7.2.2.4.2 Repeating crossbow – a crossbow with a magazine for multiple bolts.
+                        3.1.2.2.7.2.3 Firearm – a weapon that launches a projectile by explosive force.
+                            3.1.2.2.7.2.3.1 Handgun – a small firearm designed to be held and operated with one hand.
+                                3.1.2.2.7.2.3.1.1 Pistol – a semi-automatic handgun with a detachable magazine.
+                                3.1.2.2.7.2.3.1.2 Revolver – a handgun with a rotating cylinder that holds cartridges.
+                                3.1.2.2.7.2.3.1.3 Derringer – a small, easily concealable single-shot pistol.
+                            3.1.2.2.7.2.3.2 Rifle – a long-barreled firearm with a rifled bore for accuracy.
+                                3.1.2.2.7.2.3.2.1 Bolt-action rifle – a rifle manually operated by a bolt mechanism.
+                                3.1.2.2.7.2.3.2.2 Lever-action rifle – a rifle that uses a lever integrated into the stock to cycle cartridges.
+                                3.1.2.2.7.2.3.2.3 Semi-automatic rifle – a rifle that fires one cartridge per trigger pull and automatically cycles.
+                                3.1.2.2.7.2.3.2.4 Assault rifle – a selective-fire rifle using intermediate cartridges and detachable magazines.
+                            3.1.2.2.7.2.3.3 Shotgun – a smoothbore firearm designed to fire multiple projectiles.
+                                3.1.2.2.7.2.3.3.1 Pump-action shotgun – a shotgun that uses a sliding fore-end for cycling cartridges.
+                                3.1.2.2.7.2.3.3.2 Break-action shotgun – a shotgun with a hinged barrel that opens for loading.
+                                3.1.2.2.7.2.3.3.3 Semi-automatic shotgun – a shotgun that automatically cycles to load the next round.
+                            3.1.2.2.7.2.3.4 Machine gun – an automatic firearm capable of sustained fire.
+                                3.1.2.2.7.2.3.4.1 Light machine gun – a portable machine gun designed for infantry support.
+                                3.1.2.2.7.2.3.4.2 Medium machine gun – a machine gun that fires full-power rifle cartridges at sustained rates.
+                                3.1.2.2.7.2.3.4.3 Heavy machine gun – a large, crew-served machine gun that fires heavy-caliber ammunition.
+                        3.1.2.2.7.2.4 Siege Engine – a large-scale weapon for attacking fortifications.
+                            3.1.2.2.7.2.4.1 Catapult – a device that hurls projectiles using tension, torsion, or gravity.
+                            3.1.2.2.7.2.4.2 Trebuchet – a counterweight-driven siege engine that launches heavy missiles.
+                            3.1.2.2.7.2.4.3 Ballista – a torsion-powered siege weapon that launches large bolts.
+                            3.1.2.2.7.2.4.4 Onager – a Roman torsion-powered catapult that hurls stones.
+                        3.1.2.2.7.2.5 Sling – a weapon using a pouch and cords to hurl a stone or lead weight.
+                        3.1.2.2.7.2.6 Blowgun – a tube through which a projectile is expelled by breath.
+                        3.1.2.2.7.2.7 Thrown explosive – a hand-thrown device containing explosive or incendiary components.
+                            3.1.2.2.7.2.7.1 Grenade – a small explosive device designed to be thrown by hand or launched.
+                            3.1.2.2.7.2.7.2 Molotov cocktail – a breakable glass bottle containing incendiary liquids for improvised use.
+                            3.1.2.2.7.2.7.3 Smoke grenade – a device that emits smoke for signaling or concealment.
+                            3.1.2.2.7.2.7.4 Flashbang – a non-lethal device producing a blinding flash and loud noise to disorient.
         3.1.3 Physical Field - spatially extended continuous entities
             3.1.3.1 Gravitational Field - region where mass experiences force.
             3.1.3.2 Electromagnetic Field - unified field of electric and magnetic effects.
@@ -1006,24 +1704,70 @@
             4.1.1.2 Mood - A prolonged, less intense, and more diffuse affective state that is not necessarily tied to a specific object or event, often coloring one's overall subjective experience and outlook for a period.
                 4.1.1.2.1 Euthymic Mood - A relatively stable mood state characterized by a sense of normalcy, calmness, and absence of marked elevation or depression. (Baseline mood).
                 4.1.1.2.2 Elevated Mood / Euphoric Mood - A mood characterized by an exaggerated feeling of well-being, elation, or happiness, often disproportionate to circumstances.
+                    4.1.1.2.2.1 Elated Mood - A mood characterized by intense happiness, joy, or high spirits, often slightly less extreme or enduring than full euphoria.
+                    4.1.1.2.2.2 Exuberant Mood - A mood characterized by energetic enthusiasm, vivacity, and lively expression.
+                    4.1.1.2.2.3 Hypomanic Mood - A persistent, pervasive, and often disruptive elevated, expansive, or irritable mood that is less severe than full mania, typically without significant functional impairment or psychotic features.
+                    4.1.1.2.2.4 Manic Mood - A distinct period of abnormally and persistently elevated, expansive, or irritable mood, and abnormally and persistently increased goal-directed activity or energy, lasting at least 1 week and present most of the day, nearly every day.
                 4.1.1.2.3 Dysphoric Mood - A mood characterized by general feelings of unease, dissatisfaction, unhappiness, or sadness.
+                    4.1.1.2.3.1 Uneasy Mood - A mood characterized by general discomfort, restlessness, or a feeling that something is wrong, without a clear cause.
+                    4.1.1.2.3.2 Dissatisfied Mood - A mood characterized by a general sense of disappointment or unfulfillment.
+                    4.1.1.2.3.3 Pessimistic Mood - A mood characterized by a tendency to expect the worst possible outcome or to dwell on the negative aspects of a situation.
                 4.1.1.2.4 Depressed Mood - A mood characterized by persistent feelings of sadness, emptiness, hopelessness, or loss of interest or pleasure. (Can be a symptom of a disorder or a standalone mood state).
+                    4.1.1.2.4.1 Anhedonic Mood - A mood characterized by a significant loss of interest or pleasure in activities that were once considered enjoyable.
+                    4.1.1.2.4.2 Melancholic Mood - A severe form of depressed mood characterized by distinct quality of mood, profound despair, psychomotor retardation or agitation, and other specific somatic symptoms (often a specifier in clinical depression).
+                    4.1.1.2.4.3 Apathetic-Depressed Mood - Depressed mood combined with a predominant lack of interest, enthusiasm, or concern.
                 4.1.1.2.5 Irritable Mood - A mood characterized by a propensity to be easily annoyed, angered, or agitated.
+                    4.1.1.2.5.1 Agitated-Irritable Mood - Irritable mood accompanied by increased psychomotor activity, restlessness, or inner tension.
+                    4.1.1.2.5.2 Hostile Mood - A mood characterized by feelings of antagonism or unfriendliness, often expressed through aggressive behavior or thoughts.
                 4.1.1.2.6 Anxious Mood - A mood characterized by sustained feelings of apprehension, worry, nervousness, or unease, often about an impending event or something with an uncertain outcome.
+                    4.1.1.2.6.1 Generalized Anxious Mood - A mood characterized by pervasive, non-specific worry and apprehension about a variety of things.
+                    4.1.1.2.6.2 Apprehensive Mood - A mood characterized by a specific anticipation of impending danger, misfortune, or unpleasantness.
+                    4.1.1.2.6.3 Panicked Mood - A sudden, intense mood characterized by overwhelming fear, terror, or dread, often accompanied by physical symptoms.
                 4.1.1.2.7 Apathetic Mood - A mood characterized by a lack of interest, enthusiasm, or concern; indifference.
+                    4.1.1.2.7.1 Indifferent Mood - A mood characterized by a lack of interest or concern, often more neutral than true apathy.
+                    4.1.1.2.7.2 Listless Mood - A mood characterized by a lack of energy, enthusiasm, or spirit; sluggishness.
                 4.1.1.2.8 Expansive Mood - A mood characterized by unceasing and indiscriminate enthusiasm for interpersonal, sexual, or occupational interactions, often associated with an overestimation of one's importance or capabilities.
                 4.1.1.2.9 Calm Mood - A mood characterized by tranquility, serenity, and freedom from agitation or disturbance.
+                    4.1.1.2.9.1 Relaxed Mood - A mood characterized by a state of being free from tension and anxiety.
+                    4.1.1.2.9.2 Peaceful Mood - A mood characterized by a sense of inner quiet and freedom from disturbance.
                 4.1.1.2.10 Tense Mood - A mood characterized by feelings of mental or nervous strain, stress, or suspense.
+                    4.1.1.2.10.1 Stressed Mood - A mood characterized by feelings of pressure, demandingness, or being overwhelmed by circumstances.
+                    4.1.1.2.10.2 Nervous Mood - A mood characterized by unease or apprehension, often accompanied by physical signs of anxiety.
                 4.1.1.2.11 Energetic Mood - A mood characterized by having or showing great activity or vitality.
+                    4.1.1.2.11.1 Enthusiastic Mood - A mood characterized by intense and eager enjoyment, interest, or approval.
+                    4.1.1.2.11.2 Vigorous Mood - A mood characterized by physical or mental strength, health, and energy.
                 4.1.1.2.12 Fatigued Mood / Lethargic Mood - A mood characterized by a lack of energy and enthusiasm, weariness, or sluggishness.
+                    4.1.1.2.12.1 Drained Mood - A mood characterized by feeling completely exhausted or devoid of energy.
+                    4.1.1.2.12.2 Sluggish Mood - A mood characterized by feeling noticeably slow, lacking in energy or alertness.
         4.1.2 Sensory State - a state of subjective experience derived from sensory input
             4.1.2.1 Visual Sensation - subjective experience from visual input.
+                4.1.2.1.1 Color Perception - the subjective experience of hue, saturation, and brightness derived from light wavelengths.
+                4.1.2.1.2 Form Perception - the subjective experience of shapes, outlines, and spatial arrangements of objects.
+                4.1.2.1.3 Motion Perception - the subjective experience of movement or changes in position.
+                4.1.2.1.4 Light Intensity Perception - the subjective experience of brightness or dimness.
             4.1.2.2 Auditory Sensation - subjective experience from sound input.
+                4.1.2.2.1 Pitch Perception - the subjective experience of how high or low a sound is, related to frequency.
+                4.1.2.2.2 Loudness Perception - the subjective experience of the intensity or volume of a sound, related to amplitude.
+                4.1.2.2.3 Timbre Perception - the subjective experience of the quality or character of a sound that distinguishes different types of sound production (e.g., musical instruments, voices).
+                4.1.2.2.4 Spatial Audition - the subjective experience of where a sound originates in space.
             4.1.2.3 Olfactory Sensation - subjective experience from smell input.
+                4.1.2.3.1 Odor Quality Perception - the subjective experience of distinct types of smells.
+                4.1.2.3.2 Odor Intensity Perception - the subjective experience of the strength or concentration of a smell.
             4.1.2.4 Gustatory Sensation - subjective experience from taste input.
-            4.1.2.5 Somatosensory Sensation - subjective experience from bodily senses (touch, pain).
+                4.1.2.4.1 Basic Taste Qualities - the subjective experience of the fundamental tastes recognized by the tongue.
+                4.1.2.4.2 Flavor Perception - the complex subjective experience resulting from the combination of taste, smell (through retronasal olfaction), and often touch (texture) and temperature in the mouth.
+            4.1.2.5 Somatosensory Sensation - subjective experience from bodily senses (touch, pain, temperature, proprioception, kinesthesia).
+                4.1.2.5.1 Tactile Perception (Touch) - the subjective experience of pressure, vibration, texture, or contact on the skin.
+                4.1.2.5.2 Nociception (Pain Perception) - the subjective experience of discomfort or unpleasant sensations arising from tissue damage or potential damage.
+                4.1.2.5.3 Thermoception (Temperature Perception) - the subjective experience of heat or cold on the skin or internally.
+                4.1.2.5.4 Proprioception - the subjective experience of the relative position of one's own body parts and strength of effort being used in movement, derived from internal receptors.
+                4.1.2.5.5 Kinesthesia - the subjective experience of movement of body parts.
             4.1.2.6 Vestibular Sensation - subjective experience from balance/orientation system.
+                4.1.2.6.1 Balance Perception - the subjective experience of maintaining equilibrium and spatial stability.
+                4.1.2.6.2 Head Position/Movement Perception - the subjective experience of the orientation and acceleration of the head in space.
             4.1.2.7 Interoceptive Sensation - subjective experience of internal bodily states.
+                4.1.2.7.1 Visceral Sensation - the subjective experience of internal organ states.
+                4.1.2.7.2 Bodily Homeostasis Perception - the subjective experience related to the body's internal regulatory processes.
     4.2 Mental Process - an operation or sequence of changes occurring in the mind
         4.2.1 Cognitive Process - a mental operation involved in acquiring, processing, or using knowledge and information
             4.2.1.1 Perceptual Process - interpreting sensory information.
@@ -1429,10 +2173,580 @@
             5.1.7.6 Audience Segment (e.g., prime-time television viewers, readers of a specific genre).
             5.1.7.7 Ethnic or Racial Demographic Group (as defined for statistical or social analysis purposes).
         5.1.8 Society - A large-scale, enduring, and relatively self-sufficient social entity comprising individuals and groups interconnected through a complex web of relationships, sharing a common culture, and typically occupying a defined territory and organized under a common political and economic system.
-            5.1.8.1 Nation-State Society - A society largely coterminous with a modern nation-state, characterized by shared national identity and governance under a state apparatus (e.g., contemporary French society, Japanese society).
-            5.1.8.2 Tribal Society - A society organized primarily around kinship ties, with social structure based on families, clans, or lineages, often with less centralized political authority than a state.
-            5.1.8.3 Historical Societal Formation - A distinct type of society identified by its characteristic social, economic, and political structures in a specific historical period (e.g., Feudal Society in medieval Europe, Ancient Athenian Society).
-            5.1.8.4 Global Society (Emergent Concept) - A hypothetical or emergent social entity encompassing humanity as a whole, characterized by increasing global interconnectedness and interdependence.
+            5.1.8.1 Nation-State Society – a society coterminous with the territory and government of a sovereign state.
+                5.1.8.1.1 City-State Society – a Nation-State Society organized around a single dominant urban centre and its immediate hinterland.
+                    5.1.8.1.1.1 Caral – the principal urban polity of the Norte Chico civilization in coastal Peru, noted for its monumental plazas and centralized authority (c. 3500–3000 BCE).
+                    5.1.8.1.1.2 Ebla – a powerful city-state in northwestern Syria with a palace bureaucracy, extensive trade networks, and its own cuneiform archive (c. 2500–2250 BCE).
+                    5.1.8.1.1.3 Mari – an Euphrates-river city-state famed for its royal palace archives, diplomatic correspondence, and centralized governance (c. 2900–1759 BCE).
+                    5.1.8.1.1.4 Teotihuacan – the dominant Mesoamerican city-state in the Valley of Mexico, noted for its pyramidal architecture and urban planning (c. 100–750 CE).
+                    5.1.8.1.1.5 Capua – an independent Italic city-state in Campania, prominent in Magna Graecia interactions and later allied with Rome (c. 9th–3rd centuries BCE).
+                    5.1.8.1.1.6 Cumae – a Greek colony and Italic city-state in Campania, noted for its Sibylline sanctuary and trade (c. 750–274 BCE).
+                    5.1.8.1.1.7 Praeneste – a Latin city-state in Latium, famed for the Sanctuary of Fortuna and its contests with Rome (c. 7th–1st centuries BCE).
+                    5.1.8.1.1.8 Saguntum – the Iberian city allied with Rome, whose siege precipitated the Second Punic War (c. 6th century BCE–219 BCE).  
+                    5.1.8.1.1.9 Greek Polis – the characteristic city-state of ancient Greece.
+                        5.1.8.1.1.9.1 Athens – the polis renowned for democracy, philosophy, and maritime power during the Archaic and Classical periods (c. 800–322 BCE).
+                        5.1.8.1.1.9.2 Sparta – the militaristic polis in the Peloponnese, noted for its dual kingship and warrior society (c. 900–192 BCE).
+                        5.1.8.1.1.9.3 Corinth – major commercial and naval centre on the Isthmus, host of the Isthmian Games (c. 900–146 BCE).
+                        5.1.8.1.1.9.4 Thebes – leading city of Boeotia, defeated Sparta at Leuctra and briefly hegemonized Greece (c. 715–338 BCE).
+                        5.1.8.1.1.9.5 Argos – one of the oldest Peloponnesian states, noted for its rivalry with Sparta (c. 700–146 BCE).
+                        5.1.8.1.1.9.6 Miletus – Ionian polis famed for early Greek philosophy (Thales) and maritime trade (c. 1000–494 BCE).
+                        5.1.8.1.1.9.7 Ephesus – Ionian city renowned for the Temple of Artemis and as a major port (c. 1000 BCE–395 CE).
+                        5.1.8.1.1.9.8 Megara – strategic polis between Attica and the Peloponnese, founded the colony Byzantion (c. 750–146 BCE).
+                        5.1.8.1.1.9.9 Rhodes – Dorian island‐polis, famed for the Colossus and as a Hellenistic naval power (c. 408 BCE–42 CE).
+                        5.1.8.1.1.9.10 Syracuse – Greek colony in Sicily under the Tyrants and later the Deinomenids, rival of Carthage (c. 734–212 BCE).
+                        5.1.8.1.1.9.11 Byzantion – the Megarian colony on the Bosporus, later Constantinople, a major Hellenic, Roman and Byzantine centre (c. 657 BCE–1453 CE).  
+                        5.1.8.1.1.9.12 Massalia – the Phocaean colony on the southern Gaul coast, noted for trade and cultural exchange (c. 600 BCE–49 BCE).  
+                        5.1.8.1.1.9.13 Cyrene – the Greek colony in Cyrenaica, a centre of Hellenistic philosophy and medicine (c. 631 BCE–96 BCE).
+                    5.1.8.1.1.10 Phoenician
+                        5.1.8.1.1.10.1 Tyre – a Phoenician maritime trade society on the Levantine coast, famed for purple dye, shipbuilding, and colonization (c. 1200–538 BCE).
+                        5.1.8.1.1.10.2 Sidon – the Phoenician city-state in the Levant, noted for purple dye and maritime commerce (c. 3000–550 BCE).  
+                        5.1.8.1.1.10.3 Byblos – the ancient Levantine city-state, early adopter of alphabetic script and trade (c. 5000–332 BCE).  
+                        5.1.8.1.1.10.4 Arwad – the island city-state off Syria, important Phoenician naval station (c. 1300 BCE–64 BCE).  
+                        5.1.8.1.1.10.5 Utica – the Phoenician colony on North Africa’s coast, early rival to Carthage (c. 1101–146 BCE).  
+                        5.1.8.1.1.10.6 Gadir (Gades) – the Phoenician colony on the Iberian Atlantic coast, one of the oldest Western Mediterranean settlements (c. 1100–206 BCE).  
+                    5.1.8.1.1.11 Etruscan
+                        5.1.8.1.1.11.1 Veii – an Etruscan city-state north of Rome, rival of early Roman monarchy and Republic (c. 8th–4th centuries BCE; destroyed 396 BCE).
+                        5.1.8.1.1.11.2 Tarquinia – a major Etruscan city-state on the Tyrrhenian coast, noted for its painted tombs and maritime trade (c. 8th–3rd centuries BCE).
+                        5.1.8.1.1.11.3 Caere (Cerveteri) – an Etruscan city-state in southern Etruria, famed for its tumulus necropolises and trade networks (c. 9th–3rd centuries BCE).
+                        5.1.8.1.1.11.4 Vulci – an Etruscan city-state in southern Etruria, noted for its wealth, art, and iron-smelting (c. 8th–3rd centuries BCE).
+                        5.1.8.1.1.11.5 Volsinii (Orvieto) – an Etruscan city-state in central Italy, renowned for its bronze industry; destroyed by Rome in 264 BCE (c. 7th–3rd centuries BCE).
+                        5.1.8.1.1.11.6 Populonia – the principal Etruscan port and centre of iron smelting on the Tyrrhenian coast (c. 8th–3rd centuries BCE).
+                        5.1.8.1.1.11.7 Felsina (Bologna) – an Etruscan city-state in northern Italy, precursor to the Roman colony Bononia (c. 6th–3rd centuries BCE).
+                    5.1.8.1.1.12 Indus
+                        5.1.8.1.1.12.1 Harappa – a major urban polity of the Indus Valley Civilization, characterized by grid-plan cities, standardized weights, and a centralized administration (c. 2600–1900 BCE).
+                        5.1.8.1.1.12.2 Mohenjo-daro – the principal city-state of the Mature Harappan phase, renowned for its advanced civic planning, drainage systems, and state authority (c. 2500–1900 BCE).
+                    5.1.8.1.1.13 Sumerian
+                        5.1.8.1.1.13.1 Eridu – the earliest known city-state in southern Mesopotamia with centralized temple authority (c. 4000 BCE).
+                        5.1.8.1.1.13.2 Uruk – the first large-scale urban state in Sumer, noted for its administrative bureaucracy and monumental construction (c. 4000–3100 BCE).
+                        5.1.8.1.1.13.3 Ur – a major Sumerian city-state on the Persian Gulf coast, centered on a ziggurat and a temple economy (c. 2600–1800 BCE).
+                        5.1.8.1.1.13.4 Kish – an early northern Mesopotamian city-state famed for its dynastic kingship and political preeminence in Sumer (c. 3500 BCE).
+                        5.1.8.1.1.13.5 Lagash – a Sumerian city-state that achieved significant political autonomy and artistic patronage in the late 4th millennium BCE.
+                    5.1.8.1.1.14 Elamite
+                        5.1.8.1.1.14.1 Susa – an early Elamite city-state in southwestern Iran, characterized by centralized governance and temple complexes (c. 4000–3000 BCE).
+                    5.1.8.1.1.15 Minoan
+                        5.1.8.1.1.15.1 Knossos – the Minoan palace-city on Crete, early Bronze Age centre of administration and ritual (c. 1900–1400 BCE).
+                    5.1.8.1.1.16 Maya City-State Society – Classic Maya polities (c. 400 BCE–900 CE).
+                        5.1.8.1.1.16.1 Tikal – the great Petén Basin polity with towering temples, stelae, and a powerful dynasty (c. 200–900 CE)
+                        5.1.8.1.1.16.2 Calakmul – the “Snake Kingdom,” rival of Tikal, famed for its twin pyramids and far-flung alliances (c. 500–850 CE)
+                        5.1.8.1.1.16.3 Palenque – the Chiapas city-state celebrated for its intricate stucco-decorated palaces and the reign of Kʼinich Janaabʼ Pakal (c. 226 BCE–799 CE)
+                        5.1.8.1.1.16.4 Copán – the Honduran polity known for its Hieroglyphic Stairway, sculpted altars, and royal tombs (c. 400–800 CE)
+                        5.1.8.1.1.16.5 Caracol – major Belize site with dynastic stelae and sprawling causeways (c. 550–859 CE)
+                        5.1.8.1.1.16.6 Yaxchilán – Usumacinta-river polity renowned for sculpted lintels and King Itzamnaaj Bʼalam II (c. 200–900 CE)
+                        5.1.8.1.1.16.7 Uxmal – Puuc-region city noted for the Governor’s Palace and Circle of a Thousand Columns (c. 600–1000 CE)
+                        5.1.8.1.1.16.8 Chichén Itzá – Yucatán capital famous for the Temple of Kukulcán and mixed architectural styles (c. 600–1200 CE)
+                        5.1.8.1.1.16.9 Mayapan – postclassic Yucatán federation of Itza lineages (c. 1200–1440 CE)
+                        5.1.8.1.1.16.10 Cobá – northern lowlands site with raised roads (sacbé), large pyramid Nohoch Mul (c. 100–900 CE)
+                    5.1.8.1.1.18 Moche – coastal Peruvian polity famed for its temples, painted ceramics, irrigation works, and warrior-priest elite (c. 100–800 CE)
+                    5.1.8.1.1.19 Tiwanaku – highland Bolivian centre governing the Lake Titicaca region, celebrated for its monumental platform mounds and raised-field agriculture (c. 300–1000 CE)
+                5.1.8.1.2 Kingdom Society – a Nation-State Society ruled by a monarch (hereditary or elective), whose authority is institutionalized through dynastic succession or regulated election among eligible royal lineages; social orders are organized around monarchical authority and court hierarchies.
+                    5.1.8.1.2.1 Early Dynastic Period of Egypt – the unified kingdom of Upper and Lower Egypt under its first pharaoh, Narmer, establishing centralized state institutions (c. 3100–2686 BCE).
+                    5.1.8.1.2.2 Old Kingdom of Egypt – a unified Egyptian state under the Third to Sixth Dynasties, noted for its centralized bureaucracy and monumental pyramid construction (c. 2686–2181 BCE).
+                    5.1.8.1.2.3 Middle Kingdom of Egypt – the reunified Egyptian state under Mentuhotep II, featuring centralized administration and pyramid-building (c. 2055–1650 BCE).
+                    5.1.8.1.2.4 Shang Dynasty – the earliest historically confirmed Chinese state, characterized by bronze metallurgy, oracle-bone writing, and hereditary kingship (c. 1600–1046 BCE).
+                    5.1.8.1.2.5 United Monarchy of Israel – the united Hebrew monarchy under Saul, David, and Solomon, centered on Jerusalem and Temple worship (c. 1050–930 BCE).
+                    5.1.8.1.2.6 Kingdom of Judah – the southern Hebrew kingdom ruled from Jerusalem, continuing Davidic traditions after Israel’s division (c. 930–586 BCE).
+                    5.1.8.1.2.7 Merovingian Kingdom of the Franks – the early medieval Frankish realm founded by Clovis, establishing dynastic rule over Gaul (c. 481–751 CE).
+                    5.1.8.1.2.8 Visigothic Kingdom – the Germanic successor state in Iberia and southwestern Gaul, blending Roman administration with Gothic aristocracy (c. 418–721 CE).
+                    5.1.8.1.2.9 Ostrogothic Kingdom of Italy – the Italian kingdom under Theodoric the Great, maintaining Roman governance under Gothic leadership (c. 493–553 CE).
+                    5.1.8.1.2.10 Vandal Kingdom – the North African state established by the Vandals, controlling Carthage and Mediterranean piracy (c. 435–534 CE).
+                    5.1.8.1.2.11 Kingdom of the Lombards – the Germanic realm ruling much of Italy after the Gothic Wars, characterized by duchies and Arian Christianity (c. 568–774 CE).
+                    5.1.8.1.2.12 Kingdom of Silla – the Korean kingdom that unified the peninsula, fostering Buddhist culture and centralized bureaucracy (c. 57 BCE–935 CE; unification 668 CE).
+                    5.1.8.1.2.13 Yamato State – the early Japanese state under the Yamato court, establishing imperial lineage and Shinto ritual authority (c. 250–710 CE).
+                    5.1.8.1.2.14 Kassite Kingdom of Babylonia – the Babylonian dynasty under Kassite kings who preserved Mesopotamian culture under foreign rule (c. 1595–1155 BCE).
+                    5.1.8.1.2.15 Kingdom of Mitanni – the Hurrian state in northern Mesopotamia and Syria, known for chariot warfare and diplomatic treaties with Egypt (c. 1500–1300 BCE).
+                    5.1.8.1.2.16 Kingdom of Lydia – the Anatolian kingdom credited with inventing coinage and ruled by Croesus at its height (c. 1200–546 BCE).
+                    5.1.8.1.2.17 Kingdom of Aksum – the northeastern African empire controlling the Red Sea trade routes, famous for its monumental stelae and coinage (c. 100–940 CE).
+                    5.1.8.1.2.18 Kingdom of England (Norman period) – a medieval European monarchy under William I and his successors, characterized by feudal consolidation and common law (1066–1154 CE).
+                    5.1.8.1.2.19 Kingdom of France (Capetian dynasty) – the West Frankish realm under the Capetians, noted for gradual centralization of royal authority (c. 987–1214 CE).
+                    5.1.8.1.2.20 Kingdom of Portugal – the Atlantic maritime kingdom in western Iberia that pioneered European overseas exploration (c. 1139–1910 CE).
+                    5.1.8.1.2.21 Crown of Castile – the medieval Iberian monarchy that expanded through the Reconquista and later united with Aragon (c. 1230–1479 CE).
+                    5.1.8.1.2.22 Crown of Aragon – the Mediterranean monarchy in northeastern Iberia that extended into Sicily and southern Italy (c. 1035–1479 CE).
+                    5.1.8.1.2.23 Kingdom of Scotland – the northern British kingdom noted for its distinct legal system and monarchy (c. 843–1603 CE).
+                    5.1.8.1.2.24 Kingdom of Poland – the Central European monarchy under the Piast and Jagiellon dynasties, pivotal in medieval European politics (c. 1025–1795 CE).
+                    5.1.8.1.2.25 Kingdom of France (Bourbon dynasty) – the Bourbon monarchy in western Europe, noted for its centralized absolutist government and cultural influence (c. 1589–1792 CE).
+                    5.1.8.1.2.26 Kingdom of England (Stuart and Hanoverian period) – the early Stuart and Hanoverian monarchy following the Union of the Crowns, establishing parliamentary traditions (c. 1603–1707 CE).
+                    5.1.8.1.2.27 Kingdom of Great Britain – the unified British monarchy after the 1707 Acts of Union, expanding maritime power and commercial empire (c. 1707–1800 CE).
+                    5.1.8.1.2.28 Kingdom of Sweden (House of Vasa and Age of Liberty) – a major Baltic power with centralized bureaucracy (c. 1523–1809 CE).
+                    5.1.8.1.2.29 Monarchy of Spain (Habsburg and Bourbon dynasties) – controlling a global empire of European and American territories (c. 1516–1800 CE).
+                    5.1.8.1.2.30 Kingdom of Prussia – the Protestant German monarchy under the Hohenzollerns, noted for military reform and territorial expansion (c. 1701–1806 CE).
+                    5.1.8.1.2.31 Kingdom of Denmark–Norway – the dual monarchy in northern Europe, governing Denmark, Norway, and overseas possessions (c. 1524–1814 CE).
+                    5.1.8.1.2.32 Kingdom of Belgium – a constitutional monarchy established at Belgian independence (1830–Present).
+                    5.1.8.1.2.33 Kingdom of the Netherlands – a constitutional monarchy formed after the Napoleonic Wars (1815–Present).
+                    5.1.8.1.2.34 Kingdom of Norway – a Scandinavian monarchy re-established with full independence (1905–Present).
+                    5.1.8.1.2.35 Kingdom of Italy – the unified Italian monarchy under the House of Savoy (1861–1946 CE).
+                    5.1.8.1.2.36 Kingdom of Greece – the Balkan monarchy under Wittelsbach and Glücksburg dynasties (1832–1973 CE).
+                    5.1.8.1.2.37 Kingdom of Romania – the Eastern European monarchy under the Brătianu and Hohenzollern dynasties (1881–1947 CE).
+                    5.1.8.1.2.38 Kingdom of Sweden (House of Bernadotte) – the Bernadotte monarchy in Scandinavia after 1809 (1809–Present).
+                    5.1.8.1.2.39 Commonwealth of Australia – a constitutional monarchy with the British monarch as head of state (1901–Present).
+                    5.1.8.1.2.40 State of Japan – a constitutional monarchy under the 1947 Constitution with a ceremonial emperor (1947–Present).
+                    5.1.8.1.2.41 Kingdom of Spain – a parliamentary constitutional monarchy re-established in 1978 (1978–Present).
+                    5.1.8.1.2.42 Kingdom of Denmark – a constitutional monarchy established in 1849 (1849–Present).
+                    5.1.8.1.2.43 Kingdom of Thailand – a constitutional monarchy (1932–Present).
+                    5.1.8.1.2.44 Kingdom of Saudi Arabia – an absolute monarchy (1932–Present).
+                    5.1.8.1.2.45 Kingdom of Morocco – a constitutional monarchy with significant royal powers (1956–Present).
+                    5.1.8.1.2.46 Hashemite Kingdom of Jordan – a constitutional monarchy with active royal powers (1946–Present).
+                    5.1.8.1.2.47 Malaysia – a federal constitutional elective monarchy (1963–Present).
+                    5.1.8.1.2.48 Kingdom of Cambodia – a constitutional monarchy restored in 1993 (1993–Present).
+                    5.1.8.1.2.49 Kingdom of Bahrain – a constitutional monarchy (2002–Present).
+                    5.1.8.1.2.50 Kingdom of Bhutan – a constitutional monarchy (2008–Present).
+                    5.1.8.1.2.51 Kingdom of Eswatini – an absolute monarchy (1968–Present).
+                    5.1.8.1.2.52 Grand Duchy of Luxembourg – a parliamentary constitutional monarchy (1890–Present).
+                    5.1.8.1.2.53 Kingdom of Tonga – a constitutional monarchy (1875–Present).
+                    5.1.8.1.2.54 Kingdom of Lesotho – a constitutional monarchy (1966–Present).
+                    5.1.8.1.2.55 Commonwealth of The Bahamas – a constitutional monarchy (1973–Present).
+                    5.1.8.1.2.56 Belize – a constitutional monarchy (1981–Present).
+                    5.1.8.1.2.57 Grenada – a constitutional monarchy (1974–Present).
+                    5.1.8.1.2.58 Jamaica – a constitutional monarchy (1962–Present).
+                    5.1.8.1.2.59 Independent State of Papua New Guinea – a constitutional monarchy (1975–Present).
+                    5.1.8.1.2.60 Federation of Saint Kitts and Nevis – a constitutional monarchy (1983–Present).
+                    5.1.8.1.2.61 Saint Lucia – a constitutional monarchy (1979–Present).
+                    5.1.8.1.2.62 Saint Vincent and the Grenadines – a constitutional monarchy (1979–Present).
+                    5.1.8.1.2.63 Solomon Islands – a constitutional monarchy (1978–Present).
+                    5.1.8.1.2.64 Tuvalu – a constitutional monarchy (1978–Present).
+                    5.1.8.1.2.65 Antigua and Barbuda – a constitutional monarchy (1981–Present).
+                    5.1.8.1.2.66 United Kingdom of Great Britain and Northern Ireland – a constitutional monarchy (1707/1801/1922–Present).
+                    5.1.8.1.2.67 Canada – a parliamentary constitutional monarchy and federal state (1867–Present).
+                    5.1.8.1.2.68 Realm of New Zealand – a parliamentary constitutional monarchy and unitary state (1907–Present).
+                    5.1.8.1.2.69 Kingdom of Iceland - an agreement with Denmark signed on 1 December 1918 and valid for 25 years, recognised Iceland as a fully sovereign and independent state in a personal union with Denmark (1918–1944).
+                    5.1.8.1.2.70 Principality
+                        5.1.8.1.2.70.1 Principality of Monaco – a constitutional monarchy (1911–Present).
+                        5.1.8.1.2.70.2 Principality of Liechtenstein – a constitutional monarchy with strong princely powers (1862–Present).
+                        5.1.8.1.2.70.3 Principality of Andorra – a co-princely diarchy (President of France & Bishop of Urgell) with a modern constitutional government (1278–Present).
+                    5.1.8.1.2.71 Emirate
+                        5.1.8.1.2.71.1 State of Kuwait – an emirate (1961–Present).
+                        5.1.8.1.2.71.2 State of Qatar – an absolute monarchy (1971–Present).
+                        5.1.8.1.2.71.3 United Arab Emirates – a federal elective monarchy (1971–Present).
+                    5.1.8.1.2.72 Sultanate
+                        5.1.8.1.2.72.1 Sultanate of Oman – an absolute monarchy (1970–Present).
+                        5.1.8.1.2.72.2 Brunei Darussalam – an absolute monarchy (1984–Present).
+                    5.1.8.1.2.73 Kingdom of Hawaii – the Pacific island monarchy under Kamehameha I and his successors (1795–1893 CE).
+                    5.1.8.1.2.74 Kingdom of Hungary – the Central European monarchy under the Árpád and Habsburg dynasties (c. 1000–1918 CE).
+                    5.1.8.1.2.75 Kingdom of Bulgaria – the Balkan monarchy established after Ottoman liberation under the Saxe-Coburg-Gotha dynasty (1878–1946 CE).
+                    5.1.8.1.2.76 Kingdom of Serbia – the southeastern European monarchy under the Obrenović and Karađorđević dynasties (1882–1918 CE).
+                    5.1.8.1.2.77 Kingdom of Yugoslavia – the South Slavic monarchy under the Karađorđevićs, originally the Kingdom of Serbs, Croats and Slovenes (1918–1941 CE).
+                    5.1.8.1.2.78 Kingdom of Haiti – the northern Haitian monarchy under King Henri Christophe (1811–1820 CE).
+                    5.1.8.1.2.79 Kingdom of Asturias – the early medieval Iberian kingdom succeeding Visigothic rule (c. 718–924 CE).
+                    5.1.8.1.2.80 Kingdom of León – the medieval Iberian kingdom formed from Asturias, centre of Reconquista (c. 910–1230 CE).
+                    5.1.8.1.2.81 Kingdom of Navarre – the Pyrenean monarchy spanning both sides of the western Pyrenees (c. 824–1620 CE).
+                    5.1.8.1.2.82 Kingdom of Croatia – the medieval Balkan monarchy before union with Hungary (c. 925–1102 CE).
+                    5.1.8.1.2.83 Kingdom of Jerusalem – the Crusader state in the Levant established after 1099 CE (1099–1291 CE).
+                    5.1.8.1.2.84 Kingdom of Ireland – the Tudor and Stuart-era Irish monarchy under English crown (1542–1800 CE).
+                    5.1.8.1.2.85 Kingdom of Bohemia – the Central European monarchy within the Holy Roman—and later Habsburg—realm (1198–1918 CE).
+                    5.1.8.1.2.86 Kingdom of Germany – the East Frankish/German monarchy evolving into the Holy Roman Kingdom (843–1806 CE).
+                    5.1.8.1.2.87 Kingdom of Norway (medieval) – the unified Scandinavian kingdom under the Fairhair dynasty (872–1397 CE).
+                    5.1.8.1.2.88 Kingdom of Naples – the southern Italian kingdom under Angevin and Aragonese rule (1282–1816 CE).
+                    5.1.8.1.2.89 Kingdom of Sicily – the Mediterranean kingdom founded by Roger II of Hauteville (1130–1816 CE).
+                    5.1.8.1.2.90 Kingdom of Sardinia – the Savoyard island monarchy that led Italian unification (1720–1861 CE).
+                    5.1.8.1.2.91 Chola Kingdom – a South Indian Hindu monarchy under the Chola dynasty, noted for temple architecture and maritime trade (c. 9th–13th centuries CE).
+                    5.1.8.1.2.92 Hoysala Empire – a Deccan Hindu monarchy known for its stellate temples and cultural syncretism (c. 1026–1343 CE).
+                    5.1.8.1.2.93 Pandyan Kingdom – a South Indian Tamil monarchy famed for pearl fisheries and temple patronage (c. 6th century BCE–17th century CE).
+                    5.1.8.1.2.94 Khmer Empire – a Southeast Asian Hindu-Buddhist monarchy centered at Angkor, noted for monumental temple complexes (c. 802–1431 CE).
+                    5.1.8.1.2.95 Pagan Kingdom – the first Burmese monarchy centered at Pagan, known for thousands of Buddhist stupas (c. 849–1297 CE).
+                    5.1.8.1.2.96 Ayutthaya Kingdom – a Siamese monarchy that controlled central Thailand, noted for diplomatic ties and fortified capitals (c. 1350–1767 CE).
+                    5.1.8.1.2.97 Kingdom of Lan Xang – the Lao “Land of a Million Elephants” monarchy under the Khun Lo dynasty, noted for monasteries and silk trade (c. 1353–1707 CE).
+                    5.1.8.1.2.98 Sukhothai Kingdom – the first Thai state, celebrated for its Buddhist sculpture and the Ramkhamhaeng script (c. 1238–1438 CE).
+                    5.1.8.1.2.99 Champa Kingdom – the Southeast Asian Hindu polity on the central Vietnamese coast, noted for temple towers and maritime commerce (c. 192–1832 CE).
+                    5.1.8.1.2.100 Kingdom of Kongo – a Central African Bantu monarchy on the Congo River, noted for early Christian conversion and provincial administration (c. 1390–1914 CE).
+                    5.1.8.1.2.101 Kingdom of Benin – a West African Edo monarchy in present-day Nigeria, renowned for brass casting and urban walls (c. 1180–1897 CE).
+                    5.1.8.1.2.102 Ashanti Empire – the Akan monarchy in present-day Ghana, famed for gold resources and centralized matrilineal governance (c. 1670–1902 CE).
+                    5.1.8.1.2.103 Kingdom of Dahomey – the Fon monarchy in present-day Benin, known for its army of female warriors and agropastoral economy (c. 1600–1904 CE).
+                    5.1.8.1.2.104 Kingdom of Ndongo – the Mbundu monarchy in present-day Angola, noted for its alliances and resistance to Portuguese expansion (c. 1556–1671 CE).
+                    5.1.8.1.2.105 Kingdom of Mutapa – the Shona monarchy on the Zimbabwe plateau, famed for gold trade and stone architecture (c. 1430–1760 CE).
+                    5.1.8.1.2.106 Kingdom of Buganda – the Bantu monarchy in present-day Uganda, noted for centralized kabaka rule and lake transport networks (c. 14th century–Present).
+                    5.1.8.1.2.107 Kingdom of Great Zimbabwe – the medieval Shona monarchy in southern Africa, noted for its monumental stone city (c. 11th–15th centuries CE).
+                    5.1.8.1.2.108 Oyo Empire – the Yoruba monarchy in present-day Nigeria, known for cavalry forces and tributary structure (c. 1300–1835 CE).
+                    5.1.8.1.2.109 Kingdom of Nepal – a Himalayan monarchy under the Shah dynasty, unifying small principalities (1768–2008 CE)
+                    5.1.8.1.2.110 Kingdom of Afghanistan – a modern Afghan monarchy under the Barakzai dynasty (1926–1973 CE)
+                    5.1.8.1.2.111 Kingdom of Cambodia – the post-colonial Cambodian monarchy under Norodom Sihanouk (1953–1970 CE)
+                    5.1.8.1.2.112 Kingdom of Laos – the Lao constitutional monarchy under the Khun Lo lineage (1947–1975 CE)
+                    5.1.8.1.2.113 Kingdom of Montenegro – Balkan monarchy under the Petrović-Njegoš dynasty (1910–1918 CE)
+                    5.1.8.1.2.114 Kingdom of Albania – Zog I’s Albanian monarchy under the House of Zogu (1928–1939 CE)
+                    5.1.8.1.2.115 Kingdom of Egypt – the Hashemite-led Egyptian monarchy (1922–1953 CE)
+                    5.1.8.1.2.116 Kingdom of Iraq – the Hashemite monarchy in Mesopotamia (1921–1958 CE)
+                    5.1.8.1.2.117 Kingdom of Libya – the Senussi monarchy under Idris I (1951–1969 CE)
+                    5.1.8.1.2.118 Mutawakkilite Kingdom of Yemen – the Zaydi imamate-monarchy in North Yemen (1918–1970 CE)
+                    5.1.8.1.2.119 Kingdom of Tunisia – the Husainid monarchy under Muhammad VIII al-Amin (1956–1957 CE)
+                    5.1.8.1.2.120 Imperial State of Iran – the Pahlavi dynasty’s Persian monarchy (1925–1979 CE)
+                    5.1.8.1.2.121 Bagratid Kingdom of Armenia – the medieval Armenian monarchy under the Bagratuni (885–1045 CE)
+                    5.1.8.1.2.122 Kingdom of Georgia – the medieval and early modern Georgian monarchy (1008–1490 CE)
+                    5.1.8.1.2.123 Medieval Kingdom of Serbia – the Nemanjić dynasty’s Serbian monarchy (c. 1217–1346 CE)
+                    5.1.8.1.2.124 Kingdom of Makuria – the medieval Nubian Christian monarchy (c. 450–1500 CE)
+                    5.1.8.1.2.125 Kingdom of Alodia – the medieval Nubian monarchy in central Sudan (c. 6th–16th centuries CE)
+                    5.1.8.1.2.126 Kingdom of Jaffna – the Tamil monarchy in northern Sri Lanka (1215–1624 CE)
+                    5.1.8.1.2.127 Kingdom of Manipur – the Meitei monarchy in northeastern India (c. 1110–1891 CE)
+                    5.1.8.1.2.128 Kingdom of Kush – the ancient Kushite monarchy of Nubia (c. 1070 BCE–350 CE)
+                    5.1.8.1.2.139 Kingdom of the Suebi – the Germanic monarchy in northwestern Iberia (409–585 CE)
+                    5.1.8.1.2.130 Second Kingdom of Burgundy – the West Frankish monarchy in southeastern Gaul (933–1378 CE)
+                    5.1.8.1.2.131 Kingdom of Urartu – the Iron Age monarchy in the Armenian highlands (c. 860 BCE–590 BCE)
+                    5.1.8.1.2.132 Kingdom of Cappadocia – the Hellenistic monarchy in central Anatolia (c. 320 BCE–17 CE)
+                    5.1.8.1.2.133 Kingdom of Bithynia – the Hellenistic monarchy in northwestern Anatolia (c. 297 BCE–74 BCE)
+                    5.1.8.1.2.134 Kingdom of Pontus – the Hellenistic monarchy in northern Anatolia (c. 281 BCE–62 BCE)
+                    5.1.8.1.2.135 Kingdom of Epirus – the Hellenistic monarchy in northwestern Greece (c. 330 BCE–167 BCE)
+                    5.1.8.1.2.136 Kingdom of Macedonia – the ancient Argead and Antigonid monarchy in northern Greece (c. 808 BCE–168 BCE)
+                    5.1.8.1.2.137 Odrysian Kingdom of Thrace – the ancient Thracian monarchy (c. 480 BCE–46 BCE)
+                    5.1.8.1.2.138 Kingdom of Saba – the ancient South Arabian monarchy in modern Yemen (c. 1000 BCE–275 CE)
+                    5.1.8.1.2.139 Kingdom of Nri – the Igbo monarchy in present-day Nigeria (c. 948 CE–1911 CE)
+                    5.1.8.1.2.140 Kingdom of Loango – the Bantu monarchy on the Atlantic coast of Central Africa (c. 15th–19th centuries CE)
+                    5.1.8.1.2.141 Kingdom of Matamba – the Ndongo–Matamba monarchy in central Angola (c. 1631 CE–1914 CE)
+                    5.1.8.1.2.142 Kingdom of Luba – the Luba monarchy in south-central Africa (c. 1585 CE–1889 CE)
+                    5.1.8.1.2.143 Bunyoro-Kitara Kingdom – the Bunyoro monarchy in present-day Uganda (c. 14th century CE–1894 CE)
+                    5.1.8.1.2.144 Kingdom of Rwanda – the Ruanda monarchy in the African Great Lakes (c. 11th century CE–1961 CE)
+                    5.1.8.1.2.145 Kingdom of Burundi – the Burundian monarchy in the African Great Lakes (c. 1680 CE–1966 CE)
+                    5.1.8.1.2.146 Kingdom of Tahiti – the Polynesian monarchy under the Pōmare dynasty (1788 CE–1880 CE)
+                    5.1.8.1.2.147 Sultanate of Malacca – the Malay Islamic monarchy on the Malay Peninsula (c. 1400 CE–1511 CE)
+                    5.1.8.1.2.148 Ayutthaya Kingdom – the Siamese kingdom centered at Ayutthaya, renowned for its maritime trade, multicultural court, and diplomatic networks across mainland Southeast Asia (1351–1767 CE).
+                    5.1.8.1.2.149 Thonburi Kingdom – the reunified Thai state under King Taksin, based at Thonburi, noted for restoring Siamese unity after Ayutthaya’s fall (1768–1782 CE).
+                    5.1.8.1.2.150 Rattanakosin Kingdom – the Chakri-dynasty Thai monarchy founded at Bangkok, commonly called the “Kingdom of Siam,” known for centralizing reforms and early modernisation (1782–1932; 1945–1949 CE).
+                5.1.8.1.3 Empire Society – a multi-regional Nation-State Society ruled by an emperor or equivalent, often over diverse peoples.
+                    5.1.8.1.3.1 Akkadian Empire – the first Mesopotamian imperial state founded by Sargon, unifying multiple city-states under centralized monarchy (c. 2334–2154 BCE).
+                    5.1.8.1.3.2 Third Dynasty of Ur – a Sumerian imperial state under Ur-Nammu and Shulgi, renowned for codified law, state granaries, and extensive bureaucracy (c. 2112–2004 BCE).
+                    5.1.8.1.3.3 Old Babylonian Empire – the Mesopotamian kingdom centered at Babylon under Hammurabi, noted for a codified legal system and territorial expansion (c. 1894–1595 BCE).
+                    5.1.8.1.3.4 Old Kingdom of the Hittites – the early Anatolian imperial polity at Hattusa, noted for cuneiform archives and legal treaties (c. 1680–1500 BCE).
+                    5.1.8.1.3.5 Middle Assyrian Empire – the state that expanded Assur’s city-state into an empire under Ashur-uballit I and successors (c. 1365–1050 BCE).
+                    5.1.8.1.3.6 New Kingdom of Egypt – the Egyptian imperial state under pharaohs such as Hatshepsut and Ramses II, noted for military campaigns and monumental temples (c. 1550–1070 BCE).
+                    5.1.8.1.3.7 Neo-Assyrian Empire – the Assyrian state achieving unprecedented territorial expansion and administrative centralization (c. 911–609 BCE).
+                    5.1.8.1.3.8 Neo-Babylonian Empire – the Chaldean dynasty that recaptured Babylon, famous for Nebuchadnezzar II’s building projects and the Hanging Gardens (c. 626–539 BCE).
+                    5.1.8.1.3.9 Median Empire – the Iranian plateau state that formed the first Iranian empire before Achaemenid unification (c. 678–549 BCE).
+                    5.1.8.1.3.10 Achaemenid Empire – the Persian imperial state founded by Cyrus II, noted for efficient administration and cultural tolerance (c. 550–330 BCE).
+                    5.1.8.1.3.11 Parthian Empire – the Iranian state that overthrew Seleucid rule, known for feudal nobility and conflicts with Rome (c. 247 BCE–224 CE).
+                    5.1.8.1.3.12 Sasanian Empire – the Persian imperial state succeeding Parthia, noted for Zoroastrian religion, heavy cavalry, and rivalry with Rome/Byzantium (c. 224–651 CE).
+                    5.1.8.1.3.13 Maurya Empire – the first pan-Indian empire under Chandragupta and Ashoka, famous for political unity and Buddhist patronage (c. 322–185 BCE).
+                    5.1.8.1.3.14 Gupta Empire – an Indian imperial state governing northern India, renowned for its classical age of arts, sciences, and centralized administration (c. 320–550 CE).
+                    5.1.8.1.3.15 Seleucid Empire – the Hellenistic state established by Seleucus I, covering much of the Near East after Alexander’s conquests (c. 312–63 BCE).
+                    5.1.8.1.3.16 Ptolemaic Kingdom – the Hellenistic Egyptian state founded by Ptolemy I, noted for the Library of Alexandria and dynastic rule (c. 305–30 BCE).
+                    5.1.8.1.3.17 Roman Empire – the Mediterranean-spanning empire ruled by emperors, maintaining Roman law, infrastructure, and military control (c. 27 BCE–1453 CE).
+                        5.1.8.1.3.17.1 Western Roman Empire – the western half of the Roman Empire, sustaining imperial authority over Italy and Gaul until its collapse (c. 395–476 CE).
+                        5.1.8.1.3.17.2 Eastern Roman Empire – the eastern continuation of Roman sovereignty seated at Constantinople, preserving Roman administration and Orthodox Christianity (c. 395–1453 CE).
+                        5.1.8.1.3.17.3 Holy Roman Empire – a transnational medieval empire in Central Europe under an elected emperor, blending Germanic and Roman traditions (c. 962–1806 CE).
+                    5.1.8.1.3.18 Seljuk Empire – a Turko-Persian medieval empire controlling Iran, Mesopotamia, and Anatolia under Seljuk sultans (c. 1037–1194 CE).
+                    5.1.8.1.3.19 Mongol Empire – the Eurasian empire founded by Genghis Khan, uniting the Mongol tribes and conquering vast territories across Asia and Europe (c. 1206–1368 CE).
+                    5.1.8.1.3.20 Mali Empire – the West African empire famed for its wealth, trans-Saharan trade, and the city of Timbuktu (c. 1235–1600 CE).
+                    5.1.8.1.3.21 Ottoman Empire – the Turkish imperial state that expanded into Southeastern Europe, the Middle East, and North Africa (c. 1299–1922 CE).
+                    5.1.8.1.3.22 Timurid Empire – the Central Asian and Iranian empire established by Timur, known for its patronage of art and architecture (c. 1370–1507 CE).
+                    5.1.8.1.3.23 Aztec Empire (Triple Alliance) – the Triple Alliance of central Mexican city-states, renowned for its tribute system and Tenochtitlan capital (c. 1428–1521 CE).
+                    5.1.8.1.3.24 Inca Empire (Tawantinsuyu) – the Andean empire ruling western South America, notable for its road network and administrative efficiency (c. 1438–1533 CE).
+                    5.1.8.1.3.25 Songhai Empire – the West African empire succeeding Mali, controlling the Niger River region and trans-Saharan trade (c. 1464–1591 CE).
+                    5.1.8.1.3.26 Safavid Empire – the Iranian dynasty establishing Shi’a Islam as the state religion and unifying Persia (c. 1501–1736 CE).
+                    5.1.8.1.3.27 Tsardom of Russia – the Muscovite state adopting the title of tsar, centralizing power and expanding eastward (c. 1547–1721 CE).
+                    5.1.8.1.3.28 Mughal Empire – the Muslim imperial state on the Indian subcontinent, famed for its administrative sophistication and monumental architecture (c. 1526–1857 CE).
+                    5.1.8.1.3.29 Spanish Empire – the Habsburg imperial realm spanning Europe, the Americas, Africa, and Asia, pioneering global colonization (c. 1492–1898 CE).
+                    5.1.8.1.3.30 British Empire – the global maritime empire under the Stuart and Hanoverian crowns, extending sovereignty across continents (c. 1600–1997 CE).
+                    5.1.8.1.3.31 Qing Empire – the Manchu-led imperial state in China, noted for territorial consolidation and the civil service system (c. 1644–1912 CE).
+                    5.1.8.1.3.32 Russian Empire – the imperial polity centered on St. Petersburg, expanding across Eurasia under Romanov tsars (c. 1721–1917 CE).
+                    5.1.8.1.3.33 First French Empire – the French imperial state under Napoleon I (1804–1815 CE).
+                    5.1.8.1.3.34 Austrian Empire – the Habsburg imperial state succeeding the Holy Roman Empire (1804–1867 CE).
+                    5.1.8.1.3.35 Austro-Hungarian Empire – the dual monarchy formed by Habsburg lands (1867–1918 CE).
+                    5.1.8.1.3.36 German Empire – the Prussian-led federal empire under the Kaisers (1871–1918 CE).
+                    5.1.8.1.3.37 Empire of Japan – the Meiji-period imperial state industrializing and expanding in Asia (1868–1947 CE).
+                    5.1.8.1.3.38 Ghana Empire – the early West African state controlling trans-Saharan gold and salt trade through a centralized monarchy (c. 300–1200 CE).
+                    5.1.8.1.3.39 Sui Dynasty – the Chinese dynasty that reunified China and initiated major canal and legal reforms (581–618 CE).
+                    5.1.8.1.3.40 Tang Dynasty – the Chinese dynasty presiding over a golden age of cosmopolitan culture, government innovation, and territorial expansion (618–907 CE).
+                    5.1.8.1.3.41 Qin Dynasty – the first imperial dynasty of China under Qin Shi Huang, noted for unification and standardization (221–206 BCE).
+                    5.1.8.1.3.42 Han Dynasty – the Chinese dynasty succeeding Qin, noted for consolidation, Silk Road trade, and Confucian bureaucracy (202 BCE–220 CE).
+                    5.1.8.1.3.43 Song Dynasty – the Chinese dynasty known for economic transformation, paper currency, and scholar-official culture (960–1279 CE).
+                    5.1.8.1.3.44 Yuan Dynasty – the Mongol-led Chinese imperial state founded by Kublai Khan (1271–1368 CE).
+                    5.1.8.1.3.45 Ming Dynasty – the Chinese dynasty noted for maritime expeditions, cultural renaissance, and Great Wall restoration (1368–1644 CE).
+                    5.1.8.1.3.46 Empire of Brazil – the South American monarchy under Emperors Pedro I and II, noted for constitutional monarchy and early abolition of slavery (1822–1889 CE).
+                    5.1.8.1.3.47 First Mexican Empire – the post-independence monarchy under Emperor Agustín de Iturbide (1821–1823 CE).
+                    5.1.8.1.3.48 Second Mexican Empire – the Habsburg-backed monarchy under Emperor Maximilian I (1864–1867 CE).
+                    5.1.8.1.3.49 Haitian Empire – the post-revolutionary empire under Emperor Jean-Jacques Dessalines (1804–1806 CE).
+                    5.1.8.1.3.50 Sikh Empire – the northwestern Indian empire under Maharaja Ranjit Singh, unifying the Punjab (1799–1849 CE).
+                    5.1.8.1.3.51 Kushan Empire – the Central Asian empire controlling Bactria and northern India, facilitating Silk Road trade (c. 30–375 CE).
+                    5.1.8.1.3.52 Second French Empire – the Napoleonic imperial state under Napoleon III (1852–1870 CE).
+                    5.1.8.1.3.53 Wari – Andean polity with administrative centres, road networks, and imperial reach across highlands and coast (c. 600–1100 CE)
+                    5.1.8.1.3.54 Chimú – coastal Peruvian maritime state based at Chan Chan, known for vast adobe metropolis and irrigation (c. 900–1470 CE)
+                    5.1.8.1.3.55 Khmer Empire – the Southeast Asian polity centered at Angkor, noted for its monumental temple-cities (c. 802–1431 CE).
+                    5.1.8.1.3.56 Srivijaya Empire – the maritime Malay empire based on Sumatra, controlling sea-lane trade in Southeast Asia (c. 650–1377 CE).
+                    5.1.8.1.3.57 Majapahit Empire – the Javanese thalassocracy that succeeded Majapahit, famous for its naval power and cultural influence (c. 1293–1527 CE).
+                    5.1.8.1.3.58 Vijayanagara Empire – the South Indian Hindu empire renowned for its capital’s urban planning and patronage of arts (c. 1336–1646 CE).
+                    5.1.8.1.3.59 Portuguese Empire – the global maritime empire pioneering European colonization and trade (c. 1415–1999 CE).
+                    5.1.8.1.3.60 Dutch Empire – the overseas colonial empire under the Dutch Republic and later the Kingdom of the Netherlands (c. 1581–1975 CE).
+                    5.1.8.1.3.61 Swedish Empire – the Baltic-power empire under the Vasa and later houses, noted for its military and administrative reforms (c. 1611–1721 CE).
+                    5.1.8.1.3.62 Carolingian Empire – the empire founded by Charlemagne, uniting much of Western and Central Europe (c. 800–843 CE).
+                    5.1.8.1.3.63 Kanem-Bornu Empire – the Central African empire around Lake Chad, known for its long-lasting Sahelian dynasty (c. 700–1380 CE).
+                    5.1.8.1.3.64 Ethiopian Empire – the Abyssinian monarchy claiming Solomonic descent, spanning medieval to modern eras (c. 1137–1974 CE).
+                    5.1.8.1.3.65 Golden Horde – the western khanate of the Mongol Empire controlling the Pontic-Caspian steppe (c. 1243–1502 CE).
+                5.1.8.1.4 Theocratic Society – a Nation-State Society in which sovereignty and civic identity are vested in religious authority and institutions, often with a spiritual leader as head of state.
+                    5.1.8.1.4.1 Caliphate Society – an Islamic Nation-State combining religious and political authority under a caliph.
+                        5.1.8.1.4.1.1 Rashidun Caliphate – the first Islamic state uniting Arabia and expanding into the Levant and Persia under the four caliphs (632–661 CE).
+                        5.1.8.1.4.1.2 Umayyad Caliphate – the dynastic caliphate centred on Damascus, extending Muslim rule from Iberia to India (661–750 CE).
+                        5.1.8.1.4.1.3 Abbasid Caliphate – the Baghdad-based Islamic empire overseeing a golden age of learning, trade, and culture (750–1258 CE).
+                        5.1.8.1.4.1.4 Fatimid Caliphate – an Isma‘ili Shia caliphate centered in Cairo, ruling North Africa and the Levant (c. 909–1171 CE).
+                        5.1.8.1.4.1.5 Caliphate of Córdoba – a powerful Umayyad caliphate in Al-Andalus, a rival to the Abbasids and a center of Islamic culture in Europe (929–1031 CE).
+                        5.1.8.1.4.1.6 Almohad Caliphate – a Moroccan Berber Muslim empire that extended its rule over much of the Maghreb and Al-Andalus (c. 1121–1269 CE).
+                        5.1.8.1.4.1.7 Ottoman Caliphate – the Ottoman Empire’s assumption of caliphal authority after conquering the Mamluk Sultanate, merging sultanate and caliphate roles (1517–1924 CE).
+                        5.1.8.1.4.1.8 Sokoto Caliphate – an expansive Islamic state in West Africa, founded by Usman dan Fodio, ruling significant portions of modern Nigeria and neighboring countries (1804–1903 CE).
+                        5.1.8.1.4.1.9 Abbasid Caliphate (Cairo) – the Mamluk-protected Abbasid line in Cairo (1261–1517 CE)
+                    5.1.8.1.4.2 Islamic Theocratic – Muslim states ruled by religious jurists or imams rather than a secular monarch
+                        5.1.8.1.4.2.1 Islamic Republic of Iran – a modern theocratic republic governed by a Supreme Leader and religious councils, with law based on Islamic principles (1979–Present).
+                        5.1.8.1.4.2.2 Islamic Emirate of Afghanistan – a de facto theocratic state under the Taliban, governing strictly by an interpretation of Islamic law (1996–2001; 2021–Present).
+                        5.1.8.1.4.2.3 Nizari Ismāʿīlī State – the “Assassin” strongholds under the Ḥasanī imams (Alamut period; 1090–1256 CE)
+                        5.1.8.1.4.2.4 Imamate of Futa Toro – the Fulɓe theocratic state on the Senegal River (1649–1776 CE)
+                        5.1.8.1.4.2.5 Imamate of Futa Jallon – the Fulɓe theocracy in present-day Guinea (1727–1896 CE)
+                        5.1.8.1.4.2.6 Sharifate of Mecca – the Hashemite custodianship and theocratic rule in the Hijaz (968–1925 CE).
+                        5.1.8.1.4.2.7 Emirate of Diriyah – the First Saudi State under Muhammad ibn ‘Abd al-Wahhāb and the Al Saud (1744–1818 CE).
+                        5.1.8.1.4.2.8 Emirate of Nejd – the Second Saudi State under the Al Saud (1824–1891 CE).
+                    5.1.8.1.4.3 Christian Theocratic – states in which ecclesiastical authorities hold sovereign power
+                        5.1.8.1.4.3.1 Münster – the Anabaptist theocracy in Westphalia, Germany (1534–1535 CE).
+                        5.1.8.1.4.3.2 Vatican City State – an ecclesiastical absolute monarchy under the Holy See (1929–Present).
+                        5.1.8.1.4.3.3 Monastic State of the Teutonic Knights – the theocratic military order in Prussia and the Baltic (1226–1525 CE).
+                    5.1.8.1.4.4 Buddhist Theocratic – states in which Buddhist clergy or incarnate lamas hold supreme temporal authority
+                        5.1.8.1.4.4.1 Theocratic Tibet – the Buddhist state in Central Asia governed by the Dalai Lamas as both spiritual and temporal rulers (1642–1951 CE).
+                        5.1.8.1.4.4.2 Bogd Khanate of Mongolia – a Buddhist theocratic monarchy in Mongolia led by the Bogd Khan (1911–1919 CE).
+                5.1.8.1.5 Republic Society – a Nation-State Society in which sovereignty and civic identity are vested in representative institutions of citizens.
+                    5.1.8.1.5.1 Carthaginian Republic – the Phoenician-derived state at Carthage, known for maritime trade and oligarchic governance (c. 814–146 BCE).
+                    5.1.8.1.5.2 Roman Republic – the Roman state governed by elected magistrates and Senate, expanding throughout Italy and the Mediterranean (c. 509–27 BCE).
+                    5.1.8.1.5.3 United States of America – the federal republic established by the Thirteen Colonies, with a written constitution and elected government (1776–Present).
+                    5.1.8.1.5.4 Weimar Republic – the German republic between the World Wars (1918–1933 CE).
+                    5.1.8.1.5.5 Federal Republic of Germany – the West German and post-reunification federal state (1949–Present).
+                    5.1.8.1.5.6 Italian Republic – the republican government established after the 1946 referendum (1946–Present).
+                    5.1.8.1.5.7 Republic of Türkiye – the secular republic founded by Atatürk (1923–Present).
+                    5.1.8.1.5.8 Republic of India – the democratic republic established in 1950 (1950–Present).
+                    5.1.8.1.5.9 Federative Republic of Brazil – the federal republic founded in 1889 (1889–Present).
+                    5.1.8.1.5.10 Argentine Republic – the federal republic established in 1861 (1861–Present).
+                    5.1.8.1.5.11 United Mexican States – the republic established post-independence, enduring through multiple restorations (1824–Present).
+                    5.1.8.1.5.12 Republic of Chile – the unitary presidential republic established after independence (1818–Present).
+                    5.1.8.1.5.13 Islamic Republic of Afghanistan – an Islamic republic established in 2004 (2004–2021; current de jure status disputed).
+                    5.1.8.1.5.14 Republic of Albania – a parliamentary republic (1912; current form 1991–Present).
+                    5.1.8.1.5.15 People’s Democratic Republic of Algeria – a semi-presidential republic (1962–Present).
+                    5.1.8.1.5.16 Republic of Armenia – a parliamentary republic (1991–Present).
+                    5.1.8.1.5.17 Republic of Austria – a federal parliamentary republic (1918; current form 1945–Present).
+                    5.1.8.1.5.18 Republic of Azerbaijan – a semi-presidential republic (1991–Present).
+                    5.1.8.1.5.19 Plurinational State of Bolivia – a presidential republic (1825; current constitution 2009–Present).
+                    5.1.8.1.5.20 Bosnia and Herzegovina – a parliamentary republic (1992–Present).
+                    5.1.8.1.5.21 Republic of Botswana – a parliamentary republic (1966–Present).
+                    5.1.8.1.5.22 Republic of Bulgaria – a parliamentary republic (1946; current form 1991–Present).
+                    5.1.8.1.5.23 Burkina Faso – a semi-presidential republic (1960–Present).
+                    5.1.8.1.5.24 Republic of Burundi – a presidential republic (1962–Present).
+                    5.1.8.1.5.25 Republic of Cabo Verde – a semi-presidential republic (1975–Present).
+                    5.1.8.1.5.26 Republic of Cameroon – a presidential republic (1960–Present).
+                    5.1.8.1.5.27 Central African Republic – a presidential republic (1960–Present).
+                    5.1.8.1.5.28 Republic of Chad – a presidential republic (1960–Present).
+                    5.1.8.1.5.29 Republic of Colombia – a presidential republic (1810; current constitution 1991–Present).
+                    5.1.8.1.5.30 Union of the Comoros – a federal presidential republic (1975–Present).
+                    5.1.8.1.5.31 Republic of the Congo – a presidential republic (1960–Present).
+                    5.1.8.1.5.32 Republic of Costa Rica – a presidential republic (1821; current constitution 1949–Present).
+                    5.1.8.1.5.33 Republic of Côte d’Ivoire – a presidential republic (1960–Present).
+                    5.1.8.1.5.34 Republic of Croatia – a semi-presidential republic (1991–Present).
+                    5.1.8.1.5.35 Republic of Cuba – a socialist republic (1902; current system 1959–Present).
+                    5.1.8.1.5.36 Republic of Cyprus – a presidential republic (1960–Present).
+                    5.1.8.1.5.37 Czech Republic – a parliamentary republic (1993–Present).
+                    5.1.8.1.5.38 Democratic Republic of the Congo – a semi-presidential republic (1960; current form 1997–Present).
+                    5.1.8.1.5.39 Democratic People’s Republic of Korea – a Juche-based socialist republic (1948–Present).
+                    5.1.8.1.5.40 Republic of Djibouti – a presidential republic (1977–Present).
+                    5.1.8.1.5.41 Commonwealth of Dominica – a parliamentary republic (1978–Present).
+                    5.1.8.1.5.42 Dominican Republic – a presidential republic (1844; current constitution 2015–Present).
+                    5.1.8.1.5.43 Republic of Ecuador – a presidential republic (1830; current constitution 2008–Present).
+                    5.1.8.1.5.44 Republic of El Salvador – a presidential republic (1841; current constitution 1983–Present).
+                    5.1.8.1.5.45 Republic of Equatorial Guinea – a presidential republic (1968–Present).
+                    5.1.8.1.5.46 State of Eritrea – a provisional government, de facto presidential republic (1993–Present).
+                    5.1.8.1.5.47 Republic of Estonia – a parliamentary republic (1918; current form 1991–Present).
+                    5.1.8.1.5.48 Federal Democratic Republic of Ethiopia – a federal parliamentary republic (1995–Present).
+                    5.1.8.1.5.49 Republic of Fiji – a parliamentary republic (1970; current form 1987–Present).
+                    5.1.8.1.5.50 Republic of Finland – a semi-presidential republic (1917–Present).
+                    5.1.8.1.5.51 Gabonese Republic – a presidential republic (1960–Present).
+                    5.1.8.1.5.52 Republic of The Gambia – a presidential republic (1965; current form 1970–Present).
+                    5.1.8.1.5.53 Republic of Ghana – a presidential republic (1957; current form 1960–Present).
+                    5.1.8.1.5.54 Hellenic Republic – a parliamentary republic (1821; current form 1974–Present).
+                    5.1.8.1.5.55 Republic of Guatemala – a presidential republic (1821; current constitution 1985–Present).
+                    5.1.8.1.5.56 Republic of Guinea – a presidential republic (1958–Present).
+                    5.1.8.1.5.57 Republic of Guinea-Bissau – a semi-presidential republic (1973–Present).
+                    5.1.8.1.5.58 Co-operative Republic of Guyana – a semi-presidential republic (1966; current form 1970–Present).
+                    5.1.8.1.5.59 Republic of Haiti – a semi-presidential republic (1804; current constitution 1987–Present).
+                    5.1.8.1.5.60 Republic of Honduras – a presidential republic (1821; current constitution 1982–Present).
+                    5.1.8.1.5.61 Republic of Hungary – a parliamentary republic (1989–Present).
+                    5.1.8.1.5.62 Republic of Iceland – a parliamentary republic (1944–Present).
+                    5.1.8.1.5.63 Republic of Indonesia – a presidential republic (1945–Present).
+                    5.1.8.1.5.64 Republic of Iraq – a parliamentary republic (1958; current constitution 2005–Present).
+                    5.1.8.1.5.65 Republic of Ireland – a parliamentary republic (1937–Present).
+                    5.1.8.1.5.66 State of Israel – a parliamentary republic (1948–Present).
+                    5.1.8.1.5.67 Republic of Kazakhstan – a semi-presidential republic (1991–Present).
+                    5.1.8.1.5.68 Republic of Kenya – a presidential republic (1963; current constitution 2010–Present).
+                    5.1.8.1.5.69 Republic of Kiribati – a presidential republic (1979–Present).
+                    5.1.8.1.5.70 Republic of Korea – a presidential republic (1948; current constitution 1987–Present).
+                    5.1.8.1.5.71 Kyrgyz Republic – a parliamentary republic (1991–Present).
+                    5.1.8.1.5.72 Lao People’s Democratic Republic – a single-party socialist republic (1975–Present).
+                    5.1.8.1.5.73 Republic of Latvia – a parliamentary republic (1918; current form 1991–Present).
+                    5.1.8.1.5.74 Lebanese Republic – a parliamentary republic (1943–Present).
+                    5.1.8.1.5.75 Republic of Liberia – a presidential republic (1847–Present).
+                    5.1.8.1.5.76 State of Libya – a provisional government, de jure parliamentary republic (2011–Present).
+                    5.1.8.1.5.77 Republic of Lithuania – a semi-presidential republic (1991–Present).
+                    5.1.8.1.5.78 Republic of Madagascar – a semi-presidential republic (1960; current constitution 2010–Present).
+                    5.1.8.1.5.79 Republic of Malawi – a presidential republic (1964; current form 1994–Present).
+                    5.1.8.1.5.80 Republic of Maldives – a presidential republic (1965; current constitution 2008–Present).
+                    5.1.8.1.5.81 Republic of Mali – a semi-presidential republic (1960–Present).
+                    5.1.8.1.5.82 Republic of Malta – a parliamentary republic (1964; current form 1974–Present).
+                    5.1.8.1.5.83 Republic of the Marshall Islands – a presidential republic (1986–Present).
+                    5.1.8.1.5.84 Islamic Republic of Mauritania – a presidential republic (1960; current constitution 1991–Present).
+                    5.1.8.1.5.85 Republic of Mauritius – a parliamentary republic (1968; current form 1992–Present).
+                    5.1.8.1.5.86 Federated States of Micronesia – a federal presidential republic (1986–Present).
+                    5.1.8.1.5.87 Republic of Moldova – a parliamentary republic (1991–Present).
+                    5.1.8.1.5.88 Mongolia – a semi-presidential republic (1992–Present).
+                    5.1.8.1.5.89 Montenegro – a parliamentary republic (2006–Present).
+                    5.1.8.1.5.90 Republic of Mozambique – a presidential republic (1975–Present).
+                    5.1.8.1.5.91 Republic of the Union of Myanmar – a military junta, de jure parliamentary republic (1948; current constitution 2008).
+                    5.1.8.1.5.92 Republic of Namibia – a semi-presidential republic (1990–Present).
+                    5.1.8.1.5.93 Republic of Nauru – a parliamentary republic (1968–Present).
+                    5.1.8.1.5.94 Federal Democratic Republic of Nepal – a federal parliamentary republic (2008–Present).
+                    5.1.8.1.5.95 Republic of Nicaragua – a presidential republic (1838; current constitution 1987–Present).
+                    5.1.8.1.5.96 Republic of Niger – a semi-presidential republic (1960–Present).
+                    5.1.8.1.5.97 Federal Republic of Nigeria – a presidential republic (1960; current form 1999–Present).
+                    5.1.8.1.5.98 Republic of North Macedonia – a parliamentary republic (1991–Present).
+                    5.1.8.1.5.99 Republic of Palau – a presidential republic (1994–Present).
+                    5.1.8.1.5.100 State of Palestine – a semi-presidential republic (1988; observer state).
+                    5.1.8.1.5.101 Republic of Panama – a presidential republic (1903; current constitution 1972–Present).
+                    5.1.8.1.5.102 Republic of Paraguay – a presidential republic (1811; current constitution 1992–Present).
+                    5.1.8.1.5.103 Republic of Peru – a presidential republic (1821; current constitution 1993–Present).
+                    5.1.8.1.5.104 Republic of the Philippines – a presidential republic (1899; current constitution 1987–Present).
+                    5.1.8.1.5.105 Republic of Poland – a parliamentary republic (1918; current constitution 1997–Present).
+                    5.1.8.1.5.106 Portuguese Republic – a semi-presidential republic (1910; current constitution 1976–Present).
+                    5.1.8.1.5.107 Russian Federation – a semi-presidential republic (1991–Present).
+                    5.1.8.1.5.108 Republic of Rwanda – a presidential republic (1962; current constitution 2003–Present).
+                    5.1.8.1.5.109 Independent State of Samoa – a parliamentary republic (1962; became republic 2007–Present).
+                    5.1.8.1.5.110 Republic of San Marino – a parliamentary republic (301 CE; current constitution 1600–Present).
+                    5.1.8.1.5.111 Democratic Republic of São Tomé and Príncipe – a semi-presidential republic (1975–Present).
+                    5.1.8.1.5.112 Republic of Senegal – a presidential republic (1960–Present).
+                    5.1.8.1.5.113 Republic of Serbia – a parliamentary republic (2006–Present).
+                    5.1.8.1.5.114 Republic of Seychelles – a presidential republic (1976–Present).
+                    5.1.8.1.5.115 Republic of Sierra Leone – a presidential republic (1961; current constitution 1991–Present).
+                    5.1.8.1.5.116 Republic of Singapore – a parliamentary republic (1965–Present).
+                    5.1.8.1.5.117 Slovak Republic – a parliamentary republic (1993–Present).
+                    5.1.8.1.5.118 Republic of Slovenia – a parliamentary republic (1991–Present).
+                    5.1.8.1.5.119 Federal Republic of Somalia – a federal parliamentary republic (1960; current constitution 2012–Present).
+                    5.1.8.1.5.120 Republic of South Africa – a parliamentary republic with an executive president (1961–Present).
+                    5.1.8.1.5.121 Republic of South Sudan – a presidential republic (2011–Present).
+                    5.1.8.1.5.122 Democratic Socialist Republic of Sri Lanka – a semi-presidential republic (1948; current form 1972–Present).
+                    5.1.8.1.5.123 Republic of the Sudan – a transitional government (1956; current form 2019–Present).
+                    5.1.8.1.5.124 Republic of Tajikistan – a presidential republic (1991–Present).
+                    5.1.8.1.5.125 United Republic of Tanzania – a presidential republic (1964–Present).
+                    5.1.8.1.5.126 Democratic Republic of Timor-Leste – a semi-presidential republic (2002–Present).
+                    5.1.8.1.5.127 Togolese Republic – a semi-presidential republic (1960–Present).
+                    5.1.8.1.5.128 Republic of Trinidad and Tobago – a parliamentary republic (1962; current form 1976–Present).
+                    5.1.8.1.5.129 Republic of Tunisia – a semi-presidential republic (1956; current constitution 2022–Present).
+                    5.1.8.1.5.130 Turkmenistan – a presidential republic (1991–Present).
+                    5.1.8.1.5.131 Republic of Uganda – a presidential republic (1962; current constitution 1995–Present).
+                    5.1.8.1.5.132 Ukraine – a semi-presidential republic (1991–Present).
+                    5.1.8.1.5.133 Oriental Republic of Uruguay – a presidential republic (1828; current constitution 1967–Present).
+                    5.1.8.1.5.134 Republic of Uzbekistan – a presidential republic (1991–Present).
+                    5.1.8.1.5.135 Bolivarian Republic of Venezuela – a federal presidential republic (1811; current constitution 1999–Present).
+                    5.1.8.1.5.136 Socialist Republic of Vietnam – a single-party socialist republic (1945; reunification 1976–Present).
+                    5.1.8.1.5.137 Republic of Zambia – a presidential republic (1964–Present).
+                    5.1.8.1.5.138 Republic of Zimbabwe – a semi-presidential republic (1980–Present).
+                    5.1.8.1.5.139 Barbados – a parliamentary republic (2021–Present).
+                    5.1.8.1.5.140 Union of Soviet Socialist Republics – a federal socialist republic (1922–1991 CE).
+                    5.1.8.1.5.141 Islamic Republic of Pakistan – a federal parliamentary republic (1956–Present).
+                    5.1.8.1.5.142 Republic of Vanuatu – a parliamentary republic (1980–Present).
+                    5.1.8.1.5.143 Republic of Angola – a presidential republic (1992–Present).
+                    5.1.8.1.5.144 Republic of Benin – a presidential republic (1990–Present).
+                    5.1.8.1.5.145 Swiss Confederation – a federal republic (1848–Present).
+                    5.1.8.1.5.146 French Republic (First Republic) – the revolutionary republic preceding Napoleon’s empire (1792–1804 CE).
+                    5.1.8.1.5.147 French Republic (Second Republic) – the republican regime after the 1848 Revolution (1848–1852 CE).
+                    5.1.8.1.5.148 French Republic (Third Republic) – the republican government spanning the late 19th and early 20th centuries (1870–1940 CE).
+                    5.1.8.1.5.149 French Republic (Fourth Republic) – the post-WWII republican system under the 1946 constitution (1946–1958 CE).
+                    5.1.8.1.5.150 French Republic (Fifth Republic) – the current republican system established in 1958 (1958–Present).
+                    5.1.8.1.5.151 People’s Republic of China – the socialist republic founded in 1949 (1949–Present).
+                    5.1.8.1.5.152 People’s Democratic Republic of Bangladesh – a parliamentary republic (1971–Present).
+                    5.1.8.1.5.153 People’s Republic of Angola – a socialist republic (1975–1992).
+                    5.1.8.1.5.154 People’s Republic of Benin – a socialist republic (1975–1990).
+                    5.1.8.1.5.155 Republic of the Seven United Netherlands – a confederation governed by the States General, leading 17th-century trade and science (c. 1581–1795 CE).
+                    5.1.8.1.5.156 Old Swiss Confederacy – the alliance of Alpine cantons with decentralized governance and direct democratic traditions (c. 1648–1798 CE).
+                    5.1.8.1.5.157 Confederate States of America – the secessionist confederation of Southern U.S. states (1861–1865 CE).
+                    5.1.8.1.5.158 Most Serene Republic of Venice – a maritime republic governed by an elected doge and aristocratic council, dominating Adriatic trade (c. 697–1797 CE).
+                    5.1.8.1.5.159 Republic of Florence – the Tuscan city-state republic governed by Medici and guild oligarchies, a cradle of Renaissance culture (c. 1200–1532 CE).
+                    5.1.8.1.5.160 Most Serene Republic of Genoa – the maritime republic centered in Genoa, a major Mediterranean trading power under elected doges (c. 1005–1797 CE).
+                    5.1.8.1.5.161 Arab Republic of Egypt – a semi-presidential republic (1953; current constitution 2014–Present).
+                    5.1.8.1.5.162 Syrian Arab Republic – a semi-presidential republic (1946; current constitution 2012–Present).
+                    5.1.8.1.5.163 Republic of Yemen – a semi-presidential republic (1990; ongoing civil conflict).
+                    5.1.8.1.5.164 Republic of Angola – a presidential republic (1992–Present).
+                    5.1.8.1.5.165 Republic of Belarus – a presidential republic (1994–Present).
+                    5.1.8.1.5.166 Republic of Georgia – a unitary parliamentary republic (1991–Present).
+                    5.1.8.1.5.167 Republic of Romania – a semi-presidential republic (1989–Present).
+                    5.1.8.1.5.168 Republic of Suriname – a presidential republic (1975–Present).
+                    5.1.8.1.5.169 Sahrawi Arab Democratic Republic – a partially recognized state seeking independence from Morocco (1976–Present).
+                    5.1.8.1.5.170 Turkish Republic of Northern Cyprus – a de facto breakaway state recognized only by Turkey (1983–Present).
+                    5.1.8.1.5.171 Republic of Abkhazia – a de facto breakaway state (1992–Present).
+                    5.1.8.1.5.172 Republic of Artsakh – a de facto breakaway state (1991–Present).
+                    5.1.8.1.5.173 Republic of South Ossetia – a de facto breakaway state (1991–Present).
+                    5.1.8.1.5.174 Pridnestrovian Moldavian Republic – a de facto breakaway state (Transnistria; 1990–Present).
+                    5.1.8.1.5.175 Republic of Somaliland – a de facto breakaway state (1991–Present).
+                    5.1.8.1.5.176 Republic of Kosovo – a partially recognized state (2008–Present).
+            5.1.8.2 Tribal Society – A society organized primarily around kinship ties, with social structure based on families, clans, or lineages, often with less centralized political authority than a state.
+                5.1.8.2.1 Hunter-Gatherer – A tribal society whose primary sustenance comes from foraging for wild plants, hunting animals, and fishing, typically nomadic or semi-nomadic.
+                    5.1.8.2.1.1 Apache – Historically, many Apache groups were nomadic hunter-gatherers, adapting to diverse environments (c. 1500–Present)
+                    5.1.8.2.1.2 Comanche – Renowned equestrian hunter-gatherers of the Great Plains (c. 1700–Present)
+                    5.1.8.2.1.3 Blackfoot – Prominent buffalo hunters of the northern Plains (c. 1700–Present)
+                    5.1.8.2.1.4 Crow – Plains buffalo hunters and gatherers (c. 1700–Present)
+                    5.1.8.2.1.5 Nez Perce – Historically hunter-gatherers, salmon fishers, and camas-root gatherers in the Plateau region (c. 1500–Present)
+                    5.1.8.2.1.6 Cheyenne – Primarily buffalo hunters of the Great Plains (c. 1700–Present)
+                    5.1.8.2.1.7 Arapaho – Shared many cultural traits with Cheyenne, primarily buffalo hunters (c. 1700–Present)
+                    5.1.8.2.1.8 Shoshone – Hunter-gatherers primarily of the Great Basin and Plateau regions (c. 1500–Present)
+                    5.1.8.2.1.9 Inuit – Hunter-gatherers adapted to Arctic environments, primarily hunting marine mammals (c. 1200–Present)
+                    5.1.8.2.1.10 Pirahã – An indigenous group in the Amazon basin of Brazil, known for their distinct language and hunter-gatherer lifestyle (c. pre-Columbian–Present)
+                    5.1.8.2.1.11 Selk'nam – Hunter-gatherers of the southernmost tip of South America (c. pre-Columbian–1974)
+                    5.1.8.2.1.12 San – hunter-gatherers of southern Africa (c. pre-Iron Age–Present)
+                    5.1.8.2.1.13 Hadza – Tanzanian hunter-gatherers of the Great Rift Valley (c. 10 000 BCE–Present)
+                    5.1.8.2.1.14 Mbuti – Pygmy hunter-gatherers of the Ituri Forest (c. pre-Iron Age–Present)
+                    5.1.8.2.1.15 Aeta – Philippines rainforest hunter-gatherers (c. pre-Colonial–Present)
+                    5.1.8.2.1.16 Batek – Malaysian Peninsular rainforest hunter-gatherers (c. pre-Colonial–Present)
+                5.1.8.2.2 Horticultural – A tribal society that practices small-scale cultivation of plants, often using simple tools and shifting cultivation, typically more settled than hunter-gatherers.  
+                    5.1.8.2.2.1 Hopi – Well-known for their traditional dryland farming of corn, beans, and squash (c. 1200–Present)  
+                    5.1.8.2.2.2 Pueblo Tribal Societies – Sedentary societies practicing extensive agriculture, including irrigation (c. 750–Present)  
+                    5.1.8.2.2.3 Cherokee – Historically practiced settled agriculture, cultivating maize, beans, and squash (c. 1000–Present)  
+                    5.1.8.2.2.4 Seminole – Practiced horticulture, cultivating corn, beans, and squash, alongside hunting and fishing (c. 1700–Present)  
+                    5.1.8.2.2.5 Creek – Southeastern horticulturalists with complex town structures (c. 1700–Present)  
+                    5.1.8.2.2.6 Choctaw – Southeastern horticulturalists, known for agriculture and mound-building (c. 1200–Present)  
+                    5.1.8.2.2.7 Chickasaw – Southeastern horticulturalists, closely related to Choctaw (c. 1200–Present)  
+                    5.1.8.2.2.8 Yanomami – Indigenous people living in the Amazon rainforest on the border of Venezuela and Brazil, practicing horticulture (c. pre-Columbian–Present)  
+                    5.1.8.2.2.9 Guarani – Indigenous people of Paraguay and parts of neighboring countries, known for their horticulture and forest dwelling (c. pre-Columbian–Present)  
+                    5.1.8.2.2.10 Tupi – Historical indigenous groups of Brazil, many of whom practiced horticulture and lived in settled villages (c. pre-Columbian–Present)  
+                    5.1.8.2.2.11 Mapuche – Indigenous people of south-central Chile and southwestern Argentina, known for traditional horticulture and other subsistence strategies (c. pre-Columbian–Present)  
+                    5.1.8.2.2.12 Trobriand Islanders – Melanesian horticulturalists practicing yam cultivation and fishing (c. pre-Contact–Present)
+                    5.1.8.2.2.13 Ifugao – Philippine highland rice-terrace horticulturalists (c. 800 CE–Present)
+                    5.1.8.2.2.14 Munduruku – Central Amazon horticulturalists known for riverine gardens (c. pre-Columbian–Present)
+                    5.1.8.2.2.15 Khasi – Northeastern Indian hill horticulturalists practicing terrace farming (c. pre-Colonial–Present)
+                    5.1.8.2.2.16 Hmong – Southeast Asian swidden horticulturalists (c. pre-Colonial–Present)
+                    5.1.8.2.2.17 Enga – Papua New Guinea highlands horticulturalists (c. pre-Contact–Present)
+                5.1.8.2.3 Pastoralist – A tribal society that primarily subsists on the rearing of domesticated animals, often involving nomadic or transhumant lifestyles.  
+                    5.1.8.2.3.1 Navajo Tribal Society (Diné) – Primarily known for their sheep and goat herding, integrated after European contact (c. 1700–Present)  
+                    5.1.8.2.3.2 Aymara – Indigenous people of the Andes, known for high-altitude pastoralism (llamas, alpacas) and horticulture (c. pre-Columbian–Present)  
+                    5.1.8.2.3.3 Maasai – Nilotic pastoralists of East Africa, known for cattle herding (c. 1600 CE–Present)
+                    5.1.8.2.3.4 Fulani – West African pastoralists (Fula), renowned for cattle nomadism (c. 1000 CE–Present)
+                    5.1.8.2.3.5 Nenets – Siberian reindeer-herding pastoralists (c. 1st millennium CE–Present)
+                    5.1.8.2.3.6 Kyrgyz – Central Asian nomadic pastoralists herding horses and yaks (c. 6th century CE–Present)
+                    5.1.8.2.3.7 Sami – Arctic reindeer-herding pastoralists of northern Scandinavia (c. pre-Viking Age–Present)
+                5.1.8.2.4 Segmentary – A tribal society characterized by a decentralized political structure, where social organization is based on a network of kinship segments (lineages, clans) that unite or divide based on context or need.  
+                    5.1.8.2.4.1 Sioux – Many bands and divisions of the Sioux (e.g., Lakota, Dakota) exhibited segmentary social organization, particularly in earlier periods (c. 1700–Present)  
+                    5.1.8.2.4.2 Many Amazonian Tribal Societies – A general category encompassing numerous groups (e.g., Kayapo, Xingu tribes) that often exhibit segmentary political structures (c. pre-Columbian–Present)  
+                    5.1.8.2.4.3 Nuer – Nilotic segmentary society of South Sudan (c. pre-Colonial–Present)
+                    5.1.8.2.4.4 Dinka – Nilotic segmentary society of South Sudan (c. pre-Colonial–Present)
+                    5.1.8.2.4.5 Somali – Horn of Africa segmentary clan society (c. pre-Islamic–Present)
+                5.1.8.2.5 Chiefdom – A tribal society characterized by a more centralized political authority, often hereditary, and greater social stratification than simpler tribes, typically led by a chief or paramount leader.  
+                    5.1.8.2.5.1 Kwakiutl Tribal Society (Kwakwaka'wakw) – Known for their complex social hierarchy, hereditary chiefs, and elaborate potlatch ceremonies (c. pre-Contact–Present)  
+                    5.1.8.2.5.2 Haida – Pacific Northwest Coast tribal society known for their hierarchical social structure and artistic traditions (c. pre-Contact–Present)  
+                    5.1.8.2.5.3 Tlingit – Pacific Northwest Coast tribal society with a complex clan system and social stratification (c. pre-Contact–Present)  
+                    5.1.8.2.5.4 Taíno – Indigenous people of the Caribbean (including parts of Central/South America), organized into chiefdoms at the time of European contact (c. 1200–1600 CE)  
+                    5.1.8.2.5.5 Pre-Classic Maya Chiefdoms – Early political entities in Mesoamerica that exhibited chiefdom-level organization before the development of city-states (c. 2000 BCE–250 CE)  
+                    5.1.8.2.5.6 Muisca – Indigenous people of the Colombian Andes, who had developed complex chiefdoms before the Spanish conquest (c. 600–1537 CE)  
+                    5.1.8.2.5.7 Tongan Chiefdoms – Polynesian societies with hereditary chiefs pre-dating the Tongan monarchy (c. 10th century CE–1000 CE)
+                    5.1.8.2.5.8 Fijian Chiefdoms – Melanesian stratified societies organized around hereditary chiefs (c. pre-Contact–1854 CE)
+                    5.1.8.2.5.9 Māori Iwi – Māori tribal chiefdoms of New Zealand, led by rangatira (c. 13th century CE–Present)
+                5.1.8.2.6 Tribal Confederacy  
+                    5.1.8.2.6.1 Iroquois Confederacy (Haudenosaunee) – While a confederacy, its structured political system with councils and shared decision-making exhibits characteristics of a complex tribal society (c. 1570–Present)
+                    5.1.8.2.6.2 Powhatan Confederacy – Algonquian tribes of Tidewater Virginia united under Wahunsenacawh (c. 1583–1646 CE)
+                    5.1.8.2.6.3 Lakota Confederacy – alliance of Lakota Sioux bands in the northern Plains (c. 17th century CE–Present)
+                    5.1.8.2.6.4 Blackfoot Confederacy – Niitsitapi alliance of Siksika, Kainai, and Piikani bands (c. 18th century CE–Present)
+            5.1.8.3 Colonial Society
+                5.1.8.3.1 Massachusetts Bay Colony – an early North American English settlement governed by Puritan religious principles and leaders (1629–1691 CE).
+            5.1.8.4 Historical Societal Formation - A distinct type of society identified by its characteristic social, economic, and political structures in a specific historical period (e.g., Feudal Society in medieval Europe, Ancient Athenian Society).
+            5.1.8.5 Proto-State Society – emergent polities with incipient state features (tribute, proto-bureaucracy, urbanizing chiefdoms).
+                5.1.8.5.1 Protodynastic Period of Egypt (Dynasty 0) – a grouping of Upper Egyptian chiefdoms consolidating centralized rule prior to formal unification (c. 3200–3000 BCE).
+                5.1.8.5.2 Scandinavian Chiefdoms – petty kingdoms of Viking-Age Denmark, Norway and Sweden (c. 8th–11th c. CE)
+                    5.1.8.5.2.1 Kingdom of Denmark (Viking Age)
+                    5.1.8.5.2.2 Kingdom of Norway (Viking Age)
+                    5.1.8.5.2.3 Kingdom of Sweden (Viking Age)
+                5.1.8.5.3 Icelandic Commonwealth – free-assembly Norse polity on Iceland (930–1262 CE)
+                5.1.8.5.4 Late Uruk Mesopotamia – the transitional “proto-state” with temple-bureaucracy and urban precincts (c. 3500–3100 BCE)
+
     5.2 Social Structure - a patterned relationship or arrangement among social entities.
         5.2.1 Social Network Structure - the pattern of ties and connections among agents.
         5.2.2 Social Stratification System - system of ranked arrangements based on status, power, resources.

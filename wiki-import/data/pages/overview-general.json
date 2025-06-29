@@ -1,0 +1,502 @@
+{
+  "title": "Overview General",
+  "maxWidth": "900px",
+  "content": {
+    "type": "container",
+    "id": "main-page-container",
+    "backgroundColor": "#ffffff",
+    "paddingTop": "24px",
+    "paddingBottom": "32px",
+    "marginTop": "0px",
+    "marginBottom": "0px",
+    "flexDirection": "column",
+    "justifyContent": "flex-start",
+    "alignItems": "stretch",
+    "flexWrap": "nowrap",
+    "gap": "32px",
+    "items": [
+      {
+        "type": "container",
+        "id": "header-section",
+        "backgroundColor": "#f8f9fa",
+        "padding": "40px 32px",
+        "flexDirection": "column",
+        "justifyContent": "center",
+        "alignItems": "center",
+        "gap": "16px",
+        "items": [
+          {
+            "type": "markdown",
+            "id": "page-title",
+            "horizontalAlignment": "center",
+            "value": "# OmniOntos: The Structured Encyclopedia\n## General Overview"
+          },
+          {
+            "type": "markdown",
+            "id": "page-subtitle",
+            "horizontalAlignment": "center",
+            "value": "**Imagine Wikipedia, but perfectly organized. Every article has its logical place, and you can navigate from the biggest ideas down to the smallest details without getting lost.**"
+          }
+        ]
+      },
+      {
+        "type": "container",
+        "id": "main-content",
+        "padding": "0px 24px",
+        "flexDirection": "column",
+        "justifyContent": "flex-start",
+        "alignItems": "stretch",
+        "gap": "40px",
+        "items": [
+          {
+            "type": "markdown",
+            "id": "what-is-section",
+            "value": "## What Is OmniOntos?\n\nOmniOntos is a new kind of encyclopedia where **every topic is an article** and **every article knows exactly where it belongs**. Unlike traditional encyclopedias or Wikipedia, you can start with any big topic and drill down through logical layers to find exactly the level of detail you need.\n\n**Think of it like this:**\n- **Top Level:** \"Transportation\" - A broad overview of how humans and goods move around\n- **Middle Level:** \"Electric Vehicles\" - Focused article on EV technology, history, and impact\n- **Deep Level:** \"Tesla Model 3 Battery System\" - Technical specifications and engineering details\n\nEach article inherits context from the ones above it, so you always understand how your topic fits into the bigger picture."
+          },
+          {
+            "type": "container",
+            "id": "domains-section",
+            "backgroundColor": "#f0f8f0",
+            "padding": "32px",
+            "flexDirection": "column",
+            "justifyContent": "flex-start",
+            "alignItems": "stretch",
+            "gap": "24px",
+            "items": [
+              {
+                "type": "markdown",
+                "id": "domains-title",
+                "horizontalAlignment": "center",
+                "value": "## The Six Domains: How We Organize Everything\n\nInstead of random alphabetical ordering, OmniOntos organizes all knowledge into six fundamental areas:"
+              },
+              {
+                "type": "container",
+                "id": "domains-grid",
+                "flexDirection": "column",
+                "justifyContent": "flex-start",
+                "alignItems": "stretch",
+                "gap": "20px",
+                "items": [
+                  {
+                    "type": "container",
+                    "id": "domain-abstract",
+                    "backgroundColor": "#ffffff",
+                    "padding": "20px",
+                    "flexDirection": "row",
+                    "alignItems": "flex-start",
+                    "gap": "16px",
+                    "items": [
+                      {
+                        "type": "icon",
+                        "id": "abstract-icon",
+                        "name": "sigma"
+                      },
+                      {
+                        "type": "container",
+                        "id": "abstract-content",
+                        "flexGrow": 1,
+                        "flexDirection": "column",
+                        "gap": "8px",
+                        "items": [
+                          {
+                            "type": "markdown",
+                            "id": "abstract-title",
+                            "value": "### Abstract - Pure Ideas & Logic"
+                          },
+                          {
+                            "type": "markdown",
+                            "id": "abstract-desc",
+                            "value": "Mathematics, logic, theoretical concepts that exist in thought alone\n\n*Examples: Numbers, geometric theorems, algorithms, game theory*"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "container",
+                    "id": "domain-informational",
+                    "backgroundColor": "#ffffff",
+                    "padding": "20px",
+                    "flexDirection": "row",
+                    "alignItems": "flex-start",
+                    "gap": "16px",
+                    "items": [
+                      {
+                        "type": "icon",
+                        "id": "informational-icon",
+                        "name": "database"
+                      },
+                      {
+                        "type": "container",
+                        "id": "informational-content",
+                        "flexGrow": 1,
+                        "flexDirection": "column",
+                        "gap": "8px",
+                        "items": [
+                          {
+                            "type": "markdown",
+                            "id": "informational-title",
+                            "value": "### Informational - Data, Patterns & Communication"
+                          },
+                          {
+                            "type": "markdown",
+                            "id": "informational-desc",
+                            "value": "Information itself - how it's structured, transmitted, and processed\n\n*Examples: Languages, file formats, communication protocols, data structures*"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "container",
+                    "id": "domain-physical",
+                    "backgroundColor": "#ffffff",
+                    "padding": "20px",
+                    "flexDirection": "row",
+                    "alignItems": "flex-start",
+                    "gap": "16px",
+                    "items": [
+                      {
+                        "type": "icon",
+                        "id": "physical-icon",
+                        "name": "atom"
+                      },
+                      {
+                        "type": "container",
+                        "id": "physical-content",
+                        "flexGrow": 1,
+                        "flexDirection": "column",
+                        "gap": "8px",
+                        "items": [
+                          {
+                            "type": "markdown",
+                            "id": "physical-title",
+                            "value": "### Physical - The Material World"
+                          },
+                          {
+                            "type": "markdown",
+                            "id": "physical-desc",
+                            "value": "Everything you can touch, see, or measure in the physical universe\n\n*Examples: Planets, animals, chemicals, machines, energy, forces*"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "container",
+                    "id": "domain-mental",
+                    "backgroundColor": "#ffffff",
+                    "padding": "20px",
+                    "flexDirection": "row",
+                    "alignItems": "flex-start",
+                    "gap": "16px",
+                    "items": [
+                      {
+                        "type": "icon",
+                        "id": "mental-icon",
+                        "name": "brain"
+                      },
+                      {
+                        "type": "container",
+                        "id": "mental-content",
+                        "flexGrow": 1,
+                        "flexDirection": "column",
+                        "gap": "8px",
+                        "items": [
+                          {
+                            "type": "markdown",
+                            "id": "mental-title",
+                            "value": "### Mental - Mind & Consciousness"
+                          },
+                          {
+                            "type": "markdown",
+                            "id": "mental-desc",
+                            "value": "Individual thoughts, feelings, perceptions, and mental processes\n\n*Examples: Emotions, memory, perception, decision-making, consciousness*"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "container",
+                    "id": "domain-social",
+                    "backgroundColor": "#ffffff",
+                    "padding": "20px",
+                    "flexDirection": "row",
+                    "alignItems": "flex-start",
+                    "gap": "16px",
+                    "items": [
+                      {
+                        "type": "icon",
+                        "id": "social-icon",
+                        "name": "account-group"
+                      },
+                      {
+                        "type": "container",
+                        "id": "social-content",
+                        "flexGrow": 1,
+                        "flexDirection": "column",
+                        "gap": "8px",
+                        "items": [
+                          {
+                            "type": "markdown",
+                            "id": "social-title",
+                            "value": "### Social - People & Relationships"
+                          },
+                          {
+                            "type": "markdown",
+                            "id": "social-desc",
+                            "value": "How humans interact, organize, and create culture together\n\n*Examples: Governments, companies, religions, cultures, economies, families*"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "container",
+                    "id": "domain-meta",
+                    "backgroundColor": "#ffffff",
+                    "padding": "20px",
+                    "flexDirection": "row",
+                    "alignItems": "flex-start",
+                    "gap": "16px",
+                    "items": [
+                      {
+                        "type": "icon",
+                        "id": "meta-icon",
+                        "name": "tools"
+                      },
+                      {
+                        "type": "container",
+                        "id": "meta-content",
+                        "flexGrow": 1,
+                        "flexDirection": "column",
+                        "gap": "8px",
+                        "items": [
+                          {
+                            "type": "markdown",
+                            "id": "meta-title",
+                            "value": "### Meta - Methods & Tools"
+                          },
+                          {
+                            "type": "markdown",
+                            "id": "meta-desc",
+                            "value": "The techniques and frameworks we use to study and understand everything else\n\n*Examples: Scientific method, research techniques, measurement tools, analysis methods*"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "container",
+            "id": "how-it-works",
+            "backgroundColor": "#e8f4f8",
+            "padding": "32px",
+            "flexDirection": "column",
+            "justifyContent": "flex-start",
+            "alignItems": "stretch",
+            "gap": "24px",
+            "items": [
+              {
+                "type": "markdown",
+                "id": "how-title",
+                "horizontalAlignment": "center",
+                "value": "## How It Works"
+              },
+              {
+                "type": "container",
+                "id": "features-grid",
+                "flexDirection": "row",
+                "justifyContent": "space-between",
+                "alignItems": "flex-start",
+                "flexWrap": "wrap",
+                "gap": "24px",
+                "items": [
+                  {
+                    "type": "container",
+                    "id": "feature-navigation",
+                    "flexGrow": 1,
+                    "flexBasis": "280px",
+                    "backgroundColor": "#ffffff",
+                    "padding": "20px",
+                    "flexDirection": "column",
+                    "gap": "12px",
+                    "items": [
+                      {
+                        "type": "icon",
+                        "id": "navigation-icon",
+                        "name": "compass"
+                      },
+                      {
+                        "type": "markdown",
+                        "id": "nav-feature",
+                        "value": "### Perfect Navigation\n\n- Start broad, get specific - or jump directly to what you need\n- Never lose context - each article connects logically to related topics\n- No more \"Wikipedia rabbit holes\" - stay focused or explore systematically"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "container",
+                    "id": "feature-content",
+                    "flexGrow": 1,
+                    "flexBasis": "280px",
+                    "backgroundColor": "#ffffff",
+                    "padding": "20px",
+                    "flexDirection": "column",
+                    "gap": "12px",
+                    "items": [
+                      {
+                        "type": "icon",
+                        "id": "content-icon",
+                        "name": "book-open-page-variant"
+                      },
+                      {
+                        "type": "markdown",
+                        "id": "content-feature",
+                        "value": "### Rich Content\n\n- Every topic gets a full encyclopedia-style article\n- Multiple sections for different aspects (history, applications, technical details)\n- Structured data alongside readable text"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "container",
+                    "id": "feature-connections",
+                    "flexGrow": 1,
+                    "flexBasis": "280px",
+                    "backgroundColor": "#ffffff",
+                    "padding": "20px",
+                    "flexDirection": "column",
+                    "gap": "12px",
+                    "items": [
+                      {
+                        "type": "icon",
+                        "id": "connections-icon",
+                        "name": "vector-link"
+                      },
+                      {
+                        "type": "markdown",
+                        "id": "connections-feature",
+                        "value": "### Smart Connections\n\n- Articles link to related topics across different domains\n- See dependencies, contrasts, and relationships\n- Discover relevant information you didn't know you needed"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "markdown",
+            "id": "why-matters",
+            "value": "## Why This Matters\n\n**For Students:** Learn any subject with perfect context and logical progression\n\n**For Researchers:** Quickly understand new fields and find relevant connections\n\n**For Professionals:** Access both overview understanding and technical depth\n\n**For Everyone:** Finally, an encyclopedia that makes sense instead of overwhelming you"
+          },
+          {
+            "type": "container",
+            "id": "principles-section",
+            "backgroundColor": "#fff8e1",
+            "padding": "32px",
+            "flexDirection": "column",
+            "justifyContent": "flex-start",
+            "alignItems": "stretch",
+            "gap": "20px",
+            "items": [
+              {
+                "type": "markdown",
+                "id": "principles-title",
+                "horizontalAlignment": "center",
+                "value": "## Key Principles"
+              },
+              {
+                "type": "markdown",
+                "id": "principles-list",
+                "value": "- **One Right Place:** Every topic has exactly one primary location (no duplicates or confusion)\n- **Unlimited Depth:** Go as detailed as you need - from overview to expert level\n- **No Junk Drawers:** No \"miscellaneous\" or \"other\" categories - everything has a logical home\n- **Community Built:** Like Wikipedia, but with better organization and quality control"
+              }
+            ]
+          },
+          {
+            "type": "markdown",
+            "id": "navigation-example",
+            "value": "## Navigation Example\n\nA user interested in electric vehicles might encounter:\n\n- **\"Transportation\"** (Social) - Broad overview of mobility systems\n- **\"Electric Vehicles\"** (Physical → Vehicles) - Technology, environmental impact\n- **\"Lithium-Ion Battery\"** (Physical → Energy Storage) - Technical specifications\n- **\"Environmental Impact of EVs\"** (Social → Environmental Issues) - Policy implications\n\nEach topic provides comprehensive coverage at its level, with relationships guiding users to related concepts across domains."
+          },
+          {
+            "type": "container",
+            "id": "cta-section",
+            "backgroundColor": "#2c3e50",
+            "foregroundColor": "#ffffff",
+            "padding": "40px",
+            "flexDirection": "column",
+            "justifyContent": "center",
+            "alignItems": "center",
+            "gap": "20px",
+            "items": [
+              {
+                "type": "markdown",
+                "id": "cta-text",
+                "foregroundColor": "#ffffff",
+                "horizontalAlignment": "center",
+                "value": "### Ready to Explore the Structure?\n\nDive deeper into how OmniOntos works or explore the ontology directly."
+              },
+              {
+                "type": "container",
+                "id": "cta-buttons",
+                "flexDirection": "row",
+                "justifyContent": "center",
+                "alignItems": "center",
+                "flexWrap": "wrap",
+                "gap": "16px",
+                "items": [
+                  {
+                    "type": "button",
+                    "id": "contributor-btn",
+                    "label": "For Contributors",
+                    "url": "/page/overview-contributor",
+                    "style": "primary"
+                  },
+                  {
+                    "type": "button",
+                    "id": "technical-btn",
+                    "label": "Technical Details",
+                    "url": "/page/overview-technical",
+                    "style": "secondary"
+                  },
+                  {
+                    "type": "button",
+                    "id": "explore-btn",
+                    "label": "Explore Ontology",
+                    "url": "/view/00000000-0000-0000-0000-000000000000",
+                    "style": "outline"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "container",
+        "id": "footer-section",
+        "padding": "24px",
+        "backgroundColor": "#f8f9fa",
+        "flexDirection": "row",
+        "justifyContent": "space-between",
+        "alignItems": "center",
+        "flexWrap": "wrap",
+        "gap": "16px",
+        "items": [
+          {
+            "type": "markdown",
+            "id": "footer-links",
+            "value": "[Welcome](/page/welcome) • [Overview](/page/overview) • [Code of Conduct](/page/code-of-conduct) • [Contact](/page/contact) • [Privacy Policy](/page/privacy-policy)"
+          },
+          {
+            "type": "markdown",
+            "id": "footer-github",
+            "horizontalAlignment": "right",
+            "value": "[GitHub: OmniOntos](https://github.com/OmniOntos/)"
+          }
+        ]
+      }
+    ]
+  }
+}
