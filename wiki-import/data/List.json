@@ -2042,7 +2042,7 @@
   {
     "title": "Abstract or Generated Sound",
     "parentTitle": "Audio",
-    "subtitle": "Audio information composed of sounds that are primarily synthesized, heavily processed, or do not directly represent recognizable real-world events, speech, or conventional music, often used for sound design, signaling, or experimental art. (Sound effects (e.g., a laser blast, a synthesized alert tone), some forms of electronic or experimental sound art, sonic textures not classifiable as music or environmental sound.)"
+    "subtitle": "Audio information composed of sounds that are primarily synthesized, heavily processed, or do not directly represent recognizable real-world events, speech, or conventional music, often used for sound design, signaling, or experimental art. (Sound effects, some forms of electronic or experimental sound art, sonic textures not classifiable as music or environmental sound.)"
   },
   {
     "title": "Audiovisual",
@@ -2077,7 +2077,12 @@
   {
     "title": "Ambient or Atmospheric",
     "parentTitle": "Audiovisual",
-    "subtitle": "Audiovisual information primarily intended to create a specific mood, atmosphere, or sensory experience, where narrative or explicit informational content may be secondary to the aesthetic interplay of visuals and sound. (Some forms of video art, visualizers accompanying music where the visuals are tightly coupled, some types of screensavers or digital art installations with sound.)        2.1.5 Spatial - Content of spatial information (Blueprints, Architectural drawings, Maps)."
+    "subtitle": "Audiovisual information primarily intended to create a specific mood, atmosphere, or sensory experience, where narrative or explicit informational content may be secondary to the aesthetic interplay of visuals and sound. (Some forms of video art, visualizers accompanying music where the visuals are tightly coupled, some types of screensavers or digital art installations with sound.)"
+  },
+  {
+    "title": "Spatial",
+    "parentTitle": "Information Kind",
+    "subtitle": "Content of spatial information (Blueprints, Architectural drawings, Maps)."
   },
   {
     "title": "Sheet Music",
@@ -3790,592 +3795,592 @@
     "subtitle": "smallest unit of a chemical element."
   },
   {
-    "title": "Hydrogen Atom -",
+    "title": "Hydrogen Atom",
     "parentTitle": "Atom",
     "subtitle": ""
   },
   {
-    "title": "Helium Atom -",
+    "title": "Helium Atom",
     "parentTitle": "Atom",
     "subtitle": ""
   },
   {
-    "title": "Lithium Atom -",
+    "title": "Lithium Atom",
     "parentTitle": "Atom",
     "subtitle": ""
   },
   {
-    "title": "Beryllium Atom -",
+    "title": "Beryllium Atom",
     "parentTitle": "Atom",
     "subtitle": ""
   },
   {
-    "title": "Boron Atom -",
+    "title": "Boron Atom",
     "parentTitle": "Atom",
     "subtitle": ""
   },
   {
-    "title": "Carbon Atom -",
+    "title": "Carbon Atom",
     "parentTitle": "Atom",
     "subtitle": ""
   },
   {
-    "title": "Nitrogen Atom -",
+    "title": "Nitrogen Atom",
     "parentTitle": "Atom",
     "subtitle": ""
   },
   {
-    "title": "Oxygen Atom -",
+    "title": "Oxygen Atom",
     "parentTitle": "Atom",
     "subtitle": ""
   },
   {
-    "title": "Fluorine Atom -",
+    "title": "Fluorine Atom",
     "parentTitle": "Atom",
     "subtitle": ""
   },
   {
-    "title": "Neon Atom -",
+    "title": "Neon Atom",
     "parentTitle": "Atom",
     "subtitle": ""
   },
   {
-    "title": "Sodium Atom -",
+    "title": "Sodium Atom",
     "parentTitle": "Atom",
     "subtitle": ""
   },
   {
-    "title": "Magnesium Atom -",
+    "title": "Magnesium Atom",
     "parentTitle": "Atom",
     "subtitle": ""
   },
   {
-    "title": "Aluminium Atom -",
+    "title": "Aluminium Atom",
     "parentTitle": "Atom",
     "subtitle": ""
   },
   {
-    "title": "Silicon Atom -",
+    "title": "Silicon Atom",
     "parentTitle": "Atom",
     "subtitle": ""
   },
   {
-    "title": "Phosphorus Atom -",
+    "title": "Phosphorus Atom",
     "parentTitle": "Atom",
     "subtitle": ""
   },
   {
-    "title": "Sulfur Atom -",
+    "title": "Sulfur Atom",
     "parentTitle": "Atom",
     "subtitle": ""
   },
   {
-    "title": "Chlorine Atom -",
+    "title": "Chlorine Atom",
     "parentTitle": "Atom",
     "subtitle": ""
   },
   {
-    "title": "Argon Atom -",
+    "title": "Argon Atom",
     "parentTitle": "Atom",
     "subtitle": ""
   },
   {
-    "title": "Potassium Atom -",
+    "title": "Potassium Atom",
     "parentTitle": "Atom",
     "subtitle": ""
   },
   {
-    "title": "Calcium Atom -",
+    "title": "Calcium Atom",
     "parentTitle": "Atom",
     "subtitle": ""
   },
   {
-    "title": "Scandium Atom -",
+    "title": "Scandium Atom",
     "parentTitle": "Atom",
     "subtitle": ""
   },
   {
-    "title": "Titanium Atom -",
+    "title": "Titanium Atom",
     "parentTitle": "Atom",
     "subtitle": ""
   },
   {
-    "title": "Vanadium Atom -",
+    "title": "Vanadium Atom",
     "parentTitle": "Atom",
     "subtitle": ""
   },
   {
-    "title": "Chromium Atom -",
+    "title": "Chromium Atom",
     "parentTitle": "Atom",
     "subtitle": ""
   },
   {
-    "title": "Manganese Atom -",
+    "title": "Manganese Atom",
     "parentTitle": "Atom",
     "subtitle": ""
   },
   {
-    "title": "Iron Atom -",
+    "title": "Iron Atom",
     "parentTitle": "Atom",
     "subtitle": ""
   },
   {
-    "title": "Cobalt Atom -",
+    "title": "Cobalt Atom",
     "parentTitle": "Atom",
     "subtitle": ""
   },
   {
-    "title": "Nickel Atom -",
+    "title": "Nickel Atom",
     "parentTitle": "Atom",
     "subtitle": ""
   },
   {
-    "title": "Copper Atom -",
+    "title": "Copper Atom",
     "parentTitle": "Atom",
     "subtitle": ""
   },
   {
-    "title": "Zinc Atom -",
+    "title": "Zinc Atom",
     "parentTitle": "Atom",
     "subtitle": ""
   },
   {
-    "title": "Gallium Atom -",
+    "title": "Gallium Atom",
     "parentTitle": "Atom",
     "subtitle": ""
   },
   {
-    "title": "Germanium Atom -",
+    "title": "Germanium Atom",
     "parentTitle": "Atom",
     "subtitle": ""
   },
   {
-    "title": "Arsenic Atom -",
+    "title": "Arsenic Atom",
     "parentTitle": "Atom",
     "subtitle": ""
   },
   {
-    "title": "Selenium Atom -",
+    "title": "Selenium Atom",
     "parentTitle": "Atom",
     "subtitle": ""
   },
   {
-    "title": "Bromine Atom -",
+    "title": "Bromine Atom",
     "parentTitle": "Atom",
     "subtitle": ""
   },
   {
-    "title": "Krypton Atom -",
+    "title": "Krypton Atom",
     "parentTitle": "Atom",
     "subtitle": ""
   },
   {
-    "title": "Rubidium Atom -",
+    "title": "Rubidium Atom",
     "parentTitle": "Atom",
     "subtitle": ""
   },
   {
-    "title": "Strontium Atom -",
+    "title": "Strontium Atom",
     "parentTitle": "Atom",
     "subtitle": ""
   },
   {
-    "title": "Yttrium Atom -",
+    "title": "Yttrium Atom",
     "parentTitle": "Atom",
     "subtitle": ""
   },
   {
-    "title": "Zirconium Atom -",
+    "title": "Zirconium Atom",
     "parentTitle": "Atom",
     "subtitle": ""
   },
   {
-    "title": "Niobium Atom -",
+    "title": "Niobium Atom",
     "parentTitle": "Atom",
     "subtitle": ""
   },
   {
-    "title": "Molybdenum Atom -",
+    "title": "Molybdenum Atom",
     "parentTitle": "Atom",
     "subtitle": ""
   },
   {
-    "title": "Technetium Atom -",
+    "title": "Technetium Atom",
     "parentTitle": "Atom",
     "subtitle": ""
   },
   {
-    "title": "Ruthenium Atom -",
+    "title": "Ruthenium Atom",
     "parentTitle": "Atom",
     "subtitle": ""
   },
   {
-    "title": "Rhodium Atom -",
+    "title": "Rhodium Atom",
     "parentTitle": "Atom",
     "subtitle": ""
   },
   {
-    "title": "Palladium Atom -",
+    "title": "Palladium Atom",
     "parentTitle": "Atom",
     "subtitle": ""
   },
   {
-    "title": "Silver Atom -",
+    "title": "Silver Atom",
     "parentTitle": "Atom",
     "subtitle": ""
   },
   {
-    "title": "Cadmium Atom -",
+    "title": "Cadmium Atom",
     "parentTitle": "Atom",
     "subtitle": ""
   },
   {
-    "title": "Indium Atom -",
+    "title": "Indium Atom",
     "parentTitle": "Atom",
     "subtitle": ""
   },
   {
-    "title": "Tin Atom -",
+    "title": "Tin Atom",
     "parentTitle": "Atom",
     "subtitle": ""
   },
   {
-    "title": "Antimony Atom -",
+    "title": "Antimony Atom",
     "parentTitle": "Atom",
     "subtitle": ""
   },
   {
-    "title": "Tellurium Atom -",
+    "title": "Tellurium Atom",
     "parentTitle": "Atom",
     "subtitle": ""
   },
   {
-    "title": "Iodine Atom -",
+    "title": "Iodine Atom",
     "parentTitle": "Atom",
     "subtitle": ""
   },
   {
-    "title": "Xenon Atom -",
+    "title": "Xenon Atom",
     "parentTitle": "Atom",
     "subtitle": ""
   },
   {
-    "title": "Caesium Atom -",
+    "title": "Caesium Atom",
     "parentTitle": "Atom",
     "subtitle": ""
   },
   {
-    "title": "Barium Atom -",
+    "title": "Barium Atom",
     "parentTitle": "Atom",
     "subtitle": ""
   },
   {
-    "title": "Lanthanum Atom -",
+    "title": "Lanthanum Atom",
     "parentTitle": "Atom",
     "subtitle": ""
   },
   {
-    "title": "Cerium Atom -",
+    "title": "Cerium Atom",
     "parentTitle": "Atom",
     "subtitle": ""
   },
   {
-    "title": "Praseodymium Atom -",
+    "title": "Praseodymium Atom",
     "parentTitle": "Atom",
     "subtitle": ""
   },
   {
-    "title": "Neodymium Atom -",
+    "title": "Neodymium Atom",
     "parentTitle": "Atom",
     "subtitle": ""
   },
   {
-    "title": "Promethium Atom -",
+    "title": "Promethium Atom",
     "parentTitle": "Atom",
     "subtitle": ""
   },
   {
-    "title": "Samarium Atom -",
+    "title": "Samarium Atom",
     "parentTitle": "Atom",
     "subtitle": ""
   },
   {
-    "title": "Europium Atom -",
+    "title": "Europium Atom",
     "parentTitle": "Atom",
     "subtitle": ""
   },
   {
-    "title": "Gadolinium Atom -",
+    "title": "Gadolinium Atom",
     "parentTitle": "Atom",
     "subtitle": ""
   },
   {
-    "title": "Terbium Atom -",
+    "title": "Terbium Atom",
     "parentTitle": "Atom",
     "subtitle": ""
   },
   {
-    "title": "Dysprosium Atom -",
+    "title": "Dysprosium Atom",
     "parentTitle": "Atom",
     "subtitle": ""
   },
   {
-    "title": "Holmium Atom -",
+    "title": "Holmium Atom",
     "parentTitle": "Atom",
     "subtitle": ""
   },
   {
-    "title": "Erbium Atom -",
+    "title": "Erbium Atom",
     "parentTitle": "Atom",
     "subtitle": ""
   },
   {
-    "title": "Thulium Atom -",
+    "title": "Thulium Atom",
     "parentTitle": "Atom",
     "subtitle": ""
   },
   {
-    "title": "Ytterbium Atom -",
+    "title": "Ytterbium Atom",
     "parentTitle": "Atom",
     "subtitle": ""
   },
   {
-    "title": "Lutetium Atom -",
+    "title": "Lutetium Atom",
     "parentTitle": "Atom",
     "subtitle": ""
   },
   {
-    "title": "Hafnium Atom -",
+    "title": "Hafnium Atom",
     "parentTitle": "Atom",
     "subtitle": ""
   },
   {
-    "title": "Tantalum Atom -",
+    "title": "Tantalum Atom",
     "parentTitle": "Atom",
     "subtitle": ""
   },
   {
-    "title": "Tungsten Atom -",
+    "title": "Tungsten Atom",
     "parentTitle": "Atom",
     "subtitle": ""
   },
   {
-    "title": "Rhenium Atom -",
+    "title": "Rhenium Atom",
     "parentTitle": "Atom",
     "subtitle": ""
   },
   {
-    "title": "Osmium Atom -",
+    "title": "Osmium Atom",
     "parentTitle": "Atom",
     "subtitle": ""
   },
   {
-    "title": "Iridium Atom -",
+    "title": "Iridium Atom",
     "parentTitle": "Atom",
     "subtitle": ""
   },
   {
-    "title": "Platinum Atom -",
+    "title": "Platinum Atom",
     "parentTitle": "Atom",
     "subtitle": ""
   },
   {
-    "title": "Gold Atom -",
+    "title": "Gold Atom",
     "parentTitle": "Atom",
     "subtitle": ""
   },
   {
-    "title": "Mercury Atom -",
+    "title": "Mercury Atom",
     "parentTitle": "Atom",
     "subtitle": ""
   },
   {
-    "title": "Thallium Atom -",
+    "title": "Thallium Atom",
     "parentTitle": "Atom",
     "subtitle": ""
   },
   {
-    "title": "Lead Atom -",
+    "title": "Lead Atom",
     "parentTitle": "Atom",
     "subtitle": ""
   },
   {
-    "title": "Bismuth Atom -",
+    "title": "Bismuth Atom",
     "parentTitle": "Atom",
     "subtitle": ""
   },
   {
-    "title": "Polonium Atom -",
+    "title": "Polonium Atom",
     "parentTitle": "Atom",
     "subtitle": ""
   },
   {
-    "title": "Astatine Atom -",
+    "title": "Astatine Atom",
     "parentTitle": "Atom",
     "subtitle": ""
   },
   {
-    "title": "Radon Atom -",
+    "title": "Radon Atom",
     "parentTitle": "Atom",
     "subtitle": ""
   },
   {
-    "title": "Francium Atom -",
+    "title": "Francium Atom",
     "parentTitle": "Atom",
     "subtitle": ""
   },
   {
-    "title": "Radium Atom -",
+    "title": "Radium Atom",
     "parentTitle": "Atom",
     "subtitle": ""
   },
   {
-    "title": "Actinium Atom -",
+    "title": "Actinium Atom",
     "parentTitle": "Atom",
     "subtitle": ""
   },
   {
-    "title": "Thorium Atom -",
+    "title": "Thorium Atom",
     "parentTitle": "Atom",
     "subtitle": ""
   },
   {
-    "title": "Protactinium Atom -",
+    "title": "Protactinium Atom",
     "parentTitle": "Atom",
     "subtitle": ""
   },
   {
-    "title": "Uranium Atom -",
+    "title": "Uranium Atom",
     "parentTitle": "Atom",
     "subtitle": ""
   },
   {
-    "title": "Neptunium Atom -",
+    "title": "Neptunium Atom",
     "parentTitle": "Atom",
     "subtitle": ""
   },
   {
-    "title": "Plutonium Atom -",
+    "title": "Plutonium Atom",
     "parentTitle": "Atom",
     "subtitle": ""
   },
   {
-    "title": "Americium Atom -",
+    "title": "Americium Atom",
     "parentTitle": "Atom",
     "subtitle": ""
   },
   {
-    "title": "Curium Atom -",
+    "title": "Curium Atom",
     "parentTitle": "Atom",
     "subtitle": ""
   },
   {
-    "title": "Berkelium Atom -",
+    "title": "Berkelium Atom",
     "parentTitle": "Atom",
     "subtitle": ""
   },
   {
-    "title": "Californium Atom -",
+    "title": "Californium Atom",
     "parentTitle": "Atom",
     "subtitle": ""
   },
   {
-    "title": "Einsteinium Atom -",
+    "title": "Einsteinium Atom",
     "parentTitle": "Atom",
     "subtitle": ""
   },
   {
-    "title": "Fermium Atom -",
+    "title": "Fermium Atom",
     "parentTitle": "Atom",
     "subtitle": ""
   },
   {
-    "title": "Mendelevium Atom -",
+    "title": "Mendelevium Atom",
     "parentTitle": "Atom",
     "subtitle": ""
   },
   {
-    "title": "Nobelium Atom -",
+    "title": "Nobelium Atom",
     "parentTitle": "Atom",
     "subtitle": ""
   },
   {
-    "title": "Lawrencium Atom -",
+    "title": "Lawrencium Atom",
     "parentTitle": "Atom",
     "subtitle": ""
   },
   {
-    "title": "Rutherfordium Atom -",
+    "title": "Rutherfordium Atom",
     "parentTitle": "Atom",
     "subtitle": ""
   },
   {
-    "title": "Dubnium Atom -",
+    "title": "Dubnium Atom",
     "parentTitle": "Atom",
     "subtitle": ""
   },
   {
-    "title": "Seaborgium Atom -",
+    "title": "Seaborgium Atom",
     "parentTitle": "Atom",
     "subtitle": ""
   },
   {
-    "title": "Bohrium Atom -",
+    "title": "Bohrium Atom",
     "parentTitle": "Atom",
     "subtitle": ""
   },
   {
-    "title": "Hassium Atom -",
+    "title": "Hassium Atom",
     "parentTitle": "Atom",
     "subtitle": ""
   },
   {
-    "title": "Meitnerium Atom -",
+    "title": "Meitnerium Atom",
     "parentTitle": "Atom",
     "subtitle": ""
   },
   {
-    "title": "Darmstadtium Atom -",
+    "title": "Darmstadtium Atom",
     "parentTitle": "Atom",
     "subtitle": ""
   },
   {
-    "title": "Roentgenium Atom -",
+    "title": "Roentgenium Atom",
     "parentTitle": "Atom",
     "subtitle": ""
   },
   {
-    "title": "Copernicium Atom -",
+    "title": "Copernicium Atom",
     "parentTitle": "Atom",
     "subtitle": ""
   },
   {
-    "title": "Nihonium Atom -",
+    "title": "Nihonium Atom",
     "parentTitle": "Atom",
     "subtitle": ""
   },
   {
-    "title": "Flerovium Atom -",
+    "title": "Flerovium Atom",
     "parentTitle": "Atom",
     "subtitle": ""
   },
   {
-    "title": "Moscovium Atom -",
+    "title": "Moscovium Atom",
     "parentTitle": "Atom",
     "subtitle": ""
   },
   {
-    "title": "Livermorium Atom -",
+    "title": "Livermorium Atom",
     "parentTitle": "Atom",
     "subtitle": ""
   },
   {
-    "title": "Tennessine Atom -",
+    "title": "Tennessine Atom",
     "parentTitle": "Atom",
     "subtitle": ""
   },
   {
-    "title": "Oganesson Atom -",
+    "title": "Oganesson Atom",
     "parentTitle": "Atom",
     "subtitle": ""
   },
@@ -4762,72 +4767,72 @@
   {
     "title": "Europa",
     "parentTitle": "Large Icy Moon",
-    "subtitle": "(Jupiter) -"
+    "subtitle": "(Jupiter)"
   },
   {
     "title": "Ganymede",
     "parentTitle": "Large Icy Moon",
-    "subtitle": "(Jupiter) -"
+    "subtitle": "(Jupiter)"
   },
   {
     "title": "Callisto",
     "parentTitle": "Large Icy Moon",
-    "subtitle": "(Jupiter) -"
+    "subtitle": "(Jupiter)"
   },
   {
     "title": "Enceladus",
     "parentTitle": "Large Icy Moon",
-    "subtitle": "(Saturn) -"
+    "subtitle": "(Saturn)"
   },
   {
     "title": "Tethys",
     "parentTitle": "Large Icy Moon",
-    "subtitle": "(Saturn) -"
+    "subtitle": "(Saturn)"
   },
   {
     "title": "Dione",
     "parentTitle": "Large Icy Moon",
-    "subtitle": "(Saturn) -"
+    "subtitle": "(Saturn)"
   },
   {
     "title": "Rhea",
     "parentTitle": "Large Icy Moon",
-    "subtitle": "(Saturn) -"
+    "subtitle": "(Saturn)"
   },
   {
     "title": "Titan",
     "parentTitle": "Large Icy Moon",
-    "subtitle": "(Saturn) -"
+    "subtitle": "(Saturn)"
   },
   {
     "title": "Iapetus",
     "parentTitle": "Large Icy Moon",
-    "subtitle": "(Saturn) -"
+    "subtitle": "(Saturn)"
   },
   {
     "title": "Miranda",
     "parentTitle": "Large Icy Moon",
-    "subtitle": "(Uranus) -"
+    "subtitle": "(Uranus)"
   },
   {
     "title": "Ariel",
     "parentTitle": "Large Icy Moon",
-    "subtitle": "(Uranus) -"
+    "subtitle": "(Uranus)"
   },
   {
     "title": "Umbriel",
     "parentTitle": "Large Icy Moon",
-    "subtitle": "(Uranus) -"
+    "subtitle": "(Uranus)"
   },
   {
     "title": "Titania",
     "parentTitle": "Large Icy Moon",
-    "subtitle": "(Uranus) -"
+    "subtitle": "(Uranus)"
   },
   {
     "title": "Oberon",
     "parentTitle": "Large Icy Moon",
-    "subtitle": "(Uranus) -"
+    "subtitle": "(Uranus)"
   },
   {
     "title": "Large Rocky/Volcanic Moon",
@@ -4837,12 +4842,12 @@
   {
     "title": "Luna",
     "parentTitle": "Large Rocky/Volcanic Moon",
-    "subtitle": "(Earth) -"
+    "subtitle": "(Earth)"
   },
   {
     "title": "Io",
     "parentTitle": "Large Rocky/Volcanic Moon",
-    "subtitle": "(Jupiter) -"
+    "subtitle": "(Jupiter)"
   },
   {
     "title": "Small, Irregular Shape",
@@ -4852,157 +4857,157 @@
   {
     "title": "Pan",
     "parentTitle": "Small, Irregular Shape",
-    "subtitle": "(Saturn) -"
+    "subtitle": "(Saturn)"
   },
   {
     "title": "Atlas",
     "parentTitle": "Small, Irregular Shape",
-    "subtitle": "(Saturn) -"
+    "subtitle": "(Saturn)"
   },
   {
     "title": "Prometheus",
     "parentTitle": "Small, Irregular Shape",
-    "subtitle": "(Saturn) -"
+    "subtitle": "(Saturn)"
   },
   {
     "title": "Pandora",
     "parentTitle": "Small, Irregular Shape",
-    "subtitle": "(Saturn) -"
+    "subtitle": "(Saturn)"
   },
   {
     "title": "Epimetheus",
     "parentTitle": "Small, Irregular Shape",
-    "subtitle": "(Saturn) -"
+    "subtitle": "(Saturn)"
   },
   {
     "title": "Janus",
     "parentTitle": "Small, Irregular Shape",
-    "subtitle": "(Saturn) -"
+    "subtitle": "(Saturn)"
   },
   {
     "title": "Helene",
     "parentTitle": "Small, Irregular Shape",
-    "subtitle": "(Saturn) -"
+    "subtitle": "(Saturn)"
   },
   {
     "title": "Telesto",
     "parentTitle": "Small, Irregular Shape",
-    "subtitle": "(Saturn) -"
+    "subtitle": "(Saturn)"
   },
   {
     "title": "Calypso",
     "parentTitle": "Small, Irregular Shape",
-    "subtitle": "(Saturn) -"
+    "subtitle": "(Saturn)"
   },
   {
     "title": "Methone",
     "parentTitle": "Small, Irregular Shape",
-    "subtitle": "(Saturn) -"
+    "subtitle": "(Saturn)"
   },
   {
     "title": "Anthe",
     "parentTitle": "Small, Irregular Shape",
-    "subtitle": "(Saturn) -"
+    "subtitle": "(Saturn)"
   },
   {
     "title": "Pallene",
     "parentTitle": "Small, Irregular Shape",
-    "subtitle": "(Saturn) -"
+    "subtitle": "(Saturn)"
   },
   {
     "title": "Cordelia",
     "parentTitle": "Small, Irregular Shape",
-    "subtitle": "(Uranus) -"
+    "subtitle": "(Uranus)"
   },
   {
     "title": "Ophelia",
     "parentTitle": "Small, Irregular Shape",
-    "subtitle": "(Uranus) -"
+    "subtitle": "(Uranus)"
   },
   {
     "title": "Bianca",
     "parentTitle": "Small, Irregular Shape",
-    "subtitle": "(Uranus) -"
+    "subtitle": "(Uranus)"
   },
   {
     "title": "Cressida",
     "parentTitle": "Small, Irregular Shape",
-    "subtitle": "(Uranus) -"
+    "subtitle": "(Uranus)"
   },
   {
     "title": "Desdemona",
     "parentTitle": "Small, Irregular Shape",
-    "subtitle": "(Uranus) -"
+    "subtitle": "(Uranus)"
   },
   {
     "title": "Juliet",
     "parentTitle": "Small, Irregular Shape",
-    "subtitle": "(Uranus) -"
+    "subtitle": "(Uranus)"
   },
   {
     "title": "Portia",
     "parentTitle": "Small, Irregular Shape",
-    "subtitle": "(Uranus) -"
+    "subtitle": "(Uranus)"
   },
   {
     "title": "Rosalind",
     "parentTitle": "Small, Irregular Shape",
-    "subtitle": "(Uranus) -"
+    "subtitle": "(Uranus)"
   },
   {
     "title": "Belinda",
     "parentTitle": "Small, Irregular Shape",
-    "subtitle": "(Uranus) -"
+    "subtitle": "(Uranus)"
   },
   {
     "title": "Puck",
     "parentTitle": "Small, Irregular Shape",
-    "subtitle": "(Uranus) -"
+    "subtitle": "(Uranus)"
   },
   {
     "title": "Perdita",
     "parentTitle": "Small, Irregular Shape",
-    "subtitle": "(Uranus) -"
+    "subtitle": "(Uranus)"
   },
   {
     "title": "Mab",
     "parentTitle": "Small, Irregular Shape",
-    "subtitle": "(Uranus) -"
+    "subtitle": "(Uranus)"
   },
   {
     "title": "Cupid",
     "parentTitle": "Small, Irregular Shape",
-    "subtitle": "(Uranus) -"
+    "subtitle": "(Uranus)"
   },
   {
     "title": "Naiad",
     "parentTitle": "Small, Irregular Shape",
-    "subtitle": "(Neptune) -"
+    "subtitle": "(Neptune)"
   },
   {
     "title": "Thalassa",
     "parentTitle": "Small, Irregular Shape",
-    "subtitle": "(Neptune) -"
+    "subtitle": "(Neptune)"
   },
   {
     "title": "Despina",
     "parentTitle": "Small, Irregular Shape",
-    "subtitle": "(Neptune) -"
+    "subtitle": "(Neptune)"
   },
   {
     "title": "Galatea",
     "parentTitle": "Small, Irregular Shape",
-    "subtitle": "(Neptune) -"
+    "subtitle": "(Neptune)"
   },
   {
     "title": "Larissa",
     "parentTitle": "Small, Irregular Shape",
-    "subtitle": "(Neptune) -"
+    "subtitle": "(Neptune)"
   },
   {
     "title": "Proteus",
     "parentTitle": "Small, Irregular Shape",
-    "subtitle": "(Neptune) -"
+    "subtitle": "(Neptune)"
   },
   {
     "title": "Irregular Moon",
@@ -5015,107 +5020,107 @@
     "subtitle": "An irregular moon that orbits its parent body in the same direction as the parent body's rotation. These are typically found in closer, though still irregular, orbits than retrograde irregulars."
   },
   {
-    "title": "Phobos -",
+    "title": "Phobos",
     "parentTitle": "Prograde Irregular Moon",
     "subtitle": ""
   },
   {
-    "title": "Deimos -",
+    "title": "Deimos",
     "parentTitle": "Prograde Irregular Moon",
     "subtitle": ""
   },
   {
-    "title": "Himalia -",
+    "title": "Himalia",
     "parentTitle": "Prograde Irregular Moon",
     "subtitle": ""
   },
   {
-    "title": "Elara -",
+    "title": "Elara",
     "parentTitle": "Prograde Irregular Moon",
     "subtitle": ""
   },
   {
-    "title": "Lysithea -",
+    "title": "Lysithea",
     "parentTitle": "Prograde Irregular Moon",
     "subtitle": ""
   },
   {
-    "title": "Leda -",
+    "title": "Leda",
     "parentTitle": "Prograde Irregular Moon",
     "subtitle": ""
   },
   {
-    "title": "Ersa -",
+    "title": "Ersa",
     "parentTitle": "Prograde Irregular Moon",
     "subtitle": ""
   },
   {
-    "title": "Pandia -",
+    "title": "Pandia",
     "parentTitle": "Prograde Irregular Moon",
     "subtitle": ""
   },
   {
-    "title": "Kiviuq -",
+    "title": "Kiviuq",
     "parentTitle": "Prograde Irregular Moon",
     "subtitle": ""
   },
   {
-    "title": "Ijiraq -",
+    "title": "Ijiraq",
     "parentTitle": "Prograde Irregular Moon",
     "subtitle": ""
   },
   {
-    "title": "Paaliaq -",
+    "title": "Paaliaq",
     "parentTitle": "Prograde Irregular Moon",
     "subtitle": ""
   },
   {
-    "title": "Siarnaq -",
+    "title": "Siarnaq",
     "parentTitle": "Prograde Irregular Moon",
     "subtitle": ""
   },
   {
-    "title": "Albiorix -",
+    "title": "Albiorix",
     "parentTitle": "Prograde Irregular Moon",
     "subtitle": ""
   },
   {
-    "title": "S/2007 S 2 -",
+    "title": "S/2007 S 2",
     "parentTitle": "Prograde Irregular Moon",
     "subtitle": ""
   },
   {
-    "title": "Francisco -",
+    "title": "Francisco",
     "parentTitle": "Prograde Irregular Moon",
     "subtitle": ""
   },
   {
-    "title": "Caliban -",
+    "title": "Caliban",
     "parentTitle": "Prograde Irregular Moon",
     "subtitle": ""
   },
   {
-    "title": "Stephano -",
+    "title": "Stephano",
     "parentTitle": "Prograde Irregular Moon",
     "subtitle": ""
   },
   {
-    "title": "Nereid -",
+    "title": "Nereid",
     "parentTitle": "Prograde Irregular Moon",
     "subtitle": ""
   },
   {
-    "title": "Halimede -",
+    "title": "Halimede",
     "parentTitle": "Prograde Irregular Moon",
     "subtitle": ""
   },
   {
-    "title": "Sao -",
+    "title": "Sao",
     "parentTitle": "Prograde Irregular Moon",
     "subtitle": ""
   },
   {
-    "title": "Laomedeia -",
+    "title": "Laomedeia",
     "parentTitle": "Prograde Irregular Moon",
     "subtitle": ""
   },
@@ -5125,82 +5130,82 @@
     "subtitle": "An irregular moon that orbits its parent body in the opposite direction to the parent body's rotation. These are typically found in more distant and highly inclined orbits."
   },
   {
-    "title": "Pasiphae -",
+    "title": "Pasiphae",
     "parentTitle": "Retrograde Irregular Moon",
     "subtitle": ""
   },
   {
-    "title": "Sinope -",
+    "title": "Sinope",
     "parentTitle": "Retrograde Irregular Moon",
     "subtitle": ""
   },
   {
-    "title": "Carme -",
+    "title": "Carme",
     "parentTitle": "Retrograde Irregular Moon",
     "subtitle": ""
   },
   {
-    "title": "Ananke -",
+    "title": "Ananke",
     "parentTitle": "Retrograde Irregular Moon",
     "subtitle": ""
   },
   {
-    "title": "Callirrhoe -",
+    "title": "Callirrhoe",
     "parentTitle": "Retrograde Irregular Moon",
     "subtitle": ""
   },
   {
-    "title": "Megaclite -",
+    "title": "Megaclite",
     "parentTitle": "Retrograde Irregular Moon",
     "subtitle": ""
   },
   {
-    "title": "Phoebe -",
+    "title": "Phoebe",
     "parentTitle": "Retrograde Irregular Moon",
     "subtitle": ""
   },
   {
-    "title": "Skathi -",
+    "title": "Skathi",
     "parentTitle": "Retrograde Irregular Moon",
     "subtitle": ""
   },
   {
-    "title": "Narvi -",
+    "title": "Narvi",
     "parentTitle": "Retrograde Irregular Moon",
     "subtitle": ""
   },
   {
-    "title": "Ymir -",
+    "title": "Ymir",
     "parentTitle": "Retrograde Irregular Moon",
     "subtitle": ""
   },
   {
-    "title": "Sycorax -",
+    "title": "Sycorax",
     "parentTitle": "Retrograde Irregular Moon",
     "subtitle": ""
   },
   {
-    "title": "Prospero -",
+    "title": "Prospero",
     "parentTitle": "Retrograde Irregular Moon",
     "subtitle": ""
   },
   {
-    "title": "Setebos -",
+    "title": "Setebos",
     "parentTitle": "Retrograde Irregular Moon",
     "subtitle": ""
   },
   {
-    "title": "Triton -",
+    "title": "Triton",
     "parentTitle": "Retrograde Irregular Moon",
     "subtitle": ""
   },
   {
-    "title": "Psamathe -",
+    "title": "Psamathe",
     "parentTitle": "Retrograde Irregular Moon",
     "subtitle": ""
   },
   {
-    "title": "Neso -",
+    "title": "Neso",
     "parentTitle": "Retrograde Irregular Moon",
     "subtitle": ""
   },
@@ -10990,143 +10995,143 @@
     "subtitle": "the Greek colony in Cyrenaica, a centre of Hellenistic philosophy and medicine (c. 631 BCE–96 BCE)."
   },
   {
-    "title": "Phoenician -",
+    "title": "Phoenician",
     "parentTitle": "City-State Society",
     "subtitle": ""
   },
   {
     "title": "Tyre",
-    "parentTitle": "Phoenician -",
+    "parentTitle": "Phoenician",
     "subtitle": "a Phoenician maritime trade society on the Levantine coast, famed for purple dye, shipbuilding, and colonization (c. 1200–538 BCE)."
   },
   {
     "title": "Sidon",
-    "parentTitle": "Phoenician -",
+    "parentTitle": "Phoenician",
     "subtitle": "the Phoenician city-state in the Levant, noted for purple dye and maritime commerce (c. 3000–550 BCE)."
   },
   {
     "title": "Byblos",
-    "parentTitle": "Phoenician -",
+    "parentTitle": "Phoenician",
     "subtitle": "the ancient Levantine city-state, early adopter of alphabetic script and trade (c. 5000–332 BCE)."
   },
   {
     "title": "Arwad",
-    "parentTitle": "Phoenician -",
+    "parentTitle": "Phoenician",
     "subtitle": "the island city-state off Syria, important Phoenician naval station (c. 1300 BCE–64 BCE)."
   },
   {
     "title": "Utica",
-    "parentTitle": "Phoenician -",
+    "parentTitle": "Phoenician",
     "subtitle": "the Phoenician colony on North Africa’s coast, early rival to Carthage (c. 1101–146 BCE)."
   },
   {
     "title": "Gadir (Gades)",
-    "parentTitle": "Phoenician -",
+    "parentTitle": "Phoenician",
     "subtitle": "the Phoenician colony on the Iberian Atlantic coast, one of the oldest Western Mediterranean settlements (c. 1100–206 BCE)."
   },
   {
-    "title": "Etruscan -",
+    "title": "Etruscan",
     "parentTitle": "City-State Society",
     "subtitle": ""
   },
   {
     "title": "Veii",
-    "parentTitle": "Etruscan -",
+    "parentTitle": "Etruscan",
     "subtitle": "an Etruscan city-state north of Rome, rival of early Roman monarchy and Republic (c. 8th–4th centuries BCE; destroyed 396 BCE)."
   },
   {
     "title": "Tarquinia",
-    "parentTitle": "Etruscan -",
+    "parentTitle": "Etruscan",
     "subtitle": "a major Etruscan city-state on the Tyrrhenian coast, noted for its painted tombs and maritime trade (c. 8th–3rd centuries BCE)."
   },
   {
     "title": "Caere (Cerveteri)",
-    "parentTitle": "Etruscan -",
+    "parentTitle": "Etruscan",
     "subtitle": "an Etruscan city-state in southern Etruria, famed for its tumulus necropolises and trade networks (c. 9th–3rd centuries BCE)."
   },
   {
     "title": "Vulci",
-    "parentTitle": "Etruscan -",
+    "parentTitle": "Etruscan",
     "subtitle": "an Etruscan city-state in southern Etruria, noted for its wealth, art, and iron-smelting (c. 8th–3rd centuries BCE)."
   },
   {
     "title": "Volsinii (Orvieto)",
-    "parentTitle": "Etruscan -",
+    "parentTitle": "Etruscan",
     "subtitle": "an Etruscan city-state in central Italy, renowned for its bronze industry; destroyed by Rome in 264 BCE (c. 7th–3rd centuries BCE)."
   },
   {
     "title": "Populonia",
-    "parentTitle": "Etruscan -",
+    "parentTitle": "Etruscan",
     "subtitle": "the principal Etruscan port and centre of iron smelting on the Tyrrhenian coast (c. 8th–3rd centuries BCE)."
   },
   {
     "title": "Felsina (Bologna)",
-    "parentTitle": "Etruscan -",
+    "parentTitle": "Etruscan",
     "subtitle": "an Etruscan city-state in northern Italy, precursor to the Roman colony Bononia (c. 6th–3rd centuries BCE)."
   },
   {
-    "title": "Indus -",
+    "title": "Indus",
     "parentTitle": "City-State Society",
     "subtitle": ""
   },
   {
     "title": "Harappa",
-    "parentTitle": "Indus -",
+    "parentTitle": "Indus",
     "subtitle": "a major urban polity of the Indus Valley Civilization, characterized by grid-plan cities, standardized weights, and a centralized administration (c. 2600–1900 BCE)."
   },
   {
     "title": "Mohenjo-daro",
-    "parentTitle": "Indus -",
+    "parentTitle": "Indus",
     "subtitle": "the principal city-state of the Mature Harappan phase, renowned for its advanced civic planning, drainage systems, and state authority (c. 2500–1900 BCE)."
   },
   {
-    "title": "Sumerian -",
+    "title": "Sumerian",
     "parentTitle": "City-State Society",
     "subtitle": ""
   },
   {
     "title": "Eridu",
-    "parentTitle": "Sumerian -",
+    "parentTitle": "Sumerian",
     "subtitle": "the earliest known city-state in southern Mesopotamia with centralized temple authority (c. 4000 BCE)."
   },
   {
     "title": "Uruk",
-    "parentTitle": "Sumerian -",
+    "parentTitle": "Sumerian",
     "subtitle": "the first large-scale urban state in Sumer, noted for its administrative bureaucracy and monumental construction (c. 4000–3100 BCE)."
   },
   {
     "title": "Ur",
-    "parentTitle": "Sumerian -",
+    "parentTitle": "Sumerian",
     "subtitle": "a major Sumerian city-state on the Persian Gulf coast, centered on a ziggurat and a temple economy (c. 2600–1800 BCE)."
   },
   {
     "title": "Kish",
-    "parentTitle": "Sumerian -",
+    "parentTitle": "Sumerian",
     "subtitle": "an early northern Mesopotamian city-state famed for its dynastic kingship and political preeminence in Sumer (c. 3500 BCE)."
   },
   {
     "title": "Lagash",
-    "parentTitle": "Sumerian -",
+    "parentTitle": "Sumerian",
     "subtitle": "a Sumerian city-state that achieved significant political autonomy and artistic patronage in the late 4th millennium BCE."
   },
   {
-    "title": "Elamite -",
+    "title": "Elamite",
     "parentTitle": "City-State Society",
     "subtitle": ""
   },
   {
     "title": "Susa",
-    "parentTitle": "Elamite -",
+    "parentTitle": "Elamite",
     "subtitle": "an early Elamite city-state in southwestern Iran, characterized by centralized governance and temple complexes (c. 4000–3000 BCE)."
   },
   {
-    "title": "Minoan -",
+    "title": "Minoan",
     "parentTitle": "City-State Society",
     "subtitle": ""
   },
   {
     "title": "Knossos",
-    "parentTitle": "Minoan -",
+    "parentTitle": "Minoan",
     "subtitle": "the Minoan palace-city on Crete, early Bronze Age centre of administration and ritual (c. 1900–1400 BCE)."
   },
   {
@@ -11545,58 +11550,58 @@
     "subtitle": "an agreement with Denmark signed on 1 December 1918 and valid for 25 years, recognised Iceland as a fully sovereign and independent state in a personal union with Denmark (1918–1944)."
   },
   {
-    "title": "Principality -",
+    "title": "Principality",
     "parentTitle": "Kingdom Society",
     "subtitle": ""
   },
   {
     "title": "Principality of Monaco",
-    "parentTitle": "Principality -",
+    "parentTitle": "Principality",
     "subtitle": "a constitutional monarchy (1911–Present)."
   },
   {
     "title": "Principality of Liechtenstein",
-    "parentTitle": "Principality -",
+    "parentTitle": "Principality",
     "subtitle": "a constitutional monarchy with strong princely powers (1862–Present)."
   },
   {
     "title": "Principality of Andorra",
-    "parentTitle": "Principality -",
+    "parentTitle": "Principality",
     "subtitle": "a co-princely diarchy (President of France & Bishop of Urgell) with a modern constitutional government (1278–Present)."
   },
   {
-    "title": "Emirate -",
+    "title": "Emirate",
     "parentTitle": "Kingdom Society",
     "subtitle": ""
   },
   {
     "title": "State of Kuwait",
-    "parentTitle": "Emirate -",
+    "parentTitle": "Emirate",
     "subtitle": "an emirate (1961–Present)."
   },
   {
     "title": "State of Qatar",
-    "parentTitle": "Emirate -",
+    "parentTitle": "Emirate",
     "subtitle": "an absolute monarchy (1971–Present)."
   },
   {
     "title": "United Arab Emirates",
-    "parentTitle": "Emirate -",
+    "parentTitle": "Emirate",
     "subtitle": "a federal elective monarchy (1971–Present)."
   },
   {
-    "title": "Sultanate -",
+    "title": "Sultanate",
     "parentTitle": "Kingdom Society",
     "subtitle": ""
   },
   {
     "title": "Sultanate of Oman",
-    "parentTitle": "Sultanate -",
+    "parentTitle": "Sultanate",
     "subtitle": "an absolute monarchy (1970–Present)."
   },
   {
     "title": "Brunei Darussalam",
-    "parentTitle": "Sultanate -",
+    "parentTitle": "Sultanate",
     "subtitle": "an absolute monarchy (1984–Present)."
   },
   {
@@ -13680,13 +13685,13 @@
     "subtitle": "Niitsitapi alliance of Siksika, Kainai, and Piikani bands (c. 18th century CE–Present)"
   },
   {
-    "title": "Colonial Society -",
+    "title": "Colonial Society",
     "parentTitle": "Society",
     "subtitle": ""
   },
   {
     "title": "Massachusetts Bay Colony",
-    "parentTitle": "Colonial Society -",
+    "parentTitle": "Colonial Society",
     "subtitle": "an early North American English settlement governed by Puritan religious principles and leaders (1629–1691 CE)."
   },
   {
