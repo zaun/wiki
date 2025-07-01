@@ -94,7 +94,8 @@ function mergeFlatInCsv(csvFile, flatFile, outputFile) {
     const records = parse(csvContent, {
       columns: true,
       skip_empty_lines: true,
-      relax_quotes: true,
+      // relax_quotes: true,
+      relax_column_count_less: true,
     });
 
     if (records.length === 0) {
